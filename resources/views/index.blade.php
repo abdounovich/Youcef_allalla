@@ -19,7 +19,7 @@
 <div class="container mt-5">
   <div class="card-group text-white" style="opacity: 0.8">
   
-    <div class="card bg-info ">
+    <div class="card bg-info m-1">
       <div class="card-body text-left ">
       <a class="h4" href="{{route('products')}}"> 
       <p class="card-text">
@@ -31,7 +31,7 @@
       </div>
     </div>
   
-    <div class="card bg-info ">
+    <div class="card bg-info m-1 ">
         <div class="card-body text-left ">
         <a class="h4" href="{{route('clients')}}"> 
         <p class="card-text">
@@ -46,7 +46,7 @@
 
 
 
-      <div class="card bg-info ">
+      <div class="card bg-info m-1 ">
         <div class="card-body text-left ">
         <a class="h4" href="{{route('commandes')}}"> 
         <p class="card-text">
@@ -61,11 +61,11 @@
 
 
 
-      <div class="card bg-info ">
+      <div class="card bg-info m-1 ">
         <div class="card-body text-left ">
         <a class="h4" href="{{route('categories')}}"> 
         <p class="card-text">
-        <i class=" p-2 mr-2 fa fa-list-ol ">
+        <i class=" p-2 mr-2 fa fa-list-alt  ">
         </i>Categories : {{$categories->count()}}
         </p>
         </a>
@@ -73,7 +73,7 @@
         </div>
       </div>
 
-      <div class="card bg-info ">
+      <div class="card bg-info m-1 ">
         <div class="card-body text-left ">
         <a class="h4" href="{{route('sub_categories')}}"> 
         <p class="card-text">
