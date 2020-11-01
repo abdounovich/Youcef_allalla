@@ -34,7 +34,7 @@ img {
 
 
 
-                <div class="card p-2" >
+                <div class="card p-2 mt-5" >
                     <img class="card-img-top img-thumbnail p-1" style="width: 100%; height:300px" src="{{$produit->photo}}" alt="Card image">
                     <div class="card-body">
                       <h4 class="card-title">{{$produit->nom}}</h4>
