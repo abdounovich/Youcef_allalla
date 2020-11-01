@@ -14,6 +14,11 @@ img {
 </style>
 
 
+
+
+
+
+
     <div class="row text-center text-white mb-5">
         <div class="col-lg-7 mx-auto">
             <h1 class="h4 shadow bg-dark p-3" style="opacity: 0.9">Liste des produits</h1>
@@ -25,55 +30,32 @@ img {
             <ul class="list-group  shadow-lg">
                 <!-- list group item-->
                 @foreach ($produits as $produit)
-                <li class="list-group-item  shadow">
-                    <!-- Custom content-->
-
-                        
-                    <div class="media align-items-lg-center flex-column flex-lg-row ">
-                        <div class="media-body order-2 order-lg-1">
-                            <div class=" h5 mt-0 font-weight-bold mb-2">{{$produit->nom}}  
-                                <br>                            
-                           <div> <a href="{{route('products.edit',$produit->id) }}">
-                                <i class="p-1 m-2 text-warning fa fa-edit"></i>
-                            </a>
-                            <a href="{{route('products.delete',$produit->id) }}">
-                                <i class="p-1 m-2 text-danger fa fa-trash"></i>
-                            </a>
-                        </div>
 
 
 
 
+                <div class="card p-2" >
+                    <img class="card-img-top img-thumbnail" src="{{$produit->photo}}" alt="Card image">
+                    <div class="card-body">
+                      <h4 class="card-title">{{$produit->nom}}</h4>
+                      <hr>
+                      <div class=""><a href="{{route('products.edit',$produit->id) }}">
+                          <i class="text-warning m-2 fa fa-edit fa-2x"></i>
+                      </a>
+                      <a href="{{route('products.delete',$produit->id)}}">
+                          <i class=" text-danger m-2 fa fa-trash fa-2x"></i>
+                      </a></div>
+                      <hr>
+                      <p class="card-text">{{$produit->descreption}}</p>
+                      <hr>
+                      <p class="card-text text-info h4">prix : {{$produit->prix}} da</p>
+                      <hr>
+                      <p class="card-text h5">reste: <span class="text-success">{{$produit->quantity}}</span></p>
 
 
-
-
-                            
-                            </div>
-                          
-
-
-
-                            
-
-                        <p class="font-italic text-muted mb-0 small">{{$produit->descreption}}</p>
-                            <div class="d-flex align-items-center justify-content-between mt-1">
-                                <h6 class="font-weight-bold my-2">{{$produit->prix}} Da</h6>
-                           
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between mt-1">
-                                <h6 class="font-weight-bold my-2">{{$produit->SubCategories->nom}}->{{$produit->SubCategories->categories->nom}}  </h6>
-                           
-                            </div>
-                                
-                          
-                         
-                         
-                        </div>
-                        <img src="{{$produit->photo}}" alt="Generic placeholder image" width="200" class=" rounded border border-dark with-3d-shadow ml-lg-5  order-1 order-lg-2">
-                    </div> <!-- End -->
-
-                </li>                    @endforeach
+                    </div>
+                  </div>
+               @endforeach
  <!-- End -->
                                <div class="m-2 p-2">{{$produits->links()}}</div>
  </ul> <!-- End -->
