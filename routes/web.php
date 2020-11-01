@@ -79,5 +79,11 @@ Route::post('commandes/add', 'CommandeController@store')->name('commandes.add');
 Route::get('commandes/edit/{id}', 'CommandeController@edit')->name('commandes.edit');
 Route::post('commandes/edit/{id}', 'CommandeController@update')->name('commandes.edit');
 Route::get('commandes/delete/{id}', 'CommandeController@destroy')->name('commandes.delete');
+Route::get('commandes/confirmation/{id}', 'CommandeController@confirmation')->name('commandes.confirmation');
+Route::get('commandes/delivration/{id}', 'CommandeController@delivration')->name('commandes.delivration');
+Route::get('commandes/return/{id}', 'CommandeController@return')->name('commandes.return');
+
+
+
 
 

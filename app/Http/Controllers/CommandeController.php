@@ -14,8 +14,13 @@ class CommandeController extends Controller
      */
     public function index()
     {
-        $commandes=Commande::paginate(10);
-        return view("commandes.index")->with("commandes",$commandes);
+        $active_commandes=Commande::where("type",2)->paginate(10);
+        $inactive_commandes=Commande::where("type",1)->paginate(10);
+        $delivré_commandes=Commande::where("type",3)->paginate(10);
+        return view("commandes.index")
+        ->with("active_commandes",$active_commandes)
+        ->with("inactive_commandes",$inactive_commandes)
+        ->with("delivré_commandes",$delivré_commandes);
     }
 
     /**
@@ -82,5 +87,35 @@ class CommandeController extends Controller
     public function destroy(Commande $commande)
     {
         //
+    }
+
+
+
+    public function confirmation($id)
+    {
+     
+        $commande=Commande::find($id);
+        $commande->type="2";
+        $commande->save();
+        return redirect()->route('commandes');
+    }
+
+    
+    public function delivration($id)
+    {
+     
+        $commande=Commande::find($id);
+        $commande->type="3";
+        $commande->save();
+        return redirect()->route('commandes');
+    }
+
+    public function return($id)
+    {
+     
+        $commande=Commande::find($id);
+        $commande->type="1";
+        $commande->save();
+        return redirect()->route('commandes');
     }
 }

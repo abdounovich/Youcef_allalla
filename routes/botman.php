@@ -166,19 +166,8 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
 
 
 
-    $botman->hears('select([0-9]+)', function($bot,$number) {
-        
-        $bot->reply(Question::create('هل تريد تأكيد / إلغاء الطلبية ؟ ')->addButtons([
-            Button::create(' ✅ تأكيد ')->value('YesConfirme'.$number),
-            Button::create(' ✅ إلغاء ')->value('NoCancel')
-            ]));
-    
-        
 
-
-         
-    });
-    $botman->hears('YesConfirme([0-9]+)', function ( $bot,$number) {
+    $botman->hears('select([0-9]+)', function ( $bot,$number) {
 
         $bot->startConversation(new ExampleConversation($number));
 
