@@ -35,16 +35,16 @@ img {
 
 
                 <div class="card p-2" >
-                    <img class="card-img-top img-thumbnail" src="{{$produit->photo}}" alt="Card image">
+                    <img class="card-img-top img-thumbnail p-1" style="width: 100%; height:300px" src="{{$produit->photo}}" alt="Card image">
                     <div class="card-body">
                       <h4 class="card-title">{{$produit->nom}}</h4>
                       <hr>
-                      <div class=""><a href="{{route('products.edit',$produit->id) }}">
+                     <a href="{{route('products.edit',$produit->id) }}">
                           <i class="text-warning m-2 fa fa-edit fa-2x"></i>
                       </a>
                       <a href="{{route('products.delete',$produit->id)}}">
                           <i class=" text-danger m-2 fa fa-trash fa-2x"></i>
-                      </a></div>
+                      </a>
                       <hr>
                       <p class="card-text">{{$produit->descreption}}</p>
                       <hr>
