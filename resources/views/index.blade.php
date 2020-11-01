@@ -78,7 +78,7 @@
         <a class="h4" href="{{route('sub_categories')}}"> 
         <p class="card-text">
         <i class=" p-2 mr-2 fa fa-list-ol ">
-        </i>Sous-categories : {{$sub_categories->count()}}
+        </i>S-categories: {{$sub_categories->count()}}
         </p>
         </a>
   
