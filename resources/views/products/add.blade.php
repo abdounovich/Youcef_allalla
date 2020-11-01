@@ -1,9 +1,10 @@
 
-   
-    <button class="btn btn-primary  rounded p-3 m-4"  type="button" data-toggle="collapse" data-target="#product_collapse" aria-expanded="false" aria-controls="collapseExample">
+   <div class="  d-flex justify-content-center">
+    <button class="btn btn-primary  rounded p-3 m-4"  
+    type="button" data-toggle="collapse" data-target="#product_collapse" aria-expanded="false" aria-controls="collapseExample">
        Ajouter un produit </button>
 
- 
+ </div>
 
 
 
