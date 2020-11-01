@@ -22,21 +22,35 @@
 </head>
   <body>
   
-
-  <div class="d-flex justify-content-center bg-dark" style="opacity: 0.9">
-
-          <a href="/" class="  text-white m-2  p-2" type="button">Acceuil</a>
-          <a href="/products" class=" float-right  text-white m-2 p-2" type="button">Produits</a>
-          <a href="/clients" class=" float-right  text-white m-2 p-2" type="button">Clients</a>
-          <a href="/commandes" class=" float-right  text-white m-2 p-2" type="button">Commandes</a>
-          <a href="/categories" class=" float-right  text-white m-2 p-2" type="button">Categories</a>
-          <a href="/sub_categories" class="float-right  text-white m-2 p-2" type="button">Sous-Categories</a>
-</div>
-
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
       <div class="container">
+        <a class="navbar-brand" href="#">LOGO HERE</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Acceuil
+                    <span class="sr-only">(current)</span>
+                  </a>
+            </li>
+            <li class="nav-item"> <a  class="nav-link" href="/products" >Produits</a></li>
+            <li class="nav-item"><a href="/clients" class="nav-link" >Clients</a></li>
+              <li class="nav-item"><a href="/commandes"class="nav-link" >Commandes</a></li>
+                <li class="nav-item"><a href="/categories" class="nav-link" >Categories</a></li>
+                  <li class="nav-item"><a href="/sub_categories" class="nav-link" >Sous-Categories</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container" style="height:50px">
+
+    </div>
+
+      <div class="container ">
         @yield('content')
       </div>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
