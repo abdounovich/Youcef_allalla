@@ -19,7 +19,7 @@ img {
 
 
 
-    <div class="row text-center text-white mb-5">
+    <div class="row text-center text-white mb-2">
         <div class="col-lg-7 mx-auto">
             <h1 class="h4 shadow bg-dark p-3" style="opacity: 0.9">Liste des produits</h1>
         </div>
@@ -40,10 +40,10 @@ img {
                       <h4 class="card-title">{{$produit->nom}}</h4>
                       <hr>
                      <a href="{{route('products.edit',$produit->id) }}">
-                          <i class="text-warning m-2 fa fa-edit fa-2x"></i>
+                          <i class="text-warning m-2 fa fa-edit "></i>
                       </a>
                       <a href="{{route('products.delete',$produit->id)}}">
-                          <i class=" text-danger m-2 fa fa-trash fa-2x"></i>
+                          <i class=" text-danger m-2 fa fa-trash "></i>
                       </a>
                       <hr>
                       <p class="card-text">{{$produit->descreption}}</p>

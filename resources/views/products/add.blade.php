@@ -9,10 +9,7 @@
 
 
 <div class="  d-flex justify-content-center " >
-
-  
-  
-    <div class=" collapse col col-12 bg-dark my-4     text-white"  id="product_collapse" style="opacity: 0.9">
+    <div class=" collapse col col-12 bg-dark my-4 rounded     text-white"  id="product_collapse" style="opacity: 0.9">
         <div class="row text-center text-white mb-3">
             <div class="col  ">
                 <h1 class=" rounded  p-2 h4 mt-2 ">Ajouter un nouveau produit :</h1>
