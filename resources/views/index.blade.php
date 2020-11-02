@@ -19,9 +19,9 @@
     background: linear-gradient(45deg,#0a6194,#73b4ff);
 }</style>
 <div class="container mt-5">
-  <div class="card-group text-white" style="opacity: 0.8">
+  <div class=" text-white" style="opacity: 0.8">
   
-    <div class="card bg-c-blue  m-1">
+    <div class="card bg-c-blue  m-2">
       <div class="card-body text-left ">
       <a class="h4" href="{{route('products')}}"> 
       <p class="card-text">
@@ -33,7 +33,7 @@
       </div>
     </div>
   
-    <div class="card bg-c-blue m-1 ">
+    <div class="card bg-c-blue m-2">
         <div class="card-body text-left ">
         <a class="h4" href="{{route('clients')}}"> 
         <p class="card-text">
@@ -48,7 +48,7 @@
 
 
 
-      <div class="card bg-c-blue m-1 ">
+      <div class="card bg-c-blue m-2 ">
         <div class="card-body text-left ">
         <a class="h4" href="{{route('commandes')}}"> 
         <p class="card-text">
@@ -63,7 +63,7 @@
 
 
 
-      <div class="card bg-c-blue m-1 ">
+      <div class="card bg-c-blue m-2 ">
         <div class="card-body text-left ">
         <a class="h4" href="{{route('categories')}}"> 
         <p class="card-text">
@@ -75,7 +75,7 @@
         </div>
       </div>
 
-      <div class="card bg-c-blue m-1 ">
+      <div class="card bg-c-blue m-2 ">
         <div class="card-body text-left ">
         <a class="h4" href="{{route('sub_categories')}}"> 
         <p class="card-text">
