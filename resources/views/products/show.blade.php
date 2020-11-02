@@ -11,6 +11,23 @@ img {
     height: 170px;
     width: 140px
 }
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
 </style>
 
 
@@ -19,7 +36,7 @@ img {
 
 
 
-    <div class="row text-center text-white mt-5 mb-2">
+    <div class="row text-center text-white mt-5">
         <div class="col-lg-7 mx-auto">
             <h1 class="h4 shadow bg-dark p-3" style="opacity: 0.9">Liste des produits</h1>
         </div>
@@ -39,11 +56,11 @@ img {
                     <div class="card-body">
                       <h4 class="card-title">{{$produit->nom}}</h4>
                       <hr>
-                     <a href="{{route('products.edit',$produit->id) }}">
-                          <i class="text-warning m-2 fa fa-edit "></i>
+                     <a class="btn btn-warning btn-circle btn-lg p-2" href="{{route('products.edit',$produit->id) }}">
+                          <span class="text-white  fa fa-edit fa-2x "></span>
                       </a>
-                      <a href="{{route('products.delete',$produit->id)}}">
-                          <i class=" text-danger m-2 fa fa-trash "></i>
+                      <a class="btn btn-danger btn-circle btn-lg p-2" href="{{route('products.delete',$produit->id)}}">
+                          <i class=" text-white fa-2x fa fa-trash "></i>
                       </a>
                       <hr>
                       <p class="card-text">{{$produit->descreption}}</p>
