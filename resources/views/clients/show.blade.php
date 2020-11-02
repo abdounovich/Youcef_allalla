@@ -24,9 +24,9 @@ img {
 <div class="container">
     <div class="row">
         @foreach ($clients as $client)
-       
-            <div class=" clearfix col col-12 bg-dark my-2 p-2 rounded " style="opacity: 0.9">
-                <div class="float-right btn btn-danger rounded-circle "> 
+            <div class=" clearfix col col-12 bg-dark mt-2 mb-1 p-2 rounded " style="opacity: 0.9">
+                       <div class="bg-dark">
+<div class="float-right btn btn-danger rounded-circle "> 
             <a href="{{route('clients.delete',$client->id) }}">
                 <i class="  text-white  fa fa-trash"></i>
             </a>
@@ -34,9 +34,12 @@ img {
             <div class=" float-left my-2 mr-2"><img style="width: 100px; height:100px" src="{{$client->photo}}"  class=" img-thumbnail" alt=""></div>
             <div class="mt-2 text-info h5 ">{{$client->facebook}} </div>
             <div class=" text-white"><i class="text-success fa fa-map-marker mr-2 "></i>{{$client->address}}</div>
-            <div class=" text-white"><i class="text-warning fa fa-phone  mr-2"></i>{{$client->phone}}</div>
-            <div class=" row text-white"><i class=" text-info fa fa-shopping-cart mr-2"></i>{{$client->commandes->count()}}</div>
-
+            </div>
+            <div class=" text-white mr-2">
+                <div class=" float-right col col-12 p-2 "><i class=" text-warning fa fa-phone  mr2"></i><span class="mx-3 h5">  {{$client->phone}}</span></div>
+                <div class=" float-right col col-12 p-2 "><i class=" text-warning fa fa-shopping-cart  mr2"></i><span class="mx-3 h5">commandes : {{$client->commandes->count()}}</span></div>
+           
+        </div>
 
 
             </div>
@@ -47,65 +50,5 @@ img {
 
 
 
-    <div class="row" >
-        <div class="col-lg-8 mx-auto">
-            <!-- List group-->
-            <ul class="list-group  shadow-lg">
-                <!-- list group item-->
-                @foreach ($clients as $client)
-
-
-
-
-
-
-
-                <li class="list-group-item  shadow">
-                    <!-- Custom content-->
-
-                        
-                    <div class="media align-items-lg-center flex-column flex-lg-row ">
-                        <div class="media-body order-2 order-lg-1">
-                        </div class="clearfix">
-                        <div class="float-right">
-                        <img src="{{$client->photo}}" alt="Generic placeholder image" style="width:100px;height:100px" class=" mb-5 img-thumbnail  with-3d-shadow">
-                    </div> </div>
-                            <div class=" h5 mt-0 font-weight-bold mb-2"><a href="{{route('client.show',$client->slug) }}">
-                                {{$client->facebook}}
-                            </a> 
-                                <br>                            
-                           <div> 
-                            <a href="{{route('clients.delete',$client->id) }}">
-                                <i class="p-1 m-2 text-danger fa fa-trash"></i>
-                            </a>
-                        </div>
-                    </div>
-                            <div class="d-flex align-items-center justify-content-between mt-1">
-                                <h6 class="font-weight-bold my-2">{{$client->phone}} </h6>
-                           
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between mt-1">
-                                <h6 class="font-weight-bold my-2">{{$client->address}}</h6>
-                           
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between mt-1">
-                                <h6 class="font-weight-bold my-2">@if ($client->commandes->count()=="0")
-                                    il y'a aucune commande
-                                @else
-                                <a href="">commandes : {{$client->commandes->count()}}</a> @endif</h6>
-                                                          
-
-                            </div>
-                          
-                         
-                         
-                       <!-- End -->
-
-                </li>                    @endforeach
- <!-- End -->
-                               <div class="m-2 p-2">{{$clients->links()}}</div>
- </ul> <!-- End -->
-
-        </div>
-    </div>
+      <div class="m-2 p-2">{{$clients->links()}}</div>
 
