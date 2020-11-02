@@ -8,11 +8,11 @@
 
 
 
-<div class="row collapse" id="product_collapse">
+<div class="row collapse d-flex justify-content-center" id="product_collapse">
 
   
   
-    <div class="col col-10 bg-dark p-4 m-2 text-white" style="opacity: 0.9">
+    <div class="m-2 p-2 bg-dark  text-white" style="opacity: 0.9">
         <div class="row text-center text-white mb-3">
             <div class="col  ">
                 <h1 class=" rounded p-2" style=" font-size:35px">Ajouter un nouveau produit :</h1>
@@ -69,7 +69,11 @@
                 <option value="{{$item->id}}">{{$item->nom}}->{{$item->categories->nom}}</option>
             @endforeach              </select>
               </div>
-            <button type="submit" class="btn btn-primary">Ajouter</button>
+             <br>
+             
+            <button type="submit" class="btn btn-primary col col-12">Ajouter</button>
+            <br>
+            <br>
           </form>
 
 
