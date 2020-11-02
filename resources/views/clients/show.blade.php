@@ -36,8 +36,8 @@ img {
             <div class=" text-white"><i class="text-success fa fa-map-marker mr-2 "></i>{{$client->address}}</div>
             </div>
             <div class=" text-white mr-2">
-                <div class=" float-right col col-12 "><i class=" text-warning fa fa-phone  "></i><span class="mx-3">  {{$client->phone}}</span></div>
-                <div class=" float-right col col-12  "><i class=" text-warning fa fa-shopping-cart  "></i><span class="mx-3 ">commandes : {{$client->commandes->count()}}</span></div>
+                <div class=" float-right col col-12  "><i class=" text-warning fa fa-shopping-cart  "></i><span class="mr-5 ml-2 ">commandes : {{$client->commandes->count()}}</span>
+                    <i class=" text-warning fa fa-phone  "></i><span class="mx-2">  {{$client->phone}}</span></div>
            
         </div>
 
