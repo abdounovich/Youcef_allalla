@@ -12,7 +12,7 @@
 
   
   
-    <div class="m-2 p-2 col col-12 bg-dark  text-white" style="opacity: 0.9">
+    <div class=" col col-10 bg-dark  text-white" style="opacity: 0.9">
         <div class="row text-center text-white mb-3">
             <div class="col  ">
                 <h1 class=" rounded p-2 h5">Ajouter un nouveau produit :</h1>
