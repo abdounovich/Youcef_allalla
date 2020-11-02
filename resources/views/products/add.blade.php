@@ -2,7 +2,7 @@
    <div class=" fixed-bottom d-flex justify-content-end ">
     <a class="btn btn-primary   rounded  rounded-circle my-5 mr-5"  
     type="button" data-toggle="collapse" data-target="#product_collapse" aria-expanded="false" aria-controls="collapseExample">
-      <i class="fa fa-plus fa-2x p-2 text-white" ></i></a>
+      <i class="fa fa-plus fa-2x p-1 text-white" ></i></a>
 
  </div>
 
@@ -12,7 +12,7 @@
     <div class=" collapse col col-12 bg-dark my-4 rounded     text-white"  id="product_collapse" style="opacity: 0.9">
         <div class="row text-center text-white mb-3">
             <div class="col  ">
-                <h1 class=" rounded  p-2 h4 mt-2 ">Ajouter un nouveau produit :</h1>
+                <h1 class=" rounded  p-2 h4 mt-2 ">Ajouter un produit :</h1>
             </div>
         </div>
     <form method="POST" action="{{route('products.add') }}" enctype="multipart/form-data">
