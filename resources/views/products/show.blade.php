@@ -52,10 +52,10 @@ img {
                       <hr>
                       <p class="card-text text-info h4">prix : {{$produit->prix}} da</p>
                       <hr>
-                      <p class="card-text h5">reste: <span class="text-success">{{$produit->quantity}}</span> <a class="btn btn-warning btn-circle float-right  mt-2 mr-2  " href="{{route('products.edit',$produit->id) }}">
+                      <p class="card-text h5">reste: <span class="text-success">{{$produit->quantity}}</span> <a class="btn btn-warning btn-circle float-right  mr-2  " href="{{route('products.edit',$produit->id) }}">
                         <span class="text-white  fa fa-edit   "></span>
                     </a>
-                    <a class="btn btn-danger btn-circle float-right mt-2 mr-2 " href="{{route('products.delete',$produit->id)}}">
+                    <a class="btn btn-danger btn-circle float-right  mr-2 " href="{{route('products.delete',$produit->id)}}">
                         <span class=" text-white  fa fa-trash  "></span>
                     </a></p>
 
