@@ -15,19 +15,11 @@ img {
   width: 30px;
   height: 30px;
   text-align: center;
-  padding: 6px 0;
-  font-size: 12px;
-  line-height: 1.428571429;
+  padding: 2px;
+  font-size: 18px;
   border-radius: 15px;
 }
-.btn-circle.btn-lg {
-  width: 50px;
-  height: 50px;
-  padding: 10px 16px;
-  font-size: 18px;
-  line-height: 1.33;
-  border-radius: 25px;
-}
+
 </style>
 
 
@@ -56,18 +48,16 @@ img {
                     <div class="card-body">
                       <h4 class="card-title">{{$produit->nom}}</h4>
                       <hr>
-                     <a class="btn btn-warning btn-circle " href="{{route('products.edit',$produit->id) }}">
-                          <span class="text-white  fa fa-edit   "></span>
-                      </a>
-                      <a class="btn btn-danger btn-circle " href="{{route('products.delete',$produit->id)}}">
-                          <i class=" text-white fa fa-trash  "></i>
-                      </a>
-                      <hr>
                       <p class="card-text">{{$produit->descreption}}</p>
                       <hr>
                       <p class="card-text text-info h4">prix : {{$produit->prix}} da</p>
                       <hr>
-                      <p class="card-text h5">reste: <span class="text-success">{{$produit->quantity}}</span></p>
+                      <p class="card-text h5">reste: <span class="text-success">{{$produit->quantity}}</span> <a class="btn btn-warning btn-circle float-right  mt-2 mr-2  " href="{{route('products.edit',$produit->id) }}">
+                        <span class="text-white  fa fa-edit   "></span>
+                    </a>
+                    <a class="btn btn-danger btn-circle float-right mt-2 mr-2 " href="{{route('products.delete',$produit->id)}}">
+                        <span class=" text-white  fa fa-trash  "></span>
+                    </a></p>
 
 
                     </div>
