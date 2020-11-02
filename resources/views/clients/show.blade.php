@@ -33,10 +33,9 @@ img {
         </div>
             <div class=" float-left my-2 mr-2"><img style="width: 100px; height:100px" src="{{$client->photo}}"  class=" img-thumbnail" alt=""></div>
             <div class="mt-2 text-info h5 ">{{$client->facebook}} </div>
-            <div class=" text-white"><i class="text-warning fa fa-phone  mr-2"></i>{{$client->phone}}</div>
             <div class=" text-white"><i class="text-success fa fa-map-marker mr-2 "></i>{{$client->address}}</div>
-            
-            <div class=" text-white"><i class=" text-info fa fa-shopping-cart   mr-2"></i>{{$client->commandes->count()}}</div>
+            <div class=" text-white"><i class="text-warning fa fa-phone  mr-2"></i>{{$client->phone}}</div>
+            <div class=" row text-white"><i class=" text-info fa fa-shopping-cart   mr-2"></i>{{$client->commandes->count()}}</div>
 
 
 
