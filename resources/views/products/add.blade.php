@@ -2,7 +2,7 @@
    <div class=" fixed-bottom d-flex justify-content-end ">
     <a class="btn btn-primary   rounded  rounded-circle my-5 mr-5"  
     type="button" data-toggle="collapse" data-target="#product_collapse" aria-expanded="false" aria-controls="collapseExample">
-      <i class="fa fa-plus fa-2x p-1 text-white" ></i></a>
+      <i class="fa fa-plus fa-2x  text-white" ></i></a>
 
  </div>
 

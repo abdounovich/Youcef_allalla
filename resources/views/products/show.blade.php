@@ -19,7 +19,7 @@ img {
 
 
 
-    <div class="row text-center text-white my-2">
+    <div class="row text-center text-white mt-5 mb-2">
         <div class="col-lg-7 mx-auto">
             <h1 class="h4 shadow bg-dark p-3" style="opacity: 0.9">Liste des produits</h1>
         </div>
