@@ -8,14 +8,14 @@
 
 
 
-<div class="row collapse " id="product_collapse">
+<div class="  d-flex justify-content-center " >
 
   
   
-    <div class=" col col-10 bg-dark  text-white" style="opacity: 0.9">
+    <div class=" collapse col col-10 bg-dark my-4     text-white"  id="product_collapse" style="opacity: 0.9">
         <div class="row text-center text-white mb-3">
             <div class="col  ">
-                <h1 class=" rounded p-2 h5">Ajouter un nouveau produit :</h1>
+                <h1 class=" rounded  p-2 h4 mt-2 ">Ajouter un nouveau produit :</h1>
             </div>
         </div>
     <form method="POST" action="{{route('products.add') }}" enctype="multipart/form-data">
