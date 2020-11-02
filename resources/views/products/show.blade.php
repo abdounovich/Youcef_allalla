@@ -56,11 +56,11 @@ img {
                     <div class="card-body">
                       <h4 class="card-title">{{$produit->nom}}</h4>
                       <hr>
-                     <a class="btn btn-warning btn-circle btn-lg p-2" href="{{route('products.edit',$produit->id) }}">
-                          <span class="text-white  fa fa-edit fa-2x "></span>
+                     <a class="btn btn-warning btn-circle " href="{{route('products.edit',$produit->id) }}">
+                          <span class="text-white  fa fa-edit   "></span>
                       </a>
-                      <a class="btn btn-danger btn-circle btn-lg p-2" href="{{route('products.delete',$produit->id)}}">
-                          <i class=" text-white fa-2x fa fa-trash "></i>
+                      <a class="btn btn-danger btn-circle " href="{{route('products.delete',$produit->id)}}">
+                          <i class=" text-white fa fa-trash  "></i>
                       </a>
                       <hr>
                       <p class="card-text">{{$produit->descreption}}</p>
