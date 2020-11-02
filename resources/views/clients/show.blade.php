@@ -35,7 +35,7 @@ img {
             <div class="mt-2 text-info h5 ">{{$client->facebook}} </div>
             <div class=" text-white"><i class="text-success fa fa-map-marker mr-2 "></i>{{$client->address}}</div>
             <div class=" text-white"><i class="text-warning fa fa-phone  mr-2"></i>{{$client->phone}}</div>
-            <div class=" row text-white"><i class=" text-info fa fa-shopping-cart   mr-2"></i>{{$client->commandes->count()}}</div>
+            <div class=" row text-white"><i class=" text-info fa fa-shopping-cart mr-2"></i>{{$client->commandes->count()}}</div>
 
 
 
