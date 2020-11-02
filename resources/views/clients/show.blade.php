@@ -24,16 +24,19 @@ img {
 <div class="container">
     <div class="row">
         @foreach ($clients as $client)
-            <div class=" clearfix col col-12 bg-dark my-2 rounded text-white" style="opacity: 0.9">
+       
+            <div class=" clearfix col col-12 bg-dark my-2 p-2 rounded " style="opacity: 0.9">
+                <div class="float-right btn btn-danger rounded-circle "> 
+            <a href="{{route('clients.delete',$client->id) }}">
+                <i class="  text-white  fa fa-trash"></i>
+            </a>
+        </div>
             <div class=" float-left my-2 mr-2"><img style="width: 100px; height:100px" src="{{$client->photo}}"  class=" img-thumbnail" alt=""></div>
-            <div class="mt-2 ">{{$client->facebook}}  <div class="float-right btn btn-danger rounded-circle "> 
-                <a href="{{route('clients.delete',$client->id) }}">
-                    <i class="  text-white fa fa-trash"></i>
-                </a>
-            </div></div>
-            <div class="mt-1 ">Telepone : {{$client->phone}}</div>
-            <div class="mt-1 ">Commandes : {{$client->commandes->count()}}</div>
-            <div class="mt-1 ">Address : {{$client->address}}</div>
+            <div class="mt-2 text-info h5 ">{{$client->facebook}} </div>
+            <div class=" text-white"><i class="text-warning fa fa-phone  mr-2"></i>{{$client->phone}}</div>
+            <div class=" text-white"><i class="text-success fa fa-map-marker mr-2 "></i>{{$client->address}}</div>
+            
+            <div class=" text-white"><i class=" text-info fa fa-shopping-cart   mr-2"></i>{{$client->commandes->count()}}</div>
 
 
 
