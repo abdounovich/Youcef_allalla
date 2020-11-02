@@ -43,13 +43,14 @@
  
  
  
- <div class="row ">
  
    
    
-     <div class="col col-10 bg-dark p-4 m-2 text-white" style="opacity: 0.9">
-         <div class="row text-center text-white mb-3">
-             <div class="col  ">
+   
+<div class="  d-flex justify-content-center " >
+  <div class="  col col-12 bg-dark my-4 rounded     text-white"   style="opacity: 0.9">
+      <div class="row text-center text-white mb-3">
+          <div class="col  ">
                  <h1 class=" rounded p-2" style=" font-size:35px">Modifier le produit :</h1>
              </div>
          </div>
@@ -102,7 +103,7 @@
                  @endif value="{{$item->id}}">{{$item->nom}}->{{$item->categories->nom}}</option>
                @endforeach              </select> 
                </div>
-             <button type="submit" class="btn btn-primary">Modifier</button>
+             <button type="submit" class="btn btn-primary col col-12 my-3">Modifier</button>
            </form>
  
  
