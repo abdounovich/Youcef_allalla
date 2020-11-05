@@ -1,6 +1,6 @@
 
    <div class="  mt-3 mb-2 d-flex justify-content-center ">
-    <a class="btn btn-info text-white "  
+    <a class="btn btn-primary  rounded p-3 m-4 text-white"  
     type="button" data-toggle="collapse" data-target="#product_collapse" aria-expanded="false" aria-controls="collapseExample"
     ><i class="fa fa-plus mr-2">  </i> Ajouter un produit</a>
 

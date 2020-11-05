@@ -1,27 +1,24 @@
 
-   
+      <div class="  mt-3 mb-2 d-flex justify-content-center ">
+
     <button class="btn btn-primary  rounded p-3 m-4"  type="button" data-toggle="collapse" data-target="#product_collapse" aria-expanded="false" aria-controls="collapseExample">
-       Ajouter une sous catégorie</button>
+      <i class="fa fa-plus mr-2">  </i> Ajouter une sous catégorie</button>
 
  
 
-
-
-<div class="row collapse" id="product_collapse">
-
-  
-  
-    <div class="col col-10 bg-dark p-4 m-2 text-white" style="opacity: 0.9">
-        <div class="row text-center text-white mb-3">
-            <div class="col  ">
-                <h1 class=" rounded p-2" style=" font-size:35px">Ajouter une sous catégorie:</h1>
+      </div>
+      <div class="  d-flex justify-content-center " >
+        <div class=" collapse col col-12 bg-dark my-4 rounded     text-white"  id="product_collapse" style="opacity: 0.9">
+            <div class="row text-center text-white mb-3">
+                <div class="col  ">
+                    <h1 class=" rounded  p-2 h4 mt-2 ">Ajouter une sous categorie :</h1>
+                </div>
             </div>
-        </div>
     <form method="POST" action="{{route('sub_categories.add') }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group ">
               <label for="nom">Nom :</label>
-              <input type="text" class="form-control" name="nom" id="nom"  placeholder="Entrer le nom du produit">
+              <input type="text" class="form-control" name="nom" id="nom"  placeholder="Entrer le nom ">
             </div>
 
         
@@ -51,7 +48,7 @@
               image.src = URL.createObjectURL(event.target.files[0]);
               };
               </script> 
-            <button type="submit" class="btn btn-primary">Ajouter</button>
+            <button type="submit" class="btn btn-primary col col-12 my-2">Ajouter</button>
           </form>
 
 
