@@ -62,9 +62,10 @@ img {
 
                     </div>
                   </div>
+                  
                @endforeach
  <!-- End -->
-                               <div class="m-2 p-2">{{$produits->links()}}</div>
+                               <div class="d-flex justify-content-center m-4">{{$produits->links()}}</div>
  </ul> <!-- End -->
 
         </div>

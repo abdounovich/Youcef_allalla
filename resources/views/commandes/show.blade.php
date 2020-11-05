@@ -70,7 +70,7 @@ img {
 
                     </div> <!-- End -->
 
-                </li>                    @endforeach
+                </li>                    <p></p> @endforeach
  <!-- End -->
                                <div class="m-2 p-2">{{$inactive_commandes->links()}}</div>
  </ul> <!-- End -->
@@ -138,7 +138,7 @@ img {
 
                     </div> <!-- End -->
 
-                </li>                    @endforeach
+                </li><p></p>                    @endforeach
  <!-- End -->
                                <div class="m-2 p-2">{{$active_commandes->links()}}</div>
  </ul> <!-- End -->
@@ -182,9 +182,9 @@ img {
 
                     </div> <!-- End -->
 
-                </li>                    @endforeach
+                </li>                    <p></p> @endforeach
  <!-- End -->
-                               <div class="m-2 p-2">{{$delivré_commandes->links()}}</div>
+                               <div class="d-flex justify-content-center m-4">{{$delivré_commandes->links()}}</div>
  </ul> <!-- End -->
 
         </div>
