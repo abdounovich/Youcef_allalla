@@ -4,11 +4,7 @@
     </div>
 </div>
     @foreach ($active_commandes as $commande)
-    <div class=" btn card bg-primary border-dark  mt-2 mb-1"      
-     data-toggle="collapse"
-     data-target="#product_collapse{{$commande->id}}" 
-     aria-expanded="false" 
-     aria-controls="collapseExample">
+    <div class=" btn card bg-primary border-dark  mt-2 mb-1" >
       
      <div class="card-body text-left ">
       <p class="card-text">
