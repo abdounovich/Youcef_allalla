@@ -50,7 +50,24 @@ img {
                       <hr>
                       <p class="card-text">{{$produit->descreption}}</p>
                       <hr>
-                      <p class="card-text text-info h4">prix : {{$produit->prix}} da</p>
+
+                    @php
+                        $remises=App\Remise::where("product_id",$produit->id)->first();
+                        if (!$remises) {
+        echo"<p class='card-text text-info h5'>prix : ".$produit->prix."da</p>";
+}else {
+    $percentage=round(100-$remises->prix*100/$remises->produit->prix);
+
+
+
+echo '   <p class="card-text text-info h5  "> <del class="text-danger">'.$produit->prix.' da  </del> 
+                        <span class="text-success ml-3">'.$remises->prix.' da</span>                      
+                        <span class="badge p-1 ml-3 badge-info">'.$percentage.' % </span>
+                      </p>';
+
+}
+
+                    @endphp
                       <hr>
                       <p class="card-text h5">reste: <span class="text-success">{{$produit->quantity}}</span> <a class="btn btn-warning btn-circle float-right  mr-2  " href="{{route('products.edit',$produit->id) }}">
                         <span class="text-white  fa fa-edit   "></span>
