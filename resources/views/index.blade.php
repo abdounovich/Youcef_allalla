@@ -32,7 +32,7 @@ background: linear-gradient(90deg, #1a72f5 0%, #1f8de7 100%);}</style>
       </div>
     </div>
   
-    <div class="card bg-c-blue m-2">
+    <div class="card bg-c-blue m-2 border-dark">
         <div class="card-body text-left ">
         <a class="h4" href="{{route('clients')}}"> 
         <p class="card-text">
@@ -47,7 +47,7 @@ background: linear-gradient(90deg, #1a72f5 0%, #1f8de7 100%);}</style>
 
 
 
-      <div class="card bg-c-blue m-2 ">
+      <div class="card bg-c-blue m-2 border-dark ">
         <div class="card-body text-left ">
         <a class="h4" href="{{route('commandes')}}"> 
         <p class="card-text">
@@ -62,7 +62,7 @@ background: linear-gradient(90deg, #1a72f5 0%, #1f8de7 100%);}</style>
 
 
 
-      <div class="card bg-c-blue m-2 ">
+      <div class="card bg-c-blue m-2 border-dark">
         <div class="card-body text-left ">
         <a class="h4" href="{{route('categories')}}"> 
         <p class="card-text">
@@ -74,7 +74,7 @@ background: linear-gradient(90deg, #1a72f5 0%, #1f8de7 100%);}</style>
         </div>
       </div>
 
-      <div class="card bg-c-blue m-2 ">
+      <div class="card bg-c-blue m-2 border-dark ">
         <div class="card-body text-left ">
         <a class="h4" href="{{route('sub_categories')}}"> 
         <p class="card-text">
