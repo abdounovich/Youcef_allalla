@@ -30,16 +30,25 @@
       </div>
     </div>
     <div class="  d-flex justify-content-center " >
-    <div class=" collapse col col-12 bg-dark mb-5 rounded  text-white"  id="product_collapse{{$commande->id}}" style="opacity: 0.9">
-     <div class=" clearfix col col-12 bg-dark  mb-5 p-2 rounded " style="opacity: 0.9">
+    <div class=" collapse col col-12 bg-dark mb-2 rounded  text-white"  id="product_collapse{{$commande->id}}" style="opacity: 0.9">
+     <div class=" clearfix col col-12 bg-dark  mb-2 p-2 rounded " style="opacity: 0.9">
          <div class="bg-dark">
 <div class=" float-left my-2 mr-2"><img style="width: 100px; height:100px" src="{{$commande->client->photo}}"  class=" img-thumbnail" alt=""></div>
 <div class="mt-2 text-info h5 ">{{$commande->client->facebook}} </div>
 <div class=" text-white"><i class="text-success fa fa-map-marker mr-2 "></i>{{$commande->client->address}}</div>
 </div>
 <div class=" text-white mr-2">
- <div class=" float-right col col-12  "><i class=" text-warning fa fa-shopping-cart  "></i><span class="mr-3 ml-2 ">commandes : {{$commande->client->commandes->count()}}</span>
-     <i class=" text-info fa fa-phone  "></i><span class=" ml-1">  {{$commande->client->phone}}</span></div>
+ <div class=" float-right col col-12  ">
+     <i class=" text-warning fa fa-shopping-cart  ">
+         </i>
+         <span class="mr-3 ml-2 ">commandes : {{$commande->client->commandes->count()}}</span>
+ </div>
+ <div class=" float-right col col-12  ">
+
+     <i class=" text-info fa fa-phone  ">
+         </i><span class=" ml-1">  {{$commande->client->phone}}</span>
+        
+        </div>
 
 </div>
 
