@@ -159,7 +159,7 @@ $percentage=round(100-$remises->prix*100/$remises->produit->prix);
 
 
 $text=$percentage ." % ->".$remises->prix."Da";
-$text2="<del>".$text."</del>";
+$text2=print("<del>".$text."</del>");
 
 
 }
