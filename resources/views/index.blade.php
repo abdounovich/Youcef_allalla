@@ -16,7 +16,7 @@
 @endif
 
  <style>.bg-c-blue {
-background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);}</style>
+background: linear-gradient(90deg, #1a72f5 0%, #1f8de7 100%);}</style>
 <div class="container mt-5">
   <div class=" text-white" style="opacity: 0.9">
   
