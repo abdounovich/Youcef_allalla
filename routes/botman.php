@@ -152,7 +152,7 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
     foreach ($products as $product ) {
 
         $elements[]=Element::create($product->nom)
-            ->subtitle($product->descreption ." -- ".$product->prix."Da")
+            ->subtitle($product->prix ."\n".$product->descreption."Da")
             ->image($product->photo)
             ->addButton(ElementButton::create('إشتر هذا المنتج')
                 ->payload('select'.$product->id)
