@@ -159,12 +159,13 @@ $percentage=round(100-$remises->prix*100/$remises->produit->prix);
 
 
 $text=$percentage ." % ->".$remises->prix."Da";
-$text2="<del>".$text."</del>";
+$text2="<del>merahi</del>";
+
 
 
 }
 
-        $elements[]=Element::create(print ($text2))
+        $elements[]=Element::create(print$text2)
             ->subtitle($text."\n".$product->descreption."Da")
             ->image($product->photo)
             ->addButton(ElementButton::create('إشتر هذا المنتج')
