@@ -1,5 +1,6 @@
 <?php
 use App\Client;
+use App\Remise;
 use App\Product;
 use App\Category;
 use App\Commande;
@@ -150,9 +151,20 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
     $products=Product::where("SubCat_id",$number)->get();
     $elements=array();
     foreach ($products as $product ) {
+        $remises=Remise::where("product_id",$produit->id)->first();
+        if (!$remises) {
+$text=$produit->prix." Da";
+}else {
+$percentage=round(100-$remises->prix*100/$remises->produit->prix);
+
+
+$text=$percentage ." % ->".$remises->prix."Da";
+
+
+}
 
         $elements[]=Element::create($product->nom)
-            ->subtitle($product->prix ."\n".$product->descreption."Da")
+            ->subtitle($text."\n".$product->descreption."Da")
             ->image($product->photo)
             ->addButton(ElementButton::create('إشتر هذا المنتج')
                 ->payload('select'.$product->id)
