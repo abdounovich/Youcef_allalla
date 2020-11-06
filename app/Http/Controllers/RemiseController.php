@@ -68,9 +68,11 @@ class RemiseController extends Controller
      * @param  \App\Remise  $remise
      * @return \Illuminate\Http\Response
      */
-    public function edit(Remise $remise)
+    public function edit( $id)
     {
-        //
+        $remise=Remise::find($id);
+        $produits=Product::all();
+      return view('remises.edit')->with("produits",$produits)->with("remise",$remise);
     }
 
     /**
@@ -80,9 +82,21 @@ class RemiseController extends Controller
      * @param  \App\Remise  $remise
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Remise $remise)
+    public function update(Request $request,  $id)
     {
-        //
+        $remise=Remise::find($id);
+
+     
+
+      $prix=$request->get('prix');
+      $produit=$request->get('produit');
+
+
+      $remise->prix=$prix;
+      $remise->product_id=$produit;
+     
+      $remise->save();
+      return back()->with("success","remise modifié avec success");   
     }
 
     /**
@@ -91,8 +105,11 @@ class RemiseController extends Controller
      * @param  \App\Remise  $remise
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Remise $remise)
+    public function destroy( $id)
     {
-        //
+        $remise=Remise::find($id);
+        $remise->delete();
+        return back()->with("success","remise supprimé avec success");    
+
     }
 }

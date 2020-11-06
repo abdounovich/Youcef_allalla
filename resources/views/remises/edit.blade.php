@@ -2,7 +2,7 @@
    
 @extends('layouts.master')
 
-@section('title', 'Ajouter des produits')
+@section('title', 'modifier des remises')
 
 
 
@@ -21,39 +21,28 @@
   <div class="  col col-12 bg-dark my-4 rounded     text-white"  id="product_collapse" style="opacity: 0.9">
       <div class="row text-center text-white mb-3">
           <div class="col  ">
-              <h1 class=" rounded  p-2 h4 mt-2 ">Modifier la  categorie :</h1>
+              <h1 class=" rounded  p-2 h4 mt-2 ">Modifier la  remise :</h1>
           </div>
       </div>
       
-  <form method="POST" action="{{route('categories.edit',$categorie->id) }}" enctype="multipart/form-data">
+  <form method="POST" action="{{route('remises.edit',$remise->id) }}" enctype="multipart/form-data">
           @csrf
           <div class="form-group ">
-            <label for="nom">Nom :</label>
-            <input type="text" class="form-control" name="nom" id="nom"  value="{{$categorie->nom}}">
+            <label for="nom">Prix :</label>
+            <input type="text" class="form-control" name="prix" id="prix"  value="{{$remise->prix}}">
+          </div>
+          <div class="form-group">
+            <label for="product">Produit : </label>
+{{$remise->produit->nom}}               <select class="form-control" id="product" name="produit">
+            @foreach ($produits as $produit)
+         
+            <option @if ($produit->nom==$remise->produit->nom)
+                selected
+            @endif value="{{$produit->id}}">{{$produit->nom}} - {{$produit->prix}} Da</option>
+          @endforeach              </select> 
           </div>
 
        
-         
-      
-
-          <div class="form-group">
-            <div class="row">
-            <div class="col-2">
-            <input type="file" id="imgupload" onchange="loadFile(event)"  name="photo" hidden>
-            <a href="#" onclick="$('#imgupload').trigger('click'); return false;"> 
-            <img class="img " id="image" 
-            src="{{$categorie->photo}}"
-            alt="" width="200" height="200">
-            </a>
-            </div>
-            </div>
-            </div>
-            <script>
-            var loadFile = function(event) {
-            var image = document.getElementById('image');
-            image.src = URL.createObjectURL(event.target.files[0]);
-            };
-            </script> 
           
           <button type="submit" class="btn btn-primary col col-12 mb-4">Modifier</button>
         </form>

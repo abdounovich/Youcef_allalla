@@ -41,6 +41,8 @@
               <li class="nav-item"><a href="/commandes"class="nav-link" >Commandes</a></li>
                 <li class="nav-item"><a href="/categories" class="nav-link" >Categories</a></li>
                   <li class="nav-item"><a href="/sub_categories" class="nav-link" >Sous-Categories</a></li>
+                  <li class="nav-item"><a href="/remises" class="nav-link" >Remises</a></li>
+
           </ul>
         </div>
       </div>

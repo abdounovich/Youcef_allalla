@@ -26,7 +26,7 @@
                   <label for="sub_cat">Produit : </label>
                 <select class="form-control" id="product" name="produit">
                   @foreach ($products as $product)
-                  <option value="{{$product->id}}">{{$product->nom}}</option>
+                  <option value="{{$product->id}}">{{$product->nom}} - {{$product->prix}} Da</option>
               @endforeach              </select>
                 </div>
     

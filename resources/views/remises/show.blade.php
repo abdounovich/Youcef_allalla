@@ -30,7 +30,7 @@ img {
 
     <div class="row text-center text-white ">
         <div class="col-lg-7 mx-auto">
-            <h1 class="h4 shadow bg-dark p-3" style="opacity: 0.9">Liste des produits</h1>
+            <h1 class="h5 shadow bg-dark p-3" style="opacity: 0.9">Liste des produits avec remise</h1>
         </div>
     </div>
     <div class="row" >
@@ -55,7 +55,7 @@ img {
 @endphp
                       <p class="card-text text-info h5  "> <del class="text-danger">{{$remise->produit->prix}} da  </del> 
                         <span class="text-success ml-3"> {{$remise->prix}} da</span>                      
-                        <span class='badge p-1 ml-3 badge-info'>{{$percentage}} % </span>
+                        <span class='badge p-1 ml-3 badge-info'> - {{$percentage}} % </span>
                       </p>
 
 

@@ -62,7 +62,7 @@ img {
 
 echo '   <p class="card-text text-info h5  "> <del class="text-danger">'.$produit->prix.' da  </del> 
                         <span class="text-success ml-3">'.$remises->prix.' da</span>                      
-                        <span class="badge p-1 ml-3 badge-info">'.$percentage.' % </span>
+                        <span class="badge p-1 ml-3 badge-info"> - '.$percentage.' % </span>
                       </p>';
 
 }
