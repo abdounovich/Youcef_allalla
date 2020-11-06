@@ -8,7 +8,7 @@
 @section('content')
 
 @if (\Session::has('success'))
-    <div class="alert  alert-info p-2 m-4  ">
+    <div class="alert  alert-info p-2 mt-4 mb-4  ">
         <ul>
             <li class="p-2 text-left">{!! \Session::get('success') !!}</li>
         </ul>
