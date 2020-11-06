@@ -165,8 +165,8 @@ $text=" تخفيض  ".$percentage ." % \n  السعر الجديد  ".$remises->
 
 }
 
-        $elements[]=Element::create($text)
-            ->subtitle($text."\n".$product->descreption."Da")
+        $elements[]=Element::create($product->nom)
+            ->subtitle($text)
             ->image($product->photo)
             ->addButton(ElementButton::create('إشتر هذا المنتج')
                 ->payload('select'.$product->id)
