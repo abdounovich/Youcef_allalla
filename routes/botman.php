@@ -135,7 +135,7 @@ foreach ($sous_cats as $sous_cat ) {
     $elements[]=
     Element::create($sous_cat->nom)
         ->image($sous_cat->photo)
-        ->addButton(ElementButton::create('تصفح المنتجات')
+        ->addButton(ElementButton::create(' 🛍 تصفح المنتجات')
             ->payload('product_'.$sous_cat->id)
             ->type('postback'));
 }
@@ -165,7 +165,7 @@ $text=" تخفيض  ".$percentage ." % \n  السعر الجديد  ".$remises->
 
 }
 
-        $elements[]=Element::create(print$text2)
+        $elements[]=Element::create($text)
             ->subtitle($text."\n".$product->descreption."Da")
             ->image($product->photo)
             ->addButton(ElementButton::create('إشتر هذا المنتج')
