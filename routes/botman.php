@@ -151,9 +151,9 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
     $products=Product::where("SubCat_id",$number)->get();
     $elements=array();
     foreach ($products as $product ) {
-        $remises=Remise::where("product_id",$produit->id)->first();
+        $remises=Remise::where("product_id",$product->id)->first();
         if (!$remises) {
-$text=$produit->prix." Da";
+$text=$product->prix." Da";
 }else {
 $percentage=round(100-$remises->prix*100/$remises->produit->prix);
 
