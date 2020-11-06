@@ -16,12 +16,11 @@
 @endif
 
  <style>.bg-c-blue {
-    background: linear-gradient(45deg,#0a6194,#73b4ff);
-}</style>
+background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);}</style>
 <div class="container mt-5">
-  <div class=" text-white" style="opacity: 0.8">
+  <div class=" text-white" style="opacity: 0.9">
   
-    <div class="card bg-c-blue  m-2">
+    <div class="card bg-c-blue  m-2 border-dark">
       <div class="card-body text-left ">
       <a class="h4" href="{{route('products')}}"> 
       <p class="card-text">
