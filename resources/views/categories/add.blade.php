@@ -1,22 +1,28 @@
 
    
-    <button class="btn btn-primary  rounded p-3 m-4"  type="button" data-toggle="collapse" data-target="#product_collapse" aria-expanded="false" aria-controls="collapseExample">
-       Ajouter une catégorie </button>
+       <div class="  mt-3 mb-2 d-flex justify-content-center ">
+
+        <div class="btn btn-primary  rounded p-3 m-4"   
+        data-toggle="collapse"
+         data-target="#product_collapse" 
+         aria-expanded="false" 
+         aria-controls="collapseExample">
+          <i class="fa fa-plus mr-2">  </i> Ajouter une catégorie</div>
+    
+     
+    
+          </div>
 
  
 
 
-
-<div class="row collapse" id="product_collapse">
-
-  
-  
-    <div class="col col-10 bg-dark p-4 m-2 text-white" style="opacity: 0.9">
-        <div class="row text-center text-white mb-3">
-            <div class="col  ">
-                <h1 class=" rounded p-2" style=" font-size:35px">Ajouter une nouvelle catégorie :</h1>
-            </div>
-        </div>
+          <div class="  d-flex justify-content-center " >
+            <div class=" collapse col col-12 bg-dark my-4 rounded     text-white"  id="product_collapse" style="opacity: 0.9">
+                <div class="row text-center text-white mb-3">
+                    <div class="col  ">
+                        <h1 class=" rounded  p-2 h4 mt-2 ">Ajouter une categorie :</h1>
+                    </div>
+                </div>
     <form method="POST" action="{{route('categories.add') }}"  enctype="multipart/form-data">
             @csrf
             <div class="form-group ">
@@ -47,8 +53,8 @@
 
 
             
-            <button type="submit" class="btn btn-primary">Ajouter</button>
-          </form>
+<button type="submit" class="btn btn-primary col col-12 mb-4">Ajouter</button>
+</form>
 
 
     </div>

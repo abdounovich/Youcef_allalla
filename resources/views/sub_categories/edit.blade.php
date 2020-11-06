@@ -16,16 +16,15 @@
     </div>
 @endif
 
-<div class="row ">
 
   
-  
-  <div class="col col-10 bg-dark p-4 m-2 text-white" style="opacity: 0.9">
-      <div class="row text-center text-white mb-3">
-          <div class="col  ">
-              <h1 class=" rounded p-2" style=" font-size:35px">Ajouter une sous catégorie:</h1>
-          </div>
-      </div>
+  <div class="  d-flex justify-content-center " >
+    <div class=" col col-12 bg-dark my-4 rounded     text-white"  id="product_collapse" style="opacity: 0.9">
+        <div class="row text-center text-white mb-3">
+            <div class="col  ">
+                <h1 class=" rounded  p-2 h4 mt-2 ">Ajouter une sous categorie :</h1>
+            </div>
+        </div>
   <form method="POST" action="{{route('sub_categories.edit',$sub_categorie->id) }}" enctype="multipart/form-data">
           @csrf
           <div class="form-group ">
@@ -63,8 +62,8 @@
             </script> 
 
           
-          <button type="submit" class="btn btn-primary">modifier</button>
-        </form>
+<button type="submit" class="btn btn-primary col col-12 mb-4">Modifier</button>
+</form>
 
 
   </div>

@@ -48,7 +48,7 @@
               image.src = URL.createObjectURL(event.target.files[0]);
               };
               </script> 
-            <button type="submit" class="btn btn-primary col col-12 my-2">Ajouter</button>
+            <button type="submit" class="btn btn-primary col col-12 mb-4">Ajouter</button>
           </form>
 
 

@@ -46,5 +46,5 @@ img {
 
 
 
-      <div class="m-2 p-2">{{$clients->links()}}</div>
+      <div class="d-flex justify-content-center m-4">{{$clients->links()}}</div>
 
