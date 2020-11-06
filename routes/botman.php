@@ -158,7 +158,7 @@ $text=$product->prix." Da";
 $percentage=round(100-$remises->prix*100/$remises->produit->prix);
 
 
-$text=" تخفيض  % ".$percentage ." % \n  السعر الجديد  ".$remises->prix." Da";
+$text=" تخفيض  % ".$percentage ."  \n  السعر الجديد DA ".$remises->prix;
  
 
 
