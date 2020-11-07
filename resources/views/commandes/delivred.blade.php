@@ -8,7 +8,6 @@
       
      <div class="card-body text-left ">
       <p class="card-text">
-      <img class="img-thumbnail custom  p-0 " src="{{$commande->product->photo}}" alt="">
       
     <a class="btn btn-danger btn-circle float-right mt-2 mr-1" href="{{route('commandes.delete',$commande->id)}}">
         <span class=" text-white  fa fa-trash border-dark "></span>
@@ -21,6 +20,25 @@
     </a>
     
     <p class="h4  text-white text-wrap" >{{$commande->product->nom}}</p>
+    <img class="img-thumbnail custom  p-0 " src="{{$commande->product->photo}}" alt="">
+    @php
+    $remises=App\Remise::where("product_id",$commande->product->id)->first();
+    if (!$remises) {
+ echo"<p class='card-text text-white h5'>prix : ".$commande->product->prix."da </p>";
+ }else {
+ $percentage=round(100-$remises->prix*100/$remises->produit->prix);
+ 
+ 
+ 
+ echo '   <p class="card-text h5  "> <del class="text-dark">'.$commande->product->prix.' da  </del> 
+    <span class="text-white ml-3">'.$remises->prix.' da</span>                      
+    <span class="badge p-1 ml-3 badge-info"> - '.$percentage.' % </span>
+  </p>';
+ 
+ }
+ 
+ @endphp
+
       </p>
       </div>
     </div>
