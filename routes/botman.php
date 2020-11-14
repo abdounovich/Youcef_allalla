@@ -213,6 +213,22 @@ $text="-".$percentage ."%\n".$remises->prix." DA : السعر الجديد ";
     $botman->hears('showColor([0-9]+)', function ( $bot,$number) {
 
         $bot->reply(" color list should be here");
+
+
+        $product=Product::find($number);
+        foreach ($product->color as $color ) {
+            $elements[]=Element::create($color->couleur)
+            ->subtitle("color")
+            ->image($color->photo)
+            ->addButton(ElementButton::create('إشتر هذا المنتج')
+                ->payload("p")
+                ->type('postback'));
+    }
+        $bot->reply(GenericTemplate::create()
+        ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
+        ->addElements($elements)
+    );    
+        
     });
     $botman->hears('showTaille([0-9]+)', function ( $bot,$number) {
         $bot->reply(" Taille list should be here");
