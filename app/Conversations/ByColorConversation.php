@@ -32,9 +32,9 @@ public function __construct(string $product_id ) {
         $lastname = $user->getLastname();
         $full_name=$firstname.'-'.$lastname;
         $this->client=Client::where('facebook',$full_name)->first();
-        $product=Color::find($this->product_id);
-        $product->quantity=$product->quantity-1;
-        $product->save();
+        $color=Color::find($this->product_id);
+        $color->quantity=$color->quantity-1;
+        $color->save();
         $this->commande=new Commande();
         $this->commande->client_id=$this->client->id;
         $this->commande->product_id=$this->product_id;

@@ -6,6 +6,7 @@ use App\Category;
 use App\Commande;
 use App\SubCategory;
 use Illuminate\Support\Str;
+use App\Conversations\ByColorConversation;
 use App\Conversations\ExampleConversation;
 use App\Http\Controllers\BotManController;
 use BotMan\BotMan\Messages\Outgoing\Question;
@@ -232,6 +233,8 @@ $text="-".$percentage ."%\n".$remises->prix." DA : السعر الجديد ";
     });
 
     $botman->hears('byColorShow([0-9]+)', function ( $bot,$number) {
+        $bot->reply(" Taille list should be here".$number);
+
         $bot->startConversation(new ByColorConversation($number));
 
     });
