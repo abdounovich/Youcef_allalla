@@ -159,12 +159,17 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
         }
             elseif($product->product_type=="color"){
                 foreach ($product->color as $color) {
-                 $text=$text.' :'.$color->couleur ."-";}
+                    $elements[]=Element::create($product->nom)
+                    ->subtitle($product->prix)
+                    ->image($product->color->photo)
+                    ->addButton(ElementButton::create('إشتر هذا المنتج')
+                        ->payload('select'.$product->id)
+                        ->type('postback'));}
                
             }
             elseif($product->product_type=="taille"){
                 foreach ($product->taille as $taille) {
-                    $text=$text.' :'.$taille->taille ."-";}
+                   }
                   
                
             
@@ -185,12 +190,7 @@ $text="-".$percentage ."%\n".$remises->prix." DA : السعر الجديد ";
 
 } */
 
-        $elements[]=Element::create($product->nom)
-            ->subtitle($text)
-            ->image($product->photo)
-            ->addButton(ElementButton::create('إشتر هذا المنتج')
-                ->payload('select'.$product->id)
-                ->type('postback'));
+        
     }
         $bot->reply(GenericTemplate::create()
         ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
