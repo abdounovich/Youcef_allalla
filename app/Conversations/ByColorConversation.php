@@ -38,6 +38,8 @@ public function __construct(string $product_id ) {
         $this->commande=new Commande();
         $this->commande->client_id=$this->client->id;
         $this->commande->product_id=$this->product_id;
+        $this->commande->commande_type="color";
+
         $this->commande->type="1";
       
         $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح ', function(Answer $answer) {
