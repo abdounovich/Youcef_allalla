@@ -221,7 +221,7 @@ $text="-".$percentage ."%\n".$remises->prix." DA : السعر الجديد ";
             ->subtitle("color")
             ->image($color->photo)
             ->addButton(ElementButton::create('إشتر هذا المنتج')
-                ->payload("p")
+                ->payload("byColorShow".$color->id)
                 ->type('postback'));
     }
         $bot->reply(GenericTemplate::create()
@@ -230,6 +230,12 @@ $text="-".$percentage ."%\n".$remises->prix." DA : السعر الجديد ";
     );    
         
     });
+
+    $botman->hears('byColorShow([0-9]+)', function ( $bot,$number) {
+        $bot->startConversation(new ByColorConversation($number));
+
+    });
+
     $botman->hears('showTaille([0-9]+)', function ( $bot,$number) {
         $bot->reply(" Taille list should be here");
 
