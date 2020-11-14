@@ -161,14 +161,14 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
                 $text="";
 
                 foreach ($product->color as $color) {
-                 $text=$text.' :'.$color->couleur ."-";}
+                 $text=$text.''.$color->couleur ."-";}
                
             }
             elseif($product->product_type=="taille"){
                 $text="";
 
                 foreach ($product->taille as $taille) {
-                    $text=$text.' :'.$taille->couleur ."-";
+                    $text=$text.''.$taille->taille ."-";
                   
                }
             
