@@ -151,19 +151,30 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
     $products=Product::where("SubCat_id",$number)->get();
     $elements=array();
     foreach ($products as $product ) {
-        $remises=Remise::where("product_id",$product->id)->first();
+
+
+        if ($product->product_type=="simple") {
+            $text="simple";
+        }
+            elseif($product->product_type=="color"){
+                $text="color";
+            
+            
+            }
+       /*  $remises=Remise::where("product_id",$product->id)->first();
         if (!$remises) {
 $text=$product->prix." Da";
 }else {
 $percentage=round(100-$remises->prix*100/$remises->produit->prix);
 
 
-$text="-".$percentage ."%\n".$remises->prix." DA : السعر الجديد ";
+
  
+$text="-".$percentage ."%\n".$remises->prix." DA : السعر الجديد ";
 
 
 
-}
+} */
 
         $elements[]=Element::create($product->nom)
             ->subtitle($text)
