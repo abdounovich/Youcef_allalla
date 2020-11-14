@@ -213,7 +213,7 @@ $text="-".$percentage ."%\n".$remises->prix." DA : السعر الجديد ";
 
     $botman->hears('showColor([0-9]+)', function ( $bot,$number) {
 
-        $bot->reply(" color list should be here");
+        $bot->reply(" color list should ".$number);
 
 
         $product=Product::find($number);
