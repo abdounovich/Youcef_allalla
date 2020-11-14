@@ -17,11 +17,37 @@
 
 
 
+<div class="  mt-3 mb-2 d-flex justify-content-center ">
+    <a class="btn btn-primary  rounded p-3 m-4 text-white"  
+    type="button" data-toggle="collapse" data-target="#List_collapse" aria-expanded="false"><i class="fa fa-plus mr-2">  </i> Ajouter un produit</a>
 
-  
+ </div>
 
 
-@include('products.add')
+
+<div id="List_collapse" class=" collapse">
+ <div class="d-flex justify-content-center">
+  <a href="#" class="col col-10 btn btn-info p-2 m-2" data-toggle="collapse" data-target="#simple_collapse" aria-expanded="false">Produit simple </a>
+ </div>
+
+ <div class="d-flex justify-content-center ">
+
+     
+    <a   href="" class=" col col-10 btn btn-info p-2 m-2" data-toggle="collapse" data-target="#taille_collapse" aria-expanded="false">Produit avec tailles </a>
+ </div>
+ <div class="d-flex justify-content-center">
+
+    <a href="" class="col col-10 btn btn-info p-2 m-2"data-toggle="collapse" data-target="#color_collapse" aria-expanded="false">Produit avec couleurs </a>
+ </div>
+ <div class="d-flex justify-content-center">
+
+    <a href="" class="col col-10 btn btn-info p-2 m-2">Produit avec tailles/couleurs </a>
+ </div>
+  </div>
+
+@include('products.addSimple')
+@include('products.addTaille')
+@include('products.addColor')
 @include('products.show')
 
 

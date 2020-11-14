@@ -37,8 +37,13 @@ Route::get('/botman/tinker', 'BotManController@tinker');
 
 
 Route::get('products', 'ProductController@index')->name('products');
-Route::post('products/add', 'ProductController@store')->name('products.add');
+Route::post('products/add/taille', 'ProductController@storeTaille')->name('products.add.taille');
+Route::post('products/add/simple', 'ProductController@storeSimple')->name('products.add.simple');
+Route::post('products/add/color', 'ProductController@storeColor')->name('products.add.color');
+
 Route::get('products/edit/{id}', 'ProductController@edit')->name('products.edit');
+
+
 Route::post('products/edit/{id}', 'ProductController@update')->name('products.edit');
 Route::get('products/delete/{id}', 'ProductController@destroy')->name('products.delete');
 
@@ -92,4 +97,18 @@ Route::get('remises/edit/{id}', 'RemiseController@edit')->name('remises.edit');
 Route::post('remises/edit/{id}', 'RemiseController@update')->name('remises.edit');
 Route::get('remises/delete/{id}', 'RemiseController@destroy')->name('remises.delete');
 
+
+Route::get('colors/delete/{id}', 'ColorController@destroy')->name('colors.delete');
+Route::get('colors/edit/{id}', 'ColorController@edit')->name('colors.edit');
+Route::post('colors/edit/{id}', 'ColorController@update')->name('colors.edit');
+Route::get('colors/add/{id}', 'ColorController@create')->name('colors.add');
+Route::post('colors/add', 'ColorController@store')->name('color.add');
+
+
+
+Route::get('tailles/delete/{id}', 'TailleController@destroy')->name('tailles.delete');
+Route::get('tailles/edit/{id}', 'TailleController@edit')->name('tailles.edit');
+Route::post('tailles/edit/{id}', 'TailleController@update')->name('tailles.edit');
+Route::get('tailles/add/{id}', 'TailleController@create')->name('tailles.add');
+Route::post('tailles/add', 'TailleController@store')->name('taille.add');
 

@@ -22,7 +22,9 @@
     aria-controls="collapseExample">
         <span class=" text-dark  fa fa-list border-dark "></span>
     </a>
+
    <p class="h4  text-white text-wrap" >{{$commande->product->nom}}</p>
+ 
    <img class="img-thumbnail custom  p-0 " src="{{$commande->product->photo}}" alt="">
 
    @php

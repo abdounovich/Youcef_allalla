@@ -7,7 +7,7 @@
          data-target="#product_collapse" 
          aria-expanded="false" 
          aria-controls="collapseExample">
-          <i class="fa fa-plus mr-2">  </i> Ajouter une remise</div>
+          <i class="fa fa-plus mr-2">  </i> Ajouter une catégorie</div>
     
      
     
