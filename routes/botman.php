@@ -155,7 +155,7 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
 
         if ($product->product_type=="simple") {
             
-            $text="simple";
+            $text=" دج ".$product->prix." السعر  ";
         }
             elseif($product->product_type=="color"){
                 $text="";
