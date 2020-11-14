@@ -2,6 +2,7 @@
 
 namespace App\Conversations;
 
+use App\Color;
 use App\Client;
 use App\Product;
 use App\Commande;
@@ -31,7 +32,7 @@ public function __construct(string $product_id ) {
         $lastname = $user->getLastname();
         $full_name=$firstname.'-'.$lastname;
         $this->client=Client::where('facebook',$full_name)->first();
-        $product=Product::find($this->product_id);
+        $product=Color::find($this->product_id);
         $product->quantity=$product->quantity-1;
         $product->save();
         $this->commande=new Commande();
