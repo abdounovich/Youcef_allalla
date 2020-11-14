@@ -155,20 +155,26 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
 
         if ($product->product_type=="simple") {
             
-            $text=" دج ".$product->prix." السعر  ";
+            $text="  السعر ".$product->prix."  دج ";
+            $payload='select'.$product->id;
         }
             elseif($product->product_type=="color"){
+                $payload='showColor'.$product->id;
+
                 $text="";
 
                 foreach ($product->color as $color) {
-                 $text=$text.''.$color->couleur ."-";}
+                 $text=$text.''.$color->couleur .",";}
                
             }
+            
             elseif($product->product_type=="taille"){
+                $payload='showTaille'.$product->id;
+
                 $text="";
 
                 foreach ($product->taille as $taille) {
-                    $text=$text.''.$taille->taille ."-";
+                    $text=$text.''.$taille->taille .",";
                   
                }
             
@@ -193,7 +199,7 @@ $text="-".$percentage ."%\n".$remises->prix." DA : السعر الجديد ";
             ->subtitle($text)
             ->image($product->photo)
             ->addButton(ElementButton::create('إشتر هذا المنتج')
-                ->payload('select'.$product->id)
+                ->payload($payload)
                 ->type('postback'));
     }
         $bot->reply(GenericTemplate::create()
@@ -203,6 +209,15 @@ $text="-".$percentage ."%\n".$remises->prix." DA : السعر الجديد ";
     });
 
 
+
+    $botman->hears('showColor([0-9]+)', function ( $bot,$number) {
+
+        $bot->reply(" color list should be here");
+    });
+    $botman->hears('showTaille([0-9]+)', function ( $bot,$number) {
+        $bot->reply(" Taille list should be here");
+
+    });
 
 
     $botman->hears('select([0-9]+)', function ( $bot,$number) {
