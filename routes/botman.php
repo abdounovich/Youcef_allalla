@@ -233,7 +233,7 @@ $text="-".$percentage ."%\n".$remises->prix." DA : السعر الجديد ";
     });
 
     $botman->hears('byColorShow([0-9]+)', function ( $bot,$number) {
-        $bot->reply(" Taille list ".$number);
+        $bot->reply(" color list ".$number);
 
         $bot->startConversation(new ByColorConversation($number));
 
