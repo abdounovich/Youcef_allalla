@@ -158,6 +158,9 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
         }
             elseif($product->product_type=="color"){
                 $text="color";
+            }
+            elseif($product->product_type=="taille"){
+                $text="taille";
             
             
             }
