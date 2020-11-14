@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Color;
+use App\Taille;
 use App\Product;
 use App\Category;
 use App\SubCategory;
@@ -42,8 +44,18 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    
+
+
+
+
+
+    public function storeSimple(Request $request)
     {
+
+
+
+      
 
         if ($request->isMethod('post')) 
                  
@@ -54,7 +66,63 @@ class ProductController extends Controller
         $image_url= Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
        $nom=$request->get('nom');
        $photo=$image_url;
+
        $quantité=$request->get('quantity');
+       $prix=$request->get('prix');
+       $sub_cat=$request->get('sub_cat');
+       $descreption=$request->get('descreption');
+       $type="1";
+       $product=new Product();
+       $product->nom=$nom;
+       $product->photo=$photo;
+       $product->quantity=$quantité;
+       $product->prix=$prix;
+       $product->SubCat_id=$sub_cat;
+       $product->type=$type;
+       $product->product_type="simple";
+       $product->descreption=$descreption;
+       $product->save();
+  
+
+        
+       return back()->with("success","Produit ajouté avec success");
+       
+
+
+        }
+    }
+
+
+
+
+
+
+      /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function storeTaille(Request $request)
+    {
+
+
+
+      
+
+        if ($request->isMethod('post')) 
+                 
+        {
+        $image_name = $request->file('photo')->getRealPath();
+        Cloudder::upload($image_name, null);
+        list($width, $height) = getimagesize($image_name);
+        $image_url= Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
+       $nom=$request->get('nom');
+       $photo=$image_url;
+
+       $quantité=$request->get('quantity');
+       $quantité="2";
+
        $prix=$request->get('prix');
        $sub_cat=$request->get('sub_cat');
        $descreption=$request->get('descreption');
@@ -67,8 +135,19 @@ class ProductController extends Controller
        $product->prix=$prix;
        $product->SubCat_id=$sub_cat;
        $product->type=$type;
+       $product->product_type="taille";
        $product->descreption=$descreption;
        $product->save();
+
+       for ($i=1; $i <=$request->get('Tailleindex') ; $i++) { 
+        $taille=new Taille();
+        $taille->product_id=$product->id;
+        $taille->taille=$request->get('Tbutton'.$i);
+        $taille->quantity=$request->get('Qbutton'.$i);
+        $taille->save();
+     }     
+
+        
        return back()->with("success","Produit ajouté avec success");
        
 
@@ -78,6 +157,77 @@ class ProductController extends Controller
 
 
     }
+
+
+
+
+
+
+    public function storeColor(Request $request)
+    {
+
+
+
+     
+        if ($request->isMethod('post')) 
+                 
+        {
+        $image_name = $request->file('photo')->getRealPath();
+        Cloudder::upload($image_name, null);
+        list($width, $height) = getimagesize($image_name);
+        $image_url= Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
+       $nom=$request->get('nom');
+       $photo=$image_url;
+
+       $quantité=$request->get('quantity');
+       $prix=$request->get('prix');
+       $sub_cat=$request->get('sub_cat');
+       $descreption=$request->get('descreption');
+       $type="1";
+       $product=new Product();
+       $product->nom=$nom;
+       $product->photo=$photo;
+       $product->quantity="0";
+       $product->prix=$prix;
+       $product->SubCat_id=$sub_cat;
+       $product->type=$type;
+       $product->descreption=$descreption;
+       $product->product_type="color";
+       $product->save();
+  
+       for ($i=1; $i <=$request->get('index') ; $i++) { 
+        $color=new Color();
+        $color->product_id=$product->id;
+        $color->couleur=$request->get('Cbutton'.$i);
+        $color->quantity=$request->get('Qbutton'.$i);
+
+
+                 
+        
+        $image_name = $request->file('photo'.$i)->getRealPath();
+       
+        Cloudder::upload($image_name, null);
+        list($width, $height) = getimagesize($image_name);
+        $image_url= Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
+       $photo=$image_url;
+        
+        $color->photo=$photo;
+
+
+
+        $color->save();
+     }  
+
+       
+       return back()->with("success","Produit ajouté avec success");
+       
+
+
+        }
+    }
+
+
+
 
     /**
      * Display the specified resource.
@@ -94,6 +244,7 @@ class ProductController extends Controller
     {
         $product=Product::find($id);
         $categories=SubCategory::all();
+        
       return view('products.edit')->with("product",$product)->with("categories",$categories);
 
     }
@@ -147,4 +298,7 @@ else{$photo=$product->photo;}
         return back()->with("success","Produit supprimé avec success");    
 
     }
+
+
+    
 }
