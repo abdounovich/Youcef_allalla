@@ -154,13 +154,19 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
 
 
         if ($product->product_type=="simple") {
+            
             $text="simple";
         }
             elseif($product->product_type=="color"){
-                $text="color";
+                foreach ($product->color as $color) {
+                 $text=$text.' :'.$color->couleur ."-";}
+               
             }
             elseif($product->product_type=="taille"){
-                $text="taille";
+                foreach ($product->taille as $taille) {
+                    $text=$text.' :'.$taille->taille ."-";}
+                  
+               
             
             
             }
