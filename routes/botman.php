@@ -156,32 +156,19 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
         if ($product->product_type=="simple") {
             
             $text="simple";
-            
-        $elements[]=Element::create($product->nom)
-        ->subtitle($text)
-        ->image($product->photo)
-        ->addButton(ElementButton::create('إشتر هذا المنتج')
-            ->payload('select'.$product->id)
-            ->type('postback'));
         }
             elseif($product->product_type=="color"){
                 $text="";
+
                 foreach ($product->color as $color) {
-                 $text=$text.' :'.$color->couleur ."-";
-                
-        $elements[]=Element::create($product->nom)
-        ->subtitle($text)
-        ->image($product->photo)
-        ->addButton(ElementButton::create('إشتر هذا المنتج')
-            ->payload('select'.$product->id)
-            ->type('postback'));}
+                 $text=$text.' :'.$color->couleur ."-";}
                
             }
             elseif($product->product_type=="taille"){
                 $text="";
+
                 foreach ($product->taille as $taille) {
-                   
-                    $text=$text.' :'.$taille->taille ."-";
+                    $text=$text.' :'.$taille->couleur ."-";
                   
                }
             
@@ -202,6 +189,12 @@ $text="-".$percentage ."%\n".$remises->prix." DA : السعر الجديد ";
 
 } */
 
+        $elements[]=Element::create($product->nom)
+            ->subtitle($text)
+            ->image($product->photo)
+            ->addButton(ElementButton::create('إشتر هذا المنتج')
+                ->payload('select'.$product->id)
+                ->type('postback'));
     }
         $bot->reply(GenericTemplate::create()
         ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
