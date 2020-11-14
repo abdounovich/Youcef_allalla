@@ -151,55 +151,25 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
     $products=Product::where("SubCat_id",$number)->get();
     $elements=array();
     foreach ($products as $product ) {
-
-
-        if ($product->product_type=="simple") {
-            
-            $text="  السعر ".$product->prix."  دج ";
-            $payload='select'.$product->id;
-        }
-            elseif($product->product_type=="color"){
-                $payload='showColor'.$product->id;
-
-                $text="";
-
-                foreach ($product->color as $color) {
-                 $text=$text.''.$color->couleur .",";}
-               
-            }
-            
-            elseif($product->product_type=="taille"){
-                $payload='showTaille'.$product->id;
-
-                $text="";
-
-                foreach ($product->taille as $taille) {
-                    $text=$text.''.$taille->taille .",";
-                  
-               }
-            
-            
-            }
-       /*  $remises=Remise::where("product_id",$product->id)->first();
+        $remises=Remise::where("product_id",$product->id)->first();
         if (!$remises) {
 $text=$product->prix." Da";
 }else {
 $percentage=round(100-$remises->prix*100/$remises->produit->prix);
 
 
-
- 
 $text="-".$percentage ."%\n".$remises->prix." DA : السعر الجديد ";
+ 
 
 
 
-} */
+}
 
         $elements[]=Element::create($product->nom)
             ->subtitle($text)
             ->image($product->photo)
             ->addButton(ElementButton::create('إشتر هذا المنتج')
-                ->payload($payload)
+                ->payload('select'.$product->id)
                 ->type('postback'));
     }
         $bot->reply(GenericTemplate::create()
@@ -209,37 +179,6 @@ $text="-".$percentage ."%\n".$remises->prix." DA : السعر الجديد ";
     });
 
 
-
-    $botman->hears('showColor([0-9]+)', function ( $bot,$number) {
-
-        $bot->reply(" color list should be here");
-
-
-        $product=Product::find($number);
-        foreach ($product->color as $color ) {
-            $elements[]=Element::create($color->couleur)
-            ->subtitle("color")
-            ->image($color->photo)
-            ->addButton(ElementButton::create('إشتر هذا المنتج')
-                ->payload("byColorShow".$color->id)
-                ->type('postback'));
-    }
-        $bot->reply(GenericTemplate::create()
-        ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
-        ->addElements($elements)
-    );    
-        
-    });
-
-    $botman->hears('byColorShow([0-9]+)', function ( $bot,$number) {
-        $bot->startConversation(new ByColorConversation($number));
-
-    });
-
-    $botman->hears('showTaille([0-9]+)', function ( $bot,$number) {
-        $bot->reply(" Taille list should be here");
-
-    });
 
 
     $botman->hears('select([0-9]+)', function ( $bot,$number) {
