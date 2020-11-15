@@ -32,12 +32,11 @@ public function __construct(string $product_id ) {
         $lastname = $user->getLastname();
         $full_name=$firstname.'-'.$lastname;
         $this->client=Client::where('facebook',$full_name)->first();
-        $color=Color::find($this->product_id);
+        $color=product::find($this->product_id);
         $color->quantity=$color->quantity-1;
         $color->save();
         $this->commande=new Commande();
         $this->commande->client_id=$this->client->id;
-        $this->commande->product_id=$this->product_id;
         $this->commande->commande_type="color";
         $this->commande->type="1";
       
@@ -52,6 +51,7 @@ public function __construct(string $product_id ) {
 
 
                 
+            $this->commande->save();
             $this->client->save();
             $this->bot->reply("لقد تم تأكيد طلبك بنجاح "); 
             });

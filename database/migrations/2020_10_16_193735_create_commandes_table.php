@@ -17,7 +17,7 @@ class CreateCommandesTable extends Migration
             $table->bigIncrements('id');
             $table->text("type");
             $table->text("commande_type");
-            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('product_id')->default(1);;
             $table->foreign('product_id')
             ->references('id')->on('products')
             ->onDelete('cascade');
