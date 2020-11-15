@@ -4,6 +4,11 @@
     </div>
 </div>
     @foreach ($inactive_commandes as $commande)
+
+
+
+    @if ($commande->type="color")
+        
     <div class="  card bg-danger border-dark  mt-2 mb-1">
       
      <div class="card-body text-left ">
@@ -24,7 +29,15 @@
     </a>
    
     <p class="h4  text-white text-wrap" >{{$commande->product->nom}}</p>
+    @php
+        $color=App\Color::find($commande->color);
+
+    @endphp
+        <p class="h4  text-white text-wrap" >{{$color->couleur}}</p>
+
     <img class="img-thumbnail custom  p-0 " src="{{$commande->product->photo}}" alt="">
+    <img class="img-thumbnail custom  p-0 " src="{{$color->photo}}" alt="">
+
 
 
     @php
@@ -74,6 +87,9 @@ echo '   <p class="card-text h5  "> <del class="text-dark">'.$commande->product-
 
 
 </div></div></div>
+
+@endif
+
     @endforeach
     
 
