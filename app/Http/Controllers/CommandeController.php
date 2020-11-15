@@ -93,9 +93,11 @@ class CommandeController extends Controller
      * @param  \App\Commande  $commande
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Commande $commande)
+    public function destroy( $id)
     {
-        //
+Commande::find($id)->delete();
+return back()->with("success","commande supprimé avec success"); 
+
     }
 
 
