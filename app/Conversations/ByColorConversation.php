@@ -16,6 +16,8 @@ class ByColorConversation extends Conversation
 {
 
     protected $color_id;
+    protected $product_id;
+
 
 public function __construct(string $color_id,string $product_id ) {
 
