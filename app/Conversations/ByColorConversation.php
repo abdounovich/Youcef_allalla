@@ -15,15 +15,11 @@ use BotMan\BotMan\Messages\Conversations\Conversation;
 class ByColorConversation extends Conversation
 {
 
-    protected $color_id;
     protected $product_id;
 
+public function __construct(string $product_id ) {
 
-public function __construct(string $color_id,string $product_id ) {
-
-    $this->color_id = $color_id;
     $this->product_id = $product_id;
-
 }
     /**
      * First question
@@ -36,16 +32,17 @@ public function __construct(string $color_id,string $product_id ) {
         $lastname = $user->getLastname();
         $full_name=$firstname.'-'.$lastname;
         $this->client=Client::where('facebook',$full_name)->first();
-        $color=Color::find($this->color_id);
+        $color=Color::find($this->product_id);
         $color->quantity=$color->quantity-1;
         $color->save();
         $this->commande=new Commande();
         $this->commande->client_id=$this->client->id;
         $this->commande->commande_type="color";
         $this->commande->type="1";
-        $this->commande->product_id=$this->product_id;
+        $this->commande->color=$this->product_id;
+        $this->commande->product_id=$color->product_id;
 
-        $this->commande->color=$this->color_id;
+
 
       
         $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح ', function(Answer $answer) {

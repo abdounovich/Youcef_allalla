@@ -211,18 +211,18 @@ $text="-".$percentage ."%\n".$remises->prix." DA : السعر الجديد ";
 
 
 
-    $botman->hears('showColor([0-9]+)', function ( $bot,$product_id) {
+    $botman->hears('showColor([0-9]+)', function ( $bot,$number) {
 
-        $bot->reply(" color list should ".$product_id);
+        $bot->reply(" color list should be here");
 
 
-        $product=Product::find($product_id);
+        $product=Product::find($number);
         foreach ($product->color as $color ) {
             $elements[]=Element::create($color->couleur)
             ->subtitle("color")
             ->image($color->photo)
             ->addButton(ElementButton::create('إشتر هذا المنتج')
-                ->payload("byColorShow".$color->id."p".$product_id)
+                ->payload("byColorShow".$color->id)
                 ->type('postback'));
     }
         $bot->reply(GenericTemplate::create()
@@ -232,9 +232,9 @@ $text="-".$percentage ."%\n".$remises->prix." DA : السعر الجديد ";
         
     });
 
-    $botman->hears('byColorShow([0-9]+)p([0-9]+)', function ( $bot,$color_id,$product_id) {
+    $botman->hears('byColorShow([0-9]+)', function ( $bot,$number) {
 
-        $bot->startConversation(new ByColorConversation($color_id,$product_id));
+        $bot->startConversation(new ByColorConversation($number));
 
     });
 
