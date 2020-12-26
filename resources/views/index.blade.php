@@ -18,12 +18,12 @@
  <style>.bg-c-blue {
 background: linear-gradient(90deg, #1a72f5 0%, #1f8de7 100%);}</style>
 <div class="container text-white mt-5">
-  <div class=" text-white" style="opacity: 0.9">
+  <div>
   
     <div class="card bg-c-blue   m-2 border-dark">
       <div class="card-body text-left ">
       <a class="h4" href="{{route('products')}}"> 
-      <p class="card-text">
+      <p class="card-text text-light">
       <i class=" p-2 mr-2 fa fa-list-ol ">
       </i>Produits : {{$products->count()}}
       </p>
