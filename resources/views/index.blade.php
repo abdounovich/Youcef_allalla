@@ -17,8 +17,8 @@
 
  <style>.bg-c-blue {
 background: linear-gradient(90deg, #1a72f5 0%, #1f8de7 100%);}</style>
-<div class="container text-white mt-5">
-  <div>
+<div class="container  mt-5">
+  <div class=" text-white" style="opacity: 0.9">
   
     <div class="card bg-c-blue   m-2 border-dark">
       <div class="card-body text-left ">
@@ -35,7 +35,7 @@ background: linear-gradient(90deg, #1a72f5 0%, #1f8de7 100%);}</style>
     <div class="card bg-c-blue m-2 border-dark">
         <div class="card-body text-left ">
         <a class="h4" href="{{route('clients')}}"> 
-        <p class="card-text">
+        <p class="card-text text-light">
         <i class=" p-2 mr-2 fa fa-users ">
         </i>Clients : {{$clients->count()}}
         </p>
@@ -50,7 +50,7 @@ background: linear-gradient(90deg, #1a72f5 0%, #1f8de7 100%);}</style>
       <div class="card bg-c-blue m-2 border-dark ">
         <div class="card-body text-left ">
         <a class="h4" href="{{route('commandes')}}"> 
-        <p class="card-text">
+        <p class="card-text text-light">
         <i class=" p-2 mr-2 fa fa-list-ol ">
         </i>Commandes : {{$commandes->count()}}
         </p>
@@ -65,7 +65,7 @@ background: linear-gradient(90deg, #1a72f5 0%, #1f8de7 100%);}</style>
       <div class="card bg-c-blue m-2 border-dark">
         <div class="card-body text-left ">
         <a class="h4" href="{{route('categories')}}"> 
-        <p class="card-text">
+        <p class="card-text text-light">
         <i class=" p-2 mr-2 fa fa-list-alt  ">
         </i>Categories : {{$categories->count()}}
         </p>
@@ -77,7 +77,7 @@ background: linear-gradient(90deg, #1a72f5 0%, #1f8de7 100%);}</style>
       <div class="card bg-c-blue m-2 border-dark ">
         <div class="card-body text-left ">
         <a class="h4" href="{{route('sub_categories')}}"> 
-        <p class="card-text">
+        <p class="card-text text-light">
         <i class=" p-2 mr-2 fa fa-list-ol ">
         </i>S-categories: {{$sub_categories->count()}}
         </p>
