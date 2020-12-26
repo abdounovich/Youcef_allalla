@@ -39,11 +39,11 @@ public function __construct(string $product_id ) {
         $this->commande->product_id=$this->product_id;
         $this->commande->commande_type="simple";
         $this->commande->type="1";      
-        $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح ', function(Answer $answer) {
+        $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer) {
             // Save result
             $this->phone = $answer->getText();
             $this->client->phone=$this->phone;
-            $this->ask(' من فضلك أدخل  عنوانك الكامل   ', function(Answer $answer) {
+            $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
                 // Save result
                 $this->address = $answer->getText();
                 $this->client->address=$this->address;
@@ -52,7 +52,7 @@ public function __construct(string $product_id ) {
                 
             $this->commande->save();
             $this->client->save();
-            $this->bot->reply("لقد تم تأكيد طلبك بنجاح "); 
+            $this->bot->reply("  لقد تم حفظ طلبك بنجاح  ✅"); 
             });
             
 

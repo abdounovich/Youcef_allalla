@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use App\Conversations\ByColorConversation;
 use App\Conversations\ExampleConversation;
 use App\Http\Controllers\BotManController;
+use App\Conversations\ByTailleConversation;
 use BotMan\BotMan\Messages\Outgoing\Question;
 use BotMan\Drivers\Facebook\Extensions\Element;
 use BotMan\BotMan\Messages\Outgoing\Actions\Button;
@@ -78,23 +79,26 @@ $bot->reply(ButtonTemplate::create('   أنا روربوت المحادثة ال
 
 
 $botman->fallback(function($bot) {
-    $bot->reply('sorry');
+    $bot->reply(ButtonTemplate::create('عذرًا ، لم أستطع فهمك 😕 '."\n". 'هذه قائمة بالأوامر التي أفهمها:')
+
+
+
+    ->addButton(ElementButton::create('  🛒  تصفح منتجاتنا ')
+    ->type('postback')
+    ->payload('show_me_products')
+)
+->addButton(ElementButton::create(' 👨‍🏫 كيفية الشراء')
+->type('postback')
+->payload('steps')	)
+->addButton(ElementButton::create(' 💬 تواصل مع المبرمج')
+->url('https://www.messenger.com/t/merahi.adjalile')
+)
+);
 
 });
 
 
 
-$botman->hears('1', function ($bot) {
-$categories=Category::all();
-$text="0";
-foreach ($categories as $categorie ) {
-foreach ($categorie->subCat as $element) {
-    $bot->reply($element->nom);
-}
-}
-
-;
-});
 
 
 
@@ -105,19 +109,20 @@ $botman->hears('show_me_products', function ($bot) {
 
     $categories=Category::all();
     $elements=array();
+    
  
   foreach ($categories as $categorie ) { 
       $text="";
     foreach ($categorie->subCat as $element) {
-      $text=$text." -- ".$element->nom;
+      $text=$text." . ".$element->nom;
     }
         $elements[]=Element::create($categorie->nom)
         ->subtitle($text)
         ->image($categorie->photo)
-        ->addButton(ElementButton::create($categorie->nom)
-            ->payload('sous_cat_'.$categorie->id)
-            ->type('postback')
-    );
+    ->addButton(ElementButton::create(" 🛒 إبدأ التسوق ")
+    ->payload('sous_cat_'.$categorie->id)
+    ->type('postback')
+);
 
     }
         $bot->reply(GenericTemplate::create()
@@ -156,7 +161,7 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
 
         if ($product->product_type=="simple") {
             
-            $text="  السعر ".$product->prix."  دج ";
+            $text="";
             $payload='select'.$product->id;
         }
             elseif($product->product_type=="color"){
@@ -165,9 +170,10 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
                 $text="";
 
                 foreach ($product->color as $color) {
-                 $text=$text.''.$color->couleur .",";}
+                 $text=$text.''.$color->couleur ." . ";}
                
             }
+            
             
             elseif($product->product_type=="taille"){
                 $payload='showTaille'.$product->id;
@@ -175,33 +181,40 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
                 $text="";
 
                 foreach ($product->taille as $taille) {
-                    $text=$text.''.$taille->taille .",";
+                    $text=$text.''.$taille->taille ." . ";
                   
                }
             
             
             }
-       /*  $remises=Remise::where("product_id",$product->id)->first();
+        $remises=Remise::where("product_id",$product->id)->first();
         if (!$remises) {
-$text=$product->prix." Da";
-}else {
-$percentage=round(100-$remises->prix*100/$remises->produit->prix);
 
+            $elements[]=Element::create($product->nom)
 
-
- 
-$text="-".$percentage ."%\n".$remises->prix." DA : السعر الجديد ";
-
-
-
-} */
-
-        $elements[]=Element::create($product->nom)
-            ->subtitle($text)
+            ->subtitle($text."\n"." السعر  ".$product->prix . " دج ")
             ->image($product->photo)
-            ->addButton(ElementButton::create('إشتر هذا المنتج')
+            ->addButton(ElementButton::create(' 🛒 إشتر هذا المنتج')
                 ->payload($payload)
                 ->type('postback'));
+
+}else {
+
+
+$percentage=round(100-$remises->prix*100/$remises->produit->prix); 
+$text=$text."\n"." (-".$percentage ."%) ".$remises->prix." DA : السعر الجديد ";
+$elements[]=Element::create($product->nom)
+
+->subtitle($text)
+->image($product->photo)
+->addButton(ElementButton::create(' 🛒 إشتر هذا المنتج')
+    ->payload($payload)
+    ->type('postback'));
+
+
+} 
+
+     
     }
         $bot->reply(GenericTemplate::create()
         ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
@@ -213,15 +226,14 @@ $text="-".$percentage ."%\n".$remises->prix." DA : السعر الجديد ";
 
     $botman->hears('showColor([0-9]+)', function ( $bot,$number) {
 
-        $bot->reply(" color list should be here");
 
 
         $product=Product::find($number);
         foreach ($product->color as $color ) {
             $elements[]=Element::create($color->couleur)
-            ->subtitle("color")
+            ->subtitle(" السعر  ".$product->prix . " دج ")
             ->image($color->photo)
-            ->addButton(ElementButton::create('إشتر هذا المنتج')
+            ->addButton(ElementButton::create(' ✅ إشتر هذا المنتج')
                 ->payload("byColorShow".$color->id)
                 ->type('postback'));
     }
@@ -239,11 +251,28 @@ $text="-".$percentage ."%\n".$remises->prix." DA : السعر الجديد ";
     });
 
     $botman->hears('showTaille([0-9]+)', function ( $bot,$number) {
-        $bot->reply(" Taille list should be here");
+        $product=Product::find($number);
+
+$taille_array=array();
+foreach ($product->taille as $taille ) {
+   $taille_array[]=Button::create($taille->taille)->value("slectedTaille".$taille->id);
+
+}
+
+        $bot->reply(Question::create(' 📏 إختر القياس المناسب ')->addButtons($taille_array));
+
+        // $bot->startConversation(new ByTailleConversation($number));
 
     });
 
 
+    $botman->hears('slectedTaille([0-9]+)', function ( $bot,$number) {
+
+        $bot->startConversation(new ByTailleConversation($number));
+
+        
+        
+    });
     $botman->hears('select([0-9]+)', function ( $bot,$number) {
 
         $bot->startConversation(new ExampleConversation($number));
