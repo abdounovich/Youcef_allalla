@@ -198,12 +198,13 @@ class ProductController extends Controller
        $product->descreption=$descreption;
        $product->product_type="color";
        $product->save();
-  
+       $q="0";
        for ($i=1; $i <=$request->get('index') ; $i++) { 
         $color=new Color();
         $color->product_id=$product->id;
         $color->couleur=$request->get('Cbutton'.$i);
         $color->quantity=$request->get('Qbutton'.$i);
+        $q=$q+$color->quantity;
         $image_name = $request->file('photo'.$i)->getRealPath();
         Cloudder::upload($image_name, null);
         list($width, $height) = getimagesize($image_name);
@@ -211,7 +212,9 @@ class ProductController extends Controller
         $photo=$image_url;
         $color->photo=$photo;
         $color->save();
-     }  
+
+     }  $product->quantity=$q;
+     $product->save();
        return back()->with("success","Produit ajouté avec success");
        }
     }
