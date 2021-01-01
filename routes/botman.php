@@ -114,7 +114,7 @@ $botman->hears('show_me_products', function ($bot) {
   foreach ($categories as $categorie ) { 
       $text="";
     foreach ($categorie->subCat as $element) {
-      $text=$text." . ".$element->nom;
+      $text=$text."   ".$element->nom;
     }
         $elements[]=Element::create($categorie->nom)
         ->subtitle($text)

@@ -55,7 +55,7 @@ class RemiseController extends Controller
         $remise->prix=$prix;
         $remise->product_id=$produit;
         $remise->save();
-        return back()->with("success","La sous catégorie est ajoutée avec success");
+        return back()->with("success","La remise est ajoutée avec success");
     }
 
     public function storeById(Request $request,$id)
@@ -65,7 +65,7 @@ class RemiseController extends Controller
         $remise->prix=$prix;
         $remise->product_id=$id;
         $remise->save();
-        return back()->with("success","La sous catégorie est ajoutée avec success");
+        return back()->with("success","La remise est ajoutée avec success");
     }
 
     /**
