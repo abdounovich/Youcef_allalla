@@ -121,6 +121,7 @@ class ProductController extends Controller
        $photo=$image_url;
 
        $quantité=$request->get('quantity');
+       $quantité="2";
 
        $prix=$request->get('prix');
        $sub_cat=$request->get('sub_cat');
@@ -130,13 +131,14 @@ class ProductController extends Controller
        $product=new Product();
        $product->nom=$nom;
        $product->photo=$photo;
-       $product->quantity="0";
+       $product->quantity=$quantité;
        $product->prix=$prix;
        $product->SubCat_id=$sub_cat;
        $product->type=$type;
        $product->product_type="taille";
        $product->descreption=$descreption;
-$q="0";
+       $product->save();
+       $q="0";
        for ($i=1; $i <=$request->get('Tailleindex') ; $i++) { 
         $taille=new Taille();
         $taille->product_id=$product->id;
@@ -144,12 +146,12 @@ $q="0";
         $taille->quantity=$request->get('Qbutton'.$i);
         $q=$q+$taille->quantity;
         $taille->save();
-
+        
      }     
 
      $product->quantity=$q;
-    $product->save();
-        
+     $product->save();
+
        return back()->with("success","Produit ajouté avec success");
        
 
@@ -195,13 +197,13 @@ $q="0";
        $product->type=$type;
        $product->descreption=$descreption;
        $product->product_type="color";
-  $q="0";
+       $product->save();
+  
        for ($i=1; $i <=$request->get('index') ; $i++) { 
         $color=new Color();
         $color->product_id=$product->id;
         $color->couleur=$request->get('Cbutton'.$i);
         $color->quantity=$request->get('Qbutton'.$i);
-        $q=$q+  $color->quantity;
         $image_name = $request->file('photo'.$i)->getRealPath();
         Cloudder::upload($image_name, null);
         list($width, $height) = getimagesize($image_name);
@@ -209,12 +211,7 @@ $q="0";
         $photo=$image_url;
         $color->photo=$photo;
         $color->save();
-
      }  
-     $product->quantity=$q;
-
-     $product->save();
-
        return back()->with("success","Produit ajouté avec success");
        }
     }
