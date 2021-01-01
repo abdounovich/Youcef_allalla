@@ -69,7 +69,7 @@ echo '   <p class="card-text text-info h5  "> <del class="text-danger">'.$produi
         <a class="btn btn-warning btn-circle float-right  mr-2  " href="{{route('products.edit',$produit->id) }}">
           <span class="text-white  fa fa-edit   "></span>
       </a>
-      <a class="btn btn-info btn-circle float-right  mr-2  " href="{{route('products.edit',$produit->id) }}">
+      <a class="btn btn-info btn-circle float-right  mr-2  " href="{{route('remises.addByIdShow',$produit->id) }}">
         <span class="text-white  fa fa-level-down   "></span>
     </a>
       <a class="btn btn-danger btn-circle float-right  mr-2 " href="{{route('products.delete',$produit->id)}}">
@@ -126,7 +126,7 @@ echo '   <p class="card-text text-info h5  "> <del class="text-danger">'.$produi
       <a class="btn btn-warning btn-circle float-right  mr-2  " href="{{route('products.edit',$produit->id) }}">
         <span class="text-white  fa fa-edit   "></span>
     </a>
-    <a class="btn btn-info btn-circle float-right  mr-2  " href="{{route('products.edit',$produit->id) }}">
+    <a class="btn btn-info btn-circle float-right  mr-2  " href="{{route('remises.addByIdShow',$produit->id) }}">
       <span class="text-white  fa fa-level-down   "></span>
   </a>
     <a class="btn btn-danger btn-circle float-right  mr-2 " href="{{route('products.delete',$produit->id)}}">
@@ -186,7 +186,7 @@ echo '   <p class="card-text text-info h5  "> <del class="text-danger">'.$produi
         <a class="btn btn-warning btn-circle float-right  mr-2  " href="{{route('products.edit',$produit->id) }}">
         <span class="text-white  fa fa-edit   "></span>
     </a>
-    <a class="btn btn-info btn-circle float-right  mr-2  " href="{{route('products.edit',$produit->id) }}">
+    <a class="btn btn-info btn-circle float-right  mr-2  " href="{{route('remises.addByIdShow',$produit->id) }}">
       <span class="text-white  fa fa-level-down   "></span>
   </a>
     <a class="btn btn-danger btn-circle float-right  mr-2 " href="{{route('products.delete',$produit->id)}}">
