@@ -58,6 +58,16 @@ class RemiseController extends Controller
         return back()->with("success","La sous catégorie est ajoutée avec success");
     }
 
+    public function storeById(Request $request,$id)
+    {
+        $prix=$request->get('prix');
+        $remise=new Remise();
+        $remise->prix=$prix;
+        $remise->product_id=$id;
+        $remise->save();
+        return back()->with("success","La sous catégorie est ajoutée avec success");
+    }
+
     /**
      * Display the specified resource.
      *

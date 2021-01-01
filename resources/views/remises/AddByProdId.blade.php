@@ -35,7 +35,7 @@
                     <h1 class=" rounded  p-2 h4 mt-2 ">Ajouter une remise :</h1>
                 </div>
             </div>
-    <form method="POST" action="{{route('remises.add') }}" enctype="multipart/form-data">
+    <form method="POST" action="{{route('remises.addByIdPost',$products->id) }}" enctype="multipart/form-data">
             @csrf
          
 
