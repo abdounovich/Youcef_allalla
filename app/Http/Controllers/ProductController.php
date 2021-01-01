@@ -142,7 +142,7 @@ class ProductController extends Controller
         $taille->product_id=$product->id;
         $taille->taille=$request->get('Tbutton'.$i);
         $taille->quantity=$request->get('Qbutton'.$i);
-        $product->quantity=$product->quantity+$$taille->quantity;
+        $product->quantity=$product->quantity+$taille->quantity;
 
 
         $taille->save();
