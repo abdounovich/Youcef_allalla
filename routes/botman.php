@@ -308,7 +308,7 @@ foreach ($product->taille as $taille ) {
 $client=Client::whereFacebook($full_name)->first();
 
 
-        $commandes=Commande::where("client_id",$client->id)->whereType('1')->get();
+        $commandes=Commande::where("client_id",$client->id)->whereType('1')->orderBy('created_at', 'ASC')->get();
         $elements=array();
         foreach ($commandes as $commande ) {
             $elements[]=
