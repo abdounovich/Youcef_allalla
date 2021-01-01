@@ -42,7 +42,7 @@
         
             <div class="form-group">
               <label for="sub_cat">Produit : </label>
-              <p value="{{$products->id}}">{{$products->nom}} - {{$product->prix}} Da</p>
+              <p value="{{$products->id}}">{{$products->nom}} - {{$products->prix}} Da</p>
             </div>
 
              <div class="form-group ">
