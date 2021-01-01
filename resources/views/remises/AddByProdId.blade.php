@@ -37,21 +37,18 @@
             </div>
     <form method="POST" action="{{route('remises.add') }}" enctype="multipart/form-data">
             @csrf
-            <div class="form-group ">
-              <label for="nom">Prix apres remise :</label>
-              <input type="text" class="form-control" name="prix"   placeholder="Entrer le nouveaux prix ">
-            </div>
+         
 
         
             <div class="form-group">
               <label for="sub_cat">Produit : </label>
-            <select class="form-control" id="product" name="produit">
-              @foreach ($products as $product)
-              <option value="{{$product->id}}">{{$product->nom}} - {{$product->prix}} Da</option>
-          @endforeach              </select>
+              <p value="{{$products->id}}">{{$products->nom}} - {{$product->prix}} Da</p>
             </div>
 
-          
+             <div class="form-group ">
+              <label for="nom">Prix apres remise :</label>
+              <input type="text" class="form-control" name="prix"   placeholder="Entrer le nouveaux prix ">
+            </div>
             
             <button type="submit" class="btn btn-primary col col-12 mb-4">Ajouter</button>
           </form>

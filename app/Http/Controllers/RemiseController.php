@@ -22,14 +22,11 @@ class RemiseController extends Controller
         ->with('remises',$remises);
     }
 
-    public function indexById()
+    public function indexById($id)
     {
-        $products=Product::all();
-        $remises=Remise::paginate(10);
+        $products=Product::find($id);
         return view('remises.AddByProdId')
-        ->with('products',$products)
-        ->with('remises',$remises);
-    }
+        ->with('products',$products);    }
     
 
     /**
