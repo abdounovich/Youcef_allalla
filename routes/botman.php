@@ -154,7 +154,7 @@ foreach ($sous_cats as $sous_cat ) {
 
 
 $botman->hears('product_([0-9]+)', function($bot,$number) {
-    $products=Product::where("SubCat_id",$number)->get();
+    $products=Product::where("SubCat_id",$number)->where('quantity','>','0')->get();
     $elements=array();
     foreach ($products as $product ) {
 

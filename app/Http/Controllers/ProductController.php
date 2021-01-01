@@ -121,7 +121,6 @@ class ProductController extends Controller
        $photo=$image_url;
 
        $quantité=$request->get('quantity');
-       $quantité="2";
 
        $prix=$request->get('prix');
        $sub_cat=$request->get('sub_cat');
@@ -131,20 +130,24 @@ class ProductController extends Controller
        $product=new Product();
        $product->nom=$nom;
        $product->photo=$photo;
-       $product->quantity=$quantité;
+       $product->quantity="0";
        $product->prix=$prix;
        $product->SubCat_id=$sub_cat;
        $product->type=$type;
        $product->product_type="taille";
        $product->descreption=$descreption;
-       $product->save();
 
        for ($i=1; $i <=$request->get('Tailleindex') ; $i++) { 
         $taille=new Taille();
         $taille->product_id=$product->id;
         $taille->taille=$request->get('Tbutton'.$i);
         $taille->quantity=$request->get('Qbutton'.$i);
+        $product->quantity=$product->quantity+$$taille->quantity;
+
+
         $taille->save();
+        $product->save();
+
      }     
 
         
@@ -193,13 +196,13 @@ class ProductController extends Controller
        $product->type=$type;
        $product->descreption=$descreption;
        $product->product_type="color";
-       $product->save();
   
        for ($i=1; $i <=$request->get('index') ; $i++) { 
         $color=new Color();
         $color->product_id=$product->id;
         $color->couleur=$request->get('Cbutton'.$i);
         $color->quantity=$request->get('Qbutton'.$i);
+        $product->quantity=$product->quantity+$color->quantity;
         $image_name = $request->file('photo'.$i)->getRealPath();
         Cloudder::upload($image_name, null);
         list($width, $height) = getimagesize($image_name);
@@ -207,6 +210,8 @@ class ProductController extends Controller
         $photo=$image_url;
         $color->photo=$photo;
         $color->save();
+        $product->save();
+
      }  
        return back()->with("success","Produit ajouté avec success");
        }
