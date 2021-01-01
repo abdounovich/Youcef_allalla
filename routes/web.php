@@ -93,7 +93,7 @@ Route::get('commandes/return/{id}', 'CommandeController@return')->name('commande
 
 Route::get('remises', 'RemiseController@index')->name('remises');
 Route::post('remises/add', 'RemiseController@store')->name('remises.add');
-Route::get('remises/add/{id}', 'RemiseController@index')->name('remises.addByIdShow');
+Route::get('remises/add/{id}', 'RemiseController@indexById')->name('remises.addByIdShow');
 Route::post('remises/add/{id}', 'RemiseController@storeById')->name('remises.addByIdPost');
 
 

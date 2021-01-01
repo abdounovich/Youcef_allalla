@@ -22,6 +22,16 @@ class RemiseController extends Controller
         ->with('remises',$remises);
     }
 
+    public function indexById()
+    {
+        $products=Product::all();
+        $remises=Remise::paginate(10);
+        return view('remises.AddByProdId')
+        ->with('products',$products)
+        ->with('remises',$remises);
+    }
+    
+
     /**
      * Show the form for creating a new resource.
      *
