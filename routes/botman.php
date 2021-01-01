@@ -289,6 +289,7 @@ foreach ($product->taille as $taille ) {
             ]));
 
     });
+
     $botman->hears('NoCancelAgain', function ( $bot) {
         $bot->reply("حسنا   ");  
     });
@@ -313,8 +314,8 @@ $client=Client::whereFacebook($full_name)->first();
             $elements[]=
             Element::create($commande->product->nom)
                 ->image($commande->product->photo)
-                ->addButton(ElementButton::create(' 🛍 تصفح المنتجات')
-                    ->payload('product_'.$commande->id)
+                ->addButton(ElementButton::create(' ❌ إلغاء الطلبية  ')
+                    ->payload('cancelCommande'.$commande->id)
                     ->type('postback'));
         }
             $bot->reply(GenericTemplate::create()
@@ -323,6 +324,19 @@ $client=Client::whereFacebook($full_name)->first();
         );    
 
 
+    });
+
+
+    $botman->hears('cancelCommande([0-9]+)', function ( $bot,$number) {
+
+$commande=Commande::find($number);
+$commande->delete();
+         $bot->reply("حسنا لقد تم إلغاء طلبك   ");  
+        $bot->reply(Question::create('هل تريد إختيار منتج آخر ؟ ')->addButtons([
+            Button::create(' ✅ نعم ')->value('show_me_products'),
+            Button::create('   ❌ لا شكرا  ')->value('NoCancelAgain')
+            ]));
+        
     });
 
 
