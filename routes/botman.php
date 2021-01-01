@@ -295,3 +295,37 @@ foreach ($product->taille as $taille ) {
 
 
 
+    $botman->hears('my_commandes', function ( $bot) {
+
+
+        $user = $bot->getUser();
+        $facebook_id = $user->getId();
+        $firstname = $user->getFirstname();
+        $lastname = $user->getLastname();
+        $full_name=$firstname.'-'.$lastname;
+
+$client=Client::whereFacebook($full_name)->first();
+
+
+        $commandes=Commandes::where("client_id",$client->id)->get();
+        $elements=array();
+        foreach ($commandes as $commande ) {
+            $elements[]=
+            Element::create($commande->product->nom)
+                ->image($commande->product->photo)
+                ->addButton(ElementButton::create(' 🛍 تصفح المنتجات')
+                    ->payload('product_'.$commande->id)
+                    ->type('postback'));
+        }
+            $bot->reply(GenericTemplate::create()
+            ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
+            ->addElements($elements)
+        );    
+
+
+    });
+
+
+
+
+

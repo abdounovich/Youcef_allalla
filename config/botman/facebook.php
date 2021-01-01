@@ -82,7 +82,7 @@ return [
                 [
 
                     'type' => 'postback',
-                    'title' => ' 🛒 تصفح المنتجات ',
+                    'title' => ' 🛍 تصفح المنتجات ',
                     'payload' => 'show_me_products',
                    
 
