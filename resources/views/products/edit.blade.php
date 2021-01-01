@@ -391,7 +391,7 @@ HrefImageElement.setAttribute("href",  "#");
                                     </script>   
          
          <div class="form-group">
-          <label for="cat">Couleur :</label>
+          <label for="cat">Taille :</label>
   
          <input type="hidden" name="index" value="{{$product->taille->count()}}" id="ColorIndex">
          <input type="hidden" value="{{$product->quantity}}" name="quantity">

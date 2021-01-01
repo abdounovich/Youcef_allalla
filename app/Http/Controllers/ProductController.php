@@ -200,30 +200,16 @@ class ProductController extends Controller
         $color->product_id=$product->id;
         $color->couleur=$request->get('Cbutton'.$i);
         $color->quantity=$request->get('Qbutton'.$i);
-
-
-                 
-        
         $image_name = $request->file('photo'.$i)->getRealPath();
-       
         Cloudder::upload($image_name, null);
         list($width, $height) = getimagesize($image_name);
         $image_url= Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
-       $photo=$image_url;
-        
+        $photo=$image_url;
         $color->photo=$photo;
-
-
-
         $color->save();
      }  
-
-       
        return back()->with("success","Produit ajouté avec success");
-       
-
-
-        }
+       }
     }
 
 

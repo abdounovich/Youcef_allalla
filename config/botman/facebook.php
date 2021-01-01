@@ -77,24 +77,22 @@ return [
     'persistent_menu' => [
         [
             'locale' => 'default',
-            'composer_input_disabled' => 'true',
+            'composer_input_disabled' => 'false',
             'call_to_actions' => [
                 [
-                    'title' => 'My Account',
-                    'type' => 'nested',
-                    'call_to_actions' => [
-                        [
-                            'title' => 'Pay Bill',
-                            'type' => 'postback',
-                            'payload' => 'PAYBILL_PAYLOAD',
-                        ],
-                    ],
+
+                    'type' => 'postback',
+                    'title' => ' 🛒 تصفح المنتجات ',
+                    'payload' => 'show_me_products',
+                   
+
+                 
                 ],
                 [
-                    'type' => 'web_url',
-                    'title' => 'Latest News',
-                    'url' => 'http://botman.io',
-                    'webview_height_ratio' => 'full',
+                    'title' => ' 🛒 طلبياتي   ',
+                    'type' => 'postback',
+                    'payload' => 'my_commandes',
+
                 ],
             ],
         ],
