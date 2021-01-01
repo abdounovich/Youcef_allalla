@@ -42,7 +42,7 @@
         
             <div class="form-group">
               <label for="sub_cat">Produit : </label>
-              <p value="{{$products->id}}">{{$products->nom}} - {{$products->prix}} Da</p>
+              <input type="text" name="produit" disabled value="{{$products->nom}} - {{$products->prix}} Da ">
             </div>
 
              <div class="form-group ">
