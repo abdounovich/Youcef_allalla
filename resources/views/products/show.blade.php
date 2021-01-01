@@ -88,6 +88,8 @@ echo '   <p class="card-text text-info h5  "> <del class="text-danger">'.$produi
       <h4 class="card-title">{{$produit->nom}}</h4>
       <hr>
       <p class="card-text">{{$produit->descreption}}</p>
+      <p class="card-text h5">reste: <span class="text-success">{{$produit->quantity}}</span> <a class="btn btn-warning btn-circle float-right  mr-2  " href="{{route('products.edit',$produit->id) }}">
+
             <div class="row">
 @foreach ($produit->color as $color)
           
@@ -146,6 +148,8 @@ echo '   <p class="card-text text-info h5  "> <del class="text-danger">'.$produi
       <h4 class="card-title">{{$produit->nom}}</h4>
       <hr>
       <p class="card-text">{{$produit->descreption}}</p>
+      <p class="card-text h5">reste: <span class="text-success">{{$produit->quantity}}</span> <a class="btn btn-warning btn-circle float-right  mr-2  " href="{{route('products.edit',$produit->id) }}">
+
             <div class="row">
 @foreach ($produit->taille as $taille)
           
