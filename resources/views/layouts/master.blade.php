@@ -13,9 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Changa&display=swap" rel="stylesheet"><style>
            body{
     
-            background: #4CA1AF;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: #00B4DB;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     font-family: 'Changa', sans-serif;
  }
@@ -23,7 +23,7 @@ background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, F
 </head>
   <body>
   
-    <nav class="navbar navbar-expand-lg pt-3 pb-3 navbar-dark bg-primary fixed-top ">
+    <nav class="navbar navbar-expand-lg pt-3 pb-3 navbar-light bg-light   fixed-top ">
       <div class="container">
         <a class="navbar-brand" href="#">LOGO HERE</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
