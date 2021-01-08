@@ -86,6 +86,25 @@ background: linear-gradient(180deg, #1a72f5 0%, #1f8de7 100%);}</style>
         </div>
       </div>
 
+
+
+
+
+
+
+
+      <div class="card bg-light m-2">
+        <div class="card-body text-left ">
+        <a class="h4" href="{{route('sub_categories')}}"> 
+        <p class="card-text text-dark">
+        <i class=" p-2 mr-2 fa fa-list-ol ">
+        </i>S-categories: {{$sub_categories->count()}}
+        </p>
+        </a>
+  
+        </div>
+      </div>
+
   </div>
 </div>
 
