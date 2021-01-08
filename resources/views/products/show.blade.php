@@ -36,11 +36,11 @@ img {
     <div class="row" >
         <div class="col-lg-8 mx-auto">
             <!-- List group-->
-            <ul class="list-group  shadow-lg">
+            <ul class="list-group ">
                 <!-- list group item-->
                 @foreach ($produits as $produit)
 @if ($produit->product_type=="simple")
-<div class="card bg-dark text-white p-2 mt-5" >
+<div class="card bg-dark text-white p-2 mt-5 shadow-lg" >
     <img class="card-img-top img-thumbnail p-1" style="width: 100%; height:300px" src="{{$produit->photo}}" alt="Card image">
     <div class="card-body">
       <h4 class="card-title">{{$produit->nom}}</h4>

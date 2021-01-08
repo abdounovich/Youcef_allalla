@@ -1,7 +1,7 @@
 
       <div class="  mt-3 mb-2 d-flex justify-content-center ">
 
-    <button class="btn btn-primary  rounded p-3 m-4"  type="button" data-toggle="collapse" data-target="#product_collapse" aria-expanded="false" aria-controls="collapseExample">
+    <button class="btn btn-info  rounded p-3 m-4"  type="button" data-toggle="collapse" data-target="#product_collapse" aria-expanded="false" aria-controls="collapseExample">
       <i class="fa fa-plus mr-2">  </i> Ajouter une sous catégorie</button>
 
  
