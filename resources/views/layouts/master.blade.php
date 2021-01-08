@@ -13,10 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Changa&display=swap" rel="stylesheet"><style>
            body{
     
-    background:url(https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+            background: #4CA1AF;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     font-family: 'Changa', sans-serif;
  }
     </style>
