@@ -23,7 +23,7 @@ background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, F
 </head>
   <body>
   
-    <nav class="navbar navbar-expand-lg pt-3 pb-3 navbar-dark  fixed-top ">
+    <nav class="navbar navbar-expand-lg pt-3 pb-3 navbar-dark bg-primary fixed-top ">
       <div class="container">
         <a class="navbar-brand" href="#">LOGO HERE</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
