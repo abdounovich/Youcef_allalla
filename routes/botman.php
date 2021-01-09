@@ -157,7 +157,92 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
     $products=Product::where("SubCat_id",$number)->where('quantity','>','0')->get();
     $elements=array();
     $total=$products->count();
-    foreach ($products as $product ) {
+    $i=0;
+
+    $nbr_aut_by_fb=10;
+    $z=$total/$nbr_aut_by_fb;
+        $last = fmod($total, $nbr_aut_by_fb);
+        $u="0.".$last;
+        $pages= $z-$u;
+
+        for ($a=0; $a <$pages ; $a++) { 
+            ${"element_$a"}=array();
+        }
+        if ($total>10) {
+        foreach ($products as $product ) {
+
+            if ($product->product_type=="simple") {
+                
+                $text="";
+                $payload='select'.$product->id;
+            }
+                elseif($product->product_type=="color"){
+                    $payload='showColor'.$product->id;
+    
+                    $text="";
+    
+                    foreach ($product->color as $color) {
+                     $text=$text.''.$color->couleur ." . ";}
+                   
+                }
+                
+                
+                elseif($product->product_type=="taille"){
+                    $payload='showTaille'.$product->id;
+    
+                    $text="";
+    
+                    foreach ($product->taille as $taille) {
+                        $text=$text.''.$taille->taille ." . ";
+                      
+                   }
+                
+                
+                }
+            $remises=Remise::where("product_id",$product->id)->first();
+            if (!$remises) {
+              
+                for ($a=0; $a <$pages ; $a++) { 
+                   for ($n=0; $n <$nbr_aut_by_fb ; $n++) { 
+                      
+                  
+                    ${"element_$a"}=Element::create($product->nom)
+    
+                    ->subtitle($text."\n"." السعر  ".$product->prix . " دج ")
+                    ->image($product->photo)
+                    ->addButton(ElementButton::create(' 🛒 إشتر هذا المنتج')
+                        ->payload($payload)
+                        ->type('postback'));
+                
+                } }
+    
+    }else {
+    
+    
+    $percentage=round(100-$remises->prix*100/$remises->produit->prix); 
+    $text=$text."\n"." (-".$percentage ."%) ".$remises->prix." DA : السعر الجديد ";
+    for ($a=0; $a <$pages ; $a++) { 
+        for ($n=0; $n <$nbr_aut_by_fb ; $n++) { 
+           
+       
+         ${"element_$a"}=Element::create($product->nom)
+    
+    ->subtitle($text)
+    ->image($product->photo)
+    ->addButton(ElementButton::create(' 🛒 إشتر هذا المنتج')
+        ->payload($payload)
+        ->type('postback'));
+        }}
+    
+    } 
+    
+         
+        }
+       
+    }
+
+    else{   
+        foreach ($products as $product ) {
 
         if ($product->product_type=="simple") {
             
@@ -215,12 +300,16 @@ $elements[]=Element::create($product->nom)
 } 
 
      
-    }
+    }}
+ 
+    $bot->reply($total);
+
+    for ($a=0; $a <$pages ; $a++) {      
         $bot->reply(GenericTemplate::create()
         ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
-        ->addElements($elements)
-    );    
-    $bot->reply($total);
+        ->addElements( ${"element_$a"})
+    );    }
+       
 
     });
 
