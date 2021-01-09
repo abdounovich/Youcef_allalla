@@ -220,7 +220,8 @@ $elements[]=Element::create($product->nom)
         ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
         ->addElements($elements)
     );    
-    
+    $bot->reply($total);
+
     });
 
 
