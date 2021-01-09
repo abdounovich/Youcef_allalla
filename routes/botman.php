@@ -156,10 +156,9 @@ foreach ($sous_cats as $sous_cat ) {
 $botman->hears('product_([0-9]+)', function($bot,$number) {
     $products=Product::where("SubCat_id",$number)->where('quantity','>','0')->get();
     $elements=array();
-    $total=0;
+    $total=$products->count();
     foreach ($products as $product ) {
 
-$total=$total+1;
         if ($product->product_type=="simple") {
             
             $text="";
@@ -221,7 +220,7 @@ $elements[]=Element::create($product->nom)
         ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
         ->addElements($elements)
     );    
-    $bot->reply($total);
+    
     });
 
 
