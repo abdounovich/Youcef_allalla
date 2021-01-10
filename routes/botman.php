@@ -59,7 +59,7 @@ if ($username=="0") {
 
 }
 $bot->reply($full_name . ' : مرحبا بك ☺ ');
-$bot->reply( 'تشرفنا زيارتك لصفحة NNNN');
+$bot->reply( 'تشرفنا زيارتك لصفحة D-Zed Store');
 $bot->reply(ButtonTemplate::create('   أنا روربوت المحادثة التلقائية  🤖  كيف يمكنني خدمتك ؟  ')
 ->addButton(ElementButton::create('  🛒 إبدأ التسوق الآن ')
 	    ->type('postback')
@@ -250,19 +250,12 @@ $elements[]=Element::create($product->nom)
     });
 
     $botman->hears('byColorShow([0-9]+)', function ( $bot,$number) {
-
-        $bot->startConversation(new ByColorConversation($number));
-
-    });
-
+    $bot->startConversation(new ByColorConversation($number));});
     $botman->hears('showTaille([0-9]+)', function ( $bot,$number) {
-        $product=Product::find($number);
-
-$taille_array=array();
-foreach ($product->taille as $taille ) {
-   $taille_array[]=Button::create($taille->taille)->value("slectedTaille".$taille->id);
-
-}
+    $product=Product::find($number);
+    $taille_array=array();
+    foreach ($product->taille as $taille ) {
+    $taille_array[]=Button::create($taille->taille)->value("slectedTaille".$taille->id);}
 
         $bot->reply(Question::create(' 📏 إختر القياس المناسب ')->addButtons($taille_array));
 
