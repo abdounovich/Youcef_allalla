@@ -25,9 +25,40 @@ use BotMan\Drivers\Facebook\Extensions\GenericTemplate;
 $botman = resolve('botman');
 
 $botman->hears('START', function ($bot) {
-   
+/*     $user = $bot->getUser();
+    $facebook_id = $user->getId();
+    // Access last name
+    $firstname = $user->getFirstname();
+// Access last name
+$lastname = $user->getLastname();
+$full_name=$firstname.'-'.$lastname;
+// Access Username
+$username=Client::whereFacebook($full_name)->count();
+if ($username=="0") {
+    $client=new Client();
+    $client->facebook=$full_name;
+    $client->slug=Str::random(10) ;
+    $client->fb_id=$facebook_id;
+    $client->phone="aucun numero de telephone";
+    $client->address="aucune adresse";
+    $config=Config::get('botman.facebook.token');
 
-$bot->reply(  ' : مرحبا بك ☺ ');
+    ini_set("allow_url_fopen", 1);
+    
+                  $userInfoData=file_get_contents('https://graph.facebook.com/v2.6/'.$client->fb_id.'?fields=profile_pic&access_token='.$config);
+                  $userInfo = json_decode($userInfoData, true);
+              $picture = $userInfo['profile_pic'] ;
+    
+   
+    $client->photo=$picture;
+
+
+    $client->save();
+
+
+
+} */
+$bot->reply(' : مرحبا بك ☺ ');
 $bot->reply( 'تشرفنا زيارتك لصفحة D-Zed Store');
 $bot->reply(ButtonTemplate::create('   أنا روربوت المحادثة التلقائية  🤖  كيف يمكنني خدمتك ؟  ')
 ->addButton(ElementButton::create('  🛒 إبدأ التسوق الآن ')
