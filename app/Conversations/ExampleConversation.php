@@ -52,7 +52,23 @@ public function __construct(string $product_id ) {
                 
             $this->commande->save();
             $this->client->save();
+            $this->bot->reply("   😍 شكرا لك "); 
             $this->bot->reply("  لقد تم حفظ طلبك بنجاح  ✅"); 
+            
+            $this->bot->reply(Question::create('  😊 سنتصل بك قريبا لتأكيد طلبيتك  ')
+                    ->addButtons([
+                        Button::create(' ❌ إلغاء الطلبية ')
+                            ->value('my_commandes'),
+                        Button::create('➕ إشتر منتج آخر ')
+                            ->value('show_me_products'),
+                    ]));
+            
+                    // $bot->startConversation(new ByTailleConversation($number));
+            
+            
+
+
+
             });
             
 

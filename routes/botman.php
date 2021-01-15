@@ -24,7 +24,7 @@ use BotMan\Drivers\Facebook\Extensions\GenericTemplate;
 
 $botman = resolve('botman');
 
-$botman->hears('START', function ($bot) {
+$botman->hears('GET_START', function ($bot) {
     $user = $bot->getUser();
     $facebook_id = $user->getId();
     // Access last name
@@ -251,6 +251,7 @@ $elements[]=Element::create($product->nom)
 
     $botman->hears('byColorShow([0-9]+)', function ( $bot,$number) {
     $bot->startConversation(new ByColorConversation($number));});
+    
     $botman->hears('showTaille([0-9]+)', function ( $bot,$number) {
     $product=Product::find($number);
     $taille_array=array();
