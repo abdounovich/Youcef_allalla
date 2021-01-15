@@ -25,7 +25,8 @@ use BotMan\Drivers\Facebook\Extensions\GenericTemplate;
 $botman = resolve('botman');
 
 $botman->hears('START', function ($bot) {
-   /*  $user = $bot->getUser();
+    $user=$bot->getUser();
+    $id=$user->getId();   /*  $user = $bot->getUser();
     // Access last name
     $firstname = $user->getFirstname();
 // Access last name
@@ -75,7 +76,7 @@ $bot->reply(ButtonTemplate::create('   أنا روربوت المحادثة ال
 
  */
 
-$bot->reply(": مرحبا بك ☺ ");
+$bot->reply($id.": مرحبا بك ☺ ");
 
 
 });
