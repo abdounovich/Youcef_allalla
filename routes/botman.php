@@ -55,8 +55,6 @@ if ($username=="0") {
 
     $client->save();
 
-
-
 } */
 $bot->reply(' : مرحبا بك ☺ ');
 $bot->reply( 'تشرفنا زيارتك لصفحة D-Zed Store');
