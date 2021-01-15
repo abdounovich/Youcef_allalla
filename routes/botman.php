@@ -25,7 +25,7 @@ use BotMan\Drivers\Facebook\Extensions\GenericTemplate;
 $botman = resolve('botman');
 
 $botman->hears('START', function ($bot) {
-    $user = $bot->getUser();
+   /*  $user = $bot->getUser();
     // Access last name
     $firstname = $user->getFirstname();
 // Access last name
@@ -72,6 +72,10 @@ $bot->reply(ButtonTemplate::create('   أنا روربوت المحادثة ال
     ->url('https://www.messenger.com/t/merahi.adjalile')
 	)
 );
+
+ */
+
+$bot->reply(": مرحبا بك ☺ ");
 
 
 });
