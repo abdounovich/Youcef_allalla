@@ -26,7 +26,6 @@ $botman = resolve('botman');
 
 $botman->hears('START', function ($bot) {
     $user = $bot->getUser();
-    $facebook_id = $user->getId();
     // Access last name
     $firstname = $user->getFirstname();
 // Access last name
