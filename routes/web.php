@@ -116,3 +116,5 @@ Route::post('tailles/edit/{id}', 'TailleController@update')->name('tailles.edit'
 Route::get('tailles/add/{id}', 'TailleController@create')->name('tailles.add');
 Route::post('tailles/add', 'TailleController@store')->name('taille.add');
 
+
+

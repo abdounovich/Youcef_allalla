@@ -145,6 +145,7 @@ class ProductController extends Controller
         $taille->taille=$request->get('Tbutton'.$i);
         $taille->quantity=$request->get('Qbutton'.$i);
         $q=$q+$taille->quantity;
+        $taille->color_id="0";
         $taille->save();
         
      }     
