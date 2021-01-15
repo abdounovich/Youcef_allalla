@@ -66,6 +66,8 @@ public function __construct(string $product_id ) {
                             ->value('cancelCommande'.$this->commande->id),
                         Button::create('➕ إشتر منتج آخر ')
                             ->value('show_me_products'),
+                            Button::create(' 🛒  طلبياتي  ')
+                            ->value('my_commandes'),
                     ]));
             
                     // $bot->startConversation(new ByTailleConversation($number));
