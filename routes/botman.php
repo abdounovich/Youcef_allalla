@@ -32,6 +32,7 @@ $botman->hears('START', function ($bot) {
 // Access last name
 $lastname = $user->getLastname();
 $full_name=$firstname.'-'.$lastname;
+    
 // Access Username
 $username=Client::whereFacebook($full_name)->count();
 if ($username=="0") {
