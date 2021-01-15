@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "75f5d93ad220233a1f170e9b08e42c70",
+    "content-hash": "93456692085f0d28104b4e640e488317",
     "packages": [
         {
             "name": "botman/botman",
@@ -87,16 +87,16 @@
         },
         {
             "name": "botman/driver-facebook",
-            "version": "1.11.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/botman/driver-facebook.git",
-                "reference": "3345db228acf167296a214c5d9da4eb486425ef6"
+                "url": "git@github.com:botman/driver-facebook.git",
+                "reference": "3f08a5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/botman/driver-facebook/zipball/3345db228acf167296a214c5d9da4eb486425ef6",
-                "reference": "3345db228acf167296a214c5d9da4eb486425ef6",
+                "url": "https://api.github.com/repos/botman/driver-facebook/zipball/3f08a5c",
+                "reference": "3f08a5c",
                 "shasum": ""
             },
             "require": {
@@ -110,6 +110,7 @@
                 "mockery/mockery": "^1.0",
                 "phpunit/phpunit": "^5.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -145,10 +146,6 @@
                 "facebook",
                 "facebook messenger"
             ],
-            "support": {
-                "issues": "https://github.com/botman/driver-facebook/issues",
-                "source": "https://github.com/botman/driver-facebook/tree/1.11.0"
-            },
             "time": "2020-09-11T02:02:54+00:00"
         },
         {
@@ -8149,7 +8146,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "botman/driver-facebook": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
