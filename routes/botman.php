@@ -325,12 +325,12 @@ $elements[]=Element::create($product->nom)
 
     $botman->hears('cancelCommande([0-9]+)', function ( $bot,$number) {
         $commande=Commande::find($number);
-            $bot->reply($commande->product->id);  
+        if ($commande->product->product_type=="simple") {
 
-            /* $produit=Product::find($commande->product->id);
-            $product->quantity=$product->quantity+1; */
+            $produit=Product::find($commande->product->id);
+            $produit->quantity=$produit->quantity+1;
 
-        
+        }
         $commande->delete();
          $bot->reply("حسنا لقد تم إلغاء طلبك   ");  
         $bot->reply(Question::create('هل تريد إختيار منتج آخر ؟ ')->addButtons([
