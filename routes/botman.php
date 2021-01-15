@@ -325,7 +325,7 @@ $elements[]=Element::create($product->nom)
 
     $botman->hears('cancelCommande([0-9]+)', function ( $bot,$number) {
         $commande=Commande::find($number);
-            $bot->reply($commande->product->product_type);  
+            $bot->reply($commande->product->id);  
 
             /* $produit=Product::find($commande->product->id);
             $product->quantity=$product->quantity+1; */
