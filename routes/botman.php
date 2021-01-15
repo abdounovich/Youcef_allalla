@@ -25,7 +25,7 @@ use BotMan\Drivers\Facebook\Extensions\GenericTemplate;
 $botman = resolve('botman');
 
 $botman->hears('START', function ($bot) {
-/*     $user = $bot->getUser();
+    $user = $bot->getUser();
     $facebook_id = $user->getId();
     // Access last name
     $firstname = $user->getFirstname();
@@ -55,8 +55,10 @@ if ($username=="0") {
 
     $client->save();
 
-} */
-$bot->reply(' : مرحبا بك ☺ ');
+
+
+}
+$bot->reply($full_name . ' : مرحبا بك ☺ ');
 $bot->reply( 'تشرفنا زيارتك لصفحة D-Zed Store');
 $bot->reply(ButtonTemplate::create('   أنا روربوت المحادثة التلقائية  🤖  كيف يمكنني خدمتك ؟  ')
 ->addButton(ElementButton::create('  🛒 إبدأ التسوق الآن ')
