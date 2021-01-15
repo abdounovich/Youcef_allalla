@@ -251,7 +251,7 @@ $elements[]=Element::create($product->nom)
 
     $botman->hears('byColorShow([0-9]+)', function ( $bot,$number) {
     $bot->startConversation(new ByColorConversation($number));});
-    
+
     $botman->hears('showTaille([0-9]+)', function ( $bot,$number) {
     $product=Product::find($number);
     $taille_array=array();
@@ -303,10 +303,7 @@ $elements[]=Element::create($product->nom)
         $firstname = $user->getFirstname();
         $lastname = $user->getLastname();
         $full_name=$firstname.'-'.$lastname;
-
-$client=Client::whereFacebook($full_name)->first();
-
-
+        $client=Client::whereFacebook($full_name)->first();
         $commandes=Commande::where("client_id",$client->id)->whereType('1')->orderBy('created_at', 'ASC')->get();
         $elements=array();
         foreach ($commandes as $commande ) {
@@ -327,9 +324,13 @@ $client=Client::whereFacebook($full_name)->first();
 
 
     $botman->hears('cancelCommande([0-9]+)', function ( $bot,$number) {
+        $commande=Commande::find($number);
+        if ($commande->product->product_type=="simple") {
+            $produit=Product::find($commande->product->id);
+            $product->quantity=$product->quantity+1;
 
-$commande=Commande::find($number);
-$commande->delete();
+        }
+        $commande->delete();
          $bot->reply("حسنا لقد تم إلغاء طلبك   ");  
         $bot->reply(Question::create('هل تريد إختيار منتج آخر ؟ ')->addButtons([
             Button::create(' ✅ نعم ')->value('show_me_products'),
