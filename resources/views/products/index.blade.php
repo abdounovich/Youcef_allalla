@@ -48,7 +48,6 @@
 @include('products.addSimple')
 @include('products.addTaille')
 @include('products.addColor')
-@include('products.addColorTaille')
 @include('products.show')
 
 

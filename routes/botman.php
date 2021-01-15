@@ -331,6 +331,14 @@ $elements[]=Element::create($product->nom)
             $produit->quantity=$produit->quantity+1;
 
         }
+        elseif ($commande->product->product_type=="taille") {
+            $produit=Taille::find($commande->product->id);
+            $produit->quantity=$produit->quantity+1;
+        } 
+        elseif ($commande->product->product_type=="color") {
+            $produit=Color::find($commande->product->id);
+            $produit->quantity=$produit->quantity+1;
+        } 
         $commande->delete();
          $bot->reply("حسنا لقد تم إلغاء طلبك   ");  
         $bot->reply(Question::create('هل تريد إختيار منتج آخر ؟ ')->addButtons([
