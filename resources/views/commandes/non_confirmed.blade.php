@@ -9,7 +9,7 @@
 
     @if ($commande->commande_type=="color")
         
-    <div class="  card bg-secondary border-dark  mt-2 mb-1">
+    <div class="  card bg-white border-dark  mt-2 mb-1">
       
      <div class="card-body text-left ">
       <p class="card-text">
@@ -177,7 +177,7 @@ echo '   <p class="card-text h5  "> <del class="text-dark">'.$commande->product-
 
 @if ($commande->commande_type=="simple")
         
-<div class="  card bg-danger border-dark  mt-2 mb-1">
+<div class="  card bg-secondary border-dark  mt-2 mb-1">
   
  <div class="card-body text-left ">
   <p class="card-text">
