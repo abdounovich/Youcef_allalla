@@ -346,7 +346,7 @@ $elements[]=Element::create($product->nom)
         $bot->typesAndWaits(1);
 
         $bot->reply("✅ حسنا   ");
-        $bot->reply("😊 شكرا على زيارتك ونترقب رؤيتك في أقرب وقت    ");  
+        $bot->reply(" شكرا على زيارتك ونترقب رؤيتك في أقرب وقت  😊 ");  
   
     });
 
