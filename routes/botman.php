@@ -26,7 +26,7 @@ use BotMan\Drivers\Facebook\Extensions\GenericTemplate;
 
 $botman = resolve('botman');
 
-$botman->hears('بدأ الدردشة ', function ($bot) {
+$botman->hears('GET_STARTED', function ($bot) {
     $user = $bot->getUser();
     $facebook_id = $user->getId();
     // Access last name
