@@ -33,12 +33,11 @@ public function __construct(string $product_id ) {
         $lastname = $user->getLastname();
         $full_name=$firstname.'-'.$lastname;
         $this->client=Client::where('facebook',$full_name)->first();
-        $taille=Taille::find($this->product_id);
-        $taille->quantity=$taille->quantity-1;
-        $taille->save();
+        $this->taille=Taille::find($this->product_id);
+        $this->taille->quantity=$this->taille->quantity-1;
         $this->commande=new Commande();
         $this->commande->client_id=$this->client->id;
-        $this->commande->product_id=$taille->product_id;
+        $this->commande->product_id=$this->taille->product_id;
         $this->commande->type="1";
         $this->commande->commande_type="taille";
         $this->commande->taille=$this->product_id;
@@ -54,7 +53,8 @@ public function __construct(string $product_id ) {
                 $this->client->address=$this->address;
 
 
-                
+                $this->taille->save();
+
             $this->commande->save();
             $this->client->save();
             $this->bot->reply("    شكرا لك 😍 "); 

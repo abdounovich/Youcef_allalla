@@ -1,6 +1,8 @@
 <?php
+use App\Color;
 use App\Client;
 use App\Remise;
+use App\Taille;
 use App\Product;
 use App\Category;
 use App\Commande;
@@ -60,7 +62,7 @@ if ($username=="0") {
 }
 $bot->reply($full_name . ' : مرحبا بك ☺ ');
 $bot->reply( 'تشرفنا زيارتك لصفحة D-Zed Store');
-$bot->reply(ButtonTemplate::create('   أنا روربوت المحادثة التلقائية  🤖  كيف يمكنني خدمتك ؟  ')
+$bot->reply(ButtonTemplate::create('   أنا روبوت المحادثة التلقائية  🤖  كيف يمكنني خدمتك ؟  ')
 ->addButton(ElementButton::create('  🛒 إبدأ التسوق الآن ')
 	    ->type('postback')
 	    ->payload('show_me_products')
@@ -97,6 +99,31 @@ $botman->fallback(function($bot) {
 
 });
 
+
+
+$botman->hears('steps', function($bot) {
+
+    $bot->reply(' 🤭  لتسهيل عملية الشراء إختصرتها لك في أربع مراحل بسيطة للغاية  😁 : ');
+    $bot->typesAndWaits(1);
+    $bot->reply('1⃣ :  اختر المنتج  وخصائصه( لون / مقاس )واضغط على زر شراء الموجود أسفل كل صورة ');
+    $bot->typesAndWaits(1);
+    $bot->reply(' 2⃣ :  أدخل  رقم  هاتفك لكي نتصل بك من أجل تأكيد طلبيتك ');
+    $bot->typesAndWaits(1);
+    $bot->reply(' 3⃣ :   أدخل العنوان الذي نرسل إليه الطلبية   ');
+    $bot->typesAndWaits(1);
+    $bot->reply('بعد قيامك بهاته المراحل البسيطة تكون قد أتممت عملية الشراء ');
+    $bot->reply(' سيتصل بك بعدها أحد أعضاء الصفحة لتأكيد طلبيتك  ');
+    $bot->typesAndWaits(1);
+    $bot->reply(ButtonTemplate::create('يمكنك الآن بدأ التسوق بكل سهولة  😍 ')
+    ->addButton(ElementButton::create('🛍 إبدأ التسوق الآن')
+        ->type('postback')
+        ->payload('show_me_products')
+    )
+    
+    );
+    
+    
+    });
 
 
 
@@ -174,34 +201,36 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
                 $payload='showColor'.$product->id;
                 $text="";
                 foreach ($product->color as $color) {
-                 $text=$text.''.$color->couleur ." . ";}}
+                 $text=$text.' '.$color->couleur  ;}}
         elseif($product->product_type=="taille"){
                 $payload='showTaille'.$product->id;
                 $text="";
                 foreach ($product->taille as $taille) {
-                    $text=$text.''.$taille->taille ." . ";}}
-                }
+                    $text=$text.' '.$taille->taille ;}}
+                
                 $index=0;
                 $i=0;
         $remises=Remise::where("product_id",$product->id)->first();
         if (!$remises) {
            
            
-                foreach ($products as $product ) {
+            
         $index=$index+1;
 
         ${"element$i"}[]=Element::create($product->nom)
-        ->subtitle($text."\n"." السعر  ".$product->prix . " دج ")
+        ->subtitle($text."\n"." السعر   ".$product->prix . " دج ")
         ->image($product->photo)
         ->addButton(ElementButton::create(' 🛒 إشتر هذا المنتج')
             ->payload($payload)
-            ->type('postback'));
+          ->type('postback'))
+            ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
+            ->url($product->photo));
             if ($index==10) {
                 $i=$i+1;
                 $index=0;
             
     
-}}
+}
            
 
 }
@@ -215,8 +244,10 @@ $elements[]=Element::create($product->nom)
 ->image($product->photo)
 ->addButton(ElementButton::create(' 🛒 إشتر هذا المنتج')
     ->payload($payload)
-    ->type('postback'));}
-
+    ->type('postback')
+     ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
+    ->url($product->photo)));}
+    }
 
   
 
@@ -240,7 +271,9 @@ $elements[]=Element::create($product->nom)
             ->image($color->photo)
             ->addButton(ElementButton::create(' ✅ إشتر هذا المنتج')
                 ->payload("byColorShow".$color->id)
-                ->type('postback'));
+                ->type('postback'))
+                ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
+                ->url($color->photo));
     }
         $bot->reply(GenericTemplate::create()
         ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
@@ -290,7 +323,7 @@ $elements[]=Element::create($product->nom)
     });
 
     $botman->hears('NoCancelAgain', function ( $bot) {
-        $bot->reply("حسنا   ");  
+        $bot->reply("✅ حسنا   ");  
     });
 
 
@@ -329,15 +362,20 @@ $elements[]=Element::create($product->nom)
 
             $produit=Product::find($commande->product->id);
             $produit->quantity=$produit->quantity+1;
+            $produit->save();
 
         }
         elseif ($commande->product->product_type=="taille") {
-            $produit=Taille::find($commande->product->id);
+
+            $produit=Taille::find($commande->taille);
             $produit->quantity=$produit->quantity+1;
+            $produit->save();
         } 
         elseif ($commande->product->product_type=="color") {
-            $produit=Color::find($commande->product->id);
+            $produit=Color::find($commande->color);
             $produit->quantity=$produit->quantity+1;
+            $produit->save();
+
         } 
         $commande->delete();
          $bot->reply("حسنا لقد تم إلغاء طلبك   ");  

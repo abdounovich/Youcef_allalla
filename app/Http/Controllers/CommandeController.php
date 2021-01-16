@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Color;
+use App\Taille;
+use App\Product;
 use App\Commande;
 use Illuminate\Http\Request;
 
@@ -95,7 +98,29 @@ class CommandeController extends Controller
      */
     public function destroy( $id)
     {
-Commande::find($id)->delete();
+        
+        $commande=Commande::find($id);
+        if ($commande->product->product_type=="simple") {
+
+            $produit=Product::find($commande->product->id);
+            $produit->quantity=$produit->quantity+1;
+            $produit->save();
+
+        }
+        elseif ($commande->product->product_type=="taille") {
+
+            $produit=Taille::find($commande->taille);
+            $produit->quantity=$produit->quantity+1;
+            $produit->save();
+        } 
+        elseif ($commande->product->product_type=="color") {
+            $produit=Color::find($commande->color);
+            $produit->quantity=$produit->quantity+1;
+            $produit->save();
+
+        } 
+        $commande->delete();
+
 return back()->with("success","commande supprimé avec success"); 
 
     }
