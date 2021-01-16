@@ -402,7 +402,7 @@ $elements[]=Element::create($product->nom)
 
         } 
     
-        $commande->type=4;
+        $commande->type=5;
         $commande->save();
         $bot->typesAndWaits(1);
 

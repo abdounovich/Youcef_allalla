@@ -34,13 +34,13 @@ class CommandeController extends Controller
         ->with("inactive_commandes",$inactive_commandes)
         ->with("delivré_commandes",$delivré_commandes)
         ->with("annuler_par_admin",$annuler_par_admin)
-        ->with("annuler_par_client",$delivré_commandes)
+        ->with("annuler_par_client",$annuler_par_client)
 
         ->with("active_commandes_count",$active_commandes_count)
         ->with("inactive_commandes_count",$inactive_commandes_count)
         ->with("delivré_commandes_count",$delivré_commandes_count)
         ->with("annuler_par_admin_count",$annuler_par_admin_count)
-        ->with("annuler_par_client_count",$delivré_commandes_count);
+        ->with("annuler_par_client_count",$annuler_par_client_count);
     }
 
     /**
