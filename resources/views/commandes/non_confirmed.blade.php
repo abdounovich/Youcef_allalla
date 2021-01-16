@@ -9,7 +9,7 @@
 
     @if ($commande->commande_type=="color")
         
-    <div class="  card bg-danger border-dark  mt-2 mb-1">
+    <div class="  card bg-secondary border-dark  mt-2 mb-1">
       
      <div class="card-body text-left ">
       <p class="card-text">
