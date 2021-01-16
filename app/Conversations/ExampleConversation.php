@@ -32,13 +32,35 @@ public function __construct(string $product_id ) {
         $full_name=$firstname.'-'.$lastname;
         $this->client=Client::where('facebook',$full_name)->first();
         $product=Product::find($this->product_id);
-        $product->quantity=$product->quantity-1;
-        $product->save();
         $this->commande=new Commande();
         $this->commande->client_id=$this->client->id;
         $this->commande->product_id=$this->product_id;
         $this->commande->commande_type="simple";
         $this->commande->type="1";
+
+
+
+        $question1=Question::create(' الكمية   ')
+        ->addButtons([
+            Button::create('01')
+                ->value('q1'),
+            Button::create('02   ')
+                ->value('q2')]);
+        
+            
+
+       
+    
+    $this->ask($question1, function (Answer $answer) {
+        if ($answer->getValue() === 'q1') {
+            $product->quantity=$product->quantity-1;
+
+        }elseif ($answer->getValue() === 'q2') {
+            $product->quantity=$product->quantity-2;
+
+        }
+        
+    });
         if ($this->client->phone=="vide" AND $this->client->address=="vide" ) {
             $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer) {
                 $this->phone = $answer->getText();
@@ -47,6 +69,7 @@ public function __construct(string $product_id ) {
                 $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
                 $this->address = $answer->getText();
                 $this->client->address=$this->address;
+                $product->save();
                 $this->commande->save();
                 $this->client->save();
                 $this->bot->reply("    شكرا لك 😍 "); 
