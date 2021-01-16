@@ -51,17 +51,19 @@ public function __construct(string $product_id ) {
 
        
     
-    $this->ask($question1, function (Answer $answer) {
-        if ($answer->getValue() === 'q1') {
-            $product->quantity=$product->quantity-1;
-
-        }elseif ($answer->getValue() === 'q2') {
-            $product->quantity=$product->quantity-2;
-
-        }
-        
-    });
+  
+   
         if ($this->client->phone=="vide" AND $this->client->address=="vide" ) {
+
+            $this->ask($question1, function (Answer $answer) {
+                if ($answer->getValue() === 'q1') {
+                    $product->quantity=$product->quantity-1;
+        
+                }elseif ($answer->getValue() === 'q2') {
+                    $product->quantity=$product->quantity-2;
+        
+                }
+          
             $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer) {
                 $this->phone = $answer->getText();
                 $this->client->phone=$this->phone;
@@ -82,7 +84,7 @@ public function __construct(string $product_id ) {
                                 ->value('show_me_products'),
                                 Button::create(' 🛒  طلبياتي  ')
                                 ->value('my_commandes'),])) ;
-           });});
+           });});  });
           
         }else{ 
             $this->bot->reply(": رقم هاتفك هو ".$this->client->phone);
@@ -114,6 +116,15 @@ public function __construct(string $product_id ) {
                                 Button::create(' 🛒  طلبياتي  ')
                                 ->value('my_commandes'),])) ;
             } else {
+                
+            $this->ask($question1, function (Answer $answer) {
+                if ($answer->getValue() === 'q1') {
+                    $product->quantity=$product->quantity-1;
+        
+                }elseif ($answer->getValue() === 'q2') {
+                    $product->quantity=$product->quantity-2;
+        
+                }
                 $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer) {
                     $this->phone = $answer->getText();
                     $this->client->phone=$this->phone;
@@ -132,10 +143,10 @@ public function __construct(string $product_id ) {
                                     ->value('show_me_products'),
                                     Button::create(' 🛒  طلبياتي  ')
                                     ->value('my_commandes'),])) ;
-               }); });            }
+               }); });  });            }
 
           
-        });
+        }); 
             
                            
       
