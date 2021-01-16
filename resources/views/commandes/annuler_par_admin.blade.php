@@ -1,6 +1,6 @@
 <div class="row text-center text-white mb-3">
     <div class="col-lg-7 mx-auto">
-    <h1 class=" h4 mt-4 p-3 shadow bg-dark rounded" style="opacity: 0.9"> commandes non confirmées :  {{$annuler_par_admin_count}}</h1>
+    <h1 class=" h4 mt-4 p-3 shadow bg-dark rounded" style="opacity: 0.9"> commandes annuler par admin :  {{$annuler_par_admin_count}}</h1>
     </div>
 </div>
     @foreach ($annuler_par_admin as $commande)
