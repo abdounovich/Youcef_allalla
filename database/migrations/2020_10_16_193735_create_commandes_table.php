@@ -16,6 +16,7 @@ class CreateCommandesTable extends Migration
         Schema::create('commandes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text("type");
+            $table->text("quantity");
             $table->integer("color")->default("0");
             $table->integer("taille")->default("0");
             $table->text("commande_type");

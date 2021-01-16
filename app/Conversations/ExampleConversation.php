@@ -19,12 +19,16 @@ class ExampleConversation extends Conversation
 public function __construct(string $product_id ) {
 
     $this->product_id = $product_id;
+    $this->q="0";
+
 }
     /**
      * First question
      */
     public function askNumber()
     {
+
+       
         $user = $this->bot->getUser();
         $facebook_id = $user->getId();
         $firstname = $user->getFirstname();
@@ -32,7 +36,18 @@ public function __construct(string $product_id ) {
         $full_name=$firstname.'-'.$lastname;
         $this->client=Client::where('facebook',$full_name)->first();
         $this->product=Product::find($this->product_id);
-        $this->product->quantity= $this->product->quantity-1;
+
+if ( $this->product->quantity<$this->q) {
+   $this->bot->reply("لا توجد لدينا كل هاته الكمية يرجى إختيار كمية أقل ");
+   $this->askQuantity();
+
+}
+else {
+  
+
+        $this->product->quantity= $this->product->quantity-$this->q;
+
+
         $this->commande=new Commande();
         $this->commande->client_id=$this->client->id;
         $this->commande->product_id=$this->product_id;
@@ -81,6 +96,7 @@ public function __construct(string $product_id ) {
         
         $this->ask($question, function (Answer $answer) {
             if ($answer->getValue() === 'yes') {
+                $this->product->save();
                 $this->commande->save();
                 $this->client->save();
                 $this->bot->reply("    شكرا لك 😍 "); 
@@ -100,6 +116,7 @@ public function __construct(string $product_id ) {
                     
                     $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
                     $this->address = $answer->getText();
+                    $this->product->save();
                     $this->client->address=$this->address;$this->commande->save();
                     $this->client->save();
                     $this->bot->reply("    شكرا لك 😍 "); 
@@ -116,7 +133,7 @@ public function __construct(string $product_id ) {
 
           
         });
-            
+    }  
                            
       
        
@@ -125,28 +142,70 @@ public function __construct(string $product_id ) {
 
     public function askQuantity()
     {
-        $question=Question::create(' الكمية?   ')
+        $this->q="0";
+        $question1=Question::create(' الكمية?   ')
         ->addButtons([
             Button::create('01')
                 ->value('q1'),
-            Button::create('02   ')
-                ->value('q2')]);
+            Button::create('02')
+                ->value('q2'),
+            Button::create('03')
+                ->value('q3'),
+            Button::create('04')
+                ->value('q4'),
+            Button::create('05')
+                ->value('q5'),
+            Button::create('06')
+                ->value('q6'),
+                Button::create('أدخل الكمية')
+                ->value('manuel')
+                ]);
         
             
 
        
     
-    $this->ask($question, function (Answer $answer) {
-        if ($answer->getValue() === 'q1') {
-            $this->product->quantity=$this->product->quantity-1;
+    $this->ask($question1, function (Answer $answer) {
 
+        switch ($answer->getValue()) {
+            case "q1":
+            $this->q="1";
+            $this->askNumber();
+            break;
+            case "q2":
+            $this->q="2";
+            $this->askNumber();
+            break;
+            case "q3":
+                $this->q="3";
+                $this->askNumber();
+                break;
 
-        }
+                case "q4":
+                    $this->q="4";
+                    $this->askNumber();
+                    break;
+
+                    case "q5":
+                        $this->q="5";
+                        $this->askNumber();
+                        break;
+                        
+
+                        case "q6":
+                            $this->q="6";
+                            $this->askNumber();
+                            break;
+                            case "manuel":
+                                $this->ask(' من فضلك أدخل الكمية من خلال لوحة المفاتيح    ', function(Answer $answer) {
+                                    $this->q = $answer->getText();
+                                    $this->askNumber();
+                                });
+                               
+           
+          }
+     
     
-    elseif($answer->getValue() === 'q2'){
-        $this->product->quantity=$this->product->quantity-2;
-
-    } $this->askNumber();
 });
 
 

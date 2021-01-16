@@ -322,6 +322,7 @@ $elements[]=Element::create($product->nom)
     });
     $botman->hears('select([0-9]+)', function ( $bot,$number) {
         $bot->typesAndWaits(1);
+    
 
         $bot->startConversation(new ExampleConversation($number));
 

@@ -34,6 +34,7 @@
     @endphp
         <p class="h4  text-white text-wrap" >{{$commande->product->nom}}</p>
         <p class="text-white text-wrap small" >couleur : {{$color->couleur}}</p>
+        <p class="text-white text-wrap small" >quantité : {{$commande->quantity}}</p>
 
 
     <img class="img-thumbnail custom  p-0 " src="{{$color->photo}}" alt="">
@@ -118,6 +119,8 @@ $taille=App\Taille::find($commande->taille);
 @endphp
     <p class="h4  text-white text-wrap" >{{$commande->product->nom}} -- {{$taille->taille}}</p>
     <p class="h4  text-white text-wrap small" > {{$taille->taille}}</p>
+    <p class="text-white text-wrap small" >quantité : {{$commande->quantity}}</p>
+
 
 
     <img class="img-thumbnail custom  p-0 " src="{{$commande->product->photo}}" alt="">
@@ -198,6 +201,7 @@ aria-controls="collapseExample">
 
 
     <p class="h4  text-white text-wrap" >{{$commande->product->nom}}</p>
+    <p class="text-white text-wrap small" >quantité : {{$commande->quantity}}</p>
 
 
     <img class="img-thumbnail custom  p-0 " src="{{$commande->product->photo}}" alt="">
