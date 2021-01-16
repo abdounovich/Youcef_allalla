@@ -61,7 +61,9 @@ if ($username=="0") {
 
 }
 $bot->reply($full_name . ' : مرحبا بك ☺ ');
+$bot->typesAndWaits(1);
 $bot->reply( 'تشرفنا زيارتك لصفحة D-Zed Store');
+$bot->typesAndWaits(1);
 $bot->reply(ButtonTemplate::create('   أنا روبوت المحادثة التلقائية  🤖  كيف يمكنني خدمتك ؟  ')
 ->addButton(ElementButton::create('  🛒 إبدأ التسوق الآن ')
 	    ->type('postback')
@@ -81,6 +83,8 @@ $bot->reply(ButtonTemplate::create('   أنا روبوت المحادثة الت
 
 
 $botman->fallback(function($bot) {
+    $bot->typesAndWaits(1);
+
     $bot->reply(ButtonTemplate::create('عذرًا ، لم أستطع فهمك 😕 '."\n". 'هذه قائمة بالأوامر التي أفهمها:')
 
 
@@ -112,6 +116,7 @@ $botman->hears('steps', function($bot) {
     $bot->reply(' 3⃣ :   أدخل العنوان الذي نرسل إليه الطلبية   ');
     $bot->typesAndWaits(1);
     $bot->reply('بعد قيامك بهاته المراحل البسيطة تكون قد أتممت عملية الشراء ');
+    $bot->typesAndWaits(1);
     $bot->reply(' سيتصل بك بعدها أحد أعضاء الصفحة لتأكيد طلبيتك  ');
     $bot->typesAndWaits(1);
     $bot->reply(ButtonTemplate::create('يمكنك الآن بدأ التسوق بكل سهولة  😍 ')
@@ -152,6 +157,8 @@ $botman->hears('show_me_products', function ($bot) {
 );
 
     }
+    $bot->typesAndWaits(1);
+
         $bot->reply(GenericTemplate::create()
         ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
         ->addElements($elements)
@@ -172,6 +179,8 @@ foreach ($sous_cats as $sous_cat ) {
             ->payload('product_'.$sous_cat->id)
             ->type('postback'));
 }
+$bot->typesAndWaits(1);
+
     $bot->reply(GenericTemplate::create()
     ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
     ->addElements($elements)
@@ -250,8 +259,10 @@ $elements[]=Element::create($product->nom)
     }
 
   
+    $bot->typesAndWaits(1);
 
     for ($k=0;  $k<$pages ; $k++) { 
+        
           $bot->reply(GenericTemplate::create()
         ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
         ->addElements( ${"element$k"}));
@@ -275,6 +286,8 @@ $elements[]=Element::create($product->nom)
                 ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
                 ->url($color->photo));
     }
+    $bot->typesAndWaits(1);
+
         $bot->reply(GenericTemplate::create()
         ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
         ->addElements($elements)
@@ -290,6 +303,7 @@ $elements[]=Element::create($product->nom)
     $taille_array=array();
     foreach ($product->taille as $taille ) {
     $taille_array[]=Button::create($taille->taille)->value("slectedTaille".$taille->id);}
+    $bot->typesAndWaits(1);
 
         $bot->reply(Question::create(' 📏 إختر القياس المناسب ')->addButtons($taille_array));
 
@@ -299,6 +313,7 @@ $elements[]=Element::create($product->nom)
 
 
     $botman->hears('slectedTaille([0-9]+)', function ( $bot,$number) {
+        $bot->typesAndWaits(1);
 
         $bot->startConversation(new ByTailleConversation($number));
 
@@ -306,6 +321,7 @@ $elements[]=Element::create($product->nom)
         
     });
     $botman->hears('select([0-9]+)', function ( $bot,$number) {
+        $bot->typesAndWaits(1);
 
         $bot->startConversation(new ExampleConversation($number));
 
@@ -314,7 +330,11 @@ $elements[]=Element::create($product->nom)
     });
 
     $botman->hears('NoCancel', function ( $bot) {
+        $bot->typesAndWaits(1);
+
         $bot->reply("حسنا لقد تم إلغاء طلبك   ");  
+        $bot->typesAndWaits(1);
+
         $bot->reply(Question::create('هل تريد إختيار منتج آخر ؟ ')->addButtons([
             Button::create(' ✅ نعم ')->value('show_me_products'),
             Button::create('   ❌ لا شكرا  ')->value('NoCancelAgain')
@@ -323,6 +343,8 @@ $elements[]=Element::create($product->nom)
     });
 
     $botman->hears('NoCancelAgain', function ( $bot) {
+        $bot->typesAndWaits(1);
+
         $bot->reply("✅ حسنا   ");  
     });
 
@@ -347,6 +369,8 @@ $elements[]=Element::create($product->nom)
                     ->payload('cancelCommande'.$commande->id)
                     ->type('postback'));
         }
+        $bot->typesAndWaits(1);
+
             $bot->reply(GenericTemplate::create()
             ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
             ->addElements($elements)
@@ -378,7 +402,11 @@ $elements[]=Element::create($product->nom)
 
         } 
         $commande->delete();
+        $bot->typesAndWaits(1);
+
          $bot->reply("حسنا لقد تم إلغاء طلبك   ");  
+         $bot->typesAndWaits(1);
+
         $bot->reply(Question::create('هل تريد إختيار منتج آخر ؟ ')->addButtons([
             Button::create(' ✅ نعم ')->value('show_me_products'),
             Button::create('   ❌ لا شكرا  ')->value('NoCancelAgain')
