@@ -47,6 +47,18 @@ public function __construct(string $product_id ) {
                 $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
                 $this->address = $answer->getText();
                 $this->client->address=$this->address;
+                $this->commande->save();
+                $this->client->save();
+                $this->bot->reply("    شكرا لك 😍 "); 
+                $this->bot->reply("  لقد تم حفظ طلبك بنجاح  ✅"); 
+                $this->bot->reply(Question::create('    سنتصل بك قريبا لتأكيد طلبيتك  😊 ')
+                        ->addButtons([
+                            Button::create(' ❌ إلغاء الطلبية ')
+                                ->value('cancelCommande'.$this->commande->id),
+                            Button::create('➕ إشتر منتج آخر ')
+                                ->value('show_me_products'),
+                                Button::create(' 🛒  طلبياتي  ')
+                                ->value('my_commandes'),])) ;
            });});
           
         }else{ 
@@ -66,8 +78,18 @@ public function __construct(string $product_id ) {
         
         $this->ask($question, function (Answer $answer) {
             if ($answer->getValue() === 'yes') {
-                $this->bot->reply('Wuhu, great to have you on board! 🎉');
-                $this->bot->reply('I will message you when there is something new to tell ✌️');
+                $this->commande->save();
+                $this->client->save();
+                $this->bot->reply("    شكرا لك 😍 "); 
+                $this->bot->reply("  لقد تم حفظ طلبك بنجاح  ✅"); 
+                $this->bot->reply(Question::create('    سنتصل بك قريبا لتأكيد طلبيتك  😊 ')
+                        ->addButtons([
+                            Button::create(' ❌ إلغاء الطلبية ')
+                                ->value('cancelCommande'.$this->commande->id),
+                            Button::create('➕ إشتر منتج آخر ')
+                                ->value('show_me_products'),
+                                Button::create(' 🛒  طلبياتي  ')
+                                ->value('my_commandes'),])) ;
             } else {
                 $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer) {
                     $this->phone = $answer->getText();
@@ -75,24 +97,24 @@ public function __construct(string $product_id ) {
                     
                     $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
                     $this->address = $answer->getText();
-                    $this->client->address=$this->address;
-               });});            }
+                    $this->client->address=$this->address;$this->commande->save();
+                    $this->client->save();
+                    $this->bot->reply("    شكرا لك 😍 "); 
+                    $this->bot->reply("  لقد تم حفظ طلبك بنجاح  ✅"); 
+                    $this->bot->reply(Question::create('    سنتصل بك قريبا لتأكيد طلبيتك  😊 ')
+                            ->addButtons([
+                                Button::create(' ❌ إلغاء الطلبية ')
+                                    ->value('cancelCommande'.$this->commande->id),
+                                Button::create('➕ إشتر منتج آخر ')
+                                    ->value('show_me_products'),
+                                    Button::create(' 🛒  طلبياتي  ')
+                                    ->value('my_commandes'),])) ;
+               }); });            }
 
           
         });
             
-                            $this->commande->save();
-                            $this->client->save();
-                            $this->bot->reply("    شكرا لك 😍 "); 
-                            $this->bot->reply("  لقد تم حفظ طلبك بنجاح  ✅"); 
-                            $this->bot->reply(Question::create('    سنتصل بك قريبا لتأكيد طلبيتك  😊 ')
-                                    ->addButtons([
-                                        Button::create(' ❌ إلغاء الطلبية ')
-                                            ->value('cancelCommande'.$this->commande->id),
-                                        Button::create('➕ إشتر منتج آخر ')
-                                            ->value('show_me_products'),
-                                            Button::create(' 🛒  طلبياتي  ')
-                                            ->value('my_commandes'),])) ;
+                           
       
        
     }
