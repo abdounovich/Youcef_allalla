@@ -25,7 +25,7 @@
   
     <nav class="navbar navbar-expand-lg pt-3 pb-3 navbar-dark bg-info fixed-top ">
       <div class="container">
-        <a class="navbar-brand" href="#">LOGO HERE</a>
+        <a class="navbar-brand" href="#">D-Zed Store</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>

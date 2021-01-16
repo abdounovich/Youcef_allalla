@@ -41,8 +41,8 @@ if ($username=="0") {
     $client->facebook=$full_name;
     $client->slug=Str::random(10) ;
     $client->fb_id=$facebook_id;
-    $client->phone="aucun numero de telephone";
-    $client->address="aucune adresse";
+    $client->phone="vide";
+    $client->address="vide";
     $config=Config::get('botman.facebook.token');
 
     ini_set("allow_url_fopen", 1);

@@ -184,8 +184,8 @@ echo '   <p class="card-text h5  "> <del class="text-dark">'.$commande->product-
        <a class="btn btn-dark btn-circle float-right mt-2 mr-1" href="{{route('commandes.delete',$commande->id)}}">
     <span class=" text-danger  fa fa-trash border-dark "></span>
 </a>
-  <a class="btn btn-dark btn-circle float-right mt-2 mr-1" href="{{route('commandes.annuler',$commande->id)}}">
-    <span class=" text-info  fa fa-pen border-dark "></span>
+  <a class="btn btn-danger btn-circle float-right mt-2 mr-1" href="{{route('commandes.annuler',$commande->id)}}">
+    <span class=" text-white  fa fa-close border-dark "></span>
 </a>
   <a class="btn btn-success btn-circle float-right  mt-2 mr-1" href="{{route('commandes.confirmation',$commande->id) }}">
     <span class="text-white  fa fa-check border-dark   "></span>
