@@ -146,11 +146,11 @@ public function __construct(string $product_id ) {
     elseif($answer->getValue() === 'q2'){
         $this->product->quantity=$this->product->quantity-2;
 
-    }
+    } $this->askNumber();
 });
 
 
-        $this->askNumber();
+       
 
     }
     /**
