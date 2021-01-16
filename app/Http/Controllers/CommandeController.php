@@ -52,6 +52,14 @@ class CommandeController extends Controller
     {
         //
     }
+    public function annuler($id)
+    {
+
+$commande=Commande::find($id);
+$commande->type=4;
+$commande->save();
+
+    }
 
     /**
      * Store a newly created resource in storage.

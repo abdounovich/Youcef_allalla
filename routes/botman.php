@@ -401,7 +401,7 @@ $elements[]=Element::create($product->nom)
             $produit->save();
 
         } 
-        $commande->type='5';
+        $commande->type=5;
         $commande->save();
         $bot->typesAndWaits(1);
 
