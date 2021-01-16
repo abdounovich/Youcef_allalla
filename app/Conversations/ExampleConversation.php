@@ -53,6 +53,8 @@ else {
         $this->commande->product_id=$this->product_id;
         $this->commande->commande_type="simple";
         $this->commande->type="1";
+        $this->commande->quantity=$this->q;
+
 
 
         

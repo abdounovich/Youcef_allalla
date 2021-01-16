@@ -47,6 +47,7 @@ public function __construct(string $product_id ) {
         $this->commande->client_id=$this->client->id;
         $this->commande->product_id=$this->taille->product_id;
         $this->commande->type="1";
+        $this->commande->quantity=$this->q;
         $this->commande->commande_type="taille";
         $this->commande->taille=$this->product_id;
 
