@@ -401,7 +401,8 @@ $elements[]=Element::create($product->nom)
             $produit->save();
 
         } 
-        $commande->delete();
+        $commande->type='5';
+        $commande->save();
         $bot->typesAndWaits(1);
 
          $bot->reply("حسنا لقد تم إلغاء طلبك   ");  
