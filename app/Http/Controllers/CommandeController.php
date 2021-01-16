@@ -58,6 +58,7 @@ class CommandeController extends Controller
 $commande=Commande::find($id);
 $commande->type=4;
 $commande->save();
+return redirect()->route('commandes');
 
     }
 
