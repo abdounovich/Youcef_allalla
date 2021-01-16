@@ -43,46 +43,82 @@ public function __construct(string $product_id ) {
 
 
 
-      
-        $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎ ', function(Answer $answer) {
-            // Save result
-            $this->phone = $answer->getText();
-            $this->client->phone=$this->phone;
-            $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺  ', function(Answer $answer) {
-                // Save result
+        if ($this->client->phone=="vide" AND $this->client->address=="vide" ) {
+            $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer) {
+                $this->phone = $answer->getText();
+                $this->client->phone=$this->phone;
+                
+                $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
                 $this->address = $answer->getText();
                 $this->client->address=$this->address;
+                $this->commande->save();
+                $this->client->save();
+                $this->bot->reply("    شكرا لك 😍 "); 
+                $this->bot->reply("  لقد تم حفظ طلبك بنجاح  ✅"); 
+                $this->bot->reply(Question::create('    سنتصل بك قريبا لتأكيد طلبيتك  😊 ')
+                        ->addButtons([
+                            Button::create(' ❌ إلغاء الطلبية ')
+                                ->value('cancelCommande'.$this->commande->id),
+                            Button::create('➕ إشتر منتج آخر ')
+                                ->value('show_me_products'),
+                                Button::create(' 🛒  طلبياتي  ')
+                                ->value('my_commandes'),])) ;
+           });});
+          
+        }else{ 
+            $this->bot->reply(": رقم هاتفك هو ".$this->client->phone);
+            $this->bot->reply(": عنوانك هو  ".$this->client->address);
 
-
-                $this->color->save();
-
-            $this->commande->save();
-            $this->bot->reply("    شكرا لك 😍 "); 
-            $this->bot->reply("  لقد تم حفظ طلبك بنجاح  ✅"); 
+            $question=Question::create(' هل تود الإستمرار بهذا الرقم والعنوان ?   ')
+            ->addButtons([
+                Button::create('  نعم إستمر ')
+                    ->value('yes'),
+                Button::create('تغيير   ')
+                    ->value('change')]);
             
-            $this->bot->reply(Question::create('    سنتصل بك قريبا لتأكيد طلبيتك  😊 ')
-                    ->addButtons([
-                        Button::create(' ❌ إلغاء الطلبية ')
-                            ->value('cancelCommande'.$this->commande->id),
-                        Button::create('➕ إشتر منتج آخر ')
-                            ->value('show_me_products'),
-                            Button::create(' 🛒  طلبياتي  ')
-                            ->value('my_commandes'),
-                    ]));
-            
-                    // $bot->startConversation(new ByTailleConversation($number));
-            
-            
+           }      
 
+           
+        
+        $this->ask($question, function (Answer $answer) {
+            if ($answer->getValue() === 'yes') {
+                $this->commande->save();
+                $this->client->save();
+                $this->bot->reply("    شكرا لك 😍 "); 
+                $this->bot->reply("  لقد تم حفظ طلبك بنجاح  ✅"); 
+                $this->bot->reply(Question::create('    سنتصل بك قريبا لتأكيد طلبيتك  😊 ')
+                        ->addButtons([
+                            Button::create(' ❌ إلغاء الطلبية ')
+                                ->value('cancelCommande'.$this->commande->id),
+                            Button::create('➕ إشتر منتج آخر ')
+                                ->value('show_me_products'),
+                                Button::create(' 🛒  طلبياتي  ')
+                                ->value('my_commandes'),])) ;
+            } else {
+                $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer) {
+                    $this->phone = $answer->getText();
+                    $this->client->phone=$this->phone;
+                    
+                    $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
+                    $this->address = $answer->getText();
+                    $this->client->address=$this->address;$this->commande->save();
+                    $this->client->save();
+                    $this->bot->reply("    شكرا لك 😍 "); 
+                    $this->bot->reply("  لقد تم حفظ طلبك بنجاح  ✅"); 
+                    $this->bot->reply(Question::create('    سنتصل بك قريبا لتأكيد طلبيتك  😊 ')
+                            ->addButtons([
+                                Button::create(' ❌ إلغاء الطلبية ')
+                                    ->value('cancelCommande'.$this->commande->id),
+                                Button::create('➕ إشتر منتج آخر ')
+                                    ->value('show_me_products'),
+                                    Button::create(' 🛒  طلبياتي  ')
+                                    ->value('my_commandes'),])) ;
+               }); });            }
 
-
-            });
-            
-
-
+          
         });
-    
-
+            
+                           
       
        
     }
