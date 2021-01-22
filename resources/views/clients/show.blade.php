@@ -16,14 +16,6 @@ img {
 
 
 
-<div class="row text-center">
-<div>
-<textarea name="" id="" cols="30" rows="10" >@foreach ($pending_clients as $pending_client)
-    {{$pending_client->phone}} - @endforeach
-</textarea>
-
-</div>
-</div>
 
 
     <div class="row text-center text-white my-5">
@@ -32,6 +24,16 @@ img {
         </div>
     </div>
 <div class="container">
+
+    
+<div class="row text-center ">
+    <div>
+    <textarea style="" name="" id="" cols="50" rows="5" >@foreach ($pending_clients as $pending_client)
+        {{$pending_client->phone}} - @endforeach
+    </textarea>
+    
+    </div>
+    </div>
     <div class="row">
         @foreach ($clients as $client)
             <div class=" clearfix col col-12 bg-dark mt-2 mb-1 p-2 rounded " style="opacity: 0.9">
