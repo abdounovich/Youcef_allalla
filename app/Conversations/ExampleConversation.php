@@ -145,7 +145,7 @@ else {
     public function askQuantity()
     {
         $this->q="0";
-        $question1=Question::create('؟ ما الكمية التي تريد شرائها   ')
+        $question1=Question::create('   ما الكمية التي تريد شرائها ؟   ')
         ->addButtons([
             Button::create('1')
                 ->value('q1'),
@@ -158,9 +158,10 @@ else {
             Button::create('5')
                 ->value('q5'),
          
-                Button::create('أدخل الكمية')
+                Button::create('👇 أدخل الكمية')
                 ->value('manuel')
                 ]);
+        
         
             
 

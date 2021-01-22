@@ -135,23 +135,23 @@ public function __construct(string $product_id ) {
     public function askQuantity()
     {
         $this->q="0";
-        $question1=Question::create(' الكمية?   ')
+        $question1=Question::create('   ما الكمية التي تريد شرائها ؟   ')
         ->addButtons([
-            Button::create('01')
+            Button::create('1')
                 ->value('q1'),
-            Button::create('02')
+            Button::create('2')
                 ->value('q2'),
-            Button::create('03')
+            Button::create('3')
                 ->value('q3'),
-            Button::create('04')
+            Button::create('4')
                 ->value('q4'),
-            Button::create('05')
+            Button::create('5')
                 ->value('q5'),
-            Button::create('06')
-                ->value('q6'),
-                Button::create('أدخل الكمية')
+         
+                Button::create('👇 أدخل الكمية')
                 ->value('manuel')
                 ]);
+        
         
             
 
