@@ -12,6 +12,20 @@ img {
     width: 140px
 }
 </style>
+
+
+
+
+<div class="row text-center">
+<div>
+@foreach ($pending_clients as $pending_client)
+{{$pending_client->phone}}
+@endforeach
+
+</div>
+</div>
+
+
     <div class="row text-center text-white my-5">
         <div class="col-lg-7 mx-auto">
             <h1 class="h4 p-2 shadow bg-dark" style="opacity: 0.9">Liste des clients</h1>

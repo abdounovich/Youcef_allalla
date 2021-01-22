@@ -15,15 +15,14 @@ class ClientController extends Controller
     public function index()
     {
         
-        $clients=Client::where("phone","!=","vide")->get();
-        foreach ($clients as $client) {
-           echo $client->phone;
-           echo "<p></p>";
-        }
-        return;
+        $pending_clients=Client::where("phone","!=","vide")->get();
+      
         $clients=Client::paginate(10);
         return view("clients.index")
-        ->with("clients",$clients);
+        ->with("clients",$clients)
+        ->with("pending_clients",$pending_clients);
+
+        
 
     }
 
