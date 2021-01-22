@@ -62,7 +62,7 @@ if ($username=="0") {
 }
 $bot->reply($full_name . ' : مرحبا بك ☺ ');
 $bot->typesAndWaits(1);
-$bot->reply( 'تشرفنا زيارتك لصفحة D-Zed Store');
+$bot->reply( 'تشرفنا زيارتك لصفحتنا  D-Zed Store');
 $bot->typesAndWaits(1);
 $bot->reply(ButtonTemplate::create('   🤖  كيف يمكنني خدمتك ؟  ')
 ->addButton(ElementButton::create('  🛒 إبدأ التسوق الآن ')
