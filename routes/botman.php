@@ -193,7 +193,8 @@ $bot->typesAndWaits(1);
 
 $botman->hears('product_([0-9]+)', function($bot,$number) {
     $products=Product::where("SubCat_id",$number)->where('quantity','>','0')->get();
-   
+    
+    $total=$products->count();
     $nbr_aut_fb=10;
     $resultat=$total/$nbr_aut_fb;
     $reste = fmod($total, $nbr_aut_fb);
