@@ -196,7 +196,8 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
     $sub_cat=SubCategory::find($number);
     $total=$products->count();
     if ($total=="0") {
-       $bot->reply("سنقوم بإضافة المنتجات عن قريب ");
+       $bot->reply(" سنقوم بإضافة منتجات جديدة من ".$sub_cat->nom." عن قريب ");
+       return;
     }
     $nbr_aut_fb=10;
     $resultat=$total/$nbr_aut_fb;
