@@ -28,8 +28,7 @@ img {
     
 <div class="row text-center ">
     <div>
-    <textarea style="" name="" id="" cols="50" rows="5" >@foreach ($pending_clients as $pending_client)
-        {{$pending_client->phone}} - @endforeach
+    <textarea class="form-control" name="" id=""  rows="5" >@foreach ($pending_clients as $pending_client){{$pending_client->phone}}, @endforeach
     </textarea>
     
     </div>
