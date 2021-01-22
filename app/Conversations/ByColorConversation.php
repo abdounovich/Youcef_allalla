@@ -102,13 +102,15 @@ public function __construct(string $product_id ) {
                 $this->bot->reply("    شكرا لك 😍 "); 
                 $this->bot->reply("  لقد تم حفظ طلبك بنجاح  ✅"); 
                 $this->bot->reply(Question::create('    سنتصل بك قريبا لتأكيد طلبيتك  😊 ')
-                        ->addButtons([
-                            Button::create(' ❌ إلغاء الطلبية ')
-                                ->value('cancelCommande'.$this->commande->id),
-                            Button::create('➕ إشتر منتج آخر ')
-                                ->value('show_me_products'),
-                                Button::create(' 🛒  طلبياتي  ')
-                                ->value('my_commandes'),])) ;
+                ->addButtons([
+                    Button::create(' ❌ إلغاء الطلبية ')
+                        ->value('cancelCommande'.$this->commande->id),
+                        Button::create(' 🛒  طلبياتي  ')
+                        ->value('my_commandes'),
+                    Button::create('➕ إشتر منتج آخر ')
+                        ->value('show_me_products')
+                  
+                        ,])) ;
             } else {
                 $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer) {
                     $this->phone = $answer->getText();

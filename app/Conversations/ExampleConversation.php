@@ -112,10 +112,12 @@ else {
                         ->addButtons([
                             Button::create(' ❌ إلغاء الطلبية ')
                                 ->value('cancelCommande'.$this->commande->id),
-                            Button::create('➕ إشتر منتج آخر ')
-                                ->value('show_me_products'),
                                 Button::create(' 🛒  طلبياتي  ')
-                                ->value('my_commandes'),])) ;
+                                ->value('my_commandes'),
+                            Button::create('➕ إشتر منتج آخر ')
+                                ->value('show_me_products')
+                          
+                                ,])) ;
             } else {
                 $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer) {
                     $this->phone = $answer->getText();
