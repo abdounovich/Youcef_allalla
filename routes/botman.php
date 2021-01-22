@@ -193,10 +193,7 @@ $bot->typesAndWaits(1);
 
 $botman->hears('product_([0-9]+)', function($bot,$number) {
     $products=Product::where("SubCat_id",$number)->where('quantity','>','0')->get();
-    if (!$products) {
-       $bot->reply(" سنقوم بإضافة منتجات جديدة من ".$sub_cat->nom." عن قريب ");
-    }
-    else{
+   
     $nbr_aut_fb=10;
     $resultat=$total/$nbr_aut_fb;
     $reste = fmod($total, $nbr_aut_fb);
@@ -271,7 +268,7 @@ $elements[]=Element::create($product->nom)
           $bot->reply(GenericTemplate::create()
         ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
         ->addElements( ${"element$k"}));
-    }}
+    }
        });
 
 
