@@ -193,11 +193,8 @@ $bot->typesAndWaits(1);
 
 $botman->hears('product_([0-9]+)', function($bot,$number) {
     $products=Product::where("SubCat_id",$number)->where('quantity','>','0')->get();
-    $sub_cat=SubCategory::find($number);
-    $total=$products->count();
-    if ($total=="0") {
+    if (!$products) {
        $bot->reply(" سنقوم بإضافة منتجات جديدة من ".$sub_cat->nom." عن قريب ");
-       
     }
     else{
     $nbr_aut_fb=10;
