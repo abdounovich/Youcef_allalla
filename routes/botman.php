@@ -197,8 +197,9 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
     $total=$products->count();
     if ($total=="0") {
        $bot->reply(" سنقوم بإضافة منتجات جديدة من ".$sub_cat->nom." عن قريب ");
-       return;
+       
     }
+    else{
     $nbr_aut_fb=10;
     $resultat=$total/$nbr_aut_fb;
     $reste = fmod($total, $nbr_aut_fb);
@@ -273,7 +274,7 @@ $elements[]=Element::create($product->nom)
           $bot->reply(GenericTemplate::create()
         ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
         ->addElements( ${"element$k"}));
-    }
+    }}
        });
 
 
