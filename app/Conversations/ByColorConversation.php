@@ -76,17 +76,22 @@ public function __construct(string $product_id ) {
            });});
           
         }else{ 
-            $this->bot->reply(": رقم هاتفك هو ☎ ".$this->client->phone);
-            $this->bot->reply(": عنوانك هو  🏠 ".$this->client->address);
+            $this->bot->reply(" رقم هاتفك هو : ☎ ".$this->client->phone);
+            $this->bot->reply(" عنوانك هو :  🏠 ".$this->client->address);
 
             $question=Question::create(' هل تود الإستمرار بهذا الرقم والعنوان ؟   ')
             ->addButtons([
-                Button::create('  ✅ نعم إستمر ')
-                    ->value('yes'),
                 Button::create(' ✍️ تغيير   ')
-                    ->value('change')]);
+                ->value('change'),
+                Button::create('  ✅ نعم إستمر ')
+                    ->value('yes')
+               
+                    
+                    
+                    
+                    ]);
             
-           }      
+           }    
 
            
         
