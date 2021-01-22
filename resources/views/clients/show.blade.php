@@ -18,9 +18,9 @@ img {
 
 <div class="row text-center">
 <div>
-@foreach ($pending_clients as $pending_client)
-{{$pending_client->phone}}
-@endforeach
+<textarea name="" id="" cols="30" rows="10" >@foreach ($pending_clients as $pending_client)
+    {{$pending_client->phone}} - @endforeach
+</textarea>
 
 </div>
 </div>
