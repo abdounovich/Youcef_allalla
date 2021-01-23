@@ -43,6 +43,7 @@ if ($username=="0") {
     $client->fb_id=$facebook_id;
     $client->phone="vide";
     $client->address="vide";
+    $client->wilaya="vide";
     $config=Config::get('botman.facebook.token');
 
     ini_set("allow_url_fopen", 1);

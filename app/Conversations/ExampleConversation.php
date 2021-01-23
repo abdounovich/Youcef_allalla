@@ -58,15 +58,17 @@ else {
 
 
         
-        if ($this->client->phone=="vide" && $this->client->address=="vide" ) {
+        if ($this->client->phone=="vide" && $this->client->address=="vide" && $this->client->wilaya=="vide" ) {
            $this->askQuestion();
            return;
           
         }else{ 
             $this->bot->reply(" رقم هاتفك هو : ☎ ".$this->client->phone);
+            $this->bot->reply(" ولايتك هي :   ".$this->client->wilaya);
+
             $this->bot->reply(" عنوانك هو :  🏠 ".$this->client->address);
 
-            $question=Question::create(' هل تود الإستمرار بهذا الرقم والعنوان ؟   ')
+            $question=Question::create(' هل تود الإستمرار بهذا الرقم العنوان و الولاية  ؟   ')
             ->addButtons([
                 Button::create(' ✍️ تغيير   ')
                 ->value('change'),
@@ -100,14 +102,19 @@ else {
                           
                                 ,])) ;
             } else {
-                $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer) {
-                    $this->phone = $answer->getText();
+                $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer1) {
+                    $this->phone = $answer1->getText();
                     $this->client->phone=$this->phone;
                     
-                    $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
-                    $this->address = $answer->getText();
+                    $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer2) {
+                    $this->address = $answer2->getText();
+                    $this->ask(' من فضلك أدخل  رقم ولايتك   🗺    ', function(Answer $answer3) {
+                    $this->wilaya = $answer3->getText();
                     $this->product->save();
-                    $this->client->address=$this->address;$this->commande->save();
+                    $this->client->address=$this->address;
+                    $this->client->wilaya=$this->wilaya;
+
+                    $this->commande->save();
                     $this->client->save();
                     $this->bot->reply("    شكرا لك 😍 "); 
                     $this->bot->reply("  لقد تم حفظ طلبك بنجاح  ✅"); 
@@ -119,7 +126,7 @@ else {
                                     ->value('show_me_products'),
                                     Button::create(' 🛒  طلبياتي  ')
                                     ->value('my_commandes'),])) ;
-               }); });            }
+               }); });  });          }
 
           
         });
@@ -152,6 +159,15 @@ public function askAddress(){
         $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
         $this->address = $answer->getText();
         $this->client->address=$this->address;
+       
+   });
+
+}
+
+public function askWilaya(){
+    $this->ask(' من فضلك أدخل  رقم ولايتك  🗺    ', function(Answer $answer) {
+        $this->wilaya = $answer->getText();
+        $this->client->wialay=$this->wilaya;
         $this->product->save();
         $this->commande->save();
         $this->client->save();
@@ -165,9 +181,11 @@ public function askAddress(){
                         ->value('show_me_products'),
                         Button::create(' 🛒  طلبياتي  ')
                         ->value('my_commandes'),])) ;
-   });
-
+                        $this->askWialay();
+    });
 }
+
+
     public function askQuantity()
     {
         $this->q="0";

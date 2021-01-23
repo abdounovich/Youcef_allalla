@@ -21,6 +21,7 @@ class CreateClientsTable extends Migration
             $table->text('slug');
             $table->text("phone");
             $table->text("address");
+            $table->text("wilaya");
             $table->timestamps();
         });
     }
