@@ -59,7 +59,7 @@ else {
 
         
         if ($this->client->phone=="vide" AND $this->client->address=="vide" ) {
-           $this->askQuestion();
+           $this->askFirstname();
           
         }else{ 
             $this->bot->reply(" رقم هاتفك هو : ☎ ".$this->client->phone);
@@ -130,9 +130,46 @@ else {
 
 public function askQuestion(){
 
+    
+    
+    $this->askPhone();
+
+}
+
+
+public function askPhone(){
     $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer1) {
         $this->phone = $answer1->getText();
         $this->client->phone=$this->phone;
+        $this->askAddress();
+    });
+}
+
+
+
+public function askFirstname()
+    {
+        $this->ask('Hello! What is your firstname?', function(Answer $answer) {
+            // Save result
+            $this->firstname = $answer->getText();
+
+            $this->say('Nice to meet you '.$this->firstname);
+            $this->askEmail();
+        });
+    }
+
+    public function askEmail()
+    {
+        $this->ask('One more thing - what is your email?', function(Answer $answer) {
+            // Save result
+            $this->email = $answer->getText();
+
+            $this->say('Great - that is all we need, '.$this->firstname);
+        });
+    }
+
+public function askAddress(){
+
         $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
         $this->address = $answer->getText();
         $this->client->address=$this->address;
@@ -149,7 +186,7 @@ public function askQuestion(){
                         ->value('show_me_products'),
                         Button::create(' 🛒  طلبياتي  ')
                         ->value('my_commandes'),])) ;
-   });});
+   });
 
 }
     public function askQuantity()
