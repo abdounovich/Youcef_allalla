@@ -59,10 +59,7 @@ else {
 
         
         if ($this->client->phone=="vide" AND $this->client->address=="vide" ) {
-           
-                $this->askQuestion();
-            return;
-        
+           $this->askQuestion();
           
         }else{ 
             $this->bot->reply(" رقم هاتفك هو : ☎ ".$this->client->phone);
@@ -83,6 +80,7 @@ else {
            }      
 
            
+        
         $this->ask($question, function (Answer $answer) {
             if ($answer->getValue() === 'yes') {
                 $this->product->save();
@@ -130,59 +128,30 @@ else {
        
     }
 
+public function askQuestion(){
 
+    $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer1) {
+        $this->phone = $answer1->getText();
+        $this->client->phone=$this->phone;
+        $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
+        $this->address = $answer->getText();
+        $this->client->address=$this->address;
+        $this->product->save();
+        $this->commande->save();
+        $this->client->save();
+        $this->bot->reply("    شكرا لك 😍 "); 
+        $this->bot->reply("  لقد تم حفظ طلبك بنجاح  ✅"); 
+        $this->bot->reply(Question::create('    سنتصل بك قريبا لتأكيد طلبيتك  😊 ')
+                ->addButtons([
+                    Button::create(' ❌ إلغاء الطلبية ')
+                        ->value('cancelCommande'.$this->commande->id),
+                    Button::create('➕ إشتر منتج آخر ')
+                        ->value('show_me_products'),
+                        Button::create(' 🛒  طلبياتي  ')
+                        ->value('my_commandes'),])) ;
+   });});
 
-    public function AskQuestion(){
-
-
-        $this->askFirstname();
-    }
-
-
-    public function askFirstname()
-    {
-        $this->ask('Hello! What is your firstname?', function(Answer $answer) {
-            // Save result
-            $this->firstname = $answer->getText();
-
-            $this->say('Nice to meet you '.$this->firstname);
-            $this->askEmail();
-        });
-    }
-
-    public function askEmail()
-    {
-        $this->ask('One more thing - what is your email?', function(Answer $answer) {
-            // Save result
-            $this->email = $answer->getText();
-
-            $this->say('Great - that is all we need, '.$this->firstname);
-        });
-    }
-
-
-
-
-
-    public function askAddress()
-    {
-                $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
-                $this->address = $answer->getText();
-                $this->client->address=$this->address;
-                $this->product->save();
-                $this->commande->save();
-                $this->client->save();
-                $this->bot->reply("    شكرا لك 😍 "); 
-                $this->bot->reply("  لقد تم حفظ طلبك بنجاح  ✅"); 
-                $this->bot->reply(Question::create('    سنتصل بك قريبا لتأكيد طلبيتك  😊 ')
-                        ->addButtons([
-                            Button::create(' ❌ إلغاء الطلبية ')
-                                ->value('cancelCommande'.$this->commande->id),
-                            Button::create('➕ إشتر منتج آخر ')
-                                ->value('show_me_products'),
-                                Button::create(' 🛒  طلبياتي  ')
-                                ->value('my_commandes'),])) ;
-    });}
+}
     public function askQuantity()
     {
         $this->q="0";
