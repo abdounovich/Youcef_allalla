@@ -60,6 +60,7 @@ else {
         
         if ($this->client->phone=="vide" && $this->client->address=="vide" ) {
            $this->askQuestion();
+           return;
           
         }else{ 
             $this->bot->reply(" رقم هاتفك هو : ☎ ".$this->client->phone);
