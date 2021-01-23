@@ -56,6 +56,7 @@ public function __construct(string $product_id ) {
         if ($this->client->phone=="vide" AND $this->client->address=="vide" ) {
 
             $this->askQuestion();
+            return;
           }else{ 
             $this->bot->reply(" رقم هاتفك هو : ☎ ".$this->client->phone);
             $this->bot->reply(" عنوانك هو :  🏠 ".$this->client->address);
@@ -123,7 +124,7 @@ public function __construct(string $product_id ) {
 public function askQuestion(){
 
 
-
+$this->askPhone();
 }
 
 
@@ -131,7 +132,9 @@ public function askPhone(){
 
     $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer) {
         $this->phone = $answer->getText();
-        $this->client->phone=$this->phone;});
+        $this->client->phone=$this->phone;
+    
+    $this->askAdress();});
 }
 public function askAddress(){
 
