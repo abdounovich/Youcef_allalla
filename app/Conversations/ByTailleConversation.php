@@ -53,28 +53,10 @@ public function __construct(string $product_id ) {
 
       
         if ($this->client->phone=="vide" AND $this->client->address=="vide" ) {
-            $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer) {
-                $this->phone = $answer->getText();
-                $this->client->phone=$this->phone;
-                
-                $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
-                $this->address = $answer->getText();
-                $this->client->address=$this->address;
-                $this->commande->save();
-                $this->client->save();
-                $this->bot->reply("    شكرا لك 😍 "); 
-                $this->bot->reply("  لقد تم حفظ طلبك بنجاح  ✅"); 
-                $this->bot->reply(Question::create('    سنتصل بك قريبا لتأكيد طلبيتك  😊 ')
-                ->addButtons([
-                    Button::create(' ❌ إلغاء الطلبية ')
-                        ->value('cancelCommande'.$this->commande->id),
-                        Button::create(' 🛒  طلبياتي  ')
-                        ->value('my_commandes'),
-                    Button::create('➕ إشتر منتج آخر ')
-                        ->value('show_me_products')
-                  
-                        ,])) ;
-           });});
+
+            $this->askQuestion();
+            return;           
+           
           
         }else{ 
             $this->bot->reply(" رقم هاتفك هو : ☎ ".$this->client->phone);
@@ -139,6 +121,44 @@ public function __construct(string $product_id ) {
        
     }
 
+
+
+    public function askQuestion(){
+
+$this->askPhone();
+        
+    }
+
+    public function askPhone(){
+        $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer) {
+            $this->phone = $answer->getText();
+            $this->client->phone=$this->phone;
+            
+           });
+    }
+    public function askAddress(){
+
+
+
+        $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
+            $this->address = $answer->getText();
+            $this->client->address=$this->address;
+            $this->commande->save();
+            $this->client->save();
+            $this->bot->reply("    شكرا لك 😍 "); 
+            $this->bot->reply("  لقد تم حفظ طلبك بنجاح  ✅"); 
+            $this->bot->reply(Question::create('    سنتصل بك قريبا لتأكيد طلبيتك  😊 ')
+            ->addButtons([
+                Button::create(' ❌ إلغاء الطلبية ')
+                    ->value('cancelCommande'.$this->commande->id),
+                    Button::create(' 🛒  طلبياتي  ')
+                    ->value('my_commandes'),
+                Button::create('➕ إشتر منتج آخر ')
+                    ->value('show_me_products')
+              
+                    ,])) ;
+       });
+    }
     public function askQuantity()
     {
         $this->q="0";
