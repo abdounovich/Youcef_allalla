@@ -134,7 +134,7 @@ public function askPhone(){
         $this->phone = $answer->getText();
         $this->client->phone=$this->phone;
     
-    $this->askAdress();});
+    $this->askAddress();});
 }
 public function askAddress(){
 
