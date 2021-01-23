@@ -149,7 +149,7 @@ public function askPhone(){
     $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer1) {
         $this->phone = $answer1->getText();
         $this->client->phone=$this->phone;
-        $this->askAddress();
+        $this->askWilaya();
     });
 }
 
@@ -159,15 +159,6 @@ public function askAddress(){
         $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
         $this->address = $answer->getText();
         $this->client->address=$this->address;
-      $this->askWilaya(); 
-   });
-
-}
-
-public function askWilaya(){
-    $this->ask(' من فضلك أدخل  رقم ولايتك  🗺    ', function(Answer $answer) {
-        $this->wilaya = $answer->getText();
-        $this->client->wialay=$this->wilaya;
         $this->product->save();
         $this->commande->save();
         $this->client->save();
@@ -182,6 +173,16 @@ public function askWilaya(){
                         Button::create(' 🛒  طلبياتي  ')
                         ->value('my_commandes'),])) ;
                         $this->askWialay();
+   });
+
+}
+
+public function askWilaya(){
+    $this->ask(' من فضلك أدخل  رقم ولايتك     ', function(Answer $answer) {
+        $this->wilaya = $answer->getText();
+        $this->client->wialay=$this->wilaya;
+        $this->askAddress();
+
     });
 }
 
