@@ -62,10 +62,10 @@ else {
             $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer) {
                 $this->phone = $answer->getText();
                 $this->client->phone=$this->phone;
-                
                 $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
                 $this->address = $answer->getText();
                 $this->client->address=$this->address;
+                });});
                 $this->product->save();
                 $this->commande->save();
                 $this->client->save();
@@ -79,7 +79,7 @@ else {
                                 ->value('show_me_products'),
                                 Button::create(' 🛒  طلبياتي  ')
                                 ->value('my_commandes'),])) ;
-           });});
+           ;
           
         }else{ 
             $this->bot->reply(" رقم هاتفك هو : ☎ ".$this->client->phone);
