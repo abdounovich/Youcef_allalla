@@ -84,7 +84,6 @@ else {
         }else{ 
             $this->bot->reply(" رقم هاتفك هو : ☎ ".$this->client->phone);
             $this->bot->reply(" عنوانك هو :  🏠 ".$this->client->address);
-
             $question=Question::create(' هل تود الإستمرار بهذا الرقم والعنوان ؟   ')
             ->addButtons([
                 Button::create(' ✍️ تغيير   ')
