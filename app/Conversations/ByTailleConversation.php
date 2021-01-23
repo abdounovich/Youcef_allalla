@@ -133,7 +133,7 @@ $this->askPhone();
         $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer) {
             $this->phone = $answer->getText();
             $this->client->phone=$this->phone;
-            $this->askAdress();
+            $this->askAddress();
             
            });
     }
