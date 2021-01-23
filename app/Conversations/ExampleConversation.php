@@ -59,12 +59,8 @@ else {
 
         
         if ($this->client->phone=="vide" AND $this->client->address=="vide" ) {
-            $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer) {
-                $this->phone = $answer->getText();
-                $this->askAddress();
-
-               });
-
+         
+            $this->askPhone();
                 
             
            
@@ -212,9 +208,9 @@ else {
 
     public function askAddress()
     {
-        $this->client->phone=$this->phone;
         $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
         $this->address = $answer->getText();
+        });
         $this->client->address=$this->address;
         $this->product->save();
         $this->commande->save();
@@ -229,36 +225,30 @@ else {
                         ->value('show_me_products'),
                         Button::create(' 🛒  طلبياتي  ')
                         ->value('my_commandes'),])) ;
-        });
-        
+            
     }
     /**
      * Start the conversation
      */
-    public function askFirstname()
+    public function askPhone()
     {
-        $this->ask('Hello! What is your firstname?', function(Answer $answer) {
-            // Save result
-            $this->firstname = $answer->getText();
 
-            $this->say('Nice to meet you '.$this->firstname);
-            $this->askEmail();
+        $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer) {
+            $this->phone = $answer->getText();
+            $this->askAddress();
+
+        
+
+
+            // Save result
+
         });
     }
 
-    public function askEmail()
-    {
-        $this->ask('One more thing - what is your email?', function(Answer $answer) {
-            // Save result
-            $this->email = $answer->getText();
-
-            $this->say('Great - that is all we need, '.$this->firstname);
-        });
-    }
-
+    
     public function run()
     {
         // This will be called immediately
-        $this->askFirstname();
+        $this->askNumber();
     }
 }
