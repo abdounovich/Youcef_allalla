@@ -60,7 +60,7 @@ else {
         
         if ($this->client->phone=="vide" AND $this->client->address=="vide" ) {
             $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
-                $this->address = $answer->getText();
+                $this->address = $answer->getText();});
             $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer1) {
                 $this->phone = $answer1->getText();
                 $this->client->phone=$this->phone;
@@ -79,7 +79,7 @@ else {
                                 ->value('show_me_products'),
                                 Button::create(' 🛒  طلبياتي  ')
                                 ->value('my_commandes'),])) ;
-           });});
+           });
           
         }else{ 
             $this->bot->reply(" رقم هاتفك هو : ☎ ".$this->client->phone);
