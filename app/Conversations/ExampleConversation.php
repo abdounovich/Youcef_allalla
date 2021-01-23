@@ -159,7 +159,7 @@ public function askAddress(){
         $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
         $this->address = $answer->getText();
         $this->client->address=$this->address;
-       
+      $this->askWilaya(); 
    });
 
 }

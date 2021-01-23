@@ -52,6 +52,11 @@ img {
            
         </div>
 
+        <div class=" text-white mr-2">
+            <div class=" float-right col col-12  "><i class=" text-warning fa fa-shopping-cart  "></i><span class="mr-3 ml-2 ">commandes : {{$client->commandes->count()}}</span>
+                <i class=" text-info fa fa-phone  "></i><span class=" ml-1">  {{$client->wilaya}}</span></div>
+       
+    </div>
 
             </div>
         @endforeach
