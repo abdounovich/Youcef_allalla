@@ -266,6 +266,6 @@ public function askAddress(){
      */
     public function run()
     {
-        $this->askQuantity();
+        $this->askFirstname();
     }
 }
