@@ -60,8 +60,8 @@ else {
         
         if ($this->client->phone=="vide" AND $this->client->address=="vide" ) {
            
-                $this->askFirstname();
-            
+                $this->askQuestion();
+            return;
         
           
         }else{ 
@@ -83,7 +83,6 @@ else {
            }      
 
            
-        
         $this->ask($question, function (Answer $answer) {
             if ($answer->getValue() === 'yes') {
                 $this->product->save();
@@ -133,6 +132,11 @@ else {
 
 
 
+    public function AskQuestion(){
+
+
+        $this->askFirstname();
+    }
 
 
     public function askFirstname()
