@@ -179,7 +179,7 @@ public function askAddress(){
 public function askWilaya(){
     $this->ask(' من فضلك أدخل  رقم ولايتك     ', function(Answer $answer) {
         $this->wilaya = $answer->getText();
-        $this->client->wialay=$this->wilaya;
+        $this->client->wilaya=$this->wilaya;
         $this->askAddress();
 
     });
