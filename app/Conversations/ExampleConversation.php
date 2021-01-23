@@ -58,8 +58,8 @@ else {
 
 
         
-        if ($this->client->phone=="vide" AND $this->client->address=="vide" ) {
-           $this->askFirstname();
+        if ($this->client->phone=="vide" && $this->client->address=="vide" ) {
+           $this->askQuestion();
           
         }else{ 
             $this->bot->reply(" رقم هاتفك هو : ☎ ".$this->client->phone);
@@ -145,28 +145,6 @@ public function askPhone(){
     });
 }
 
-
-
-public function askFirstname()
-    {
-        $this->ask('Hello! What is your firstname?', function(Answer $answer) {
-            // Save result
-            $this->firstname = $answer->getText();
-
-            $this->say('Nice to meet you '.$this->firstname);
-            $this->askEmail();
-        });
-    }
-
-    public function askEmail()
-    {
-        $this->ask('One more thing - what is your email?', function(Answer $answer) {
-            // Save result
-            $this->email = $answer->getText();
-
-            $this->say('Great - that is all we need, '.$this->firstname);
-        });
-    }
 
 public function askAddress(){
 
@@ -266,6 +244,6 @@ public function askAddress(){
      */
     public function run()
     {
-        $this->askFirstname();
+        $this->askQuantity();
     }
 }
