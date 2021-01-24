@@ -106,10 +106,10 @@ else {
                     $this->phone = $answer1->getText();
                     $this->client->phone=$this->phone;
                     
-                    $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer2) {
-                    $this->address = $answer2->getText();
-                    $this->ask(' من فضلك أدخل  رقم ولايتك   🗺    ', function(Answer $answer3) {
-                    $this->wilaya = $answer3->getText();
+                    $this->ask(' من فضلك أدخل  رقم ولايتك   🗺    ', function(Answer $answer2) {
+                    $this->wilaya = $answer2->getText();
+                    $this->ask(' من فضلك أدخل  عنوانك الكامل    🗺    ', function(Answer $answer3) {
+                    $this->address = $answer3->getText();
                     $this->product->save();
                     $this->client->address=$this->address;
                     $this->client->wilaya=$this->wilaya;
