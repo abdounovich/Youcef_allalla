@@ -171,9 +171,10 @@ public function askConfirmation(){
     $this->bot->reply('  الكمية   : '.$this->q);
     $this->bot->reply($this->msgText ." : ".$this->msgValue);
 
-    $question=Question::create( 'السعر  💵 : '.$this->prix*$this->q ." دج ")->addButtons([
-        Button::create(' ✅ تأكيد الطلبية')->value('yes'),
+    $question=Question::create( 'المبلغ الإجمالي  💵 : '.$this->prix*$this->q ." دج ")->addButtons([
         Button::create(' ❎ إلغاء الطلب')->value('NoCancel'),
+        Button::create(' ✅ تأكيد الطلبية')->value('yes'),
+
     ]);
     $this->ask($question, function (Answer $answer) {
     
@@ -190,8 +191,8 @@ public function askConfirmation(){
             $this->bot->typesAndWaits(1);
     
             $this->bot->reply(Question::create('هل تريد إختيار منتج آخر ؟ ')->addButtons([
+                Button::create('   ❌ لا شكرا  ')->value('NoCancelAgain'),
                 Button::create(' ✅ نعم ')->value('show_me_products'),
-                Button::create('   ❌ لا شكرا  ')->value('NoCancelAgain')
                 ]));
         }
        
