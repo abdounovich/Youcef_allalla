@@ -287,7 +287,7 @@ public function askWilaya(){
                 
                 $obj = json_decode($jsonobj);
                 
-                $this->wilaya= $obj->w."".$this->wilaya;
+                $this->wilaya= $this->wilaya;
                 
                 
 
