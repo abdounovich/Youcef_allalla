@@ -5,6 +5,8 @@ namespace App\Conversations;
 use App\Client;
 use App\Product;
 use App\Commande;
+use App\Color;
+use App\Taille;
 use Illuminate\Foundation\Inspiring;
 use BotMan\BotMan\Messages\Incoming\Answer;
 use BotMan\BotMan\Messages\Attachments\Image;
@@ -14,16 +16,19 @@ use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
 use BotMan\Drivers\Facebook\Extensions\ElementButton;
 use BotMan\BotMan\Messages\Conversations\Conversation;
 use BotMan\Drivers\Facebook\Extensions\ButtonTemplate;
+use App\Conversations\botConversation;
 
-class ExampleConversation extends Conversation
+class botConversation extends Conversation
 {
 
     protected $product_id;
 
-public function __construct(string $product_id ) {
+public function __construct(string $product_id,string $typ ) {
 
     $this->product_id = $product_id;
     $this->q="0";
+    $this->typ = $typ;
+
 
 }
     /**
@@ -39,7 +44,7 @@ public function __construct(string $product_id ) {
         $lastname = $user->getLastname();
         $full_name=$firstname.'-'.$lastname;
         $this->client=Client::where('facebook',$full_name)->first();
-        $this->product=Product::find($this->product_id);
+
 
 if ( $this->product->quantity<$this->q) {
    $this->bot->reply("لا توجد لدينا كل هاته الكمية يرجى إختيار كمية أقل ");
@@ -55,13 +60,9 @@ else {
         $this->commande=new Commande();
         $this->commande->client_id=$this->client->id;
         $this->commande->product_id=$this->product_id;
-        $this->commande->commande_type="simple";
+        $this->commande->commande_type=$this->typ;
         $this->commande->type="1";
         $this->commande->quantity=$this->q;
-
-
-
-        
         if ($this->client->phone=="vide" && $this->client->address=="vide" && $this->client->wilaya=="vide" ) {
            $this->askQuestion();
            return;
@@ -69,9 +70,7 @@ else {
         }else{ 
             $this->bot->reply(" رقم هاتفك هو : ☎ ".$this->client->phone);
             $this->bot->reply(" ولايتك هي :   ".$this->client->wilaya);
-
             $this->bot->reply(" عنوانك هو :  🏠 ".$this->client->address);
-
             $question=Question::create(' هل تود الإستمرار بهذا الرقم العنوان و الولاية  ؟   ')
             ->addButtons([
                 Button::create(' ✍️ تغيير   ')
@@ -96,27 +95,13 @@ else {
                 $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer1) {
                     $this->phone = $answer1->getText();
                     $this->client->phone=$this->phone;
-                    
                     $this->ask(' من فضلك أدخل  رقم ولايتك   🗺    ', function(Answer $answer2) {
                     $this->wilaya = $answer2->getText();
                     $this->ask(' من فضلك أدخل  عنوانك الكامل    🗺    ', function(Answer $answer3) {
                     $this->address = $answer3->getText();
-                    $this->product->save();
                     $this->client->address=$this->address;
                     $this->client->wilaya=$this->wilaya;
-
-                    $this->commande->save();
-                    $this->client->save();
-                    $this->bot->reply("    شكرا لك 😍 "); 
-                    $this->bot->reply("  لقد تم حفظ طلبك بنجاح  ✅"); 
-                    $this->bot->reply(Question::create('    سنتصل بك قريبا لتأكيد طلبيتك  😊 ')
-                            ->addButtons([
-                                Button::create(' ❌ إلغاء الطلبية ')
-                                    ->value('cancelCommande'.$this->commande->id),
-                                Button::create('➕ إشتر منتج آخر ')
-                                    ->value('show_me_products'),
-                                    Button::create(' 🛒  طلبياتي  ')
-                                    ->value('my_commandes'),])) ;
+                    $this->askConfirmation();
                }); });  });          }
 
           
@@ -165,8 +150,9 @@ public function askConfirmation(){
     $this->bot->reply('   ☺ المرحلة الأخيرة  ');
     $this->bot->typesAndWaits(1);
     $this->bot->reply(' 🛒 تأكيد الطلبية');  
-    $this->sup=Product::where('id',$this->product_id)->first();
-    $this->attachment = new Image($this->sup->photo, [
+
+  
+    $this->attachment = new Image($this->photo, [
         'custom_payload' => true,
     ]);
     
@@ -183,10 +169,11 @@ public function askConfirmation(){
     $this->bot->reply('  العنوان   : '. $this->client->address);
     $this->bot->reply('  الولاية   : '.$this->client->wilaya);
     $this->bot->reply('  الكمية   : '.$this->q);
+    $this->bot->reply($this->msgText ." : ".$this->msgValue);
 
-    $question=Question::create( 'السعر  💵 : '.$this->sup->prix ." دج ")->addButtons([
+    $question=Question::create( 'السعر  💵 : '.$this->prix*$this->q ." دج ")->addButtons([
         Button::create(' ✅ تأكيد الطلبية')->value('yes'),
-        Button::create(' ❎ إلغاء الطلب')->value('no'),
+        Button::create(' ❎ إلغاء الطلب')->value('NoCancel'),
     ]);
     $this->ask($question, function (Answer $answer) {
     
@@ -196,21 +183,18 @@ public function askConfirmation(){
             $this->bot->typesAndWaits(1);
             $this->finalStep();    
         }
-        elseif($answer->getValue() === 'no'){  $this->bot->reply(ButtonTemplate::create('تم إلغاء طلبك بنجاح ')
-            ->addButton(ElementButton::create('🛍 الشراء من جديد')
-                ->type('postback')
-                ->payload('show_me_products')
-            )
-            ->addButton(ElementButton::create(' 🛒 طلبياتي ')
-            ->type('postback')
-            ->payload('my_commandes')
-        )
-            ->addButton(ElementButton::create(' 💬 استفسار ')
-                ->type('postback')
-                ->payload('show_commandes')
-            )
-        );
-            }
+        else {
+            $this->bot->typesAndWaits(1);
+
+            $this->bot->reply("حسنا لقد تم إلغاء طلبك   ");  
+            $this->bot->typesAndWaits(1);
+    
+            $this->bot->reply(Question::create('هل تريد إختيار منتج آخر ؟ ')->addButtons([
+                Button::create(' ✅ نعم ')->value('show_me_products'),
+                Button::create('   ❌ لا شكرا  ')->value('NoCancelAgain')
+                ]));
+        }
+       
     });
     
     
@@ -261,6 +245,35 @@ public function askWilaya(){
 
     public function askQuantity()
     {
+        
+        if ($this->typ=="simple") {
+            $this->product=Product::find($this->product_id);
+            $this->photo= $this->product->photo;
+            $this->quantity=$this->product->quantity;
+            $this->prix=$this->product->prix;
+            $this->msgText="";
+            $this->msgValue="";
+
+
+}elseif ($this->typ=='taille') {
+    $this->product=Taille::find($this->product_id);
+    $this->prix=$this->product->product->prix;
+    $this->photo=$this->product->product->photo;
+    $this->quantity=$this->product->quantity;
+    $this->msgText="  المقاس ";
+    $this->msgValue=$this->product->taille;
+
+}
+elseif ($this->typ=='color') {
+    $this->product=Color::find($this->product_id);
+    $this->prix=$this->product->product->prix;
+    $this->quantity=$this->product->quantity;
+    $this->photo=$this->product->photo;
+    $this->msgText=" اللون :";
+    $this->msgValue=$this->product->color;
+
+}
+        
         $this->q="0";
         $question1=Question::create('   ما الكمية التي تريد شرائها ؟   ')
         ->addButtons([

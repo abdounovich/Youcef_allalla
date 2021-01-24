@@ -8,6 +8,7 @@ use App\Category;
 use App\Commande;
 use App\SubCategory;
 use Illuminate\Support\Str;
+use App\Conversations\botConversation;
 use App\Conversations\ByColorConversation;
 use App\Conversations\ExampleConversation;
 use App\Http\Controllers\BotManController;
@@ -73,7 +74,7 @@ $bot->reply(ButtonTemplate::create('   🤖  كيف يمكنني خدمتك ؟  
     ->addButton(ElementButton::create(' 👨‍🏫 كيفية الشراء')
     ->type('postback')
     ->payload('steps')	)
-	->addButton(ElementButton::create(' 💬 تواصل مع المبرمج')
+	->addButton(ElementButton::create(' 💬 إستفسار ')
     ->url('https://www.messenger.com/t/merahi.adjalile')
 	)
 );
@@ -97,7 +98,7 @@ $botman->fallback(function($bot) {
 ->addButton(ElementButton::create(' 👨‍🏫 كيفية الشراء')
 ->type('postback')
 ->payload('steps')	)
-->addButton(ElementButton::create(' 💬 تواصل مع المبرمج')
+->addButton(ElementButton::create(' 💬 إستفسار')
 ->url('https://www.messenger.com/t/merahi.adjalile')
 )
 );
@@ -109,19 +110,19 @@ $botman->fallback(function($bot) {
 $botman->hears('steps', function($bot) {
 
     $bot->reply(' 🤭  لتسهيل عملية الشراء إختصرتها لك في 3 مراحل بسيطة  للغاية  😁 : ');
-    $bot->typesAndWaits(2);
+    $bot->typesAndWaits(1);
     $bot->reply('1⃣ :  اختر المنتج  وخصائصه ( لون / مقاس / كمية ) واضغط على زر شراء الموجود أسفل كل صورة ');
-    $bot->typesAndWaits(2);
+    $bot->typesAndWaits(1);
     $bot->reply(' 2⃣ :  أدخل  رقم  هاتفك لكي نتصل بك من أجل تأكيد طلبيتك ');
-    $bot->typesAndWaits(2);
+    $bot->typesAndWaits(1);
     $bot->reply(' 3⃣ :   أدخل العنوان الذي نرسل إليه الطلبية   ');
-    $bot->typesAndWaits(2);
+    $bot->typesAndWaits(1);
     $bot->reply('بعد قيامك بهاته المراحل البسيطة تكون قد أتممت عملية الشراء ');
-    $bot->typesAndWaits(2);
+    $bot->typesAndWaits(1);
     $bot->reply('  في حالة قيامك  بعدة طلبيات ستستفيد من تخفيضات خاصة حسب الكمية أو المبلغ الإجمالي للطلبية  ');
-    $bot->typesAndWaits(2);
+    $bot->typesAndWaits(1);
     $bot->reply(' سيتصل بك بعدها أحد أعضاء الصفحة لتأكيد طلبيتك والإجابة على إستفساراتك  ');
-    $bot->typesAndWaits(2);
+    $bot->typesAndWaits(1);
     $bot->reply(ButtonTemplate::create('يمكنك الآن بدأ التسوق بكل سهولة  😍 ')
     ->addButton(ElementButton::create('🛍 إبدأ التسوق الآن')
         ->type('postback')
@@ -300,7 +301,11 @@ $elements[]=Element::create($product->nom)
     });
 
     $botman->hears('byColorShow([0-9]+)', function ( $bot,$number) {
-    $bot->startConversation(new ByColorConversation($number));});
+        $messages=array("   أحسنت الإختيار 👌 "  ,    " 😍 إختيار رائع  "  , "👏 إختيار موفق");
+        $bot->reply(   $messages[array_rand($messages)]);
+
+        $bot->startConversation(new botConversation($number,'color'));
+});
 
     $botman->hears('showTaille([0-9]+)', function ( $bot,$number) {
     $product=Product::find($number);
@@ -308,7 +313,8 @@ $elements[]=Element::create($product->nom)
     foreach ($product->taille as $taille ) {
     $taille_array[]=Button::create($taille->taille)->value("slectedTaille".$taille->id);}
     $bot->typesAndWaits(1);
-
+    $messages=array("   أحسنت الإختيار 👌 "  ,    " 😍 إختيار رائع  "  , "👏 إختيار موفق");
+    $bot->reply(   $messages[array_rand($messages)]);
         $bot->reply(Question::create(' 📏 إختر القياس المناسب ')->addButtons($taille_array));
 
         // $bot->startConversation(new ByTailleConversation($number));
@@ -318,17 +324,19 @@ $elements[]=Element::create($product->nom)
 
     $botman->hears('slectedTaille([0-9]+)', function ( $bot,$number) {
         $bot->typesAndWaits(1);
+      $bot->reply('جيد جدا 👌');
 
-        $bot->startConversation(new ByTailleConversation($number));
+        $bot->startConversation(new botConversation($number,'taille'));
 
         
         
     });
     $botman->hears('select([0-9]+)', function ( $bot,$number) {
         $bot->typesAndWaits(1);
-    
+        $messages=array("   أحسنت الإختيار 👌 "  ,    " 😍 إختيار رائع  "  , "👏 إختيار موفق");
+        $bot->reply(   $messages[array_rand($messages)]);
 
-        $bot->startConversation(new ExampleConversation($number));
+        $bot->startConversation(new botConversation($number,'simple'));
 
         
         
@@ -361,7 +369,6 @@ $elements[]=Element::create($product->nom)
 
 
         $user = $bot->getUser();
-        $facebook_id = $user->getId();
         $firstname = $user->getFirstname();
         $lastname = $user->getLastname();
         $full_name=$firstname.'-'.$lastname;
