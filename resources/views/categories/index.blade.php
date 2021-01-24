@@ -18,10 +18,15 @@
 
 
 
+   
+
+
 
 
 @include('categories.add')
 @include('categories.show')
+
+
 
 
 
