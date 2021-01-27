@@ -18,12 +18,9 @@ use BotMan\Drivers\Facebook\Extensions\ButtonTemplate;
 class ExampleConversation extends Conversation
 {
 
-    protected $product_id;
 
-public function __construct(string $product_id ) {
+public function __construct( ) {
 
-    $this->product_id = $product_id;
-    $this->q="0";
 
 }
     /**
@@ -331,11 +328,88 @@ public function askWilaya(){
        
 
     }
+
+
+    public function askWilayaa(){
+        $this->ask(' من فضلك أدخل رقم ولايتك     ', function(Answer $answer) {
+            $this->wilaya = $answer->getText();
+    
+            if (is_numeric($this->wilaya)) {
+    
+    
+    $jsonobj = '{
+    "w01":"أدرار",
+    "w33":"إليزي",
+    "w04":"أم البواقي",
+    "w03":"الأغواط",
+    "w09":"البليدة",
+    "w10":"البويرة",
+    "w32":"البيض",
+    "w16":"الجزائر",
+    "w17":"الجلفة",
+    "w02":"الشلف",
+    "w36":"الطارف",
+    "w26":"المدية",
+    "w28":"المسيلة",
+    "w45":"النعامة",
+    "w39":"الوادي",
+    "w05":"باتنة",
+    "w06":"بجاية",
+    "w34":"برج بوعريريج",
+    "w07":"بسكرة",
+    "w08":"بشار",
+    "w35":"بومرداس",
+    "w12":"تبسة",
+    "w13":"تلمسان",
+    "w11":"تمنراست",
+    "w14":"تيارت",
+    "w42":"تيبازة",
+    "w15":"تيزي وزو",
+    "w38":"تيسمسيلت",
+    "w37":"تيندوف",
+    "w18":"جيجل",
+    "w40":"خنشلة",
+    "w19":"سطيف",
+    "w20":"سعيدة",
+    "w21":"سكيكدة",
+    "w41":"سوق أهراس",
+    "w22":"سيدي بلعباس",
+    "w23":"عنابة",
+    "w44":"عين الدفلى",
+    "w46":"عين تيموشنت",
+    "w47":"غرداية",
+    "w48":"غليزان",
+    "w24":"قالمة",
+    "w25":"قسنطينة",
+    "w27":"مستغانم",
+    "w29":"معسكر",
+    "w43":"ميلة",
+    "w30":"ورقلة",
+    "w31":"وهران"}';
+    
+    
+    
+    
+    $obj = json_decode($jsonobj);
+    $this->bot->reply(${"w".$this->wilaya}="w".$this->wilaya);
+ 
+    $obj->${"w".$this->wilaya};
+    
+                $this->client->wilaya=$this->wilaya;
+                $this->askAddress();
+            }
+            else{$this->bot->reply(" خطأ , من فضلك أدخل  رقم الولاية فقط ");
+                $this->askWilayaa();
+            }
+        
+    
+        });
+    }
     /**
      * Start the conversation
      */
     public function run()
     {
-        $this->askQuantity();
+        $this->askWilayaa();
     }
 }

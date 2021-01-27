@@ -430,7 +430,14 @@ $elements[]=Element::create($product->nom)
         
     });
 
+    $botman->hears('a', function ( $bot) {
 
+
+        $bot->startConversation(new ExampleConversation());
+
+        
+        
+    });
 
 
 
