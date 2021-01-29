@@ -401,30 +401,41 @@ $elements[]=Element::create($product->nom)
 
 
         else{
-        $elements=array();
-    
+
         
         foreach ($commandes as $commande ) {
 
-           
-            $elements[]=
-            Element::create($commande->product->nom)
-                ->image($commande->product->photo)
-                ->addButton(ElementButton::create('  حالة الطلبية ‼  ')
-                    ->payload('CommandeStatue'.$commande->id)
-                    ->type('postback')
-                    ->addButton(ElementButton::create(' ❌ إلغاء الطلبية  ')
-                    ->payload('cancelCommande'.$commande->id)
-                    ->type('postback'))
-                
-                );
-        }
-        $bot->typesAndWaits(1);
+
+
 
             $bot->reply(GenericTemplate::create()
             ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
-            ->addElements($elements)
-        );    
+            ->addElements([
+                Element::create($commande->product->nom)
+                    ->subtitle($commande->product->nom)
+                    ->image($commande->product->photo)
+                    
+                    
+                    ->addButton(ElementButton::create(' ℹ حالة الطلبية  ')
+                        ->payload('CommandeStatue'.$commande->id)
+                        ->type('postback'))
+                         
+                    ->addButton(ElementButton::create(' ❌ إلغاء الطلبية  ')
+                    ->payload('cancelCommande'.$commande->id)
+                    ->type('postback')
+            )
+            ])
+        );
+
+
+
+
+           
+         
+    
+        }
+
+           
     }
 
     });
@@ -435,13 +446,13 @@ $elements[]=Element::create($product->nom)
         $commande=Commande::find($number);
         switch ($commande->type) {
             case 1:
-        $bot->reply(" طلبية غير مؤكدة سنتصل بك قريبا 🟨 ");
+        $bot->reply("🟡 طلبية غير مؤكدة سنتصل بك قريبا ");
                 break;
             case 2:
-                $bot->reply(" طلبية  مؤكدة في إنتظار التوصيل  🟡 ");
+                $bot->reply(" 🟢 طلبية  مؤكدة في إنتظار التوصيل   ");
                 break;
             case 3:
-                $bot->reply(" طلبية قيد التوصيل   🚚  ");
+                $bot->reply(" 🚚 طلبية قيد التوصيل     ");
                 break;
         }
 

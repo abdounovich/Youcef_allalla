@@ -47,7 +47,7 @@ public function __construct(string $product_id,string $typ ) {
 
 
 if ( $this->product->quantity<$this->q) {
-   $this->bot->reply("لا توجد لدينا كل هاته الكمية يرجى إختيار كمية أقل ");
+   $this->bot->reply("لا توجد لدينا كل هاته الكمية يرجى إختيار كمية أقل 🤷‍♂️ ");
    $this->askQuantity();
 
 }
@@ -69,7 +69,7 @@ else {
           
         }else{ 
             $this->bot->reply(" رقم هاتفك هو : ☎ ".$this->client->phone);
-            $this->bot->reply(" ولايتك هي :   ".$this->client->wilaya);
+            $this->bot->reply(" ولايتك هي : 🇩🇿  ".$this->client->wilaya);
             $this->bot->reply(" عنوانك هو :  🏠 ".$this->client->address);
             $question=Question::create(' هل تود الإستمرار بهذا الرقم العنوان و الولاية  ؟   ')
             ->addButtons([
@@ -160,17 +160,13 @@ public function askConfirmation(){
     $this->message = OutgoingMessage::create('This is my text')
                 ->withAttachment( $this->attachment);
     
-    // Reply message object
     
     $this->bot->reply($this->message);
-    // $this->bot->reply(' المقاس : ' .$this->taille);
-    
+    $this->bot->reply($this->msgText ." : ".$this->msgValue);
+    $this->bot->reply('  الكمية   : '.$this->q);
     $this->bot->reply('  الهاتف ☎ : '. $this->client->phone);
     $this->bot->reply('  العنوان   : '. $this->client->address);
     $this->bot->reply('  الولاية   : '.$this->client->wilaya);
-    $this->bot->reply('  الكمية   : '.$this->q);
-    $this->bot->reply($this->msgText ." : ".$this->msgValue);
-
     $question=Question::create( 'المبلغ الإجمالي  💵 : '.$this->prix*$this->q ." دج ")->addButtons([
         Button::create(' ❎ إلغاء الطلب')->value('NoCancel'),
         Button::create(' ✅ تأكيد الطلبية')->value('yes'),
@@ -228,7 +224,7 @@ public function finalStep(){
 
 }
 public function askWilaya(){
-    $this->ask(' من فضلك أدخل رقم ولايتك     ', function(Answer $answer) {
+    $this->ask('🇩🇿  من فضلك أدخل رقم ولايتك     ', function(Answer $answer) {
         $this->wilaya = $answer->getText();
 
         if (is_numeric($this->wilaya)) {
@@ -334,7 +330,7 @@ elseif ($this->typ=='color') {
 }
         
         $this->q="0";
-        $question1=Question::create('   ما الكمية التي تريد شرائها ؟   ')
+        $question1=Question::create('   ما الكمية التي تريد شرائها ؟  🔢   ')
         ->addButtons([
             Button::create('1')
                 ->value('q1'),
@@ -344,8 +340,7 @@ elseif ($this->typ=='color') {
                 ->value('q3'),
             Button::create('4')
                 ->value('q4'),
-            Button::create('5')
-                ->value('q5'),
+         
          
                 Button::create('👇 أدخل الكمية')
                 ->value('manuel')
@@ -377,16 +372,7 @@ elseif ($this->typ=='color') {
                     $this->askNumber();
                     break;
 
-                    case "q5":
-                        $this->q="5";
-                        $this->askNumber();
-                        break;
-                        
-
-                        case "q6":
-                            $this->q="6";
-                            $this->askNumber();
-                            break;
+                   
                             case "manuel":
                                 $this->ask(' من فضلك أدخل الكمية من خلال لوحة المفاتيح    ', function(Answer $answer) {
                                     $this->q = $answer->getText();
