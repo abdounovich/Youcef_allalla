@@ -195,8 +195,13 @@ $bot->typesAndWaits(1);
 
 $botman->hears('product_([0-9]+)', function($bot,$number) {
     $products=Product::where("SubCat_id",$number)->where('quantity','>','0')->get();
-    
+    $sub_cat=SubCategory::find($number);
     $total=$products->count();
+
+
+    if ($total=="0") {
+        $bot->reply(" سنقوم قريبا  بإضافة منتجات في قسم  ".$sub_cat->nom ."ال".$sub_cat->category->nom);
+    }else{
     $nbr_aut_fb=10;
     $resultat=$total/$nbr_aut_fb;
     $reste = fmod($total, $nbr_aut_fb);
@@ -271,7 +276,7 @@ $elements[]=Element::create($product->nom)
           $bot->reply(GenericTemplate::create()
         ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
         ->addElements( ${"element$k"}));
-    }
+    }}
        });
 
 
