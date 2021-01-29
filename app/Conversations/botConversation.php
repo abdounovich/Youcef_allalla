@@ -91,21 +91,15 @@ else {
             if ($answer->getValue() === 'yess') {
 
                 $this->askConfirmation();
-               } else {
-                $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer1) {
-                    $this->phone = $answer1->getText();
-                    $this->client->phone=$this->phone;
-                    $this->ask(' من فضلك أدخل  رقم ولايتك   🗺    ', function(Answer $answer2) {
-                    $this->wilaya = $answer2->getText();
-                    $this->ask(' من فضلك أدخل  عنوانك الكامل    🗺    ', function(Answer $answer3) {
-                    $this->address = $answer3->getText();
-                    $this->client->address=$this->address;
-                    $this->client->wilaya=$this->wilaya;
-                    $this->askConfirmation();
-               }); });  });          }
+               } else {                $this->askQuestion();
+               }
+               
+
+
+               });          
 
           
-        });
+        
     }  
                            
       
@@ -342,7 +336,7 @@ elseif ($this->typ=='color') {
                 ->value('q4'),
          
          
-                Button::create('👇 أدخل الكمية')
+                Button::create(' أدخل الكمية 👇')
                 ->value('manuel')
                 ]);
         
