@@ -377,7 +377,7 @@ $elements[]=Element::create($product->nom)
         $lastname = $user->getLastname();
         $full_name=$firstname.'-'.$lastname;
         $client=Client::whereFacebook($full_name)->first();
-        $commandes=Commande::where("client_id",$client->id)->whereBetween('type',0,5)->orderBy('created_at', 'ASC')->get();
+        $commandes=Commande::where("client_id",$client->id)->whereBetween('type',[0,5])->orderBy('created_at', 'ASC')->get();
         $total=$commandes->count();
 
 
