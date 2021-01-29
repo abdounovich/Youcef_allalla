@@ -200,7 +200,7 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
 
 
     if ($total=="0") {
-        $bot->reply(" سنقوم قريبا  بإضافة منتجات في قسم  ".$sub_cat->nom ."ال".$sub_cat->categories->nom);
+        $bot->reply(" سنقوم قريبا  بإضافة منتجات في قسم  ".$sub_cat->nom ." ال".$sub_cat->categories->nom);
     }else{
     $nbr_aut_fb=10;
     $resultat=$total/$nbr_aut_fb;
