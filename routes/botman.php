@@ -371,14 +371,35 @@ $elements[]=Element::create($product->nom)
 
 
     $botman->hears('my_commandes', function ( $bot) {
-
-
+        $bot->typesAndWaits(1);
         $user = $bot->getUser();
         $firstname = $user->getFirstname();
         $lastname = $user->getLastname();
         $full_name=$firstname.'-'.$lastname;
         $client=Client::whereFacebook($full_name)->first();
         $commandes=Commande::where("client_id",$client->id)->whereType('1')->orderBy('created_at', 'ASC')->get();
+        $total=$commandes->count();
+
+
+
+
+        if ($total=="0") {
+           $bot->reply(ButtonTemplate::create('لا توجد لدينا أي طلبية مسجلة بإسمك ')
+->addButton(ElementButton::create('  🛒 أطلب منتجك الآن ')
+	    ->type('postback')
+	    ->payload('show_me_products')
+    )
+    ->addButton(ElementButton::create(' 👨‍🏫 كيفية الشراء')
+    ->type('postback')
+    ->payload('steps')	)
+	->addButton(ElementButton::create(' 💬 إستفسار ')
+    ->url('https://www.messenger.com/t/merahi.adjalile')
+	)
+);
+        }
+
+
+        else{
         $elements=array();
         foreach ($commandes as $commande ) {
             $elements[]=
@@ -394,7 +415,7 @@ $elements[]=Element::create($product->nom)
             ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
             ->addElements($elements)
         );    
-
+    }
 
     });
 
