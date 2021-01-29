@@ -384,8 +384,8 @@ $elements[]=Element::create($product->nom)
 
 
         if ($total=="0") {
-            $bot->reply("  لا توجد لدينا أي طلبية مسجلة بإسمك  😓  ");
-           $bot->reply(ButtonTemplate::create('   يمكنك تقديم أول طلبية لك الآن وبكل سهولة  ☺️ ')
+            $bot->reply("  لا توجد أي طلبية مسجلة بإسمك  😓  ");
+           $bot->reply(ButtonTemplate::create('   يمكنك الآن تقديم أول طلبية بكل سهولة  ☺️ ')
 ->addButton(ElementButton::create('  🛒 تصفح المنتجات   ')
 	    ->type('postback')
 	    ->payload('show_me_products')
