@@ -377,16 +377,16 @@ $elements[]=Element::create($product->nom)
         $lastname = $user->getLastname();
         $full_name=$firstname.'-'.$lastname;
         $client=Client::whereFacebook($full_name)->first();
-        $commandes=Commande::where("client_id",$client->id)->whereType('1')->orderBy('created_at', 'ASC')->get();
+        $commandes=Commande::where("client_id",$client->id)->where('type','>','1')->orderBy('created_at', 'ASC')->get();
         $total=$commandes->count();
 
 
 
 
         if ($total=="0") {
-            $bot->reply(" 😓 لا توجد لدينا أي طلبية مسجلة بإسمك ");
-           $bot->reply(ButtonTemplate::create('  ☺️ يمكنك تقديم أول طلبية لك الآن وبكل سهولة  ')
-->addButton(ElementButton::create('  🛒 تصفح  المنتجات   ')
+            $bot->reply("  لا توجد لدينا أي طلبية مسجلة بإسمك  😓  ");
+           $bot->reply(ButtonTemplate::create('   يمكنك تقديم أول طلبية لك الآن وبكل سهولة  ☺️ ')
+->addButton(ElementButton::create('  🛒 تصفح المنتجات   ')
 	    ->type('postback')
 	    ->payload('show_me_products')
     )
