@@ -377,7 +377,7 @@ $elements[]=Element::create($product->nom)
         $lastname = $user->getLastname();
         $full_name=$firstname.'-'.$lastname;
         $client=Client::whereFacebook($full_name)->first();
-        $commandes=Commande::where("client_id",$client->id)->whereBetween('type',[0,4])->orderBy('created_at', 'ASC')->get();
+        $commandes=Commande::where("client_id",$client->id)->whereBetween('type',[0,3])->orderBy('created_at', 'ASC')->get();
         $total=$commandes->count();
 
 
@@ -402,13 +402,22 @@ $elements[]=Element::create($product->nom)
 
         else{
         $elements=array();
+    
+        
         foreach ($commandes as $commande ) {
+
+           
             $elements[]=
             Element::create($commande->product->nom)
                 ->image($commande->product->photo)
-                ->addButton(ElementButton::create(' ❌ إلغاء الطلبية  ')
+                ->addButton(ElementButton::create('  حالة الطلبية ‼  ')
+                    ->payload('CommandeStatue'.$commande->id)
+                    ->type('postback')
+                    ->addButton(ElementButton::create(' ❌ إلغاء الطلبية  ')
                     ->payload('cancelCommande'.$commande->id)
-                    ->type('postback'));
+                    ->type('postback'))
+                
+                );
         }
         $bot->typesAndWaits(1);
 
@@ -417,6 +426,24 @@ $elements[]=Element::create($product->nom)
             ->addElements($elements)
         );    
     }
+
+    });
+
+
+    $botman->hears('CommandeStatue([0-9]+)', function ( $bot,$number) {
+
+        $commande=Commande::find($number);
+        switch ($commande->type) {
+            case 1:
+        $bot->reply(" طلبية غير مؤكدة سنتصل بك قريبا 🟨 ");
+                break;
+            case 2:
+                $bot->reply(" طلبية  مؤكدة في إنتظار التوصيل  🟡 ");
+                break;
+            case 3:
+                $bot->reply(" طلبية قيد التوصيل   🚚  ");
+                break;
+        }
 
     });
 
