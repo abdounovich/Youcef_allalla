@@ -26,7 +26,7 @@ img {
   border-radius: 6px;
   padding: 5px;
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   bottom: 150%;
   left: 50%;
   margin-left: -75px;
