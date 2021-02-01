@@ -5,12 +5,10 @@
     <span class=" text-white  fa fa-list  "></span>
 </a>
 
-<a class="btn btn-outline-light  btn-circle float-right mt-2 mr-1" href="#"  data-toggle="collapse" data-target="#product_collapse{{$commande->id}}" aria-expanded="false" aria-controls="collapseExample">
+<a class="btn btn-outline-light  btn-circle float-right mt-2 mr-1" href="{{route('commandes.delete',$commande->id)}}"  >
     <span class=" text-white  fa fa-trash  "></span>
 </a>
-<a class="btn btn-outline-danger btn-circle float-right mt-2 mr-1" href="{{route('commandes.delete',$commande->id)}}">
-    <span class=" text-white  fa fa-trash  "></span>
-</a>
+
 @if ($commande->type=="1" OR $commande->type=="2" OR $commande->type=="3" OR $commande->type=="6" )
 <a class="btn btn-outline-light btn-circle float-right mt-2 mr-1" href="{{route('commandes.annuler',$commande->id)}}"  >
     <span class=" text-white  fa fa-remove border-dark "></span>
