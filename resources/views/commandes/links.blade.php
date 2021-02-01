@@ -11,32 +11,32 @@
 
 @if ($commande->type=="1" OR $commande->type=="2" OR $commande->type=="3" OR $commande->type=="6" )
 <a class="btn btn-outline-light btn-circle float-right mt-2 mr-1" href="{{route('commandes.annuler',$commande->id)}}"  >
-    <span class=" text-white  fa fa-remove border-dark "></span>
+    <span class=" text-white  fa fa-remove  "></span>
 </a>
 @endif
 
 @if ($commande->type=="2")
 <a class="btn btn-outline-success btn-circle float-right  mt-2 mr-1" href="{{route('commandes.delivration',$commande->id) }}">
-    <span class="text-white  fa fa-truck border-dark   "></span>
+    <span class="text-white  fa fa-truck   "></span>
 </a> 
 
 <a class="btn btn-outline-warning btn-circle float-right  mt-2 mr-1" href="{{route('commandes.return',$commande->id) }}">
-    <span class="text-white  fa fa-refresh border-dark   "></span>
+    <span class="text-white  fa fa-refresh    "></span>
 </a>
 @endif
 
 @if ($commande->type=="1")
 <a class="btn btn-outline-info btn-circle float-right  mt-2 mr-1" href="{{route('commandes.confirmation',$commande->id) }}">
-    <span class="text-white  fa fa-arrow-down border-dark   "></span>
+    <span class="text-white  fa fa-arrow-down    "></span>
 </a> 
 @endif
 
 
 @if ($commande->type=="6")
 <a class="btn btn-outline-success btn-circle float-right  mt-2 mr-1" href="{{route('commandes.done',$commande->id) }}">
-    <span class="text-white  fa fa-check border-dark   "></span>
+    <span class="text-white  fa fa-check   "></span>
 </a> 
 <a class="btn btn-outline-warning btn-circle float-right  mt-2 mr-1" href="{{route('commandes.return',$commande->id) }}">
-    <span class="text-white  fa fa-refresh border-dark   "></span>
+    <span class="text-white  fa fa-refresh  "></span>
 </a> 
 @endif
