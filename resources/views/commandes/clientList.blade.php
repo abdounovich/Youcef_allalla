@@ -40,26 +40,26 @@
                         </i>
 
                         @if ($ByClientInactiveCommandes>0)
-                        <span class=" ml-2 badge badge-secondary btn-circle ">{{$ByClientInactiveCommandes}}</span> 
+                        <span class=" ml-2 p-1 badge badge-secondary btn-circle ">{{$ByClientInactiveCommandes}}</span> 
                         @endif
                         
                         @if ($ByClientActiveCommandes>0)
-                        <span class=" ml-2 badge badge-primary btn-circle ">{{$ByClientActiveCommandes}}</span></span> 
+                        <span class=" ml-2 p-1 badge badge-primary btn-circle ">{{$ByClientActiveCommandes}}</span></span> 
 
                         @endif
 
                         @if ($ByClientDelivredCommandes>0)
-                        <span class=" ml-2 badge badge-success btn-circle ">{{$ByClientDelivredCommandes}}</span>
+                        <span class=" ml-2 p-1 badge badge-success btn-circle ">{{$ByClientDelivredCommandes}}</span>
 
                         @endif
 
                         @if ($ByClientenrouteCommandes>0)
-                        <span class=" ml-2 badge badge-warning btn-circle ">{{$ByClientenrouteCommandes}}</span>  
+                        <span class=" ml-2 p-1 badge badge-warning btn-circle ">{{$ByClientenrouteCommandes}}</span>  
 
                         @endif
 
                         @if ($ByClientcanceledCommandes>0)
-                        <span class=" ml-2 badge badge-danger btn-circle ">{{$ByClientcanceledCommandes}}</span> 
+                        <span class=" ml-2 p-1 badge badge-danger btn-circle ">{{$ByClientcanceledCommandes}}</span> 
 
                         @endif
 
