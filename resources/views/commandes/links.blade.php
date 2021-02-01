@@ -6,7 +6,7 @@
     </a>
     <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
         <a class="btn btn-light  btn-circle float-right mt-2 mr-1" href="#"  data-toggle="collapse" data-target="#product_collapse{{$commande->id}}" aria-expanded="false" aria-controls="collapseExample">
-            <span class="     fa fa-list  "></span>
+            <span class="     fa fa-info  "></span>
         </a>
         
         <a class="btn btn-light  btn-circle float-right mt-2 mr-1" href="{{route('commandes.delete',$commande->id)}}"  >
