@@ -7,7 +7,7 @@
        <p class="h4  text-white text-wrap" >{{$commande->product->nom}}        <span class="text-white"> X {{$commande->quantity}}</span>
        </p>
    
-       <img class="img-thumbnail custom  p-0 " style="width: 100%;height:300px" src="{{$commande->product->photo}}" alt="">
+       <img class="img-thumbnail custom  p-0 " style="width: 100%;height:250px" src="{{$commande->product->photo}}" alt="">
        <p class="small mt-3 text-white">{{$commande->created_at}}</p>
 
    @php
