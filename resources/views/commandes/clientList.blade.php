@@ -49,17 +49,17 @@
                         @endif
 
                         @if ($ByClientDelivredCommandes>0)
-                        <span class=" ml-2 p-1 badge badge-success btn-circle ">{{$ByClientDelivredCommandes}}</span>
+                        <span class=" ml-2 p-1 badge btn-success btn-circle ">{{$ByClientDelivredCommandes}}</span>
 
                         @endif
 
                         @if ($ByClientenrouteCommandes>0)
-                        <span class=" ml-2 p-1 badge badge-warning btn-circle ">{{$ByClientenrouteCommandes}}</span>  
+                        <span class=" ml-2 p-1 badge btn-warning btn-circle ">{{$ByClientenrouteCommandes}}</span>  
 
                         @endif
 
                         @if ($ByClientcanceledCommandes>0)
-                        <span class=" ml-2 p-1 badge badge-danger btn-circle ">{{$ByClientcanceledCommandes}}</span> 
+                        <span class=" ml-2 p-1 badge btn-danger btn-circle ">{{$ByClientcanceledCommandes}}</span> 
 
                         @endif
 
