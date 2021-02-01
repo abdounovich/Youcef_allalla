@@ -16,27 +16,35 @@ class CommandeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {    
+        
+
         $inactive_commandes=Commande::where("type",1)->paginate(10);
         $active_commandes=Commande::where("type",2)->paginate(10);
         $delivré_commandes=Commande::where("type",3)->paginate(10);
+        $enroute_commandes=Commande::where("type",6)->paginate(10);
         $annuler_par_admin=Commande::where("type",4)->paginate(10);
         $annuler_par_client=Commande::where("type",5)->paginate(10);
-        
         $inactive_commandes_count=Commande::where("type",1)->count();
         $active_commandes_count=Commande::where("type",2)->count();
         $delivré_commandes_count=Commande::where("type",3)->count();
         $annuler_par_admin_count=Commande::where("type",4)->count();
         $annuler_par_client_count=Commande::where("type",5)->count();
+        $enroute_commandes_count=Commande::where("type",6)->count();
 
+
+    
         return view("commandes.index")
         ->with("active_commandes",$active_commandes)
         ->with("inactive_commandes",$inactive_commandes)
+        ->with("enroute_commandes",$enroute_commandes)
         ->with("delivré_commandes",$delivré_commandes)
         ->with("annuler_par_admin",$annuler_par_admin)
         ->with("annuler_par_client",$annuler_par_client)
-
+        
         ->with("active_commandes_count",$active_commandes_count)
+        ->with("enroute_commandes_count",$enroute_commandes_count)
+        ->with("inactive_commandes_count",$inactive_commandes_count)
         ->with("inactive_commandes_count",$inactive_commandes_count)
         ->with("delivré_commandes_count",$delivré_commandes_count)
         ->with("annuler_par_admin_count",$annuler_par_admin_count)
@@ -56,7 +64,20 @@ class CommandeController extends Controller
     {
 
 $commande=Commande::find($id);
+if ($commande->commande_type=="simple") {
+$produit=Product::find($commande->product->id);
+}
+elseif($commande->commande_type=="color") {
+    $produit=Color::find($commande->color);
+
+}
+elseif($commande->commande_type=="taille") {
+    $produit=taille::find($commande->taille);
+
+}
 $commande->type=4;
+$produit->quantity=$produit->quantity+$commande->quantity;
+$produit->save();
 $commande->save();
 return redirect()->route('commandes');
 
@@ -158,10 +179,21 @@ return back()->with("success","commande supprimé avec success");
     {
      
         $commande=Commande::find($id);
+        $commande->type="6";
+        $commande->save();
+        return redirect()->route('commandes');
+    }
+
+
+    public function done($id)
+    {
+     
+        $commande=Commande::find($id);
         $commande->type="3";
         $commande->save();
         return redirect()->route('commandes');
     }
+
 
     public function return($id)
     {

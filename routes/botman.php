@@ -257,15 +257,22 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
 
 else {
 $percentage=round(100-$remises->prix*100/$remises->produit->prix); 
-$text=$text."\n"." (-".$percentage ."%) ".$remises->prix." DA : السعر الجديد ";
-$elements[]=Element::create($product->nom)
-->subtitle($text)
-->image($product->photo)
-->addButton(ElementButton::create(' 🛒 إشتر هذا المنتج')
+$text=$text."\n"."(-".$percentage ."%)"."   السعر الجديد : ".$remises->prix."دج";
+
+    ${"element$i"}[]=Element::create($product->nom)
+    ->subtitle($text)
+    ->image($product->photo)
+    ->addButton(ElementButton::create(' 🛒 إشتر هذا المنتج')
     ->payload($payload)
-    ->type('postback')
-     ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
-    ->url($product->photo)));}
+  ->type('postback'))
+    ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
+    ->url($product->photo));
+        if ($index==10) {
+            $i=$i+1;
+            $index=0;
+
+
+}}
     }
 
   

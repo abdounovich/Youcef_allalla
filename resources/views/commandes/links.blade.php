@@ -1,0 +1,38 @@
+
+<a class="btn btn-light btn-circle float-right mt-2 mr-1" href="#"  data-toggle="collapse" data-target="#product_collapse{{$commande->id}}" aria-expanded="false" aria-controls="collapseExample">
+    <span class=" text-dark  fa fa-list border-dark "></span>
+</a>
+<a class="btn btn-danger btn-circle float-right mt-2 mr-1" href="{{route('commandes.delete',$commande->id)}}">
+    <span class=" text-white  fa fa-trash border-dark "></span>
+</a>
+@if ($commande->type=="1" OR $commande->type=="2" OR $commande->type=="3" OR $commande->type=="6" )
+<a class="btn btn-light btn-circle float-right mt-2 mr-1" href="{{route('commandes.annuler',$commande->id)}}"  >
+    <span class=" text-danger  fa fa-remove border-dark "></span>
+</a>
+@endif
+
+@if ($commande->type=="2")
+<a class="btn btn-success btn-circle float-right  mt-2 mr-1" href="{{route('commandes.delivration',$commande->id) }}">
+    <span class="text-white  fa fa-truck border-dark   "></span>
+</a> 
+
+<a class="btn btn-warning btn-circle float-right  mt-2 mr-1" href="{{route('commandes.return',$commande->id) }}">
+    <span class="text-white  fa fa-refresh border-dark   "></span>
+</a>
+@endif
+
+@if ($commande->type=="1")
+<a class="btn btn-info btn-circle float-right  mt-2 mr-1" href="{{route('commandes.confirmation',$commande->id) }}">
+    <span class="text-white  fa fa-arrow-down border-dark   "></span>
+</a> 
+@endif
+
+
+@if ($commande->type=="6")
+<a class="btn btn-success btn-circle float-right  mt-2 mr-1" href="{{route('commandes.done',$commande->id) }}">
+    <span class="text-white  fa fa-check border-dark   "></span>
+</a> 
+<a class="btn btn-warning btn-circle float-right  mt-2 mr-1" href="{{route('commandes.return',$commande->id) }}">
+    <span class="text-white  fa fa-refresh border-dark   "></span>
+</a> 
+@endif

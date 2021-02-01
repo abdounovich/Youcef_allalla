@@ -319,7 +319,7 @@ elseif ($this->typ=='color') {
     $this->quantity=$this->product->quantity;
     $this->photo=$this->product->photo;
     $this->msgText=" اللون :";
-    $this->msgValue=$this->product->color;
+    $this->msgValue=$this->product->couleur;
 
 }
         
