@@ -11,7 +11,7 @@
        <p class=" text-white text-wrap " > {{$taille->taille}} <span class=" text-white"> X {{$commande->quantity}}</span></p>
    
    
-       <img class="img-thumbnail custom  p-0 " src="{{$commande->product->photo}}" alt="">
+       <img class="img-thumbnail custom  p-0 mt-2 " style="width: 100%;height:250px" src="{{$commande->product->photo}}" alt="">
    
    
        <p class="small mt-3 text-white">{{$commande->created_at}}</p>

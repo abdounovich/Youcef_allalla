@@ -10,7 +10,7 @@
             <p class="h4  text-white text-wrap" >{{$commande->product->nom}} </p>
             <p class="text-white text-wrap " >couleur : {{$color->couleur}} <span class=" text-white">X {{$commande->quantity}}</span></p>
 
-            <img class="img-thumbnail custom  p-0 " src="{{$color->photo}}" alt="">
+            <img class="img-thumbnail custom  p-0 mt-2 " style="width: 100%;height:250px" src="{{$commande->product->photo}}" alt="">
 
 
 
