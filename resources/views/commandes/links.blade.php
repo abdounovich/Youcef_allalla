@@ -1,7 +1,7 @@
 
 
 <div class="dropdown">
-    <a class=" dropdown-toggle float-right " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a class=" dropdown-toggle float-right "  id="dropdownMenuButton"  aria-haspopup="true" aria-expanded="false">
      <i class="fa fa-ellipsis-v text-white"></i>
     </a>
     <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
