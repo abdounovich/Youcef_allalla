@@ -1,5 +1,5 @@
 
-<div class="bg-dark">...
+<div class="bg-dark p-2">
 
 <a class="btn btn-outline-light  btn-circle float-right mt-2 mr-1" href="#"  data-toggle="collapse" data-target="#product_collapse{{$commande->id}}" aria-expanded="false" aria-controls="collapseExample">
     <span class=" text-dark  fa fa-list border-dark "></span>
