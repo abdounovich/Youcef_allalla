@@ -4,6 +4,10 @@
 <a class="btn btn-outline-light  btn-circle float-right mt-2 mr-1" href="#"  data-toggle="collapse" data-target="#product_collapse{{$commande->id}}" aria-expanded="false" aria-controls="collapseExample">
     <span class=" text-white  fa fa-list  "></span>
 </a>
+
+<a class="btn btn-outline-light  btn-circle float-right mt-2 mr-1" href="#"  data-toggle="collapse" data-target="#product_collapse{{$commande->id}}" aria-expanded="false" aria-controls="collapseExample">
+    <span class=" text-white  fa fa-trash  "></span>
+</a>
 <a class="btn btn-outline-danger btn-circle float-right mt-2 mr-1" href="{{route('commandes.delete',$commande->id)}}">
     <span class=" text-white  fa fa-trash  "></span>
 </a>
