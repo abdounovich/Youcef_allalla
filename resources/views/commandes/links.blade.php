@@ -1,15 +1,15 @@
 
-<div class="bg-dark p-2">
+
 
 <a class="btn btn-outline-light  btn-circle float-right mt-2 mr-1" href="#"  data-toggle="collapse" data-target="#product_collapse{{$commande->id}}" aria-expanded="false" aria-controls="collapseExample">
-    <span class=" text-dark  fa fa-list border-dark "></span>
+    <span class=" text-white  fa fa-list border-dark "></span>
 </a>
 <a class="btn btn-outline-danger btn-circle float-right mt-2 mr-1" href="{{route('commandes.delete',$commande->id)}}">
     <span class=" text-white  fa fa-trash border-dark "></span>
 </a>
 @if ($commande->type=="1" OR $commande->type=="2" OR $commande->type=="3" OR $commande->type=="6" )
 <a class="btn btn-outline-light btn-circle float-right mt-2 mr-1" href="{{route('commandes.annuler',$commande->id)}}"  >
-    <span class=" text-danger  fa fa-remove border-dark "></span>
+    <span class=" text-white  fa fa-remove border-dark "></span>
 </a>
 @endif
 
@@ -38,4 +38,3 @@
     <span class="text-white  fa fa-refresh border-dark   "></span>
 </a> 
 @endif
-</div>
