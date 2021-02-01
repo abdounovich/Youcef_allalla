@@ -8,7 +8,7 @@
    
    @endphp
        <p class="h4  text-white text-wrap" >{{$commande->product->nom}} </p>
-       <p class=" text-white text-wrap " > {{$taille->taille}} <span class=" text-dark"> X {{$commande->quantity}}</span></p>
+       <p class=" text-white text-wrap " > {{$taille->taille}} <span class=" text-white"> X {{$commande->quantity}}</span></p>
    
    
        <img class="img-thumbnail custom  p-0 " src="{{$commande->product->photo}}" alt="">

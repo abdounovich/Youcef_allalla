@@ -4,7 +4,7 @@
         @include('commandes.links')
 
    
-       <p class="h4  text-white text-wrap" >{{$commande->product->nom}}        <span class="text-dark"> X {{$commande->quantity}}</span>
+       <p class="h4  text-white text-wrap" >{{$commande->product->nom}}        <span class="text-white"> X {{$commande->quantity}}</span>
        </p>
    
        <img class="img-thumbnail custom  p-0 " src="{{$commande->product->photo}}" alt="">
