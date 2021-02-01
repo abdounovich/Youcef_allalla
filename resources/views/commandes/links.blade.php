@@ -4,7 +4,7 @@
     <a class="  float-right " type="button" id="dropdownMenuButton" data-toggle="dropdown"  aria-expanded="false">
      <i style="font-size: 20px" class="fa fa-ellipsis-v text-white"></i>
     </a>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <div class="" aria-labelledby="dropdownMenuButton">
         <a class="btn btn-light  btn-circle float-right mt-2 mr-1" href="#"  data-toggle="collapse" data-target="#product_collapse{{$commande->id}}" aria-expanded="false" aria-controls="collapseExample">
             <span class="     fa fa-info  "></span>
         </a>
