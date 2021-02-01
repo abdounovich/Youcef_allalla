@@ -15,6 +15,7 @@ img {
 .tooltip {
   position: relative;
   display: inline-block;
+  z-index: -1;
 }
 
 .tooltip .tooltiptext {
@@ -26,6 +27,7 @@ img {
   border-radius: 6px;
   padding: 5px;
   position: absolute;
+  z-index: -1;
   bottom: 150%;
   left: 50%;
   margin-left: -75px;
