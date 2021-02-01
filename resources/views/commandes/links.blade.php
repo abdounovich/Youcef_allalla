@@ -1,10 +1,10 @@
 
 
 <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a class=" dropdown-toggle float-right " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
      <i class="fa fa-ellipsis-v text-white"></i>
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    </a>
+    <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
         <a class="btn btn-light  btn-circle float-right mt-2 mr-1" href="#"  data-toggle="collapse" data-target="#product_collapse{{$commande->id}}" aria-expanded="false" aria-controls="collapseExample">
             <span class="     fa fa-list  "></span>
         </a>
