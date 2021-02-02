@@ -165,7 +165,7 @@ public function askConfirmation(){
     $this->bot->reply('  الولاية   : '.$this->client->wilaya);
 
     $remise=Remise::where("product_id",$this->product_id)->first();
-  $this->reply($remise->prix);
+  
     $this->commande->total_price=$this->prix*$this->q;
     $question=Question::create( 'المبلغ الإجمالي  💵 : '.$this->commande->total_price." دج ")->addButtons([
         Button::create(' ❎ إلغاء الطلب')->value('NoCancel'),
