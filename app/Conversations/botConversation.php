@@ -198,7 +198,6 @@ public function finalStep(){
 
 
     $this->product->save();
-    $this->commande->total_price="0";
     $this->commande->save();
     $this->client->save();
     $this->bot->reply("    شكرا لك 😍 "); 
