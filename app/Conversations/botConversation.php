@@ -166,7 +166,7 @@ public function askConfirmation(){
 
     $remise=Remise::where("product_id",$this->product_id)->first();
     if ($remise) {
-        $this->prix=$remise->prix;
+        $this->bot->reply("jkjj");
     }
     $this->commande->total_price=$this->prix*$this->q;
     $question=Question::create( 'المبلغ الإجمالي  💵 : '.$this->commande->total_price." دج ")->addButtons([
