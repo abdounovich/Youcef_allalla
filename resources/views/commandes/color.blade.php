@@ -8,9 +8,9 @@
 
             @endphp
             <p class="h4  text-white text-wrap" >{{$commande->product->nom}} </p>
-            <p class="text-white text-wrap " >couleur : {{$color->couleur}} <span class=" text-white">X {{$commande->quantity}}</span></p>
+            <p class="text-white text-wrap " >couleur : {{$color->couleur}} <span class=" text-dark">X {{$commande->quantity}}</span></p>
 
-            <img class="img-thumbnail custom  p-0 mt-2 " style="width: 100%;height:250px" src="{{$commande->product->photo}}" alt="">
+            <img class="img-thumbnail custom  p-0 " src="{{$color->photo}}" alt="">
 
 
 
@@ -20,13 +20,22 @@
                             if (!$remises) {
                         echo"<p class='card-text  text-white  mt-3 h5'>Total : ".$commande->product->prix*$commande->quantity." da </p>";
                         }else {
-                        $percentage=round(100-$remises->prix*100/$remises->produit->prix);
+
+                            if ($commande->created_at>$remises->created_at) {
+                                $percentage=round(100-$remises->prix*100/$remises->produit->prix);
 
                         echo '   <p class="card-text mt-3 h5  "> <del class="text-dark">'.$commande->product->prix.' da  </del> 
                             <span class="text-white ml-3">'.$remises->prix.' da</span>                      
                             <span class="badge p-1 ml-3 badge-info"> - '.$percentage.' % </span>
                         </p>';
 
+
+                            }else {
+                                echo"<p class='card-text  text-white  mt-3 h5'>Total : ".$commande->product->prix*$commande->quantity." da </p>";
+
+                            }
+
+                       
                             }
 
                     @endphp

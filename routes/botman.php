@@ -293,6 +293,12 @@ $text=$text."\n"."(-".$percentage ."%)"."   السعر الجديد : ".$remises
 
 
         $product=Product::find($number);
+        $remise=Remise::where("product_id",$number)->first();
+        if ($remise) {
+            $product->prix=$remise->prix;
+        }
+       
+
         foreach ($product->color as $color ) {
             $elements[]=Element::create($color->couleur)
             ->subtitle(" السعر  ".$product->prix . " دج ")
