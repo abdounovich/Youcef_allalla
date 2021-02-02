@@ -164,7 +164,6 @@ public function askConfirmation(){
     $this->bot->reply('  العنوان   : '. $this->client->address);
     $this->bot->reply('  الولاية   : '.$this->client->wilaya);
 
-    $remise=Remise::where("product_id",$this->product_id)->first();
   
     $this->commande->total_price=$this->prix*$this->q;
     $question=Question::create( 'المبلغ الإجمالي  💵 : '.$this->commande->total_price." دج ")->addButtons([
