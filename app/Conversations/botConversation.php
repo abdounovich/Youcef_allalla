@@ -386,8 +386,6 @@ elseif ($this->typ=='color') {
      
     
 });
-
-
        
 
     }
