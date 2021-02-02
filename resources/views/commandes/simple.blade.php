@@ -15,14 +15,19 @@
    if (!$remises) {
     echo"<p class='card-text  text-white  mt-3 h5'>Total : ".$commande->product->prix*$commande->quantity." da </p>";
    }else {
-   $percentage=round(100-$remises->prix*100/$remises->produit->prix);
-   
-   
-   
-   echo '   <p class="card-text mt-3 h5  "> <del class="text-dark">'.$commande->product->prix.' da  </del> 
-   <span class="text-white ml-3">'.$remises->prix.' da</span>                      
-   <span class="badge p-1 ml-3 badge-info"> - '.$percentage.' % </span>
-   </p>';
+    if ($commande->created_at>$remises->created_at) {
+                                $percentage=round(100-$remises->prix*100/$remises->produit->prix);
+
+                        echo '   <p class="card-text mt-3 h5  "> <del class="text-dark">'.$commande->product->prix.' da  </del> 
+                            <span class="text-white ml-3">'.$remises->prix.' da</span>                      
+                            <span class="badge p-1 ml-3 badge-info"> - '.$percentage.' % </span>
+                        </p>';
+
+
+                            }else {
+                                echo"<p class='card-text  text-white  mt-3 h5'>Total : ".$commande->product->prix*$commande->quantity." da </p>";
+
+                            }
    
    }
    

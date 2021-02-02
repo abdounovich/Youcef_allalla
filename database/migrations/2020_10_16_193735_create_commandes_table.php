@@ -20,6 +20,7 @@ class CreateCommandesTable extends Migration
             $table->integer("color")->default("0");
             $table->integer("taille")->default("0");
             $table->text("commande_type");
+            $table->text("total_price");
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')
             ->references('id')->on('products')
