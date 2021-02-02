@@ -7,6 +7,8 @@ use App\Product;
 use App\Commande;
 use App\Color;
 use App\Taille;
+use App\Remise;
+
 use Illuminate\Foundation\Inspiring;
 use BotMan\BotMan\Messages\Incoming\Answer;
 use BotMan\BotMan\Messages\Attachments\Image;
@@ -161,7 +163,13 @@ public function askConfirmation(){
     $this->bot->reply('  الهاتف ☎ : '. $this->client->phone);
     $this->bot->reply('  العنوان   : '. $this->client->address);
     $this->bot->reply('  الولاية   : '.$this->client->wilaya);
-    $question=Question::create( 'المبلغ الإجمالي  💵 : '.$this->prix*$this->q ." دج ")->addButtons([
+
+    $remise=Remise::where("product_id",$this->product_id)->first();
+    if ($remise) {
+        $this->prix=$remise->prix;
+    }
+    $this->commande->total_price=$this->prix*$this->q;
+    $question=Question::create( 'المبلغ الإجمالي  💵 : '.$this->commande->total_price." دج ")->addButtons([
         Button::create(' ❎ إلغاء الطلب')->value('NoCancel'),
         Button::create(' ✅ تأكيد الطلبية')->value('yes'),
 
@@ -389,5 +397,4 @@ elseif ($this->typ=='color') {
     public function run()
     {
         $this->askQuantity();
-    }
-}
+    }}
