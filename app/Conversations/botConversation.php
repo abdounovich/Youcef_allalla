@@ -80,10 +80,6 @@ else {
                 ->value('change'),
                 Button::create('  ✅ نعم إستمر ')
                     ->value('yess')
-               
-                    
-                    
-                    
                     ]);
             
            }      
