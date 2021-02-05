@@ -162,7 +162,6 @@ public function askConfirmation(){
     $question=Question::create( 'المبلغ الإجمالي  💵 : '.$this->commande->total_price." دج ")->addButtons([
         Button::create(' ❎ إلغاء الطلب')->value('NoCancel'),
         Button::create(' ✅ تأكيد الطلبية')->value('yes'),
-
     ]);
     $this->ask($question, function (Answer $answer) {
     
