@@ -1,8 +1,9 @@
 <div class="  d-flex justify-content-center " >
+        <hr color="white">
+
     <div class=" collapse col col-12 bg-dark mb-2 rounded  text-white"  id="product_collapse{{$commande->id}}" style="opacity: 0.9">
         <div class=" clearfix col col-12 bg-darl  mb-2 p-2 rounded " style="opacity: 0.9">
             <div class="bg-dark">
-                
                 <div class=" float-left my-2 mr-2">
                     <img style="width: 100px; height:100px" src="{{$commande->client->photo}}" class=" img-thumbnail" alt="">
                 </div>
