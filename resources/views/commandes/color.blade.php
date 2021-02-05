@@ -38,7 +38,6 @@
 
 
 
-            <p class="small mt-3 text-white">{{$commande->created_at}}</p>
                     @php
                             $remises=App\Remise::where("product_id",$commande->product->id)->first();
                             if (!$remises) {
@@ -50,8 +49,9 @@
 
                         echo '   <p class="card-text mt-3 h5  "> 
                             <span class="text-white ">'.$remises->prix.' da</span>                      
-                            <span class="badge p-1 ml-3 badge-info"> - '.$percentage.' % </span>
-                        </p>';
+                            <span class="badge p-1 ml-2 badge-info"> - '.$percentage.' % </span>
+                                   <span class=" float-right mt-3 text-white">'.$commande->created_at.'</span></p>
+';
 
 
                             }else {

@@ -47,10 +47,11 @@
     if ($commande->created_at>$remises->created_at) {
                                 $percentage=round(100-$remises->prix*100/$remises->produit->prix);
 
-                        echo '   <p class="card-text mt-3 h5  "> 
+                                echo '   <p class="card-text mt-3 h5  "> 
                             <span class="text-white ">'.$remises->prix.' da</span>                      
-                            <span class="badge p-1 ml-3 badge-info"> - '.$percentage.' % </span>
-                        </p>';
+                            <span class="badge p-1 ml-2 badge-info"> - '.$percentage.' % </span>
+                                   <span class=" float-right mt-3 text-white">'.$commande->created_at.'</span></p>
+';
 
 
                             }else {
