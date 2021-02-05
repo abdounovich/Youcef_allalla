@@ -48,7 +48,7 @@
 
                                 echo '   <p class="card-text mt-3 h5  "> 
                             <span class="text-white ">'.$remises->prix.' da</span>                      
-                            <span class="badge p-1 ml-2 badge-info"> - '.$percentage.' % </span>
+                            <span class="badge p-1  badge-info"> - '.$percentage.' % </span>
                                    <span class=" float-right  small text-white">'.$commande->created_at.'</span></p>
 ';
 
