@@ -413,8 +413,9 @@ $text=$text."\n"."(-".$percentage ."%)"."   السعر الجديد : ".$remises
 
 
         else{
+$bot->reply(" لديك ".$total." طلبية ");
+$bot->typesAndWaits(1);
 
-        
         foreach ($commandes as $commande ) {
 
 
