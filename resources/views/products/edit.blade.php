@@ -46,11 +46,11 @@
  
    
    @if ($product->product_type=="simple")
-<div class="  d-flex justify-content-center " >
-  <div class="  col col-12 bg-dark mt-4 my-4 rounded     text-white"   style="opacity: 0.9">
+<div class="mt-4  d-flex justify-content-center " >
+  <div class="  col col-12 bg-dark  my-4 rounded     text-white"   style="opacity: 0.9">
       <div class="row text-center text-white mb-3">
           <div class="col  ">
-                 <h2 class=" rounded p-2" style=" font-size:35px">Modifier:</h2>
+                 <h2 class=" rounded p-2">Modifier:</h2>
              </div>
          </div>
      <form method="POST" action="{{route('products.edit',$product->id) }}" enctype="multipart/form-data">
