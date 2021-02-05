@@ -163,8 +163,8 @@ public function askConfirmation(){
     $this->bot->reply($this->msgText ."  ".$this->msgValue);
     $this->bot->reply('  الكمية  : '.$this->q);
     $this->bot->reply('  الهاتف ☎ : '. $this->client->phone);
-    $this->bot->reply('  العنوان : '. $this->client->address);
-    $this->bot->reply('  الولاية  : '.$this->client->wilaya);
+    $this->bot->reply('  العنوان 🏠 : '. $this->client->address);
+    $this->bot->reply('  الولاية 🇩🇿 : '.$this->client->wilaya);
 
     
     $this->commande->total_price=$this->prix*$this->q;
