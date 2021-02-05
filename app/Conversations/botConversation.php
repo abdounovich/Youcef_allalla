@@ -53,8 +53,6 @@ else {
   
 
         $this->product->quantity= $this->product->quantity-$this->q;
-
-
         $this->commande=new Commande();
         $this->commande->client_id=$this->client->id;
         $this->commande->product_id=$this->product_id;
@@ -150,11 +148,11 @@ public function askConfirmation(){
     
     
     $this->bot->reply($this->message);
-    $this->bot->reply($this->msgText ." : ".$this->msgValue);
+    $this->bot->reply($this->msgText ."  ".$this->msgValue);
     $this->bot->reply('  الكمية   : '.$this->q);
     $this->bot->reply('  الهاتف ☎ : '. $this->client->phone);
-    $this->bot->reply('  العنوان   : '. $this->client->address);
-    $this->bot->reply('  الولاية   : '.$this->client->wilaya);
+    $this->bot->reply('  العنوان 🏠 : '. $this->client->address);
+    $this->bot->reply('  الولاية 🇩🇿 : '.$this->client->wilaya);
 
     $this->remise=Remise::where("product_id",$this->product_id)->first();
     if ($this->remise) {
