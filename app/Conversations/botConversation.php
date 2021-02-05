@@ -310,7 +310,7 @@ ${"w".$this->wilaya}="w".$this->wilaya;
     {
         
             $this->q="0";
-        $question1=Question::create('   ما الكمية التي تريد شرائها ؟  🔢   ')
+        $question5=Question::create('   ما الكمية التي تريد شرائها ؟  🔢   ')
         ->addButtons([
             Button::create('1')
                 ->value('q1'),
@@ -331,7 +331,7 @@ ${"w".$this->wilaya}="w".$this->wilaya;
 
        
     
-    $this->ask($question1, function (Answer $answer) {
+    $this->ask($question5, function (Answer $answer) {
 
         switch ($answer->getValue()) {
             case "q1":
