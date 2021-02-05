@@ -64,9 +64,9 @@ else {
            return;
           
         }else{ 
-            $this->bot->reply(" رقم هاتفك هو : ☎ ".$this->client->phone);
-            $this->bot->reply(" ولايتك هي : 🇩🇿  ".$this->client->wilaya);
-            $this->bot->reply(" عنوانك هو :  🏠 ".$this->client->address);
+            $this->bot->reply("☎ رقم هاتفك هو :  ".$this->client->phone);
+            $this->bot->reply("🇩🇿 ولايتك هي :   ".$this->client->wilaya);
+            $this->bot->reply("🏠 عنوانك هو :   ".$this->client->address);
             $question=Question::create(' هل تود الإستمرار بهذا الرقم العنوان و الولاية  ؟   ')
             ->addButtons([
                 Button::create(' ✍️ تغيير   ')
@@ -149,7 +149,7 @@ public function askConfirmation(){
     
     $this->bot->reply($this->message);
     $this->bot->reply($this->msgText ."  ".$this->msgValue);
-    $this->bot->reply('  الكمية   : '.$this->q);
+    $this->bot->reply('  الكمية : '.$this->q);
     $this->bot->reply('  الهاتف ☎ : '. $this->client->phone);
     $this->bot->reply('  العنوان 🏠 : '. $this->client->address);
     $this->bot->reply('  الولاية 🇩🇿 : '.$this->client->wilaya);
