@@ -2,7 +2,7 @@
 <div class="row text-center text-white mb-3">
     <div class="col-lg-7 mx-auto">
     <h1 class=" h4 mt-4 p-3 shadow bg-dark rounded" style="opacity: 0.9"> 
-        commandes  annulées par client :  {{$annuler_par_client_count}}
+        Annulées par client :  {{$annuler_par_client_count}}
     </h1>
     </div>
 </div>

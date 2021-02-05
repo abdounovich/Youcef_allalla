@@ -37,33 +37,32 @@
                             $ByClientenrouteCommandes=App\Commande::where("type",6)->where("client_id",$commande->client->id)->count();
 
                         @endphp 
-                        <span class=" ml-2 ">{{$commande->client->commandes->count()}} 
-                        </span> 
                         
-                        <i class=" text-warning fa fa-shopping-cart  "> 
-                        </i>
+                        
+                     
 
                         @if ($ByClientInactiveCommandes>0)
-                        <span class=" ml-2  badge badge-secondary btn-circle ">{{$ByClientInactiveCommandes}}</span> 
+                        <span class="  badge badge-secondary  ">
+                            {{$ByClientInactiveCommandes}}</span> 
                         @endif
                         
                         @if ($ByClientActiveCommandes>0)
-                        <span class=" ml-2 badge badge-primary btn-circle ">{{$ByClientActiveCommandes}}</span></span> 
+                        <span class=" ml-2 badge badge-primary  ">{{$ByClientActiveCommandes}}</span></span> 
 
                         @endif
 
                         @if ($ByClientDelivredCommandes>0)
-                        <span class=" ml-2 badge btn-success btn-circle ">{{$ByClientDelivredCommandes}}</span>
+                        <span class=" ml-2 badge btn-success  ">{{$ByClientDelivredCommandes}}</span>
 
                         @endif
 
                         @if ($ByClientenrouteCommandes>0)
-                        <span class=" ml-2  badge btn-warning btn-circle ">{{$ByClientenrouteCommandes}}</span>  
+                        <span class=" ml-2  badge btn-warning ">{{$ByClientenrouteCommandes}}</span>  
 
                         @endif
 
                         @if ($ByClientcanceledCommandes>0)
-                        <span class=" ml-2  badge btn-danger btn-circle ">{{$ByClientcanceledCommandes}}</span> 
+                        <span class=" ml-2  badge btn-danger  ">{{$ByClientcanceledCommandes}}</span> 
 
                         @endif
 
