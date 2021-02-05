@@ -34,7 +34,7 @@
         @endif
         
         @if ($commande->type=="1")
-        <a class="btn btn-info btn-circle float-right   mr-1" href="{{route('commandes.confirmation',$commande->id) }}">
+        <a class="btn btn-primary btn-circle float-right   mr-1" href="{{route('commandes.confirmation',$commande->id) }}">
             <span class="    fa fa-arrow-down    "></span>
         </a> 
         @endif
