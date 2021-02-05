@@ -399,7 +399,6 @@ elseif ($this->typ=='color') {
 
 }
         
-  
         $this->askQuantity();
     }
 }
