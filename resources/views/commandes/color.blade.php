@@ -41,7 +41,7 @@
                     @php
                             $remises=App\Remise::where("product_id",$commande->product->id)->first();
                             if (!$remises) {
-                        echo"<p class='card-text  text-white  mt-3 h5'>Total : ".$commande->product->prix*$commande->quantity." da </p>";
+                        echo'<p class="card-text  text-white  mt-3 h5">Total : '.$commande->product->prix*$commande->quantity." da  <span class='float-right mt-3 text-white'>".$commande->created_at."</span></p>";
                         }else {
 
                             if ($commande->created_at>$remises->created_at) {

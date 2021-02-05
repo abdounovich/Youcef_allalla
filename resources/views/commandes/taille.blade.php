@@ -35,14 +35,13 @@
        <img class="img-thumbnail custom  p-0 mt-2 " style="width: 100%;height:250px" src="{{$commande->product->photo}}" alt="">
    
    
-       <p class="small mt-3 text-white">{{$commande->created_at}}</p>
 
    @php
    $remises=App\Remise::where("product_id",$commande->product->id)->first();
 
    
    if (!$remises) {
-    echo"<p class='card-text  text-white  mt-3 h5'>Total : ".$commande->product->prix*$commande->quantity." da </p>";
+    echo'<p class="card-text  text-white  mt-3 h5">Total : '.$commande->product->prix*$commande->quantity." da  <span class='float-right mt-3 text-white'>".$commande->created_at."</span></p>";
    }else {
     if ($commande->created_at>$remises->created_at) {
                                 $percentage=round(100-$remises->prix*100/$remises->produit->prix);
