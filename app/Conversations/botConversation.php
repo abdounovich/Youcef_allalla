@@ -309,7 +309,7 @@ ${"w".$this->wilaya}="w".$this->wilaya;
             $this->photo= $this->product->photo;
             $this->quantity=$this->product->quantity;
             $this->prix=$this->product->prix;
-            $this->msgText="المنتج ";
+            $this->msgText="";
             $this->msgValue=$this->product->nom;
 
 
