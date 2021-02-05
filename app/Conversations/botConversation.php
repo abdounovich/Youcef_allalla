@@ -318,7 +318,7 @@ ${"w".$this->wilaya}="w".$this->wilaya;
         
         
 $this->ask($question5, function (Answer $answer) {
-$this->as=$answer->getValue();
+$this->as=$answer->getValue();});
 $this->bot->reply($this->as);
         switch ($$this->as) {
             case "q1":
@@ -350,7 +350,6 @@ $this->bot->reply($this->as);
           }
      
     
-});
 
 
        
