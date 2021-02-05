@@ -312,17 +312,8 @@ ${"w".$this->wilaya}="w".$this->wilaya;
             $this->q="0";
         $question5=Question::create('   ما الكمية التي تريد شرائها ؟  🔢   ')
         ->addButtons([
-            Button::create('1')
-                ->value('q1'),
-            Button::create('2')
-                ->value('q2'),
-            Button::create('3')
-                ->value('q3'),
-            Button::create('4')
-                ->value('q4'),
-         
-         
-                Button::create(' أدخل الكمية 👇')
+          
+         Button::create(' أدخل الكمية 👇')
                 ->value('manuel')
                 ]);
         
