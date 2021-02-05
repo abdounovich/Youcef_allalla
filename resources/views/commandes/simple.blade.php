@@ -1,7 +1,6 @@
   
     <div class="card-body text-left ">
      <div class="card-text">
-        @include('commandes.links')
 
    
        <p class="h4  text-white text-wrap" > 
@@ -47,7 +46,8 @@
    
    @endphp
    
-   
+   @include('commandes.links')
+
      </div>
    </div>
    @include('commandes.clientList')

@@ -1,7 +1,6 @@
   
     <div class="card-body text-left ">
      <div class="card-text">
-        @include('commandes.links')
 
    @php
    $taille=App\Taille::find($commande->taille);
@@ -54,7 +53,8 @@
    
    @endphp
    
-   
+   @include('commandes.links')
+
 </div>
      </div>
    @include('commandes.clientList')
