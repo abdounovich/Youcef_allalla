@@ -41,12 +41,7 @@ public function __construct(string $product_id,string $typ ) {
     {
 
        
-        $user = $this->bot->getUser();
-        $facebook_id = $user->getId();
-        $firstname = $user->getFirstname();
-        $lastname = $user->getLastname();
-        $full_name=$firstname.'-'.$lastname;
-        $this->client=Client::where('facebook',$full_name)->first();
+       
 
 
 if ( $this->product->quantity<$this->q) {
@@ -312,17 +307,20 @@ ${"w".$this->wilaya}="w".$this->wilaya;
             $this->q="0";
         $question5=Question::create('   ما الكمية التي تريد شرائها ؟  🔢   ')
         ->addButtons([
-          
+            Button::create('1')
+                ->value('q1'),
+            Button::create('2')
+                ->value('q2'),
+            Button::create('3')
+                ->value('q3'),
+            Button::create('4')
+                ->value('q4'),
          Button::create(' أدخل الكمية 👇')
-                ->value('manuel')
+                ->value('Qmanuel')
                 ]);
         
         
-            
-
-       
-    
-    $this->ask($question5, function (Answer $answer) {
+$this->ask($question5, function (Answer $answer) {
 
         switch ($answer->getValue()) {
             case "q1":
@@ -334,21 +332,21 @@ ${"w".$this->wilaya}="w".$this->wilaya;
             $this->askNumber();
             break;
             case "q3":
-                $this->q="3";
-                $this->askNumber();
-                break;
-
-                case "q4":
-                    $this->q="4";
-                    $this->askNumber();
-                    break;
+            $this->q="3";
+            $this->askNumber();
+            break;
+            case "q4":
+            $this->q="4";
+            $this->askNumber();
+            break;
 
                    
-                            case "manuel":
-                                $this->ask(' من فضلك أدخل الكمية من خلال لوحة المفاتيح    ', function(Answer $answer) {
-                                    $this->q = $answer->getText();
-                                    $this->askNumber();
-                                });
+            case "Qmanuel":
+            $this->ask(' من فضلك أدخل الكمية من خلال لوحة المفاتيح    ', function(Answer $answer) {
+            $this->q = $answer->getText();
+            $this->askNumber();
+            
+                    });
                                
            
           }
@@ -365,6 +363,16 @@ ${"w".$this->wilaya}="w".$this->wilaya;
      */
     public function run()
     {
+
+
+
+        $this->user = $this->bot->getUser();
+        $this->facebook_id =  $this->user->getId();
+        $this->firstname = $this->user->getFirstname();
+        $this->lastname =  $this->user->getLastname();
+        $this->full_name= $this->firstname.'-'. $this->lastname;
+        $this->client=Client::where('facebook', $this->full_name)->first();
+
 
         if ($this->typ=="simple") {
             $this->product=Product::find($this->product_id);
