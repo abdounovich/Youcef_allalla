@@ -234,6 +234,15 @@ public function askWilaya(){
 
 
 $jsonobj = '{
+    "w1":"أدرار",
+    "w2":"الشلف",
+    "w3":"الأغواط",
+    "w4":"أم البواقي",
+    "w5":"باتنة",
+    "w6":"بجاية",
+    "w7":"بسكرة",
+    "w8":"بشار",
+    "w9":"البليدة",
 "w01":"أدرار",
 "w33":"إليزي",
 "w04":"أم البواقي",
@@ -304,35 +313,7 @@ ${"w".$this->wilaya}="w".$this->wilaya;
     public function askQuantity()
     {
         
-        if ($this->typ=="simple") {
-            $this->product=Product::find($this->product_id);
-            $this->photo= $this->product->photo;
-            $this->quantity=$this->product->quantity;
-            $this->prix=$this->product->prix;
-            $this->msgText="";
-            $this->msgValue=$this->product->nom;
-
-
-}elseif ($this->typ=='taille') {
-    $this->product=Taille::find($this->product_id);
-    $this->prix=$this->product->product->prix;
-    $this->photo=$this->product->product->photo;
-    $this->quantity=$this->product->quantity;
-    $this->msgText="  المقاس ";
-    $this->msgValue=$this->product->taille;
-
-}
-elseif ($this->typ=='color') {
-    $this->product=Color::find($this->product_id);
-    $this->prix=$this->product->product->prix;
-    $this->quantity=$this->product->quantity;
-    $this->photo=$this->product->photo;
-    $this->msgText=" اللون :";
-    $this->msgValue=$this->product->couleur;
-
-}
-        
-        $this->q="0";
+            $this->q="0";
         $question1=Question::create('   ما الكمية التي تريد شرائها ؟  🔢   ')
         ->addButtons([
             Button::create('1')
@@ -397,6 +378,36 @@ elseif ($this->typ=='color') {
      */
     public function run()
     {
+
+        if ($this->typ=="simple") {
+            $this->product=Product::find($this->product_id);
+            $this->photo= $this->product->photo;
+            $this->quantity=$this->product->quantity;
+            $this->prix=$this->product->prix;
+            $this->msgText="";
+            $this->msgValue=$this->product->nom;
+
+
+}elseif ($this->typ=='taille') {
+    $this->product=Taille::find($this->product_id);
+    $this->prix=$this->product->product->prix;
+    $this->photo=$this->product->product->photo;
+    $this->quantity=$this->product->quantity;
+    $this->msgText="  المقاس ";
+    $this->msgValue=$this->product->taille;
+
+}
+elseif ($this->typ=='color') {
+    $this->product=Color::find($this->product_id);
+    $this->prix=$this->product->product->prix;
+    $this->quantity=$this->product->quantity;
+    $this->photo=$this->product->photo;
+    $this->msgText=" اللون :";
+    $this->msgValue=$this->product->couleur;
+
+}
+        
+  
         $this->askQuantity();
     }
 }
