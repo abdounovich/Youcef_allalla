@@ -252,7 +252,7 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
 
 else {
 $percentage=round(100-$remises->prix*100/$remises->produit->prix); 
-$text=$text."\n"."(-".$percentage ."%)"."   السعر الجديد : ".$remises->prix."دج"."\n".$product->descreption;
+$text=$text."\n"."(-".$percentage ."%)"." السعر الجديد : ".$remises->prix."دج"."\n".$product->descreption;
 
     ${"element$i"}[]=Element::create($product->nom)
     ->subtitle($text)
@@ -296,7 +296,7 @@ $text=$text."\n"."(-".$percentage ."%)"."   السعر الجديد : ".$remises
 
         foreach ($product->color as $color ) {
             $elements[]=Element::create($color->couleur)
-            ->subtitle(" السعر  ".$product->prix . " دج ")
+            ->subtitle(" السعر  ".$product->prix . " دج "."\n".$product->descreption)
             ->image($color->photo)
             ->addButton(ElementButton::create(' ✅ إشتر هذا المنتج')
                 ->payload("byColorShow".$color->id)
