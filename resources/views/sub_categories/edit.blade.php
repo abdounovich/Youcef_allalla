@@ -37,7 +37,7 @@
             <label for="sub_cat">Catégorie : </label>
           <select class="form-control" id="sub_cat" name="cat">
             @foreach ($categories as $item)
-            <option value="{{$item->id}}" @if($item->nom==$sub_categorie->categories->nom)
+            <option value="{{$item->id}}" @if($item->id==$sub_categorie->categories->id)
   selected
               @endif>{{$item->nom}}</option>
         @endforeach              </select>
