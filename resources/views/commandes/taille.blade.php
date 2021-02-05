@@ -48,7 +48,7 @@
                                 $percentage=round(100-$remises->prix*100/$remises->produit->prix);
 
                         echo '   <p class="card-text mt-3 h5  "> 
-                            <span class="text-white ml-3">'.$remises->prix.' da</span>                      
+                            <span class="text-white ">'.$remises->prix.' da</span>                      
                             <span class="badge p-1 ml-3 badge-info"> - '.$percentage.' % </span>
                         </p>';
 
