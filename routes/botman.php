@@ -232,7 +232,7 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
         $index=$index+1;
 
         ${"element$i"}[]=Element::create($product->nom)
-        ->subtitle($text."\n"." السعر   ".$product->prix . " دج ")
+        ->subtitle($text."\n"." السعر   ".$product->prix . " دج "."\n".$product->descreption)
         ->image($product->photo)
         ->addButton(ElementButton::create(' 🛒 إشتر هذا المنتج')
             ->payload($payload)
