@@ -1,33 +1,33 @@
 <div class="  d-flex justify-content-center " >
 
-    <div class=" collapse col col-12 bg-dark mb-2 rounded  text-white"  id="product_collapse{{$commande->id}}" style="opacity: 0.9">
-        <div class=" clearfix col col-12 bg-darl  mb-2 p-2 rounded " style="opacity: 0.9">
-            <div class="bg-dark">
+    <div class=" collapse col col-12 bg-light mb-2 rounded  text-white"  id="product_collapse{{$commande->id}}" style="opacity: 0.9">
+        <div class=" clearfix col col-12 bg-light  mb-2 p-2 rounded " style="opacity: 0.9">
+            <div class="bg-light">
                 <div class=" float-left my-2 mr-2">
                     <img style="width: 100px; height:100px" src="{{$commande->client->photo}}" class=" img-thumbnail" alt="">
                 </div>
 
-                <div class="mt-2 text-light h5 ">
+                <div class="mt-2 text-dark h5 ">
                     {{$commande->client->facebook}} 
                 </div>
 
-                <div class=" text-white">
+                <div class=" text-dark">
                     <i class="text-success fa fa-map-marker mr-2 "></i>{{$commande->client->address}}
                 </div>
 
-                <div class=" text-white">
+                <div class=" text-dark">
                     <i class="text-danger fa fa-flag mr-2 "></i>{{$commande->client->wilaya}}
                 </div>
 
-                <div class=" text-white">
+                <div class=" text-dark">
 
                     <i class="text-primary fa fa-phone mr-2 "></i>
-                    <a class="text-light" href="tel: {{$commande->client->phone}}"> {{$commande->client->phone}}  </a>   
+                    <a class="text-dark" href="tel: {{$commande->client->phone}}"> {{$commande->client->phone}}  </a>   
 
                    
                 </div>
 
-                 <div class=" text-white mr-2">
+                 <div class=" text-dark mr-2">
                     <div class=" float-right col col-12  ">
                         @php
                             $ByClientInactiveCommandes=App\Commande::where("type",1)->where("client_id",$commande->client->id)->count();
