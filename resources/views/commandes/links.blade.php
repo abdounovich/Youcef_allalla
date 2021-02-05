@@ -13,10 +13,7 @@
             <span class="     fa fa-info  "></span>
         </a>
         
-        <a class="btn btn-danger  btn-circle float-right  mr-1" href="{{route('commandes.delete',$commande->id)}}"  >
-            <span class="     fa fa-trash  "></span>
-        </a>
-     
+       
       
         
         @if ($commande->type=="1" OR $commande->type=="2"  OR $commande->type=="6" )
