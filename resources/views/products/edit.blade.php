@@ -98,9 +98,8 @@
                  @foreach ($categories as $item)
               
                  <option @if ($item->nom==$product->SubCategories->nom)
-                   
-                  selected
-                 @endif value="{{$item->id}}">{{$item->nom}}->{{$item->categories->nom}}</option>
+class="text-primary" 
+                @endif value="{{$item->id}}">{{$item->nom}}->{{$item->categories->nom}}</option>
                @endforeach              </select> 
                </div>
              <button type="submit" class="btn btn-primary col col-12 my-3">Modifier</button>
