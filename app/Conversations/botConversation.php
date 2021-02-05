@@ -396,9 +396,8 @@ elseif ($this->typ=='color') {
     $this->photo=$this->product->photo;
     $this->msgText=" اللون ";
     $this->msgValue=$this->product->couleur;
-
 }
         
-        $this->askQuantity();
+$this->askQuantity();
     }
 }
