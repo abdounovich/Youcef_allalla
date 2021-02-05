@@ -5,6 +5,7 @@
      <i style="font-size: 20px" class="fa fa-ellipsis-v text-white"></i>
     </a>
 </div> --}}
+<hr class="text-light bg-light">
 
 
     <div class=" bg-dark" aria-labelledby="">
@@ -49,7 +50,7 @@
             <span class="    fa fa-refresh  "></span>
         </a> 
         @endif
-        
+
     </div>
 
 
