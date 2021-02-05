@@ -98,7 +98,7 @@
                  @foreach ($categories as $item)
               
                  <option @if ($item->nom==$product->SubCategories->nom)
-                     class="text-danger"
+                     selected
                  @endif value="{{$item->id}}">{{$item->nom}}->{{$item->categories->nom}}</option>
                @endforeach              </select> 
                </div>
