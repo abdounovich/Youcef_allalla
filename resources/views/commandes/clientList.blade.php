@@ -22,7 +22,7 @@
                 <div class=" text-white">
 
                     <i class="text-primary fa fa-phone mr-2 "></i>
-                    <a class="text-primary" href="tel: {{$commande->client->phone}}"> {{$commande->client->phone}}  </a>   
+                    <a class="text-light" href="tel: {{$commande->client->phone}}"> {{$commande->client->phone}}  </a>   
 
                    
                 </div>
