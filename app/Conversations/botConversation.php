@@ -305,35 +305,34 @@ ${"w".$this->wilaya}="w".$this->wilaya;
         $question5=Question::create('   ما الكمية التي تريد شرائها ؟  🔢   ')
         ->addButtons([
             Button::create('1')
-                ->value('Q1'),
+                ->value('q1'),
             Button::create('2')
-                ->value('Q2'),
+                ->value('q2'),
             Button::create('3')
-                ->value('Q3'),
+                ->value('q3'),
             Button::create('4')
-                ->value('Q4'),
+                ->value('q4'),
          Button::create(' أدخل الكمية 👇')
                 ->value('Qmanuel')
                 ]);
         
         
 $this->ask($question5, function (Answer $answer) {
-$this->as=$answer->getValue();});
-$this->bot->reply($this->as);
-        switch ($this->as) {
-            case "Q1":
+
+        switch ($answer->getValue()) {
+            case "q1":
             $this->q="1";
             $this->askNumber();
             break;
-            case "Q2":
+            case "q2":
             $this->q="2";
             $this->askNumber();
             break;
-            case "Q3":
+            case "q3":
             $this->q="3";
             $this->askNumber();
             break;
-            case "Q4":
+            case "q4":
             $this->q="4";
             $this->askNumber();
             break;
@@ -350,6 +349,7 @@ $this->bot->reply($this->as);
           }
      
     
+});
 
 
        
@@ -398,6 +398,6 @@ elseif ($this->typ=='color') {
     $this->msgValue=$this->product->couleur;
 }
         
-$this->askQuantity();
+        $this->askQuantity();
     }
 }
