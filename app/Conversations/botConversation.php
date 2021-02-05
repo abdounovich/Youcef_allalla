@@ -305,13 +305,13 @@ ${"w".$this->wilaya}="w".$this->wilaya;
         $question5=Question::create('   ما الكمية التي تريد شرائها ؟  🔢   ')
         ->addButtons([
             Button::create('1')
-                ->value('q1'),
+                ->value('Q1'),
             Button::create('2')
-                ->value('q2'),
+                ->value('Q2'),
             Button::create('3')
-                ->value('q3'),
+                ->value('Q3'),
             Button::create('4')
-                ->value('q4'),
+                ->value('Q4'),
          Button::create(' أدخل الكمية 👇')
                 ->value('Qmanuel')
                 ]);
@@ -321,19 +321,19 @@ $this->ask($question5, function (Answer $answer) {
 $this->as=$answer->getValue();});
 $this->bot->reply($this->as);
         switch ($$this->as) {
-            case "q1":
+            case "Q1":
             $this->q="1";
             $this->askNumber();
             break;
-            case "q2":
+            case "Q2":
             $this->q="2";
             $this->askNumber();
             break;
-            case "q3":
+            case "Q3":
             $this->q="3";
             $this->askNumber();
             break;
-            case "q4":
+            case "Q4":
             $this->q="4";
             $this->askNumber();
             break;
