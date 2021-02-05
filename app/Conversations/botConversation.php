@@ -320,7 +320,7 @@ ${"w".$this->wilaya}="w".$this->wilaya;
 $this->ask($question5, function (Answer $answer) {
 $this->as=$answer->getValue();});
 $this->bot->reply($this->as);
-        switch ($$this->as) {
+        switch ($this->as) {
             case "Q1":
             $this->q="1";
             $this->askNumber();
