@@ -41,7 +41,7 @@
 
    
    if (!$remises) {
-    echo'<p class="card-text  text-white  mt-3 h5">Total : '.$commande->product->prix*$commande->quantity." da  <span class='float-right mt-3 text-white'>".$commande->created_at."</span></p>";
+    echo'<p class="card-text  text-white  mt-3 h5">Total : '.$commande->product->prix*$commande->quantity.' da </p>  <span class=" float-right  text-white">'.$commande->created_at.'</span>';
    }else {
     if ($commande->created_at>$remises->created_at) {
                                 $percentage=round(100-$remises->prix*100/$remises->produit->prix);
