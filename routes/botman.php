@@ -252,7 +252,7 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
 
 else {
 $percentage=round(100-$remises->prix*100/$remises->produit->prix); 
-$text=$text."\n"."(-".$percentage ."%)"."   السعر الجديد : ".$remises->prix."دج";
+$text=$text."\n"."(-".$percentage ."%)"."   السعر الجديد : ".$remises->prix."دج"."\n".$product->descreption;
 
     ${"element$i"}[]=Element::create($product->nom)
     ->subtitle($text)
