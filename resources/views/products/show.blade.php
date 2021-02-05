@@ -45,6 +45,7 @@ img {
     <div class="card-body">
       <h4 class="card-title">{{$produit->nom}}</h4>
       <hr>
+      <p>{{$produit->SubCategories->nom}}-->{{$produit->SubCategories->categories->nom}}</p>
       <p class="card-text">{{$produit->descreption}}</p>
       <hr>
     @php
