@@ -14,7 +14,6 @@ use BotMan\BotMan\Messages\Conversations\Conversation;
 
 class ByColorConversation extends Conversation
 {
-
     protected $product_id;
 
 
