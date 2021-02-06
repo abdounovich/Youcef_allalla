@@ -488,10 +488,12 @@ $bot->typesAndWaits(1);
                 break;
             case 3:
                 $bot->reply("حالة الطلبية :"."#CM".$commande->id."W25");
-
+ 
         $bot->reply("وصول الطلبية بنجاح");
                 break;
             case 6:
+                $bot->reply("حالة الطلبية :"."#CM".$commande->id."W25");
+
                     $bot->reply(" 🚚 طلبية قيد التوصيل     ");
                             break;
         }
