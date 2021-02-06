@@ -198,7 +198,7 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
         $bot->reply(" 👌 سنقوم قريبا  بإضافة منتجات في قسم  ".$sub_cat->nom ." ال".$sub_cat->categories->nom);
      
 $bot->reply(Question::create('  الرجوع إلى القائمة الرئيسية  ؟   ')->addButtons([
-    Button::create(' ✅ نعم ')->value('show_me_products'),]));
+    Button::create(' ✅ نعم ')->value('sous_cat_'.$sub_cat->id),]));
 
 
     }else{
