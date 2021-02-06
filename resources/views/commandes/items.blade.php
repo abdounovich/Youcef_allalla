@@ -3,7 +3,7 @@
    @if (!$remises) 
    
    <div class="mt-2" ><span class="  text-secondary">{{$commande->created_at->format("d-m-y H:i")}}</span></div>
-   <div class="card-text  text-white mt-1  h5"> {{$commande->total_price}} da 
+   <div class="card-text  text-white mt-1  h5"> {{$commande->product->prix}} da 
     <span class="badge float-right  mr-1 float-sm-right text-white  badge-success">   {{$commande->total_price}} Da  </span>
 
     
