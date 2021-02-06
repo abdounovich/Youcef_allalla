@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3a096e197aaa63b0cb175657056fd8bf",
+    "content-hash": "c8d67f3318c93d50191165f129cdfc3f",
     "packages": [
         {
             "name": "botman/botman",
@@ -340,16 +340,16 @@
         },
         {
             "name": "cloudinary/cloudinary_php",
-            "version": "1.19.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cloudinary/cloudinary_php.git",
-                "reference": "9698155f6bcf7fc9b6aa140bf1daebca7ac3d5c5"
+                "reference": "0492abb43bdd0234bf64b131dd4212816ef4542a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cloudinary/cloudinary_php/zipball/9698155f6bcf7fc9b6aa140bf1daebca7ac3d5c5",
-                "reference": "9698155f6bcf7fc9b6aa140bf1daebca7ac3d5c5",
+                "url": "https://api.github.com/repos/cloudinary/cloudinary_php/zipball/0492abb43bdd0234bf64b131dd4212816ef4542a",
+                "reference": "0492abb43bdd0234bf64b131dd4212816ef4542a",
                 "shasum": ""
             },
             "require": {
@@ -1413,36 +1413,33 @@
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
-            "name": "cloudinary/cloudinary_php",
-            "version": "1.19.0",
+            "name": "jrm2k6/cloudder",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/cloudinary/cloudinary_php.git",
-                "reference": "9698155f6bcf7fc9b6aa140bf1daebca7ac3d5c5"
+                "url": "https://github.com/jrm2k6/cloudder.git",
+                "reference": "82d75368890424d166bf025df39611a1d18abcc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cloudinary/cloudinary_php/zipball/9698155f6bcf7fc9b6aa140bf1daebca7ac3d5c5",
-                "reference": "9698155f6bcf7fc9b6aa140bf1daebca7ac3d5c5",
+                "url": "https://api.github.com/repos/jrm2k6/cloudder/zipball/82d75368890424d166bf025df39611a1d18abcc0",
+                "reference": "82d75368890424d166bf025df39611a1d18abcc0",
                 "shasum": ""
             },
             "require": {
-                "ext-curl": "*",
-                "ext-json": "*",
-                "php": ">=5.4.0"
+                "cloudinary/cloudinary_php": ">=1.1",
+                "php": ">=5.3.0"
             },
             "require-dev": {
-                "ext-zip": "*",
-                "phpunit/phpunit": "4.8.*"
+                "laravel/framework": ">=5.0",
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "4.*"
             },
             "type": "library",
             "autoload": {
-                "classmap": [
-                    "src"
-                ],
-                "files": [
-                    "src/Helpers.php"
-                ]
+                "psr-0": {
+                    "JD\\Cloudder": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1450,20 +1447,25 @@
             ],
             "authors": [
                 {
-                    "name": "Cloudinary",
-                    "homepage": "https://github.com/cloudinary/cloudinary_php/graphs/contributors"
+                    "name": "Jeremy Dagorn",
+                    "email": "jeremy.dagorn@gmail.com"
                 }
             ],
-            "description": "Cloudinary PHP SDK",
-            "homepage": "https://github.com/cloudinary/cloudinary_php",
+            "description": "Cloudinary API wrapper for Laravel",
+            "homepage": "https://github.com/jrm2k6/cloudder",
             "keywords": [
-                "cdn",
-                "cloud",
+                "api",
                 "cloudinary",
-                "image management",
-                "sdk"
+                "image",
+                "laravel",
+                "laravel4",
+                "upload"
             ],
-            "time": "2020-10-29T04:01:07+00:00"
+            "support": {
+                "issues": "https://github.com/jrm2k6/cloudder/issues",
+                "source": "https://github.com/jrm2k6/cloudder/tree/master"
+            },
+            "time": "2017-02-03T19:10:37+00:00"
         },
         {
             "name": "kylekatarnls/update-helper",
