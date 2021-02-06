@@ -7,9 +7,8 @@
 </div> --}}
 <hr color="white">
     <div class=" bg-dark  " >
-        <a class="  btn-circle float-right  mr-1" href="#"  data-toggle="collapse" data-target="#product_collapse{{$commande->id}}" aria-expanded="false" aria-controls="collapseExample">
-            <span class="text-white"> #{{$commande->id}}
-            </span> 
+        <a class="  btn-circle float-right " >
+            <span class="text-white float-right h3 ">#{{$commande->id}}</span> 
         </a>
         
        
