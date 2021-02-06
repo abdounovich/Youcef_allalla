@@ -361,7 +361,6 @@ $this->ask($question5, function (Answer $answer) {
     {
 
 
-$this->bot->reply($this->product_id);
         $this->user = $this->bot->getUser();
         $this->facebook_id =  $this->user->getId();
         $this->firstname = $this->user->getFirstname();
@@ -386,6 +385,7 @@ $this->bot->reply($this->product_id);
 
 }elseif ($this->typ=='taille') {
     $this->product=Taille::find($this->product_id);
+    $this->product_id=$this->product->product_id;
     $this->prix=$this->product->product->prix;
     $this->photo=$this->product->product->photo;
     $this->quantity=$this->product->quantity;
@@ -397,6 +397,7 @@ $this->bot->reply($this->product_id);
 }
 elseif ($this->typ=='color') {
     $this->product=Color::find($this->product_id);
+    $this->product_id=$this->product->product_id;
     $this->prix=$this->product->product->prix;
     $this->quantity=$this->product->quantity;
     $this->photo=$this->product->photo;
@@ -406,6 +407,7 @@ elseif ($this->typ=='color') {
     $this->msgText=" اللون ";
     $this->msgValue=$this->product->couleur;
 }
+$this->bot->reply($this->product_id);
         
         $this->askQuantity();
     }
