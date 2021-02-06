@@ -31,6 +31,7 @@
   <a class="btn btn-danger  btn-circle float-right  mr-1" href="{{route('commandes.delete',$commande->id)}}"  >
     <span class="     fa fa-trash  "></span>
 </a>
+<img class="img-thumbnail custom  p-0 mt-2 " style="width: 100%;height:250px" src="{{$commande->product->photo}}" alt="">
 
   </p>            <p class="text-white text-wrap " >couleur : {{$color->couleur}} <span class=" text-dark">X {{$commande->quantity}}</span></p>
 
