@@ -194,25 +194,13 @@ $botman->hears('product_([0-9]+)', function($bot,$number1) {
     $total=$products->count();
 
 
-    if ($total=="0") {
-        $bot->reply(" 👌 سنقوم قريبا  بإضافة منتجات في قسم  ".$sub_cat->nom ." ال".$sub_cat->categories->nom);
-     
-        $sous_cats=SubCategory::where("cat_id",$sub_cat->categories->id)->get();
-        $elements=array();
-        foreach ($sous_cats as $sous_cat ) {
-            $elements[]=
-            Element::create($sous_cat->nom)
-                ->image($sous_cat->photo)
-                ->addButton(ElementButton::create(' 🛍 تصفح المنتجات')
-                    ->payload('product_'.$sous_cat->id)
-                    ->type('postback'));
-        }
-        $bot->typesAndWaits(1);
+    if ($total=="0") {     
+        $bot->reply(Question::create(" 👌 سنقوم قريبا  بإضافة منتجات في قسم  ".$sub_cat->nom ." ال".$sub_cat->categories->nom)->addButtons([
+            Button::create(" ال قسم ".$sub_cat->categories->nom)->value('show_me_products'),
+            Button::create('  الرئيسية  ')->value('NoCancelAgain')
+            ]));
         
-            $bot->reply(GenericTemplate::create()
-            ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
-            ->addElements($elements)
-        );    
+          
 
 
     }else{
@@ -486,7 +474,7 @@ $bot->typesAndWaits(1);
             case 3:
                 $bot->reply("حالة الطلبية :"."#CM".$commande->id."W25");
  
-        $bot->reply("وصول الطلبية بنجاح");
+        $bot->reply(" ✅ وصول الطلبية بنجاح");
                 break;
             case 6:
                 $bot->reply("حالة الطلبية :"."#CM".$commande->id."W25");
