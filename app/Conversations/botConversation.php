@@ -25,14 +25,12 @@ class botConversation extends Conversation
 
     protected $product_id;
     protected $typ;
-    protected $wilaya;
 
 public function __construct(string $product_id,string $typ ) {
 
     $this->product_id = $product_id;
     $this->q="0";
     $this->typ = $typ;
-    $this->wilaya = "0";
 
 
 }
@@ -197,13 +195,10 @@ public function finalStep(){
     $this->product->save();
     $this->commande->save();
     $this->client->save();
-
     $this->bot->reply("    شكرا لك 😍 "); 
-    $this->bot->reply("....". $this->wilaya); 
-
     $this->bot->reply("  لقد تم حفظ طلبك بنجاح  ✅");
-/*     $this->bot->reply("رقم طلبيتك :"."CM".$this->commande->id."W".$this->wilaya); 
- */    $this->bot->reply(" سنتصل بك قريبا لتأكيد طلبيتك  😊"); 
+    $this->bot->reply("رقم طلبيتك :"."CM".$this->commande->id."W25");
+    $this->bot->reply(" سنتصل بك قريبا لتأكيد طلبيتك  😊"); 
     $this->bot->reply(Question::create(' 🤝 عملية التسليم تكون في غضون 24 إلى 48 ساعة والدفع عند الإستلام 🚚 ')
             ->addButtons([
                 Button::create(' ❌ إلغاء الطلبية ')
