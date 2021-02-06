@@ -1,5 +1,5 @@
   
-    <div class="card-body text-left btn " 
+    <div class="card-body p-4 text-left btn " 
     data-toggle="collapse" 
     data-target="#product_collapse{{$commande->id}}" 
     aria-expanded="false" 
