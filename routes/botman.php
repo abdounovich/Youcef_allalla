@@ -336,7 +336,7 @@ $text=$text."\n"."(-".$percentage ."%)"." السعر الجديد : ".$remises->
     $bot->typesAndWaits(1);
     $messages=array("   أحسنت الإختيار 👌 "  ,    " 😍 إختيار رائع  "  , "👏 إختيار موفق");
     $bot->reply(   $messages[array_rand($messages)]);
-        $bot->reply(Question::create(' 📏 إختر القياس المناسب ')->addButtons($taille_array));
+        $bot->reply(Question::create(' 📏 إختر المقاس المناسب ')->addButtons($taille_array));
 
         // $bot->startConversation(new ByTailleConversation($number));
 
