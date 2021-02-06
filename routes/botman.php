@@ -197,7 +197,7 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
     if ($total=="0") {
         $bot->reply(" 👌 سنقوم قريبا  بإضافة منتجات في قسم  ".$sub_cat->nom ." ال".$sub_cat->categories->nom);
      
-        $sous_cats=SubCategory::where("SubCat_id",$number)->get();
+        $sous_cats=SubCategory::where("cat_id",$number)->get();
         $elements=array();
         foreach ($sous_cats as $sous_cat ) {
             $elements[]=
