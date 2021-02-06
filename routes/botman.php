@@ -197,8 +197,22 @@ $botman->hears('product_([0-9]+)', function($bot,$number) {
     if ($total=="0") {
         $bot->reply(" 👌 سنقوم قريبا  بإضافة منتجات في قسم  ".$sub_cat->nom ." ال".$sub_cat->categories->nom);
      
-$bot->reply(Question::create('  الرجوع إلى القائمة الرئيسية  ؟   ')->addButtons([
-    Button::create(' ✅ نعم ')->value('sous_cat_'.$sub_cat->id),]));
+        $sous_cats=SubCategory::where("SubCat_id",$number)->get();
+        $elements=array();
+        foreach ($sous_cats as $sous_cat ) {
+            $elements[]=
+            Element::create($sous_cat->nom)
+                ->image($sous_cat->photo)
+                ->addButton(ElementButton::create(' 🛍 تصفح المنتجات')
+                    ->payload('product_'.$sous_cat->id)
+                    ->type('postback'));
+        }
+        $bot->typesAndWaits(1);
+        
+            $bot->reply(GenericTemplate::create()
+            ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
+            ->addElements($elements)
+        );    
 
 
     }else{
