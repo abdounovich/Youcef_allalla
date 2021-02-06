@@ -197,7 +197,7 @@ public function finalStep(){
     $this->client->save();
     $this->bot->reply("    شكرا لك 😍 "); 
     $this->bot->reply("  لقد تم حفظ طلبك بنجاح  ✅");
-    $this->bot->reply("رقم طلبيتك :"."CM".$this->commande->id."W25");
+    $this->bot->reply("رقم طلبيتك :"."#CM".$this->commande->id."W25");
     $this->bot->reply(" سنتصل بك قريبا لتأكيد طلبيتك  😊"); 
     $this->bot->reply(Question::create(' 🤝 عملية التسليم تكون في غضون 24 إلى 48 ساعة والدفع عند الإستلام 🚚 ')
             ->addButtons([
