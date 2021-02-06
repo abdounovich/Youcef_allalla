@@ -188,9 +188,9 @@ $bot->typesAndWaits(1);
 
 
 
-$botman->hears('product_([0-9]+)', function($bot,$number) {
-    $products=Product::where("SubCat_id",$number)->where('quantity','>','0')->get();
-    $sub_cat=SubCategory::find($number);
+$botman->hears('product_([0-9]+)', function($bot,$number1) {
+    $products=Product::where("SubCat_id",$number1)->where('quantity','>','0')->get();
+    $sub_cat=SubCategory::find($number1);
     $total=$products->count();
 
 
@@ -302,12 +302,12 @@ $text=$text."\n"."(-".$percentage ."%)"." السعر الجديد : ".$remises->
 
 
 
-    $botman->hears('showColor([0-9]+)', function ( $bot,$number) {
+    $botman->hears('showColor([0-9]+)', function ( $bot,$number2) {
 
 
 
-        $product=Product::find($number);
-        $remise=Remise::where("product_id",$number)->first();
+        $product=Product::find($number2);
+        $remise=Remise::where("product_id",$number2)->first();
         if ($remise) {
             $product->prix=$remise->prix;
         }
@@ -332,15 +332,15 @@ $text=$text."\n"."(-".$percentage ."%)"." السعر الجديد : ".$remises->
         
     });
 
-    $botman->hears('byColorShow([0-9]+)', function ( $bot,$number) {
+    $botman->hears('byColorShow([0-9]+)', function ( $bot,$number3) {
         $messages=array("   أحسنت الإختيار 👌 "  ,    " 😍 إختيار رائع  "  , "👏 إختيار موفق");
         $bot->reply(   $messages[array_rand($messages)]);
 
-        $bot->startConversation(new botConversation($number,'color'));
+        $bot->startConversation(new botConversation($number3,'color'));
 });
 
-    $botman->hears('showTaille([0-9]+)', function ( $bot,$number) {
-    $product=Product::find($number);
+    $botman->hears('showTaille([0-9]+)', function ( $bot,$number3) {
+    $product=Product::find($number3);
     $taille_array=array();
     foreach ($product->taille as $taille ) {
     $taille_array[]=Button::create($taille->taille)->value("slectedTaille".$taille->id);}
@@ -354,21 +354,21 @@ $text=$text."\n"."(-".$percentage ."%)"." السعر الجديد : ".$remises->
     });
 
 
-    $botman->hears('slectedTaille([0-9]+)', function ( $bot,$number) {
+    $botman->hears('slectedTaille([0-9]+)', function ( $bot,$number4) {
         $bot->typesAndWaits(1);
       $bot->reply('جيد جدا 👌');
 
-        $bot->startConversation(new botConversation($number,'taille'));
+        $bot->startConversation(new botConversation($number4,'taille'));
 
         
         
     });
-    $botman->hears('select([0-9]+)', function ( $bot,$number) {
+    $botman->hears('select([0-9]+)', function ( $bot,$number5) {
         $bot->typesAndWaits(1);
         $messages=array("   أحسنت الإختيار 👌 "  ,    " 😍 إختيار رائع  "  , "👏 إختيار موفق");
         $bot->reply(   $messages[array_rand($messages)]);
 
-        $bot->startConversation(new botConversation($number,'simple'));
+        $bot->startConversation(new botConversation($number5,'simple'));
 
         
         
@@ -473,9 +473,9 @@ $bot->typesAndWaits(1);
     });
 
 
-    $botman->hears('CommandeStatue([0-9]+)', function ( $bot,$number) {
+    $botman->hears('CommandeStatue([0-9]+)', function ( $bot,$number6) {
 
-        $commande=Commande::find($number);
+        $commande=Commande::find($number6);
         switch ($commande->type) {
             case 1:
         $bot->reply("حالة الطلبية :"."#CM".$commande->id."W25");
@@ -501,8 +501,8 @@ $bot->typesAndWaits(1);
     });
 
 
-    $botman->hears('cancelCommande([0-9]+)', function ( $bot,$number) {
-        $commande=Commande::find($number);
+    $botman->hears('cancelCommande([0-9]+)', function ( $bot,$number7) {
+        $commande=Commande::find($number7);
         if ($commande->product->product_type=="simple") {
 
             $produit=Product::find($commande->product->id);
