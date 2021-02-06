@@ -444,7 +444,7 @@ $bot->typesAndWaits(1);
             ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
             ->addElements([
                 Element::create($commande->product->nom)
-                    ->subtitle($commande->product->nom)
+                    ->subtitle("#CM".$commande->idw."W25")
                     ->image($commande->product->photo)
                     
                     
