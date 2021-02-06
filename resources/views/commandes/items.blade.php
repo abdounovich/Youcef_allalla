@@ -15,8 +15,10 @@
                                   <div class="mt-2" ><span class="  text-secondary">{{$commande->created_at->format("d-m-y H:i")}}</span></div>
 
                                  <div class="card-text h5 clearfix  ">
-                                   <span class="text-white float-sm-left ">{{$commande->total_price}} da</span>
+                                   <span class="text-white float-sm-left ">{{$remises->prix}} da</span>
                                   <span class="badge ml-2  mr-1 float-sm-left  badge-info"> - {{$percentage}} % </span>
+                                  <span class="mr-1  float-sm-right  ">  {{$commande->total_price}}  </span>
+
                                 </div>
 
 
