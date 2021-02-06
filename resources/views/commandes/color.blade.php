@@ -27,8 +27,8 @@
   @endif 
   {{$commande->product->nom}}        <span class="text-white"> X {{$commande->quantity}}</span>
 
-  <a class="btn btn-danger  btn-circle float-right  mr-1" href="{{route('commandes.delete',$commande->id)}}"  >
-    <span class="     fa fa-trash  "></span>
+  <a class="btn btn-dark btn-circle float-right mt-2 mr-1" href="{{route('commandes.delete',$commande->id)}}">
+    <span class=" text-danger  fa fa-trash border-dark "></span>
 </a>
 <img class="img-thumbnail custom  p-0 mt-2 " style="width: 100%;height:250px" src="{{$commande->product->photo}}" alt="">
 
