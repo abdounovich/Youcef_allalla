@@ -192,7 +192,8 @@ public function askConfirmation(){
 
 
 public function finalStep(){
- 
+    $this->bot->reply($this->commande->id); 
+    $this->bot->reply($this->commande->wilaya); 
     $this->bot->reply("    شكرا لك 😍 "); 
     $this->bot->reply("  لقد تم حفظ طلبك بنجاح  ✅");
     $this->bot->reply("رقم طلبيتك :"."CM".$this->commande->id."W".$this->wilaya); 
