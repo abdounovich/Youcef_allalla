@@ -20,7 +20,7 @@
                                  <div class="card-text h5 clearfix  ">
                                    <span class="text-white float-sm-left ">{{$remises->produit->prix}} da</span>
                                   <span class="badge ml-2  mr-1 float-sm-left  badge-info"> - {{$percentage}} % </span>
-                                  <span class="badge ml-2 float-right  mr-1 float-sm-right text-white  badge-success">   {{$commande->total_price}} Da  </span><span class="text-white float-right">Total:</span>
+                                  <span class="badge float-right  mr-1 float-sm-right text-white  badge-success">   {{$commande->total_price}} Da  </span>
 
                                 </div>
 
