@@ -2,10 +2,13 @@
     .border-orange{
         border-color:darkred;
     }
+    .bg-orange{
+        border-color:darkred;
+    }
 </style>
 <div class="row text-center text-white mb-3">
     <div class="col-lg-7 mx-auto">
-    <h1 class=" h4 mt-4 p-3 shadow bg-dark rounded" style="opacity: 0.9"> 
+    <h1 class=" h4 mt-4 p-3 shadow bg-orange rounded" style="opacity: 0.9"> 
           Annulées par admin :  {{$annuler_par_admin_count}}
     </h1>
     </div>

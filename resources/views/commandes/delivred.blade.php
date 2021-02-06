@@ -1,8 +1,8 @@
 
 <div class="row text-center text-white mb-3">
     <div class="col-lg-7 mx-auto">
-    <h1 class=" h4 mt-4 p-3 shadow bg-dark rounded" style="opacity: 0.9"> 
-          délivrées :  {{$delivré_commandes_count}}
+    <h1 class=" h4 mt-4 p-3 shadow bg-success rounded" style="opacity: 0.9"> 
+          Délivrées :  {{$delivré_commandes_count}}
     </h1>
     </div>
 </div>
