@@ -8,7 +8,7 @@
 <hr color="white">
     <div class=" bg-dark  " >
         <a class="  btn-circle float-right " >
-            <span class="text-white float-right h3 ">#{{$commande->id}}</span> 
+            <span class="text-white float-right h3 ">#CM{{$commande->id}}W25</span> 
         </a>
         
        
