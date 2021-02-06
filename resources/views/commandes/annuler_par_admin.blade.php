@@ -3,7 +3,7 @@
         border-color:darkred;
     }
     .bg-orange{
-        border-color:darkred;
+        background-color:darkred;
     }
 </style>
 <div class="row text-center text-white mb-3">
