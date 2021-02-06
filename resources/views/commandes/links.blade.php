@@ -6,14 +6,14 @@
     </a>
 </div> --}}
 <hr color="white">
-    <div class=" bg-dark " >
-        <a class="btn btn-info  btn-circle float-right  mr-1" href="#"  data-toggle="collapse" data-target="#product_collapse{{$commande->id}}" aria-expanded="false" aria-controls="collapseExample">
-            <span class="     fa fa-info  "></span>
+    <div class=" bg-dark  " >
+        <a class="  btn-circle float-right  mr-1" href="#"  data-toggle="collapse" data-target="#product_collapse{{$commande->id}}" aria-expanded="false" aria-controls="collapseExample">
+            <span class="text-white"> #{{$commande->id}}
+            </span> 
         </a>
         
        
-      
-        
+       
         @if ($commande->type=="1" OR $commande->type=="2"  OR $commande->type=="6" )
         <a class="btn btn-danger  btn-circle float-left  mr-1" href="{{route('commandes.annuler',$commande->id)}}"  >
             <span class="     fa fa-remove  "></span>
