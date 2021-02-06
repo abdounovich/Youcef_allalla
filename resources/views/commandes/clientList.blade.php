@@ -50,17 +50,17 @@
                         <span class=" ml-2 badge badge-primary  ">{{$ByClientActiveCommandes}}</span></span> 
 
                         @endif
+                        @if ($ByClientenrouteCommandes>0)
+                        <span class=" ml-2  badge btn-warning ">{{$ByClientenrouteCommandes}}</span>  
+
+                        @endif
 
                         @if ($ByClientDelivredCommandes>0)
                         <span class=" ml-2 badge btn-success  ">{{$ByClientDelivredCommandes}}</span>
 
                         @endif
 
-                        @if ($ByClientenrouteCommandes>0)
-                        <span class=" ml-2  badge btn-warning ">{{$ByClientenrouteCommandes}}</span>  
-
-                        @endif
-
+                       
                         @if ($ByClientcanceledCommandes>0)
                         <span class=" ml-2  badge btn-danger  ">{{$ByClientcanceledCommandes}}</span> 
 
