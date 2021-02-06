@@ -1,10 +1,9 @@
 @php
-   $remises=App\Remise::where("product_id",$commande->product->id)->first();
-   @endphp
+   $remises=App\Remise::where("product_id",$commande->product->id)->first();@endphp
    @if (!$remises) 
    
    <div class="mt-2" ><span class="  text-secondary">{{$commande->created_at->format("d-m-y H:i")}}</span></div>
-   <div class="card-text  text-white mt-1  h1"> {{$commande->product->prix}} daazzz
+   <div class="card-text  text-white mt-1  h5"> {{$commande->product->prix}} da 
     <span class="badge float-right  mr-1 float-sm-right text-white  badge-success">   {{$commande->total_price}} Da  </span>
 
     
@@ -28,7 +27,7 @@
 
                             @else 
                             <div class="mt-2" ><span class="  text-secondary">{{$commande->created_at->format("d-m-y H:i")}}</span></div>
-   <div class="card-text  text-white mt-1  h5"> {{$commande->product->prix*$commande->quantity}} da
+   <div class="card-text  text-white mt-1  h5"> {{$commande->product->prix*$commande->quantity}} daaa
     <span class="badge  float-right  mr-1 float-sm-right text-white  badge-success">   {{$commande->total_price}} Da  </span>
  
    </div>
