@@ -141,19 +141,19 @@ return redirect()->route('commandes');
         if ($commande->product->product_type=="simple") {
 
             $produit=Product::find($commande->product->id);
-            $produit->quantity=$produit->quantity+1;
+            $produit->quantity=$produit->quantity+$commande->quantity;
             $produit->save();
 
         }
         elseif ($commande->product->product_type=="taille") {
 
             $produit=Taille::find($commande->taille);
-            $produit->quantity=$produit->quantity+1;
+            $produit->quantity=$produit->quantity+$commande->quantity;
             $produit->save();
         } 
         elseif ($commande->product->product_type=="color") {
             $produit=Color::find($commande->color);
-            $produit->quantity=$produit->quantity+1;
+            $produit->quantity=$produit->quantity+$commande->quantity;
             $produit->save();
 
         } 
