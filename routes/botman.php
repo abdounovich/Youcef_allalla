@@ -478,20 +478,20 @@ $bot->typesAndWaits(1);
         $commande=Commande::find($number);
         switch ($commande->type) {
             case 1:
-        $bot->reply("حالة الطلبية :"."#CM".$commande->id."w25");
+        $bot->reply("حالة الطلبية :"."CM".$commande->id."W25");
         $bot->reply("  غير مؤكدة سنتصل بك قريبا  🟡");
 
                 break;
             case 2:
-        $bot->reply("حالة الطلبية :"."#CM".$commande->id."w25");
+        $bot->reply("حالة الطلبية :"."CM".$commande->id."W25");
         $bot->reply("  طلبية  مؤكدة في إنتظار التوصيل 🟢  ");
                 break;
             case 3:
-                $bot->reply("حالة الطلبية :"."#CM".$commande->id."w25");
+                $bot->reply("حالة الطلبية :"."CM".$commande->id."W25");
         $bot->reply("وصول الطلبية بنجاح");
                 break;
             case 6:
-                $bot->reply("حالة الطلبية :"."#CM".$commande->id."w25");
+                $bot->reply("حالة الطلبية :"."CM".$commande->id."W25");
                     $bot->reply("  طلبية قيد التوصيل  🚚   ");
                             break;
         }
