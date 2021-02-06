@@ -6,7 +6,6 @@
     aria-controls="collapseExample">
 
         <div class="card-text">
-            @include('commandes.links')
             @php
                 $color=App\Color::find($commande->color);
 
@@ -35,11 +34,13 @@
 
   </p>            <p class="text-white text-wrap " >Couleur : {{$color->couleur}} </p>
 
+            <img class="img-thumbnail custom  p-0 " src="{{$color->photo}}" alt="">
 
 
 
             @include('commandes.items')
 
+            @include('commandes.links')
 
     
         </div>
