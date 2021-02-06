@@ -407,7 +407,6 @@ elseif ($this->typ=='color') {
     $this->msgText=" اللون ";
     $this->msgValue=$this->product->couleur;
 }
-$this->bot->reply($this->product_id);
         
         $this->askQuantity();
     }
