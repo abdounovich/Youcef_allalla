@@ -11,16 +11,16 @@
 
     @foreach ($delivré_commandes as $commande)
         @if ($commande->commande_type=="color")
-        <div class="card bg-dark border-dark  mt-2 mb-1" >
+        <div style="border-width: 10px" class="card bg-dark border-success     mt-2 mb-1" >
             @include('commandes.color')
         </div>
 
         @elseif($commande->commande_type=="taille")
-        <div class="card bg-dark border-dark  mt-2 mb-1" >
+        <div style="border-width: 10px" class="card bg-dark border-success     mt-2 mb-1" >
             @include('commandes.taille')
         </div>
         @elseif($commande->commande_type=="simple")
-        <div class="card bg-dark border-dark  mt-2 mb-1" >
+        <div style="border-width: 10px" class="card bg-dark border-success     mt-2 mb-1" >
             @include('commandes.simple')
         </div>
         @endif
