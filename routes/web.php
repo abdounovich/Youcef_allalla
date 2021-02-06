@@ -23,6 +23,7 @@ Route::get('/', function () {
     ->with("categories",Category::all())
     ->with("sub_categories",SubCategory::all())
     ->with("commandes",Commande::all())
+    ->with("InactivCommandes",Commande::whereType(1)->get())
     ->with("clients",Client::all())
 
 
