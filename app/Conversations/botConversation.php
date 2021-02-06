@@ -25,12 +25,14 @@ class botConversation extends Conversation
 
     protected $product_id;
     protected $typ;
+    protected $wilaya;
 
 public function __construct(string $product_id,string $typ ) {
 
     $this->product_id = $product_id;
     $this->q="0";
     $this->typ = $typ;
+    $this->wilaya = "0";
 
 
 }
