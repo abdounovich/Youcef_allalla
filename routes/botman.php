@@ -430,7 +430,7 @@ $bot->typesAndWaits(1);
             ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
             ->addElements([
                 Element::create($commande->product->nom)
-                    ->subtitle("#CM".$commande->id."W25")
+                    ->subtitle("CM".$commande->id."W25")
                     ->image($commande->product->photo)
                     
                     
@@ -464,21 +464,21 @@ $bot->typesAndWaits(1);
         $commande=Commande::find($number6);
         switch ($commande->type) {
             case 1:
-        $bot->reply("حالة الطلبية :"."#CM".$commande->id."W25");
+        $bot->reply("حالة الطلبية :"."CM".$commande->id."W25");
         $bot->reply("🟡  غير مؤكدة سنتصل بك قريبا ");
 
                 break;
             case 2:
-        $bot->reply("حالة الطلبية :"."#CM".$commande->id."W25");
+        $bot->reply("حالة الطلبية :"."CM".$commande->id."W25");
         $bot->reply(" 🟢 طلبية  مؤكدة في إنتظار التوصيل   ");
                 break;
             case 3:
-                $bot->reply("حالة الطلبية :"."#CM".$commande->id."W25");
+                $bot->reply("حالة الطلبية :"."CM".$commande->id."W25");
  
         $bot->reply(" ✅ وصول الطلبية بنجاح");
                 break;
             case 6:
-                $bot->reply("حالة الطلبية :"."#CM".$commande->id."W25");
+                $bot->reply("حالة الطلبية :"."CM".$commande->id."W25");
 
                     $bot->reply(" 🚚 طلبية قيد التوصيل     ");
                             break;
