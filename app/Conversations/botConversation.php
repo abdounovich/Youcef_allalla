@@ -361,7 +361,7 @@ $this->ask($question5, function (Answer $answer) {
     {
 
 
-
+$this->bot->reply($this->product_id);
         $this->user = $this->bot->getUser();
         $this->facebook_id =  $this->user->getId();
         $this->firstname = $this->user->getFirstname();
