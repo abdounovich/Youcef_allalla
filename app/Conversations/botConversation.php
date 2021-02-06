@@ -197,7 +197,7 @@ public function finalStep(){
     $this->client->save();
 
     $this->bot->reply("    شكرا لك 😍 "); 
-    $this->bot->reply("....". $this->commande->id); 
+    $this->bot->reply("....". $this->wilaya); 
 
     $this->bot->reply("  لقد تم حفظ طلبك بنجاح  ✅");
 /*     $this->bot->reply("رقم طلبيتك :"."CM".$this->commande->id."W".$this->wilaya); 
