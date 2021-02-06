@@ -17,8 +17,8 @@ class CreateCommandesTable extends Migration
             $table->bigIncrements('id');
             $table->text("type");
             $table->text("quantity");
-            $table->integer("color")->default("0");
-            $table->integer("taille")->default("0");
+            $table->integer("color");
+            $table->integer("taille");
             $table->text("commande_type");
             $table->text("total_price");
             $table->unsignedBigInteger('product_id');

@@ -378,6 +378,9 @@ $this->ask($question5, function (Answer $answer) {
             $this->prix=$this->product->prix;
             $this->msgText="";
             $this->msgValue=$this->product->nom;
+            $this->commande->taille= '0';
+            $this->commande->color= '0';
+
 
 
 }elseif ($this->typ=='taille') {
@@ -385,7 +388,9 @@ $this->ask($question5, function (Answer $answer) {
     $this->prix=$this->product->product->prix;
     $this->photo=$this->product->product->photo;
     $this->quantity=$this->product->quantity;
+    $this->commande->taille= $this->product->id;
     $this->msgText="  المقاس ";
+    $this->commande->color= '0';
     $this->msgValue=$this->product->taille;
 
 }
@@ -394,6 +399,9 @@ elseif ($this->typ=='color') {
     $this->prix=$this->product->product->prix;
     $this->quantity=$this->product->quantity;
     $this->photo=$this->product->photo;
+    $this->commande->color= $this->product->id;
+    $this->commande->taille= '0';
+
     $this->msgText=" اللون ";
     $this->msgValue=$this->product->couleur;
 }
