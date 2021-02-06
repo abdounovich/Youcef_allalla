@@ -53,7 +53,6 @@ else {
   
 
         $this->product->quantity= $this->product->quantity-$this->q;
-        $this->commande=new Commande();
         $this->commande->client_id=$this->client->id;
         $this->commande->product_id=$this->product_id;
         $this->commande->commande_type=$this->typ;
@@ -369,6 +368,8 @@ $this->ask($question5, function (Answer $answer) {
         $this->lastname =  $this->user->getLastname();
         $this->full_name= $this->firstname.'-'. $this->lastname;
         $this->client=Client::where('facebook', $this->full_name)->first();
+
+        $this->commande=new Commande();
 
 
         if ($this->typ=="simple") {
