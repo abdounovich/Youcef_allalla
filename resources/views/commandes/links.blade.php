@@ -5,10 +5,8 @@
      <i style="font-size: 20px" class="fa fa-ellipsis-v text-white"></i>
     </a>
 </div> --}}
-<hr class="text-light bg-light">
-
-
-    <div class=" bg-dark" aria-labelledby="">
+<hr color="white">
+    <div class=" bg-dark " >
         <a class="btn btn-info  btn-circle float-right  mr-1" href="#"  data-toggle="collapse" data-target="#product_collapse{{$commande->id}}" aria-expanded="false" aria-controls="collapseExample">
             <span class="     fa fa-info  "></span>
         </a>

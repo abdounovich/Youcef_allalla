@@ -20,7 +20,7 @@
          @elseif($commande->type=="6")
          <i class="btn btn-warning btn-circle"></i>
        @endif 
-       {{$commande->product->nom}}        <span class="text-white"> X {{$commande->quantity}}</span>
+       {{$commande->product->nom}}        <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span>
         <a class="btn btn-danger  btn-circle float-right  mr-1" href="{{route('commandes.delete',$commande->id)}}"  >
         <span class="     fa fa-trash  "></span>
     </a></p>
@@ -28,29 +28,7 @@
  
        <img class="img-thumbnail custom  p-0 mt-2 " style="width: 100%;height:250px" src="{{$commande->product->photo}}" alt="">
 
-   @php
-   $remises=App\Remise::where("product_id",$commande->product->id)->first();
-   if (!$remises) {
-    echo'<p class="card-text  text-white mt-3  h5"> '.$commande->product->prix*$commande->quantity.' da <span class="float-right small">'.$commande->created_at->format("Y-m-d  H:i").'</span></p>'  ;
-   }else {
-    if ($commande->created_at>$remises->created_at) {
-                                $percentage=round(100-$remises->prix*100/$remises->produit->prix);
-
-                                echo '   <p class="card-text mt-3 h5  "> 
-                            <span class="text-white ">'.$remises->prix.' da</span>                      
-                            <span class="badge p-1  badge-info"> - '.$percentage.' % </span>
-                                   <span class=" float-right  small text-white">'.$commande->created_at->format("Y-m-d  H:i").'</span></p>
-';
-
-
-                            }else {
-                              echo'<p class="card-text  text-white mt-3  h5"> '.$commande->product->prix*$commande->quantity.' da <span class="float-right small">'.$commande->created_at->format("Y-m-d  H:i").'</span></p>'  ;
-
-                            }
-   
-   }
-   
-   @endphp
+   @include('commandes.items')
    
    @include('commandes.links')
 
