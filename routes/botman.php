@@ -197,7 +197,7 @@ $botman->hears('product_([0-9]+)', function($bot,$number1) {
     if ($total=="0") {     
         $bot->reply(Question::create(" 👌 سنقوم قريبا بإضافة منتجات جديدة  في قسم  ".$sub_cat->nom ." ال".$sub_cat->categories->nom)->addButtons([
             Button::create('  الرئيسية  🏠 ')->value('show_me_products'),
-            Button::create("ال ".'قسم'.$sub_cat->categories->nom."🔝")->value('sous_cat_'.$sub_cat->categories->id)
+            Button::create("قسم ال".$sub_cat->categories->nom."🔝")->value('sous_cat_'.$sub_cat->categories->id)
 
             ]));
         
