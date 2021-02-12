@@ -417,7 +417,7 @@ elseif ($this->typ=='complexe') {
     $this->photo=$this->product->product->photo;
     $this->quantity=$this->product->quantity;
     $this->commande->taille= $this->product->id;
-    $this->msgText="  المقاس ";
+    $this->msgText=$this->product->color->couleur."  المقاس ";
     $this->commande->color= $this->product->color->id;
     $this->msgValue=$this->product->taille;
 
