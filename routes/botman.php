@@ -223,7 +223,15 @@ $botman->hears('product_([0-9]+)', function($bot,$number1) {
                 $payload='showComplexe'.$product->id;
                 $text="";
                 foreach ($product->color as $color) {
-                 $text=$text.' '.$color->couleur  ;}}
+                 $text=$text.' '.$color->couleur  ;
+                 foreach ($color->taille as $taille) {
+                    $text=$text.' '.$taille->taille  ;
+                   
+                   }
+                }
+                
+                
+                }
         elseif($product->product_type=="color"){
                 $payload='showColor'.$product->id;
                 $text="";
@@ -326,12 +334,69 @@ $text=$text."\n"."(-".$percentage ."%)"." السعر الجديد : ".$remises->
         
     });
 
+
     $botman->hears('byColorShow([0-9]+)', function ( $bot,$number3) {
         $messages=array("   أحسنت الإختيار 👌 "  ,    " 😍 إختيار رائع  "  , "👏 إختيار موفق");
         $bot->reply(   $messages[array_rand($messages)]);
 
         $bot->startConversation(new botConversation($number3,'color'));
 });
+
+
+
+
+
+
+
+
+
+
+
+$botman->hears('showComplexe([0-9]+)', function ( $bot,$number2) {
+
+
+
+    $product=Product::find($number2);
+    $remise=Remise::where("product_id",$number2)->first();
+    if ($remise) {
+        $product->prix=$remise->prix;
+    }
+   
+
+    foreach ($product->color as $color ) {
+        $elements[]=Element::create($color->couleur)
+        ->subtitle(" السعر  ".$product->prix . " دج "."\n".$product->descreption)
+        ->image($color->photo)
+        ->addButton(ElementButton::create(' ✅ إشتر هذا المنتج')
+            ->payload("byComplexeShow".$color->id)
+            ->type('postback'))
+            ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
+            ->url($color->photo));
+}
+$bot->typesAndWaits(1);
+
+    $bot->reply(GenericTemplate::create()
+    ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
+    ->addElements($elements)
+);    
+    
+});
+
+
+$botman->hears('byComplexeShow([0-9]+)', function ( $bot,$number3) {
+    $messages=array("   أحسنت الإختيار 👌 "  ,    " 😍 إختيار رائع  "  , "👏 إختيار موفق");
+    $bot->reply(   $messages[array_rand($messages)]);
+
+    $bot->startConversation(new botConversation($number3,'color'));
+});
+
+
+
+
+
+
+
+
 
     $botman->hears('showTaille([0-9]+)', function ( $bot,$number3) {
     $product=Product::find($number3);

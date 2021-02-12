@@ -246,7 +246,7 @@ class ProductController extends Controller
        $color=new Color();
         $color->product_id=$product->id;
         $color->couleur=$couleur;
-        $color->quantity="/";
+        $color->quantity="0.1";
         $color->photo=$photo;
         $color->save();
         $q="0";
@@ -300,7 +300,7 @@ class ProductController extends Controller
        $product=new Product();
        $product->nom=$nom;
        $product->photo=$photo;
-       $product->quantity="/";
+       $product->quantity="0.1";
        $product->prix=$prix;
        $product->SubCat_id=$sub_cat;
        $product->type=$type;
