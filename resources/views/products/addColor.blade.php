@@ -16,12 +16,12 @@
             @csrf
             <div class="form-group ">
               <label for="nom">Nom :</label>
-              <input type="text" class="form-control" name="nom" id="nom"  placeholder="Entrer le nom du produit">
+              <input type="text" class="form-control" name="nom" id="nom_color"  placeholder="Entrer le nom du produit">
             </div>
 
             <div class="form-group">
                 <label for="descreption">Descreption </label>
-                <textarea class="form-control" name="descreption" id="descreption" rows="3"></textarea>
+                <textarea class="form-control" name="descreption" id="descreption_color" rows="3"></textarea>
               </div>
 
               <div class="form-group">
@@ -186,13 +186,13 @@ HrefImageElement.setAttribute("href",  "#");
       </script>
               <div class="form-group">
                 <label for="prix">Prix : </label>
-                <input type="text" class="form-control" name="prix" id="prix" placeholder="prix en dianars">
+                <input type="text" class="form-control" name="prix" id="prix_color" placeholder="prix en dianars">
               </div>
 
 
               <div class="form-group">
                 <label for="sub_cat">Sous Catégorie : </label>
-              <select class="form-control" id="sub_cat" name="sub_cat">
+              <select class="form-control" id="sub_cat_color" name="sub_cat">
                 @foreach ($sub_categories as $item)
                 <option value="{{$item->id}}">{{$item->nom}}->{{$item->categories->nom}}</option>
             @endforeach              </select>

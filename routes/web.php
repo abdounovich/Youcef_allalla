@@ -16,7 +16,8 @@ use App\SubCategory;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/1', function () {    return view('welcome');
+});
 Route::get('/', function () {
     return view('index')
     ->with("products",Product::all())
@@ -25,8 +26,6 @@ Route::get('/', function () {
     ->with("commandes",Commande::all())
     ->with("InactivCommandes",Commande::whereType(1)->get())
     ->with("clients",Client::all())
-
-
 
 
     ;
@@ -41,12 +40,16 @@ Route::get('products', 'ProductController@index')->name('products');
 Route::post('products/add/taille', 'ProductController@storeTaille')->name('products.add.taille');
 Route::post('products/add/simple', 'ProductController@storeSimple')->name('products.add.simple');
 Route::post('products/add/color', 'ProductController@storeColor')->name('products.add.color');
+Route::post('products/add/complexe', 'ProductController@storeComplexe')->name('products.add.complexe');
+Route::post('products/add/complexeStepe', 'ProductController@storeComplexeStep1')->name('products.add.complexeStep1');
 
 Route::get('products/edit/{id}', 'ProductController@edit')->name('products.edit');
 
 
 Route::post('products/edit/{id}', 'ProductController@update')->name('products.edit');
 Route::get('products/delete/{id}', 'ProductController@destroy')->name('products.delete');
+Route::get('products/steps/{step}/{id}', 'ProductController@steps')->name('products.steps');
+
 
 
 
@@ -119,6 +122,8 @@ Route::get('tailles/edit/{id}', 'TailleController@edit')->name('tailles.edit');
 Route::post('tailles/edit/{id}', 'TailleController@update')->name('tailles.edit');
 Route::get('tailles/add/{id}', 'TailleController@create')->name('tailles.add');
 Route::post('tailles/add', 'TailleController@store')->name('taille.add');
+
+
 
 
 

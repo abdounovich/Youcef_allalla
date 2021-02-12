@@ -20,6 +20,8 @@
     font-family: 'Changa', sans-serif;
  }
     </style>
+        @livewireStyles
+
 </head>
   <body>
   
@@ -62,6 +64,7 @@
     <script src="{{ asset('js/app.js') }}" type="text/js"></script>
     
 
+    @livewireScripts
 
 </body>
 </html>

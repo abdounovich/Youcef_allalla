@@ -21,11 +21,9 @@ class ProductController extends Controller
     {
         $cat=Category::all();
         $sub_cat=SubCategory::all();
-        $produits=Product::paginate(10);
        return view('products.index')
        ->with('cat',$cat)
-       ->with('sub_categories',$sub_cat)
-       ->with('produits',$produits);
+       ->with('sub_categories',$sub_cat);
     }
 
     /**
@@ -117,9 +115,8 @@ class ProductController extends Controller
         Cloudder::upload($image_name, null);
         list($width, $height) = getimagesize($image_name);
         $image_url= Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
+       $photo=$image_url; 
        $nom=$request->get('nom');
-       $photo=$image_url;
-
        $quantité=$request->get('quantity');
        $quantité="2";
 
@@ -219,6 +216,87 @@ class ProductController extends Controller
        }
     }
 
+    public function storeComplexeStep1(Request $request)
+    { 
+
+        if ($request->isMethod('post')) 
+                 
+        {
+      $image_name = $request->file('photo')->getRealPath();
+        Cloudder::upload($image_name, null);
+        list($width, $height) = getimagesize($image_name);
+        $image_url= Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
+       $photo=$image_url; 
+       $id=$request->get('id');
+       $product=Product::find($id);
+       $couleur=$request->get('nom');
+       $product->type="1";
+       $color=new Color();
+        $color->product_id=$product->id;
+        $color->couleur=$couleur;
+        $color->quantity="/";
+        $color->photo=$photo;
+        $color->save();
+        $q="0";
+        for ($i=1; $i <=$request->get('Tailleindex') ; $i++) { 
+         $taille=new Taille();
+         $taille->product_id=$product->id;
+         $taille->color_id=$color->id;
+         $taille->taille=$request->get('Tbutton'.$i);
+         $taille->quantity=$request->get('Qbutton'.$i);
+         $q=$q+$taille->quantity;
+         $taille->save();
+      }   
+  
+      $product->save();  
+
+       return back()->with("success","Produit ajouté avec success");
+       
+
+
+        }
+
+    }
+    public function storeComplexe(Request $request)
+    {
+
+
+
+      
+
+        if ($request->isMethod('post')) 
+                 
+        {
+         $image_name = $request->file('photo')->getRealPath();
+        Cloudder::upload($image_name, null);
+        list($width, $height) = getimagesize($image_name);
+        $image_url= Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
+       $photo=$image_url; 
+       $nom=$request->get('nom');
+
+       $prix=$request->get('prix');
+       $sub_cat=$request->get('sub_cat');
+       $descreption=$request->get('descreption');
+       $type="0";
+       $product=new Product();
+       $product->nom=$nom;
+       $product->photo=$photo;
+       $product->quantity="/";
+       $product->prix=$prix;
+       $product->SubCat_id=$sub_cat;
+       $product->type=$type;
+       $product->product_type="complexe";
+       $product->descreption=$descreption;
+       $product->save();
+  
+
+        
+       return back()->with("success","Produit ajouté avec success");
+       
+
+
+        }
+    }
 
 
 
@@ -292,6 +370,25 @@ else{$photo=$product->photo;}
 
     }
 
+
+ /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Product  $product
+     * @return \Illuminate\Http\Response
+     */
+    public function steps($step,$id)
+    {
+        $produit=Product::find($id);
+        $cat=Category::all();
+        $sub_cat=SubCategory::all();
+    return view('products.step0'.$step)
+    ->with("produit",$produit)
+    ->with('cat',$cat)
+    ->with('sub_categories',$sub_cat);
+  
+   
+        }
 
     
 }

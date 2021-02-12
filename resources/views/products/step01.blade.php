@@ -1,23 +1,63 @@
 
 
-<div class="  d-flex justify-content-center " >
-    <div class=" collapse col col-12 bg-dark my-4 rounded     text-white"  id="taille_collapse" style="opacity: 0.9">
+
+
+@extends('layouts.master')
+
+@section('title', 'Ajouter des produits')
+
+
+
+@section('content')
+
+@if (\Session::has('success'))
+    <div class="alert  alert-success mt-4    ">
+        <ul>
+            <li class="p-2 mt-2  text-left">{!! \Session::get('success') !!}</li>
+        </ul>
+    </div>
+@endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="  d-flex justify-content-center " >
+    <div class="  col col-12 bg-dark my-4 rounded     text-white"  id="taille_collapse" style="opacity: 0.9">
         <div class="row text-center text-white mb-3">
             <div class="col  ">
-                <h1 class=" rounded  p-2 h4 mt-2 ">Ajouter un produit avec tailles :</h1>
+                <h1 class=" rounded  p-2 h4 mt-2 ">Ajouter La couleur :</h1>
             </div>
         </div>
-    <form method="POST" action="{{route('products.add.taille') }}" enctype="multipart/form-data">
+    <form method="POST" action="{{route('products.add.complexeStep1') }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group ">
-              <label for="nom">Nom :</label>
-              <input type="text" class="form-control" name="nom" id="nom_taille"  placeholder="Entrer le nom du produit">
-            </div>
+             
+            <input type="hidden" value="{{$produit->id}}" class="form-control" name="id" id="id"  >
 
             <div class="form-group">
-                <label for="descreption">Descreption </label>
-                <textarea class="form-control" name="descreption" id="descreption_taille" rows="3"></textarea>
-              </div>
+                <div class="row">
+                  <div class="col-2">
+               <img class="img "  
+                  src="{{$produit->photo}}"
+                    alt="" width="200" height="200">
+               
+                  </div>
+                  
+                </div> <label for="nom" class="mt-4">Nom :</label>
+              <input type="text" class="form-control" name="nom" id="nom"  placeholder="Entrer la couleur ex : rouge">
+            </div>
+
+           
 
               <div class="form-group">
                 <div class="row">
@@ -26,7 +66,7 @@
                 <a href="#" onclick="$('#Tailleimgupload').trigger('click'); return false;"> 
                    <img class="img " id="Tailleimage" 
                    src="https://res.cloudinary.com/ds9qfm1ok/image/upload/v1595881085/gallery-131964752828011266_ko0lhf.png"
-                    alt="" width="200" height="200">
+                    alt="" width="150" height="150">
                 </a>
                   </div>
                   
@@ -123,19 +163,10 @@
       
           }
       </script>
-              <div class="form-group">
-                <label for="prix">Prix : </label>
-                <input type="text" class="form-control" name="prix" id="prix_taille" placeholder="prix en dianars">
-              </div>
+            
 
 
-              <div class="form-group">
-                <label for="sub_cat">Sous Catégorie : </label>
-              <select class="form-control" id="sub_cat_taille" name="sub_cat">
-                @foreach ($sub_categories as $item)
-                <option value="{{$item->id}}">{{$item->nom}}->{{$item->categories->nom}}</option>
-            @endforeach              </select>
-              </div>
+              
              
              
 
@@ -147,3 +178,11 @@
 
     </div>
 </div> 
+
+
+
+
+
+@stop
+
+

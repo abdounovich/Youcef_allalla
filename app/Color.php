@@ -10,4 +10,12 @@ class Color extends Model
     {
         return $this->belongsTo(Product::class,'product_id');
     }
+
+
+    public function taille()
+    {
+        return $this->hasMany(Taille::class,'color_id');
+    }
+
+
 }

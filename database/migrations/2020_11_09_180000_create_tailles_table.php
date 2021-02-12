@@ -21,6 +21,10 @@ class CreateTaillesTable extends Migration
             $table->foreign('product_id')
             ->references('id')->on('products')
             ->onDelete('cascade');
+            $table->unsignedBigInteger('color_id')->nullable();
+            $table->foreign('color_id')
+            ->references('id')->on('colors')
+            ->onDelete('cascade');
             $table->timestamps();
         });
     }
