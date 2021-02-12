@@ -163,6 +163,12 @@ class ProductController extends Controller
 
 
 
+      /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
 
     public function storeColor(Request $request)
     {
@@ -216,6 +222,12 @@ class ProductController extends Controller
        }
     }
 
+      /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function storeComplexeStep1(Request $request)
     { 
 
@@ -257,6 +269,13 @@ class ProductController extends Controller
         }
 
     }
+    
+      /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function storeComplexe(Request $request)
     {
 
