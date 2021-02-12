@@ -397,7 +397,7 @@ $botman->hears('byComplexeShow([0-9]+)', function ( $bot,$number3) {
     $product=Color::find($number3);
     $taille_array=array();
     foreach ($product->taille as $taille ) {
-    $taille_array[]=Button::create($taille->taille)->value("slectedTaille".$taille->id);}
+    $taille_array[]=Button::create($taille->taille)->value("slectedTailleComplexe".$taille->id);}
     $bot->typesAndWaits(1);
     $messages=array("   أحسنت الإختيار 👌 "  ,    " 😍 إختيار رائع  "  , "👏 إختيار موفق");
     $bot->reply(   $messages[array_rand($messages)]);
@@ -409,7 +409,15 @@ $botman->hears('byComplexeShow([0-9]+)', function ( $bot,$number3) {
 
 
 
+$botman->hears('slectedTailleComplexe([0-9]+)', function ( $bot,$number4) {
+    $bot->typesAndWaits(1);
+  $bot->reply('جيد جدا 👌');
 
+    $bot->startConversation(new botConversation($number4,'complexe'));
+
+    
+    
+});
 
 
 
@@ -425,7 +433,6 @@ $botman->hears('byComplexeShow([0-9]+)', function ( $bot,$number3) {
     $bot->reply(   $messages[array_rand($messages)]);
         $bot->reply(Question::create(' 📏 إختر المقاس المناسب ')->addButtons($taille_array));
 
-        // $bot->startConversation(new ByTailleConversation($number));
 
     });
 
