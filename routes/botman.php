@@ -405,7 +405,6 @@ $botman->hears('byComplexeShow([0-9]+)', function ( $bot,$number3) {
 
 
 
-    $bot->startConversation(new botConversation($number3,'color'));
 });
 
 
