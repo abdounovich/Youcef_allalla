@@ -286,11 +286,11 @@ class ProductController extends Controller
         if ($request->isMethod('post')) 
                  
         {
-         $image_name = $request->file('photo')->getRealPath();
-        Cloudder::upload($image_name, null);
-        list($width, $height) = getimagesize($image_name);
-        $image_url= Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
-       $photo=$image_url; 
+            $image_name = $request->file('photo')->getRealPath();
+            Cloudder::upload($image_name, null);
+            list($width, $height) = getimagesize($image_name);
+            $image_url= Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
+           $photo=$image_url; 
        $nom=$request->get('nom');
 
        $prix=$request->get('prix');
