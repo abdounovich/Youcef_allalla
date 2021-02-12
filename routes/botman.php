@@ -225,12 +225,12 @@ $botman->hears('product_([0-9]+)', function($bot,$number1) {
                 foreach ($product->color as $color) {
                    
                  $text=$text.' '.$color->couleur  ; 
-                 $text= $text."( ";
+                 $text= $text." (";
                  foreach ($color->taille as $taille) {
                     $text=$text.' '.$taille->taille  ;
                    
                    }
-                   $text= $text." ),";
+                   $text= $text.") ";
                 }
                 
                 
@@ -365,10 +365,15 @@ $botman->hears('showComplexe([0-9]+)', function ( $bot,$number2) {
         $product->prix=$remise->prix;
     }
    
+    $les_tailles="";
 
     foreach ($product->color as $color ) {
+        foreach ($color->taille as $taille ) {
+        $les_tailles=$les_tailles." ".$taille->taille;
+
+        }
         $elements[]=Element::create($color->couleur)
-        ->subtitle(" السعر  ".$product->prix . " دج "."\n".$product->descreption)
+        ->subtitle($les_tailles."\n"." السعر  ".$product->prix . " دج "."\n".$product->descreption)
         ->image($color->photo)
         ->addButton(ElementButton::create(' ✅ إشتر هذا المنتج')
             ->payload("byComplexeShow".$color->id)
