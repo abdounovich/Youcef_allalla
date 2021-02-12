@@ -24,7 +24,7 @@
             @include('commandes.simple')
         </div>
         @elseif($commande->commande_type=="complexe")
-        <div style="border-width: 10px" class="card bg-dark border-primary     mt-2 mb-1" >
+        <div style="border-width: 10px" class="card bg-dark border-success     mt-2 mb-1" >
             @include('commandes.complexe')
         </div>
         @endif
