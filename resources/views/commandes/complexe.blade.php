@@ -25,10 +25,10 @@
     <i class="btn btn-info btn-circle"></i>
   @endif 
   {{$commande->product->nom}}        <span class="text-white"> X {{$commande->quantity}}</span>
-  </p>      
-    <a class="btn btn-danger  btn-circle float-right  mr-1" href="{{route('commandes.delete',$commande->id)}}"  >
+   <a class="btn btn-danger  btn-circle float-right  mr-1" href="{{route('commandes.delete',$commande->id)}}"  >
         <span class="     fa fa-trash  "></span>
-    </a>
+    </a></p>      
+   
     <p class=" text-white text-wrap " >couleur: {{$taille->color->couleur}}  </p>
     <p class=" text-white text-wrap " >Taille: {{$taille->taille}}  </p>
 
