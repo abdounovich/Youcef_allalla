@@ -23,7 +23,7 @@
             <div class="form-group">
               <div class="row">
                 <div class="col-2">
-                  <input type="file" id="imgupload_c" onchange="loadFileComplexe(event)"  name="photo1" hidden>
+                  <input type="file" id="imgupload_c" onchange="loadFileComplexe(event)"  name="photo" hidden>
               <a href="#" onclick="$('#imgupload_c').trigger('click'); return false;"> 
                  <img class="img" id="image_c" src="https://res.cloudinary.com/ds9qfm1ok/image/upload/v1595881085/gallery-131964752828011266_ko0lhf.png"
                   alt="" width="201" height="200">
