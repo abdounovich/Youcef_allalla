@@ -414,13 +414,13 @@ elseif ($this->typ=='complexe') {
     $this->product=Taille::find($this->product_id);
     $this->product_id=$this->product->product_id;
     $this->prix=$this->product->product->prix;
+    $this->photo=$this->product->product->photo;
     $this->quantity=$this->product->quantity;
-    $this->photo=$this->product->photo;
+    $this->commande->taille= $this->product->id;
+    $this->msgText="  المقاس ";
     $this->commande->color= $this->product->color->id;
-    $this->commande->taille=$this->product->id;
+    $this->msgValue=$this->product->taille;
 
-    $this->msgText=" اللون ";
-    $this->msgValue=$this->product->couleur;
 }
 
 
