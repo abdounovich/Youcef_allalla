@@ -365,9 +365,10 @@ $botman->hears('showComplexe([0-9]+)', function ( $bot,$number2) {
         $product->prix=$remise->prix;
     }
    
-    $les_tailles="";
 
     foreach ($product->color as $color ) {
+        $les_tailles="";
+
         foreach ($color->taille as $taille ) {
         $les_tailles=$les_tailles." ".$taille->taille;
 
