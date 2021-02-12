@@ -219,6 +219,11 @@ $botman->hears('product_([0-9]+)', function($bot,$number1) {
         if ($product->product_type=="simple") { 
             $text="";
             $payload='select'.$product->id;}
+            elseif($product->product_type=="complexe"){
+                $payload='showComplexe'.$product->id;
+                $text="";
+                foreach ($product->color as $color) {
+                 $text=$text.' '.$color->couleur  ;}}
         elseif($product->product_type=="color"){
                 $payload='showColor'.$product->id;
                 $text="";
