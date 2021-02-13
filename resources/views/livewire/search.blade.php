@@ -12,6 +12,7 @@
             <h1 class="h4 shadow bg-dark p-3" style="opacity: 0.9">Liste des produits</h1>
         </div>
     </div>
+
 @endif
 
 

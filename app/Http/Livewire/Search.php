@@ -4,12 +4,12 @@ namespace App\Http\Livewire;
 
 use App\Product;
 use Livewire\Component;
-use WithPagination;
+use Livewire\WithPagination;
 
 
 class Search extends Component
 {
-
+use WithPagination;
     public $query="";    
     public $produits="";
     public $message="";
