@@ -29,7 +29,7 @@
   <span class=" fa fa-trash  "></span>
 </a></p>
 
-    <p class=" text-white text-wrap mt-2 " >Couleur : <span class="text-info">{{$taille->color->couleur}}</span></p>
+    <p class=" text-white text-wrap mt-4 " >Couleur : <span class="text-info">{{$taille->color->couleur}}</span></p>
     <p class=" text-white text-wrap mt-2 "> Taille : <span class="text-info">{{$taille->taille}}</span>  </p>
 
 
