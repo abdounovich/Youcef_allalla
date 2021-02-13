@@ -23,7 +23,7 @@
        {{$commande->product->nom}}        <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span>
 
        <div class="dropdown float-right">
-        <button class="btn btn-secondary " type="button" id="dropdownMenuButton" data-toggle="dropdown" >
+        <button class="btn btn-dark " type="button" id="dropdownMenuButton" data-toggle="dropdown" >
          <i class="fa fa-ellipsis-v"></i>
         </button>
         <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
