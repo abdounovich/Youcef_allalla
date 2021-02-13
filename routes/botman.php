@@ -614,7 +614,7 @@ $bot->typesAndWaits(1);
         $commande->save();
         $bot->typesAndWaits(1);
 
-         $bot->reply("  حسنا لقد تم إلغاء طلبك بنجاح   😄 ");  
+         $bot->reply("  حسنا لقد تم إلغاء الطلبية "."CM".$commande->id."W25"." بنجاح   😄 ");  
          $bot->typesAndWaits(1);
 
         $bot->reply(Question::create('هل تريد إختيار منتج آخر ؟ ')->addButtons([
