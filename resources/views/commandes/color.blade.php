@@ -1,9 +1,6 @@
 
         <div class="card-text">
-            @php
-                $color=App\Color::find($commande->color);
-
-            @endphp
+        
 
 <div class="card-body   text-left btn " 
 data-toggle="collapse" 
@@ -44,7 +41,7 @@ effacer</a>        </div>
 <p></p>
 <img class="img-thumbnail custom  p-0 mt-2 " style="width: 100%;height:250px" src="{{$commande->product->photo}}" alt="">
 
-  </p>            <p class="text-white text-wrap " >Couleur : {{$color->couleur}} </p>
+             <p class="text-white text-wrap " >Couleur : {{$color->couleur}} </p>
 
             <img class="img-thumbnail custom  p-0 " src="{{$color->photo}}" alt="">
 

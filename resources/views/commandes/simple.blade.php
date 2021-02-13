@@ -29,7 +29,7 @@
          <i class="fa text-bold fa-ellipsis-v"></i>
         </button>
         <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
-          <a  href="{{route('commandes.delete',$commande->id)}}"  >
+          <a class="text-dark p-2 m-2"  href="{{route('commandes.delete',$commande->id)}}"  >
 effacer</a>        </div>
       </div>
 
