@@ -28,8 +28,7 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="btn btn-danger  btn-circle float-right  mr-1" href="{{route('commandes.delete',$commande->id)}}"  >
-            <span class=" fa fa-trash  "></span>
-        </a>        </div>
+effacer</a>        </div>
       </div>
 
 
