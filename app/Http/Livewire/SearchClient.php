@@ -13,7 +13,11 @@ class SearchClient extends Component
 
     public function render()
     {
-        $this->clients=Client::where('facebook','like',"%{$this->query}%")->get();
+        $this->clients=Client::where('facebook','like','%'.$this->query.'%')
+        ->orWhere('wilaya', 'like', '%' . $this->query . '%')
+        ->orWhere('address', 'like', '%' . $this->query . '%')
+        ->orWhere('phone', 'like', '%' . $this->query . '%')->get();
+
        if ($this->clients->count()=="0") {
          $this->message="pas de résultat";
        }
