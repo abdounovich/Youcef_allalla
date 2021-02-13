@@ -23,7 +23,7 @@
       
    
        {{$commande->product->nom}}        
-       <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span> 
+       <span class="text-white ml-2 text-info"> X {{$commande->quantity}} 
       </p>
        <span class="dropdown float-right">
         <button class="btn btn-dark " type="button" id="dropdownMenuButton" data-toggle="dropdown" >
@@ -33,7 +33,7 @@
           <a  href="{{route('commandes.delete',$commande->id)}}"  >
 effacer</a>        </span>
           </span>
-    </span>
+    </span></span>
 <p></p>
             
  
