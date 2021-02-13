@@ -11,7 +11,7 @@ class SearchCommandes extends Component
     public $commande="";
     public function render()
     {
-        $this->commande=Commande::where('id','like',"%{$this->query}%")->get();
+        $this->inactive_commandes=Commande::where('id','like',"%{$this->query}%")->get();
         if ($this->commande->count()=="0") {
           $this->message="pas de résultat";
         }
