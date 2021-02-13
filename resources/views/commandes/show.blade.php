@@ -36,7 +36,6 @@
    </style>
    
    
-@livewire('search-commandes')
 @include('commandes.non_confirmed')
 @include('commandes.confirmed')
 @include('commandes.enroute')
