@@ -6,7 +6,7 @@
     aria-controls="collapseExample">     <div class="card-text">
 
    
-       <p class="h4  text-white text-wrap" > 
+       <div class="h4  text-white text-wrap" > 
          @if ($commande->type=="1")
              <i class="btn btn-secondary btn-circle"></i>
          @elseif($commande->type=="2")
@@ -20,7 +20,7 @@
          @elseif($commande->type=="6")
          <i class="btn btn-warning btn-circle"></i>
        @endif 
-      </p>
+       </div>
       
        {{$commande->product->nom}}        <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span>
 
