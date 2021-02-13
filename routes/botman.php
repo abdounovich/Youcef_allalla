@@ -648,7 +648,8 @@ $bot->typesAndWaits(1);
 
     $botman->hears('PRO([0-9]+)', function($bot,$number1) {
         $product=Product::find($number1);
- 
+ $bot->reply($product->nom);
+ return;
             if ($product->product_type=="simple") { 
                 $text="";
                 $payload='select'.$product->id;}
