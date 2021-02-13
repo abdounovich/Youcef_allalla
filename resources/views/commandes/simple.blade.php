@@ -20,10 +20,10 @@
          @elseif($commande->type=="6")
          <i class="btn btn-warning btn-circle"></i>
        @endif 
-       </p>
+      
    
        {{$commande->product->nom}}        
-       <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span>
+       <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span> </p>
        <div class="dropdown float-right">
         <button class="btn btn-dark " type="button" id="dropdownMenuButton" data-toggle="dropdown" >
          <i class="fa fa-ellipsis-v"></i>
