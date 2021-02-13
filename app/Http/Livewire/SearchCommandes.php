@@ -13,7 +13,14 @@ class SearchCommandes extends Component
 
     public function render()
     {
-        
+        $this->inactive_commandes=Commande::where('id','like',"%{$this->query}%")->get();
+        if ($this->inactive_commandes->count()=="0") {
+          $this->message="pas de résultat";
+        }
+        else {
+         $this->message="";
+ 
+        }
         return view('livewire.search-commandes');
     }
 
