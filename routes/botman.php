@@ -603,18 +603,35 @@ $bot->typesAndWaits(1);
             $produit->save();
 
         } 
-    
+        elseif ($commande->product->product_type=="complexe") {
+            $produit=Taille::find($commande->taille);
+            $produit->quantity=$produit->quantity+$commande->quantity;
+            $produit->save();
+
+        } 
+    if ($commande->type=="1") {
         $commande->type=5;
         $commande->save();
         $bot->typesAndWaits(1);
 
-         $bot->reply("حسنا لقد تم إلغاء طلبك   ");  
+         $bot->reply("  حسنا لقد تم إلغاء طلبك بنجاح   😄 ");  
          $bot->typesAndWaits(1);
 
         $bot->reply(Question::create('هل تريد إختيار منتج آخر ؟ ')->addButtons([
             Button::create(' ✅ نعم ')->value('show_me_products'),
             Button::create('   ❌ لا شكرا  ')->value('NoCancelAgain')
             ]));
+    }
+    else{
+
+        $bot->reply("أنا آسف ، لا يمكنك إلغاء هذه الطلبية الآن لأنك قمت بتأكيدها من قبل ");  
+        $bot->typesAndWaits(1);
+
+       $bot->reply(Question::create('هل تريد إختيار منتج آخر ؟ ')->addButtons([
+           Button::create(' ✅ نعم ')->value('show_me_products'),
+           Button::create('   ❌ لا شكرا  ')->value('NoCancelAgain')
+           ]));
+    }
         
     });
 
