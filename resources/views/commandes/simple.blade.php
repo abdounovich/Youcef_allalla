@@ -6,7 +6,7 @@
     aria-controls="collapseExample">     <div class="card-text">
 
    <div>
-       <p class="h4  text-white text-wrap" > 
+       <span class="h4  text-white text-wrap" > 
          @if ($commande->type=="1")
              <i class="btn btn-secondary btn-circle"></i>
          @elseif($commande->type=="2")
@@ -23,7 +23,7 @@
       
    
        {{$commande->product->nom}}        
-       <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span> </p>
+       <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span>
        <div class="dropdown float-right">
         <button class="btn btn-dark " type="button" id="dropdownMenuButton" data-toggle="dropdown" >
          <i class="fa fa-ellipsis-v"></i>
@@ -32,6 +32,8 @@
           <a  href="{{route('commandes.delete',$commande->id)}}"  >
 effacer</a>        </div>
       </div>
+
+       </span>
     </div>
 <p></p>
             
