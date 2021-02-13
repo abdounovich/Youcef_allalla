@@ -1,5 +1,6 @@
 @php
-   $remises=App\Remise::where("product_id",$commande->product->id)->first();@endphp   
+   $remises=App\Remise::where("product_id",$commande->product->id)->first();
+    carbon\Carbon::setLocale('fr');@endphp   
    <div class="mt-2" ><span class="  text-secondary">{{$commande->created_at->DiffForHumans()}}</span></div>
 
    @if (!$remises) 
