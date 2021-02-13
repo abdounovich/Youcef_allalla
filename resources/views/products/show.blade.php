@@ -29,7 +29,7 @@ border-radius: 15px;
 
 
 
-  <div class="row" >
+  <div class="row my-5" >
       <div class="col-lg-8 mx-auto">
           <!-- List group-->
           <ul class="list-group ">

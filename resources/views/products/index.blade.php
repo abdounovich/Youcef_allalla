@@ -17,11 +17,6 @@
 
 
 
-<div class="  mt-3 mb-2 d-flex justify-content-center ">
-    <a class="btn btn-info  rounded p-3 m-4 text-white"  
-    type="button" data-toggle="collapse" data-target="#List_collapse" aria-expanded="false"><i class="fa fa-plus mr-2">  </i> Ajouter un produit</a>
-
- </div>
 
 
 

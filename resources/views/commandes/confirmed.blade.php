@@ -23,8 +23,8 @@
     <br>
 
     <div class="d-flex justify-content-center m-4">
-        {{$active_commandes->links()}}
-    </div>
+{{--         {{$active_commandes->links()}}
+ --}}    </div>
   
   
   

@@ -30,8 +30,8 @@
     <br>
 
     <div class="d-flex justify-content-center m-4">
-        {{$annuler_par_admin->links()}}
-    </div>
+{{--         {{$annuler_par_admin->links()}}
+ --}}    </div>
   
   
   

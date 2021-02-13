@@ -20,6 +20,10 @@ class Search extends Component
        if ($this->produits->count()=="0") {
          $this->message="pas de résultat";
        }
+       else {
+        $this->message="";
+
+       }
        
             return view('livewire.search');
 
@@ -30,6 +34,10 @@ class Search extends Component
 
     public function mount()
     {
+
+
+
+        
         $this->produits=Product::paginate(5);
         return view('livewire.search');
     }

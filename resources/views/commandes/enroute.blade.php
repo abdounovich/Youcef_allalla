@@ -23,8 +23,8 @@
     <br>
 
     <div class="d-flex justify-content-center m-4">
-        {{$enroute_commandes->links()}}
-    </div>
+{{--         {{$enroute_commandes->links()}}
+ --}}    </div>
   
   
   
