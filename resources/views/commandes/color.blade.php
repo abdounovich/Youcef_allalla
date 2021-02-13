@@ -25,11 +25,11 @@
     @elseif($commande->type=="6")
     <i class="btn btn-info btn-circle"></i>
   @endif 
-  {{$commande->product->nom}}        <span class="text-white"> X {{$commande->quantity}}</span>
-
+  {{$commande->product->nom}}        <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span>
   <a class="btn btn-danger  btn-circle float-right  mr-1" href="{{route('commandes.delete',$commande->id)}}"  >
-    <span class="     fa fa-trash  "></span>
-</a>
+  <span class=" fa fa-trash  "></span>
+</a></p>
+
 <img class="img-thumbnail custom  p-0 mt-2 " style="width: 100%;height:250px" src="{{$commande->product->photo}}" alt="">
 
   </p>            <p class="text-white text-wrap " >Couleur : {{$color->couleur}} </p>
