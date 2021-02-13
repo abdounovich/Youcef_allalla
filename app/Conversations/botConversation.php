@@ -192,7 +192,9 @@ public function askConfirmation(){
 
 public function finalStep(){
     $this->product->save();
-    $this->commande->slug="CM".$this->commande->id.'W'.$this->wilaya;
+    $this->key = array_search ($this->client->wilaya, $this->obj);
+
+    $this->commande->slug="CM".$this->commande->id.$this->key;
     $this->commande->save();
     $this->client->save();
     $this->bot->reply("    شكرا لك 😍 "); 
@@ -224,7 +226,7 @@ public function askWilaya(){
         if (is_numeric($this->wilaya)) {
 
 
-$jsonobj = '{
+$this->jsonobj = '{
     "w1":"أدرار",
     "w2":"الشلف",
     "w3":"الأغواط",
@@ -286,10 +288,10 @@ $jsonobj = '{
 
 
 
-$obj = json_decode($jsonobj);
+$this->obj = json_decode($this->jsonobj);
 ${"w".$this->wilaya}="w".$this->wilaya;
 
- $this->client->wilaya=$obj->${"w".$this->wilaya};
+ $this->client->wilaya=$this->obj->${"w".$this->wilaya};
             
             $this->askAddress();
         }
