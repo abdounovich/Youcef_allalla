@@ -26,9 +26,12 @@ class SearchCommandes extends Component
 
 
     public function mount()
-    {
-        $this->inactive_commandes=Commande::find($this->query);
-        $this->active_commandes=Commande::find($this->query);
+    {  $this->inactive_commandes=Commande::where("type",1)->paginate(10);
+        $this->active_commandes=Commande::where("type",2)->paginate(10);
+        $this->delivré_commandes=Commande::where("type",3)->paginate(10);
+        $this->enroute_commandes=Commande::where("type",6)->paginate(10);
+        $this->annuler_par_admin=Commande::where("type",4)->paginate(10);
+        $this->annuler_par_client=Commande::where("type",5)->paginate(10);
 
         return view('livewire.search-commandes');
 
