@@ -560,7 +560,7 @@ $bot->typesAndWaits(1);
         switch ($commande->type) {
             case 1:
         $bot->reply("حالة الطلبية :"."CM".$commande->id."W25");
-        $bot->reply("🟡  غير مؤكدة سنتصل بك قريبا ");
+        $bot->reply("  غير مؤكدة سنتصل بك قريبا 🟡 ");
 
                 break;
             case 2:
@@ -614,7 +614,7 @@ $bot->typesAndWaits(1);
         $commande->save();
         $bot->typesAndWaits(1);
 
-         $bot->reply("  حسنا لقد تم إلغاء الطلبية "."CM".$commande->id."W25"." بنجاح   😄 ");  
+         $bot->reply(" لقد تم إلغاء الطلبية "."CM".$commande->id."W25"." بنجاح  😄 ");  
          $bot->typesAndWaits(1);
 
         $bot->reply(Question::create('هل تريد إختيار منتج آخر ؟ ')->addButtons([
