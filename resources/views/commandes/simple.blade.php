@@ -11,8 +11,7 @@
        <i class="fa fa-2x text-bold fa-ellipsis-v"></i>
       </button>
       <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
-        <a class="text-dark "  href="{{route('commandes.delete',$commande->id)}}"  >
-effacer</a>        </div>
+        <a class="text-dark "  href="{{route('commandes.delete',$commande->id)}}"  >effacer</a></div>
     </div>
        <span class="h4  text-white text-wrap" > 
          @if ($commande->type=="1")
