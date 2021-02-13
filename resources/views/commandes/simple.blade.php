@@ -10,8 +10,8 @@
       <button class="btn  " type="button" id="dropdownMenuButton" data-toggle="dropdown" >
        <i class="fa mr-0 fa-2x text-bold fa-ellipsis-v"></i>
       </button>
-      <div class="dropdown-menu ml-5 " aria-labelledby="dropdownMenuButton">
-        <a class="text-dark p-2 m-2"  href="{{route('commandes.delete',$commande->id)}}"  >
+      <div class="dropdown-menu mr-5 " aria-labelledby="dropdownMenuButton">
+        <a class="text-dark "  href="{{route('commandes.delete',$commande->id)}}"  >
 effacer</a>        </div>
     </div>
        <span class="h4  text-white text-wrap" > 
