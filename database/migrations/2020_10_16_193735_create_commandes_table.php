@@ -20,6 +20,7 @@ class CreateCommandesTable extends Migration
             $table->integer("color");
             $table->integer("taille");
             $table->text("commande_type");
+            $table->text("slug");
             $table->text("total_price");
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')
