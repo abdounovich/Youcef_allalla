@@ -560,7 +560,7 @@ $bot->typesAndWaits(1);
         switch ($commande->type) {
             case 1:
         $bot->reply("حالة الطلبية :"."CM".$commande->id."W25");
-        $bot->reply("  غير مؤكدة سنتصل بك قريبا 🟡 ");
+        $bot->reply(" 🟡 غير مؤكدة سنتصل بك قريبا 🟡 ");
 
                 break;
             case 2:
