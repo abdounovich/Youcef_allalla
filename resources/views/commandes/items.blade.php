@@ -1,8 +1,9 @@
 @php
-   $remises=App\Remise::where("product_id",$commande->product->id)->first();@endphp
+   $remises=App\Remise::where("product_id",$commande->product->id)->first();@endphp   
+   <div class="mt-2" ><span class="  text-secondary">{{$commande->created_at->DiffForHumans()}}</span></div>
+
    @if (!$remises) 
    
-   <div class="mt-2" ><span class="  text-secondary">{{$commande->created_at->DiffForHumans("d-m-y H:i")}}</span></div>
    <div class="card-text  text-white mt-1  h5"> {{$commande->product->prix}} da 
     <span class="badge float-right mt-1  mr-1 float-sm-right text-white  badge-success">   {{$commande->total_price}} Da  </span>
 
@@ -15,7 +16,6 @@
                                     $percentage=round(100-$remises->prix*100/$remises->produit->prix);
 
                                 @endphp
-                                  <div class="mt-2" ><span class="  text-secondary">{{$commande->created_at->DiffForHumans("d-m-y H:i")}}</span></div>
 
                                  <div class="card-text h5 clearfix  ">
                                    <span class="text-white float-sm-left ">{{$remises->produit->prix}} da</span>
@@ -26,7 +26,6 @@
 
 
                             @else 
-                            <div class="mt-2" ><span class="  text-secondary">{{$commande->created_at->DiffForHumans("d-m-y H:i")}}</span></div>
                             <div class="card-text  text-white mt-1  h5"> {{$commande->product->prix}} da
     <span class="badge  float-right mt-1  mr-1 float-sm-right text-white  badge-success">   {{$commande->total_price}} Da  </span>
  
