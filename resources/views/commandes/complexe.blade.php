@@ -29,7 +29,8 @@
   <span class=" fa fa-trash  "></span>
 </a></p>
 
-    <p class=" text-white text-wrap mt-2 " >couleur: <span class="text-info">{{$taille->color->couleur}}</span> Taille: <span class="text-info>{{$taille->taille}}</span>  </p>
+    <p class=" text-white text-wrap mt-2 " >couleur: <span class="text-info">{{$taille->color->couleur}}</span></p>
+    <p> Taille: <span class="text-info">{{$taille->taille}}</span>  </p>
 
 
        <img class="img-thumbnail custom  p-0 mt-2 " style="width: 100%;height:250px" src="{{$commande->product->photo}}" alt="">
