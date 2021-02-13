@@ -636,21 +636,9 @@ $bot->typesAndWaits(1);
         
     });
 
-    
-
-
-
-
-
-
-
-
-
     $botman->hears('PRO([0-9]+)', function($bot,$number1) {
         $product=Product::find($number1);
- $bot->reply($product->nom);
- return;
-            if ($product->product_type=="simple") { 
+   if ($product->product_type=="simple") { 
                 $text="";
                 $payload='select'.$product->id;}
                 elseif($product->product_type=="complexe"){
@@ -702,18 +690,18 @@ $bot->typesAndWaits(1);
         ->image($product->photo)
         ->addButton(ElementButton::create(' 🛒 إشتر هذا المنتج')
         ->payload($payload)
-      ->type('postback'))
+        ->type('postback'))
         ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
         ->url($product->photo));
           
         
-      
+    }
         $bot->typesAndWaits(1);
     
             
               $bot->reply(GenericTemplate::create()
             ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
-            ->addElements($element));}
+            ->addElements($element));
            });
         
     
