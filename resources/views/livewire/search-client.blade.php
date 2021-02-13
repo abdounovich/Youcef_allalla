@@ -8,7 +8,7 @@
 @if ($message=="")
     
   <div class="row text-center text-white mt-5 ">
-        <div class="col-lg-7 mx-auto">
+        <div class="col-lg-7 mt-5 mx-auto">
             <h1 class="h4 shadow bg-dark p-3" style="opacity: 0.9">Liste des Clients</h1>
         </div>
     </div>
