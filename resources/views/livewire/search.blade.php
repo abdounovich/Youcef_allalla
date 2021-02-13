@@ -12,9 +12,6 @@
             <h1 class="h4 shadow bg-dark p-3" style="opacity: 0.9">Liste des produits</h1>
         </div>
     </div>
-
-    
-  
 @endif
 
 
@@ -39,17 +36,12 @@
 
     <div class="row">
       @foreach ($produit->taille as $taille)
-              
-        
           <div class=" col-4 p-2">
           <p class="card-text  h5  ">{{$taille->taille}} :  
          <span class="ml-1 text-success">{{$taille->quantity}}</span> </p> 
         </div>
           @endforeach
           </div>
-      
-
-
     @elseIf ($produit->product_type=="color")
     <div class="row">
       @foreach ($produit->color as $color)
