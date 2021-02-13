@@ -12,18 +12,18 @@
 
 <p class="h4  text-white text-wrap" > 
     @if ($commande->type=="1")
-    <i class="btn btn-secondary btn-circle"></i>
-@elseif($commande->type=="2")
-<i class="btn btn-primary btn-circle"></i>
-@elseif($commande->type=="3")
-<i class="btn btn-success btn-circle"></i>
-@elseif($commande->type=="4")
-<i class="btn btn-danger btn-circle"></i>
-@elseif($commande->type=="5")
-<i class="btn btn-danger btn-circle"></i>
-@elseif($commande->type=="6")
-<i class="btn btn-info btn-circle"></i>
-@endif 
+             <i class="btn btn-secondary btn-circle"></i>
+         @elseif($commande->type=="2")
+         <i class="btn btn-primary btn-circle"></i>
+         @elseif($commande->type=="3")
+         <i class="btn btn-success btn-circle"></i>
+         @elseif($commande->type=="4")
+         <i class="btn btn-danger btn-circle"></i>
+         @elseif($commande->type=="5")
+         <i class="btn btn-danger btn-circle"></i>
+         @elseif($commande->type=="6")
+         <i class="btn btn-warning btn-circle"></i>
+       @endif 
   {{$commande->product->nom}}        <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span>
   <a class="btn btn-danger  btn-circle float-right  mr-1" href="{{route('commandes.delete',$commande->id)}}"  >
   <span class=" fa fa-trash  "></span>

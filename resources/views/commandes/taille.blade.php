@@ -22,7 +22,7 @@
 @elseif($commande->type=="5")
 <i class="btn btn-danger btn-circle"></i>
 @elseif($commande->type=="6")
-<i class="btn btn-info btn-circle"></i>
+<i class="btn btn-warning btn-circle"></i>
 @endif 
 
     {{$commande->product->nom}}        <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span>
