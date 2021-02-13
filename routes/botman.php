@@ -775,10 +775,11 @@ $bot->typesAndWaits(1);
         "w31":"وهران"}';
         
         
-        
-        
-        $obj = json_decode($jsonobj);
-       $w="w".$wilaya;
+               $obj = json_decode($jsonobj);
+ 
+${"w".$wilaya}=$obj->${"w".$wilaya};
 
-        $bot->reply($w);
+        
+
+        $bot->reply( ${"w".$wilaya});
            });
