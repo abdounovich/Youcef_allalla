@@ -27,7 +27,7 @@
       
        <span class="dropdown float-right">
         <button class="btn btn-dark " type="button" id="dropdownMenuButton" data-toggle="dropdown" >
-         <i class="fa fa-ellipsis-v"></i>
+         <i class="fa fa-2x fa-ellipsis-v"></i>
         </button>
         <span class="dropdown-menu " aria-labelledby="dropdownMenuButton">
           <a  href="{{route('commandes.delete',$commande->id)}}"  >
