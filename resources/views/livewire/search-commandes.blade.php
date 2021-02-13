@@ -35,16 +35,6 @@
  --}}    </div>
   
 
- @foreach ($active_commandes as $commande)
- <div style="border-width: 10px" class="card bg-dark border-secondary     mt-2 mb-1" >
-     @include('commandes.simple')
- </div>
-@endforeach
-
-<br>
-<div class="d-flex justify-content-center m-4">
-{{--         {{$inactive_commandes->links()}}
---}}    </div>
 
   
   
