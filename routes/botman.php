@@ -640,3 +640,82 @@ $bot->typesAndWaits(1);
 
 
 
+
+
+
+
+
+
+    $botman->hears('PRO([0-9]+)', function($bot,$number1) {
+        $product=Product::find($number1);
+ 
+            if ($product->product_type=="simple") { 
+                $text="";
+                $payload='select'.$product->id;}
+                elseif($product->product_type=="complexe"){
+                    $payload='showComplexe'.$product->id;
+                    $text="";
+                    foreach ($product->color as $color) {
+                       
+                     $text=$text.' '.$color->couleur  ; 
+                     $text= $text." (";
+                     foreach ($color->taille as $taille) {
+                        $text=$text.' '.$taille->taille  ;
+                       
+                       }
+                       $text= $text.") ";
+                    }
+                    
+                    
+                    }
+            elseif($product->product_type=="color"){
+                    $payload='showColor'.$product->id;
+                    $text="";
+                    foreach ($product->color as $color) {
+                     $text=$text.' '.$color->couleur  ;}}
+            elseif($product->product_type=="taille"){
+                    $payload='showTaille'.$product->id;
+                    $text="";
+                    foreach ($product->taille as $taille) {
+                        $text=$text.' '.$taille->taille ;}
+                    
+                    }
+                    
+                   
+            $remises=Remise::where("product_id",$product->id)->first();
+            if (!$remises) {
+            $element[]=Element::create($product->nom)
+            ->subtitle($text."\n"." السعر   ".$product->prix . " دج "."\n".$product->descreption)
+            ->image($product->photo)
+            ->addButton(ElementButton::create(' 🛒 إشتر هذا المنتج')
+                ->payload($payload)
+              ->type('postback'))
+                ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
+                ->url($product->photo));}
+        
+    else {
+    $percentage=round(100-$remises->prix*100/$remises->produit->prix); 
+    $text=$text."\n"."(-".$percentage ."%)"." السعر الجديد : ".$remises->prix."دج"."\n".$product->descreption;
+        $element[]=Element::create($product->nom)
+        ->subtitle($text)
+        ->image($product->photo)
+        ->addButton(ElementButton::create(' 🛒 إشتر هذا المنتج')
+        ->payload($payload)
+      ->type('postback'))
+        ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
+        ->url($product->photo));
+          
+        
+      
+        $bot->typesAndWaits(1);
+    
+            
+              $bot->reply(GenericTemplate::create()
+            ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
+            ->addElements($element));}
+           });
+        
+    
+
+
+
