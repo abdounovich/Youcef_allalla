@@ -26,7 +26,7 @@
        <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span>
        <div class="dropdown float-right">
         <button class="btn btn-dark " type="button" id="dropdownMenuButton" data-toggle="dropdown" >
-         <i class="fa text-bold fa-ellipsis-v"></i>
+         <i class="fa fa-2x text-bold fa-ellipsis-v"></i>
         </button>
         <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
           <a class="text-dark p-2 m-2"  href="{{route('commandes.delete',$commande->id)}}"  >
