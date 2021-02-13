@@ -7,7 +7,7 @@
 
    <div>
     <div class="dropdown float-right">
-      <button class="btn  " type="button" id="dropdownMenuButton" data-toggle="dropdown" >
+      <button class="btn text-white  " type="button" id="dropdownMenuButton" data-toggle="dropdown" >
        <i class="fa mr-0 fa-2x text-bold fa-ellipsis-v"></i>
       </button>
       <div class="dropdown-menu mr-5 " aria-labelledby="dropdownMenuButton">
