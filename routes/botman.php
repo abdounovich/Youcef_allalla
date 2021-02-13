@@ -488,6 +488,7 @@ $botman->hears('slectedTailleComplexe([0-9]+)', function ( $bot,$number5) {
         $full_name=$firstname.'-'.$lastname;
         $client=Client::whereFacebook($full_name)->first();
         $commandes=Commande::where("client_id",$client->id)->where('type',1)
+        ->orWhere('type',2)->orWhere('type',3)->orWhere('type',6)
         ->orderBy('created_at', 'ASC')->get();
         $total=$commandes->count();
 
