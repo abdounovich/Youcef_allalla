@@ -13,7 +13,7 @@
 
 <p class="h4  text-white text-wrap" > 
     @if ($commande->type=="1")
-        <i class="btn btn-warning btn-circle"></i>
+        <i class="btn btn-secondary btn-circle"></i>
     @elseif($commande->type=="2")
     <i class="btn btn-primary btn-circle"></i>
     @elseif($commande->type=="3")
