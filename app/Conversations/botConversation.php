@@ -192,11 +192,12 @@ public function askConfirmation(){
 
 public function finalStep(){
     $this->product->save();
+    $this->commande->slug="CM";
     $this->commande->save();
     $this->client->save();
     $this->bot->reply("    شكرا لك 😍 "); 
     $this->bot->reply("  لقد تم حفظ طلبك بنجاح  ✅");
-    $this->bot->reply("رقم طلبيتك : "."CM".$this->commande->id."W25");
+    $this->bot->reply("رقم طلبيتك : ". $this->commande->slug);
    
 
 
