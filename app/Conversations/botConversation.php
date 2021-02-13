@@ -200,7 +200,7 @@ public function finalStep(){
     $this->client->save();
     $this->bot->reply("    شكرا لك 😍 "); 
     $this->bot->reply("  لقد تم حفظ طلبك بنجاح  ✅");
-    $this->bot->reply("رقم طلبيتك : ". $this->commande->slug);
+    $this->bot->reply("رقم طلبيتك : ". $this->commande2->slug);
    
 
 
