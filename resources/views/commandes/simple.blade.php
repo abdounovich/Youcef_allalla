@@ -6,7 +6,7 @@
     aria-controls="collapseExample">     <div class="card-text">
 
    
-       <div class="h4  text-white text-wrap" > 
+       <p class="h4  text-white text-wrap" > 
          @if ($commande->type=="1")
              <i class="btn btn-secondary btn-circle"></i>
          @elseif($commande->type=="2")
@@ -20,8 +20,6 @@
          @elseif($commande->type=="6")
          <i class="btn btn-warning btn-circle"></i>
        @endif 
-       </div>
-      
        {{$commande->product->nom}}        <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span>
 
        <div class="dropdown float-right">
@@ -34,6 +32,7 @@ effacer</a>        </div>
       </div>
 
 
+       </p>
       
  
        <img class="img-thumbnail custom  p-0 mt-2 " style="width: 100%;height:250px" src="{{$commande->product->photo}}" alt="">
