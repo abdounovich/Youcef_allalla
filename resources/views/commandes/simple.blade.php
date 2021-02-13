@@ -6,7 +6,7 @@
     aria-controls="collapseExample">     <div class="card-text">
 
    <div>
-    <div class="dropdown float-right">
+    <div class="dropdown dropleft float-right">
       <button class="btn text-white  " type="button" id="dropdownMenuButton" data-toggle="dropdown" >
        <i class="fa fa-2x text-bold fa-ellipsis-v"></i>
       </button>
