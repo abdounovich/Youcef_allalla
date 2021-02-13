@@ -1,7 +1,5 @@
 
 
-
-
 <style>
     .text-gray {
     color: #aaa

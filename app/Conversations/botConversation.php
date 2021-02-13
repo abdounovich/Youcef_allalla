@@ -195,7 +195,8 @@ public function finalStep(){
     $this->commande->slug="CM";
     $this->commande->save();
     $this->commande2=Commande::find( $this->commande->id);
-    $this->commande2->slug="CM".$this->commande->id;
+    $this->key = array_search( $this->client->wilaya, get_object_vars($this->obj));
+    $this->commande2->slug="CM".$this->commande->id."".$this->key;
     $this->commande2->save();
     $this->client->save();
     $this->bot->reply("    شكرا لك 😍 "); 
@@ -289,10 +290,10 @@ $jsonobj = '{
 
 
 
-$obj = json_decode($jsonobj);
+$this->obj = json_decode($jsonobj);
 ${"w".$this->wilaya}="w".$this->wilaya;
 
- $this->client->wilaya=$obj->${"w".$this->wilaya};
+ $this->client->wilaya=$this->obj->${"w".$this->wilaya};
             
             $this->askAddress();
         }
