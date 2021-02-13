@@ -2,7 +2,6 @@
 <div class="row text-center text-white mb-3">
     <div class="col-lg-7 mx-auto">
     <h1 class=" h4 mt-4 p-3 shadow bg-secondary rounded" style="opacity: 0.9"> 
-        Non-confirmées :  {{$inactive_commandes_count}}
     </h1>
     </div>
 </div>
