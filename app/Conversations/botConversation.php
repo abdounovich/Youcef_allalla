@@ -192,7 +192,7 @@ public function askConfirmation(){
 
 public function finalStep(){
     $this->product->save();
-    $this->commande->slug="CM".$this->commande->id.'W';
+    $this->commande->slug="CM".$this->commande->id.'W'.$this->wilaya;
     $this->commande->save();
     $this->client->save();
     $this->bot->reply("    شكرا لك 😍 "); 
@@ -288,7 +288,6 @@ $jsonobj = '{
 
 $obj = json_decode($jsonobj);
 ${"w".$this->wilaya}="w".$this->wilaya;
-$this->slug=$this->wilaya;
 
  $this->client->wilaya=$obj->${"w".$this->wilaya};
             
