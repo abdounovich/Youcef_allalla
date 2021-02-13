@@ -27,7 +27,7 @@ class SearchCommandes extends Component
 
     public function mount()
     {
-        $this->inactive_commandes=Commande::all();
+        $this->inactive_commandes=Commande::find(1);
         return view('livewire.search-commandes');
 
     }
