@@ -22,7 +22,7 @@
        @endif 
       
    
-       {{$commande->product->nom}}        
+      <span class="text-wrap"> {{$commande->product->nom}} </span>       
        <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span>
        <div class="dropdown float-right">
         <button class="btn btn-dark " type="button" id="dropdownMenuButton" data-toggle="dropdown" >
