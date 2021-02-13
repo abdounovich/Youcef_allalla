@@ -8,7 +8,7 @@
    <div>
     <div class="dropdown float-right">
       <button class="btn text-white  " type="button" id="dropdownMenuButton" data-toggle="dropdown" >
-       <i class="fa mr-0 fa-2x text-bold fa-ellipsis-v"></i>
+       <i class="fa fa-2x text-bold fa-ellipsis-v"></i>
       </button>
       <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
         <a class="text-dark "  href="{{route('commandes.delete',$commande->id)}}"  >
