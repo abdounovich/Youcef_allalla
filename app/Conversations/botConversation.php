@@ -193,7 +193,8 @@ public function askConfirmation(){
 public function finalStep(){
     $this->product->save();
     $this->key = array_search ($this->client->wilaya, $this->obj);
-
+    $this->bot->reply($this->key); 
+return;
     $this->commande->slug="CM".$this->commande->id.$this->key;
     $this->commande->save();
     $this->client->save();
