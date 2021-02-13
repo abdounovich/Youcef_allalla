@@ -8,7 +8,7 @@
 </div>
  
 
-
+@livewire('search-commandes',['type' => '1'])
     @foreach ($inactive_commandes as $commande)
         <div style="border-width: 10px" class="card bg-dark border-secondary     mt-2 mb-1" >
             @include('commandes.simple')
