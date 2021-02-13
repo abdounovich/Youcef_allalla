@@ -15,7 +15,7 @@
                                     $percentage=round(100-$remises->prix*100/$remises->produit->prix);
 
                                 @endphp
-                                  <div class="mt-2" ><span class="  text-secondary">{{$commande->created_at->format("d-m-y H:i")}}</span></div>
+                                  <div class="mt-2" ><span class="  text-secondary">{{$commande->created_at->DiffForHumans("d-m-y H:i")}}</span></div>
 
                                  <div class="card-text h5 clearfix  ">
                                    <span class="text-white float-sm-left ">{{$remises->produit->prix}} da</span>
