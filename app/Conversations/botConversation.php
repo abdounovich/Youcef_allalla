@@ -374,7 +374,7 @@ $this->ask($question5, function (Answer $answer) {
         $this->client=Client::where('facebook', $this->full_name)->first();
 
         $this->commande=new Commande();
-        $this->commande->slug="CM".$this->commande->id."W".$this->slug;
+        $this->commande->slug="CM"."W".$this->slug;
         if ($this->typ=="simple") {
             $this->product=Product::find($this->product_id);
             $this->photo= $this->product->photo;
