@@ -6,6 +6,14 @@
     aria-controls="collapseExample">     <div class="card-text">
 
    <div>
+    <div class="dropdown float-right">
+      <button class="btn btn-dark " type="button" id="dropdownMenuButton" data-toggle="dropdown" >
+       <i class="fa mr-0 fa-2x text-bold fa-ellipsis-v"></i>
+      </button>
+      <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+        <a class="text-dark p-2 m-2"  href="{{route('commandes.delete',$commande->id)}}"  >
+effacer</a>        </div>
+    </div>
        <span class="h4  text-white text-wrap" > 
          @if ($commande->type=="1")
              <i class="btn btn-secondary btn-circle"></i>
@@ -24,14 +32,7 @@
    
       <span class="text-wrap"> {{$commande->product->nom}}       
        <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span> </span>
-       <div class="dropdown float-right">
-        <button class="btn btn-dark " type="button" id="dropdownMenuButton" data-toggle="dropdown" >
-         <i class="fa mr-0 fa-2x text-bold fa-ellipsis-v"></i>
-        </button>
-        <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
-          <a class="text-dark p-2 m-2"  href="{{route('commandes.delete',$commande->id)}}"  >
-effacer</a>        </div>
-      </div>
+      
 
        </span>
     </div>
