@@ -7,3 +7,11 @@
 {{$message}}
 {{$type}}
 
+@if ($message=="")
+    
+  
+
+    
+  
+@endif
+@include('commandes.non_confirmed')
