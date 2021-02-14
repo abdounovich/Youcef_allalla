@@ -36,7 +36,8 @@
    </style>
    
    
-   @livewire('search-commandes'){{-- @include('commandes.confirmed')
+   @livewire('search-commandes')
+   {{-- @include('commandes.confirmed')
 @include('commandes.enroute')
 @include('commandes.delivred')
 @include('commandes.annuler_par_admin')
