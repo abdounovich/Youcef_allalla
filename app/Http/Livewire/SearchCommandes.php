@@ -13,6 +13,12 @@ class SearchCommandes extends Component
     public $commandes="";
     public $query="";
     public $categorie="type";
+   
+   
+    public function BtnFunction($categorie)
+    {
+        $this->categorie=$categorie;
+    }
     public function render()
     {
         $this->commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->get();
