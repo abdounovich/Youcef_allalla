@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Commande;
 use Livewire\Component;
-
+use Livewire\WithPagination;
 class SearchCommandes extends Component
 {
     use WithPagination;
