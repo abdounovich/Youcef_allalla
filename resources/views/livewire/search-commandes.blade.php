@@ -12,7 +12,7 @@
     <button class="btn btn-info" wire:model="color" wire:click="$set('categorie','id')">
         id
     </button> 
-    <button @if ($color=="2")
+    <button wire:model="color" @if ($color=="2")
     class="btn btn-success" @else class="btn btn-info"
 @endif   wire:click="BtnFunction('slug',{{$color}})">
         Add Todo
