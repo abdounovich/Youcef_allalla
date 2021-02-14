@@ -1,7 +1,7 @@
 
 
 <div>
-    <button class="btn btn-info" wire:click="BtnFunction('slug')">
+    <button class="btn btn-info" wire:click="$set('categorie', 'slug')">
         code
     </button>    
         <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control" placeholder="Entrer le nom du produit">
