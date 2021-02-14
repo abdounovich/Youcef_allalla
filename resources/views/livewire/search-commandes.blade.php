@@ -11,6 +11,8 @@
       
       </div>
 {{$message}}
+{{$categorie}}
+
 @if ($message=="")
     
  
