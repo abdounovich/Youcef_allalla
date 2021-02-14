@@ -12,7 +12,7 @@
    <div class="row text-center text-white mb-3">
     <div class="col-lg-7 mx-auto">
     <h1 class=" h4 mt-4 p-3 shadow bg-secondary rounded" style="opacity: 0.9"> 
-        Non-confirmées :  {{$commandes_count}}
+        Non-confirmées : 
     </h1>
     </div>
 </div> 
@@ -29,7 +29,7 @@
     <div class="row text-center text-white mb-3">
         <div class="col-lg-7 mx-auto">
         <h1 class=" h4 mt-4 p-3 shadow bg-primary rounded" style="opacity: 0.9"> 
-            confirmées :  {{$commandes_count}}
+            confirmées :  
         </h1>
         </div>
     </div>
@@ -46,7 +46,7 @@
 <div class="row text-center text-white mb-3">
     <div class="col-lg-7 mx-auto">
     <h1 class=" h4 mt-4 p-3 shadow bg-warning rounded" style="opacity: 0.9"> 
-        en route :  {{$commandes_count}}
+        en route :  
     </h1>
     </div>
 </div>
@@ -65,7 +65,7 @@
 <div class="row text-center text-white mb-3">
     <div class="col-lg-7 mx-auto">
     <h1 class=" h4 mt-4 p-3 shadow bg-success rounded" style="opacity: 0.9"> 
-        délivrée :  {{$commandes_count}}
+        délivrée :  
     </h1>
     </div>
 </div>
@@ -83,7 +83,7 @@
 <div class="row text-center text-white mb-3">
     <div class="col-lg-7 mx-auto">
     <h1 class=" h4 mt-4 p-3 shadow bg-oranger rounded" style="opacity: 0.9"> 
-        Aannuler par admin :  {{$commandes_count}}
+        Aannuler par admin :  
     </h1>
     </div>
 </div>
@@ -100,7 +100,7 @@
 <div class="row text-center text-white mb-3">
     <div class="col-lg-7 mx-auto">
     <h1 class=" h4 mt-4 p-3 shadow bg-danger rounded" style="opacity: 0.9"> 
-        annuller par client :  {{$commandes_count}}
+        annuller par client :  
     </h1>
     </div>
 </div>
