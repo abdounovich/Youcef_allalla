@@ -12,10 +12,10 @@ class SearchCommandes extends Component
     public $message="";
     public $commandes="";
     public $query="";
-    public $categorie="type";
+    public $categorie;
     public function render()
     {
-        $this->commandes=Commande::where('slug','LIKE','%'.$this->query.'%')->get();
+        $this->commandes=Commande::where("id",'LIKE','%'.$this->query.'%')->get();
       /*   $this->commandes=Commande::where('slug','ILIKE','%'.$this->query.'%')
         ->orWhere('slug','ILIKE','%'.$this->query.'%')
         ->orWhere('type',$this->query)
