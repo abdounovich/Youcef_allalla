@@ -5,7 +5,7 @@ namespace App\Http\Livewire;
 use App\Commande;
 use Livewire\Component;
 use Livewire\WithPagination;
-use Illuminate\Database\Query\Builder;
+use Illuminate\Database\Eloquent\Builder;
 
 class SearchCommandes extends Component
 {
