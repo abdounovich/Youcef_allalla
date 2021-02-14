@@ -13,15 +13,7 @@ class SearchCommandes extends Component
 
     public function render()
     {
-        $this->commandes=Commande::where('type','LIKE','%'.$this->query.'%')->get();
-
-        if ($this->commandes->count()=="0") {
-            $this->message="pas de résultat";
-          }
-          else {
-           $this->message="";
-   
-          }
+      $this->message="1111";
         return view('livewire.search-commandes');
     }
 
