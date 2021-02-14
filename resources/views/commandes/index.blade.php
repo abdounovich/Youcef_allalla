@@ -21,8 +21,7 @@
   
 
 <div class="mt-5"></div>
-@include('commandes.show')
-
+@livewire('search-commandes')
 
 
 
