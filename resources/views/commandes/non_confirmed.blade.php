@@ -57,7 +57,7 @@
   
 
 <div class="mt-5"></div>
-@livewire('search-commandes')
+@livewire('commandes')
 
 
 
