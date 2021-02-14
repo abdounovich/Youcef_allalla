@@ -6,8 +6,7 @@
         <input wire:model="categorie" name="animal" type="radio" value="client" /> nom du client
         <input wire:model="categorie" name="animal" type="radio" value="wilaya" /> Wilaya
         <input wire:model="categorie" name="animal" type="radio" value="slug" /> Code
-
-       
+        </div>
         <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control" placeholder="Entrer le nom du produit">
       
       </div>
