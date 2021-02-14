@@ -12,9 +12,11 @@ class SearchCommandes extends Component
     public $message="";
     public $commandes="";
     public $query="";
+    public $categorie="";
     public function render()
     {
-        $this->commandes=Commande::where('slug','ILIKE','%'.$this->query.'%')
+        $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')->get();
+      /*   $this->commandes=Commande::where('slug','ILIKE','%'.$this->query.'%')
         ->orWhere('slug','ILIKE','%'.$this->query.'%')
         ->orWhere('type',$this->query)
         ->orWhere('color','ILIKE','%'.$this->query.'%')
@@ -29,7 +31,7 @@ class SearchCommandes extends Component
         })
         ->orWhereHas('client', function (Builder $req1) {
             $req1->where('facebook', 'ILIKE', '%'.$this->query.'%');
-        })->get();
+        })->get(); */
         
         return view('livewire.search-commandes');
     }

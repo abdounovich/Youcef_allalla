@@ -3,6 +3,12 @@
 <div>
 
     <div class="input-group mb-3">
+        <select name="select" wire:model="categorie" class="form-control" >
+            <option value="slug">slug</option>
+            <option value="type">type</option>
+
+           
+        </select>
         <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control" placeholder="Entrer le nom du produit">
       
       </div>
