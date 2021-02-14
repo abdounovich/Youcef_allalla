@@ -9,7 +9,7 @@ class SearchCommandes extends Component
 {
     public $query="";    
     public $commandes="";
-    public $message="";
+    public $message="1";
 
     public function render()
     {
