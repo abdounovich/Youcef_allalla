@@ -1,14 +1,19 @@
 
 
 <div>
-    <button class="btn btn-info" wire:click="$set('categorie', 'slug')">
+    {{$categorie}}
+    {{$message}}
+
+    <button class="btn btn-info" wire:click="$set('categorie','slug')">
         code
+    </button> 
+    <button class="btn btn-info" wire:click="$set('message','jjhh')">
+        message
     </button>    
         <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control" placeholder="Entrer le nom du produit">
       
       </div>
 {{$message}}
-{{$categorie}}
 
 @if ($message=="")
     
