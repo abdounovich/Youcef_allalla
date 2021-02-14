@@ -19,13 +19,11 @@ class CommandeController extends Controller
     {    
         
 
-       $commandes=Commande::paginate(10);
       /*    $active_commandes=Commande::where("type",2)->paginate(10);
         $delivré_commandes=Commande::where("type",3)->paginate(10);
         $enroute_commandes=Commande::where("type",6)->paginate(10);
         $annuler_par_admin=Commande::where("type",4)->paginate(10);
         $annuler_par_client=Commande::where("type",5)->paginate(10); */
-        $commandes_count=Commande::count();
   /*       $active_commandes_count=Commande::where("type",2)->count();
         $delivré_commandes_count=Commande::where("type",3)->count();
         $annuler_par_admin_count=Commande::where("type",4)->count();
@@ -34,9 +32,8 @@ class CommandeController extends Controller
  */
 
     
-        return view("commandes.index")
+        return view("commandes.index");
 /*         ->with("active_commandes",$active_commandes)
- */        ->with("commandes",$commandes)
 /*         ->with("enroute_commandes",$enroute_commandes)
         ->with("delivré_commandes",$delivré_commandes)
         ->with("annuler_par_admin",$annuler_par_admin)
@@ -44,7 +41,6 @@ class CommandeController extends Controller
         
    /*      ->with("active_commandes_count",$active_commandes_count)
         ->with("enroute_commandes_count",$enroute_commandes_count) */
-        ->with("commandes_count",$commandes_count)
      /*    ->with("inactive_commandes_count",$inactive_commandes_count)
         ->with("delivré_commandes_count",$delivré_commandes_count)
         ->with("annuler_par_admin_count",$annuler_par_admin_count)
