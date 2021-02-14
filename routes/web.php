@@ -17,7 +17,7 @@ use App\SubCategory;
 |
 */
 Route::get('/1', function () {    
-    return view('non_confirmed');
+    return view('commandes.non_confirmed');
 });
 Route::get('/', function () {
     return view('index')
