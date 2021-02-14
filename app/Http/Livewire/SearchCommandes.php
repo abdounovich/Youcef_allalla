@@ -13,10 +13,18 @@ class SearchCommandes extends Component
     public $commandes="";
     public $query="";
     public $categorie="type";
+    public $color="1";
+
    
    
-    public function BtnFunction($categorie)
+    public function BtnFunction($categorie,$color)
     {
+        if ($color=="1") {
+           $this->color=="2";
+        }
+        elseif ($color=="2") {
+            $this->color=="1";
+         }
         $this->categorie=$categorie;
     }
     public function render()

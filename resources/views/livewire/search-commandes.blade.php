@@ -4,12 +4,19 @@
     {{$categorie}}
     {{$message}}
 
-    <button class="btn btn-info" wire:click="$set('categorie','slug')">
+    <button class="btn btn-info" @if ($color=="2")
+        class="btn btn-success"
+    @endif wire:click="$set('categorie','slug')">
         code
     </button> 
-    <button class="btn btn-info" wire:click="$set('message','jjhh')">
-        message
-    </button>    
+    <button class="btn btn-info" wire:click="$set('categorie','id')">
+        id
+    </button> 
+    <button @if ($color=="2")
+    class="btn btn-success" @else class="btn btn-info"
+@endif   wire:click="BtnFunction('slug',{{$color}})">
+        Add Todo
+    </button>
         <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control" placeholder="Entrer le nom du produit">
       
       </div>
