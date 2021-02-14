@@ -15,7 +15,7 @@ class SearchCommandes extends Component
     public $categorie;
     public function render()
     {
-        $this->commandes=Commande::where("slug",'LIKE','%'.$this->query.'%')->get();
+        $this->commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->get();
       /*   $this->commandes=Commande::where('slug','ILIKE','%'.$this->query.'%')
         ->orWhere('slug','ILIKE','%'.$this->query.'%')
         ->orWhere('type',$this->query)
