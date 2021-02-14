@@ -2,11 +2,10 @@
     <div class="input-group mb-3">
 
         {{$message}}
-        1
+        
         <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control" placeholder="Entrer le nom du commande">
       
       </div>
-{{$message}}
 @if ($message=="")
     
  
