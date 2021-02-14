@@ -12,7 +12,7 @@ class SearchCommandes extends Component
     public $message="";
     public $commandes="";
     public $query="";
-    public $categorie="";
+    public $categorie="type";
     public function render()
     {
         $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')->get();
