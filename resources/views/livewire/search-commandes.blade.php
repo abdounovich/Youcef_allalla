@@ -3,6 +3,7 @@
 <div>
     {{$categorie}}
     {{$message}}
+    {{$color}}
 
     <button class="btn btn-info" @if ($color=="2")
         class="btn btn-success"
