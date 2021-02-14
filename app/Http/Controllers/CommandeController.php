@@ -36,7 +36,7 @@ class CommandeController extends Controller
     
         return view("commandes.index")
 /*         ->with("active_commandes",$active_commandes)
- */        ->with("inactive_commandes",$inactive_commandes)
+ */        ->with("commandes",$commandes)
 /*         ->with("enroute_commandes",$enroute_commandes)
         ->with("delivré_commandes",$delivré_commandes)
         ->with("annuler_par_admin",$annuler_par_admin)
@@ -44,7 +44,7 @@ class CommandeController extends Controller
         
    /*      ->with("active_commandes_count",$active_commandes_count)
         ->with("enroute_commandes_count",$enroute_commandes_count) */
-        ->with("inactive_commandes_count",$inactive_commandes_count)
+        ->with("commandes_count",$commandes_count)
      /*    ->with("inactive_commandes_count",$inactive_commandes_count)
         ->with("delivré_commandes_count",$delivré_commandes_count)
         ->with("annuler_par_admin_count",$annuler_par_admin_count)
