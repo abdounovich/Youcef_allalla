@@ -17,7 +17,9 @@
         <div style="border-width: 10px" class="card bg-dark border-secondary     mt-2 mb-1" >
             @include('commandes.simple')
         </div>
-    
+    @endforeach
+    @foreach ($commandes as $commande)
+
 @elseIf($commande->type=="2")
 <div class="row text-center text-white mb-3">
     <div class="col-lg-7 mx-auto">
@@ -29,6 +31,8 @@
 <div style="border-width: 10px" class="card bg-dark border-primary     mt-2 mb-1" >
     @include('commandes.simple')
 </div>
+@endforeach
+@foreach ($commandes as $commande)
 @elseIf($commande->type=="6")
 <div class="row text-center text-white mb-3">
     <div class="col-lg-7 mx-auto">
@@ -40,6 +44,8 @@
 <div style="border-width: 10px" class="card bg-dark border-warning     mt-2 mb-1" >
     @include('commandes.simple')
 </div>
+@endforeach
+@foreach ($commandes as $commande)
 @elseIf($commande->type=="3")
 <div class="row text-center text-white mb-3">
     <div class="col-lg-7 mx-auto">
@@ -51,6 +57,8 @@
 <div style="border-width: 10px" class="card bg-dark border-success     mt-2 mb-1" >
     @include('commandes.simple')
 </div>
+@endforeach
+@foreach ($commandes as $commande)
 @elseIf($commande->type=="4")
 <div class="row text-center text-white mb-3">
     <div class="col-lg-7 mx-auto">
@@ -62,6 +70,8 @@
 <div style="border-width: 10px" class="card bg-dark border-oranger     mt-2 mb-1" >
     @include('commandes.simple')
 </div>
+@endforeach
+@foreach ($commandes as $commande)
 @elseIf($commande->type=="5")
 <div class="row text-center text-white mb-3">
     <div class="col-lg-7 mx-auto">
