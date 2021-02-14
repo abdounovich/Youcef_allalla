@@ -9,7 +9,7 @@
     @endif wire:click="$set('categorie','slug')">
         code
     </button> 
-    <button class="btn btn-info" wire:click="$set('categorie','id')">
+    <button class="btn btn-info" wire:model="color" wire:click="$set('categorie','id')">
         id
     </button> 
     <button @if ($color=="2")
