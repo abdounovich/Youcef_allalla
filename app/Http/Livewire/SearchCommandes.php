@@ -32,7 +32,7 @@ class SearchCommandes extends Component
 
     public function mount()
     {
-    $this->produits=Product::paginate(5);
+    $this->commandes=Commande::paginate(5);
         return view('livewire.search-commandes');
     }
 }
