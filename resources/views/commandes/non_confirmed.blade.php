@@ -18,9 +18,6 @@
         </div>
         @endIf
     @endforeach
-    @foreach ($commandes as $commande)
-
-
 
     <div class="row text-center text-white mb-3">
         <div class="col-lg-7 mx-auto">
@@ -29,6 +26,7 @@
         </h1>
         </div>
     </div>
+    @foreach ($commandes as $commande)
 @If($commande->type=="2")
 
 <div style="border-width: 10px" class="card bg-dark border-primary     mt-2 mb-1" >
