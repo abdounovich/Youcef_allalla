@@ -21,9 +21,5 @@
   
 
 <div class="mt-5"></div>
-@livewire('search-commandes')
-
-
-
-
+@include('commandes.show')
 @stop
