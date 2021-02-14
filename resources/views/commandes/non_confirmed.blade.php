@@ -9,14 +9,37 @@
  
 
 
-    @foreach ($inactive_commandes as $commande)
+    @foreach ($commandes as $commande)
        
+    @if ($commande->type=="1")
+        
+   
         <div style="border-width: 10px" class="card bg-dark border-secondary     mt-2 mb-1" >
             @include('commandes.simple')
         </div>
-
     
+@elseIf($commande->type=="2")
+<div style="border-width: 10px" class="card bg-dark border-primary     mt-2 mb-1" >
+    @include('commandes.simple')
+</div>
+@elseIf($commande->type=="3")
+<div style="border-width: 10px" class="card bg-dark border-success     mt-2 mb-1" >
+    @include('commandes.simple')
+</div>
+@elseIf($commande->type=="4")
+<div style="border-width: 10px" class="card bg-dark border-orange     mt-2 mb-1" >
+    @include('commandes.simple')
+</div>
+@elseIf($commande->type=="5")
+<div style="border-width: 10px" class="card bg-dark border-danger     mt-2 mb-1" >
+    @include('commandes.simple')
+</div>
+@elseIf($commande->type=="6")
+<div style="border-width: 10px" class="card bg-dark border-warning     mt-2 mb-1" >
+    @include('commandes.simple')
+</div>
 
+ @endif
 
     @endforeach
     

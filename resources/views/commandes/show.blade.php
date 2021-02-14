@@ -37,8 +37,8 @@
    
    
 @include('commandes.non_confirmed')
-@include('commandes.confirmed')
+{{-- @include('commandes.confirmed')
 @include('commandes.enroute')
 @include('commandes.delivred')
 @include('commandes.annuler_par_admin')
-@include('commandes.annuler_par_client')
+@include('commandes.annuler_par_client') --}}
