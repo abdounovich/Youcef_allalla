@@ -16,16 +16,19 @@ class SearchCommandes extends Component
     {
         $this->commandes=Commande::where('slug','ILIKE','%'.$this->query.'%')
         ->orWhere('slug','ILIKE','%'.$this->query.'%')
-        ->orWhere('type','ILIKE','%'.$this->query.'%')
+        ->orWhere('type',$this->query)
         ->orWhere('color','ILIKE','%'.$this->query.'%')
-        ->orWhere('commande_type','ILIKE','%'.$this->query.'%')
+        ->orWhere('commande_type','LIKE','%'.$this->query.'%')
 
-        ->orWhere('taille','ILIKE','%'.$this->query.'%')
+        ->orWhere('taille','LIKE','%'.$this->query.'%')
 
-        ->orWhere('total_price','ILIKE','%'.$this->query.'%')
+        ->orWhere('total_price','LIKE','%'.$this->query.'%')
 
 ->orWhereHas('product', function (Builder $req) {
             $req->where('nom', 'ILIKE', '%'.$this->query.'%');
+        })
+        ->orWhereHas('client', function (Builder $req1) {
+            $req1->where('facebook', 'ILIKE', '%'.$this->query.'%');
         })->get();
         
         return view('livewire.search-commandes');
