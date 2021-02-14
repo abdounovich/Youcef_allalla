@@ -16,9 +16,7 @@ use App\SubCategory;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/1', function () {    
-    return view('commandes.non_confirmed');
-});
+
 Route::get('/', function () {
     return view('index')
     ->with("products",Product::all())
