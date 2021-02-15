@@ -5,7 +5,15 @@
     {{$message}}
  
 
-
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" wire:model="categorie" value="slug" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+        <label class="form-check-label" for="inlineRadio1">Code</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" wire:model="categorie" value="type" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+        <label class="form-check-label" for="inlineRadio2">type</label>
+      </div>
+     
     
 
         <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control" placeholder="Entrer le nom du produit">
