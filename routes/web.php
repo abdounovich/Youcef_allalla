@@ -5,6 +5,7 @@ use App\Product;
 use App\Category;
 use App\Commande;
 use App\SubCategory;
+use Illuminate\Database\Eloquent\Builder;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,12 +20,9 @@ use App\SubCategory;
 
 Route::get('/2', function () {
 
-    $commandes=Commande::whereHas('client', function (Builder $req) {
-        $req->where('wilaya', 'ILIKE', '%'."قسنطينة".'%');
-    })
-
-->get();
-dd($commandes);
+    $this->commandes=Commande::whereHas('product', function (Builder $req) {
+        $req->where('nom', 'ILIKE', '%'."MERAHI".'%');
+    })->get(); 
 });
 
 
