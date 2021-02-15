@@ -19,7 +19,7 @@ class SearchClient extends Component
         $clients=Client::where('facebook','ILIKE','%'.$this->query.'%')
         ->orWhere('wilaya', 'ILIKE', '%' . $this->query . '%')
         ->orWhere('address', 'ILIKE', '%' . $this->query . '%')
-        ->orWhere('phone', 'ILIKE', '%' . $this->query . '%')->paginate(10);
+        ->orWhere('phone', 'ILIKE', '%' . $this->query . '%')->paginate(1);
 
        if ($clients->count()=="0") {
          $this->message="pas de résultat";
