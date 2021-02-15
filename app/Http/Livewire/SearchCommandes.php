@@ -58,6 +58,10 @@ class SearchCommandes extends Component
         return view('livewire.search-commandes',['commandes'=>$commandes]);
     }
 
+public function mount(){
+    $commandes=Commande::all();
+    return view('livewire.search-commandes',["commandes"=>$commandes]);
 
+}
 
 }
