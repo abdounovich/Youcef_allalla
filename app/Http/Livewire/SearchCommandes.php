@@ -35,19 +35,18 @@ class SearchCommandes extends Component
             })->get();
 
         }  */
-        $commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')->paginate(10);
         if($this->categorie=="slug" OR $this->categorie=="type" OR $this->categorie=="total_price"){
-        $commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')
+        $commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')
         ->orWhere('slug','LIKE','%'.$this->query.'%')
         ->orWhere('type',$this->query)->paginate(2);}
 
         elseif ($this->categorie=="facebook" OR $this->categorie=="wilaya" ){
            $commandes=Commande::whereHas('client', function (Builder $req) {
-                $req->where($this->categorie, 'ILIKE', '%'.$this->query.'%');
+                $req->where($this->categorie, 'LIKE', '%'.$this->query.'%');
             })->paginate(2);}
             elseif ($this->categorie=="nom" ){
                $commandes=Commande::whereHas('product', function (Builder $req) {
-                    $req->where($this->categorie, 'ILIKE', '%'.$this->query.'%');
+                    $req->where($this->categorie, 'LIKE', '%'.$this->query.'%');
                 })->paginate(2);}
 
 
