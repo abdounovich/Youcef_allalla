@@ -1,16 +1,11 @@
 
 
 <div>
-    {{$categorie}}
     {{$message}}
- 
+    {{$categorie}}
 
-   
-   
-
-    
     <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" value="slug" wire:model="categorie" wire:click="change('1')" 
+        <button type="button"   wire:click="change('1','slug')" 
         @if ($statue=="1")
         class="btn btn-success"
         @else
@@ -18,7 +13,7 @@
      
         @endif>Code</button>
 
-        <button type="button" value="slug" wire:model="categorie" wire:click="change('2')" 
+        <button type="button" wire:click="change('2','wilaya')" 
         @if ($statue=="2")
         class="btn btn-success"
         @else
@@ -28,7 +23,7 @@
 
 
         
-        <button type="button" value="slug" wire:model="categorie" wire:click="change('3')" 
+        <button type="button" wire:click="change('3','client')" 
         @if ($statue=="3")
         class="btn btn-success"
         @else
