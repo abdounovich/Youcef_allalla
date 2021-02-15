@@ -4,11 +4,11 @@
  
 
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" wire:model="categorie" value="slug" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+        <input class="form-check-input" type="radio" wire:model="categorie" value="slug" name="categorie" id="inlineRadio1" value="option1">
         <label class="form-check-label" for="inlineRadio1">Code</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" wire:model="categorie" value="type" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+        <input class="form-check-input" type="radio" wire:model="categorie" value="type" name="categorie" id="inlineRadio2" value="option2">
         <label class="form-check-label" for="inlineRadio2">type</label>
       </div>
      
