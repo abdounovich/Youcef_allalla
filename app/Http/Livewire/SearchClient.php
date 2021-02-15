@@ -21,7 +21,7 @@ class SearchClient extends Component
         ->orWhere('address', 'ILIKE', '%' . $this->query . '%')
         ->orWhere('phone', 'ILIKE', '%' . $this->query . '%')->paginate(10);
 
-       if ($this->clients->count()=="0") {
+       if ($clients->count()=="0") {
          $this->message="pas de résultat";
        }
        else {
