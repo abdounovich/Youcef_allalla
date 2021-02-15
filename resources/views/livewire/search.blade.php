@@ -124,45 +124,14 @@ echo '   <p class="card-text text-info h5  "> <del class="text-danger">'.$produi
 
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       
-                
+           
              @endforeach
 
 </div>
 
-
+<div class=" container">
+  <div  class="row d-flex mt-2 justify-content-center">
+  <div  >{{$produits->links()}}
+ </div>
+</div> 
+</div>

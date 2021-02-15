@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\Builder;
 class SearchCommandes extends Component
 {
     public $message="";
-    public $commandes="";
-    public $query="";
+/*     public $commandes="";
+ */    public $query="";
     public $categorie="type";
 
    
@@ -22,8 +22,8 @@ class SearchCommandes extends Component
     }
     public function render()
     {
-        $this->commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->get();
-      /*   $this->commandes=Commande::where('slug','ILIKE','%'.$this->query.'%')
+       /*  $this->commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->get();
+        $this->commandes=Commande::where('slug','ILIKE','%'.$this->query.'%')
         ->orWhere('slug','ILIKE','%'.$this->query.'%')
         ->orWhere('type',$this->query)
         ->orWhere('color','ILIKE','%'.$this->query.'%')
@@ -40,14 +40,15 @@ class SearchCommandes extends Component
             $req1->where('facebook', 'ILIKE', '%'.$this->query.'%');
         })->get(); */
         
-        return view('livewire.search-commandes');
+        return view('livewire.search-commandes',['commandes'=>Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->paginate(10)
+        ]);
     }
-    public function mount()
+   /*  public function mount()
     {
         $this->commandes=Commande::all();
         
         return view('livewire.search-commandes');
-    }
+    } */
 
 
 }
