@@ -24,15 +24,15 @@ class SearchCommandes extends Component
         $commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->paginate(10);
 
 
-        if ($this->categorie=="wilaya") {
+        if($this->categorie=="wilaya") {
             $commandes=Commande::whereHas('client', function (Builder $req) {
                 $req->where('wilaya', 'ILIKE', '%'.$this->query.'%');
-            })-get();
+            })->get();
 
         } elseif($this->categorie=="client") {
-            $commandes=Commande::orWhereHas('client', function (Builder $req1) {
-                $req1->where('facebook', 'ILIKE', '%'.$this->query.'%')->get();
-            });
+            $commandes=Commande::whereHas('client', function (Builder $req) {
+                $req->where('facebook', 'ILIKE', '%'.$this->query.'%');
+            })->get();
 
         } 
         
@@ -53,6 +53,8 @@ class SearchCommandes extends Component
             $req1->where('facebook', 'ILIKE', '%'.$this->query.'%');
         })->get(); */
         
+
+
         return view('livewire.search-commandes',['commandes'=>$commandes]);
     }
 
