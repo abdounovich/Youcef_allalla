@@ -3,10 +3,7 @@
 <div>
     {{$categorie}}
     {{$message}}
-    <div>
-        <button wire:click="BtnFunction('slug')" wire:class="btn btn-success">
-        </button>
-    </div>
+ 
 
    
    
