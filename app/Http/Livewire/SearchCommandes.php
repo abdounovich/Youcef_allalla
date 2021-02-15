@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Builder;
 class SearchCommandes extends Component
 {
     public $message="";
+    public $commandes;
     public $query="قسنطينة";
     public $categorie="type";
     protected $paginationTheme = 'bootstrap';
@@ -21,7 +22,7 @@ class SearchCommandes extends Component
    
     public function render()
     {
-        $commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->paginate(10);
+/*         $commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->paginate(10);
 
 
         if($this->categorie=="wilaya") {
@@ -34,9 +35,9 @@ class SearchCommandes extends Component
                 $req->where('facebook', 'ILIKE', '%'.$this->query.'%');
             })->get();
 
-        } 
+        }  */
         
-      /*   $this->commandes=Commande::where('slug','ILIKE','%'.$this->query.'%')
+        $this->commandes=Commande::where('slug','ILIKE','%'.$this->query.'%')
         ->orWhere('slug','ILIKE','%'.$this->query.'%')
         ->orWhere('type',$this->query)
         ->orWhere('color','ILIKE','%'.$this->query.'%')
@@ -51,11 +52,11 @@ class SearchCommandes extends Component
         })
         ->orWhereHas('client', function (Builder $req1) {
             $req1->where('facebook', 'ILIKE', '%'.$this->query.'%');
-        })->get(); */
+        })->get(); 
         
 
 
-        return view('livewire.search-commandes',['commandes'=>$commandes]);
+        return view('livewire.search-commandes');
     }
 
 public function mount(){
