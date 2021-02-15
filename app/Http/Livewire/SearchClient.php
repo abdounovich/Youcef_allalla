@@ -13,6 +13,7 @@ class SearchClient extends Component
 
     public $query="";    
     public $message="";
+    protected $paginationTheme = 'bootstrap';
 
     public function render()
     {
