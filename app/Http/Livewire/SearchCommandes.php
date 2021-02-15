@@ -35,7 +35,6 @@ class SearchCommandes extends Component
             })->get();
 
         }  */
-        $commandes=Commande::paginate(10);
 
         if($this->categorie=="slug" OR $this->categorie=="type" OR $this->categorie=="total_price"){
         $commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->paginate(10);}
