@@ -10,15 +10,16 @@ use Illuminate\Database\Eloquent\Builder;
 class SearchCommandes extends Component
 {
     public $message="";
+    public $statue="0";
 /*     public $commandes="";
  */    public $query="";
     public $categorie="type";
 
    
    
-    public function BtnFunction($categorie)
+    public function change($statue)
     {
-        $this->categorie=$categorie;
+        $this->statue=$statue;
     }
     public function render()
     {
