@@ -37,23 +37,17 @@ class SearchCommandes extends Component
 
         }  */
         
-        $this->commandes=Commande::where('slug','ILIKE','%'.$this->query.'%')
-        ->orWhere('slug','ILIKE','%'.$this->query.'%')
-        ->orWhere('type',$this->query)
-        ->orWhere('color','ILIKE','%'.$this->query.'%')
-        ->orWhere('commande_type','LIKE','%'.$this->query.'%')
 
-        ->orWhere('taille','LIKE','%'.$this->query.'%')
+        if($this->categorie=="slug" OR $this->categorie=="type"){
+        $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')
+        ->orWhere('slug','LIKE','%'.$this->query.'%')
+        ->orWhere('type',$this->query)->get();}
 
-        ->orWhere('total_price','LIKE','%'.$this->query.'%')
-
-->orWhereHas('product', function (Builder $req) {
-            $req->where('nom', 'ILIKE', '%'.$this->query.'%');
-        })
-        ->orWhereHas('client', function (Builder $req1) {
-            $req1->where('facebook', 'ILIKE', '%'.$this->query.'%');
-        })->get(); 
-        
+        elseif ($this->categorie=="facebook" OR $this->categorie=="wilaya"){
+            $this->commandes=Commande::whereHas('client', function (Builder $req) {
+                $req->where($this->categorie, 'LIKE', '%'.$this->query.'%');
+            })->get();}
+           
 
 
         return view('livewire.search-commandes');
