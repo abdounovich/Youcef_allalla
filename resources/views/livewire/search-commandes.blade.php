@@ -9,8 +9,7 @@
     </div>
 
    
-    <button  wire:model="color"  class="btn btn-info" wire:loading.attr="hidden"
-    wire:click="BtnFunction('slug')" >Code</button>
+   
 
     
     <div class="btn-group" role="group" aria-label="Basic example">
