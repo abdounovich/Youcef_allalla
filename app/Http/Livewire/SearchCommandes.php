@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\Builder;
 class SearchCommandes extends Component
 {
     public $message="";
-    public $query="قسنطينة";
-    public $categorie="type";
+    public $query="";
+    public $categorie="";
     protected $paginationTheme = 'bootstrap';
 
     use WithPagination;
