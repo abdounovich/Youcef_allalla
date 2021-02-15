@@ -16,10 +16,7 @@ class SearchCommandes extends Component
 
    
    
-    public function BtnFunction($categorie)
-    {
-        $this->categorie=$categorie;
-    }
+   
     public function render()
     {
         $commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->paginate(10);

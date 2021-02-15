@@ -1,8 +1,6 @@
 
 
 <div>
-    {{$categorie}}
-    {{$message}}
  
 
     <div class="form-check form-check-inline">
