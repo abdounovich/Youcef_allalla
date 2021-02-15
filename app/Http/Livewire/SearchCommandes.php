@@ -10,23 +10,20 @@ use Illuminate\Database\Eloquent\Builder;
 class SearchCommandes extends Component
 {
     public $message="";
-    public $statue="0";
-/*     public $commandes="";
- */    public $query="";
+    public $commandes="";
+    public $query="";
     public $categorie="type";
-
-
-    public function change($statue,$categorie)
+    
+   
+   
+    public function BtnFunction($categorie)
     {
-        $this->statue=$statue;
         $this->categorie=$categorie;
-
-
     }
     public function render()
     {
-       /*  $this->commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->get();
-        $this->commandes=Commande::where('slug','ILIKE','%'.$this->query.'%')
+        $this->commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->get();
+      /*   $this->commandes=Commande::where('slug','ILIKE','%'.$this->query.'%')
         ->orWhere('slug','ILIKE','%'.$this->query.'%')
         ->orWhere('type',$this->query)
         ->orWhere('color','ILIKE','%'.$this->query.'%')
@@ -42,30 +39,15 @@ class SearchCommandes extends Component
         ->orWhereHas('client', function (Builder $req1) {
             $req1->where('facebook', 'ILIKE', '%'.$this->query.'%');
         })->get(); */
-
-
-        $commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->paginate(10);
-
-
-        if ($this->categorie=="client") {
-            $commandes=Commande::WhereHas('client', function (Builder $req1) {
-                $req1->where('facebook', 'ILIKE', '%'.$this->query.'%');
-            })->paginate(10);           
-        }
-        elseif ($this->categorie=="wilaya") {
-            $commandes=Commande::WhereHas('client', function (Builder $req1) {
-                $req1->where('wilaya', 'ILIKE', '%'.$this->query.'%');
-            })->paginate(10);           
-        }
         
-        return view('livewire.search-commandes',['commandes'=>$commandes]);
+        return view('livewire.search-commandes');
     }
-   /*  public function mount()
+    public function mount()
     {
         $this->commandes=Commande::all();
         
         return view('livewire.search-commandes');
-    } */
+    }
 
 
 }
