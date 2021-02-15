@@ -22,7 +22,7 @@ class SearchCommandes extends Component
     }
     public function render()
     {
-        $commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->paginate(10);
+        $commandes=Commande::where("slug",'LIKE','%'.$this->query.'%')->paginate(10);
       /*   $this->commandes=Commande::where('slug','ILIKE','%'.$this->query.'%')
         ->orWhere('slug','ILIKE','%'.$this->query.'%')
         ->orWhere('type',$this->query)
