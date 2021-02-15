@@ -20,11 +20,11 @@ use Illuminate\Database\Eloquent\Builder;
 
 Route::get('/2', function () {
 
-    $this->commandes=Commande::whereHas('product', function (Builder $req) {
+    $commandes=Commande::whereHas('product', function (Builder $req) {
         $req->where('nom', 'ILIKE', '%'."MERAHI".'%');
     })->get(); 
+dd($commandes);
 });
-
 
 
 Route::get('/', function () {
