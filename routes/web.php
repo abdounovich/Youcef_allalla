@@ -23,8 +23,9 @@ Route::get('/2', function () {
     $commandes=Commande::whereHas('product', function (Builder $req) {
         $req->where('nom', 'ILIKE', '%'."MERAHI".'%');
     })->get(); 
-dd($commandes);
-});
+foreach ($commandes as $commande ) {
+  echo "<p>".$commande->client->facebook."</p>";
+}});
 
 
 Route::get('/', function () {
