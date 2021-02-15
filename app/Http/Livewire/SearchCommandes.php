@@ -10,10 +10,10 @@ use Illuminate\Database\Eloquent\Builder;
 class SearchCommandes extends Component
 {
     public $message="";
-    public $commandes="";
     public $query="";
     public $categorie="type";
-    
+    use WithPagination;
+
    
    
     public function BtnFunction($categorie)
@@ -22,7 +22,7 @@ class SearchCommandes extends Component
     }
     public function render()
     {
-        $this->commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->get();
+        $commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->paginate(10);
       /*   $this->commandes=Commande::where('slug','ILIKE','%'.$this->query.'%')
         ->orWhere('slug','ILIKE','%'.$this->query.'%')
         ->orWhere('type',$this->query)
@@ -40,14 +40,9 @@ class SearchCommandes extends Component
             $req1->where('facebook', 'ILIKE', '%'.$this->query.'%');
         })->get(); */
         
-        return view('livewire.search-commandes');
+        return view('livewire.search-commandes',['commandes'=>$commandes]);
     }
-    public function mount()
-    {
-        $this->commandes=Commande::all();
-        
-        return view('livewire.search-commandes');
-    }
+
 
 
 }
