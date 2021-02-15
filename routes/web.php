@@ -21,7 +21,7 @@ use Illuminate\Database\Eloquent\Builder;
 Route::get('/2', function () {
 
     $commandes=Commande::whereHas('product', function (Builder $req) {
-        $req->where('nom', 'ILIKE', '%'."MERAHI".'%');
+        $req->where('facebook', 'ILIKE', '%'."MERAHI".'%');
     })->get(); 
 foreach ($commandes as $commande ) {
   echo "<p>".$commande->client->facebook."</p>";
