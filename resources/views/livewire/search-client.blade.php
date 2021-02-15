@@ -98,10 +98,10 @@
                 </div>
     </div>
     @endforeach
-</div>
-</div>
-<div class=" container">
+</div><div class=" container">
     <div  class="row d-flex mt-2 justify-content-center">
     <div  >{{$clients->links()}}
    </div>
+</div>
+
 
