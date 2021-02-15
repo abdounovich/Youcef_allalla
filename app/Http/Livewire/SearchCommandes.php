@@ -30,9 +30,9 @@ class SearchCommandes extends Component
             })->paginate(10);
 
         } elseif($this->categorie=="client") {
-            $commandes=Commande::whereHas('client', function (Builder $req) {
-                $req->where('facebook', 'ILIKE', '%'.$this->query.'%');
-            })->paginate(10);
+            $commandes=Commande::orWhereHas('client', function (Builder $req1) {
+                $req1->where('facebook', 'ILIKE', '%'.$this->query.'%');
+            })->get();
 
         } 
         
