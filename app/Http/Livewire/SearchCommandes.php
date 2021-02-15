@@ -38,16 +38,19 @@ class SearchCommandes extends Component
         }  */
         
 
-        if($this->categorie=="slug" OR $this->categorie=="type"){
+        if($this->categorie=="slug" OR $this->categorie=="type" OR $this->categorie=="total_price"){
         $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')
         ->orWhere('slug','LIKE','%'.$this->query.'%')
         ->orWhere('type',$this->query)->get();}
 
-        elseif ($this->categorie=="facebook" OR $this->categorie=="wilaya"){
+        elseif ($this->categorie=="facebook" OR $this->categorie=="wilaya" ){
             $this->commandes=Commande::whereHas('client', function (Builder $req) {
-                $req->where($this->categorie, 'LIKE', '%'.$this->query.'%');
+                $req->where($this->categorie, 'ILIKE', '%'.$this->query.'%');
             })->get();}
-           
+            elseif ($this->categorie=="nom" ){
+                $this->commandes=Commande::whereHas('product', function (Builder $req) {
+                    $req->where($this->categorie, 'ILIKE', '%'.$this->query.'%');
+                })->get();}
 
 
         return view('livewire.search-commandes');
