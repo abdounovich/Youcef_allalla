@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\Builder;
 class SearchCommandes extends Component
 {
     public $message="";
-    public $commandes;
     public $query="قسنطينة";
     public $categorie="type";
     protected $paginationTheme = 'bootstrap';
@@ -36,30 +35,29 @@ class SearchCommandes extends Component
             })->get();
 
         }  */
-        
-
+        $commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')->paginate(10);
         if($this->categorie=="slug" OR $this->categorie=="type" OR $this->categorie=="total_price"){
-        $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')
+        $commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')
         ->orWhere('slug','LIKE','%'.$this->query.'%')
-        ->orWhere('type',$this->query)->get();}
+        ->orWhere('type',$this->query)->paginate(2);}
 
         elseif ($this->categorie=="facebook" OR $this->categorie=="wilaya" ){
-            $this->commandes=Commande::whereHas('client', function (Builder $req) {
+           $commandes=Commande::whereHas('client', function (Builder $req) {
                 $req->where($this->categorie, 'ILIKE', '%'.$this->query.'%');
-            })->get();}
+            })->paginate(2);}
             elseif ($this->categorie=="nom" ){
-                $this->commandes=Commande::whereHas('product', function (Builder $req) {
+               $commandes=Commande::whereHas('product', function (Builder $req) {
                     $req->where($this->categorie, 'ILIKE', '%'.$this->query.'%');
-                })->get();}
+                })->paginate(2);}
 
 
-        return view('livewire.search-commandes');
+        return view('livewire.search-commandes',["commandes"=>$commandes]);
     }
 
-public function mount(){
+/* public function mount(){
     $commandes=Commande::paginate(10);
     return view('livewire.search-commandes',["commandes"=>$commandes]);
 
-}
+} */
 
 }

@@ -198,13 +198,14 @@
     </div>
     
     
-     <div class=" container">
+  {{--   <div class=" container">
         <div  class="row d-flex mt-2 justify-content-center">
         <div  >{{$commandes->links()}}
        </div>
     
-     
+     --}}
     
     
     
         </div></div></div></div>
+        
