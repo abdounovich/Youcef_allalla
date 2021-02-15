@@ -12,7 +12,7 @@
         <label class="form-check-label" for="inlineRadio2">type</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" wire:model="categorie" value="client" name="categorie" id="inlineRadio2" >
+        <input class="form-check-input" type="radio" wire:model="categorie" value="facebook" name="categorie" id="inlineRadio2" >
         <label class="form-check-label" for="inlineRadio2">client</label>
       </div>
       <div class="form-check form-check-inline">
