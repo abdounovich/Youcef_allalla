@@ -13,7 +13,33 @@
     wire:click="BtnFunction('slug')" >Code</button>
 
     
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" value="slug" wire:model="categorie" wire:click="change('1')" 
+        @if ($statue=="1")
+        class="btn btn-success"
+        @else
+        class="btn btn-info"
+     
+        @endif>Code</button>
 
+        <button type="button" value="slug" wire:model="categorie" wire:click="change('2')" 
+        @if ($statue=="2")
+        class="btn btn-success"
+        @else
+        class="btn btn-info"
+     
+        @endif>Wilaya</button>
+
+
+        
+        <button type="button" value="slug" wire:model="categorie" wire:click="change('3')" 
+        @if ($statue=="3")
+        class="btn btn-success"
+        @else
+        class="btn btn-info"
+     
+        @endif>Client</button>
+      </div>
         <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control" placeholder="Entrer le nom du produit">
       
       </div>

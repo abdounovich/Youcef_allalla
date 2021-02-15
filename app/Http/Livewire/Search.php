@@ -12,8 +12,14 @@ class Search extends Component
 use WithPagination;
     public $query="";    
     public $message="";
+    public $statue="0";
     protected $paginationTheme = 'bootstrap';
 
+
+    public function change($statue)
+    {
+        $this->statue=$statue;
+    }
     public function render()
     {
       
