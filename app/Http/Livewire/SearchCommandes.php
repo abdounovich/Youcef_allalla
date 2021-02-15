@@ -47,15 +47,17 @@ class SearchCommandes extends Component
                $commandes=Commande::whereHas('product', function (Builder $req) {
                     $req->where($this->categorie, 'LIKE', '%'.$this->query.'%');
                 })->paginate(10);}
+else {
+    $commandes=Commande::paginate(10);}
 
 
         return view('livewire.search-commandes',["commandes"=>$commandes]);
     }
 
- public function mount(){
-    $commandes=Commande::all(10);
+/*  public function mount(){
+    $commandes=Commande::all();
     return view('livewire.search-commandes',["commandes"=>$commandes]);
 
-} 
+}  */
 
 }
