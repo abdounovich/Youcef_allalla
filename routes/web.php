@@ -21,11 +21,11 @@ Route::get('/2', function () {
 
     $commandes=Commande::whereHas('client', function (Builder $req) {
         $req->where('wilaya', 'ILIKE', '%'."قسنطينة".'%');
-    });
+    })
 
-})->get();
+->get();
 dd($commandes);
-
+});
 
 
 
