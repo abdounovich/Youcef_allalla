@@ -27,12 +27,12 @@ class SearchCommandes extends Component
         if ($this->categorie=="wilaya") {
             $commandes=Commande::whereHas('client', function (Builder $req) {
                 $req->where('wilaya', 'ILIKE', '%'.$this->query.'%');
-            })->paginate(10);
+            })-get();
 
         } elseif($this->categorie=="client") {
             $commandes=Commande::orWhereHas('client', function (Builder $req1) {
-                $req1->where('facebook', 'ILIKE', '%'.$this->query.'%');
-            })->get();
+                $req1->where('facebook', 'ILIKE', '%'.$this->query.'%')->get();
+            });
 
         } 
         

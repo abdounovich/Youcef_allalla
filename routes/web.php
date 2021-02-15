@@ -17,6 +17,18 @@ use App\SubCategory;
 |
 */
 
+Route::get('/2', function () {
+
+    $commandes=Commande::whereHas('client', function (Builder $req) {
+        $req->where('wilaya', 'ILIKE', '%'."قسنطينة".'%');
+    });
+
+})->get();
+dd($commandes);
+
+
+
+
 Route::get('/', function () {
     return view('index')
     ->with("products",Product::all())
