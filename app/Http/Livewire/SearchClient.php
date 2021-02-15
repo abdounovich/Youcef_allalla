@@ -12,7 +12,6 @@ class SearchClient extends Component
     use withPagination;
 
     public $query="";    
-    public $clients="";
     public $message="";
 
     public function render()
@@ -37,13 +36,5 @@ class SearchClient extends Component
 
 
 
-    public function mount()
-    {
-
-
-
-        
-        $this->clients=Client::paginate(5);
-        return view('livewire.search-client');
-    }
+    
 }
