@@ -5,15 +5,12 @@
     {{$message}}
  
 
-   
-    <button wire:model="color"  class="btn btn-info" wire:loading.attr="disabled"
-    wire:click="BtnFunction('slug')" >Code</button>
 
     
 
         <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control" placeholder="Entrer le nom du produit">
       
-      </div>
+   
 {{$message}}
 
 @if ($message=="")
@@ -186,4 +183,4 @@
     
     
     
-    
+        </div></div></div></div>
