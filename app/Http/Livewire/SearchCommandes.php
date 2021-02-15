@@ -48,7 +48,7 @@ class SearchCommandes extends Component
                     $req->where($this->categorie, 'LIKE', '%'.$this->query.'%');
                 })->paginate(10);}
 else {
-    $commandes=Commande::all();}
+    $commandes=Commande::paginate(10);}
 
 
         return view('livewire.search-commandes',["commandes"=>$commandes]);
