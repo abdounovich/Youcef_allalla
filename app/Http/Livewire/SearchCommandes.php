@@ -53,7 +53,7 @@ class SearchCommandes extends Component
     }
 
  public function mount(){
-    $commandes=Commande::paginate(10);
+    $commandes=Commande::all(10);
     return view('livewire.search-commandes',["commandes"=>$commandes]);
 
 } 
