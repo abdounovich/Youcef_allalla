@@ -12,6 +12,8 @@ class SearchCommandes extends Component
     public $message="";
     public $query="";
     public $categorie="type";
+    protected $paginationTheme = 'bootstrap';
+
     use WithPagination;
 
    
@@ -20,6 +22,20 @@ class SearchCommandes extends Component
     public function render()
     {
         $commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->paginate(10);
+
+
+        if ($this->categorie=="wilaya") {
+            $commandes=Commande::whereHas('product', function (Builder $req) {
+                $req->where('wilaya', 'ILIKE', '%'.$this->query.'%');
+            })->paginate(10);
+
+        } elseif($this->categorie=="client") {
+            $commandes=Commande::whereHas('product', function (Builder $req) {
+                $req->where('facebook', 'ILIKE', '%'.$this->query.'%');
+            })->paginate(10);
+
+        } 
+        
       /*   $this->commandes=Commande::where('slug','ILIKE','%'.$this->query.'%')
         ->orWhere('slug','ILIKE','%'.$this->query.'%')
         ->orWhere('type',$this->query)
