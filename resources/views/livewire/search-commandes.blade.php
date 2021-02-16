@@ -97,7 +97,6 @@
             @include('commandes.simple')
         </div>
 
-        {{$loop->last}} 
         @if ($loop->last==$commandes->count())
         {!!$activation=0!!}
         @endif
