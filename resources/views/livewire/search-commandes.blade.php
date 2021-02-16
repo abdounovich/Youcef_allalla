@@ -92,7 +92,10 @@
     </div> 
 
     <div class="infinite-scroll">
+@php
+        $commandes=App\Commande::paginate(4);
 
+@endphp
     @foreach ($commandes as $commande)
         <div style="border-width: 10px" class="card bg-dark border-secondary     mt-2 mb-1" >
             @include('commandes.simple')
