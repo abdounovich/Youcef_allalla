@@ -86,30 +86,17 @@
        
      
     
-    <div class="row text-center text-white mb-3">
-    <div class="col-lg-7 mx-auto">
-    <h1 class=" h4 mt-4 p-3 shadow bg-secondary rounded" style="opacity: 0.9"> 
-        Non-confirmées : 
-    </h1>
-    </div>
-    </div> 
+ 
 
-    <div class="scrolling-pagination">
 
     @foreach ($commandes as $commande)
-    
-    
-        <div style="border-width: 10px" class="card bg-dark border-secondary     mt-2 mb-1" >
-            @include('commandes.simple')
-        </div>
+    @include('commandes.simple')
     @endforeach
     
 
     
     
-    <br>
-    
-</div>
+
      
   
     {{-- <script type="text/javascript">
