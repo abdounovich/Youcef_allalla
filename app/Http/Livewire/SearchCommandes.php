@@ -12,11 +12,16 @@ class SearchCommandes extends Component
     public $message="";
     public $query="";
     public $categorie="";
+    public $TakeLimit="5";
+
     protected $paginationTheme = 'bootstrap';
 
     use WithPagination;
 
-   
+    public function loadMore()
+     {   $this->TakeLimit=$this->TakeLimit+5;
+    
+    }
    
    
     public function render()
@@ -37,19 +42,18 @@ class SearchCommandes extends Component
         }  */
 
         if($this->categorie=="slug" OR $this->categorie=="type" OR $this->categorie=="total_price"){
-        $commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->paginate(5);}
+        $commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->take($this->TakeLimit);}
 
         elseif ($this->categorie=="facebook" OR $this->categorie=="wilaya" ){
            $commandes=Commande::whereHas('client', function (Builder $req) {
                 $req->where($this->categorie, 'LIKE', '%'.$this->query.'%');
-            })->paginate(5);}
+            })->take($this->TakeLimit);}
             elseif ($this->categorie=="nom" ){
                $commandes=Commande::whereHas('product', function (Builder $req) {
                     $req->where($this->categorie, 'LIKE', '%'.$this->query.'%');
-                })->paginate(5);}
+                })->take($this->TakeLimit);}
 else {
-    $commandes=Commande::paginate(5);}
-    $commandes=Commande::paginate(2);
+    $commandes=Commande::take($this->TakeLimit);}
 
 
         return view('livewire.search-commandes',["commandes"=>$commandes]);

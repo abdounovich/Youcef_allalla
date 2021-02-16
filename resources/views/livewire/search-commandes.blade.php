@@ -92,10 +92,7 @@
     </div> 
 
     <div class="infinite-scroll">
-@php
-        $commandes=App\Commande::paginate(4);
 
-@endphp
     @foreach ($commandes as $commande)
         <div style="border-width: 10px" class="card bg-dark border-secondary     mt-2 mb-1" >
             @include('commandes.simple')
@@ -106,8 +103,7 @@
     
     
  
- {{$commandes->links()}}   
-</div>
+<button class="btn btn-primary" wire:click="loadMore" type="button">Afficher plus</button></div>
 
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

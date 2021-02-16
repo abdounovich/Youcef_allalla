@@ -18,14 +18,6 @@ use Illuminate\Database\Eloquent\Builder;
 |
 */
 
-Route::get('/2', function () {
-
-    $commandes=Commande::whereHas('client', function (Builder $req) {
-        $req->where('facebook', 'ILIKE', '%'."MERAHI".'%');
-    })->get(); 
-foreach ($commandes as $commande ) {
-  echo "<p>".$commande->client->facebook."</p>";
-}});
 
 
 Route::get('/', function () {
