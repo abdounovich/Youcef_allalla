@@ -97,13 +97,11 @@
     <div class="scrolling-pagination">
 
     @foreach ($commandes as $commande)
-    @if ($commande->type=="1")
     
     
         <div style="border-width: 10px" class="card bg-dark border-secondary     mt-2 mb-1" >
             @include('commandes.simple')
         </div>
-        @endIf
     @endforeach
     
 
