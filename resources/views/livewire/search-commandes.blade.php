@@ -110,7 +110,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.3.7/jquery.jscroll.min.js"></script>
 <script type="text/javascript">
 
-    $('ul.pagination').hide();
     $('.infinite-scroll').jscroll({
             autoTrigger: true,
             debug: true,
