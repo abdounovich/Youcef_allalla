@@ -11,7 +11,7 @@ class SearchCommandes extends Component
 {
     public $message="";
     public $query="";
-    public $categorie="";
+    public $categorie="s";
     public $TakeLimit="5";
     public $activation="1";
     protected $paginationTheme = 'bootstrap';
@@ -54,7 +54,7 @@ class SearchCommandes extends Component
                     $req->where($this->categorie, 'LIKE', '%'.$this->query.'%');
                 })->take($this->TakeLimit);}
 else {
-    $commandes=Commande::all()->take($this->TakeLimit);}
+    $commandes=Commande::where('type','LIKE','%'.$this->query.'%')->take($this->TakeLimit);}
 
 
         return view('livewire.search-commandes',["commandes"=>$commandes]);
