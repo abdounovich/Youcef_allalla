@@ -96,9 +96,7 @@
         <div style="border-width: 10px" class="card bg-dark border-secondary     mt-2 mb-1" >
             @include('commandes.simple')
         </div>
-        @if($loop->last)
-        {{$loop->last}}
-    @endif
+        {{ $loop->count }}
     @endforeach
     
 
