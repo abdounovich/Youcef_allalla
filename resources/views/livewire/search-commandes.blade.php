@@ -100,7 +100,7 @@
     @endforeach
     
 
-    <div class="row text-center text-white mb-3">
+    <div class="row text-center text-white my-5">
         <div class="col-lg-7 mx-auto">
             <button  class="btn btn-primary" @if ($TakeLimit>$commandes->count()) 
                 disabled class='btn btn-danger'    @endif  wire:click="loadMore" type="button">Afficher plus</button>
