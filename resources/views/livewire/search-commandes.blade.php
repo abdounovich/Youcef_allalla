@@ -96,6 +96,8 @@
         <div style="border-width: 10px" class="card bg-dark border-secondary     mt-2 mb-1" >
             @include('commandes.simple')
         </div>
+
+        {{$loop->iteration}} de  {{$loop->count}} 
         @if ($loop->iteration==$loop->count)
             {{$activation=0}}
         @endif
