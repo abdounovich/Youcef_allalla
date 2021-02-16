@@ -3,19 +3,16 @@
     data-toggle="collapse" 
     data-target="#product_collapse{{$commande->id}}" 
     aria-expanded="false" 
-    aria-controls="collapseExample">   
-      <div class="card-text">
+    aria-controls="collapseExample">     <div class="card-text">
 
-      <div>
-    {{--<div class="dropdown dropleft float-right">
+   <div>
+    <div class="dropdown dropleft float-right">
       <button class="btn text-white  " type="button" id="dropdownMenuButton" data-toggle="dropdown" >
        <i class="fa fa-2x text-bold fa-ellipsis-v"></i>
       </button>
       <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
-        <a class="text-dark m-2 p-2 "  href="{{route('commandes.delete',$commande->id)}}"  >
-           <i class="fa fa-trash text-danger m-2"></i> effacer</a>
-          </div>
-    </div> --}}
+        <a class="text-dark m-2 p-2 "  href="{{route('commandes.delete',$commande->id)}}"  > <i class="fa fa-trash text-danger m-2"></i> effacer</a></div>
+    </div>
        <span class="h4  text-white text-wrap" > 
          @if ($commande->type=="1")
              <i class="btn btn-secondary btn-circle"></i>
