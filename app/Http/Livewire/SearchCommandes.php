@@ -12,7 +12,7 @@ class SearchCommandes extends Component
     public $message="";
     public $query="";
     public $categorie="";
-    public $TakeLimit="1";
+    public $TakeLimit="3";
     public $activation="1";
     protected $paginationTheme = 'bootstrap';
 
