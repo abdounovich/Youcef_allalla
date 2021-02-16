@@ -1,5 +1,6 @@
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.4.1/jquery.jscroll.min.js"></script>
 <div>
  
 
@@ -92,6 +93,9 @@
     </h1>
     </div>
     </div> 
+
+    <div class="scrolling-pagination">
+
     @foreach ($commandes as $commande)
     @if ($commande->type=="1")
     
@@ -202,8 +206,23 @@
         <div  class="row d-flex mt-2 justify-content-center">
         <div  >{{$commandes->links()}}
        </div>
-        </div></div></div></div>
+        </div></div></div></div></div>
      
+    </script>
+    <script type="text/javascript">
+        $('ul.pagination').hide();
+        $(function() {
+            $('.scrolling-pagination').jscroll({
+                autoTrigger: true,
+                padding: 0,
+                nextSelector: '.pagination li.active + li a',
+                contentSelector: 'div.scrolling-pagination',
+                callback: function() {
+                    $('ul.pagination').remove();
+                }
+            });
+        });
+    </script>
     
     
     
