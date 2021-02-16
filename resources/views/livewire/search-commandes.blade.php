@@ -103,8 +103,7 @@
     <div class="row text-center text-white mb-3">
         <div class="col-lg-7 mx-auto">
             <button  class="btn btn-primary" @if ($TakeLimit>$commandes->count()) 
-                disabled
-          class='sf-toggle-hidden'    @endif  wire:click="loadMore" type="button">Afficher plus</button>
+                disabled class='btn btn-danger'    @endif  wire:click="loadMore" type="button">Afficher plus</button>
         </div>
         </div> 
     
