@@ -96,13 +96,16 @@
         <div style="border-width: 10px" class="card bg-dark border-secondary     mt-2 mb-1" >
             @include('commandes.simple')
         </div>
+        @if($loop->last)
+        {{$loop->last}}
+    @endif
     @endforeach
     
 
     
     
- 
-    <button class="btn btn-primary" wire:click="loadMore" type="button">Afficher plus</button>
+ <div>
+    <button class="btn btn-primary" wire:click="loadMore" type="button">Afficher plus</button></div>
 </div>
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.3.7/jquery.jscroll.min.js"></script>
