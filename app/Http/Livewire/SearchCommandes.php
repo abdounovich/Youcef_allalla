@@ -37,21 +37,21 @@ class SearchCommandes extends Component
         }  */
 
         if($this->categorie=="slug" OR $this->categorie=="type" OR $this->categorie=="total_price"){
-        $commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->paginate(10);}
+        $commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->paginate(5);}
 
         elseif ($this->categorie=="facebook" OR $this->categorie=="wilaya" ){
            $commandes=Commande::whereHas('client', function (Builder $req) {
                 $req->where($this->categorie, 'LIKE', '%'.$this->query.'%');
-            })->paginate(10);}
+            })->paginate(5);}
             elseif ($this->categorie=="nom" ){
                $commandes=Commande::whereHas('product', function (Builder $req) {
                     $req->where($this->categorie, 'LIKE', '%'.$this->query.'%');
-                })->paginate(10);}
+                })->paginate(5);}
 else {
-    $commandes=Commande::all();}
+    $commandes=Commande::paginate(5);}
 
 
-        return view('livewire.search-commandes',["commandes"=>Commande::all()]);
+        return view('livewire.search-commandes',["commandes"=>$commandes]);
     }
 
 /*  public function mount(){
