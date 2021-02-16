@@ -97,8 +97,8 @@
             @include('commandes.simple')
         </div>
 
-        {{$loop->iteration}} de  {{$loop->count}} {{$loop->last}} 
-        @if ($loop->iteration==$loop->count)
+        {{$loop->last}} 
+        @if ($loop->last ==$commandes->count())
             {{$activation=0}}
         @endif
     @endforeach
