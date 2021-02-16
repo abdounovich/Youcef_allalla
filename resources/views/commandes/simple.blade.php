@@ -42,7 +42,8 @@
 <p></p>
             
  
-       <img class="img-thumbnail custom  p-0 mt-2 " style="width: 100%;height:250px" src="{{$commande->product->photo}}" alt="">
+       <img class="img-thumbnail custom  p-0 mt-2 " 
+       style="width: 100%;height:250px" src="{{$commande->product->photo}}" alt="">
 
    @include('commandes.items')
    
@@ -50,4 +51,4 @@
 
      </div>
     </div>
-   @include('commandes.clientList')
+{{--    @include('commandes.clientList') --}}
