@@ -110,16 +110,17 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.3.7/jquery.jscroll.min.js"></script>
 <script type="text/javascript">
-
-    $('.infinite-scroll').jscroll({
+    $('ul.pagination').hide();
+   
+        $('.infinite-scroll').jscroll({
             autoTrigger: true,
-            debug: true,
-            loadingHtml: '<div>....</div>',
+            loadingHtml: '<img class="center-block" src="/images/loading.gif" alt="Loading..." />',
             padding: 0,
             nextSelector: '.pagination li.active + li a',
             contentSelector: 'div.infinite-scroll',
             callback: function() {
                 $('ul.pagination').remove();
             }
-    });
+        });
+
 </script>
