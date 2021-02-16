@@ -45,6 +45,7 @@
 
 
 
+
     <style>
         .text-gray {
            color: #aaa
@@ -89,8 +90,10 @@
     </div>
     </div> 
 
-    <div class="scrolling-pagination">
-
+    <div class="infinite-scroll">
+@php
+    $commandes=App\Commande::paginate(5);
+@endphp
     @foreach ($commandes as $commande)
         <div style="border-width: 10px" class="card bg-dark border-secondary     mt-2 mb-1" >
             @include('commandes.simple')
@@ -105,21 +108,20 @@
 </div>
      
 
-  <script type="text/javascript">
-  
-        $('ul.pagination').hide();
-        $(function() {
-            $('.scrolling-pagination').jscroll({
-                autoTrigger: true,
-                padding: 0,
-                nextSelector: '.pagination li.active + li a',
-                contentSelector: 'div.scrolling-pagination',
-                callback: function() {
-                    $('ul.pagination').remove();
-                }
-            });
-        });
-    </script>  
-    
-    
-    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.3.7/jquery.jscroll.min.js"></script>
+<script type="text/javascript">
+
+    $('ul.pagination').hide();
+    $('.infinite-scroll').jscroll({
+            autoTrigger: true,
+            debug: true,
+            loadingHtml: '<img class="center-block" src="/images/loading.gif" alt="Loading..." />',
+            padding: 0,
+            nextSelector: '.pagination li.active + li a',
+            contentSelector: 'div.infinite-scroll',
+            callback: function() {
+                $('ul.pagination').remove();
+            }
+    });
+</script>
