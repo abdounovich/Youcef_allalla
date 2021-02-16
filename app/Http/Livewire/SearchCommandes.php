@@ -42,16 +42,16 @@ class SearchCommandes extends Component
         }  */
 
         if($this->categorie=="slug" OR $this->categorie=="type" OR $this->categorie=="total_price"){
-        $commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->all()->take($this->TakeLimit);}
+        $commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->take($this->TakeLimit);}
 
         elseif ($this->categorie=="facebook" OR $this->categorie=="wilaya" ){
            $commandes=Commande::whereHas('client', function (Builder $req) {
                 $req->where($this->categorie, 'LIKE', '%'.$this->query.'%');
-            })->all()->take($this->TakeLimit);}
+            })->take($this->TakeLimit);}
             elseif ($this->categorie=="nom" ){
                $commandes=Commande::whereHas('product', function (Builder $req) {
                     $req->where($this->categorie, 'LIKE', '%'.$this->query.'%');
-                })->all()->take($this->TakeLimit);}
+                })->take($this->TakeLimit);}
 else {
     $commandes=Commande::all()->take($this->TakeLimit);}
 
