@@ -56,7 +56,7 @@ class SearchCommandes extends Component
 else {
     $commandes=Commande::all()->take(5);}
 
-
+    $commandes=Commande::where('slug','LIKE','%'.$this->query.'%')->take($this->TakeLimit);
         return view('livewire.search-commandes',["commandes"=>$commandes]);
     }
 
