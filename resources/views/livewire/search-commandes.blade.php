@@ -91,9 +91,7 @@
     </div> 
 
     <div class="infinite-scroll">
-@php
-    $commandes=App\Commande::paginate(5);
-@endphp
+
     @foreach ($commandes as $commande)
         <div style="border-width: 10px" class="card bg-dark border-secondary     mt-2 mb-1" >
             @include('commandes.simple')
@@ -116,7 +114,7 @@
     $('.infinite-scroll').jscroll({
             autoTrigger: true,
             debug: true,
-            loadingHtml: '<img class="center-block" src="/images/loading.gif" alt="Loading..." />',
+            loadingHtml: '<div>loading...</div>',
             padding: 0,
             nextSelector: '.pagination li.active + li a',
             contentSelector: 'div.infinite-scroll',
