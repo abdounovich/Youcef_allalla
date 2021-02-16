@@ -1,10 +1,8 @@
 
-{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.4.1/jquery.jscroll.min.js"></script> --}}
-{{-- <div>
-  --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.4.1/jquery.jscroll.min.js"></script> 
 
-{{--     <div class="form-check form-check-inline">
+  <div class="form-check form-check-inline">
         <input class="form-check-input" type="radio" wire:model="categorie" value="slug" name="categorie" id="inlineRadio1" >
         <label class="form-check-label" for="inlineRadio1">Code</label>
       </div>
@@ -29,21 +27,20 @@
       <div class="form-check form-check-inline">
         <input class="form-check-input" type="radio" wire:model="categorie" value="wilaya" name="categorie" id="inlineRadio2" >
         <label class="form-check-label" for="inlineRadio2">wilaya</label>
-      </div> --}}
+      </div> 
      
     
 
-    {{--     <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control" placeholder="Entrer le nom du produit">
+      <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control" placeholder="Entrer le nom du produit">
       
    
-{{$message}} --}}
+{{$message}}
 
-{{-- @if ($message=="")
+@if ($message=="")
     
  
 
-@endif --}}
-{{-- <div> --}}
+@endif 
 
 
 
@@ -97,8 +94,6 @@
     <div class="scrolling-pagination">
 
     @foreach ($commandes as $commande)
-    
-    
         <div style="border-width: 10px" class="card bg-dark border-secondary     mt-2 mb-1" >
             @include('commandes.simple')
         </div>
@@ -107,12 +102,12 @@
 
     
     
-    <br>
+ 
     
 </div>
      
   
-    {{-- <script type="text/javascript">
+ <script type="text/javascript">
         $('ul.pagination').hide();
         $(function() {
             $('.scrolling-pagination').jscroll({
@@ -125,7 +120,7 @@
                 }
             });
         });
-    </script> --}}
+    </script> 
     
     
     
