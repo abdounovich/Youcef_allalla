@@ -20,6 +20,7 @@ class SearchCommandes extends Component
 
     public function loadMore()
      {   $this->TakeLimit=$this->TakeLimit+1;
+       
     
     }
    

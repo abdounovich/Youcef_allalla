@@ -96,20 +96,17 @@
         <div style="border-width: 10px" class="card bg-dark border-secondary     mt-2 mb-1" >
             @include('commandes.simple')
         </div>
-{{$loop->iteration}} 
-{{$commandes->count()}} 
-        @if ($loop->iteration==$commandes->count())
-        {!!$activation=0!!}
-      @endif
+
     @endforeach
     
 
     
     
  <div>
-    <button  class="btn btn-primary" {{-- @if ($activation==0)
+    <button  class="btn btn-primary" @if ($TakeLimit>=$commandes->count()) 
+      
     disabled
-    @endif --}} wire:click="loadMore" type="button">Afficher plus</button></div>
+    @endif  wire:click="loadMore" type="button">Afficher plus</button></div>
 </div>
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.3.7/jquery.jscroll.min.js"></script>
