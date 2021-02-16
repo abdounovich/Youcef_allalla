@@ -98,7 +98,7 @@
         </div>
 
         @if ($loop->last==$commandes->count())
-        {!!$activation=0!!}
+        {{!!$activation=0!!}}
         @endif
     @endforeach
     
