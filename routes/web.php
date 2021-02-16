@@ -18,6 +18,11 @@ use Illuminate\Database\Eloquent\Builder;
 |
 */
 
+Route::get('/2', function () {
+$products=App\Product::all()->take(2);
+foreach($products as $product){ 
+echo  $product->nom;}
+});
 
 
 Route::get('/', function () {
