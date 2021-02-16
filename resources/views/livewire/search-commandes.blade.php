@@ -104,8 +104,9 @@
  {{$commandes->links()}}   
 </div>
      
-  
+
   <script type="text/javascript">
+  
         $('ul.pagination').hide();
         $(function() {
             $('.scrolling-pagination').jscroll({
