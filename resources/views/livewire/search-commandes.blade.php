@@ -98,9 +98,9 @@
         </div>
 
         {{$loop->iteration}} de  {{$loop->count}} 
-        @if ($loop->iteration==$loop->count)
+       {{--  @if ($loop->iteration==$loop->count)
             {{$activation=0}}
-        @endif
+        @endif --}}
     @endforeach
     
 
