@@ -91,7 +91,6 @@
     </div>
     </div> 
 
-    <div class="infinite-scroll">
 
     @foreach ($commandes as $commande)
         <div style="border-width: 10px" class="card bg-dark border-secondary     mt-2 mb-1" >
@@ -103,10 +102,9 @@
     
     
  
-<button class="btn btn-primary" wire:click="loadMore" type="button">Afficher plus</button></div>
-
+    <button class="btn btn-primary" wire:click="loadMore" type="button">Afficher plus</button>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.3.7/jquery.jscroll.min.js"></script>
 <script type="text/javascript">
     $('ul.pagination').hide();
@@ -122,4 +120,4 @@
             }
         });
 
-</script>
+</script> --}}
