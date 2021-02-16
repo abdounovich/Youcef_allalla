@@ -105,8 +105,7 @@
  <div>
     <button  class="btn btn-primary" @if ($TakeLimit>$commandes->count()) 
       
-    disabled
-    @endif  wire:click="loadMore" type="button">Afficher plus</button></div>
+class='sf-toggle-hidden'    @endif  wire:click="loadMore" type="button">Afficher plus</button></div>
 </div>
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.3.7/jquery.jscroll.min.js"></script>
