@@ -1,5 +1,5 @@
 <div>
-
+{{$categorie}}
     <div class="form-check form-check-inline">
 
 <input class="form-check-input" type="radio" wire:model="categorie" value="slug" name="categorie" id="inlineRadio1" >

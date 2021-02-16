@@ -12,14 +12,14 @@ class SearchCommandes extends Component
     public $message="";
     public $query="";
     public $categorie="";
-    public $TakeLimit="3";
+    public $TakeLimit="5";
     public $activation="1";
     protected $paginationTheme = 'bootstrap';
 
     use WithPagination;
 
     public function loadMore()
-     {   $this->TakeLimit=$this->TakeLimit+1;
+     {   $this->TakeLimit=$this->TakeLimit+5;
        
     
     }
