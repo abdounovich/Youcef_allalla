@@ -106,7 +106,7 @@
 </div>
      
   
- {{-- <script type="text/javascript">
+  <script type="text/javascript">
         $('ul.pagination').hide();
         $(function() {
             $('.scrolling-pagination').jscroll({
@@ -119,7 +119,7 @@
                 }
             });
         });
-    </script>  --}}
+    </script>  
     
     
     
