@@ -1,5 +1,6 @@
 <div>
 
+    <div class="form-check form-check-inline">
 
 <input class="form-check-input" type="radio" wire:model="categorie" value="slug" name="categorie" id="inlineRadio1" >
         <label class="form-check-label" for="inlineRadio1">Code</label>
@@ -105,7 +106,7 @@
  {{$commandes->links()}}   
 </div>
 
-
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.3.7/jquery.jscroll.min.js"></script>
 <script type="text/javascript">
