@@ -19,7 +19,7 @@ class SearchCommandes extends Component
     use WithPagination;
 
     public function loadMore()
-     {   $this->TakeLimit=$this->TakeLimit+5;
+     {   $this->TakeLimit=$this->TakeLimit+1;
     
     }
    
