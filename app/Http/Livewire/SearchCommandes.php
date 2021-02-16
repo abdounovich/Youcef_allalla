@@ -13,7 +13,7 @@ class SearchCommandes extends Component
     public $query="";
     public $categorie="";
     public $TakeLimit="1";
-
+    public $activation="1";
     protected $paginationTheme = 'bootstrap';
 
     use WithPagination;
