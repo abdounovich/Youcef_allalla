@@ -12,7 +12,7 @@ class SearchCommandes extends Component
     public $message="";
     public $query="";
     public $commandes="";
-    public $categorie="type";
+    public $categorie="";
     public $TakeLimit="5";
     public $activation="1";
     protected $paginationTheme = 'bootstrap';
@@ -36,32 +36,32 @@ class SearchCommandes extends Component
           $this->message="Pas de resultat pour ".$this->query;
        }
 
-/*  
+ 
         if($this->categorie=="wilaya") {
-            $commandes=Commande::whereHas('client', function (Builder $req) {
+            $this->commandes=Commande::whereHas('client', function (Builder $req) {
                 $req->where('wilaya', 'ILIKE', '%'.$this->query.'%');
             })->get();
 
         } elseif($this->categorie=="client") {
-            $commandes=Commande::whereHas('client', function (Builder $req) {
+            $this->commandes=Commande::whereHas('client', function (Builder $req) {
                 $req->where('facebook', 'ILIKE', '%'.$this->query.'%');
             })->get();
 
         }  
-        $commandes=Commande::all()->take($this->TakeLimit);
+        $this->commandes=Commande::all()->take($this->TakeLimit);
 
          if($this->categorie=="slug" OR $this->categorie=="type" OR $this->categorie=="total_price"){
-        $commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->take($this->TakeLimit);}
+        $this->commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->take($this->TakeLimit);}
 
         elseif ($this->categorie=="facebook" OR $this->categorie=="wilaya" ){
-           $commandes=Commande::whereHas('client', function (Builder $req) {
+           $this->commandes=Commande::whereHas('client', function (Builder $req) {
                 $req->where($this->categorie, 'LIKE', '%'.$this->query.'%');
             })->take($this->TakeLimit);}
             elseif ($this->categorie=="nom" ){
-               $commandes=Commande::whereHas('product', function (Builder $req) {
+               $this->commandes=Commande::whereHas('product', function (Builder $req) {
                     $req->where($this->categorie, 'LIKE', '%'.$this->query.'%');
                 })->take($this->TakeLimit);}
-else {}*/
+
         return view('livewire.search-commandes');
     }
 
