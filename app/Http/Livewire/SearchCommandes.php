@@ -13,7 +13,7 @@ class SearchCommandes extends Component
     public $categorie="type";
     public $TakeLimit="5";
     public $activation="1";
-
+    public $type="";
 
     public function loadMore()
      {   $this->TakeLimit=$this->TakeLimit+5;
@@ -24,6 +24,12 @@ class SearchCommandes extends Component
         $this->categorie=$value;
     }
 
+    public function changetype($value){
+        $this->categorie='type';
+        $this->type=$value;
+    }
+
+    
    
     public function render()
     {
@@ -33,9 +39,13 @@ class SearchCommandes extends Component
 
 
 
-         if($this->categorie=="slug" OR $this->categorie=="type" OR $this->categorie=="total_price"){
+         if($this->categorie=="slug"  OR $this->categorie=="total_price"){
         $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')->get()->take($this->TakeLimit);}
 
+        elseif($this->categorie=="type"){
+            $this->commandes=Commande::where($this->categorie,'LIKE',$this->type)->get()->take($this->TakeLimit);}
+    
+            
         elseif ($this->categorie=="facebook" OR $this->categorie=="wilaya" ){
            $this->commandes=Commande::whereHas('client', function (Builder $req) {
                 $req->where($this->categorie, 'ILIKE', '%'.$this->query.'%');

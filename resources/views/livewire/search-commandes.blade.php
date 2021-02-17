@@ -8,29 +8,29 @@
 <button  class="btn btn-link "    wire:click="change('total_price')"  name="categorie" id="inlineRadio1">Prix total</button>
 <br>
 <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" wire:model="categorie" value="slug" name="categorie" id="inlineRadio1" >
-            <label class="form-check-label" for="inlineRadio1">confirmées</label>
+    <input class="form-check-input" type="radio" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
+            <label class="form-check-label" for="inlineRadio1">Non confirmées</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" wire:model="categorie" value="type" name="categorie" id="inlineRadio2" >
-            <label class="form-check-label" for="inlineRadio2">non Confirmées</label>
+            <input class="form-check-input" type="radio" wire:click="changetype('2')" name="categorie" id="inlineRadio2" >
+            <label class="form-check-label" for="inlineRadio2">Confirmées</label>
           </div>
     
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" wire:model="categorie" value="nom" name="categorie" id="inlineRadio1" >
+            <input class="form-check-input" type="radio" wire:click="changetype('6')" name="categorie" id="inlineRadio1" >
             <label class="form-check-label" for="inlineRadio1">En route</label>
           </div>
     
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" wire:model="categorie" value="total_price" name="categorie" id="inlineRadio1" >
+            <input class="form-check-input" type="radio" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
             <label class="form-check-label" for="inlineRadio1">Délivrées</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" wire:model="categorie" value="facebook" name="categorie" id="inlineRadio2" >
+            <input class="form-check-input" type="radio" wire:click="changetype('4')" name="categorie" id="inlineRadio2" >
             <label class="form-check-label" for="inlineRadio2">Annuller Par Client</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" wire:model="categorie" value="wilaya" name="categorie" id="inlineRadio2" >
+            <input class="form-check-input" type="radio" wire:click="changetype('5')" name="categorie" id="inlineRadio2" >
             <label class="form-check-label" for="inlineRadio2">Annuler Par Admin</label>
           </div> 
          
