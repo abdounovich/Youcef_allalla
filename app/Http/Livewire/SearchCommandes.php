@@ -65,7 +65,7 @@ else {}*/
     }
 
    public function mount(){
-    $commandes=Commande::orderBy('created_at', 'asc')
+    $commandes=Commande::orderBy('created_at', 'asc')->get()
     ->take($this->TakeLimit);
     return view('livewire.search-commandes',["commandes"=>$commandes]);
 
