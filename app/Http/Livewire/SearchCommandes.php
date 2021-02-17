@@ -27,7 +27,7 @@ class SearchCommandes extends Component
    
     public function render()
     {
-       $commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')->get();
+       $commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')->get()->take(2);
 
 /*  
         if($this->categorie=="wilaya") {
@@ -58,10 +58,10 @@ else {}*/
         return view('livewire.search-commandes',["commandes"=>$commandes]);
     }
 
-  /* public function mount(){
+   public function mount(){
     $commandes=Commande::all()->take($this->TakeLimit);
     return view('livewire.search-commandes',["commandes"=>$commandes]);
 
 }  
- */
+ 
 }
