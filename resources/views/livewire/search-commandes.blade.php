@@ -1,4 +1,15 @@
 <div>
+
+
+<div class="bg-white text-dark">
+    Commande
+<button class="btn btn-link"  wire:model="categorie"  name="categorie" id="inlineRadio1" >slug</button>
+
+
+
+</div>
+
+
 {{$categorie}}
     <div class="form-check form-check-inline">
 
@@ -80,14 +91,7 @@
        
      
     
-    <div class="row text-center text-white mb-3">
-    <div class="col-lg-7 mx-auto">
-    <h1 class=" h4 mt-4 p-3 shadow bg-secondary rounded" style="opacity: 0.9"> 
-        Non-confirmées : 
-    </h1>
-    </div>
-    </div> 
-
+   
 
     @foreach ($commandes as $commande)
         <div style="border-width: 10px" class="card bg-dark border-secondary     mt-2 mb-1" >
