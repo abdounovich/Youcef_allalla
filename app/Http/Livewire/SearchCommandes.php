@@ -28,7 +28,7 @@ class SearchCommandes extends Component
     public function render()
     {
        $commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')
-       ->orderBy('created_at', 'asc')->get()
+       ->orderBy('created_at', 'desc')->get()
        ->take($this->TakeLimit);
 
        if ($commandes->count()=="0") {
@@ -65,7 +65,7 @@ else {}*/
     }
 
    public function mount(){
-    $commandes=Commande::orderBy('created_at', 'asc')->get()
+    $commandes=Commande::orderBy('created_at', 'desc')->get()
     ->take($this->TakeLimit);
     return view('livewire.search-commandes',["commandes"=>$commandes]);
 
