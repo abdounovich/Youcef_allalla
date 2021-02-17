@@ -3,10 +3,24 @@
     <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control" placeholder="Entrer le nom du produit">
       
     @if ($commandes->count()=="0")
-    <p class="m-3 text-danger h4">Pas de résultat pour : {{$query}}</p>
+    <p class="mt-3 ml-2 text-danger h5">Pas de résultat pour : {{$query}}</p>
     @endif
  
-<div class="bg-white text-dark mt-5 ">
+
+    <p>
+        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+             <i class="fa fa-filter"></i> Filtrer        </a>
+    
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+        </div>
+      </div>
+
+
+
+<div class="bg-white text-dark mt-2 ">
 <br>
 <span class="ml-2 mt-4">Commande</span><hr>
     
