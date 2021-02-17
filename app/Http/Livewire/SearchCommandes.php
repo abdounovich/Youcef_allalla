@@ -41,6 +41,7 @@ class SearchCommandes extends Component
             })->get();
 
         }  */
+        $commandes=Commande::all()->take($this->TakeLimit);
 
          if($this->categorie=="slug" OR $this->categorie=="type" OR $this->categorie=="total_price"){
         $commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->take($this->TakeLimit);}
@@ -53,8 +54,7 @@ class SearchCommandes extends Component
                $commandes=Commande::whereHas('product', function (Builder $req) {
                     $req->where($this->categorie, 'LIKE', '%'.$this->query.'%');
                 })->take($this->TakeLimit);}
-else {
-    $commandes=Commande::all()->take($this->TakeLimit);} 
+else {}
         return view('livewire.search-commandes',["commandes"=>$commandes]);
     }
 
