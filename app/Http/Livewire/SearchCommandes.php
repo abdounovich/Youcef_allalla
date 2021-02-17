@@ -27,11 +27,11 @@ class SearchCommandes extends Component
    
     public function render()
     {
-       $commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')
+       $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')
        ->orderBy('created_at', 'desc')->get()
        ->take($this->TakeLimit);
 
-       if ($commandes->count()=="0") {
+       if ($this->commandes->count()=="0") {
           $this->message="Pas de resultat pour ".$this->query;
        }
 
@@ -61,13 +61,13 @@ class SearchCommandes extends Component
                     $req->where($this->categorie, 'LIKE', '%'.$this->query.'%');
                 })->take($this->TakeLimit);}
 else {}*/
-        return view('livewire.search-commandes',["commandes"=>$commandes]);
+        return view('livewire.search-commandes');
     }
 
    public function mount(){
-    $commandes=Commande::orderBy('created_at', 'desc')->get()
+    $this->commandes=Commande::orderBy('created_at', 'desc')->get()
     ->take($this->TakeLimit);
-    return view('livewire.search-commandes',["commandes"=>$commandes]);
+    return view('livewire.search-commandes');
 
 }  
  
