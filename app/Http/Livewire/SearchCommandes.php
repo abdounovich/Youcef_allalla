@@ -55,11 +55,11 @@ class SearchCommandes extends Component
     }
 
    public function mount(){
-    $this->commandes=Commande::orderBy('created_at', 'desc')->get()
-    ->take($this->TakeLimit);
+   /*  $this->commandes=Commande::orderBy('created_at', 'desc')->get()
+    ->take($this->TakeLimit); */
 
     $this->commandes=Commande::whereHas('product', function (Builder $req) {
-        $req->where('nom', 'ILIKE', '%'.'taille'.'%');
+        $req->where('nom', 'LIKE', '%'.'taille1'.'%');
     })->get()->take($this->TakeLimit);
     return view('livewire.search-commandes');
 
