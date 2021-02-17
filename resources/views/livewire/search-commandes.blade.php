@@ -1,16 +1,17 @@
 <div>
 
-    <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control" placeholder="Entrer le nom du produit">
       
-    @if ($commandes->count()=="0")
+  
+
+    <p>
+        <a class="btn btn-primary col col-4" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+             <i class="fa fa-filter"></i> Filtrer        </a>
+             <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control col col-6" placeholder="Entrer le nom du produit">
+
+      @if ($commandes->count()=="0")
     <p class="mt-3 ml-2 text-danger h5">Pas de résultat pour : {{$query}}</p>
     @endif
  
-
-    <p>
-        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-             <i class="fa fa-filter"></i> Filtrer        </a>
-    
       </p>
       <div class="collapse" id="collapseExample">
         <div class="card card-body">
