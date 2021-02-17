@@ -48,7 +48,7 @@
          
 
 <hr>
-<span class="ml-2 mt-4">Produit</span><hr>
+<span class="ml-2 ">Produit</span><hr>
 <div class="row ">
     
 
@@ -57,12 +57,14 @@
 <button  class="btn btn-link "    wire:click="change('couleur')"  name="categorie" id="inlineRadio1">Couleur</button>
 </div>
 <hr>
-<span class="ml-2 mt-4">Client</span><hr>
+<span class="ml-2">Client</span><hr>
+<div class="row">
+    
 
 <button class="btn btn-link "   wire:click="change('facebook')"  name="categorie" id="inlineRadio1">Nom du client</button>
 <button  class="btn btn-link "    wire:click="change('taille')"  name="categorie" id="inlineRadio1">Wilaya</button>
 <button  class="btn btn-link "    wire:click="change('phone')"  name="categorie" id="inlineRadio1">Telephone</button>
-    <br>
+   </div> <br>
         </div>
       </div>
 
