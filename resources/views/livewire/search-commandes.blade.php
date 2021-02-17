@@ -4,10 +4,10 @@
   
 
     <p>
-        <div class="row ml-2">
+        <div class="row ml-1">
         <a class="btn btn-primary col col-3" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
              <i class="fa fa-filter"></i> Filtrer        </a>
-             <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control col col-7 ml-2" 
+             <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control col col-8 ml-2" 
              placeholder="Rechercher">
         </div>
       @if ($commandes->count()=="0")
@@ -18,7 +18,7 @@
       <div class="collapse" id="collapseExample">
         <div class="card card-body">
             <br>
-<span class="ml-2 mt-4">Commande</span><hr>
+<span class="ml-2 ">Commande</span><hr>
     
 <button class="btn btn-link "   wire:click="change('slug')"  name="categorie" id="inlineRadio1">code</button>
 <button  class="btn btn-link "    wire:click="change('total_price')"  name="categorie" id="inlineRadio1">Prix total</button>
