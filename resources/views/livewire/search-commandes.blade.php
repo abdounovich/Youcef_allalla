@@ -18,7 +18,7 @@
       <div class="collapse" id="collapseExample">
         <div class="card card-body">
             
-<span class="ml-2 ">Commande</span><hr>
+<span class="text-center">Par commande</span><hr>
     
 <div class="row"><button class="btn btn-link text-left "   wire:click="change('slug')"  name="categorie" id="inlineRadio1">code</button>
 <button  class="btn btn-link text-left "    wire:click="change('total_price')"  name="categorie" id="inlineRadio1">Prix total</button>
@@ -48,7 +48,7 @@
          
 
 <hr>
-<span class="ml-2 ">Produit</span><hr>
+<span class="text-center">Par produit</span><hr>
 <div class="row ">
     
 
@@ -57,7 +57,7 @@
 <button  class="btn btn-link "    wire:click="change('couleur')"  name="categorie" id="inlineRadio1">Couleur</button>
 </div>
 <hr>
-<span class="ml-2">Client</span><hr>
+<span class="text-center">Par client</span><hr>
 <div class="row">
     
 
