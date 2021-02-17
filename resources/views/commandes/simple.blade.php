@@ -11,10 +11,9 @@
     
        <div class="dropdown dropleft float-right">
       <button class="btn text-white  " type="button" id="dropdownMenuButton" data-toggle="dropdown" >
-       <i class="fa fa-2x text-bold fa-ellipsis-v"></i>
+      kkkk
       </button>
       <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
-          <i class="fa fa-trash text-danger m-2"></i> effacer
         </div> 
     </div> 
     
