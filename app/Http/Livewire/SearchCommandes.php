@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Builder;
 
 class SearchCommandes extends Component
 {
-    public $message="";
     public $query="";
     public $commandes="";
     public $categorie="type";
@@ -27,12 +26,7 @@ class SearchCommandes extends Component
     {
      
 
-       if ($this->commandes->count()=="0") {
-          $this->message="0 resultat pour ".$this->query;
-       }
-       else{
-        $this->message="";
-       }
+       
 
 
 

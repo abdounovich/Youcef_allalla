@@ -32,8 +32,10 @@
 
       <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control" placeholder="Entrer le nom du produit">
       
-   
-<p class="m-3 text-danger">{{$message}}</p>
+   @if ($commandes-count()=="0")
+   <p class="m-3 text-danger">Pas de résultat pour : {{$query}}</p>
+
+   @endif
 
 
 
