@@ -6,7 +6,7 @@
     <br>
 <button class="btn btn-link "   wire:click="change('slug')"  name="categorie" id="inlineRadio1">slug</button>
 <button  class="btn btn-link "    wire:click="change('total_price')"  name="categorie" id="inlineRadio1">Prix total</button>
-
+<br>
 <div class="form-check form-check-inline">
     <input class="form-check-input" type="radio" wire:model="categorie" value="slug" name="categorie" id="inlineRadio1" >
             <label class="form-check-label" for="inlineRadio1">confirmées</label>
