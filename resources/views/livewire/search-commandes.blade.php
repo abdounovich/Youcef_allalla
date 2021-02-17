@@ -2,9 +2,8 @@
 
 
 <div class="bg-white text-dark">
-    Commande
-    <hr>
-    <br>
+<span class="m-2">Commande</span><hr>
+    
 <button class="btn btn-link "   wire:click="change('slug')"  name="categorie" id="inlineRadio1">code</button>
 <button  class="btn btn-link "    wire:click="change('total_price')"  name="categorie" id="inlineRadio1">Prix total</button>
 <br>
@@ -33,20 +32,13 @@
         
          
 
-<br>
-Produit
-<hr>
+<span class="m-2">Produit</span><hr>
 
-<br>
 <button class="btn btn-link "   wire:click="change('nom')"  name="categorie" id="inlineRadio1">nom du produit</button>
 <button  class="btn btn-link "    wire:click="change('taille')"  name="categorie" id="inlineRadio1">Taille</button>
 <button  class="btn btn-link "    wire:click="change('couleur')"  name="categorie" id="inlineRadio1">Couleur</button>
+<span class="m-2">Client</span><hr>
 
-    <br>
-    Client
-    <hr>
-
-<br>
 <button class="btn btn-link "   wire:click="change('facebook')"  name="categorie" id="inlineRadio1">Nom du client</button>
 <button  class="btn btn-link "    wire:click="change('taille')"  name="categorie" id="inlineRadio1">Wilaya</button>
 <button  class="btn btn-link "    wire:click="change('phone')"  name="categorie" id="inlineRadio1">Telephone</button>
