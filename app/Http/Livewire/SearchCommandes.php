@@ -37,30 +37,19 @@ class SearchCommandes extends Component
        }
 
  
-        if($this->categorie=="wilaya") {
-            $this->commandes=Commande::whereHas('client', function (Builder $req) {
-                $req->where('wilaya', 'ILIKE', '%'.$this->query.'%');
-            })->get();
-
-        } elseif($this->categorie=="client") {
-            $this->commandes=Commande::whereHas('client', function (Builder $req) {
-                $req->where('facebook', 'ILIKE', '%'.$this->query.'%');
-            })->get();
-
-        }  
-        $this->commandes=Commande::all()->take($this->TakeLimit);
+       
 
          if($this->categorie=="slug" OR $this->categorie=="type" OR $this->categorie=="total_price"){
-        $this->commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->take($this->TakeLimit);}
+        $this->commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')->get()->take($this->TakeLimit);}
 
         elseif ($this->categorie=="facebook" OR $this->categorie=="wilaya" ){
            $this->commandes=Commande::whereHas('client', function (Builder $req) {
                 $req->where($this->categorie, 'LIKE', '%'.$this->query.'%');
-            })->take($this->TakeLimit);}
+            })->get()->take($this->TakeLimit);}
             elseif ($this->categorie=="nom" ){
                $this->commandes=Commande::whereHas('product', function (Builder $req) {
                     $req->where($this->categorie, 'LIKE', '%'.$this->query.'%');
-                })->take($this->TakeLimit);}
+                })->get()->take($this->TakeLimit);}
 
         return view('livewire.search-commandes');
     }
