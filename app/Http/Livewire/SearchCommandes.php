@@ -60,10 +60,10 @@ else {
         return view('livewire.search-commandes',["commandes"=>$commandes]);
     }
 
-/*  public function mount(){
-    $commandes=Commande::all();
+  public function mount(){
+    $commandes=Commande::all()->take(10);
     return view('livewire.search-commandes',["commandes"=>$commandes]);
 
-}  */
+}  
 
 }
