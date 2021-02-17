@@ -8,7 +8,7 @@
 <button  class="btn btn-link "    wire:click="change('total_price')"  name="categorie" id="inlineRadio1">Prix total</button>
 <br>
 <div class="row">
-<div class="m-5 col col-6">
+<div class="col col-6">
         <input class="form-check-input " type="radio" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
             <label class="form-check-label ml-1" for="inlineRadio1">Non confirmées</label>
             <br>
@@ -18,7 +18,7 @@
             <input class="form-check-input " type="radio" wire:click="changetype('6')" name="categorie" id="inlineRadio1" >
             <label class="form-check-label ml-1" for="inlineRadio1">En route</label> 
         </div>
-        <div class="m-5 col col-6">
+        <div class="col col-6">
             <input class="form-check-input " type="radio" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
                 <label class="form-check-label ml-1" for="inlineRadio1">Non confirmées</label>
                 <br>
