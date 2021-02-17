@@ -14,14 +14,7 @@
       </p>
       <div class="collapse" id="collapseExample">
         <div class="card card-body">
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-        </div>
-      </div>
-
-
-
-<div class="bg-white text-dark mt-2 ">
-<br>
+            <br>
 <span class="ml-2 mt-4">Commande</span><hr>
     
 <button class="btn btn-link "   wire:click="change('slug')"  name="categorie" id="inlineRadio1">code</button>
@@ -65,6 +58,13 @@
 <button  class="btn btn-link "    wire:click="change('taille')"  name="categorie" id="inlineRadio1">Wilaya</button>
 <button  class="btn btn-link "    wire:click="change('phone')"  name="categorie" id="inlineRadio1">Telephone</button>
     <br>
+        </div>
+      </div>
+
+
+
+<div class="bg-white text-dark mt-2 ">
+
 
 </div>
 
