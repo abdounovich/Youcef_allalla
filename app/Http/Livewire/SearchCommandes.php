@@ -4,7 +4,6 @@ namespace App\Http\Livewire;
 
 use App\Commande;
 use Livewire\Component;
-use Livewire\WithPagination;
 use Illuminate\Database\Eloquent\Builder;
 
 class SearchCommandes extends Component
@@ -15,9 +14,7 @@ class SearchCommandes extends Component
     public $categorie="type";
     public $TakeLimit="5";
     public $activation="1";
-    protected $paginationTheme = 'bootstrap';
 
-    use WithPagination;
 
     public function loadMore()
      {   $this->TakeLimit=$this->TakeLimit+5;
@@ -28,9 +25,7 @@ class SearchCommandes extends Component
    
     public function render()
     {
-       $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')
-       ->orderBy('created_at', 'desc')->get()
-       ->take($this->TakeLimit);
+     
 
        if ($this->commandes->count()=="0") {
           $this->message="0 resultat pour ".$this->query;
@@ -56,10 +51,9 @@ class SearchCommandes extends Component
                 })->get()->take($this->TakeLimit);}
 
                 else {
-                    $this->commandes=Commande::whereHas('product', function (Builder $req) {
-                        $req->where($this->categorie, 'ILIKE', '%'.$this->query.'%');
-                    })->get()->take($this->TakeLimit);
-           
+                    $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')
+                    ->orderBy('created_at', 'desc')->get()
+                    ->take($this->TakeLimit);
                 }
         return view('livewire.search-commandes');
     }
