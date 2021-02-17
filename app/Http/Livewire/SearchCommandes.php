@@ -18,9 +18,12 @@ class SearchCommandes extends Component
     public function loadMore()
      {   $this->TakeLimit=$this->TakeLimit+5;
        
-    
     }
    
+    public function change($value){
+        $this->categorie=$value;
+    }
+
    
     public function render()
     {
