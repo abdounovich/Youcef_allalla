@@ -64,19 +64,14 @@
 <button class="btn btn-link "   wire:click="change('facebook')"  name="categorie" id="inlineRadio1">Nom du client</button>
 <button  class="btn btn-link "    wire:click="change('taille')"  name="categorie" id="inlineRadio1">Wilaya</button>
 <button  class="btn btn-link "    wire:click="change('phone')"  name="categorie" id="inlineRadio1">Telephone</button>
-   </div> <br>
+   </div> 
         </div>
       </div>
 
 
 
-<div class="bg-white text-dark mt-2 ">
 
 
-</div>
-
-
-{{$categorie}}
    {{--  <div class="form-check form-check-inline">
 
 <input class="form-check-input" type="radio" wire:model="categorie" value="slug" name="categorie" id="inlineRadio1" >
@@ -154,7 +149,21 @@
    
 
     @foreach ($commandes as $commande)
-        <div style="border-width: 10px" class="card bg-dark border-secondary     mt-2 mb-1" >
+        <div style="border-width: 10px" 
+        @if ($commande->type=="1")
+        class="card bg-dark border-secondary     mt-2 mb-1"
+        @elseIf($commande->type=="2")
+        class="card bg-dark border-primary     mt-2 mb-1"
+        @elseIf($commande->type=="6")
+        class="card bg-dark border-warning     mt-2 mb-1"
+        @elseIf($commande->type=="3")
+        class="card bg-dark border-success     mt-2 mb-1"
+        @elseIf($commande->type=="4")
+        class="card bg-dark border-danger     mt-2 mb-1"
+        @elseIf($commande->type=="5")
+        class="card bg-dark border-orange     mt-2 mb-1"
+
+        @endif  >
             @include('commandes.simple')
         </div>
 
