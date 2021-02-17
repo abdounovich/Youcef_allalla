@@ -4,9 +4,8 @@
 <div class="bg-white text-dark">
     Commande
     <br>
-<button class="btn btn-link col col-12"   wire:click="change('slug')"  name="categorie" id="inlineRadio1">slug</button>
-<button  class="btn btn-link col col-12"   wire:click="change('created_at')"  name="categorie" id="inlineRadio1">date</button>
-<button  class="btn btn-link col col-12"    wire:click="change('total_price')"  name="categorie" id="inlineRadio1">Prix total</button>
+<button class="btn btn-link "   wire:click="change('slug')"  name="categorie" id="inlineRadio1">slug</button>
+<button  class="btn btn-link "    wire:click="change('total_price')"  name="categorie" id="inlineRadio1">Prix total</button>
 
 
 
