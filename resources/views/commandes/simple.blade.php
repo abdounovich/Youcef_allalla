@@ -10,11 +10,11 @@
    <div>
     
        <div class="dropdown dropleft float-right">
-      <button class="btn text-white  " type="button" id="DeleteForm" data-toggle="dropdown" >
+      <button class="btn text-white"  id="DeleteForm" data-toggle="dropdown" >
        <i class="fa fa-2x text-bold fa-ellipsis-v"></i>
       </button>
-      <div class="dropdown-menu " aria-labelledby="DeleteForm">
-        <a class="text-dark m-2 p-2 "  href="{{route('commandes.delete',$commande->id)}}"  > 
+      <div class="dropdown-menu" aria-labelledby="DeleteForm">
+        <a class="text-dark m-2 p-2 "  href="{{route('commandes.delete',$commande->id)}}"> 
           <i class="fa fa-trash text-danger m-2"></i> effacer</a>
         </div> 
     </div> 
