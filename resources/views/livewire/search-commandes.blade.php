@@ -1,7 +1,12 @@
 <div>
 
-
-<div class="bg-white text-dark m-0">
+    <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control" placeholder="Entrer le nom du produit">
+      
+    @if ($commandes->count()=="0")
+    <p class="m-3 text-danger h4">Pas de résultat pour : {{$query}}</p>
+    @endif
+ 
+<div class="bg-white text-dark mt-5 ">
 <br>
 <span class="ml-2 mt-4">Commande</span><hr>
     
@@ -81,12 +86,6 @@
      
     
  --}}
-      <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control" placeholder="Entrer le nom du produit">
-      
-   @if ($commandes->count()=="0")
-   <p class="m-3 text-danger h4">Pas de résultat pour : {{$query}}</p>
-
-   @endif
 
 
 
