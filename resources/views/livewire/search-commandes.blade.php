@@ -29,18 +29,7 @@
                 <label class="form-check-label ml-1" for="inlineRadio1">Annuler Par Admin</label> 
             </div>
 </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input " type="radio" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
-            <label class="form-check-label" for="inlineRadio1">Délivrées</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" wire:click="changetype('4')" name="categorie" id="inlineRadio2" >
-            <label class="form-check-label" for="inlineRadio2">Annuller Par Client</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" wire:click="changetype('5')" name="categorie" id="inlineRadio2" >
-            <label class="form-check-label" for="inlineRadio2">Annuler Par Admin</label>
-          </div> 
+        
          
 
 <br>
@@ -49,14 +38,13 @@ Produit
 <button class="btn btn-link "   wire:click="change('nom')"  name="categorie" id="inlineRadio1">nom du produit</button>
 <button  class="btn btn-link "    wire:click="change('taille')"  name="categorie" id="inlineRadio1">Taille</button>
 <button  class="btn btn-link "    wire:click="change('couleur')"  name="categorie" id="inlineRadio1">Couleur</button>
-<button  class="btn btn-link "    wire:click="change('couleur')"  name="categorie" id="inlineRadio1">Couleur</button>
 
     <br>
     Client
 <br>
-<button class="btn btn-link "   wire:click="change('facebook')"  name="categorie" id="inlineRadio1">nom du client</button>
-<button  class="btn btn-link "    wire:click="change('taille')"  name="categorie" id="inlineRadio1">wilaya</button>
-<button  class="btn btn-link "    wire:click="change('couleur')"  name="categorie" id="inlineRadio1">Couleur
+<button class="btn btn-link "   wire:click="change('facebook')"  name="categorie" id="inlineRadio1">Nom du client</button>
+<button  class="btn btn-link "    wire:click="change('taille')"  name="categorie" id="inlineRadio1">Wilaya</button>
+<button  class="btn btn-link "    wire:click="change('phone')"  name="categorie" id="inlineRadio1">Telephone</button>
     <br>
 </button>
 
