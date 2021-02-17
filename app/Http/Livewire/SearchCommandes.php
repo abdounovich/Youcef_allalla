@@ -28,7 +28,7 @@ class SearchCommandes extends Component
    
     public function render()
     {
-       /* $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')
+       $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')
        ->orderBy('created_at', 'desc')->get()
        ->take($this->TakeLimit);
 
@@ -36,10 +36,12 @@ class SearchCommandes extends Component
           $this->message="Pas de resultat pour ".$this->query;
        }
 
- 
+       $this->commandes=Commande::whereHas('product', function (Builder $req) {
+        $req->where('nom', 'ILIKE', '%'.$this->query.'%');
+    })->get()->take($this->TakeLimit);
        
 
-         if($this->categorie=="slug" OR $this->categorie=="type" OR $this->categorie=="total_price"){
+       /*   if($this->categorie=="slug" OR $this->categorie=="type" OR $this->categorie=="total_price"){
         $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')->get()->take($this->TakeLimit);}
 
         elseif ($this->categorie=="facebook" OR $this->categorie=="wilaya" ){
@@ -55,12 +57,10 @@ class SearchCommandes extends Component
     }
 
    public function mount(){
-   /*  $this->commandes=Commande::orderBy('created_at', 'desc')->get()
-    ->take($this->TakeLimit); */
+    $this->commandes=Commande::orderBy('created_at', 'desc')->get()
+    ->take($this->TakeLimit);
 
-    $this->commandes=Commande::whereHas('product', function (Builder $req) {
-        $req->where('nom', 'LIKE', '%'.'taille1'.'%');
-    })->get()->take($this->TakeLimit);
+    
     return view('livewire.search-commandes');
 
 }  
