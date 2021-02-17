@@ -4,18 +4,18 @@
 <div class="bg-white text-dark">
     Commande
     <br>
-<button class="btn btn-link "   wire:click="change('slug')"  name="categorie" id="inlineRadio1">slug</button>
+<button class="btn btn-link "   wire:click="change('slug')"  name="categorie" id="inlineRadio1">code</button>
 <button  class="btn btn-link "    wire:click="change('total_price')"  name="categorie" id="inlineRadio1">Prix total</button>
 <br>
 <div class="m-5">
         <input class="form-check-input " type="radio" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
-            <label class="form-check-label ml-3" for="inlineRadio1">Non confirmées</label>
+            <label class="form-check-label ml-1" for="inlineRadio1">Non confirmées</label>
             <br>
             <input class="form-check-input " type="radio" wire:click="changetype('2')" name="categorie" id="inlineRadio2" >
-            <label class="form-check-label ml-3" for="inlineRadio2">Confirmées</label>
+            <label class="form-check-label ml-1" for="inlineRadio2">Confirmées</label>
             <br>
             <input class="form-check-input " type="radio" wire:click="changetype('6')" name="categorie" id="inlineRadio1" >
-            <label class="form-check-label ml-3" for="inlineRadio1">En route</label> 
+            <label class="form-check-label ml-1" for="inlineRadio1">En route</label> 
         </div>
           <div class="form-check form-check-inline">
             <input class="form-check-input " type="radio" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
