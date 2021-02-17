@@ -61,7 +61,7 @@ else {
     }
 
   public function mount(){
-    $commandes=Commande::all()->take(10);
+    $commandes=Commande::all();
     return view('livewire.search-commandes',["commandes"=>$commandes]);
 
 }  
