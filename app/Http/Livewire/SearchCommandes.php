@@ -29,7 +29,7 @@ class SearchCommandes extends Component
     {
        $commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')->get()->take($this->TakeLimit);
 
-       if ($commandes->count=="0") {
+       if ($commandes->count()=="0") {
           $this->message="Pas de resultat pour ".$this->query;
        }
 
