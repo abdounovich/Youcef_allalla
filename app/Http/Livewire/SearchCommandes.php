@@ -48,8 +48,7 @@ class SearchCommandes extends Component
                     $req->where($this->categorie, 'ILIKE', '%'.$this->query.'%');
                 })->get()->take($this->TakeLimit);}
 
-                elseif ($this->categorie=="all" ){
-                    $this->commandes=Commande::all()->take($this->TakeLimit);}
+               
                 else {
                     $this->commandes=Commande::all()
                     ->take($this->TakeLimit);
