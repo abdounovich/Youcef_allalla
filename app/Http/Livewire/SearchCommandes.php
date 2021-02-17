@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Builder;
 
 class SearchCommandes extends Component
 {
-    public $message="";
+    public $message="lorem ujzfref edgreg";
     public $query="";
     public $commandes="";
     public $categorie="type";
