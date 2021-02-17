@@ -9,26 +9,15 @@
 
    <div>
     
-    <div class="card-body   text-left btn " 
-    data-toggle="collapse" 
-    data-target="#deletForm" 
-    aria-expanded="false" 
-    aria-controls="collapseExample"> 
-    <button class="btn text-white  " type="button" id="DeleteForm" data-toggle="dropdown" >
-      <i class="fa fa-2x text-bold fa-ellipsis-v"></i>
-     </button>
-    </div>
-    <div class=" collapse " id="deletForm" style="opacity: 0.9">
-      <div class=" clearfix col col-12 bg-light  mb-2 p-2 rounded " style="opacity: 0.9">
-          <div class="bg-light">
-              
-                 <div class="dropdown-menu " aria-labelledby="DeleteForm">
-                   <a class="text-dark m-2 p-2 "  href="{{route('commandes.delete',$commande->id)}}"  > 
-                     <i class="fa fa-trash text-danger m-2"></i> effacer</a>
-              </div></div></div></div>
-
-       
-  
+       <div class="dropdown dropleft float-right">
+      <button class="btn text-white  " type="button" id="dropdownMenuButton" data-toggle="dropdown" >
+       <i class="fa fa-2x text-bold fa-ellipsis-v"></i>
+      </button>
+      <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+          <i class="fa fa-trash text-danger m-2"></i> effacer
+        </div> 
+    </div> 
+    
        <span class="h4  text-white text-wrap" > 
          @if ($commande->type=="1")
              <i class="btn btn-secondary btn-circle"></i>
