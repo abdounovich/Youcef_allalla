@@ -8,18 +8,15 @@
     <div class="card-text">
 
    <div>
-    
-       <div class="dropdown dropleft float-right">
-      <button class="btn text-white  " type="button" id="dropdownMenuButton" data-toggle="dropdown" >
+     <div class="dropdown dropleft float-right">
+      <button class="btn text-white" type="button" id="dropdownMenuButton{{$commande->id}}" data-toggle="dropdown" >
        <i class="fa fa-2x text-bold fa-ellipsis-v"></i>
-
-      </button>        </div> 
-
-      <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+      </button>
+      <div class="dropdown-menu " aria-labelledby="dropdownMenuButton{{$commande->id}}">
         <a class="text-dark m-2 p-2 "  href="{{route('commandes.delete',$commande->id)}}"  > 
           <i class="fa fa-trash text-danger m-2"></i> effacer</a>
+        </div> 
     </div> 
-    
        <span class="h4  text-white text-wrap" > 
          @if ($commande->type=="1")
              <i class="btn btn-secondary btn-circle"></i>
@@ -37,8 +34,7 @@
       
    
       <span class="text-wrap"> {{$commande->product->nom}}       
-       <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span> 
-      </span>
+       <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span> </span>
       
 
        </span>
