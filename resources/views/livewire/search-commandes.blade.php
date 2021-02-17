@@ -3,7 +3,7 @@
 
 <div class="bg-white text-dark">
     Commande
-<button class="btn btn-link"  wire:model="categorie"  name="categorie" id="inlineRadio1" >slug</button>
+<input type="button" class="btn btn-link"  value="slug" wire:model="categorie"  name="categorie" id="inlineRadio1">
 
 
 
