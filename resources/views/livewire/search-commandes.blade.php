@@ -7,7 +7,7 @@
         <div class="row ml-1">
         <a class="btn btn-primary col col-3" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
              <i class="fa fa-filter"></i> Filtrer        </a>
-             <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control col col-8 ml-2" 
+             <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control col col-8 ml-3" 
              placeholder="Rechercher">
         </div>
       @if ($commandes->count()=="0")
