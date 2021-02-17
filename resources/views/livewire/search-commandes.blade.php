@@ -2,6 +2,7 @@
 
 
 <div class="bg-white text-dark">
+<br>
 <span class="ml-2 mt-4">Commande</span><hr>
     
 <button class="btn btn-link "   wire:click="change('slug')"  name="categorie" id="inlineRadio1">code</button>
@@ -32,12 +33,14 @@
         
          
 <br>
+<hr>
 <span class="ml-2 mt-4">Produit</span><hr>
 
 <button class="btn btn-link "   wire:click="change('nom')"  name="categorie" id="inlineRadio1">nom du produit</button>
 <button  class="btn btn-link "    wire:click="change('taille')"  name="categorie" id="inlineRadio1">Taille</button>
 <button  class="btn btn-link "    wire:click="change('couleur')"  name="categorie" id="inlineRadio1">Couleur</button>
 <br>
+<hr>
 <span class="ml-2 mt-4">Client</span><hr>
 
 <button class="btn btn-link "   wire:click="change('facebook')"  name="categorie" id="inlineRadio1">Nom du client</button>
