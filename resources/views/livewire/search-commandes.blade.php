@@ -23,15 +23,15 @@
             <br>
             <input class="form-check-input " type="radio" wire:click="changetype('6')" name="categorie" id="inlineRadio1" >
             <label class="form-check-label ml-1" for="inlineRadio1">En route</label> 
-
+            <br>
             <input class="form-check-input " type="radio" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
-                <label class="form-check-label ml-1" for="inlineRadio1">Délivrées</label>
-                <br>
-                <input class="form-check-input " type="radio" wire:click="changetype('4')" name="categorie" id="inlineRadio2" >
-                <label class="form-check-label ml-1" for="inlineRadio2">Annuller Par Client</label>
-                <br>
-                <input class="form-check-input " type="radio" wire:click="changetype('5')" name="categorie" id="inlineRadio1" >
-                <label class="form-check-label ml-1" for="inlineRadio1">Annuler Par Admin</label> 
+            <label class="form-check-label ml-1" for="inlineRadio1">Délivrées</label>
+            <br>
+            <input class="form-check-input " type="radio" wire:click="changetype('4')" name="categorie" id="inlineRadio2" >
+            <label class="form-check-label ml-1" for="inlineRadio2">Annuller Par Client</label>
+            <br>
+            <input class="form-check-input " type="radio" wire:click="changetype('5')" name="categorie" id="inlineRadio1" >
+            <label class="form-check-label ml-1" for="inlineRadio1">Annuler Par Admin</label> 
             </div>
 </div>
         
