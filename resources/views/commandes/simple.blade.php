@@ -9,7 +9,7 @@
 
    <div>
     
-       <div class="dropdown dropleft float-right">
+       <div class="dropdown  float-right">
       <button class="btn text-white"  id="DeleteForm" data-toggle="dropdown" >
        <i class="fa fa-2x text-bold fa-ellipsis-v"></i>
       </button>
