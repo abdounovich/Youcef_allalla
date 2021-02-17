@@ -1,8 +1,8 @@
-<div class="dropdown">
+{{-- <div class="dropdown">
     <a class="  float-right " type="button" id="dropdownMenuButton" data-toggle="dropdown"  aria-expanded="false">
      <i style="font-size: 20px" class="fa fa-ellipsis-v text-white"></i>
     </a>
-</div> 
+</div>  --}}
 <hr color="white">
     <div class=" bg-dark  " >
         <a class="  btn-circle float-right " >
