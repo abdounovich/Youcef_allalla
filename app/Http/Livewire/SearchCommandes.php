@@ -63,7 +63,7 @@ else {}*/
     }
 
    public function mount(){
-    $commandes=Commande::all()->take($this->TakeLimit);
+    $commandes=Commande::latest()->take($this->TakeLimit);
     return view('livewire.search-commandes',["commandes"=>$commandes]);
 
 }  
