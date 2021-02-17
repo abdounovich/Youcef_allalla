@@ -16,13 +16,16 @@
  
       </p>
       <div class="collapse" id="collapseExample">
+        <button class="btn btn-danger text-left "   wire:click="change('all')"  name="categorie" id="inlineRadio1"> <i class="fa fa-times-circle"></i> effacer filtre</button>
+        <hr>
         <div class="card card-body">
             
 <span class="text-center">Par commande</span><hr>
     
-<div class="row"><button class="btn btn-link text-left "   wire:click="change('slug')"  name="categorie" id="inlineRadio1">code</button>
+<div class="row">
+    <button class="btn btn-link text-left "   wire:click="change('slug')"  name="categorie" id="inlineRadio1">code</button>
 <button  class="btn btn-link text-left "    wire:click="change('total_price')"  name="categorie" id="inlineRadio1">Prix total</button>
-</div><br>
+</div>
 <div class="row">
 <div class="col col-10 ml-4">
         <input class="form-check-input " type="radio" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
@@ -67,43 +70,6 @@
    </div> 
         </div>
       </div>
-
-
-
-
-
-   {{--  <div class="form-check form-check-inline">
-
-<input class="form-check-input" type="radio" wire:model="categorie" value="slug" name="categorie" id="inlineRadio1" >
-        <label class="form-check-label" for="inlineRadio1">Code</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" wire:model="categorie" value="type" name="categorie" id="inlineRadio2" >
-        <label class="form-check-label" for="inlineRadio2">type</label>
-      </div>
-
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" wire:model="categorie" value="nom" name="categorie" id="inlineRadio1" >
-        <label class="form-check-label" for="inlineRadio1">Produit</label>
-      </div>
-
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" wire:model="categorie" value="total_price" name="categorie" id="inlineRadio1" >
-        <label class="form-check-label" for="inlineRadio1">Prix</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" wire:model="categorie" value="facebook" name="categorie" id="inlineRadio2" >
-        <label class="form-check-label" for="inlineRadio2">client</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" wire:model="categorie" value="wilaya" name="categorie" id="inlineRadio2" >
-        <label class="form-check-label" for="inlineRadio2">wilaya</label>
-      </div> 
-     
-    
- --}}
-
-
 
 
 
