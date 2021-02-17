@@ -20,11 +20,11 @@
             
 <span class="ml-2 ">Commande</span><hr>
     
-<button class="btn btn-link "   wire:click="change('slug')"  name="categorie" id="inlineRadio1">code</button>
-<button  class="btn btn-link "    wire:click="change('total_price')"  name="categorie" id="inlineRadio1">Prix total</button>
+<button class="btn btn-link text-left "   wire:click="change('slug')"  name="categorie" id="inlineRadio1">code</button>
+<button  class="btn btn-link text-left "    wire:click="change('total_price')"  name="categorie" id="inlineRadio1">Prix total</button>
 <br>
 <div class="row">
-<div class="col col-6 ml-4">
+<div class="col col-10 ml-4">
         <input class="form-check-input " type="radio" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
             <label class="form-check-label ml-1" for="inlineRadio1">Non confirmées</label>
             <br>
