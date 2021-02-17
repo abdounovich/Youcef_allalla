@@ -28,7 +28,7 @@ class SearchCommandes extends Component
    
     public function render()
     {
-       $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')
+       /* $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')
        ->orderBy('created_at', 'desc')->get()
        ->take($this->TakeLimit);
 
@@ -49,7 +49,7 @@ class SearchCommandes extends Component
             elseif ($this->categorie=="nom" ){
                $this->commandes=Commande::whereHas('product', function (Builder $req) {
                     $req->where($this->categorie, 'ILIKE', '%'.$this->query.'%');
-                })->get()->take($this->TakeLimit);}
+                })->get()->take($this->TakeLimit);} */
 
         return view('livewire.search-commandes');
     }
