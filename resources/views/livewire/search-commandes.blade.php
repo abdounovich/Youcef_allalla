@@ -7,14 +7,56 @@
 <button class="btn btn-link "   wire:click="change('slug')"  name="categorie" id="inlineRadio1">slug</button>
 <button  class="btn btn-link "    wire:click="change('total_price')"  name="categorie" id="inlineRadio1">Prix total</button>
 
+<div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" wire:model="categorie" value="slug" name="categorie" id="inlineRadio1" >
+            <label class="form-check-label" for="inlineRadio1">confirmées</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" wire:model="categorie" value="type" name="categorie" id="inlineRadio2" >
+            <label class="form-check-label" for="inlineRadio2">non Confirmées</label>
+          </div>
+    
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" wire:model="categorie" value="nom" name="categorie" id="inlineRadio1" >
+            <label class="form-check-label" for="inlineRadio1">En route</label>
+          </div>
+    
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" wire:model="categorie" value="total_price" name="categorie" id="inlineRadio1" >
+            <label class="form-check-label" for="inlineRadio1">Délivrées</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" wire:model="categorie" value="facebook" name="categorie" id="inlineRadio2" >
+            <label class="form-check-label" for="inlineRadio2">Annuller Par Client</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" wire:model="categorie" value="wilaya" name="categorie" id="inlineRadio2" >
+            <label class="form-check-label" for="inlineRadio2">Annuler Par Admin</label>
+          </div> 
+         
 
+<br>
+Produit
+<br>
+<button class="btn btn-link "   wire:click="change('nom')"  name="categorie" id="inlineRadio1">nom du produit</button>
+<button  class="btn btn-link "    wire:click="change('taille')"  name="categorie" id="inlineRadio1">Taille</button>
+<button  class="btn btn-link "    wire:click="change('couleur')"  name="categorie" id="inlineRadio1">Couleur</button>
+<button  class="btn btn-link "    wire:click="change('couleur')"  name="categorie" id="inlineRadio1">Couleur</button>
 
+    <br>
+    Client
+<br>
+<button class="btn btn-link "   wire:click="change('facebook')"  name="categorie" id="inlineRadio1">nom du client</button>
+<button  class="btn btn-link "    wire:click="change('taille')"  name="categorie" id="inlineRadio1">wilaya</button>
+<button  class="btn btn-link "    wire:click="change('couleur')"  name="categorie" id="inlineRadio1">Couleur
+    <br>
+</button>
 
 </div>
 
 
 {{$categorie}}
-    <div class="form-check form-check-inline">
+   {{--  <div class="form-check form-check-inline">
 
 <input class="form-check-input" type="radio" wire:model="categorie" value="slug" name="categorie" id="inlineRadio1" >
         <label class="form-check-label" for="inlineRadio1">Code</label>
@@ -43,7 +85,7 @@
       </div> 
      
     
-
+ --}}
       <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control" placeholder="Entrer le nom du produit">
       
    @if ($commandes->count()=="0")
