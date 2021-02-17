@@ -19,28 +19,19 @@
             <label class="form-check-label ml-1" for="inlineRadio1">En route</label> 
         </div>
         <div class="col col-6">
-            <input class="form-check-input " type="radio" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
-                <label class="form-check-label ml-1" for="inlineRadio1">Non confirmées</label>
+            <input class="form-check-input " type="radio" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
+                <label class="form-check-label ml-1" for="inlineRadio1">Délivrées</label>
                 <br>
-                <input class="form-check-input " type="radio" wire:click="changetype('2')" name="categorie" id="inlineRadio2" >
-                <label class="form-check-label ml-1" for="inlineRadio2">Confirmées</label>
+                <input class="form-check-input " type="radio" wire:click="changetype('4')" name="categorie" id="inlineRadio2" >
+                <label class="form-check-label ml-1" for="inlineRadio2">Annuller Par Client</label>
                 <br>
-                <input class="form-check-input " type="radio" wire:click="changetype('6')" name="categorie" id="inlineRadio1" >
-                <label class="form-check-label ml-1" for="inlineRadio1">En route</label> 
+                <input class="form-check-input " type="radio" wire:click="changetype('5')" name="categorie" id="inlineRadio1" >
+                <label class="form-check-label ml-1" for="inlineRadio1">Annuler Par Admin</label> 
             </div>
 </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input " type="radio" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
-            <label class="form-check-label" for="inlineRadio1">Délivrées</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" wire:click="changetype('4')" name="categorie" id="inlineRadio2" >
-            <label class="form-check-label" for="inlineRadio2">Annuller Par Client</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" wire:click="changetype('5')" name="categorie" id="inlineRadio2" >
-            <label class="form-check-label" for="inlineRadio2">Annuler Par Admin</label>
-          </div> 
+          
+
+         
          
 
 <br>
