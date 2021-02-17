@@ -11,10 +11,13 @@
     
        <div class="dropdown dropleft float-right">
       <button class="btn text-white  " type="button" id="dropdownMenuButton" data-toggle="dropdown" >
-      kkkk
-      </button>
+       <i class="fa fa-2x text-bold fa-ellipsis-v"></i>
+
+      </button>        </div> 
+
       <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
-        </div> 
+        <a class="text-dark m-2 p-2 "  href="{{route('commandes.delete',$commande->id)}}"  > 
+          <i class="fa fa-trash text-danger m-2"></i> effacer</a>
     </div> 
     
        <span class="h4  text-white text-wrap" > 
