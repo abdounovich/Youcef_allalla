@@ -3,8 +3,8 @@
 
 <div class="bg-white text-dark">
     Commande
-<input type="button" class="btn btn-link"  value="slug" wire:model="change(slug)"  name="categorie" id="inlineRadio1">
-<input type="button" class="btn btn-link"  value="wilaya" wire:model="change(wilaya)"  name="categorie" id="inlineRadio1">
+<button class="btn btn-link"   wire:click="change(slug)"  name="categorie" id="inlineRadio1">slug</button>
+<button  class="btn btn-link"   wire:click="change(wilaya)"  name="categorie" id="inlineRadio1">wilaya</button>
 
 
 
