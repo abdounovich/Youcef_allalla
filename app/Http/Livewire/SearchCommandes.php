@@ -35,7 +35,9 @@ class SearchCommandes extends Component
        if ($this->commandes->count()=="0") {
           $this->message="Pas de resultat pour ".$this->query;
        }
-
+else {
+    $this->message="";
+}
        $this->commandes=Commande::whereHas('product', function (Builder $req) {
         $req->where($this->categorie, 'ILIKE', '%'.$this->query.'%');
     })->get()->take($this->TakeLimit);
