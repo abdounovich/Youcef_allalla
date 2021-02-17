@@ -7,15 +7,15 @@
 <button class="btn btn-link "   wire:click="change('slug')"  name="categorie" id="inlineRadio1">slug</button>
 <button  class="btn btn-link "    wire:click="change('total_price')"  name="categorie" id="inlineRadio1">Prix total</button>
 <br>
-        <input class="form-check-input" type="radio" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
+        <input class="form-check-input ml-5" type="radio" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
             <label class="form-check-label" for="inlineRadio1">Non confirmées</label>
             <br>
-            <input class="form-check-input" type="radio" wire:click="changetype('2')" name="categorie" id="inlineRadio2" >
+            <input class="form-check-input ml-5" type="radio" wire:click="changetype('2')" name="categorie" id="inlineRadio2" >
             <label class="form-check-label" for="inlineRadio2">Confirmées</label>
             <br>
-            <input class="form-check-input" type="radio" wire:click="changetype('6')" name="categorie" id="inlineRadio1" >
+            <input class="form-check-input ml-5" type="radio" wire:click="changetype('6')" name="categorie" id="inlineRadio1" >
             <label class="form-check-label" for="inlineRadio1">En route</label> 
-              
+
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
             <label class="form-check-label" for="inlineRadio1">Délivrées</label>
