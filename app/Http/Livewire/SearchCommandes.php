@@ -27,7 +27,7 @@ class SearchCommandes extends Component
    
     public function render()
     {
-       $commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')->get()->take(2);
+       $commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')->get()->take($this->TakeLimit);
 
 /*  
         if($this->categorie=="wilaya") {
