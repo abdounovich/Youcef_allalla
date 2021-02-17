@@ -28,7 +28,7 @@ class SearchCommandes extends Component
     public function render()
     {
        $commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')
-       ->orderBy('created_at', 'asc')
+       ->orderBy('created_at', 'asc')->get()
        ->take($this->TakeLimit);
 
        if ($commandes->count()=="0") {
