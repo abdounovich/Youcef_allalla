@@ -35,11 +35,7 @@
    
 {{$message}}
 
-@if ($commandes=="")
-    
- <p>Pas de resultat pour {{$query}} !</p>
 
-@endif 
 
 
 
