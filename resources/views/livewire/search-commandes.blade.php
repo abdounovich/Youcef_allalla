@@ -29,9 +29,18 @@
                 <label class="form-check-label ml-1" for="inlineRadio1">Annuler Par Admin</label> 
             </div>
 </div>
-          
-
-         
+          <div class="form-check form-check-inline">
+            <input class="form-check-input " type="radio" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
+            <label class="form-check-label" for="inlineRadio1">Délivrées</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" wire:click="changetype('4')" name="categorie" id="inlineRadio2" >
+            <label class="form-check-label" for="inlineRadio2">Annuller Par Client</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" wire:click="changetype('5')" name="categorie" id="inlineRadio2" >
+            <label class="form-check-label" for="inlineRadio2">Annuler Par Admin</label>
+          </div> 
          
 
 <br>
