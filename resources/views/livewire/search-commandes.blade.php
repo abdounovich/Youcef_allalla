@@ -37,7 +37,7 @@
 
 @if ($message=="")
     
- <p>pas de resultat !</p>
+ <p>Pas de resultat pour {{$queyr}} !</p>
 
 @endif 
 
