@@ -65,7 +65,6 @@ else {
         }else{ 
             $this->bot->reply("☎ رقم هاتفك هو :  ".$this->client->phone);
             $this->bot->reply(" 🇩🇿 ولايتك هي :  ".$this->client->wilaya);
-            $this->obj=$this->client->wilaya;
             $this->bot->reply("🏠 عنوانك هو :  ".$this->client->address);
             $question=Question::create(' هل تود الإستمرار بهذا الرقم العنوان و الولاية  ؟   ')
             ->addButtons([
@@ -234,7 +233,6 @@ public function askWilaya(){
 
 
 
-$this->obj = json_decode($this->jsonobj);
 ${"W".$this->wilaya}="W".$this->wilaya;
  $this->client->wilaya=$this->obj->${"W".$this->wilaya};
             
@@ -432,6 +430,7 @@ $this->jsonobj = '{
 "W30":"ورقلة",
 "W31":"وهران"}';
 
+$this->obj = json_decode($this->jsonobj);
 
 
         
