@@ -209,7 +209,7 @@
         {{$total}}
         <p >{{$produits->count()}}</p>
           <button  class="btn btn-primary" @if ($total>=$produits->count()) 
-               class='d-none'    @endif  wire:click="loadMore" type="button">Afficher plus</button>
+               class='btn btn-danger'    @endif  wire:click="loadMore" type="button">Afficher plus</button>
       </div>
       </div> 
   
