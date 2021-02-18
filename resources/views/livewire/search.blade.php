@@ -203,17 +203,13 @@
                
                  @endforeach
   
-@if ($total>=$produits->count())
-  @php
-      $TakeLimit=$TakeLimitFirst;
-  @endphp
-@else 
- <div class="row text-center text-white my-5">
-      <div class="col-lg-7 mx-auto">
-          <button  class="btn btn-primary" wire:click="loadMore" type="button">Afficher plus</button>
-      </div>
-      </div> 
-@endif
+                 <script type="text/javascript">
+                  window.onscroll = function(ev) {
+                      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                          window.livewire.emit('loadMore');
+                      }
+                  };
+             </script>
 
  
   
