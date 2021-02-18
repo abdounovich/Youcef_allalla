@@ -10,8 +10,8 @@
     <p>
         <div class="row">
         <a class="btn btn-primary col col-3" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-             <i class="fa fa-filter"></i>Filtrer</a>
-             <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control col col-7 ml-1" 
+             <i class="fa fa-filter"></i> Filtrer</a>
+             <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control col col-6 ml-1" 
              placeholder="Rechercher">
         </div>
       @if ($clients->count()=="0")
