@@ -34,7 +34,7 @@ class Search extends Component
     public function render()
     { 
         $this->produits=Product::where($this->categorie,'ILIKE','%'.$this->query.'%')->get()->take($this->TakeLimit);
-        if ( $this->categorie=='type') {
+        if ( $this->categorie=='product_type') {
              $this->produits=Product::where($this->categorie,'ILIKE','%'.$this->type.'%')->get()->take($this->TakeLimit);
 
         }
