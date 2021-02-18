@@ -25,7 +25,7 @@ class Search extends Component
     }
 
     public function changetype($value){
-        $this->categorie='type';
+        $this->categorie='product_type';
         $this->type=$value;
     }
 
