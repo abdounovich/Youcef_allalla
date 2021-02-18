@@ -11,7 +11,7 @@ class Search extends Component
     public $query="";
     public $produits="";
     public $categorie="nom";
-    public $TakeLimit="2";
+    public $TakeLimit="10";
     public $activation="1";
     public $type="";
 
