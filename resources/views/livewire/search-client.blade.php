@@ -1,89 +1,89 @@
 
-
-
-
-
       
   
-   
-    <p>
-        <div class="row ml-0">
-            <a class="btn btn-primary col col-3" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                 <i class="fa fa-filter"></i> Filtrer        </a>
-                 <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control col col-8 ml-3" 
-                 placeholder="Rechercher">
-            </div>
-      @if ($clients->count()=="0")
-    <p class="mt-3 ml-2 text-danger h5">Pas de résultat pour : {{$query}}</p>
-    @endif
+
  
-      </p>
-      <div class="collapse" id="collapseExample">
-        <button class="btn btn-danger text-left my-2 "   wire:click="change('all')"  name="categorie" id="inlineRadio1"> <i class="fa fa-times-circle"></i> effacer filtre</button>
-     
-        <div class="card card-body my-2">
-            
-    
-  <div class="row ">
-    
-  <button class="btn btn-link "   wire:click="change('facebook')"  name="categorie" id="inlineRadio1">Nom du client</button>
-  <button  class="btn btn-link"    wire:click="change('phone')"  name="categorie" id="inlineRadio1">Telephone </button>
-  <button  class="btn btn-link"    wire:click="change('wilaya')"  name="categorie" id="inlineRadio1">Wilaya </button>
+  <div class="row ml-0">
+    <a class="btn btn-primary col col-3" data-toggle="collapse" href="#collapseExample" 
+    role="button" aria-expanded="false" aria-controls="collapseExample">
+         <i class="fa fa-filter"></i> Filtrer        </a>
+         <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control col col-8 ml-3" 
+         placeholder="Rechercher">
+    </div>
+  @if ($clients->count()=="0")
+<p class="mt-3 ml-2 text-danger h5">Pas de résultat pour : {{$query}}</p>
+@endif
 
-
-  </div>
+  
+  <div class="collapse" id="collapseExample">
+    <button class="btn btn-danger text-left mt-2 "   wire:click="change('all')"  name="categorie" id="inlineRadio1"> 
+      <i class="fa fa-times-circle"></i> effacer filtre</button>
+    <hr>
+    <div class="card card-body">
         
-         
-  
-  
-  
-        </div>
-      </div>
-  
-  
-  
-  
-  
-  
-    <style>
-        .text-gray {
-           color: #aaa
-       }
-       
-       img {
-           height: 170px;
-           width: 140px
-       }
-       .btn-circle {
-         width: 30px;
-         height: 30px;
-         text-align: center;
-         padding: 2px;
-         font-size: 18px;
-         border-radius: 15px;
-       }
-       img {
-           height: 170px;
-           width: 140px
-       }
-       .bg-c-blue {
-           background: linear-gradient(45deg,#3a96cc,#0176fc);
-       }
-       
-       .custom{
-       
-           width: 50px;
-           height: 50px;
-       
-       }
-       </style>
-       
-       
-     
+
+
+    <div class="row ">
     
+        <button class="btn btn-link "   wire:click="change('facebook')"  name="categorie" id="inlineRadio1">Nom du client</button>
+        <button  class="btn btn-link"    wire:click="change('phone')"  name="categorie" id="inlineRadio1">Telephone </button>
+        <button  class="btn btn-link"    wire:click="change('wilaya')"  name="categorie" id="inlineRadio1">Wilaya </button>
+      
+      
+        </div>
+    
+     
+
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+<style>
+    .text-gray {
+       color: #aaa
+   }
    
-       <div class="row">
-        @foreach ($clients as $client)
+   img {
+       height: 170px;
+       width: 140px
+   }
+   .btn-circle {
+     width: 30px;
+     height: 30px;
+     text-align: center;
+     padding: 2px;
+     font-size: 18px;
+     border-radius: 15px;
+   }
+   img {
+       height: 170px;
+       width: 140px
+   }
+   .bg-c-blue {
+       background: linear-gradient(45deg,#3a96cc,#0176fc);
+   }
+   
+   .custom{
+   
+       width: 50px;
+       height: 50px;
+   
+   }
+   </style>
+   
+   
+ 
+
+
+  
+  
+   @foreach ($clients as $client)
         <div class=" clearfix col col-12 bg-dark  mb-2 p-2 rounded " style="opacity: 0.9">
     
                     <div class="bg-dark">
@@ -165,19 +165,29 @@
                     </div>
         </div>
         @endforeach
-    </div>
       
-      
-        
-    
-                   <script type="text/javascript">
-                    window.onscroll = function(ev) {
-                        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-                            window.livewire.emit('loadMore');
-                        }
-                    };
-               </script>
   
+     
+    
+
+               <script type="text/javascript">
+                window.onscroll = function(ev) {
+                    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                        window.livewire.emit('loadMore');
+                    }
+                };
+           </script>
+
+
+
+
+
+
+
+
+
+
+
 
   
   
