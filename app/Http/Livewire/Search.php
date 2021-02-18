@@ -12,6 +12,7 @@ class Search extends Component
     public $produits="";
     public $categorie="nom";
     public $TakeLimit="2";
+    public $TakeLimitFirst="2";
     public $activation="1";
     public $type="";
     public $total='0';
