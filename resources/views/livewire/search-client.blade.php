@@ -87,7 +87,7 @@
   
   
    @foreach ($clients as $client)
-        <div class=" clearfix col col-12 bg-dark  mb-2 p-2 rounded " style="opacity: 0.9">
+        <div class=" clearfix col col-12 bg-dark   my-2 p-2 rounded " style="opacity: 0.9">
     
                     <div class="bg-dark">
                         
