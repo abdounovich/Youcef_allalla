@@ -13,15 +13,12 @@ class SearchClient extends Component
   public $clients="";
   public $categorie="facebook";
   public $TakeLimit="10";
-  public $activation="1";
   public $type="";
-  public $total='0';
   protected $listeners = [
       'loadMore' => 'loadMore'
   ];
   public function loadMore()
    {   $this->TakeLimit=$this->TakeLimit+5;
-      $this->total=$this->total+$this->TakeLimit;
      
   }
  
@@ -47,7 +44,6 @@ class SearchClient extends Component
  public function mount(){
   $this->clients=Client::orderBy('created_at', 'desc')->get()
   ->take($this->TakeLimit);
-$this->total=$this->TakeLimit;
   
   return view('livewire.search-client');
 
