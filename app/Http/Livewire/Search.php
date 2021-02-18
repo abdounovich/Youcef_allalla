@@ -41,6 +41,8 @@ class Search extends Component
             $this->produits=Product::all()
             ->take($this->TakeLimit);
         }
+        return view('livewire.search');
+
     }
    public function mount(){
     $this->produits=Product::orderBy('created_at', 'desc')->get()
