@@ -203,15 +203,19 @@
                
                  @endforeach
   
-
-  <div class="row text-center text-white my-5">
+@if ($total>=$produits->count())
+  
+@else 
+ <div class="row text-center text-white my-5">
       <div class="col-lg-7 mx-auto">
         {{$total}}
         <p >{{$produits->count()}}</p>
-          <button  class="btn btn-primary" @if ($total>=$produits->count()) 
-               class='btn btn-danger'    @endif  wire:click="loadMore" type="button">Afficher plus</button>
+          <button  class="btn btn-primary" wire:click="loadMore" type="button">Afficher plus</button>
       </div>
       </div> 
+@endif
+
+ 
   
 
 </div>
