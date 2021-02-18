@@ -21,11 +21,11 @@
       </p>
       <div class="collapse" id="collapseExample">
         <button class="btn btn-danger text-left "   wire:click="change('all')"  name="categorie" id="inlineRadio1"> <i class="fa fa-times-circle"></i> effacer filtre</button>
-        <hr>
+     
         <div class="card card-body">
             
     
-  <div class="row">
+  <div class="row my-2 ml-0">
     
   <button class="btn btn-link "   wire:click="change('facebook')"  name="categorie" id="inlineRadio1">Nom du client</button>
   <button  class="btn btn-link"    wire:click="change('phone')"  name="categorie" id="inlineRadio1">Telephone </button>
