@@ -27,22 +27,11 @@
     
   <div class="row">
     
-  <button class="btn btn-link "   wire:click="change('nom')"  name="categorie" id="inlineRadio1">nom du produit</button>
-  <button  class="btn btn-link"    wire:click="change('prix')"  name="categorie" id="inlineRadio1">Prix </button>
-  <div class="col col-10 ml-4">
-        <input class="form-check-input " type="radio" wire:click="changetype('simple')" name="categorie" id="inlineRadio1" >
-            <label class="form-check-label ml-1" for="inlineRadio1">Simple</label>
-            <br>
-            <input class="form-check-input " type="radio" wire:click="changetype('taille')" name="categorie" id="inlineRadio2" >
-            <label class="form-check-label ml-1" for="inlineRadio2">Taille</label>
-            <br>
-            <input class="form-check-input " type="radio" wire:click="changetype('color')" name="categorie" id="inlineRadio1" >
-            <label class="form-check-label ml-1" for="inlineRadio1">Couleur</label> 
-            <br>
-            <input class="form-check-input " type="radio" wire:click="changetype('complexe')" name="categorie" id="inlineRadio1" >
-            <label class="form-check-label ml-1" for="inlineRadio1">Couleur + taille</label>
-       
-            </div>
+  <button class="btn btn-link "   wire:click="change('facebook')"  name="categorie" id="inlineRadio1">Nom du client</button>
+  <button  class="btn btn-link"    wire:click="change('phone')"  name="categorie" id="inlineRadio1">Telephone </button>
+  <button  class="btn btn-link"    wire:click="change('wilaya')"  name="categorie" id="inlineRadio1">Wilaya </button>
+
+
   </div>
         
          
