@@ -33,7 +33,6 @@ class Search extends Component
    
     public function render()
     { 
-        $this->produits=Product::where($this->categorie,'ILIKE','%'.$this->query.'%')->get()->take($this->TakeLimit);
         if ( $this->categorie=='product_type') {
              $this->produits=Product::where($this->categorie,'ILIKE','%'.$this->type.'%')->get()->take($this->TakeLimit);
 
@@ -42,7 +41,8 @@ class Search extends Component
             $this->produits=Product::orderBy('created_at', 'desc')->get();
        }
     
-       
+       else{ $this->produits=Product::where($this->categorie,'ILIKE','%'.$this->query.'%')->get()->take($this->TakeLimit);
+       }
         
         return view('livewire.search');
 
