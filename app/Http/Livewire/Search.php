@@ -32,15 +32,13 @@ class Search extends Component
     
    
     public function render()
-    { $this->produits=Product::where($this->categorie,'ILIKE','%'.$this->query.'%')->get()->take($this->TakeLimit);
+    { 
+        $this->produits=Product::where($this->categorie,'ILIKE','%'.$this->query.'%')->get()->take($this->TakeLimit);
         if ( $this->categorie=='type') {
              $this->produits=Product::where($this->categorie,'ILIKE','%'.$this->type.'%')->get()->take($this->TakeLimit);
 
         }
-        else {
-            $this->produits=Product::all()
-            ->take($this->TakeLimit);
-        }
+        
         return view('livewire.search');
 
     }
