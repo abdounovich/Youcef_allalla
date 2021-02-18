@@ -11,12 +11,12 @@ class Search extends Component
     public $query="";
     public $produits="";
     public $categorie="nom";
-    public $TakeLimit="10";
+    public $TakeLimit="5";
     public $activation="1";
     public $type="";
 
     public function loadMore()
-     {   $this->TakeLimit=$this->TakeLimit*2;
+     {   $this->TakeLimit=$this->TakeLimit+5;
        
     }
    
@@ -33,16 +33,14 @@ class Search extends Component
    
     public function render()
     { 
-        $this->produits=Product::where($this->categorie,'ILIKE','%'.$this->categorie.'%')->get()->take($this->TakeLimit);
-
+        $this->produits=Product::where($this->categorie,'ILIKE','%'.$this->query.'%')->get()->take($this->TakeLimit);
         if ( $this->categorie=='product_type') {
              $this->produits=Product::where($this->categorie,'ILIKE','%'.$this->type.'%')->get()->take($this->TakeLimit);
 
-        }elseif($this->categorie=='all'){
-
-            $this->produits=Product::orderBy('created_at', 'desc')->get()
-            ->take($this->TakeLimit);
         }
+        elseif ( $this->categorie=='all') {
+            $this->produits=Product::orderBy('created_at', 'desc')->get();
+       }
     
        
         
