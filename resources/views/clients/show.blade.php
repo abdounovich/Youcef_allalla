@@ -56,7 +56,7 @@ img {
 
 <div class="container">
 
-<div class="row mt-5">
+<div class="row">
 <button class="btn btn-info mb-2 " onclick="myFunction()">
 
     Copier</button> <span class="tooltiptext m-3" id="myTooltip"></span>
@@ -85,8 +85,8 @@ img {
 
 
 
-</div>
+
 @livewire('search-client')
 
-
+</div>
 
