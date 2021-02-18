@@ -9,33 +9,57 @@ use Livewire\WithPagination;
 class SearchClient extends Component
 {
 
-    use withPagination;
+  public $query="";
+  public $clients="";
+  public $categorie="facebook";
+  public $TakeLimit="10";
+  public $activation="1";
+  public $type="";
+  public $total='0';
+  protected $listeners = [
+      'loadMore' => 'loadMore'
+  ];
+  public function loadMore()
+   {   $this->TakeLimit=$this->TakeLimit+5;
+      $this->total=$this->total+$this->TakeLimit;
+     
+  }
+ 
+  public function change($value){
+      $this->categorie=$value;
+  }
 
-    public $query="";    
-    public $message="";
-    protected $paginationTheme = 'bootstrap';
+  public function changetype($value){
+      $this->categorie='product_type';
+      $this->type=$value;
+  }
 
-    public function render()
-    {
-        $clients=Client::where('facebook','ILIKE','%'.$this->query.'%')
-        ->orWhere('wilaya', 'ILIKE', '%' . $this->query . '%')
-        ->orWhere('address', 'ILIKE', '%' . $this->query . '%')
-        ->orWhere('phone', 'ILIKE', '%' . $this->query . '%')->paginate(1);
+  
+ 
+  public function render()
+  { 
+      if ( $this->categorie=='product_type') {
+           $this->clients=Client::where($this->categorie,'ILIKE','%'.$this->type.'%')->get()->take($this->TakeLimit);
 
-       if ($clients->count()=="0") {
-         $this->message="pas de résultat";
-       }
-       else {
-        $this->message="";
+      }
+      elseif ( $this->categorie=='all') {
+          $this->clients=Client::orderBy('created_at', 'desc')->get();
+     }
+  
+     else{ $this->clients=Client::where($this->categorie,'ILIKE','%'.$this->query.'%')->get()->take($this->TakeLimit);
+     }
+      
+      return view('livewire.search-clients');
 
-       }
-       
-            return view('livewire.search-client',['clients'=>$clients]);
+  }
+ public function mount(){
+  $this->clients=Client::orderBy('created_at', 'desc')->get()
+  ->take($this->TakeLimit);
+$this->total=$this->TakeLimit;
+  
+  return view('livewire.search-clients');
 
-       
-    }
-
-
+}  
 
     
 }
