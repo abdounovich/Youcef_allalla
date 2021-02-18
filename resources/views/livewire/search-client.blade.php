@@ -7,20 +7,20 @@
   
 <div>
    
-         <div class="row">
-            <a class="btn btn-primary col col-3" data-toggle="collapse" href="#collapseExample" 
-            role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-filter"></i> Filtrer </a>
-                 <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control col col-7 ml-1" 
-                 placeholder="Rechercher">
-            </div>
-      @if ($clients->count()=="0")
+    <p>
+        <div class="row ml-0">
+        <a class="btn btn-primary col col-3" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+             <i class="fa fa-filter"></i> Filtrer        </a>
+             <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control col col-8 ml-3" 
+             placeholder="Rechercher">
+        </div>
+      @if ($commandes->count()=="0")
     <p class="mt-3 ml-2 text-danger h5">Pas de résultat pour : {{$query}}</p>
     @endif
-  
-      
+ 
+      </p>
       <div class="collapse" id="collapseExample">
-        <button class="btn btn-danger text-left "   wire:click="change('all')"  name="categorie" id="inlineRadio1"> 
-          <i class="fa fa-times-circle"></i> effacer filtre</button>
+        <button class="btn btn-danger text-left "   wire:click="change('all')"  name="categorie" id="inlineRadio1"> <i class="fa fa-times-circle"></i> effacer filtre</button>
         <hr>
         <div class="card card-body">
             
