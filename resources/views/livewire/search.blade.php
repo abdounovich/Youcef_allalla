@@ -1,5 +1,5 @@
 
-<div>
+
 
       
   
@@ -18,7 +18,7 @@
 
     
     <div class="collapse" id="collapseExample">
-      <button class="btn btn-danger text-left "   wire:click="change('all')"  name="categorie" id="inlineRadio1"> 
+      <button class="btn btn-danger text-left mt-2 "   wire:click="change('all')"  name="categorie" id="inlineRadio1"> 
         <i class="fa fa-times-circle"></i> effacer filtre</button>
       <hr>
       <div class="card card-body">
@@ -211,7 +211,7 @@
  
   
 
-</div>
+
 
 
 
