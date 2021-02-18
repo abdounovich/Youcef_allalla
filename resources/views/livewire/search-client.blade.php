@@ -23,7 +23,7 @@
         
 
 
-    <div class="row ">
+    <div class="row mb-3 ">
     
         <button class="btn btn-link "   wire:click="change('facebook')"  name="categorie" id="inlineRadio1">Nom du client</button>
         <button  class="btn btn-link"    wire:click="change('phone')"  name="categorie" id="inlineRadio1">Telephone </button>
