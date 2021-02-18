@@ -205,7 +205,7 @@
   
 @if ($total>=$produits->count())
   @php
-      $takeLimit=$takeLimitFirst;
+      $TakeLimit=$TakeLimitFirst;
   @endphp
 @else 
  <div class="row text-center text-white my-5">
