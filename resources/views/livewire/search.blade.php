@@ -6,7 +6,8 @@
 
   <p>
       <div class="row ml-0">
-      <a class="btn btn-primary col col-3" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+      <a class="btn btn-primary col col-3" data-toggle="collapse" href="#collapseExample" 
+      role="button" aria-expanded="false" aria-controls="collapseExample">
            <i class="fa fa-filter"></i> Filtrer        </a>
            <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control col col-8 ml-3" 
            placeholder="Rechercher">
@@ -92,7 +93,7 @@
    
   
  
-     <div class="  mt-3 mb-2 d-flex justify-content-center ">
+     <div class="  mt-5 mb-2 d-flex justify-content-center ">
       <a class="btn btn-info  rounded p-3 m-4 text-white"  
       type="button" data-toggle="collapse" data-target="#List_collapse" aria-expanded="false"><i class="fa fa-plus mr-2">  </i> Ajouter un produit</a>
     
