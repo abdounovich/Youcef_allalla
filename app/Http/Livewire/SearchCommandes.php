@@ -14,6 +14,9 @@ class SearchCommandes extends Component
     public $TakeLimit="5";
     public $activation="1";
     public $type="";
+    protected $listeners = [
+        'loadMore' => 'loadMore'
+    ];
 
     public function loadMore()
      {   $this->TakeLimit=$this->TakeLimit+5;
