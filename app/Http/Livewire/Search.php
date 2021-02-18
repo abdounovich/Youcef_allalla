@@ -36,7 +36,10 @@ class Search extends Component
         if ( $this->categorie=='product_type') {
              $this->produits=Product::where($this->categorie,'ILIKE','%'.$this->type.'%')->get()->take($this->TakeLimit);
 
-        }else{ $this->produits=Product::where($this->categorie,'ILIKE','%'.$this->query.'%')->get()->take($this->TakeLimit);
+        }elseif($this->categorie=='all'){
+
+            $this->produits=Product::orderBy('created_at', 'desc')->get()
+            ->take($this->TakeLimit);
         }
     
        
