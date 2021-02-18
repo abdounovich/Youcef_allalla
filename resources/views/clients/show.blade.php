@@ -54,7 +54,7 @@ img {
 
 
 
-<div class="container mb-5">
+<div class="container mb-2">
 
 <div class="row">
 <button class="btn btn-info  mt-5 " onclick="myFunction()">
