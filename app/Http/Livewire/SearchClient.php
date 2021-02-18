@@ -38,17 +38,9 @@ class SearchClient extends Component
  
   public function render()
   { 
-      if ( $this->categorie=='product_type') {
-           $this->clients=Client::where($this->categorie,'ILIKE','%'.$this->type.'%')->get()->take($this->TakeLimit);
-
-      }
-      elseif ( $this->categorie=='all') {
-          $this->clients=Client::orderBy('created_at', 'desc')->get();
-     }
-  
-     else{ $this->clients=Client::where($this->categorie,'ILIKE','%'.$this->query.'%')->get()->take($this->TakeLimit);
-     }
       
+      $this->clients=Client::where($this->categorie,'ILIKE','%'.$this->query.'%')->get()->take($this->TakeLimit);
+   
       return view('livewire.search-client');
 
   }
