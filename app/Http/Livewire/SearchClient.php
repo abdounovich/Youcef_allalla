@@ -49,7 +49,7 @@ class SearchClient extends Component
      else{ $this->clients=Client::where($this->categorie,'ILIKE','%'.$this->query.'%')->get()->take($this->TakeLimit);
      }
       
-      return view('livewire.search-clients');
+      return view('livewire.search-client');
 
   }
  public function mount(){
@@ -57,7 +57,7 @@ class SearchClient extends Component
   ->take($this->TakeLimit);
 $this->total=$this->TakeLimit;
   
-  return view('livewire.search-clients');
+  return view('livewire.search-client');
 
 }  
 
