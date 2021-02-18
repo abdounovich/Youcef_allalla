@@ -11,7 +11,7 @@
            <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control col col-8 ml-3" 
            placeholder="Rechercher">
       </div>
-    @if ($commandes->count()=="0")
+    @if ($produits->count()=="0")
   <p class="mt-3 ml-2 text-danger h5">Pas de résultat pour : {{$query}}</p>
   @endif
 
