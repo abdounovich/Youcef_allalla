@@ -17,8 +17,8 @@
 
     </p>
     <div class="collapse" id="collapseExample">
-   {{--    <button class="btn btn-danger text-left "   wire:click="change('all')"  name="categorie" id="inlineRadio1"> 
-        <i class="fa fa-times-circle"></i> effacer filtre</button> --}}
+      <button class="btn btn-danger text-left "   wire:click="change('all')"  name="categorie" id="inlineRadio1"> 
+        <i class="fa fa-times-circle"></i> effacer filtre</button>
       <hr>
       <div class="card card-body">
           
