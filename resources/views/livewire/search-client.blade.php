@@ -3,7 +3,7 @@
   
 
  
-  <div class="row ml-0">
+  <div class="row ml-0 my-2">
     <a class="btn btn-primary col col-3" data-toggle="collapse" href="#collapseExample" 
     role="button" aria-expanded="false" aria-controls="collapseExample">
          <i class="fa fa-filter"></i> Filtrer        </a>
