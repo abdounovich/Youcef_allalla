@@ -85,9 +85,8 @@ img {
 
 
 
-
+</div>
 @livewire('search-client')
 
-      <div class="d-flex justify-content-center m-4">{{$clients->links()}}</div>
 
 
