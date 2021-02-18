@@ -207,7 +207,7 @@
   <div class="row text-center text-white my-5">
       <div class="col-lg-7 mx-auto">
         {{$total}}
-        <p>{{$produits->count()}}</p>
+        <p class="invisible">{{$produits->count()}}</p>
           <button  class="btn btn-primary" @if ($total>=$produits->count()) 
                class='invisible'    @endif  wire:click="loadMore" type="button">Afficher plus</button>
       </div>
