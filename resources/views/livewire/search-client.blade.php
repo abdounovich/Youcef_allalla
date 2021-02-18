@@ -1,19 +1,22 @@
 
       
+
+<div>
+
+      
   
 
- 
-  <div class="row ml-0 my-2">
-    <a class="btn btn-primary col col-3" data-toggle="collapse" href="#collapseExample" 
-    role="button" aria-expanded="false" aria-controls="collapseExample">
-         <i class="fa fa-filter"></i> Filtrer        </a>
-         <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control col col-8 ml-3" 
-         placeholder="Rechercher">
-    </div>
-  @if ($clients->count()=="0")
-<p class="mt-3 ml-2 text-danger h5">Pas de résultat pour : {{$query}}</p>
-@endif
-
+    <p>
+        <div class="row ml-0">
+        <a class="btn btn-primary col col-3" data-toggle="collapse" href="#collapseExample" 
+        role="button" aria-expanded="false" aria-controls="collapseExample">
+             <i class="fa fa-filter"></i> Filtrer        </a>
+             <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control col col-8 ml-3" 
+             placeholder="Rechercher">
+        </div>
+      @if ($clients->count()=="0")
+    <p class="mt-3 ml-2 text-danger h5">Pas de résultat pour : {{$query}}</p>
+    @endif
   
   <div class="collapse" id="collapseExample">
     <button class="btn btn-danger text-left mt-2 "   wire:click="change('all')"  name="categorie" id="inlineRadio1"> 
@@ -183,7 +186,7 @@
 
 
 
-
+        </div>
 
 
 
