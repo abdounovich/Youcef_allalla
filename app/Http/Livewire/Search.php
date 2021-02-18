@@ -14,9 +14,11 @@ class Search extends Component
     public $TakeLimit="2";
     public $activation="1";
     public $type="";
+    public $total='0';
 
     public function loadMore()
-     {   $this->TakeLimit=$this->TakeLimit+5;
+     {   $this->TakeLimit=$this->TakeLimit*2;
+        $this->total=$this->total+$this->TakeLimit;
        
     }
    
@@ -50,7 +52,7 @@ class Search extends Component
    public function mount(){
     $this->produits=Product::orderBy('created_at', 'desc')->get()
     ->take($this->TakeLimit);
-
+$this->total=$this->TakeLimit;
     
     return view('livewire.search');
 
