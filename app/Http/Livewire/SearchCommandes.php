@@ -14,14 +14,16 @@ class SearchCommandes extends Component
     public $TakeLimit="5";
     public $activation="1";
     public $type="";
+    public $total='0';
     protected $listeners = [
         'loadMore' => 'loadMore'
     ];
 
     public function loadMore()
-     {   $this->TakeLimit=$this->TakeLimit+5;
-       
-    }
+    {   $this->TakeLimit=$this->TakeLimit*2;
+       $this->total=$this->total+$this->TakeLimit;
+      
+   }
    
     public function change($value){
         $this->categorie=$value;
