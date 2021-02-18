@@ -25,8 +25,6 @@
 <div class="row">
   
 <button class="btn btn-link "   wire:click="change('nom')"  name="categorie" id="inlineRadio1">nom du produit</button>
-<button  class="btn btn-link "    wire:click="change('taille')"  name="categorie" id="inlineRadio1">Taille</button>
-<button  class="btn btn-link"    wire:click="change('color')"  name="categorie" id="inlineRadio1">Couleur</button>
 <button  class="btn btn-link"    wire:click="change('prix')"  name="categorie" id="inlineRadio1">Prix </button>
 <div class="col col-10 ml-4">
       <input class="form-check-input " type="radio" wire:click="changetype('simple')" name="categorie" id="inlineRadio1" >

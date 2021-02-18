@@ -38,6 +38,7 @@ class Search extends Component
              $this->produits=Product::where($this->categorie,'ILIKE','%'.$this->type.'%')->get()->take($this->TakeLimit);
 
         }
+       
         
         return view('livewire.search');
 
