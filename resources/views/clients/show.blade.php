@@ -57,7 +57,7 @@ img {
 <div class="container">
 
 <div class="row">
-<button class="btn btn-info mb-2 " onclick="myFunction()">
+<button class="btn btn-info  my-2 " onclick="myFunction()">
 
     Copier</button> <span class="tooltiptext m-3" id="myTooltip"></span>
 
