@@ -11,12 +11,12 @@ class Search extends Component
     public $query="";
     public $produits="";
     public $categorie="nom";
-    public $TakeLimit="5";
+    public $TakeLimit="2";
     public $activation="1";
     public $type="";
 
     public function loadMore()
-     {   $this->TakeLimit=$this->TakeLimit+5;
+     {   $this->TakeLimit=$this->TakeLimit*2;
        
     }
    
