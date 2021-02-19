@@ -36,7 +36,7 @@
                             <br>
                             <input class="form-check-input " type="radio" wire:click="changetype('4')" name="categorie" id="inlineRadio2" >
                             <br>
-                            <input class="btn btn-danger " type="radio" wire:click="changetype('5')" name="categorie" id="inlineRadio1" >
+                            <input class="btn btn-danger " type="button" wire:click="changetype('5')" name="categorie" id="inlineRadio1" >
                             </div>
                         
                          
