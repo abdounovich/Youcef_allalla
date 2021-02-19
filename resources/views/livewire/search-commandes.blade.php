@@ -25,32 +25,22 @@
       </p>
 
         
-        <div class="card card-body">
-            <div class="row">
                 <div class="col col-10 ml-4">
                         <input class="form-check-input " type="radio" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
-                            <label class="form-check-label ml-1" for="inlineRadio1"></label>
                             <br>
                             <input class="form-check-input " type="radio" wire:click="changetype('2')" name="categorie" id="inlineRadio2" >
-                            <label class="form-check-label ml-1" for="inlineRadio2"></label>
                             <br>
                             <input class="form-check-input " type="radio" wire:click="changetype('6')" name="categorie" id="inlineRadio1" >
-                            <label class="form-check-label ml-1" for="inlineRadio1"></label> 
                             <br>
                             <input class="form-check-input " type="radio" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
-                            <label class="form-check-label ml-1" for="inlineRadio1"></label>
                             <br>
                             <input class="form-check-input " type="radio" wire:click="changetype('4')" name="categorie" id="inlineRadio2" >
-                            <label class="form-check-label ml-1" for="inlineRadio2"></label>
                             <br>
                             <input class="btn btn-danger " type="radio" wire:click="changetype('5')" name="categorie" id="inlineRadio1" >
-                            <label class="form-check-label ml-1" for="inlineRadio1"></label> 
                             </div>
                         
                          
-        </div>
-    
-    </div>
+     
 
 
       <div class="collapse" id="collapseExample1">
