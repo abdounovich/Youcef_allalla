@@ -43,7 +43,7 @@
                             <input class="form-check-input " type="radio" wire:click="changetype('4')" name="categorie" id="inlineRadio2" >
                             <label class="form-check-label ml-1" for="inlineRadio2"></label>
                             <br>
-                            <input class="form-check-input btn btn-danger " type="radio" wire:click="changetype('5')" name="categorie" id="inlineRadio1" >
+                            <input class="btn btn-danger " type="radio" wire:click="changetype('5')" name="categorie" id="inlineRadio1" >
                             <label class="form-check-label ml-1" for="inlineRadio1"></label> 
                             </div>
                         
