@@ -56,7 +56,7 @@ class SearchCommandes extends Component
             })->get()->take($this->TakeLimit);} */
 
                $this->commandes=Commande::whereHas('product', function (Builder $req) {
-                    $req->where($this->categorie, 'ILIKE', '%'."taille".'%');
+                    $req->where($this->categorie, 'ILIKE', '%'."$this->query".'%');
                 })->get()->take($this->TakeLimit);
 
                
