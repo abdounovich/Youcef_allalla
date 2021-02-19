@@ -27,11 +27,15 @@ class SearchCommandes extends Component
    }
    
     public function change($value){
+       
         $this->categorie=$value;
     }
 
     public function changetype($value){
-        $this->type=$value;
+        if ($value=="all") {
+        $this->mount();
+        }else{$this->type=$value;
+        }
     }
 
     
@@ -62,7 +66,7 @@ class SearchCommandes extends Component
         return view('livewire.search-commandes');
     }
 
-  /*  public function mount(){
+   public function mount(){
     $this->commandes=Commande::orderBy('created_at', 'desc')->get()
     ->take($this->TakeLimit);
 
@@ -70,5 +74,5 @@ class SearchCommandes extends Component
     return view('livewire.search-commandes');
 
 }  
-  */
+
 }
