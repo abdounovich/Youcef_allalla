@@ -11,6 +11,15 @@
              @else
              {{$categorie}}
              @endif</a>
+
+             <a class="btn btn-primary col col-3" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <i class="fa fa-sort-amount-desc"></i> @if ($categorie=='0' OR $categorie=="all")
+                Trier
+                @else
+                {{$categorie}}
+                @endif</a>
+
+                
              <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control col col-8 ml-4" 
              placeholder="Rechercher">
         </div>
