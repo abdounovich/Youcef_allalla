@@ -12,12 +12,7 @@
              {{$categorie}}
              @endif</a>
 
-             <a class="btn btn-primary col col-3" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
-                <i class="fa fa-sort-amount-desc"></i> @if ($categorie=='0' OR $categorie=="all")
-                Trier
-                @else
-                {{$categorie}}
-                @endif</a>
+            
 
                 
              <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control col col-8 ml-4" 
@@ -29,30 +24,28 @@
  
       </p>
 
-      <div class="collapse" id="collapseExample2">
         
         <div class="card card-body">
             <div class="row">
                 <div class="col col-10 ml-4">
                         <input class="form-check-input " type="radio" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
-                            <label class="form-check-label ml-1" for="inlineRadio1">Non confirmées</label>
+                            <label class="form-check-label ml-1" for="inlineRadio1"></label>
                             <br>
                             <input class="form-check-input " type="radio" wire:click="changetype('2')" name="categorie" id="inlineRadio2" >
-                            <label class="form-check-label ml-1" for="inlineRadio2">Confirmées</label>
+                            <label class="form-check-label ml-1" for="inlineRadio2"></label>
                             <br>
                             <input class="form-check-input " type="radio" wire:click="changetype('6')" name="categorie" id="inlineRadio1" >
-                            <label class="form-check-label ml-1" for="inlineRadio1">En route</label> 
+                            <label class="form-check-label ml-1" for="inlineRadio1"></label> 
                             <br>
                             <input class="form-check-input " type="radio" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
-                            <label class="form-check-label ml-1" for="inlineRadio1">Délivrées</label>
+                            <label class="form-check-label ml-1" for="inlineRadio1"></label>
                             <br>
                             <input class="form-check-input " type="radio" wire:click="changetype('4')" name="categorie" id="inlineRadio2" >
-                            <label class="form-check-label ml-1" for="inlineRadio2">Annuller Par Client</label>
+                            <label class="form-check-label ml-1" for="inlineRadio2"></label>
                             <br>
-                            <input class="form-check-input " type="radio" wire:click="changetype('5')" name="categorie" id="inlineRadio1" >
-                            <label class="form-check-label ml-1" for="inlineRadio1">Annuler Par Admin</label> 
+                            <input class="form-check-input btn btn-danger " type="radio" wire:click="changetype('5')" name="categorie" id="inlineRadio1" >
+                            <label class="form-check-label ml-1" for="inlineRadio1"></label> 
                             </div>
-                </div>
                         
                          
         </div>
