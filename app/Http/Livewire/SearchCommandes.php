@@ -33,7 +33,6 @@ class SearchCommandes extends Component
 
     public function changetype($value){
         if ($value=="all") {
-        $this->mount();
         }else{$this->type=$value;
         }
     }
