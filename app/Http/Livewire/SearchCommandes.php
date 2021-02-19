@@ -59,7 +59,7 @@ class SearchCommandes extends Component
 
                
                 else {
-                    $this->commandes=Commande::all()
+                    $this->commandes=Commande::whereType(2)->orderBy('created_at', 'desc')->get()
                     ->take($this->TakeLimit);
                 }
         return view('livewire.search-commandes');
