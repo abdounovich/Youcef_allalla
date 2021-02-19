@@ -59,7 +59,7 @@ class SearchCommandes extends Component
 
                
                 else {
-                    $this->commandes=Commande::all()
+                    $this->commandes=Commande::where("type",$this->type)->get()
                     ->take($this->TakeLimit);
                 }
         return view('livewire.search-commandes');
