@@ -13,7 +13,7 @@ class SearchCommandes extends Component
     public $categorie="";
     public $TakeLimit="5";
     public $activation="1";
-    public $type="";
+    public $type="2";
     public $total='0';
     public $trierPar="";
     protected $listeners = [
