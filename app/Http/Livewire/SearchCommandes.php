@@ -66,8 +66,7 @@ class SearchCommandes extends Component
     }
 
    public function mount(){
-    $this->commandes=Commande::whereType(2)->get()
-    ->take($this->TakeLimit);
+    $this->commandes=Commande::all();
 
     
     return view('livewire.search-commandes');
