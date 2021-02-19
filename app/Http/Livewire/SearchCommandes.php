@@ -31,7 +31,6 @@ class SearchCommandes extends Component
     }
 
     public function changetype($value){
-        $this->trierPar='type';
         $this->type=$value;
     }
 
@@ -40,11 +39,9 @@ class SearchCommandes extends Component
     public function render()
     {if($this->categorie=="slug"  OR $this->categorie=="total_price"){
         $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')
-        ->get()->take($this->TakeLimit);}
-
-        elseif($this->trierPar=="type"){
-            $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')
         ->whereType($this->type)->get()->take($this->TakeLimit);}
+
+       
     
             
         elseif ($this->categorie=="facebook" OR $this->categorie=="wilaya" ){
