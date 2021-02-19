@@ -25,7 +25,9 @@
 
         
          <div class=" text-center">
-             <input class="btn btn-secondary btn-circle " type="button" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
+            
+            <input class="btn btn-dark btn-circle " type="button" wire:click="changetype('all')" name="categorie" >        
+            <input class="btn btn-secondary btn-circle " type="button" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
                     <input class="btn btn-primary btn-circle " type="button" wire:click="changetype('2')" name="categorie" id="inlineRadio2" >
                     <input class="btn btn-warning btn-circle " type="button" wire:click="changetype('6')" name="categorie" id="inlineRadio1" >
                     <input class="btn btn-success btn-circle " type="button" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
