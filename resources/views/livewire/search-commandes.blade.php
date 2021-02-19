@@ -34,7 +34,7 @@
                             <input class="btn btn-danger btn-circle " type="button" wire:click="changetype('5')" name="categorie" >
                         
                          
-     
+                </div>
 
 
       <div class="collapse" id="collapseExample1">
