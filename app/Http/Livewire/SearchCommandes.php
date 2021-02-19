@@ -10,7 +10,7 @@ class SearchCommandes extends Component
 {
     public $query="";
     public $commandes="";
-    public $categorie="nom";
+    public $categorie="";
     public $TakeLimit="5";
     public $activation="1";
     public $type="1";
@@ -44,46 +44,26 @@ class SearchCommandes extends Component
 
 
         if($this->categorie=="slug"  OR $this->categorie=="total_price"){
-            if ($this->type=='all') {
-                $this->commandes=Commande::where($this->categorie, 'ILIKE', '%'.$this->query.'%')->get()
-            ->take($this->TakeLimit);
-            }
-            else{
         $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')
         ->whereType($this->type)->get()->take($this->TakeLimit);}
-            }
+
        
     
             
         elseif ($this->categorie=="facebook" OR $this->categorie=="wilaya" ){
-            if ($this->type=='all') {
-                $this->commandes=Commande::where($this->categorie, 'ILIKE', '%'.$this->query.'%')->get()
-            ->take($this->TakeLimit);
-            }
-            else{
            $this->commandes=Commande::whereHas('client', function (Builder $req) {
                 $req->where($this->categorie, 'ILIKE', '%'.$this->query.'%');
-            })->whereType($this->type)->get()->take($this->TakeLimit);}}
+            })->whereType($this->type)->get()->take($this->TakeLimit);}
 
             elseif ($this->categorie=="nom" ){
-                if ($this->type=='all') {
-                    $this->commandes=Commande::where($this->categorie, 'ILIKE', '%'.$this->query.'%')->get()
-                ->take($this->TakeLimit);
-                }
-                else{
                $this->commandes=Commande::whereHas('product', function (Builder $req) {
                     $req->where($this->categorie, 'ILIKE', '%'.$this->query.'%');
                 })->whereType($this->type)->get()->take($this->TakeLimit);}
-            }
+
                
                 else {
-                    if ($this->type=='all') {
-                        $this->commandes=Commande::where($this->categorie, 'ILIKE', '%'.$this->query.'%')->get()
-                    ->take($this->TakeLimit);
-                    }
-                    else{
                     $this->commandes=Commande::whereType($this->type)->get()
-                    ->take($this->TakeLimit);}
+                    ->take($this->TakeLimit);
                     
                  }
                 
