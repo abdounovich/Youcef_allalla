@@ -10,7 +10,7 @@ class SearchCommandes extends Component
 {
     public $query="";
     public $commandes="";
-    public $categorie="slug";
+    public $categorie="type";
     public $TakeLimit="5";
     public $activation="1";
     public $type="2";
@@ -32,7 +32,6 @@ class SearchCommandes extends Component
 
     public function changetype($value){
         $this->trierPar='type';
-        $this->categorie="slug";
         $this->type=$value;
     }
 
