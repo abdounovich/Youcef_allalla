@@ -26,18 +26,12 @@
 
         
                 <div class="col col-10 ml-4">
-                        <input class="form-check-input " type="radio" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
-                            <br>
-                            <input class="form-check-input " type="radio" wire:click="changetype('2')" name="categorie" id="inlineRadio2" >
-                            <br>
-                            <input class="form-check-input " type="radio" wire:click="changetype('6')" name="categorie" id="inlineRadio1" >
-                            <br>
-                            <input class="form-check-input " type="radio" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
-                            <br>
-                            <input class="form-check-input " type="radio" wire:click="changetype('4')" name="categorie" id="inlineRadio2" >
-                            <br>
-                            <input class="btn btn-danger " type="button" wire:click="changetype('5')" name="categorie" id="inlineRadio1" >
-                            </div>
+                        <input class="btn btn-secondary btn-circle " type="radio" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
+                            <input class="btn btn-primary btn-circle " type="radio" wire:click="changetype('2')" name="categorie" id="inlineRadio2" >
+                            <input class="btn btn-warning btn-circle " type="radio" wire:click="changetype('6')" name="categorie" id="inlineRadio1" >
+                            <input class="btn btn-success btn-circle " type="radio" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
+                            <input class="btn btn-danger btn-circle " type="radio" wire:click="changetype('4')" name="categorie" id="inlineRadio2" >
+                            <input class="btn btn-danger btn-circle " type="button" wire:click="changetype('5')" name="categorie" >
                         
                          
      
