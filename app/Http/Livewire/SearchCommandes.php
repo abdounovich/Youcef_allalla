@@ -15,7 +15,7 @@ class SearchCommandes extends Component
     public $activation="1";
     public $type="2";
     public $total='0';
-    public $trierPar="";
+    public $trierPar="type";
     protected $listeners = [
         'loadMore' => 'loadMore'
     ];
