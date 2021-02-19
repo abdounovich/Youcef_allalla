@@ -10,7 +10,7 @@ class SearchCommandes extends Component
 {
     public $query="";
     public $commandes="";
-    public $categorie="";
+    public $categorie="slug";
     public $TakeLimit="5";
     public $activation="1";
     public $type="2";
@@ -46,12 +46,12 @@ class SearchCommandes extends Component
             ->where($this->categorie,'LIKE',$this->type)
            ->get()->take($this->TakeLimit);}
     
-            
         elseif ($this->categorie=="facebook" OR $this->categorie=="wilaya" ){
            $this->commandes=Commande::whereHas('client', function (Builder $req) {
                 $req->where($this->categorie, 'ILIKE', '%'.$this->query.'%');
             })->get()->take($this->TakeLimit);}
-            elseif ($this->categorie=="nom" ){
+
+        elseif ($this->categorie=="nom" ){
                $this->commandes=Commande::whereHas('product', function (Builder $req) {
                     $req->where($this->categorie, 'ILIKE', '%'.$this->query.'%');
                 })->get()->take($this->TakeLimit);}
