@@ -10,7 +10,7 @@ class SearchCommandes extends Component
 {
     public $query="";
     public $commandes="";
-    public $categorie="nom";
+    public $categorie="type";
     public $TakeLimit="5";
     public $activation="1";
     public $type="2";
@@ -38,29 +38,32 @@ class SearchCommandes extends Component
     
    
     public function render()
-    {/* if($this->categorie=="slug"  OR $this->categorie=="total_price"){
+    {if($this->categorie=="slug"  OR $this->categorie=="total_price"){
         $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')
-        ->where($this->trierPar,'LIKE','%'.$this->type.'%')
-        ->get()->take($this->TakeLimit);} */
+        ->where('type','LIKE','%'.$this->type.'%')
+        ->get()->take($this->TakeLimit);}
 
-       /*  elseif($this->trierPar=="type"){
-            $this->commandes=Commande::where($this->trierPar,'LIKE','%'.$this->type.'%')
-            ->where($this->categorie,'ILIKE','%'.$this->query.'%')
+        elseif($this->trierPar=="type"){
+            $this->commandes=Commande::where($this->trierPar,'LIKE','%'.$this->type.'%')->where($this->categorie,'ILIKE','%'.$this->query.'%')
             ->where($this->categorie,'LIKE',$this->type)
-            ->where($this->trierPar,'LIKE','%'.$this->type.'%')
-            ->get()->take($this->TakeLimit);} */
+            ->where('type','LIKE','%'.$this->type.'%')
+            ->get()->take($this->TakeLimit);}
 
-       /*  elseif ($this->categorie=="facebook" OR $this->categorie=="wilaya" ){
+        elseif ($this->categorie=="facebook" OR $this->categorie=="wilaya" ){
            $this->commandes=Commande::whereHas('client', function (Builder $req) {
                 $req->where($this->categorie, 'ILIKE', '%'.$this->query.'%');
-            })->get()->take($this->TakeLimit);} */
+            })->where('type','LIKE','%'.$this->type.'%')->get()->take($this->TakeLimit);}
 
-               $this->commandes=Commande::whereHas('product', function (Builder $req) {
-                    $req->where($this->categorie, 'ILIKE', '%'."$this->query".'%');
-                })->where("type",2)->get()->take($this->TakeLimit);
+        elseif ($this->categorie=="nom" ){
+               $this->commandes=Commande::where($this->trierPar,'LIKE','%'.$this->type.'%')->whereHas('product', function (Builder $req) {
+                    $req->where($this->categorie, 'ILIKE', '%'.$this->query.'%');
+                })->where('type','LIKE','%'.$this->type.'%')->get()->take($this->TakeLimit);}
 
                
-               
+                else {
+                    $this->commandes=Commande::where("type",$this->type)->get()
+                    ->take($this->TakeLimit);
+                }
         return view('livewire.search-commandes');
     }
 
