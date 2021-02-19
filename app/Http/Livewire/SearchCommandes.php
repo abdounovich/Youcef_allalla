@@ -41,7 +41,8 @@ class SearchCommandes extends Component
         $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')->get()->take($this->TakeLimit);}
 
         elseif($this->categorie=="type"){
-            $this->commandes=Commande::where($this->categorie,'LIKE',$this->type)->get()->take($this->TakeLimit);}
+            $this->commandes=Commande::where($this->categorie,'LIKE',$this->type)
+            ->where($this->categorie,'ILIKE','%'.$this->query.'%')->get()->take($this->TakeLimit);}
     
             
         elseif ($this->categorie=="facebook" OR $this->categorie=="wilaya" ){
