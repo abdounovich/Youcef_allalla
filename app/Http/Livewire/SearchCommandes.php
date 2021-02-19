@@ -15,6 +15,7 @@ class SearchCommandes extends Component
     public $activation="1";
     public $type="";
     public $total='0';
+    public $trierPar="";
     protected $listeners = [
         'loadMore' => 'loadMore'
     ];
@@ -30,7 +31,7 @@ class SearchCommandes extends Component
     }
 
     public function changetype($value){
-        $this->categorie='type';
+        $this->trierPar='type';
         $this->type=$value;
     }
 
@@ -41,7 +42,8 @@ class SearchCommandes extends Component
         $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')->get()->take($this->TakeLimit);}
 
         elseif($this->categorie=="type"){
-            $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')->where($this->categorie,'LIKE',$this->type)
+            $this->commandes=Commande::where($this->categorie,'LIKE',$this->type)
+            ->where($this->categorie,'ILIKE','%'.$this->query.'%')
            ->get()->take($this->TakeLimit);}
     
             

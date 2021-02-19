@@ -30,13 +30,34 @@
       </p>
 
       <div class="collapse" id="collapseExample2">
-        <button class="btn btn-danger text-left "   
-        wire:click="change('all')"  name="categorie" id="inlineRadio1"> <i class="fa fa-times-circle"></i> effacer filtre
-    </button>
-        <hr>
+        
         <div class="card card-body">
-            
-        </div></div>
+            <div class="row">
+                <div class="col col-10 ml-4">
+                        <input class="form-check-input " type="radio" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
+                            <label class="form-check-label ml-1" for="inlineRadio1">Non confirmées</label>
+                            <br>
+                            <input class="form-check-input " type="radio" wire:click="changetype('2')" name="categorie" id="inlineRadio2" >
+                            <label class="form-check-label ml-1" for="inlineRadio2">Confirmées</label>
+                            <br>
+                            <input class="form-check-input " type="radio" wire:click="changetype('6')" name="categorie" id="inlineRadio1" >
+                            <label class="form-check-label ml-1" for="inlineRadio1">En route</label> 
+                            <br>
+                            <input class="form-check-input " type="radio" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
+                            <label class="form-check-label ml-1" for="inlineRadio1">Délivrées</label>
+                            <br>
+                            <input class="form-check-input " type="radio" wire:click="changetype('4')" name="categorie" id="inlineRadio2" >
+                            <label class="form-check-label ml-1" for="inlineRadio2">Annuller Par Client</label>
+                            <br>
+                            <input class="form-check-input " type="radio" wire:click="changetype('5')" name="categorie" id="inlineRadio1" >
+                            <label class="form-check-label ml-1" for="inlineRadio1">Annuler Par Admin</label> 
+                            </div>
+                </div>
+                        
+                         
+        </div>
+    
+    </div>
 
 
       <div class="collapse" id="collapseExample1">
@@ -50,29 +71,7 @@
     <button class="btn btn-link text-left "   wire:click="change('slug')"  name="categorie" id="inlineRadio1">code</button>
 <button  class="btn btn-link text-left "    wire:click="change('total_price')"  name="categorie" id="inlineRadio1">Prix total</button>
 </div>
-<div class="row">
-<div class="col col-10 ml-4">
-        <input class="form-check-input " type="radio" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
-            <label class="form-check-label ml-1" for="inlineRadio1">Non confirmées</label>
-            <br>
-            <input class="form-check-input " type="radio" wire:click="changetype('2')" name="categorie" id="inlineRadio2" >
-            <label class="form-check-label ml-1" for="inlineRadio2">Confirmées</label>
-            <br>
-            <input class="form-check-input " type="radio" wire:click="changetype('6')" name="categorie" id="inlineRadio1" >
-            <label class="form-check-label ml-1" for="inlineRadio1">En route</label> 
-            <br>
-            <input class="form-check-input " type="radio" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
-            <label class="form-check-label ml-1" for="inlineRadio1">Délivrées</label>
-            <br>
-            <input class="form-check-input " type="radio" wire:click="changetype('4')" name="categorie" id="inlineRadio2" >
-            <label class="form-check-label ml-1" for="inlineRadio2">Annuller Par Client</label>
-            <br>
-            <input class="form-check-input " type="radio" wire:click="changetype('5')" name="categorie" id="inlineRadio1" >
-            <label class="form-check-label ml-1" for="inlineRadio1">Annuler Par Admin</label> 
-            </div>
-</div>
-        
-         
+
 
 <hr>
 <span class="text-center">Par produit</span><hr>
