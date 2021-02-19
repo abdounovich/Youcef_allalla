@@ -38,7 +38,7 @@ class SearchCommandes extends Component
     
    
     public function render()
-    {if($this->categorie=="slug"  OR $this->categorie=="total_price"){
+    {/* if($this->categorie=="slug"  OR $this->categorie=="total_price"){
         $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')->where($this->trierPar,$this->type)
         ->get()->take($this->TakeLimit);}
 
@@ -61,7 +61,7 @@ class SearchCommandes extends Component
                 else {
                     $this->commandes=Commande::whereType(2)->orderBy('created_at', 'desc')->get()
                     ->take($this->TakeLimit);
-                }
+                } */
         return view('livewire.search-commandes');
     }
 
