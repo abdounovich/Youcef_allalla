@@ -66,7 +66,7 @@ class SearchCommandes extends Component
     }
 
    public function mount(){
-    $this->commandes=Commande::whereType(2)->orderBy('created_at', 'desc')->get()
+    $this->commandes=Commande::whereType(2)->get()
     ->take($this->TakeLimit);
 
     
