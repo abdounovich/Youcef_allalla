@@ -10,10 +10,10 @@ class SearchCommandes extends Component
 {
     public $query="";
     public $commandes="";
-    public $categorie="type";
+    public $categorie="";
     public $TakeLimit="5";
     public $activation="1";
-    public $type="2";
+    public $type="";
     public $total='0';
     public $trierPar="";
     protected $listeners = [
@@ -32,8 +32,6 @@ class SearchCommandes extends Component
 
     public function changetype($value){
         $this->trierPar='type';
-        $this->categorie='type';
-
         $this->type=$value;
     }
 
@@ -41,9 +39,10 @@ class SearchCommandes extends Component
    
     public function render()
     {if($this->categorie=="slug"  OR $this->categorie=="total_price"){
-        $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')->get()->take($this->TakeLimit);}
+        $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')->where($this->trierPar,$this->type)
+        ->get()->take($this->TakeLimit);}
 
-        elseif($this->trierPar=="type"){
+        elseif($this->categorie=="type"){
             $this->commandes=Commande::where($this->trierPar,'LIKE',$this->type)
             ->where($this->categorie,'ILIKE','%'.$this->query.'%')
            ->get()->take($this->TakeLimit);}
@@ -60,13 +59,14 @@ class SearchCommandes extends Component
 
                
                 else {
-                    $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')
-                    ->get()->take($this->TakeLimit);                }
+                    $this->commandes=Commande::all()
+                    ->take($this->TakeLimit);
+                }
         return view('livewire.search-commandes');
     }
 
    public function mount(){
-    $this->commandes=Commande::orderBy('created_at', 'desc')->get()
+    $this->commandes=Commande::whereType(2)->orderBy('created_at', 'desc')->get()
     ->take($this->TakeLimit);
 
     
