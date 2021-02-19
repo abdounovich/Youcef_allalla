@@ -32,7 +32,7 @@
                     <input class="btn btn-warning btn-circle " type="button" wire:click="changetype('6')" name="categorie" id="inlineRadio1" >
                     <input class="btn btn-success btn-circle " type="button" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
                     <input class="btn btn-danger btn-circle " type="button" wire:click="changetype('4')" name="categorie" id="inlineRadio2" >
-                    <input class="btn btn-danger btn-circle " type="button" wire:click="changetype('5')" name="categorie" >        
+                    <input class="btn btn-danger btn-circle " value="X" type="button" wire:click="changetype('5')" name="categorie" >        
                 </div>
 
 
