@@ -32,6 +32,7 @@ class SearchCommandes extends Component
 
     public function changetype($value){
         $this->trierPar='type';
+        $this->categorie="slug";
         $this->type=$value;
     }
 
