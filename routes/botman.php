@@ -555,6 +555,7 @@ $bot->typesAndWaits(1);
 
 
     $botman->hears('CommandeStatue([0-9]+)', function ( $bot,$number6) {
+        date_default_timezone_set("Africa/Algiers");
 
         $commande=Commande::find($number6);
         switch ($commande->type) {
