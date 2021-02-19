@@ -8,8 +8,7 @@
         <a class="btn btn-primary col col-3" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
              <i class="fa fa-filter"></i> @if ($categorie=='0' OR $categorie=="all")
              Filtrer
-             @else
-             {{$categorie}}
+            
              @endif</a>
 
             
@@ -25,15 +24,13 @@
       </p>
 
         
-                <div class="col col-10 ml-4">
-                        <input class="btn btn-secondary btn-circle " type="button" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
-                            <input class="btn btn-primary btn-circle " type="button" wire:click="changetype('2')" name="categorie" id="inlineRadio2" >
-                            <input class="btn btn-warning btn-circle " type="button" wire:click="changetype('6')" name="categorie" id="inlineRadio1" >
-                            <input class="btn btn-success btn-circle " type="button" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
-                            <input class="btn btn-danger btn-circle " type="button" wire:click="changetype('4')" name="categorie" id="inlineRadio2" >
-                            <input class="btn btn-danger btn-circle " type="button" wire:click="changetype('5')" name="categorie" >
-                        
-                         
+         <div class=" text-center">
+             <input class="btn btn-secondary btn-circle " type="button" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
+                    <input class="btn btn-primary btn-circle " type="button" wire:click="changetype('2')" name="categorie" id="inlineRadio2" >
+                    <input class="btn btn-warning btn-circle " type="button" wire:click="changetype('6')" name="categorie" id="inlineRadio1" >
+                    <input class="btn btn-success btn-circle " type="button" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
+                    <input class="btn btn-danger btn-circle " type="button" wire:click="changetype('4')" name="categorie" id="inlineRadio2" >
+                    <input class="btn btn-danger btn-circle " type="button" wire:click="changetype('5')" name="categorie" >        
                 </div>
 
 
