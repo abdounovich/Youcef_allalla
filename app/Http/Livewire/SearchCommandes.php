@@ -10,7 +10,7 @@ class SearchCommandes extends Component
 {
     public $query="";
     public $commandes="";
-    public $categorie="type";
+    public $categorie="nom";
     public $TakeLimit="5";
     public $activation="1";
     public $type="2";
@@ -55,7 +55,7 @@ class SearchCommandes extends Component
             })->where('type','LIKE','%'.$this->type.'%')->get()->take($this->TakeLimit);}
 
         elseif ($this->categorie=="nom" ){
-               $this->commandes=Commande::where($this->trierPar,'LIKE','%'.$this->type.'%')->whereHas('product', function (Builder $req) {
+               $this->commandes=Commande::whereHas('product', function (Builder $req) {
                     $req->where($this->categorie, 'ILIKE', '%'.$this->query.'%');
                 })->where('type','LIKE','%'.$this->type.'%')->get()->take($this->TakeLimit);}
 
