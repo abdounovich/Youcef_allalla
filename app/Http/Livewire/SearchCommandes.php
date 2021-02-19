@@ -42,7 +42,7 @@ class SearchCommandes extends Component
         $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')->get()->take($this->TakeLimit);}
 
         elseif($this->categorie=="type"){
-            $this->commandes=Commande::where($this->categorie,'LIKE',$this->type)
+            $this->commandes=Commande::where($this->trierPar,'LIKE',$this->type)
             ->where($this->categorie,'ILIKE','%'.$this->query.'%')
            ->get()->take($this->TakeLimit);}
     
