@@ -43,11 +43,11 @@ class SearchCommandes extends Component
         ->where('type','LIKE','%'.$this->type.'%')
         ->get()->take($this->TakeLimit);}
 
-        elseif($this->trierPar=="type"){
+     /*    elseif($this->trierPar=="type"){
             $this->commandes=Commande::where($this->trierPar,'LIKE','%'.$this->type.'%')->where($this->categorie,'ILIKE','%'.$this->query.'%')
             ->where($this->categorie,'LIKE',$this->type)
             ->where('type','LIKE','%'.$this->type.'%')
-            ->get()->take($this->TakeLimit);}
+            ->get()->take($this->TakeLimit);} */
 
         elseif ($this->categorie=="facebook" OR $this->categorie=="wilaya" ){
            $this->commandes=Commande::whereHas('client', function (Builder $req) {
@@ -57,7 +57,7 @@ class SearchCommandes extends Component
         elseif ($this->categorie=="nom" ){
                $this->commandes=Commande::whereHas('product', function (Builder $req) {
                     $req->where($this->categorie, 'ILIKE', '%'.$this->query.'%');
-                })->where('type','LIKE','%'.$this->type.'%')->get()->take($this->TakeLimit);}
+                })->where('type',$this->type)->get()->take($this->TakeLimit);}
 
                
                 else {
