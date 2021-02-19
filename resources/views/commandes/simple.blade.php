@@ -27,7 +27,7 @@
          @elseif($commande->type=="4")
          <i class="btn btn-danger btn-circle"></i>
          @elseif($commande->type=="5")
-         <i class="btn btn-danger btn-circle"></i>
+         <i class="btn btn-orange btn-circle"></i>
          @elseif($commande->type=="6")
          <i class="btn btn-warning btn-circle"></i>
        @endif 

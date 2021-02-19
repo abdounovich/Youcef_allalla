@@ -46,6 +46,10 @@
        background: linear-gradient(45deg,#3a96cc,#0176fc);
    }
    
+
+   .btn-orange{
+       background-color: crimson;
+   }
    .custom{
    
        width: 50px;
