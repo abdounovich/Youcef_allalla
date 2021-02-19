@@ -12,7 +12,7 @@
              {{$categorie}}
              @endif</a>
 
-             <a class="btn btn-primary col col-3" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+             <a class="btn btn-primary col col-3" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
                 <i class="fa fa-sort-amount-desc"></i> @if ($categorie=='0' OR $categorie=="all")
                 Trier
                 @else
@@ -28,7 +28,18 @@
     @endif
  
       </p>
-      <div class="collapse" id="collapseExample">
+
+      <div class="collapse" id="collapseExample2">
+        <button class="btn btn-danger text-left "   
+        wire:click="change('all')"  name="categorie" id="inlineRadio1"> <i class="fa fa-times-circle"></i> effacer filtre
+    </button>
+        <hr>
+        <div class="card card-body">
+            
+        </div></div>
+
+
+      <div class="collapse" id="collapseExample1">
         <button class="btn btn-danger text-left "   wire:click="change('all')"  name="categorie" id="inlineRadio1"> <i class="fa fa-times-circle"></i> effacer filtre</button>
         <hr>
         <div class="card card-body">
