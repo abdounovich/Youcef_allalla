@@ -583,12 +583,16 @@ $bot->typesAndWaits(1);
                             case 4:
                                 $bot->reply("حالة الطلبية :".$commande->slug);
                                 $bot->reply("  طلبية  ملغاة  من طرف الأدمين     ");
+                                $bot->reply("  تاريخ إلغاء الطلبية :".$commande->updated_at);
+
                                         break;
 
 
                                         case 5:
                                             $bot->reply("حالة الطلبية :".$commande->slug);
                                             $bot->reply("   لقد قمت بإلغاء هاته الطلبية   ");
+                                            $bot->reply("  تاريخ إلغاء الطلبية :".$commande->updated_at);
+
                                                     break;
         }
 
