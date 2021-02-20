@@ -81,6 +81,8 @@ return [
             'call_to_actions' => [
                 [
 
+                    
+
                     'type' => 'postback',
                     'title' => ' 🛍 تصفح المنتجات ',
                     'payload' => 'show_me_products',
@@ -95,9 +97,9 @@ return [
 
                 ],
                 [
-                    'title' => ' 💬 تواصل مع المبرمج',
-                    'type' => 'web_url',
-                    'url' => 'https://www.messenger.com/t/merahi.adjalile',
+                    'title' => ' ✍️  تعديل بياناتي ',
+                    'type' => 'postback',
+                    'payload' => 'my_profile',
                 ],
             ],
         ],

@@ -734,3 +734,8 @@ $bot->typesAndWaits(1);
 
             
            });
+
+           $botman->hears('my_profile', function($bot,$number1) {
+
+            
+        });
