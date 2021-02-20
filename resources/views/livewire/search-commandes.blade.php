@@ -32,7 +32,7 @@
                     <input class="btn btn-warning  " value="{{$commandes6->count()}}" type="button" wire:click="changetype('6')" name="categorie" id="inlineRadio1" >
                     <input class="btn btn-success  " value="{{$commandes3->count()}}" type="button" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
                     <input class="btn btn-danger  " value="{{$commandes4->count()}}" type="button" wire:click="changetype('4')" name="categorie" id="inlineRadio2" >
-                    <input class="btn btn-orange  " value="{{$commandes5->count()}}"  type="button" wire:click="changetype('5')" name="categorie" >        
+                    <input class="btn btn-orange text-white  " value="{{$commandes5->count()}}"  type="button" wire:click="changetype('5')" name="categorie" >        
                 </div>
 
 
