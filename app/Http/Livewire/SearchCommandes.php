@@ -10,6 +10,17 @@ class SearchCommandes extends Component
 {
     public $query="";
     public $commandes="";
+    public $commandes1="";
+
+    public $commandes2="";
+
+    public $commandes3="";
+
+    public $commandes4="";
+
+    public $commandes5="";
+    public $commandes6="";
+
     public $categorie="";
     public $TakeLimit="5";
     public $activation="1";
