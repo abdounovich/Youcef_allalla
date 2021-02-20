@@ -14,7 +14,7 @@
             
 
                 
-             <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control col col-8 ml-4" 
+             <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control col col-8 ml-2" 
              placeholder="Rechercher">
         </div>
       @if ($commandes->count()=="0")
