@@ -27,7 +27,7 @@
          <div class=" text-center text-white my-3">
             
 {{--             <input class="btn btn-dark btn-circle text-white " value="X"  type="button" wire:click="changetype('all')" name="categorie" >        
- --}}            <input class="btn btn-secondary m-2 p-2  " value="{{$commandes1->count()}}" type="button" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
+ --}}            <input class="btn btn-secondary m-2 px-2  " value="{{$commandes1->count()}}" type="button" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
                     <input class="btn btn-primary m-2 p-2  " value="{{$commandes2->count()}}" type="button" wire:click="changetype('2')" name="categorie" id="inlineRadio2" >
                     <input class="btn btn-warning m-2 p-2  " value="{{$commandes6->count()}}" type="button" wire:click="changetype('6')" name="categorie" id="inlineRadio1" >
                     <input class="btn btn-success m-2 p-2 " value="{{$commandes3->count()}}" type="button" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
