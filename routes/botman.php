@@ -735,7 +735,7 @@ $bot->typesAndWaits(1);
             
            });
 
-           $botman->hears('my_profile', function($bot,$number1) {
+           $botman->hears('my_profile', function($bot) {
             $bot->startConversation(new profileConversation());
 
             
