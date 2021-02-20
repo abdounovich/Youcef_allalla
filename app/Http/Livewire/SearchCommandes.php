@@ -52,7 +52,12 @@ class SearchCommandes extends Component
    
     public function render()
     {
-
+        $this->commandes1=Commande::whereType("1")->get();
+        $this->commandes2=Commande::whereType("2")->get();
+        $this->commandes3=Commande::whereType("3")->get();
+        $this->commandes4=Commande::whereType("4")->get();
+        $this->commandes5=Commande::whereType("5")->get();
+        $this->commandes6=Commande::whereType("6")->get();
 
         if($this->categorie=="slug"  OR $this->categorie=="total_price"){
         $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')
@@ -81,16 +86,11 @@ class SearchCommandes extends Component
         return view('livewire.search-commandes');
     }
 
-   public function mount(){
-    $this->commandes1=Commande::whereType("1")->get();
-    $this->commandes2=Commande::whereType("2")->get();
-    $this->commandes3=Commande::whereType("3")->get();
-    $this->commandes4=Commande::whereType("4")->get();
-    $this->commandes5=Commande::whereType("5")->get();
-    $this->commandes6=Commande::whereType("6")->get();
+/*    public function mount(){
+  
 
     return view('livewire.search-commandes');
 
-}  
+}  */ 
 
 }
