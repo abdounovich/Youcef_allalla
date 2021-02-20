@@ -79,7 +79,8 @@ public function askWilaya(){
 
 ${"W".$this->wilaya}="W".$this->wilaya;
  $this->client->wilaya=$this->obj->${"W".$this->wilaya};
-$this->client->save();            
+$this->client->save(); 
+$this->bot->reply("☑ لقد تم تعديل بياناتك بنجاح  ");           
         }
         else{$this->bot->reply(" خطأ , من فضلك أدخل  رقم الولاية فقط ");
             $this->askWilaya();
