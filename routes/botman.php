@@ -11,6 +11,7 @@ use Illuminate\Support\Str;
 use App\Conversations\botConversation;
 use App\Conversations\ByColorConversation;
 use App\Conversations\ExampleConversation;
+use App\Conversations\profileConversation;
 use App\Http\Controllers\BotManController;
 use App\Conversations\ByTailleConversation;
 use BotMan\BotMan\Messages\Outgoing\Question;
