@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center " >
+<div class="d-flex justify-content-center  my-2" >
 
     <div class="  col col-12 bg-dark mb-2 rounded  text-white"  id="product_collapse{{$commande->id}}" style="opacity: 0.9">
         <div class=" clearfix col col-12 bg-light  mb-2 p-2 rounded " style="opacity: 0.9">
@@ -75,4 +75,3 @@
         </div>
     </div>
 </div>
-<div class="mb-5"></div>
