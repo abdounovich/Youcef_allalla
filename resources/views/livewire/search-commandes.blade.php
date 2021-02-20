@@ -5,7 +5,7 @@
 
     <p>
         <div class="row ml-0">
-        <a class="btn btn-primary col col-3" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <a class="btn btn-info col col-3" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
              <i class="fa fa-filter"></i> @if ($categorie=='0' OR $categorie=="all")
              Filtrer
             
