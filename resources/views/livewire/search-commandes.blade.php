@@ -27,12 +27,12 @@
          <div class="  text-white my-3">
             
 {{--             <input class="btn btn-dark btn-circle text-white " value="X"  type="button" wire:click="changetype('all')" name="categorie" >        
- --}}            <input class="btn btn-secondary  " width="17%" value="{{$commandes1->count()}}" type="button" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
-                    <input class="btn btn-primary  " width="17%" value="{{$commandes2->count()}}" type="button" wire:click="changetype('2')" name="categorie" id="inlineRadio2" >
-                    <input class="btn btn-warning  " width="17%" value="{{$commandes6->count()}}" type="button" wire:click="changetype('6')" name="categorie" id="inlineRadio1" >
-                    <input class="btn btn-success  " width="17%" value="{{$commandes3->count()}}" type="button" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
-                    <input class="btn btn-danger  " width="17%" value="{{$commandes4->count()}}" type="button" wire:click="changetype('4')" name="categorie" id="inlineRadio2" >
-                    <input class="btn btn-orange text-white " width="16%"  value="{{$commandes5->count()}}"  type="button" wire:click="changetype('5')" name="categorie" >        
+ --}}            <input class="btn btn-secondary col col-4  " value="{{$commandes1->count()}}" type="button" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
+                    <input class="btn btn-primary  col col-4  " value="{{$commandes2->count()}}" type="button" wire:click="changetype('2')" name="categorie" id="inlineRadio2" >
+                    <input class="btn btn-warning  col col-4  " value="{{$commandes6->count()}}" type="button" wire:click="changetype('6')" name="categorie" id="inlineRadio1" >
+                    <input class="btn btn-success  col col-4  " value="{{$commandes3->count()}}" type="button" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
+                    <input class="btn btn-danger  col col-4  " value="{{$commandes4->count()}}" type="button" wire:click="changetype('4')" name="categorie" id="inlineRadio2" >
+                    <input class="btn btn-orange text-white   col col-4 " value="{{$commandes5->count()}}"  type="button" wire:click="changetype('5')" name="categorie" >        
                 </div>
 
 
