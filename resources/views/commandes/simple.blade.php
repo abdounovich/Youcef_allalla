@@ -52,4 +52,3 @@
      </div>
     </div>
  @include('commandes.clientList') 
- <div class="mb-5"></div>
