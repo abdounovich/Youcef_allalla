@@ -28,11 +28,11 @@
             
 {{--             <input class="btn btn-dark btn-circle text-white " value="X"  type="button" wire:click="changetype('all')" name="categorie" >        
  --}}            <input class=" btn  badge-secondary   " value="{{$commandes1->count()}}" type="button" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
-                    <input class="badge  badge-primary rounded-circle    " value="{{$commandes2->count()}}" type="button" wire:click="changetype('2')" name="categorie" id="inlineRadio2" >
-                    <input class="btn btn-warning rounded-circle    " value="{{$commandes6->count()}}" type="button" wire:click="changetype('6')" name="categorie" id="inlineRadio1" >
-                    <input class="btn btn-success rounded-circle    " value="{{$commandes3->count()}}" type="button" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
-                    <input class="btn btn-danger  rounded-circle   " value="{{$commandes4->count()}}" type="button" wire:click="changetype('4')" name="categorie" id="inlineRadio2" >
-                    <input class="btn btn-orange rounded-circle text-white    col col-2 " value="{{$commandes5->count()}}"  type="button" wire:click="changetype('5')" name="categorie" >        
+                    <input class="btn  badge-primary  " value="{{$commandes2->count()}}" type="button" wire:click="changetype('2')" name="categorie" id="inlineRadio2" >
+                    <input class="btn  badge-warning " value="{{$commandes6->count()}}" type="button" wire:click="changetype('6')" name="categorie" id="inlineRadio1" >
+                    <input class="btn  badge-success " value="{{$commandes3->count()}}" type="button" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
+                    <input class="btn  badge-danger  " value="{{$commandes4->count()}}" type="button" wire:click="changetype('4')" name="categorie" id="inlineRadio2" >
+                    <input class="btn  badge-orange text-white    col col-2 " value="{{$commandes5->count()}}"  type="button" wire:click="changetype('5')" name="categorie" >        
                 </div>
 
 
