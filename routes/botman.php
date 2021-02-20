@@ -740,3 +740,8 @@ $bot->typesAndWaits(1);
 
             
         });
+
+
+        $botman->hears('Hello', function($bot) {
+            $bot->startConversation(new profileConversation);
+        });
