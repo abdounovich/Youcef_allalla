@@ -24,7 +24,7 @@
       </p>
 
         
-         <div class="  text-white my-3">
+         <div class=" text center  text-white my-3">
             
 {{--             <input class="btn btn-dark btn-circle text-white " value="X"  type="button" wire:click="changetype('all')" name="categorie" >        
  --}}            <input class="btn btn-secondary col col-3 m-1  " value="{{$commandes1->count()}}" type="button" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
