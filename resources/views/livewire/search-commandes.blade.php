@@ -5,7 +5,7 @@
 
     <p>
         <div class="row ml-0">
-        <a class="btn btn-info col col-3" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <a class="btn btn-info col ml-1 col-3" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
              <i class="fa fa-filter"></i> @if ($categorie=='0' OR $categorie=="all")
              Filtrer
             
@@ -14,7 +14,7 @@
             
 
                 
-             <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control col col-8 ml-2" 
+             <input type="search" wire:model.bounce.500ms="query" name="query" class="form-control col col-8 ml-3" 
              placeholder="Rechercher">
         </div>
       @if ($commandes->count()=="0")
