@@ -70,13 +70,16 @@ class SearchCommandes extends Component
         return view('livewire.search-commandes');
     }
 
-  /*  public function mount(){
-    $this->commandes=Commande::orderBy('created_at', 'desc')->get()
-    ->take($this->TakeLimit);
+   public function mount(){
+    $this->commandes1=Commande::whereType("1")->get();
+    $this->commandes2=Commande::whereType("2")->get();
+    $this->commandes3=Commande::whereType("3")->get();
+    $this->commandes4=Commande::whereType("4")->get();
+    $this->commandes5=Commande::whereType("5")->get();
+    $this->commandes6=Commande::whereType("6")->get();
 
-    
     return view('livewire.search-commandes');
 
 }  
-  */
+
 }

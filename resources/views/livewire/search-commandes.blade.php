@@ -27,12 +27,12 @@
          <div class=" text-center my-3">
             
 {{--             <input class="btn btn-dark btn-circle text-white " value="X"  type="button" wire:click="changetype('all')" name="categorie" >        
- --}}            <input class="btn btn-secondary btn-circle " type="button" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
-                    <input class="btn btn-primary btn-circle " type="button" wire:click="changetype('2')" name="categorie" id="inlineRadio2" >
-                    <input class="btn btn-warning btn-circle " type="button" wire:click="changetype('6')" name="categorie" id="inlineRadio1" >
-                    <input class="btn btn-success btn-circle " type="button" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
-                    <input class="btn btn-danger btn-circle " type="button" wire:click="changetype('4')" name="categorie" id="inlineRadio2" >
-                    <input class="btn btn-orange btn-circle "  type="button" wire:click="changetype('5')" name="categorie" >        
+ --}}            <input class="btn btn-secondary btn-circle " value="{{$commandes1->count()}}" type="button" wire:click="changetype('1')" name="categorie" id="inlineRadio1" >
+                    <input class="btn btn-primary btn-circle " value="{{$commandes2->count()}}" type="button" wire:click="changetype('2')" name="categorie" id="inlineRadio2" >
+                    <input class="btn btn-warning btn-circle " value="{{$commandes6->count()}}" type="button" wire:click="changetype('6')" name="categorie" id="inlineRadio1" >
+                    <input class="btn btn-success btn-circle " value="{{$commandes3->count()}}" type="button" wire:click="changetype('3')" name="categorie" id="inlineRadio1" >
+                    <input class="btn btn-danger btn-circle " value="{{$commandes4->count()}}" type="button" wire:click="changetype('4')" name="categorie" id="inlineRadio2" >
+                    <input class="btn btn-orange btn-circle " value="{{$commandes5->count()}}"  type="button" wire:click="changetype('5')" name="categorie" >        
                 </div>
 
 
