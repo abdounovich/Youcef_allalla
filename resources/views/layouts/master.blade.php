@@ -65,7 +65,7 @@
     
 
     @livewireScripts
-    <nav class="navbar fixed-bottom navbar-expand-lg navbar-light bg-info">
+    <nav class="navbar fixed-bottom navbar-expand navbar-light bg-info">
      
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
