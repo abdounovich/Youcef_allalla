@@ -504,7 +504,7 @@ $botman->hears('slectedTailleComplexe([0-9]+)', function ( $bot,$number5) {
 
         }
         if ($commandes2->count()>"0") {
-            $cmd_array[]=Button::create(" 🟢 مؤكدة".' ('.$commandes2->count().")")->value("CommandeByType2");
+            $cmd_array[]=Button::create(" 🆗 مؤكدة".' ('.$commandes2->count().")")->value("CommandeByType2");
 
         }
         if ($commandes6->count()>"0") {
