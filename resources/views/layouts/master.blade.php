@@ -66,10 +66,10 @@
 
     @livewireScripts
 <footer class="fixed-bottom">
-  <div class="d-flex flex-row bd-highlight mb-3">
-    <div class="p-2 bd-highlight">Flex item 1</div>
-    <div class="p-2 bd-highlight">Flex item 2</div>
-    <div class="p-2 bd-highlight">Flex item 3</div>
+  <div class="d-flex justify-content-center  mb-0">
+    <div class="p-2 bg-info text-white">Flex item 1</div>
+    <div class="p-2 bg-info text-white">Flex item 2</div>
+    <div class="p-2 bg-info text-white">Flex item 3</div>
   </div>
 </footer>
 </body>
