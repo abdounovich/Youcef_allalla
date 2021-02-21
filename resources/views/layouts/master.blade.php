@@ -65,8 +65,8 @@
     
 
     @livewireScripts
-    <div class="d-flex fixed-bottom flex-row bg-info mb-0">
-      <div class="p-4 "><a href="/"><i class="text-white fa fa-home"></i></a></div>
+    <div class="d-flex fixed-bottom flex-center bg-info mb-0">
+      <div class="p-4 "><a href="/"><i class="text-white fa fa-2x fa-home"></i></a></div>
       <div class="p-4 "><a href="/"><i class="text-white fa fa-users"></i></a></div>
       <div class="p-4 "><a href="/"><i class="text-white fa  fa-shopping-cart"></i></a></div>
       <div class="p-4 "><a href="/"><i class="text-white fa  fa-list-alt"></i></a></div>
