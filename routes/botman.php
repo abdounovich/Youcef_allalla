@@ -542,8 +542,13 @@ if (empty($cmd_array)) {
     });
     
 $botman->hears('CommandeByType([0-9]+)', function ( $bot,$number7) {
-
-    $commandes=Commande::whereType($number7)->get();
+    $bot->typesAndWaits(1);
+    $user = $bot->getUser();
+    $firstname = $user->getFirstname();
+    $lastname = $user->getLastname();
+    $full_name=$firstname.'-'.$lastname;
+    $client=Client::whereFacebook($full_name)->first();
+    $commandes=Commande::where("client_id",$client->id)->whereType($number7)->get();
     
 
 
