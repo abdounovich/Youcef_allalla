@@ -501,19 +501,19 @@ $botman->hears('slectedTailleComplexe([0-9]+)', function ( $bot,$number5) {
         $cmd_array=array();
 
         if ($commandes1->count()>"0") {
-            $cmd_array[]=Button::create("طلبيات غير مؤكدة".' ('.$commandes1->count().")")->value("CommandeByType1");
+            $cmd_array[]=Button::create(" غير مؤكدة".' ('.$commandes1->count().")")->value("CommandeByType1");
 
         }
         if ($commandes2->count()>"0") {
-            $cmd_array[]=Button::create("طلبيات مؤكدة".' ('.$commandes2->count().")")->value("CommandeByType2");
+            $cmd_array[]=Button::create(" مؤكدة".' ('.$commandes2->count().")")->value("CommandeByType2");
 
         }
         if ($commandes6->count()>"0") {
-            $cmd_array[]=Button::create("  طلبيات في الطريق".' ('.$commandes6->count().")")->value("CommandeByType6");
+            $cmd_array[]=Button::create(" قيد التوصيل ".' ('.$commandes6->count().")")->value("CommandeByType6");
 
         }
         if ($commandes3->count()>"0") {
-            $cmd_array[]=Button::create("طلبيات مستلمة ".' ('.$commandes3->count().")")->value("CommandeByType3");
+            $cmd_array[]=Button::create(" مستلمة ".' ('.$commandes3->count().")")->value("CommandeByType3");
 
         }
         if ($commandes45->count()>"0") {
