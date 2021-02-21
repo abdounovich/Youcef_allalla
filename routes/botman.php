@@ -536,8 +536,8 @@ if ($cmd_array="") {
 );
 
 }        else{
-    $bot->reply(" لديك ".$total." طلبية    ");
-    $bot->typesAndWaits(1);            $bot->reply(Question::create(' إختر  نوع الطلبية ')->addButtons($cmd_array));
+    $bot->typesAndWaits(1);            
+    $bot->reply(Question::create(' إختر  نوع الطلبية ')->addButtons($cmd_array));
 }
     });
     
