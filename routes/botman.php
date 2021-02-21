@@ -495,7 +495,6 @@ $botman->hears('slectedTailleComplexe([0-9]+)', function ( $bot,$number5) {
         $commandes1=Commande::where("client_id",$client->id)->whereType("1")->get();
         $commandes2=Commande::where("client_id",$client->id)->whereType("2")->get();
         $commandes3=Commande::where("client_id",$client->id)->whereType("3")->get();
-        $commandes45=Commande::where("client_id",$client->id)->whereType("4")->orWhere("type","5")->get();
         $commandes6=Commande::where("client_id",$client->id)->whereType("6")->get();
 
         $cmd_array=array();
@@ -516,10 +515,7 @@ $botman->hears('slectedTailleComplexe([0-9]+)', function ( $bot,$number5) {
             $cmd_array[]=Button::create(" مستلمة ".' ('.$commandes3->count().")")->value("CommandeByType3");
 
         }
-        if ($commandes45->count()>"0") {
-            $cmd_array[]=Button::create("طلبيات ملغاة ".' ('.$commandes45->count().")")->value("CommandeByType4");
-
-        }
+       
 if (empty($cmd_array)) {
     $bot->reply("  لا توجد أي طلبية مسجلة بإسمك  😓  ");
     $bot->reply(ButtonTemplate::create('   يمكنك الآن تقديم أول طلبية بكل سهولة  ☺️ ')
