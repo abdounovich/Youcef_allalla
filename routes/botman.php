@@ -543,7 +543,7 @@ if (empty($cmd_array)) {
     
 $botman->hears('CommandeByType([0-9]+)', function ( $bot,$number7) {
 
-    $commandes=Commande::whereType($number6)->get();
+    $commandes=Commande::whereType($number7)->get();
     
 
 
