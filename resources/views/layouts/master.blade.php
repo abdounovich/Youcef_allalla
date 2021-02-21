@@ -66,12 +66,11 @@
 
     @livewireScripts
     <div class="d-flex fixed-bottom flex-center bg-info mb-0">
-      <div class="p-3 btn flex-fill "><a href="/"><i class="text-white fa  fa-home"></i></a></div>
+      <div class="p-3 btn flex-fill "><a href="/"><i  @if(request()->route('/') ) active @endif class="text-white fa  fa-home"></i></a></div>
       <div class="p-3 btn flex-fill "><a href="/"><i class="text-white fa  fa-users"></i></a></div>
       <div class="p-3 btn flex-fill"><a href="/"><i class="text-white fa   fa-shopping-cart"></i></a></div>
       <div class="p-3 btn flex-fill"><a href="/"><i class="text-white fa   fa-list-alt"></i></a></div>
       <div class="p-3 btn flex-fill"><a href="/"><i class="text-white fa   fa-list"></i></a></div>
-
     
     
     </div>
