@@ -66,7 +66,7 @@
 
     @livewireScripts
     <div class="d-flex fixed-bottom flex-center bg-info mb-0">
-      <div class="p-3 bg-white  text-center flex-fill"><a href="/"><i class="text-info fa   fa-home" style="font-size: 20px"></i></a></div>
+      <div class="p-3 bg-white  text-center flex-fill"><a href="/"><i class="text-info fa   fa-home" style="font-size: 22px"></i></a></div>
 
       <div class="p-3 btn flex-fill "><a href="/"><i class="text-white fa  fa-users" style="font-size: 20px"></i></a></div>
       <div class="p-3 btn flex-fill"><a href="/"><i class="text-white fa   fa-shopping-cart" style="font-size: 20px"></i></a></div>
