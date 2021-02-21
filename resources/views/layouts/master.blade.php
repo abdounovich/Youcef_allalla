@@ -70,6 +70,8 @@
       <div class="p-3 flex-fill "><a href="/"><i class="text-white fa  fa-users"></i></a></div>
       <div class="p-3 flex-fill"><a href="/"><i class="text-white fa   fa-shopping-cart"></i></a></div>
       <div class="p-3 flex-fill"><a href="/"><i class="text-white fa   fa-list-alt"></i></a></div>
+      <div class="p-3 flex-fill"><a href="/"><i class="text-white fa   fa-list"></i></a></div>
+
     
     
     </div>
