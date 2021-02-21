@@ -65,15 +65,18 @@
     
 
     @livewireScripts
-    <nav class="navbar fixed-bottom navbar-expand navbar-light bg-info">
-     
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link  text-white active" href="#"> <span class=" fa fa-home"></span></a>
-          <a class="nav-item nav-link" href="#">Features</a>
-          <a class="nav-item nav-link" href="#">Pricing</a>
-        </div>
-      </div>
-    </nav>
+    <div class="d-flex fixed-bottom flex-row bg-info mb-0">
+      <div class="p-4 "><a href="/"><i class="text-white fa fa-home"></i></a></div>
+      <div class="p-4 "><a href="/"><i class="text-white fa fa-users"></i></a></div>
+      <div class="p-4 "><a href="/"><i class="text-white fa  fa-shopping-cart"></i></a></div>
+      <div class="p-4 "><a href="/"><i class="text-white fa  fa-list-alt"></i></a></div>
+    
+    
+    </div>
 </body>
 </html>
+
+
+
+
+
