@@ -484,41 +484,75 @@ $botman->hears('slectedTailleComplexe([0-9]+)', function ( $bot,$number5) {
 
 
     $botman->hears('my_commandes', function ( $bot) {
+
+
         $bot->typesAndWaits(1);
         $user = $bot->getUser();
         $firstname = $user->getFirstname();
         $lastname = $user->getLastname();
         $full_name=$firstname.'-'.$lastname;
         $client=Client::whereFacebook($full_name)->first();
-        $commandes=Commande::where("client_id",$client->id)->where('type',1)
-        ->orWhere('type',2)->orWhere('type',3)->orWhere('type',6)
-        ->orderBy('created_at', 'ASC')->get();
-        $total=$commandes->count();
+        $commandes1=Commande::where("client_id",$client->id)->whereType("1")->get();
+        $commandes2=Commande::where("client_id",$client->id)->whereType("2")->get();
+        $commandes3=Commande::where("client_id",$client->id)->whereType("3")->get();
+        $commandes45=Commande::where("client_id",$client->id)->whereType("4")->orWhere("type","5")->get();
+        $commandes6=Commande::where("client_id",$client->id)->whereType("6")->get();
 
+        $cmd_array=array();
 
+        if ($commandes1->count()>"0") {
+            $cmd_array[]=Button::create("طلبيات غير مؤكدة".' ('.$commandes1->count().")")->value("CommandeByType1");
 
-
-        if ($total=="0") {
-            $bot->reply("  لا توجد أي طلبية مسجلة بإسمك  😓  ");
-           $bot->reply(ButtonTemplate::create('   يمكنك الآن تقديم أول طلبية بكل سهولة  ☺️ ')
-->addButton(ElementButton::create('  🛒 تصفح المنتجات   ')
-	    ->type('postback')
-	    ->payload('show_me_products')
-    )
-    ->addButton(ElementButton::create(' 👨‍🏫 كيفية الشراء')
-    ->type('postback')
-    ->payload('steps')	)
-	->addButton(ElementButton::create(' 💬 إستفسار ')
-    ->url('https://www.messenger.com/t/merahi.adjalile')
-	)
-);
         }
+        if ($commandes2->count()>"0") {
+            $cmd_array[]=Button::create("طلبيات مؤكدة".' ('.$commandes2->count().")")->value("CommandeByType2");
+
+        }
+        if ($commandes6->count()>"0") {
+            $cmd_array[]=Button::create("  طلبيات في الطريق".' ('.$commandes6->count().")")->value("CommandeByType6");
+
+        }
+        if ($commandes3->count()>"0") {
+            $cmd_array[]=Button::create("طلبيات مستلمة ".' ('.$commandes3->count().")")->value("CommandeByType3");
+
+        }
+        if ($commandes45->count()>"0") {
+            $cmd_array[]=Button::create("طلبيات ملغاة ".' ('.$commandes45->count().")")->value("CommandeByType4");
+
+        }
+if ($cmd_array="") {
+    $bot->reply("  لا توجد أي طلبية مسجلة بإسمك  😓  ");
+    $bot->reply(ButtonTemplate::create('   يمكنك الآن تقديم أول طلبية بكل سهولة  ☺️ ')
+->addButton(ElementButton::create('  🛒 تصفح المنتجات   ')
+ ->type('postback')
+ ->payload('show_me_products')
+)
+->addButton(ElementButton::create(' 👨‍🏫 كيفية الشراء')
+->type('postback')
+->payload('steps')	)
+->addButton(ElementButton::create(' 💬 إستفسار ')
+->url('https://www.messenger.com/t/merahi.adjalile')
+)
+);
+
+}        else{
+    $bot->reply(" لديك ".$total." طلبية    ");
+    $bot->typesAndWaits(1);            $bot->reply(Question::create(' إختر  نوع الطلبية ')->addButtons($cmd_array));
+}
+    });
+    
+$botman->hears('CommandeByType([0-9]+)', function ( $bot,$number7) {
+
+    $commandes=Commande::whereType($number6)->get();
+    
 
 
-        else{
-$bot->reply(" لديك ".$total." طلبية    ");
-$bot->typesAndWaits(1);
 
+       
+      
+
+
+        
         foreach ($commandes as $commande ) {
 
 
@@ -551,8 +585,6 @@ $bot->typesAndWaits(1);
     
         }
 
-           
-    }
 
     });
 
@@ -731,10 +763,7 @@ $bot->typesAndWaits(1);
 
 
 
-           $botman->hears('w([0-9]+)', function($bot,$number1) {
-
-            
-           });
+         
 
            $botman->hears('my_profile', function($bot) {
             $bot->startConversation(new profileConversation());
@@ -742,7 +771,3 @@ $bot->typesAndWaits(1);
             
         });
 
-
-        $botman->hears('Hello', function($bot) {
-            $bot->startConversation(new profileConversation);
-        });
