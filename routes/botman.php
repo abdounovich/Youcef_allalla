@@ -525,7 +525,7 @@ return;
             $cmd_array[]=Button::create("طلبيات ملغاة ".' ('.$commandes45->count().")")->value("CommandeByType4");
 
         }
-if ($cmd_array="") {
+if (empty($cmd_array)) {
     $bot->reply("  لا توجد أي طلبية مسجلة بإسمك  😓  ");
     $bot->reply(ButtonTemplate::create('   يمكنك الآن تقديم أول طلبية بكل سهولة  ☺️ ')
 ->addButton(ElementButton::create('  🛒 تصفح المنتجات   ')
