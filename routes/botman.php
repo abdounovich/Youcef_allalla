@@ -497,12 +497,7 @@ $botman->hears('slectedTailleComplexe([0-9]+)', function ( $bot,$number5) {
         $commandes3=Commande::where("client_id",$client->id)->whereType("3")->get();
         $commandes45=Commande::where("client_id",$client->id)->whereType("4")->orWhere("type","5")->get();
         $commandes6=Commande::where("client_id",$client->id)->whereType("6")->get();
-$bot->reply($commandes1->count());
-$bot->reply($commandes2->count());
-$bot->reply($commandes3->count());
-$bot->reply($commandes45->count());
-$bot->reply($commandes6->count());
-return;
+
         $cmd_array=array();
 
         if ($commandes1->count()>"0") {
