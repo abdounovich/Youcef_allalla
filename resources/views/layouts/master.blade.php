@@ -65,12 +65,15 @@
     
 
     @livewireScripts
-<footer class="fixed-bottom">
-  <div class="d-flex justify-content-center  mb-0">
-    <div class="p-2 bg-info text-white">Flex item 1</div>
-    <div class="p-2 bg-info text-white">Flex item 2</div>
-    <div class="p-2 bg-info text-white">Flex item 3</div>
-  </div>
-</footer>
+    <nav class="navbar fixed-bottom navbar-expand-lg navbar-light bg-info">
+     
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link  text-white active" href="#"> <span class=" fa fa-home"></span></a>
+          <a class="nav-item nav-link" href="#">Features</a>
+          <a class="nav-item nav-link" href="#">Pricing</a>
+        </div>
+      </div>
+    </nav>
 </body>
 </html>
