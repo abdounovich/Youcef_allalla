@@ -22,6 +22,8 @@
 
 <div class="mt-5"></div>
 @include('commandes.show')
+<div class="mt-5"></div>
+
 @section('footer')
 
 <div class="d-flex fixed-bottom flex-center bg-info mb-0">
