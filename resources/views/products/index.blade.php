@@ -71,7 +71,7 @@
     </div>
     <div class="p-3 text-center  flex-fill flex-fill ">
         <a href="/commandes">
-        <i class="text-wgite fa   fa-shopping-bag" style="font-size: 20px"></i>
+        <i class="text-white fa   fa-shopping-bag" style="font-size: 20px"></i>
         </a>
     </div>
     <div class="p-3 text-center  flex-fill">    
