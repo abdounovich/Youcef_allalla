@@ -61,7 +61,7 @@
         </a>
     </div>
     <div class="p-3   text-center flex-fill bg-light active border-top border-bottom border-info">
-        <a href="/produits">
+        <a href="/products">
             <i class="text-info fa   fa-cubes" style="font-size: 22px"></i>
         </a>
     </div>
