@@ -35,7 +35,7 @@
             <i class="text-white fa   fa-cubes" style="font-size: 22px"></i>
         </a>
     </div>
-    <div class="p-3  active text-center  bg-light    flex-fill border-top border-info ">
+    <div class="p-3  active text-center  bg-light    flex-fill border-top border-bottom border-info ">
         <a href="/clients"><i class="text-info fa   fa-users" style="font-size: 20px"></i>
         </a>
     </div>
