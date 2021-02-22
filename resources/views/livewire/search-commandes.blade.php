@@ -131,7 +131,8 @@
         @endif  >
             @include('commandes.simple')
         </div>
-
+        <br>
+        <br>
     @endforeach
     
 
@@ -143,5 +144,4 @@
         };
    </script>
     
-<br>
-<br></div>
+</div>
