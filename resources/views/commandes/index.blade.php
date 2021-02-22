@@ -42,7 +42,7 @@
         <a href="/clients"><i class="text-white fa   fa-users" style="font-size: 20px"></i>
         </a>
     </div>
-    <div class="p-3 text-center  flex-fill flex-fill bg-light active border-top border-bottom border-info">
+    <div class="p-3 text-center  flex-fill  bg-light active border-top border-bottom border-info">
         <a href="/commandes">
         <i class="text-info fa   fa-shopping-bag" style="font-size: 20px"></i>
         </a>
