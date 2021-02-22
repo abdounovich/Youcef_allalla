@@ -19,12 +19,31 @@
  
     font-family: 'Changa', sans-serif;
  }
+ #loading {width: 100%;height: 100%;top: 0px;left: 0px;position: fixed;display: block; z-index: 99}
+#loading-image {position: absolute;top: 40%;left: 45%;z-index: 100} 
+/* The side navigation menu */
+.sidebar a:hover:not(.active) {
+      background-color: #555;
+      color:black;
+  background-color:white;
+;
+  }
     </style>
         @livewireStyles
 
 </head>
   <body>
-  
+    <div id="loading" style="width: 100%; height:100%"  class="bg-white">
+      <img id="loading-image" width="150px" height="150px" src="http://www.abyssindetanger.com/wp-content/themes/spontaneous/img/global/loading-gallery.gif" alt="Loading..." />
+      </div> 
+   <script type="application/javascript">
+$(window).on("load",function(){
+     $("#loading").fadeOut(2000);
+});
+$(window).on("load",function(){
+     $("#loading-image").fadeOut(1500);
+});
+</script>
     <nav class="navbar navbar-expand-lg pt-3 pb-3 navbar-dark bg-info fixed-top ">
       <div class="container">
         <a class="navbar-brand" href="#">D-Zed Store</a>
