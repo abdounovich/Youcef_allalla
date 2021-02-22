@@ -65,8 +65,11 @@ img {
   
   <div class="tooltip clearfix mt-2 col col-12 bg-dark  mb-2 p-2 rounded " style="opacity: 0.9">
   <textarea class="form-control" name="" id="myInput"  rows="5" >
-    @foreach ($pending_clients as $pending_client){{$pending_client->phone}},@endforeach</textarea>
+    @foreach ($pending_clients as $pending_client){{$pending_client->phone}},@endforeach
   
+  </textarea>
+  <div class="my-5"></div>
+
   </div> </div>
   
   <script>
@@ -88,6 +91,5 @@ img {
   
   
   
-  <div class="my-5"></div>
   
   </div>
