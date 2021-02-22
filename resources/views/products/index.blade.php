@@ -48,6 +48,7 @@
 @include('products.addColor')
 @include('products.addComplexe')
 @include('products.show')
+<div class="mt-5"></div>
 
 
 
