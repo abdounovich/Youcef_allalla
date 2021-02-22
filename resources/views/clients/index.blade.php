@@ -41,7 +41,7 @@
         </a>
     </div>
     <div class="p-3 text-center  flex-fill">
-        <a href="/">
+        <a href="/commandes">
         <i class="text-white fa   fa-shopping-bag" style="font-size: 20px"></i>
         </a>
     </div>

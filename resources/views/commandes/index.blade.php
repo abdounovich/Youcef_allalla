@@ -36,13 +36,13 @@
             <i class="text-white fa   fa-cubes" style="font-size: 22px"></i>
         </a>
     </div>
-    <div class="p-3  text-center     flex-fill  ">
-        <a href="/clients"><i class="text-info fa   fa-users" style="font-size: 20px"></i>
+    <div class="p-3  text-center   ">
+        <a href="/clients"><i class="text-white fa   fa-users" style="font-size: 20px"></i>
         </a>
     </div>
-    <div class="p-3 text-center  flex-fill">
-        <a href="/">
-        <i class="text-white fa   fa-shopping-cart" style="font-size: 20px"></i>
+    <div class="p-3 text-center  flex-fill flex-fill bg-light active border-top border-bottom border-info">
+        <a href="/commandes">
+        <i class="text-info fa   fa-shopping-bag" style="font-size: 20px"></i>
         </a>
     </div>
     <div class="p-3 text-center  flex-fill">    
