@@ -54,41 +54,41 @@ img {
 
 
 
+
+@livewire('search-client')
 <div class="container mb-1">
 
-<div class="row">
-<button class="btn btn-info  mt-5 " onclick="myFunction()">
-
-    Copier</button> <span class="tooltiptext m-3" id="myTooltip"></span>
-
-<div class="tooltip clearfix mt-2 col col-12 bg-dark  mb-2 p-2 rounded " style="opacity: 0.9">
-<textarea class="form-control" name="" id="myInput"  rows="5" >
-  @foreach ($pending_clients as $pending_client){{$pending_client->phone}},@endforeach</textarea>
-
-</div> </div>
-
-<script>
-    function myFunction() {
-      var copyText = document.getElementById("myInput");
-      copyText.select();
-      copyText.setSelectionRange(0, 99999);
-      document.execCommand("copy");
+  <div class="row">
+  <button class="btn btn-info  mt-5 " onclick="myFunction()">
+  
+      Copier</button> <span class="tooltiptext m-3" id="myTooltip"></span>
+  
+  <div class="tooltip clearfix mt-2 col col-12 bg-dark  mb-2 p-2 rounded " style="opacity: 0.9">
+  <textarea class="form-control" name="" id="myInput"  rows="5" >
+    @foreach ($pending_clients as $pending_client){{$pending_client->phone}},@endforeach</textarea>
+  
+  </div> </div>
+  
+  <script>
+      function myFunction() {
+        var copyText = document.getElementById("myInput");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+        
+        var tooltip = document.getElementById("myTooltip");
+        tooltip.innerHTML = " Copied :)";
+      }
       
-      var tooltip = document.getElementById("myTooltip");
-      tooltip.innerHTML = " Copied :)";
-    }
-    
-    function outFunc() {
-      var tooltip = document.getElementById("myTooltip");
-      tooltip.innerHTML = "Copy to clipboard";
-    }
-    </script>
-
-
-
-
-
-</div>
-@livewire('search-client')
-
-<div class="m-5">..</div>
+      function outFunc() {
+        var tooltip = document.getElementById("myTooltip");
+        tooltip.innerHTML = "Copy to clipboard";
+      }
+      </script>
+  
+  
+  
+  
+  
+  </div>
+<div class="m-5"></div>
