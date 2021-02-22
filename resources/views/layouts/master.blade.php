@@ -41,7 +41,6 @@
    <script type="application/javascript">
    jQuery(document).ready(function($){
     $("#loading").fadeOut(2000);
-    $("#loading-image").fadeOut(5000);
 });
 
 
