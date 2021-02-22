@@ -35,15 +35,15 @@
             <i class="text-white fa   fa-cubes" style="font-size: 22px"></i>
         </a>
     </div>
-    <div class="p-3  active text-center  bg-light    flex-fill ">
+    <div class="p-3  active text-center  bg-light    flex-fill " style="border-width: 10px">
         <a href="/clients"><i class="text-info fa   fa-users" style="font-size: 20px"></i>
         </a>
     </div>
-    <div class="p-3  flex-fill"><a href="/">
+    <div class="p-3 text-center  flex-fill"><a href="/">
         <i class="text-white fa   fa-shopping-cart" style="font-size: 20px"></i>
     </a>
 </div>
-    <div class="p-3 flex-fill"><a href="/">
+    <div class="p-3 text-center  flex-fill"><a href="/">
         <i class="text-white fa   fa-list" style="font-size: 20px"></i>
     </a>
 </div>
