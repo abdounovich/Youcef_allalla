@@ -54,7 +54,7 @@ img {
 
 
 
-
+<div class="my-5"></div>
 @livewire('search-client')
 <div class="container mb-1">
 
@@ -91,4 +91,4 @@ img {
   
   
   </div>
-<div class="m-5"></div>
+<div class="my-5"></div>
