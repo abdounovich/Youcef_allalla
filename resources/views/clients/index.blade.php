@@ -22,8 +22,7 @@
 
 
 @include('clients.show')
-<div class="my-5"><p></p></div>
-
+<br><br>
 @section('footer')
 <div class="mt-5"></div>
 
