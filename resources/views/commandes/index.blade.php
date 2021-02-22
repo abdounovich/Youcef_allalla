@@ -24,7 +24,7 @@
 
 @section('footer')
 
-<div class="my-5"></div>
+<div class="mt-5"></div>
 
 <div class="d-flex fixed-bottom flex-center bg-info mb-0">
 
