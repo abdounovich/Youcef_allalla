@@ -25,7 +25,9 @@
 <div class="mt-5"></div>
 
 @section('footer')
-
+<br>
+<br>
+<br><br><br>
 <div class="d-flex fixed-bottom flex-center bg-info mb-0">
 
     <div class="p-3   text-center flex-fill">
@@ -53,5 +55,6 @@
         </a>
     </div>
   </div>
+  
 @endsection
 @stop
