@@ -68,7 +68,6 @@ img {
     @foreach ($pending_clients as $pending_client){{$pending_client->phone}},@endforeach
   
   </textarea>
-  <div class="my-5"><p></p></div>
 
   </div> </div>
   
