@@ -127,7 +127,11 @@ public function askAddress(){
         $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
         $this->address = $answer->getText();
         $this->client->address=$this->address;
-        $this->askLivriason($this->wilaya);});
+        $this->key = array_search( $this->client->wilaya, get_object_vars($this->obj));
+
+        $this->WilayaNumber= substr($key, 1);
+
+        $this->askLivriason($this->WilayaNumber);});
 }
 public function askConfirmation($VariableLivraison){
           
