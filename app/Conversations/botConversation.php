@@ -136,7 +136,7 @@ public function askAddress(){
 
 
 
-public function askConfirmation(string $VariableLivraison){
+public function askConfirmation(){
           
 
     $this->bot->reply('   ☺ المرحلة الأخيرة  ');
@@ -166,7 +166,7 @@ public function askConfirmation(string $VariableLivraison){
     }
     $this->commande->total_price=$this->prix*$this->q;
     $this->lePrixProduits=$this->commande->total_price;
-    $this->lePrixLivraison=$VariableLivraison;
+    $this->lePrixLivraison="200";
     $this->LePrixTotal= $this->lePrixProduits+ $this->lePrixLivraison;
     $this->bot->reply('  ثمن البضاعة   : '.$this->lePrixProduits)." دج ";
     $this->bot->reply(' تكلفة التوصيل    : '.$this->lePrixLivraison)." دج ";
@@ -359,10 +359,10 @@ $this->ask($question5, function (Answer $answer) {
             
             if($answer->getValue() === 'home') {
 
-                $this>askConfirmation($this->home);
+                $this>askConfirmation(200);
 
             }else{
-                $this>askConfirmation($this->desk);
+                $this>askConfirmation(300);
 
 
             }
