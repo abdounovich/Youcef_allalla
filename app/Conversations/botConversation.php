@@ -359,10 +359,10 @@ $this->ask($question5, function (Answer $answer) {
             
             if($answer->getValue() === 'home') {
 
-                return $this>askConfirmation(200);
+                return $this->askConfirmation($this->home);
 
             }else{
-              return  $this>askConfirmation(300);
+              return  $this->askConfirmation($this->desk);
 
 
             }
