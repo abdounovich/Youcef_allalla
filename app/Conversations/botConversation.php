@@ -136,7 +136,7 @@ public function askAddress(){
 
 
 
-public function askConfirmation(){
+public function askConfirmation($LivrPrice){
           
 
     $this->bot->reply('   ☺ المرحلة الأخيرة  ');
@@ -166,7 +166,7 @@ public function askConfirmation(){
     }
     $this->commande->total_price=$this->prix*$this->q;
     $this->lePrixProduits=$this->commande->total_price;
-    $this->lePrixLivraison="200";
+    $this->lePrixLivraison=$LivrPrice;
     $this->LePrixTotal= $this->lePrixProduits+ $this->lePrixLivraison;
     $this->bot->reply('  ثمن البضاعة   : '.$this->lePrixProduits)." دج ";
     $this->bot->reply(' تكلفة التوصيل    : '.$this->lePrixLivraison)." دج ";
