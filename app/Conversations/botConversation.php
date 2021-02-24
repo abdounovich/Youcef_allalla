@@ -167,10 +167,10 @@ public function askConfirmation($LivrPrice){
     $this->commande->total_price=$this->prix*$this->q;
     $this->lePrixProduits=$this->commande->total_price;
     $this->lePrixLivraison=$this->LivrPrice;
-    $this->LePrixTotal= $this->lePrixProduits + $this->lePrixLivraison;
-    $this->bot->reply('  ثمن المنتوج  : '.$this->lePrixProduits)." دج ";
+/*     $this->LePrixTotal= $this->lePrixProduits + $this->lePrixLivraison;
+ */    $this->bot->reply('  ثمن المنتوج  : '.$this->lePrixProduits)." دج ";
     $this->bot->reply(' تكلفة التوصيل  : '.$this->lePrixLivraison)." دج ";
-    $question=Question::create( 'المبلغ الإجمالي  💵 : '.$this->LePrixTotal." دج ")->addButtons([
+    $question=Question::create( 'المبلغ الإجمالي  💵 : '.$this->lePrixLivraison." دج ")->addButtons([
         Button::create(' ❎ إلغاء الطلب')->value('NoCancel'),
         Button::create(' ✅ تأكيد الطلبية')->value('yes'),
     ]);
