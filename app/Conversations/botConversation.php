@@ -175,7 +175,6 @@ public function askConfirmation($LivrPrice){
         Button::create(' ✅ تأكيد الطلبية')->value('yes'),
     ]);
     $this->ask($question, function (Answer $answer) {
-    
         
         if($answer->getValue() === 'yes') {
     
