@@ -360,7 +360,7 @@ $this->ask($question5, function (Answer $answer) {
 $this->bot->reply("يمكن أن نرسل لك طلبيتك إلى منزلك أو يمكنك التنقل بنفسك إلى مكتب yalidine في ولايتك  ");
 $this->bot->reply(" سعر التوصيل إلى المنزل هو : ".$this->home ." دج ");
 $this->bot->reply(" سعر التوصيل إلى مكتب ياليدين في الولاية  هو : ".$this->desk ." دج ");
-        $question=Question::create( 'إختر طريقة التوصيل  : '.$this->commande->total_price." دج ")->addButtons([
+        $question=Question::create( 'إختر طريقة التوصيل  : ')->addButtons([
             Button::create(' إلى المنزل ')->value('home'),
             Button::create('  مكتب  Yalidine')->value('desk')
 
