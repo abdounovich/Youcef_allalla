@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1210cb7c33ca9ebff6e6504fc2e9210d",
+    "content-hash": "c9f0477b67c6d30498f2f213bbed2064",
     "packages": [
         {
             "name": "botman/botman",
@@ -87,16 +87,16 @@
         },
         {
             "name": "botman/driver-facebook",
-            "version": "1.11.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/botman/driver-facebook.git",
-                "reference": "3345db228acf167296a214c5d9da4eb486425ef6"
+                "reference": "3f08a5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/botman/driver-facebook/zipball/3345db228acf167296a214c5d9da4eb486425ef6",
-                "reference": "3345db228acf167296a214c5d9da4eb486425ef6",
+                "url": "https://api.github.com/repos/botman/driver-facebook/zipball/3f08a5c",
+                "reference": "3f08a5c",
                 "shasum": ""
             },
             "require": {
@@ -110,6 +110,7 @@
                 "mockery/mockery": "^1.0",
                 "phpunit/phpunit": "^5.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -8221,6 +8222,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "botman/driver-facebook": 20,
         "jrm2k6/cloudder": 20
     },
     "prefer-stable": true,
