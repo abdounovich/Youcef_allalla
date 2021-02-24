@@ -127,13 +127,16 @@ public function askAddress(){
         $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
         $this->address = $answer->getText();
         $this->client->address=$this->address;
-        $this->key = array_search( $this->client->wilaya, get_object_vars($this->obj));
+        $this->key = array_search($this->client->wilaya, get_object_vars($this->obj));
 
-        $this->WilayaNumber= substr($key, 1);
+        $this->WilayaNumber= substr($this->key, 1);
 
         $this->askLivriason($this->WilayaNumber);});
 }
-public function askConfirmation($VariableLivraison){
+
+
+
+public function askConfirmation(string $VariableLivraison){
           
 
     $this->bot->reply('   ☺ المرحلة الأخيرة  ');
