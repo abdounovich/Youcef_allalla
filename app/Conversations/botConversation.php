@@ -81,7 +81,7 @@ else {
         $this->ask($question, function (Answer $answer) {
             if ($answer->getValue() === 'yess') {
 
-                $this->askConfirmation();
+                $this->askLivriason();
                } else {                $this->askQuestion();
                }
                
@@ -127,9 +127,9 @@ public function askAddress(){
         $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
         $this->address = $answer->getText();
         $this->client->address=$this->address;
-        $this->askConfirmation();});
+        $this->askLivriason($this->wilaya);});
 }
-public function askConfirmation(){
+public function askConfirmation($VariableLivraison){
           
 
     $this->bot->reply('   ☺ المرحلة الأخيرة  ');
@@ -158,7 +158,12 @@ public function askConfirmation(){
         $this->prix=$this->remise->prix;
     }
     $this->commande->total_price=$this->prix*$this->q;
-    $question=Question::create( 'المبلغ الإجمالي  💵 : '.$this->commande->total_price." دج زائد مصاريف الشحن " .$this->home)->addButtons([
+    $this->lePrixProduits=$this->commande->total_price;
+    $this->lePrixLivraison=$VariableLivraison;
+    $this->LePrixTotal= $this->lePrixProduits+ $this->lePrixLivraison;
+    $this->bot->reply('  ثمن البضاعة   : '.$this->lePrixProduits)." دج ";
+    $this->bot->reply(' تكلفة التوصيل    : '.$this->lePrixLivraison)." دج ";
+    $question=Question::create( 'المبلغ الإجمالي  💵 : '.$this->LePrixTotal." دج ")->addButtons([
         Button::create(' ❎ إلغاء الطلب')->value('NoCancel'),
         Button::create(' ✅ تأكيد الطلبية')->value('yes'),
     ]);
@@ -230,32 +235,7 @@ public function askWilaya(){
 
 
 
-            $url = "https://api.yalidine.com/v1/deliveryfees/".$this->wilaya; // the wilayas endpoint
-            $api_id = "80153160526942779734"; // your api ID
-            $api_token = "np3A1Ezh8BjgNS2ivR139nsoewmmLXLUu7uSfeFVWKy5xfQRowFptHZx8O70Jr6C"; // your api token
-            $curl = curl_init();
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => $url,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => '',
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => 'GET',
-                CURLOPT_HTTPHEADER => array(
-                    'X-API-ID: '."80153160526942779734",
-                    'X-API-TOKEN: '."np3A1Ezh8BjgNS2ivR139nsoewmmLXLUu7uSfeFVWKy5xfQRowFptHZx8O70Jr6C"
-                ),
-            ));
-            
-            $response_json = curl_exec($curl);
-            curl_close($curl);
-            $responses = json_decode($response_json);
-            $this->home=$responses->data[0]->home_fee;
-            $this->desk=$responses->data[0]->desk_fee;
-            
-           
+
 
 
 ${"W".$this->wilaya}="W".$this->wilaya;
@@ -328,6 +308,60 @@ $this->ask($question5, function (Answer $answer) {
 
        
 
+    }
+
+
+    public function askLivriason($wil)
+    {
+
+        $url = "https://api.yalidine.com/v1/deliveryfees/".$wil; // the wilayas endpoint
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_HTTPHEADER => array(
+                'X-API-ID: '."80153160526942779734",
+                'X-API-TOKEN: '."np3A1Ezh8BjgNS2ivR139nsoewmmLXLUu7uSfeFVWKy5xfQRowFptHZx8O70Jr6C"
+            ),
+        ));
+        
+        $response_json = curl_exec($curl);
+        curl_close($curl);
+        $responses = json_decode($response_json);
+        $this->home=$responses->data[0]->home_fee;
+        $this->desk=$responses->data[0]->desk_fee;
+        
+      
+
+
+
+
+        $question=Question::create( 'إختر طريقة التوصيل  : '.$this->commande->total_price." دج ")->addButtons([
+            Button::create(' إلى المنزل '.$this->home." دج ")->value('home'),
+            Button::create('  مكتب  Yalidine'.$this->desk." دج ")->value('desk')
+
+        ]);
+        $this->ask($question, function (Answer $answer) {
+        
+            
+            if($answer->getValue() === 'home') {
+
+                $this>askConfirmation($this->home);
+
+            }else{
+                $this>askConfirmation($this->desk);
+
+
+            }
+        
+        });
+        
     }
     /**
      * Start the conversation
@@ -453,20 +487,13 @@ $this->jsonobj = '{
 "W29":"معسكر",
 "W43":"ميلة",
 "W30":"ورقلة",
-"W31":"وهران"}';
+"W31":"وهران"
+}';
 
 $this->obj = json_decode($this->jsonobj);
 
 
         
-     
         $this->askQuantity();
     }
-
-    public function askLivraison()
-    {
-    }
-
-
 }
-
