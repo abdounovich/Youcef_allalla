@@ -166,7 +166,7 @@ public function askConfirmation($LivrPrice){
     }
     $this->commande->total_price=$this->prix*$this->q;
     $this->lePrixProduits=$this->commande->total_price;
-    $this->lePrixLivraison=$this->LivrPrice;
+    $this->lePrixLivraison=$LivrPrice;
     $this->LePrixTotal= $this->lePrixProduits + $this->lePrixLivraison;
     $this->bot->reply('  ثمن المنتوج  : '.$this->lePrixProduits)." دج ";
     $this->bot->reply(' تكلفة التوصيل  : '.$this->lePrixLivraison)." دج ";
