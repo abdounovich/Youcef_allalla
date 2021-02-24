@@ -81,8 +81,17 @@ else {
         $this->ask($question, function (Answer $answer) {
             if ($answer->getValue() === 'yess') {
 
-                $this->askLivriason();
-               } else {                $this->askQuestion();
+
+
+                $this->key = array_search($this->client->wilaya, get_object_vars($this->obj));
+
+                $this->WilayaNumber= substr($this->key, 1);
+        
+                $this->askLivriason($this->WilayaNumber);
+
+               } else {                
+                   
+                $this->askQuestion();
                }
                
 
