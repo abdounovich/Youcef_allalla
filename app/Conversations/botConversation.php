@@ -158,7 +158,7 @@ public function askConfirmation(){
         $this->prix=$this->remise->prix;
     }
     $this->commande->total_price=$this->prix*$this->q;
-    $question=Question::create( 'المبلغ الإجمالي  💵 : '.$this->commande->total_price." دج ")->addButtons([
+    $question=Question::create( 'المبلغ الإجمالي  💵 : '.$this->commande->total_price." دج زائد مصاريف الشحن " .$this->home)->addButtons([
         Button::create(' ❎ إلغاء الطلب')->value('NoCancel'),
         Button::create(' ✅ تأكيد الطلبية')->value('yes'),
     ]);
@@ -230,7 +230,32 @@ public function askWilaya(){
 
 
 
-
+            $url = "https://api.yalidine.com/v1/deliveryfees/".$this->wilaya; // the wilayas endpoint
+            $api_id = "80153160526942779734"; // your api ID
+            $api_token = "np3A1Ezh8BjgNS2ivR139nsoewmmLXLUu7uSfeFVWKy5xfQRowFptHZx8O70Jr6C"; // your api token
+            $curl = curl_init();
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => $url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => '',
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => 'GET',
+                CURLOPT_HTTPHEADER => array(
+                    'X-API-ID: '."80153160526942779734",
+                    'X-API-TOKEN: '."np3A1Ezh8BjgNS2ivR139nsoewmmLXLUu7uSfeFVWKy5xfQRowFptHZx8O70Jr6C"
+                ),
+            ));
+            
+            $response_json = curl_exec($curl);
+            curl_close($curl);
+            $responses = json_decode($response_json);
+            $this->home=$responses->data[0]->home_fee;
+            $this->desk=$responses->data[0]->desk_fee;
+            
+           
 
 
 ${"W".$this->wilaya}="W".$this->wilaya;
@@ -434,6 +459,14 @@ $this->obj = json_decode($this->jsonobj);
 
 
         
+     
         $this->askQuantity();
     }
+
+    public function askLivraison()
+    {
+    }
+
+
 }
+
