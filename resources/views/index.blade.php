@@ -52,7 +52,7 @@ background: linear-gradient(90deg, #2C73D2 0%, #0089BA 100%);}</style>
         <a class="h4" href="{{route('commandes')}}"> 
         <p class="card-text text-info">
         <i class=" p-2 mr-2 fa fa-shopping-cart ">
-        </i>Commandessss : {{$commandes->count()}} ({{$InactivCommandes->count()}})
+        </i>Commandes : {{$commandes->count()}} ({{$InactivCommandes->count()}})
         </p>
         </a>
   
