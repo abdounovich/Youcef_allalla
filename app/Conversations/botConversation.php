@@ -288,11 +288,12 @@ public function getTicket(){
                                      <div class="ticket-title" style="margin-top: -10px">
                                         سعر البضاعة 
                                      
-                                         <span style="color: black; float:left"> دج <b>'.$this->commande2->total_price.'</b>  </span>
-                                     </div>
+                                         <span style="color: black; float:left">  <b>'.$this->commande2->total_price.'</b>  </span>
+                                     دج</div>
                                           <div class="ticket-title">
                                              كلفة التوصيل                                      
-                                             <span style="color: black; float:left"> دج <b>'.$this->valOftype.'</b>  </span>
+                                             <span style="color: black; float:left">  <b>'.$this->valOftype.'</b>  </span>
+                                             دج
                                          </div>
                                              <div class="ticket-title" style="padding-top:10px; margin-top:15px; border-top: 2px dashed #ccc;" >
                                          السعر الإجمالي                                      
@@ -309,7 +310,7 @@ public function getTicket(){
                                       </div>
                                       <!-- /.ticket-title -->
                                       <div class="ticket-info" >
-                                         '.$this->TypeOfLivraison.'</div>
+                                         '.$this->textOfType.'</div>
                                    
                                  </td>
                                  <!-- /.second-col -->
