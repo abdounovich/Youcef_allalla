@@ -292,7 +292,7 @@ public function getTicket(){
                                      </div>
                                           <div class="ticket-title">
                                              كلفة التوصيل                                      
-                                             <span style="color: black; float:left"> <b>'.$this->valOfType.'</b> دج </span>
+                                             <span style="color: black; float:left"> <b></b> دج </span>
                                          </div>
                                              <div class="ticket-title" style="padding-top:10px; margin-top:15px; border-top: 2px dashed #ccc;" >
                                          السعر الإجمالي                                      
