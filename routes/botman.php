@@ -499,22 +499,18 @@ $botman->hears('slectedTailleComplexe([0-9]+)', function ( $bot,$number5) {
 
         $cmd_array=array();
 
-        if ($commandes1->count()>"0") {
             $cmd_array[]=Button::create("⚠ غير مؤكدة".' ('.$commandes1->count().")")->value("CommandeByType1");
 
-        }
-        if ($commandes2->count()>"0") {
+       
             $cmd_array[]=Button::create(" 🆗 مؤكدة".' ('.$commandes2->count().")")->value("CommandeByType2");
 
-        }
-        if ($commandes6->count()>"0") {
+        
             $cmd_array[]=Button::create(" 🚚 قيد التوصيل ".' ('.$commandes6->count().")")->value("CommandeByType6");
 
-        }
-        if ($commandes3->count()>"0") {
+       
             $cmd_array[]=Button::create(" ✅ مستلمة ".' ('.$commandes3->count().")")->value("CommandeByType3");
 
-        }
+        
        
 if (empty($cmd_array)) {
     $bot->reply("  لا توجد أي طلبية مسجلة بإسمك  😓  ");

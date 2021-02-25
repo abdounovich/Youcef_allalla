@@ -112,18 +112,18 @@ border-right: 2px dashed #ccc;
 padding: 10px;
 text-align: right;
 vertical-align: top;
-width: 250px;
+width: 900px;
 }
 .ticket-ticket-details .second-col {
 padding: 4px 0px 0px 32px;
 text-align: right;
-width: 150px;
+width: 90px;
 }
 .ticket-ticket-details .third-col {
     padding: 4px 0px 0px 32px;
 
 text-align: right;
-width: 100px;
+width: 90px;
 
 }
 .ticket-qr-code{
@@ -238,7 +238,7 @@ a[href]:after, abbr[title]:after {
                                         <div class="ticket-title" style="padding-top:10px; margin-top:15px; border-top: 2px dashed #ccc;" >
                                     السعر الإجمالي                                      
                             
-                                    <b><span style="color: black;background-color:rgb(250, 235, 29);padding:5px; margin-top:-5px; float:left">'.$this->LePrixTotal.'</span></div>
+                                    <b><span style="color: black;background-color:rgb(250, 235, 29);padding:5px; margin-top:-5px; float:left">4535 DZD</span></div>
                                     </b>                              
                                                                    
                                 <!-- /.ticket-info -->
