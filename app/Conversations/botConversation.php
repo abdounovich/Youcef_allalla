@@ -571,7 +571,7 @@ public function finalStep(){
                     ->value('show_me_products'),
                     
                     ])) ;
-;
+
   $this->getTicket();
 
 }
