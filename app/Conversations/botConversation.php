@@ -346,8 +346,7 @@ public function getTicket(){
 ';
 
 $css = 'body {
-font-family: sans-serif;
-background-color: #fff;
+    font-family: "Almarai", sans-serif;background-color: #fff;
 color: #535353;
 margin: 5px;
 }
@@ -374,7 +373,7 @@ line-height: 21px;
 }
 .ticket-wrapper {
 border: 2px solid #999;
-border-top: 12px solid goldenrod;
+border-top: 12px solid rgb(250, 235, 29);
 margin: 15px auto 0;
 padding-bottom: 15px;
 width: 650px;
@@ -392,8 +391,9 @@ text-align: center;
 vertical-align: middle;
 }
 .ticket-logo img {
-height: 189px;
-width: 38px;
+height: 150px;
+width: 150px;
+margin: 0px;
 }
 .ticket-name-div {
 border-bottom: 2px dotted #ccc;
@@ -421,12 +421,12 @@ text-align: left;
 }
 .ticket-event-details .first-col {
 text-align: left;
-width: 40%;
+width: 50%;
 }
 .ticket-event-details .second-col {
 text-align: right;
 vertical-align: top;
-width: 60%;
+width: 50%;
 }
 .ticket-venue {
 color: #535353;
@@ -442,23 +442,27 @@ text-align: left;
 }
 .ticket-ticket-details .first-col {
 border-right: 2px dashed #ccc;
-padding-top: 4px;
-text-align: left;
+padding: 10px;
+text-align: right;
 vertical-align: top;
-width: 150px;
+width: 250px;
 }
 .ticket-ticket-details .second-col {
 padding: 4px 0px 0px 32px;
 text-align: right;
-width: 225px;
+width: 150px;
 }
 .ticket-ticket-details .third-col {
+    padding: 4px 0px 0px 32px;
+
 text-align: right;
+width: 100px;
+
 }
 .ticket-qr-code{
-height: 95px;
-margin-top: 10px;
-width: 95px;
+height: 50px;
+
+width: 50px;
 }
 /* Print specific styles */
 @media print {
@@ -486,8 +490,7 @@ a[href]:after, abbr[title]:after {
 }
 @page {
     margin: 1cm;
-}
-}';
+}}';
 $google_fonts = "Roboto";
     
     $data = array('html'=>$html,
