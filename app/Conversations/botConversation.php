@@ -288,17 +288,17 @@ public function getTicket(){
                                      <div class="ticket-title" style="margin-top: -10px">
                                         سعر البضاعة 
                                      
-                                         <span style="color: black; float:left">  <b>'.$this->commande2->total_price.'</b>  </span>
-                                     دج</div>
+                                         دج<span style="color: black; float:left">  <b>'.$this->commande2->total_price.'</b>  </span>
+                                     </div>
                                           <div class="ticket-title">
                                              كلفة التوصيل                                      
-                                             <span style="color: black; float:left">  <b>'.$this->valOftype.'</b>  </span>
-                                             دج
+                                             دج<span style="color: black; float:left">  <b>'.$this->valOftype.'</b>  </span>
+                                             
                                          </div>
                                              <div class="ticket-title" style="padding-top:10px; margin-top:15px; border-top: 2px dashed #ccc;" >
                                          السعر الإجمالي                                      
                                  
-                                         <b><span style="color: black;background-color:rgb(250, 235, 29);padding:5px; margin-top:-5px; float:left">دج '.$this->LePrixTotal.'</span></div>
+                                         دج<b><span style="color: black;background-color:rgb(250, 235, 29);padding:5px; margin-top:-5px; float:left"> '.$this->LePrixTotal.'</span></div>
                                          </b>                              
                                                                         
                                      <!-- /.ticket-info -->
