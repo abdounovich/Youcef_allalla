@@ -20,6 +20,10 @@ use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 use BotMan\Drivers\Facebook\Extensions\ElementButton;
 use BotMan\Drivers\Facebook\Extensions\ButtonTemplate;
 use BotMan\Drivers\Facebook\Extensions\GenericTemplate;
+use BotMan\BotMan\Messages\Attachments\Image;
+use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
+
+
 
 
 
@@ -82,6 +86,19 @@ $bot->reply(ButtonTemplate::create('   🤖  كيف يمكنني خدمتك ؟  
 
 
 });
+
+
+      $botman->hears('i', function ( $bot) {
+
+        $this->attachment = new Image($this->photo, [
+            'custom_payload' => true,
+        ]);
+        
+        // Build message object
+        $this->message = OutgoingMessage::create('This is my text')
+                    ->withAttachment('https://hcti.io/v1/image/de8c2661-7c41-4fc3-a2b6-1aacd7b44a3c');
+        $this->bot->reply($this->message); 
+       });
 
 
 
