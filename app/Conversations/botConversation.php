@@ -271,7 +271,7 @@ public function getTicket(){
                                         TICKET #
                                     </div>
                                     <!-- /.ticket-title -->
-                                    <div class="ticket-info">
+                                    <div class="ticket-info">'.$this->commande2->slug.'
                                    
                                     </div>
                                     <!-- /.ticket-info -->
