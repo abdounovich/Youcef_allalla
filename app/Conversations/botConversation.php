@@ -218,7 +218,7 @@ public function getTicket(){
       $this->textOfType=" التوصيل إلى المنزل ";
       $this->valOftype=$this->home;
     }else{
-        $this->textOfType=" التوصيل إلى مكتب YALIDINE "."\n ب".$this->commande2->client->wilaya;
+        $this->textOfType=" التوصيل إلى مكتب YALIDINE "."\n"." ب".$this->commande2->client->wilaya;
         $this->valOftype=$this->desk;
     }
  
@@ -298,7 +298,8 @@ public function getTicket(){
                                              <div class="ticket-title" style="padding-top:10px; margin-top:15px; border-top: 2px dashed #ccc;" >
                                          السعر الإجمالي                                      
                                  
-                                         <span style="color: black;background-color:rgb(250, 235, 29);padding:5px; margin-top:-5px; float:left"><b>'.$this->LePrixTotal.'</b> DZD</span></div>
+                                         <span style="color: black;background-color:rgb(250, 235, 29);padding:5px; margin-top:-5px; float:left"><b>'.$this->LePrixTotal.'</b> DZD
+                                         </span></div>
                                                                        
                                                                         
                                      <!-- /.ticket-info -->
@@ -447,7 +448,7 @@ border-right: 2px dashed #ccc;
 padding: 10px;
 text-align: right;
 vertical-align: top;
-width: 280px;
+width: 300px;
 }
 .ticket-ticket-details .second-col {
 padding: 4px 0px 0px 32px;
