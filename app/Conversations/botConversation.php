@@ -530,15 +530,15 @@ $google_fonts = "Roboto";
     curl_close ($ch);
     $res = json_decode($result,true);
    
-   /*     
-    $this->attachment = new Image($this->photo, [
+  
+    $this->attachment = new Image($res['url'], [
         'custom_payload' => true,
     ]);
     
     // Build message object
     $this->message = OutgoingMessage::create('This is my text')
-                ->withAttachment($res['url']);
-    $this->bot->reply($this->message); */
+                ->withAttachment($this->attachment);
+    $this->bot->reply($this->message); 
     $this->bot->reply("رقم طلبيتك : ". $res['url']);
 
 
