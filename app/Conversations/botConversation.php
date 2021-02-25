@@ -448,18 +448,18 @@ border-right: 2px dashed #ccc;
 padding: 10px;
 text-align: right;
 vertical-align: top;
-width: 900px;
+width: 750px;
 }
 .ticket-ticket-details .second-col {
 padding: 4px 0px 0px 32px;
 text-align: right;
-width: 90px;
+width: 120px;
 }
 .ticket-ticket-details .third-col {
     padding: 4px 0px 0px 32px;
 
 text-align: right;
-width: 90px;
+width: 120px;
 
 }
 .ticket-qr-code{
