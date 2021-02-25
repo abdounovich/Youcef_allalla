@@ -221,8 +221,7 @@ public function getTicket(){
         $this->textOfType=" التوصيل إلى مكتب YALIDINE "."ب".$this->commande2->client->wilaya;
         $this->valOftype=$this->desk;
     }
-    $this->bot->reply($this->textOfType."/".$this->valOftype);
-    return;
+ 
      $html = '
      <!-- Start Ticket -->
      <div class="ticket-wrapper">
@@ -310,7 +309,7 @@ public function getTicket(){
                                       </div>
                                       <!-- /.ticket-title -->
                                       <div class="ticket-info" >
-                                         '.$this->TypeOfLivraison.'                                </div>
+                                         eeeeeeeeee                                </div>
                                    
                                  </td>
                                  <!-- /.second-col -->
