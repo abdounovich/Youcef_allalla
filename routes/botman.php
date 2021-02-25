@@ -88,18 +88,6 @@ $bot->reply(ButtonTemplate::create('   🤖  كيف يمكنني خدمتك ؟  
 });
 
 
-      $botman->hears('i', function ( $bot) {
-
-        $this->attachment = new Image($this->photo, [
-            'custom_payload' => true,
-        ]);
-        
-        // Build message object
-        $this->message = OutgoingMessage::create('This is my text')
-                    ->withAttachment('https://i.stack.imgur.com/7Ulsz.png');
-        $this->bot->reply($this->message); 
-       });
-
 
 
 $botman->fallback(function($bot) {
