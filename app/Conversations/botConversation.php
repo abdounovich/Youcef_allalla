@@ -221,7 +221,7 @@ public function getTicket(){
             <td class="first-col">
                 <!-- title -->
                 <div class="ticket-name-div">
-                    <span class="ticket-event-longtitle">'.$this->commande->product->nom.'</span>
+                    <span class="ticket-event-longtitle">'.$this->commande2->product->nom.'</span>
                 </div>
                 <!-- /.ticket-name-div -->
                 <!-- venue details start -->
@@ -230,7 +230,7 @@ public function getTicket(){
                         <tr>
                             <td class="first-col">
                                 <div class="ticket-info">
-                                   '.$this->commande->created_at->format('Y-m-d').'
+                                   '.$this->commande2->created_at->format('Y-m-d').'
                                 </div>
                                 <!-- /.ticket-info -->
                                 <div class="ticket-title">
@@ -238,7 +238,7 @@ public function getTicket(){
                                 </div>
                                 <!-- /.ticket-title -->
                                 <div class="ticket-info">
-                                    '.$this->commande->created_at->format('H:i').'
+                                    '.$this->commande2->created_at->format('H:i').'
 
                                 </div>
                                 <!-- /.ticket-info -->
@@ -246,7 +246,7 @@ public function getTicket(){
                             <!-- /.first-col -->
                             <td class="second-col">
                                 <div class="ticket-venue">
-                                    '.$this->commande->client->address.'
+                                    '.$this->commande2->client->address.'
                                 </div>
                                 <!-- /.ticket-venue -->
                                 <div class="ticket-venue">
@@ -254,7 +254,7 @@ public function getTicket(){
                                 </div>
                                 <!-- /.ticket-venue -->
                                 <div class="ticket-venue">
-                                    '.$this->commande->client->wilaya.'
+                                    '.$this->commande2->client->wilaya.'
                                 </div>
                                 <!-- /.ticket-venue -->
                             </td>
@@ -273,7 +273,7 @@ public function getTicket(){
                                 </div>
                                 <!-- /.ticket-title -->
                                 <div class="ticket-info">
-                                    '.$this->commande->slug.'
+                                    '.$this->commande2->slug.'
                                 </div>
                                 <!-- /.ticket-info -->
                                 <div class="ticket-title">
@@ -281,7 +281,7 @@ public function getTicket(){
                                 </div>
                                 <!-- /.ticket-title -->
                                 <div class="ticket-info">
-                                    '.$this->commande->total-price.'
+                                    '.$this->commande2->total_price.'
 
                                 </div>
                                 <!-- /.ticket-info -->
@@ -293,7 +293,7 @@ public function getTicket(){
                                 </div>
                                 <!-- /.ticket-title -->
                                 <div class="ticket-info">
-                                    '.$this->commande->client->facebook.'
+                                    '.$this->commande2->client->facebook.'
 
                                 </div>
                                 <!-- /.ticket-info -->
@@ -542,6 +542,8 @@ $google_fonts = "Roboto";
     $this->message = OutgoingMessage::create('This is my text')
                 ->withAttachment($this->attachment);
     $this->bot->reply($this->message); 
+       $this->commande2->save();
+    $this->client->save();
     $this->bot->reply("رقم طلبيتك : ". $res['url']);
 
 
@@ -554,8 +556,7 @@ public function finalStep(){
     $this->commande2=Commande::find( $this->commande->id);
     $this->key = array_search( $this->client->wilaya, get_object_vars($this->obj));
     $this->commande2->slug="CM".$this->commande->id."".$this->key;
-    $this->commande2->save();
-    $this->client->save();
+ 
     $this->bot->reply("    شكرا لك 😍 "); 
     $this->bot->reply("  لقد تم حفظ طلبك بنجاح  ✅");
   
