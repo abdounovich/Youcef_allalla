@@ -229,9 +229,9 @@ public function getTicket(){
                  <td class="first-col">
                      <!-- title -->
                      <div class="ticket-name-div">
-                         <span class="ticket-event-longtitle">NIKE JUST DO IT</span>
+                         <span class="ticket-event-longtitle">'.$this->commande2->product->nom.'</span>
                          <span style=" font-size:12px; margin:6px; float: right ">
-                             2020/02/20  10:05
+                         '.$this->commande2->created_at->format(" H:i    Y/m/d  ").'
                          </span> 
      
                      </div>
