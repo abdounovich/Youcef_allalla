@@ -20,7 +20,7 @@ use Illuminate\Database\Eloquent\Builder;
 
 Route::get('/test', function () {
 
-echo '<img class="ticket-qr-code" src="images/logo1.jpeg"/>';
+    return view('welcome');
 
 });
 
