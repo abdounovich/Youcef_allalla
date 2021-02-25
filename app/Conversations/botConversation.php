@@ -218,7 +218,7 @@ public function getTicket(){
       $this->textOfType=" التوصيل إلى المنزل ";
       $this->valOftype=$this->home;
     }else{
-        $this->textOfType=" التوصيل إلى مكتب YALIDINE "."ب".$this->commande2->client->wilaya;
+        $this->textOfType=" التوصيل إلى مكتب YALIDINE "."\n ب".$this->commande2->client->wilaya;
         $this->valOftype=$this->desk;
     }
  
@@ -298,8 +298,8 @@ public function getTicket(){
                                              <div class="ticket-title" style="padding-top:10px; margin-top:15px; border-top: 2px dashed #ccc;" >
                                          السعر الإجمالي                                      
                                  
-                                         <b><span style="color: black;background-color:rgb(250, 235, 29);padding:5px; margin-top:-5px; float:left">  '.$this->LePrixTotal.'</span></div>
-                                         </b> DZD                              
+                                         <span style="color: black;background-color:rgb(250, 235, 29);padding:5px; margin-top:-5px; float:left"><b>'.$this->LePrixTotal.'</b> DZD</span></div>
+                                                                       
                                                                         
                                      <!-- /.ticket-info -->
                                  </td>
@@ -680,9 +680,9 @@ $this->ask($question5, function (Answer $answer) {
       
 
         $this->bot->reply("يمكن أن نرسل لك طلبيتك إلى منزلك");
-$this->bot->reply(" أو يمكنك التنقل بنفسك إلى مكتب yalidine في ولاية   ".$this->client->wilaya);
+$this->bot->reply(" أو يمكنك التنقل بنفسك إلى مكتب YALIDINE في ولاية ".$this->client->wilaya);
 $this->bot->reply(" سعر التوصيل إلى المنزل هو : ".$this->home ." دج ");
-$this->bot->reply(" سعر التوصيل إلى مكتب Yalidine هو : ".$this->desk ." دج ");
+$this->bot->reply(" سعر التوصيل إلى مكتب YALIDINE هو : ".$this->desk ." دج ");
         $question=Question::create( ' 👇 إختر طريقة التوصيل   ')->addButtons([
             Button::create('  إلى المنزل 🏠 ')->value('home'),
             Button::create('   مكتب YALIDINE 🚗')->value('desk')
