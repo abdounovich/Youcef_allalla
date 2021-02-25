@@ -19,9 +19,8 @@ use Illuminate\Database\Eloquent\Builder;
 */
 
 Route::get('/test', function () {
-$str="lol";
-    $str = substr($str, 1);
-echo $str;
+
+echo '<img class="ticket-qr-code" src="images/logo1.jpeg"/>';
 
 });
 

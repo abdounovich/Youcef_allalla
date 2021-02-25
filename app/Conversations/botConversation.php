@@ -234,7 +234,7 @@ public function getTicket(){
                                 </div>
                                 <!-- /.ticket-info -->
                                 <div class="ticket-title">
-                                    TIME
+                                    الوقت 
                                 </div>
                                 <!-- /.ticket-title -->
                                 <div class="ticket-info">
@@ -247,10 +247,7 @@ public function getTicket(){
                                 <div class="ticket-venue">
                                     '.$this->commande2->client->address.'
                                 </div>
-                                <!-- /.ticket-venue -->
-                                <div class="ticket-venue">
-                                    Street
-                                </div>
+                              
                                 <!-- /.ticket-venue -->
                                 <div class="ticket-venue">
                                     '.$this->commande2->client->wilaya.'
@@ -268,7 +265,7 @@ public function getTicket(){
                         <tr>
                             <td class="first-col">
                                 <div class="ticket-title">
-                                    TICKET #
+                                    كود الطلبية  #
                                 </div>
                                 <!-- /.ticket-title -->
                                 <div class="ticket-info">
@@ -276,18 +273,18 @@ public function getTicket(){
                                 </div>
                                 <!-- /.ticket-info -->
                                 <div class="ticket-title">
-                                    PRICE
+                                    السعر الإجمالي 
                                 </div>
                                 <!-- /.ticket-title -->
                                 <div class="ticket-info">
-                                    '.$this->commande2->total_price.'
+                                    '.$this->commande2->total_price.' دج 
                                 </div>
                                 <!-- /.ticket-info -->
                             </td>
                             <!-- /.first-col -->
                             <td class="second-col">
                                 <div class="ticket-title">
-                                    TICKET OWNER
+                                   الطلبية خاصة ب: 
                                 </div>
                                 <!-- /.ticket-title -->
                                 <div class="ticket-info">
@@ -295,7 +292,7 @@ public function getTicket(){
                                 </div>
                                 <!-- /.ticket-info -->
                                 <div class="ticket-title">
-                                    TICKET TYPE
+                                   نوع التوصيل 
                                 </div>
                                 <!-- /.ticket-title -->
                                 <div class="ticket-info">
@@ -306,7 +303,7 @@ public function getTicket(){
                             <!-- /.second-col -->
                             <td class="third-col">
                                 <a href="#" target="_blank">
-                                <img class="ticket-qr-code" src="http://placehold.it/100x100?text=QR+Code" alt="qrcode" />
+                                <img class="ticket-qr-code" src="images/qr-code.png" alt=""/>
                                 </a>
                             </td>
                             <!-- /.third-col -->
@@ -317,8 +314,7 @@ public function getTicket(){
             </td>
             <!-- /.first-col -->
             <td class="ticket-logo">
-                <img src="http://placehold.it/40x190?text=Logo" alt="Logo" />
-            </td>
+            <img class="ticket-qr-code" src="images/logo1.jpeg" alt="logo"/>            </td>
             <!-- /.ticket-logo -->
         </tr>
     </table>
@@ -357,7 +353,7 @@ line-height: 21px;
 }
 .ticket-wrapper {
 border: 2px solid #999;
-border-top: 12px solid rgb(33,150,243);
+border-top: 12px solid goldenrod;
 margin: 15px auto 0;
 padding-bottom: 15px;
 width: 650px;
