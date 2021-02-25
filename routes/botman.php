@@ -96,7 +96,7 @@ $bot->reply(ButtonTemplate::create('   🤖  كيف يمكنني خدمتك ؟  
         
         // Build message object
         $this->message = OutgoingMessage::create('This is my text')
-                    ->withAttachment('https://hcti.io/v1/image/de8c2661-7c41-4fc3-a2b6-1aacd7b44a3c');
+                    ->withAttachment('https://i.stack.imgur.com/7Ulsz.png');
         $this->bot->reply($this->message); 
        });
 
