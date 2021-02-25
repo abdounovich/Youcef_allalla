@@ -309,7 +309,7 @@ public function getTicket(){
                                       </div>
                                       <!-- /.ticket-title -->
                                       <div class="ticket-info" >
-                                         eeeeeeeeee                                </div>
+                                                                        </div>
                                    
                                  </td>
                                  <!-- /.second-col -->
