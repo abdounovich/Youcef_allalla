@@ -298,8 +298,8 @@ public function getTicket(){
                                              <div class="ticket-title" style="padding-top:10px; margin-top:15px; border-top: 2px dashed #ccc;" >
                                          السعر الإجمالي                                      
                                  
-                                         <b><span style="color: black;background-color:rgb(250, 235, 29);padding:5px; margin-top:-5px; float:left"> DZD '.$this->LePrixTotal.'</span></div>
-                                         </b>                              
+                                         <b><span style="color: black;background-color:rgb(250, 235, 29);padding:5px; margin-top:-5px; float:left">  '.$this->LePrixTotal.'</span></div>
+                                         </b> DZD                              
                                                                         
                                      <!-- /.ticket-info -->
                                  </td>
@@ -452,7 +452,7 @@ width: 280px;
 .ticket-ticket-details .second-col {
 padding: 4px 0px 0px 32px;
 text-align: right;
-width: 150px;
+width: 180px;
 }
 .ticket-ticket-details .third-col {
     padding: 4px 0px 0px 32px;
