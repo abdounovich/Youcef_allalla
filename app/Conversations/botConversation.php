@@ -213,119 +213,122 @@ public function askConfirmation($LivrPrice){
 
 
 public function getTicket(){
-    $html = '
+     $html = '
     <!-- Start Ticket -->
-    <div class="ticket-wrapper">
-        <table class="ticket-table">
-            <tr>
-                <td class="first-col">
-                    <!-- title -->
-                    <div class="ticket-name-div">
-                        <span class="ticket-event-longtitle">Ticket Title</span>
-                    </div>
-                    <!-- /.ticket-name-div -->
-                    <!-- venue details start -->
-                    <div class="ticket-event-details">
-                        <table>
-                            <tr>
-                                <td class="first-col">
-                                    <div class="ticket-info">
-                                    
-                                    </div>
-                                    <!-- /.ticket-info -->
-                                    <div class="ticket-title">
-                                        الوقت
-                                    </div>
-                                    <!-- /.ticket-title -->
-                                    <div class="ticket-info">
-                                        8:00 AM
-                                    </div>
-                                    <!-- /.ticket-info -->
-                                </td>
-                                <!-- /.first-col -->
-                                <td class="second-col">
-                                    <div class="ticket-venue">
-                                        Places name
-                                    </div>
-                                    <!-- /.ticket-venue -->
-                                    <div class="ticket-venue">
-                                        Street
-                                    </div>
-                                    <!-- /.ticket-venue -->
-                                    <div class="ticket-venue">
-                                        City, State
-                                    </div>
-                                    <!-- /.ticket-venue -->
-                                </td>
-                                <!-- /.second-col -->
-                            </tr>
-                        </table>
-                    </div>
-                    <!-- /.ticket-event-details -->
-                    <!-- ticket details start -->
-                    <div class="ticket-ticket-details">
-                        <table>
-                            <tr>
-                                <td class="first-col">
-                                    <div class="ticket-title">
-                                        TICKET #
-                                    </div>
-                                    <!-- /.ticket-title -->
-                                    <div class="ticket-info">'.$this->commande2->slug.'
-                                   
-                                    </div>
-                                    <!-- /.ticket-info -->
-                                    <div class="ticket-title">
-                                        PRICE
-                                    </div>
-                                    <!-- /.ticket-title -->
-                                    <div class="ticket-info">
-                                        $00.00
-                                    </div>
-                                    <!-- /.ticket-info -->
-                                </td>
-                                <!-- /.first-col -->
-                                <td class="second-col">
-                                    <div class="ticket-title">
-                                        TICKET OWNER
-                                    </div>
-                                    <!-- /.ticket-title -->
-                                    <div class="ticket-info">
-                                        MERAHI ABDELDJALIL
-                                    </div>
-                                    <!-- /.ticket-info -->
-                                    <div class="ticket-title">
-                                        TICKET TYPE
-                                    </div>
-                                    <!-- /.ticket-title -->
-                                    <div class="ticket-info">
-                                        Showroom + VIP access
-                                    </div>
-                                    <!-- /.ticket-info -->
-                                </td>
-                                <!-- /.second-col -->
-                                <td class="third-col">
-                                    <a href="#" target="_blank">
-                                    <img class="ticket-qr-code" src="http://placehold.it/100x100?text=QR+Code" alt="qrcode" />
-                                    </a>
-                                </td>
-                                <!-- /.third-col -->
-                            </tr>
-                        </table>
-                    </div>
-                    <!-- /.ticket-ticket-details -->
-                </td>
-                <!-- /.first-col -->
-                <td class="ticket-logo">
-                    <img src="http://placehold.it/40x190?text=Logo" alt="Logo" />
-                </td>
-                <!-- /.ticket-logo -->
-            </tr>
-        </table>
-        <!-- /.ticket-table -->
-    </div>
-    <!-- /.ticket-wrapper -->
-    <!-- End Ticket -->
+<div class="ticket-wrapper">
+    <table class="ticket-table">
+        <tr>
+            <td class="first-col">
+                <!-- title -->
+                <div class="ticket-name-div">
+                    <span class="ticket-event-longtitle">'.$this->commande->product->nom.'</span>
+                </div>
+                <!-- /.ticket-name-div -->
+                <!-- venue details start -->
+                <div class="ticket-event-details">
+                    <table>
+                        <tr>
+                            <td class="first-col">
+                                <div class="ticket-info">
+                                   '.$this->commande->created_at->format('Y-m-d').'
+                                </div>
+                                <!-- /.ticket-info -->
+                                <div class="ticket-title">
+                                    TIME
+                                </div>
+                                <!-- /.ticket-title -->
+                                <div class="ticket-info">
+                                    '.$this->commande->created_at->format('H:i').'
+
+                                </div>
+                                <!-- /.ticket-info -->
+                            </td>
+                            <!-- /.first-col -->
+                            <td class="second-col">
+                                <div class="ticket-venue">
+                                    '.$this->commande->client->address.'
+                                </div>
+                                <!-- /.ticket-venue -->
+                                <div class="ticket-venue">
+                                    Street
+                                </div>
+                                <!-- /.ticket-venue -->
+                                <div class="ticket-venue">
+                                    '.$this->commande->client->wilaya.'
+                                </div>
+                                <!-- /.ticket-venue -->
+                            </td>
+                            <!-- /.second-col -->
+                        </tr>
+                    </table>
+                </div>
+                <!-- /.ticket-event-details -->
+                <!-- ticket details start -->
+                <div class="ticket-ticket-details">
+                    <table>
+                        <tr>
+                            <td class="first-col">
+                                <div class="ticket-title">
+                                    TICKET #
+                                </div>
+                                <!-- /.ticket-title -->
+                                <div class="ticket-info">
+                                    '.$this->commande->slug.'
+                                </div>
+                                <!-- /.ticket-info -->
+                                <div class="ticket-title">
+                                    PRICE
+                                </div>
+                                <!-- /.ticket-title -->
+                                <div class="ticket-info">
+                                    '.$this->commande->total-price.'
+
+                                </div>
+                                <!-- /.ticket-info -->
+                            </td>
+                            <!-- /.first-col -->
+                            <td class="second-col">
+                                <div class="ticket-title">
+                                    TICKET OWNER
+                                </div>
+                                <!-- /.ticket-title -->
+                                <div class="ticket-info">
+                                    '.$this->commande->client->facebook.'
+
+                                </div>
+                                <!-- /.ticket-info -->
+                                <div class="ticket-title">
+                                    TICKET TYPE
+                                </div>
+                                <!-- /.ticket-title -->
+                                <div class="ticket-info">
+                                    Showroom + VIP access
+                                </div>
+                                <!-- /.ticket-info -->
+                            </td>
+                            <!-- /.second-col -->
+                            <td class="third-col">
+                                <a href="#" target="_blank">
+                                <img class="ticket-qr-code" src="http://placehold.it/100x100?text=QR+Code" alt="qrcode" />
+                                </a>
+                            </td>
+                            <!-- /.third-col -->
+                        </tr>
+                    </table>
+                </div>
+                <!-- /.ticket-ticket-details -->
+            </td>
+            <!-- /.first-col -->
+            <td class="ticket-logo">
+                <img src="http://placehold.it/40x190?text=Logo" alt="Logo" />
+            </td>
+            <!-- /.ticket-logo -->
+        </tr>
+    </table>
+    <!-- /.ticket-table -->
+</div>
+<!-- /.ticket-wrapper -->
+<!-- End Ticket -->
 ';
 
 $css = 'body {
