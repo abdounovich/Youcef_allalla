@@ -292,7 +292,7 @@ public function getTicket(){
                                      </div>
                                           <div class="ticket-title">
                                              كلفة التوصيل                                      
-                                             <span style="color: black; float:left">  <b>'.$this->valOftype.' DZD </b>  </span>
+                                             <span style="color: black; float:left">  <b>'.$this->valOftype.'  </b> DZD </span>
                                              
                                          </div>
                                              <div class="ticket-title" style="padding-top:10px; margin-top:15px; border-top: 2px dashed #ccc;" >
@@ -447,7 +447,7 @@ border-right: 2px dashed #ccc;
 padding: 10px;
 text-align: right;
 vertical-align: top;
-width: 250px;
+width: 280px;
 }
 .ticket-ticket-details .second-col {
 padding: 4px 0px 0px 32px;
