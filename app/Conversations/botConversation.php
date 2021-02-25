@@ -530,7 +530,7 @@ $google_fonts = "Roboto";
     curl_close ($ch);
     $res = json_decode($result,true);
    
-    
+   /*     
     $this->attachment = new Image($this->photo, [
         'custom_payload' => true,
     ]);
@@ -538,8 +538,8 @@ $google_fonts = "Roboto";
     // Build message object
     $this->message = OutgoingMessage::create('This is my text')
                 ->withAttachment($res['url']);
-    $this->bot->reply($this->message);
-    $this->bot->reply("رقم طلبيتك : ". $this->commande2->slug);
+    $this->bot->reply($this->message); */
+    $this->bot->reply("رقم طلبيتك : ". $res['url']);
 
 
 }
