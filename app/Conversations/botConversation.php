@@ -229,7 +229,7 @@ public function getTicket(){
                         <table>
                             <tr>
                                 <td class="first-col">
-                                    <div class="ticket-info">'.$this->commande->created_at().'
+                                    <div class="ticket-info">
                                     
                                     </div>
                                     <!-- /.ticket-info -->
@@ -272,7 +272,7 @@ public function getTicket(){
                                     </div>
                                     <!-- /.ticket-title -->
                                     <div class="ticket-info">
-                                    '.$this->commande->slug.'
+                                   
                                     </div>
                                     <!-- /.ticket-info -->
                                     <div class="ticket-title">
