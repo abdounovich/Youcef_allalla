@@ -445,21 +445,22 @@ text-align: left;
 }
 .ticket-ticket-details .first-col {
 border-right: 2px dashed #ccc;
-padding: 10px;
+padding-top: 10px;
+padding-right: 5px;
 text-align: right;
 vertical-align: top;
-width: 500px;
+width: 43%;
 }
 .ticket-ticket-details .second-col {
 padding: 4px 0px 0px 32px;
 text-align: right;
-width: 150px;
+width: 32%;
 }
 .ticket-ticket-details .third-col {
     padding: 4px 0px 0px 32px;
 
 text-align: right;
-width: 150px;
+width: 25%;
 
 }
 .ticket-qr-code{

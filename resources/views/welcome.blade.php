@@ -13,7 +13,7 @@
     <!-- Styles -->
     <style>
 body {
-    font-family: 'Almarai', sans-serif;background-color: #fff;
+    font-family: "Almarai", sans-serif;background-color: #fff;
 color: #535353;
 margin: 5px;
 }
@@ -109,21 +109,22 @@ text-align: left;
 }
 .ticket-ticket-details .first-col {
 border-right: 2px dashed #ccc;
-padding: 10px;
+padding-top: 10px;
+padding-right: 5px;
 text-align: right;
 vertical-align: top;
-width: 900px;
+width: 43%;
 }
 .ticket-ticket-details .second-col {
 padding: 4px 0px 0px 32px;
 text-align: right;
-width: 90px;
+width: 32%;
 }
 .ticket-ticket-details .third-col {
     padding: 4px 0px 0px 32px;
 
 text-align: right;
-width: 90px;
+width: 25%;
 
 }
 .ticket-qr-code{
@@ -164,128 +165,130 @@ a[href]:after, abbr[title]:after {
 
 
 
-     <!-- Start Ticket -->
-<div class="ticket-wrapper">
-    <table class="ticket-table">
-        <tr>
-            <td class="first-col">
-                <!-- title -->
-                <div class="ticket-name-div">
-                    <span class="ticket-event-longtitle">NIKE JUST DO IT</span>
-                    <span style=" font-size:12px; margin:6px; float: right ">
-                        2020/02/20  10:05
-                    </span> 
-
-                </div>
-                <!-- /.ticket-name-div -->
-                <!-- venue details start -->
-                <div class="ticket-event-details">
-                    <table>
-                        <tr>
-                            <td class="first-col">
-                         
-
+       <!-- Start Ticket -->
+       <div class="ticket-wrapper">
+        <table class="ticket-table">
+            <tr>
+                <td class="first-col">
+                    <!-- title -->
+                    <div class="ticket-name-div">
+                        <span class="ticket-event-longtitle">'.$this->commande2->product->nom.'</span>
+                        <span style=" font-size:12px; margin:6px; float: right ">
+                        '.$this->commande2->created_at->format(" Y/m/d    H:i:s     ").'
+                        </span> 
     
-
-                                      <div class="ticket-venue">
-                                        '.$this->commande2->client->address.'
-                                     </div>
-     
-                                     <!-- /.ticket-venue -->
-                                     <div class="ticket-venue">
-                                         <b>'.$this->commande2->client->wilaya.'</b>
-                                     </div>
-
-                            </td>
-                            <!-- /.first-col -->
-                            <td class="second-col">
+                    </div>
+                    <!-- /.ticket-name-div -->
+                    <!-- venue details start -->
+                    <div class="ticket-event-details">
+                        <table>
+                            <tr>
+                                <td class="first-col">
+                             
+    
+        
+    
+                                          <div class="ticket-venue">
+                                            '.$this->commande2->client->address.'
+                                         </div>
+         
+                                         <!-- /.ticket-venue -->
+                                         <div class="ticket-venue">
+                                             <b>'.$this->commande2->client->wilaya.'</b>
+                                         </div>
+    
+                                </td>
+                                <!-- /.first-col -->
+                                <td class="second-col">
+                                   
+                                    <div class="ticket-title" style="margin-top: -2px">
+                                        : الطلبية خاصة بـ  
+                                      </div>
+                                      <!-- /.ticket-title -->
+                                      <div class="ticket-info" style="margin-top: 5px">
+                                        '.$this->commande2->client->facebook.'                                  </div>
+                                      <!-- /.ticket-info -->
+                                    
+    
+                                </td>
                                
-                                <div class="ticket-title" style="margin-top: -2px">
-                                    : الطلبية خاصة بـ  
-                                  </div>
-                                  <!-- /.ticket-title -->
-                                  <div class="ticket-info" style="margin-top: 5px">
-                                    '.$this->commande2->client->facebook.'                                  </div>
-                                  <!-- /.ticket-info -->
-                                
-
-                            </td>
-                           
-                            <!-- /.second-col -->
-                        </tr>
-                    </table>
-                </div>
-                <!-- /.ticket-event-details -->
-                <!-- ticket details start -->
-                <div class="ticket-ticket-details">
-                    <table>
-                        <tr>
-                            <td class="first-col">
-                               
-                                <!-- /.ticket-info -->
-                                <div class="ticket-title">
-                                </div>
-                                <!-- /.ticket-title -->
-                                <div class="ticket-title" style="margin-top: -10px">
-                                   سعر البضاعة 
-                                
-                                    <span style="color: black; float:left"> <b>'.$this->commande2->total_price.'</b> دج </span>
-                                </div>
-                                     <div class="ticket-title">
-                                        كلفة التوصيل                                      
-                                        <span style="color: black; float:left"> <b>'.$this->valOfType.'</b> دج </span>
+                                <!-- /.second-col -->
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- /.ticket-event-details -->
+                    <!-- ticket details start -->
+                    <div class="ticket-ticket-details">
+                        <table>
+                            <tr>
+                                <td class="first-col">
+                                   
+                                    <!-- /.ticket-info -->
+                                    <div class="ticket-title">
                                     </div>
-                                        <div class="ticket-title" style="padding-top:10px; margin-top:15px; border-top: 2px dashed #ccc;" >
-                                    السعر الإجمالي                                      
-                            
-                                    <b><span style="color: black;background-color:rgb(250, 235, 29);padding:5px; margin-top:-5px; float:left">4535 DZD</span></div>
-                                    </b>                              
-                                                                   
-                                <!-- /.ticket-info -->
-                            </td>
-                            <!-- /.first-col -->
-                            <td class="second-col">
-                                <div class="ticket-title">
-                                    طريقة التوصيل 
-                                 </div>
-                                 <!-- /.ticket-title -->
-                                 <div class="ticket-info" >
-                                    '.$this->TypeOfLivraison.'                                </div>
-                              
-                            </td>
-                            <!-- /.second-col -->
-                            <td class="third-col">
-                                <div class="ticket-title">
-                                    كود الطلبية  
-                                </div>
-                                <!-- /.ticket-title -->
-                                <div class="ticket-info" style="background-color:rgb(250, 235, 29);text-align: center; margin-top:5px" >
-                                  <b><span  style="color:black; ">  '.$this->commande2->slug.'  </span> </b>                             </div>
-                                 
-                            </td>
-                            <!-- /.third-col -->
-                        </tr>
-
-                    </table>
-                </div>
-                <!-- /.ticket-ticket-details -->
-            </td>
-            <!-- /.first-col -->
-            <td class="ticket-logo">
-            <img class="ticket-qr-code" src="https://res.cloudinary.com/ds9qfm1ok/image/upload/v1614278674/logo1_govtcv.jpg" alt="logo"/>                      
-            <img style=" width:80px; height:80px" src="https://res.cloudinary.com/ds9qfm1ok/image/upload/v1614278672/qr-code_x9eanz.png" alt="qrcode"/>
-
-  </td>
-
-            <!-- /.ticket-logo -->
-        </tr>
-    </table>
-    <!-- /.ticket-table -->
-</div>
-<!-- /.ticket-wrapper -->
-<!-- End Ticket -->
-
-
+                                    <!-- /.ticket-title -->
+                                    <div class="ticket-title" style="margin-top: -10px">
+                                       سعر البضاعة 
+                                    
+                                        <span style="color: black; float:left">  <b>3500</b> DZD  </span>
+                                    </div>
+                                         <div class="ticket-title">
+                                            كلفة التوصيل                                      
+                                            <span style="color: black; float:left">  <b>500</b> DZD </span>
+                                            
+                                        </div>
+                                            <div class="ticket-title" style="padding-top:10px; margin-top:15px; border-top: 2px dashed #ccc;" >
+                                        السعر الإجمالي                                      
+                                
+                                        <span style="color: black;background-color:rgb(250, 235, 29);padding:5px; margin-top:-5px; float:left">
+                                            <b>400000</b> DZD
+                                        </span></div>
+                                                                      
+                                                                       
+                                    <!-- /.ticket-info -->
+                                </td>
+                                <!-- /.first-col -->
+                                <td class="second-col">
+                                    <div class="ticket-title">
+                                        طريقة التوصيل 
+                                     </div>
+                                     <!-- /.ticket-title -->
+                                     <div class="ticket-info" >
+                                        '.$this->textOfType.'</div>
+                                  
+                                </td>
+                                <!-- /.second-col -->
+                                <td class="third-col">
+                                    <div class="ticket-title">
+                                        كود الطلبية  
+                                    </div>
+                                    <!-- /.ticket-title -->
+                                    <div class="ticket-info" style="background-color:rgb(250, 235, 29);text-align: center; margin-top:5px" >
+                                      <b><span  style="color:black; ">CM100W25 </span> </b>                             </div>
+                                     
+                                </td>
+                                <!-- /.third-col -->
+                            </tr>
+    
+                        </table>
+                    </div>
+                    <!-- /.ticket-ticket-details -->
+                </td>
+                <!-- /.first-col -->
+                <td class="ticket-logo">
+                <img class="ticket-qr-code" src="https://res.cloudinary.com/ds9qfm1ok/image/upload/v1614278674/logo1_govtcv.jpg" alt="logo"/>                      
+                <img style=" width:80px; height:80px" src="https://res.cloudinary.com/ds9qfm1ok/image/upload/v1614278672/qr-code_x9eanz.png" alt="qrcode"/>
+    
+      </td>
+    
+                <!-- /.ticket-logo -->
+            </tr>
+        </table>
+        <!-- /.ticket-table -->
+    </div>
+    <!-- /.ticket-wrapper -->
+    <!-- End Ticket -->
+    
 
 
 </body>
