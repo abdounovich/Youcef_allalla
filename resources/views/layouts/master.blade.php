@@ -31,10 +31,10 @@
 ;
   }
   .bg-dzed{
-    background-color:gold;
+    background-color:rgb(255, 197, 6);
   }
   .text-dzed{
-    color:gold;
+    color:rgb(255, 197, 6);
   }
     </style>
         @livewireStyles

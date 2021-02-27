@@ -20,9 +20,9 @@ background: linear-gradient(90deg, #2C73D2 0%, #0089BA 100%);}</style>
 <div class="container  mt-5">
   <div class=" text-white" style="opacity: 0.9">
   
-    <div class="card bg-light   ">
+    <div class="card bg-light my-2  ">
       <div class="card-body text-left ">
-      <a class="h4" href="{{route('products')}}"> 
+      <a class="h5" href="{{route('products')}}"> 
       <p class="card-text text-dark">
       <i class=" p-2 mr-2 text-dzed fa fa-list-ol ">
       </i>Produits : {{$products->count()}}
@@ -32,9 +32,9 @@ background: linear-gradient(90deg, #2C73D2 0%, #0089BA 100%);}</style>
       </div>
     </div>
   
-    <div class="card bg-light  ">
+    <div class="card bg-light my-2  ">
         <div class="card-body text-left ">
-        <a class="h4" href="{{route('clients')}}"> 
+        <a class="h5" href="{{route('clients')}}"> 
         <p class="card-text text-dark">
         <i class=" text-dzed p-2 mr-2 fa fa-users ">
         </i>Clients : {{$clients->count()}}
@@ -47,9 +47,9 @@ background: linear-gradient(90deg, #2C73D2 0%, #0089BA 100%);}</style>
 
 
 
-      <div class="card bg-light">
+      <div class="card bg-light my-2 ">
         <div class="card-body text-left ">
-        <a class="h4" href="{{route('commandes')}}"> 
+        <a class="h5" href="{{route('commandes')}}"> 
         <p class="card-text text-dark">
         <i class="text-dzed p-2 mr-2 fa fa-shopping-cart ">
         </i>CMD : {{$commandes->count()}} ({{$InactivCommandes->count()}})
@@ -62,9 +62,9 @@ background: linear-gradient(90deg, #2C73D2 0%, #0089BA 100%);}</style>
 
 
 
-      <div class="card bg-light  ">
+      <div class="card bg-light my-2   ">
         <div class="card-body text-left ">
-        <a class="h4" href="{{route('categories')}}"> 
+        <a class="h5" href="{{route('categories')}}"> 
         <p class="card-text text-dark">
         <i class="text-dzed p-2 mr-2 fa fa-list-alt  ">
         </i>Categories : {{$categories->count()}}
@@ -74,9 +74,9 @@ background: linear-gradient(90deg, #2C73D2 0%, #0089BA 100%);}</style>
         </div>
       </div>
 
-      <div class="card bg-light    ">
+      <div class="card bg-light  my-2   ">
         <div class="card-body text-left ">
-        <a class="h4" href="{{route('sub_categories')}}"> 
+        <a class="h5" href="{{route('sub_categories')}}"> 
         <p class="card-text text-dark">
         <i class="text-dzed p-2 mr-2 fa fa-list-ol ">
         </i>S-categories: {{$sub_categories->count()}}
