@@ -52,7 +52,7 @@ class Search extends Component
 
     }
    public function mount(){
-    $this->produits=Product::orderBy('created_at', 'desc')->get()
+    $this->produits=Product::orderBy('created_at', 'asc')->get()
     ->take($this->TakeLimit);
 $this->total=$this->TakeLimit;
     
