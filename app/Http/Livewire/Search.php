@@ -45,7 +45,7 @@ class Search extends Component
             $this->produits=Product::orderBy('created_at', 'desc')->get();
        }
     
-       else{ $this->produits=Product::where($this->categorie,'ILIKE','%'.$this->query.'%')->orderBy('created_at', 'asc')->get()->take($this->TakeLimit);
+       else{ $this->produits=Product::where($this->categorie,'ILIKE','%'.$this->query.'%')->orderBy('created_at', 'desc')->get()->take($this->TakeLimit);
        }
         
         return view('livewire.search');
