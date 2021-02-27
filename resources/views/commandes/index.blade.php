@@ -23,12 +23,11 @@
 @include('commandes.show')
 
 @section('footer')
-
 <div class="mt-5"></div>
 
-<div class="d-flex fixed-bottom flex-center bg-info mb-0">
+<div class="d-flex fixed-bottom flex-center bg-dzed mb-0">
 
-    <div class="p-3   text-center flex-fill">
+    <div class="p-3   text-center flex-fill bg-dzed ">
         <a href="/">
             <i class="text-white fa   fa-home" style="font-size: 22px"></i>
         </a>
@@ -38,13 +37,13 @@
             <i class="text-white fa   fa-cubes" style="font-size: 22px"></i>
         </a>
     </div>
-    <div class="p-3  text-center   ">
+    <div class="p-3  text-center     flex-fill ">
         <a href="/clients"><i class="text-white fa   fa-users" style="font-size: 20px"></i>
         </a>
     </div>
-    <div class="p-3 text-center  flex-fill  bg-light active border-top border-bottom border-info">
+    <div class="p-3 text-center  flex-fill">
         <a href="/commandes">
-        <i class="text-info fa   fa-shopping-bag" style="font-size: 20px"></i>
+        <i class="text-dark fa   fa-shopping-bag" style="font-size: 20px"></i>
         </a>
     </div>
     <div class="p-3 text-center  flex-fill">    
@@ -53,6 +52,5 @@
         </a>
     </div>
   </div>
-  
 @endsection
 @stop

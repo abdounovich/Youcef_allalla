@@ -101,7 +101,37 @@ background: linear-gradient(90deg, #2C73D2 0%, #0089BA 100%);}</style>
 @endphp
   
 
+@section('footer')
+<div class="mt-5"></div>
 
+<div class="d-flex fixed-bottom flex-center bg-dzed mb-0">
+
+    <div class="p-3   text-center flex-fill bg-dzed ">
+        <a href="/">
+            <i class="text-dark fa   fa-home" style="font-size: 22px"></i>
+        </a>
+    </div>
+    <div class="p-3   text-center flex-fill">
+        <a href="/products">
+            <i class="text-white fa   fa-cubes" style="font-size: 22px"></i>
+        </a>
+    </div>
+    <div class="p-3  text-center     flex-fill ">
+        <a href="/clients"><i class="text-white fa   fa-users" style="font-size: 20px"></i>
+        </a>
+    </div>
+    <div class="p-3 text-center  flex-fill">
+        <a href="/commandes">
+        <i class="text-white fa   fa-shopping-bag" style="font-size: 20px"></i>
+        </a>
+    </div>
+    <div class="p-3 text-center  flex-fill">    
+        <a href="/">
+        <i class="text-white fa   fa-list" style="font-size: 20px"></i>
+        </a>
+    </div>
+  </div>
+@endsection
 
 
 
