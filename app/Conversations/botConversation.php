@@ -537,13 +537,13 @@ $google_fonts = "Roboto";
     $this->attachment = new Image($res['url'], [
         'custom_payload' => true,
     ]);
-    
+     $this->client->save();
+
     // Build message object
     $this->message = OutgoingMessage::create('This is my text')
                 ->withAttachment($this->attachment);
     $this->bot->reply($this->message); 
        $this->commande2->save();
-    $this->client->save();
     $this->bot->reply("رقم طلبيتك : ". $res['url']);
 
 
