@@ -139,8 +139,10 @@ public function askAddress(){
         $this->key = array_search($this->client->wilaya, get_object_vars($this->obj));
 
         $this->WilayaNumber= substr($this->key, 1);
+        $this->client->save();
 
         $this->askLivriason($this->WilayaNumber);});
+
 }
 
 
@@ -653,7 +655,7 @@ $this->ask($question5, function (Answer $answer) {
 
     public function askLivriason($wil)
     {
-
+        $this->client=Client::where('facebook', $this->full_name)->first();
         $url = "https://api.yalidine.com/v1/deliveryfees/".$wil; // the wilayas endpoint
         $curl = curl_init();
         curl_setopt_array($curl, array(
