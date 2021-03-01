@@ -20,6 +20,10 @@ use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 use BotMan\Drivers\Facebook\Extensions\ElementButton;
 use BotMan\Drivers\Facebook\Extensions\ButtonTemplate;
 use BotMan\Drivers\Facebook\Extensions\GenericTemplate;
+use BotMan\BotMan\Messages\Attachments\Image;
+use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
+
+
 
 
 
@@ -82,6 +86,7 @@ $bot->reply(ButtonTemplate::create('   🤖  كيف يمكنني خدمتك ؟  
 
 
 });
+
 
 
 
