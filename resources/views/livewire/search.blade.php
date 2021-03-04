@@ -203,7 +203,7 @@ img {vertical-align: middle;}
     <div class="card bg-dark text-white p-2 mt-5 shadow-lg" >
       <img class="card-img-top img-thumbnail p-1" style="width: 100%; height:300px" src="{{$produit->photo}}" alt="Card image">
       <div class="slideshow-container">
-        @foreach ($images as $image)
+        @foreach ($produit->image as $image)
             
         <div class="mySlides fade">
           <div class="numbertext" >{{$loop->index+1}}
@@ -223,7 +223,7 @@ img {vertical-align: middle;}
         <br>
         
         <div style="text-align:center">
-            @foreach ($images as $image)
+            @foreach ($produit->image as $image)
         
           <span class="dot" onclick="currentSlide({{$loop->index+1}})"></span> 
         @endforeach
