@@ -199,7 +199,7 @@ img {
           
       @else
 
-      <p>{{$produit->image->count}}</p>
+      <p>{{$produit->image->count()}}</p>
       @endif
 
 
