@@ -209,8 +209,11 @@ img {
      
     
       <div class="row" >
-    
-        @foreach ($produit->image as $image)
+    @if ($produit->image->count()="0")
+        
+        
+    @else
+    @foreach ($produit->image as $image)
     <div style="  margin: auto;  text-align: center;">
         <div class="column">
           <img class="demo cursor" src="{{$image->image}}" style="width:50px; height:50px;" onclick="currentSlide({{$loop->index+1}})" alt="The Woods">
@@ -250,6 +253,9 @@ img {
         }
         </script>
             
+   
+    @endif
+      
       <div class="card-body">
         <h4 class="card-title">{{$produit->nom}}</h4>
       
