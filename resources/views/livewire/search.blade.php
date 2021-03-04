@@ -193,36 +193,32 @@ img {
         
     <div class="card bg-dark text-white p-2 mt-5 shadow-lg" >
       <img class="card-img-top img-thumbnail p-1" style="width: 100%; height:300px" src="{{$produit->photo}}" alt="Card image">
-     
-    
-     
-    
-     
-      
-      @foreach ($produit->image as $image)
-          
-      <div class="mySlides">
-        <div class="numbertext">{{$loop->index}} / {{$produit->image->count()}}</div>
-        <img src="{{$image->image}}" style="width:100%">
-      </div>
-              @endforeach
 
+        @foreach ($images as $image)
+            
+      <div class="mySlides">
+        <div class="numbertext">1 / 6</div>
+        <img src="{{$image->image}}" style="width:100% ;height:250px;display: block; margin-left: auto; margin-right: auto ">
+      </div>
+    
+         @endforeach
+    
       <a class="prev" onclick="plusSlides(-1)">❮</a>
       <a class="next" onclick="plusSlides(1)">❯</a>
     
-      <div class="caption-container">
-        <p id="caption"></p>
+     
+    
+      <div class="row" >
+    
+        @foreach ($images as $image)
+    <div style="  margin: auto;  text-align: center;">
+        <div class="column">
+          <img class="demo cursor" src="{{$image->image}}" style="width:50px; height:50px;" onclick="currentSlide({{$loop->index+1}})" alt="The Woods">
+       </div> </div>
+        @endforeach
+    
       </div>
     
-      <div class="row">
-        @foreach ($produit->image as $image)
-
-        <div class="column">
-          <img class="demo cursor" src="{{$image->image}}" style="width:100%" onclick="currentSlide({{$loop->index+1}})" alt="Snowy Mountains">
-       
-        </div>
-
-        @endforeach
       </div>
 
       <script>
@@ -241,7 +237,6 @@ img {
           var i;
           var slides = document.getElementsByClassName("mySlides");
           var dots = document.getElementsByClassName("demo");
-          var captionText = document.getElementById("caption");
           if (n > slides.length) {slideIndex = 1}
           if (n < 1) {slideIndex = slides.length}
           for (i = 0; i < slides.length; i++) {
