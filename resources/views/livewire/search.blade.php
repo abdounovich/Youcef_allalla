@@ -99,7 +99,11 @@
         @foreach ($produits as $produit)
         
     <div class="card bg-dark text-white p-2 mt-5 shadow-lg" >
-      <img class="card-img-top img-thumbnail p-1" style="width: 100%; height:300px" src="{{$produit->photo}}" alt="Card image">
+      <img class="card-img-top img-thumbnail p-1" wire:click="$emitSelf('slider')" style="width: 100%; height:300px" src="{{$produit->photo}}" alt="Card image">
+
+
+
+      
       <div class="card-body">
         <h4 class="card-title">{{$produit->nom}}</h4>
       
@@ -200,6 +204,12 @@
                
                  @endforeach
   
+
+                 <script>
+                  Livewire.on('slider', event  => {
+                      alert('A post was added with the id of: ');
+                  })
+                  </script>
                  <script type="text/javascript">
                   window.onscroll = function(ev) {
                       if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
