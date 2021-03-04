@@ -131,6 +131,7 @@ Route::get('tailles/add/{id}', 'TailleController@create')->name('tailles.add');
 Route::post('tailles/add', 'TailleController@store')->name('taille.add');
 
 
+Route::get('images/add/{id}', 'ImageController@index')->name('images');
+Route::get('images/show/{id}', 'ImageController@show')->name('images.show');
 
-
-
+Route::post('images/add/{id}', 'ImageController@store')->name('images.add');

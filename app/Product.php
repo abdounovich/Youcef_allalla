@@ -45,4 +45,11 @@ class Product extends Model
         return $this->hasMany(Color::class);
     }
   
+    public function image()
+    {
+
+        return $this->hasMany(Image::class);
+    }
+
+
 }
