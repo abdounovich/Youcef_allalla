@@ -205,7 +205,7 @@ img {
             
       <div class="mySlides">
         <div class="numbertext">1 / 6</div>
-        <img src="{{$image->image}}" >
+        <img src="{{$image->image}}" style="width:100% ;height:250px;display: block; margin-left: auto; margin-right: auto ">
       </div>
     
          @endforeach
@@ -226,12 +226,14 @@ img {
     
       </div>
     </div>
+
+
+
     
+    @push('scripts')
+
     <script>
-
-
-document.addEventListener('livewire:load', function () {
-  var slideIndex = 1;
+    var slideIndex = 1;
     showSlides(slideIndex);
     
     function plusSlides(n) {
@@ -257,9 +259,9 @@ document.addEventListener('livewire:load', function () {
       }
       slides[slideIndex-1].style.display = "block";
       dots[slideIndex-1].className += " active";
-    }        })
-   
+    }
     </script>
+    @endpush
           @endif
 
 
