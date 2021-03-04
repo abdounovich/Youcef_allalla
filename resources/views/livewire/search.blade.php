@@ -220,7 +220,7 @@ img {
         @foreach ($produit->image as $image)
     <div style="  margin: auto;  text-align: center;">
         <div class="column">
-          <img class="demo cursor" src="{{$image->image}}" style="width:50px; height:50px;" onclick="currentSlide({{$loop->index+1}})" alt="The Woods">
+          <img class="demo cursor" src="{{$image->image}}" style="width:50px; height:50px;" onclick="currentSlide({{$loop->index}})" alt="The Woods">
        </div> </div>
         @endforeach
     
