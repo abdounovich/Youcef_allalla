@@ -228,7 +228,10 @@ img {
     </div>
     
     <script>
-    var slideIndex = 1;
+
+
+document.addEventListener('livewire:load', function () {
+  var slideIndex = 1;
     showSlides(slideIndex);
     
     function plusSlides(n) {
@@ -254,7 +257,8 @@ img {
       }
       slides[slideIndex-1].style.display = "block";
       dots[slideIndex-1].className += " active";
-    }
+    }        })
+   
     </script>
           @endif
 
