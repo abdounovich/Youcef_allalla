@@ -194,7 +194,7 @@ img {
     <div class="card bg-dark text-white p-2 mt-5 shadow-lg" >
       <img class="card-img-top img-thumbnail p-1" style="width: 100%; height:300px" src="{{$produit->photo}}" alt="Card image">
 
-        @foreach ($images as $image)
+        @foreach ($produit->image as $image)
             
       <div class="mySlides">
         <div class="numbertext">1 / 6</div>
@@ -210,7 +210,7 @@ img {
     
       <div class="row" >
     
-        @foreach ($images as $image)
+        @foreach ($produit->image as $image)
     <div style="  margin: auto;  text-align: center;">
         <div class="column">
           <img class="demo cursor" src="{{$image->image}}" style="width:50px; height:50px;" onclick="currentSlide({{$loop->index+1}})" alt="The Woods">
