@@ -139,7 +139,6 @@ img {
 /* Six columns side by side */
 .column {
   float: left;
-  width: 16.66%;
 }
 
 /* Add a transparency effect for thumnbail images */
@@ -253,7 +252,6 @@ img {
           }
           slides[slideIndex-1].style.display = "block";
           dots[slideIndex-1].className += " active";
-          captionText.innerHTML = dots[slideIndex-1].alt;
         }
         </script>
             
