@@ -199,13 +199,13 @@ img {
           
       @else
 
-      <div class="container">
+      <div class="container mt-5">
 
         @foreach ($produit->image as $image)
             
       <div class="mySlides">
         <div class="numbertext">1 / 6</div>
-        <img src="{{$image->image}}" style="width:100% ;height:250px;display: block; margin-left: auto; margin-right: auto ">
+        <img src="{{$image->image}}" >
       </div>
     
          @endforeach
@@ -219,7 +219,7 @@ img {
     
         @foreach ($produit->image as $image)
     <div style="  margin: auto;  text-align: center;">
-        <div class="column">{{$loop->index}}
+        <div class="column">
           <img class="demo cursor" src="{{$image->image}}" style="width:50px; height:50px;" onclick="currentSlide({{$loop->index}})" alt="The Woods">
        </div> </div>
         @endforeach
