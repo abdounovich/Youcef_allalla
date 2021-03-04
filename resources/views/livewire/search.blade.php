@@ -220,7 +220,7 @@ img {
         @foreach ($produit->image as $image)
     <div style="  margin: auto;  text-align: center;">
         <div class="column">
-          <img class="demo cursor" src="{{$image->image}}" style="width:50px; height:50px;" onclick="currentSlide({{$loop->index}})" alt="The Woods">
+          <img class="demo cursor" src="{{$image->image}}" style="width:50px; height:50px;" wire:click="$emit('slider') "onclick="currentSlide({{$loop->index}})" alt="The Woods">
        </div> </div>
         @endforeach
     
@@ -233,6 +233,12 @@ img {
     @push('scripts')
 
     <script>
+
+
+
+window.addEventListener('slider', event => {
+    
+
     var slideIndex = 1;
     showSlides(slideIndex);
     
@@ -259,7 +265,7 @@ img {
       }
       slides[slideIndex-1].style.display = "block";
       dots[slideIndex-1].className += " active";
-    }
+    }});
     </script>
     @endpush
           @endif
