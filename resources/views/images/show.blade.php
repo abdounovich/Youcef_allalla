@@ -100,63 +100,7 @@ img {
 <body>
 
 
-<div class="container">
 
-    @foreach ($images as $image)
-        
-  <div class="mySlides">
-    <div class="numbertext">1 / 6</div>
-    <img src="{{$image->image}}" style="width:100% ;height:250px;display: block; margin-left: auto; margin-right: auto ">
-  </div>
-
-     @endforeach
-
-  <a class="prev" onclick="plusSlides(-1)">❮</a>
-  <a class="next" onclick="plusSlides(1)">❯</a>
-
- 
-
-  <div class="row" >
-
-    @foreach ($images as $image)
-<div style="  margin: auto;  text-align: center;">
-    <div class="column">
-      <img class="demo cursor" src="{{$image->image}}" style="width:50px; height:50px;" onclick="currentSlide({{$loop->index+1}})" alt="The Woods">
-   </div> </div>
-    @endforeach
-
-  </div>
-</div>
-
-<script>
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  var captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-}
-</script>
     
 </body>
 </html>
