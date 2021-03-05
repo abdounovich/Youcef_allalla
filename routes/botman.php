@@ -31,6 +31,7 @@ use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
 
 
 $botman = resolve('botman');
+$this->config=Config::get('app.url');
 
 $botman->hears('GET_STARTED', function ($bot) {
     $user = $bot->getUser();
@@ -271,8 +272,8 @@ $botman->hears('product_([0-9]+)', function($bot,$number1) {
           ->type('postback'))
             ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
             ->url($product->photo))
-            ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
-            ->url($product->photo));
+            ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
+            ->url($this->config."/images/".$product->id));
             if ($index==10) {
                 $i=$i+1;
                 $index=0;
