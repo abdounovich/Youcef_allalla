@@ -273,7 +273,10 @@ $botman->hears('product_([0-9]+)', function($bot,$number1) {
             ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
             ->url($product->photo))
             ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
-            ->url($this->config."/images/show/".$product->id));
+            ->url($this->config."/images/show/".$product->id)
+            ->heightRatio('tall')
+            ->disableShare()
+            ->enableExtensions());
             if ($index==10) {
                 $i=$i+1;
                 $index=0;
@@ -298,7 +301,10 @@ $text=$text."\n"."(-".$percentage ."%)"." السعر الجديد : ".$remises->
   ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
   ->url($product->photo))
   ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
-  ->url($this->config."/images/show/".$product->id));
+  ->url($this->config."/images/show/".$product->id)
+  ->heightRatio('tall')
+  ->disableShare()
+  ->enableExtensions());
         if ($index==10) {
             $i=$i+1;
             $index=0;
@@ -341,7 +347,10 @@ $text=$text."\n"."(-".$percentage ."%)"." السعر الجديد : ".$remises->
                 ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
             ->url($product->photo))
             ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
-            ->url($this->config."/images/show/".$product->id));
+            ->url($this->config."/images/show/".$product->id)
+            ->heightRatio('tall')
+            ->disableShare()
+            ->enableExtensions());
     }
     $bot->typesAndWaits(1);
 
@@ -397,7 +406,9 @@ $botman->hears('showComplexe([0-9]+)', function ( $bot,$number2) {
             ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
             ->url($product->photo))
             ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
-            ->url($this->config."/images/show/".$product->id));
+            ->url($this->config."/images/show/".$product->id) ->heightRatio('tall')
+            ->disableShare()
+            ->enableExtensions());
 }
 $bot->typesAndWaits(1);
 
@@ -745,7 +756,10 @@ $botman->hears('CommandeByType([0-9]+)', function ( $bot,$number7) {
               ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
               ->url($product->photo))
               ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
-              ->url($this->config."/images/show/".$product->id));}
+              ->url($this->config."/images/show/".$product->id)
+              ->heightRatio('tall')
+              ->disableShare()
+              ->enableExtensions());}
         
     else {
     $percentage=round(100-$remises->prix*100/$remises->produit->prix); 
@@ -759,7 +773,10 @@ $botman->hears('CommandeByType([0-9]+)', function ( $bot,$number7) {
         ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
             ->url($product->photo))
             ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
-            ->url($this->config."/images/show/".$product->id));
+            ->url($this->config."/images/show/".$product->id)
+            ->heightRatio('tall')
+            ->disableShare()
+            ->enableExtensions());
           
         
     }
