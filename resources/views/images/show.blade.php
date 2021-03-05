@@ -31,6 +31,8 @@ img {vertical-align: middle;}
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
+  background-color: rgb(252, 206, 0);
+
 }
 
 /* Position the "next button" to the right */
