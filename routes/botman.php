@@ -281,7 +281,6 @@ $botman->hears('product_([0-9]+)', function($bot,$number1) {
                 $i=$i+1;
                 $index=0;
             
-    
 }
            
 
