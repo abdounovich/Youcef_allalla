@@ -272,9 +272,9 @@ $botman->hears('product_([0-9]+)', function($bot,$number1) {
           ->type('postback'))
             ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
             ->url($product->photo))
-            ->addButton(ElementButton::create('   ➕  المزيد  الصور   ')
+            ->addButton(ElementButton::create('   ➕  مزيد من الصور ')
             ->url($this->config."/images/show/".$product->id)
-            ->heightRatio('compact')
+            ->heightRatio('tall')
         );
             if ($index==10) {
                 $i=$i+1;
@@ -299,9 +299,9 @@ $text=$text."\n"."(-".$percentage ."%)"." السعر الجديد : ".$remises->
   ->type('postback'))
   ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
   ->url($product->photo))
-  ->addButton(ElementButton::create('   ➕  المزيد  الصور   ')
+  ->addButton(ElementButton::create('   ➕  مزيد من الصور    ')
   ->url($this->config."/images/show/".$product->id)
-  ->heightRatio('compact'));
+  ->heightRatio('tall'));
         if ($index==10) {
             $i=$i+1;
             $index=0;
@@ -343,9 +343,9 @@ $text=$text."\n"."(-".$percentage ."%)"." السعر الجديد : ".$remises->
                 ->type('postback'))
                 ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
             ->url($product->photo))
-            ->addButton(ElementButton::create('   ➕  المزيد  الصور   ')
+            ->addButton(ElementButton::create('   ➕  مزيد من الصور    ')
             ->url($this->config."/images/show/".$product->id)
-            ->heightRatio('compact')
+            ->heightRatio('tall')
           
 );
     }
@@ -402,9 +402,9 @@ $botman->hears('showComplexe([0-9]+)', function ( $bot,$number2) {
             ->type('postback'))
             ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
             ->url($product->photo))
-            ->addButton(ElementButton::create('➕ المزيد الصور')
+            ->addButton(ElementButton::create('➕ مزيد من الصور')
             ->url($this->config."/images/show/".$product->id)
-            ->heightRatio('compact'));
+            ->heightRatio('tall'));
 }
 $bot->typesAndWaits(1);
 
@@ -751,9 +751,9 @@ $botman->hears('CommandeByType([0-9]+)', function ( $bot,$number7) {
               ->type('postback'))
               ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
               ->url($product->photo))
-              ->addButton(ElementButton::create('➕ المزيد الصور')
+              ->addButton(ElementButton::create('➕ مزيد من الصور ')
               ->url($this->config."/images/show/".$product->id)
-              ->heightRatio('compact'));}
+              ->heightRatio('tall'));}
         
     else {
     $percentage=round(100-$remises->prix*100/$remises->produit->prix); 
@@ -766,9 +766,9 @@ $botman->hears('CommandeByType([0-9]+)', function ( $bot,$number7) {
         ->type('postback'))
         ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
             ->url($product->photo))
-            ->addButton(ElementButton::create('   ➕  المزيد  الصور   ')
+            ->addButton(ElementButton::create('   ➕  مزيد من الصور    ')
             ->url($this->config."/images/show/".$product->id)
-              ->heightRatio('compact'));
+              ->heightRatio('tall'));
           
         
     }
