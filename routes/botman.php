@@ -400,7 +400,7 @@ $botman->hears('showComplexe([0-9]+)', function ( $bot,$number2) {
         ->addButton(ElementButton::create(' ✅ إشتر هذا المنتج')
             ->payload("byComplexeShow".$color->id)
             ->type('postback'))
-            ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
+            ->addButton(ElementButton::create(' 🔍 تكبير الصورة  ')
             ->url($product->photo))
             ->addButton(ElementButton::create('➕ مزيد من الصور')
             ->url($this->config."/images/show/".$product->id)
