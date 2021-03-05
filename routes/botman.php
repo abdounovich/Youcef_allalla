@@ -270,6 +270,8 @@ $botman->hears('product_([0-9]+)', function($bot,$number1) {
             ->payload($payload)
           ->type('postback'))
             ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
+            ->url($product->photo))
+            ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
             ->url($product->photo));
             if ($index==10) {
                 $i=$i+1;

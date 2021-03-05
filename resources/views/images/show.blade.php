@@ -1,50 +1,35 @@
 <!DOCTYPE html>
 <html>
+<head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body {
-  font-family: Arial;
-  margin: 0;
-}
 
-* {
-  box-sizing: border-box;
-}
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
 
-img {
-  vertical-align: middle;
-}
-
-/* Position the image container (needed to position the left and right arrows) */
-.container {
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
   position: relative;
-}
-
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
+  margin: auto;
 }
 
 /* Next & previous buttons */
-.prev,
-.next {
+.prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 40%;
+  top: 50%;
   width: auto;
   padding: 16px;
-  margin-top: -50px;
+  margin-top: -22px;
   color: white;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
+  transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
-  -webkit-user-select: none;
 }
 
 /* Position the "next button" to the right */
@@ -54,9 +39,19 @@ img {
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+.prev:hover, .next:hover {
+  background-color: rgb(252, 206, 0);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
 }
 
 /* Number text (1/3 etc) */
@@ -68,64 +63,72 @@ img {
   top: 0;
 }
 
-/* Container for image text */
-.caption-container {
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color:black;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
 }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.active, .dot:hover {
+  background-color:  rgb(252, 206, 0);
 }
 
-/* Six columns side by side */
-.column {
-  float: left;
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 
-/* Add a transparency effect for thumnbail images */
-.demo {
-  opacity: 0.6;
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }
 
-.active,
-.demo:hover {
-  opacity: 1;
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
 }
 </style>
+</head>
 <body>
 
-
-<div class="container">
+<div class="slideshow-container">
 
     @foreach ($images as $image)
         
-  <div class="mySlides">
-    <div class="numbertext">1 / 6</div>
-    <img src="{{$image->image}}" style="width:100% ;height:250px;display: block; margin-left: auto; margin-right: auto ">
-  </div>
+<div class="mySlides fade">
+  <div class="numbertext" style="background-color:  rgb(252, 206, 0)">{{$loop->index+1}} / {{$images->count()}}</div>
+  <img src="{{$image->image}}"  style="width:100% ;height:200px ;padding:10px">
+  <div class="text">{{$image->product->nom}}</div>
+</div>
 
-     @endforeach
-
-  <a class="prev" onclick="plusSlides(-1)">❮</a>
-  <a class="next" onclick="plusSlides(1)">❯</a>
-
- 
-
-  <div class="row" >
-
-    @foreach ($images as $image)
-<div style="  margin: auto;  text-align: center;">
-    <div class="column">
-      <img class="demo cursor" src="{{$image->image}}" style="width:50px; height:50px;" onclick="currentSlide({{$loop->index+1}})" alt="The Woods">
-   </div> </div>
     @endforeach
 
-  </div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+    @foreach ($images as $image)
+
+  <span class="dot" onclick="currentSlide({{$loop->index+1}})"></span> 
+@endforeach
 </div>
 
 <script>
@@ -143,20 +146,19 @@ function currentSlide(n) {
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  var captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+      slides[i].style.display = "none";  
   }
   for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";
+  slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
 </script>
-    
+
 </body>
-</html>
+</html> 
