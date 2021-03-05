@@ -272,7 +272,7 @@ $botman->hears('product_([0-9]+)', function($bot,$number1) {
           ->type('postback'))
             ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
             ->url($product->photo))
-            ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
+            ->addButton(ElementButton::create('   ➕  المزيد  الصور   ')
             ->url($this->config."/images/show/".$product->id)
             ->heightRatio('compact')
         );
@@ -299,7 +299,7 @@ $text=$text."\n"."(-".$percentage ."%)"." السعر الجديد : ".$remises->
   ->type('postback'))
   ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
   ->url($product->photo))
-  ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
+  ->addButton(ElementButton::create('   ➕  المزيد  الصور   ')
   ->url($this->config."/images/show/".$product->id)
   ->heightRatio('compact'));
         if ($index==10) {
@@ -343,7 +343,7 @@ $text=$text."\n"."(-".$percentage ."%)"." السعر الجديد : ".$remises->
                 ->type('postback'))
                 ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
             ->url($product->photo))
-            ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
+            ->addButton(ElementButton::create('   ➕  المزيد  الصور   ')
             ->url($this->config."/images/show/".$product->id)
             ->heightRatio('compact')
           
@@ -751,10 +751,9 @@ $botman->hears('CommandeByType([0-9]+)', function ( $bot,$number7) {
               ->type('postback'))
               ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
               ->url($product->photo))
-              ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
               ->addButton(ElementButton::create('➕ المزيد الصور')
               ->url($this->config."/images/show/".$product->id)
-              ->heightRatio('compact')));}
+              ->heightRatio('compact'));}
         
     else {
     $percentage=round(100-$remises->prix*100/$remises->produit->prix); 
@@ -767,7 +766,7 @@ $botman->hears('CommandeByType([0-9]+)', function ( $bot,$number7) {
         ->type('postback'))
         ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
             ->url($product->photo))
-            ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
+            ->addButton(ElementButton::create('   ➕  المزيد  الصور   ')
             ->url($this->config."/images/show/".$product->id)
               ->heightRatio('compact'));
           
