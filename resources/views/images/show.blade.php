@@ -103,7 +103,7 @@ img {vertical-align: middle;}
   .prev, .next,.text {font-size: 11px}
 }
 </style>
-<title>{{$images->product->nom}}</title>
+<title>D-ZED-STORE</title>
 </head>
 <body>
 
