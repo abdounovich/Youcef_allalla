@@ -31,6 +31,7 @@ use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
 
 
 $botman = resolve('botman');
+$this->config=Config::get('app.url');
 
 $botman->hears('GET_STARTED', function ($bot) {
     $user = $bot->getUser();
@@ -270,7 +271,9 @@ $botman->hears('product_([0-9]+)', function($bot,$number1) {
             ->payload($payload)
           ->type('postback'))
             ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
-            ->url($product->photo));
+            ->url($product->photo))
+            ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
+            ->url($this->config."/images/show/".$product->id));
             if ($index==10) {
                 $i=$i+1;
                 $index=0;
@@ -292,8 +295,11 @@ $text=$text."\n"."(-".$percentage ."%)"." السعر الجديد : ".$remises->
     ->addButton(ElementButton::create(' 🛒 إشتر هذا المنتج')
     ->payload($payload)
   ->type('postback'))
-    ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
-    ->url($product->photo));
+  ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
+  ->url($product->photo))
+  ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
+  ->url($this->config."/images/show/".$product->id)
+);
         if ($index==10) {
             $i=$i+1;
             $index=0;
@@ -334,7 +340,9 @@ $text=$text."\n"."(-".$percentage ."%)"." السعر الجديد : ".$remises->
                 ->payload("byColorShow".$color->id)
                 ->type('postback'))
                 ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
-                ->url($color->photo));
+            ->url($product->photo))
+            ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
+            ->url($this->config."/images/show/".$product->id));
     }
     $bot->typesAndWaits(1);
 
@@ -388,7 +396,9 @@ $botman->hears('showComplexe([0-9]+)', function ( $bot,$number2) {
             ->payload("byComplexeShow".$color->id)
             ->type('postback'))
             ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
-            ->url($color->photo));
+            ->url($product->photo))
+            ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
+            ->url($this->config."/images/show/".$product->id));
 }
 $bot->typesAndWaits(1);
 
@@ -733,8 +743,10 @@ $botman->hears('CommandeByType([0-9]+)', function ( $bot,$number7) {
             ->addButton(ElementButton::create(' 🛒 إشتر هذا المنتج')
                 ->payload($payload)
               ->type('postback'))
-                ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
-                ->url($product->photo));}
+              ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
+              ->url($product->photo))
+              ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
+              ->url($this->config."/images/show/".$product->id));}
         
     else {
     $percentage=round(100-$remises->prix*100/$remises->produit->prix); 
@@ -746,7 +758,9 @@ $botman->hears('CommandeByType([0-9]+)', function ( $bot,$number7) {
         ->payload($payload)
         ->type('postback'))
         ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
-        ->url($product->photo));
+            ->url($product->photo))
+            ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
+            ->url($this->config."/images/show/".$product->id));
           
         
     }
