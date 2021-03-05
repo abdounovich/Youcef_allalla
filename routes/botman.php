@@ -399,9 +399,9 @@ $botman->hears('showComplexe([0-9]+)', function ( $bot,$number2) {
             ->type('postback'))
             ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
             ->url($product->photo))
-            ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
+            ->addButton(ElementButton::create('➕ المزيد من الصور')
             ->url($this->config."/images/show/".$product->id)
-            ->heightRatio('tall'));
+            ->heightRatio('compact'));
 }
 $bot->typesAndWaits(1);
 
