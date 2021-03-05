@@ -103,7 +103,7 @@ img {vertical-align: middle;}
   .prev, .next,.text {font-size: 11px}
 }
 </style>
-<title>{{$image->product->nom}}</title>
+<title>{{$images->product->nom}}</title>
 </head>
 <body>
 
