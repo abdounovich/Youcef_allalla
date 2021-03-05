@@ -273,7 +273,9 @@ $botman->hears('product_([0-9]+)', function($bot,$number1) {
             ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
             ->url($product->photo))
             ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
-            ->url($this->config."/images/show/".$product->id));
+            ->url($this->config."/images/show/".$product->id)
+            ->heightRatio('compact')
+        );
             if ($index==10) {
                 $i=$i+1;
                 $index=0;
@@ -299,7 +301,7 @@ $text=$text."\n"."(-".$percentage ."%)"." السعر الجديد : ".$remises->
   ->url($product->photo))
   ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
   ->url($this->config."/images/show/".$product->id)
-);
+  ->heightRatio('compact'));
         if ($index==10) {
             $i=$i+1;
             $index=0;
@@ -343,6 +345,7 @@ $text=$text."\n"."(-".$percentage ."%)"." السعر الجديد : ".$remises->
             ->url($product->photo))
             ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
             ->url($this->config."/images/show/".$product->id)
+            ->heightRatio('compact')
           
 );
     }
@@ -749,7 +752,9 @@ $botman->hears('CommandeByType([0-9]+)', function ( $bot,$number7) {
               ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
               ->url($product->photo))
               ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
-              ->url($this->config."/images/show/".$product->id));}
+              ->addButton(ElementButton::create('➕ المزيد الصور')
+              ->url($this->config."/images/show/".$product->id)
+              ->heightRatio('compact')));}
         
     else {
     $percentage=round(100-$remises->prix*100/$remises->produit->prix); 
@@ -763,7 +768,8 @@ $botman->hears('CommandeByType([0-9]+)', function ( $bot,$number7) {
         ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
             ->url($product->photo))
             ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
-            ->url($this->config."/images/show/".$product->id));
+            ->url($this->config."/images/show/".$product->id)
+              ->heightRatio('compact'));
           
         
     }
