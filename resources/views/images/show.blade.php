@@ -111,7 +111,7 @@ img {vertical-align: middle;}
         
 <div class="mySlides fade">
   <div class="numbertext" style="background-color:  rgb(252, 206, 0)">{{$loop->index+1}} / {{$images->count()}}</div>
-  <img src="{{$image->image}}"  style="width:100% ;height:200px ;padding:10px">
+  <img src="{{$image->image}}"  style="width:100% ;height:400px ;padding:10px">
   <div class="text">{{$image->product->nom}}</div>
 </div>
 
