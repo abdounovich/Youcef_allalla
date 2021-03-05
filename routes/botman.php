@@ -274,7 +274,7 @@ $botman->hears('product_([0-9]+)', function($bot,$number1) {
             ->url($product->photo))
             ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
             ->url($this->config."/images/show/".$product->id)
-            ->heightRatio('tall')
+            ->heightRatio('compact')
             ->disableShare()
             ->enableExtensions());
             if ($index==10) {
@@ -302,7 +302,7 @@ $text=$text."\n"."(-".$percentage ."%)"." السعر الجديد : ".$remises->
   ->url($product->photo))
   ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
   ->url($this->config."/images/show/".$product->id)
-  ->heightRatio('tall')
+  ->heightRatio('compact')
   ->disableShare()
   ->enableExtensions());
         if ($index==10) {
@@ -348,7 +348,7 @@ $text=$text."\n"."(-".$percentage ."%)"." السعر الجديد : ".$remises->
             ->url($product->photo))
             ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
             ->url($this->config."/images/show/".$product->id)
-            ->heightRatio('tall')
+            ->heightRatio('compact')
             ->disableShare()
             ->enableExtensions());
     }
@@ -406,7 +406,7 @@ $botman->hears('showComplexe([0-9]+)', function ( $bot,$number2) {
             ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
             ->url($product->photo))
             ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
-            ->url($this->config."/images/show/".$product->id) ->heightRatio('tall')
+            ->url($this->config."/images/show/".$product->id) ->heightRatio('compact')
             ->disableShare()
             ->enableExtensions());
 }
@@ -757,7 +757,7 @@ $botman->hears('CommandeByType([0-9]+)', function ( $bot,$number7) {
               ->url($product->photo))
               ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
               ->url($this->config."/images/show/".$product->id)
-              ->heightRatio('tall')
+              ->heightRatio('compact')
               ->disableShare()
               ->enableExtensions());}
         
@@ -774,7 +774,7 @@ $botman->hears('CommandeByType([0-9]+)', function ( $bot,$number7) {
             ->url($product->photo))
             ->addButton(ElementButton::create('   ➕  المزيد من الصور   ')
             ->url($this->config."/images/show/".$product->id)
-            ->heightRatio('tall')
+            ->heightRatio('compact')
             ->disableShare()
             ->enableExtensions());
           
