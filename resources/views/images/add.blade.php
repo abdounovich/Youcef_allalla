@@ -26,7 +26,7 @@
   @foreach ($product->image as $image)
 <img class="img " id="image" 
 src="{{$image->image}}"
- alt="" width="200" height="200" style="padding: 2px">
+ alt="" width="200" height="200" >
  
 @endforeach
     
