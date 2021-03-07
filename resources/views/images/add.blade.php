@@ -19,7 +19,7 @@
 <div class="container">
   
 
-<div class="row mt-5 justify-content-center text-center">
+<div class="row mt-5  text-center">
   <div class="col col-2">
 
 
