@@ -107,7 +107,7 @@ img {vertical-align: middle;}
 </style>
 <title>D-ZED-STORE</title>
 </head>
-<body style="background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);">
+<body>
 
 
 
