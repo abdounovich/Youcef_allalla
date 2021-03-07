@@ -16,15 +16,15 @@
     </div>
 @endif
 
-<div class="container">
+<div class="container  ">
   
 
-<div class="row mt-5 justify-content-center ">
-  <div class="col col-2">
+<div class="row mt-5  d-flex justify-content-center ">
+  <div class="col col-6">
 
 
   @foreach ($product->image as $image)
-<img class="img " id="image" 
+<img class="img mx-auto d-block" id="image" 
 src="{{$image->image}}"
  alt="" width="200" height="200" >
  
