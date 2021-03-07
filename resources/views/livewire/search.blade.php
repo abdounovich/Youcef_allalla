@@ -177,7 +177,7 @@
         @if ($produit->product_type=="simple")
         <p class="card-text h5">reste : <span class="text-success">{{$produit->quantity}}</span>  
         @endif
-        <a class="btn btn-info btn-circle float-right  mr-2  " href="{{route('images.add',$produit->id) }}">
+        <a class="btn btn-info btn-circle float-right  mr-2  " href="{{route('images',$produit->id) }}">
           <span class="text-white  fa fa-plus   "></span>
       </a>
           <a class="btn btn-warning btn-circle float-right  mr-2  " href="{{route('products.edit',$produit->id) }}">
