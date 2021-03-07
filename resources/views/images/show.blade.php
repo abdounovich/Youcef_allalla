@@ -107,7 +107,7 @@ img {vertical-align: middle;}
 </style>
 <title>D-ZED-STORE</title>
 </head>
-<body>
+<body style="background-color:rgb(197, 194, 194)">
 
 
 
