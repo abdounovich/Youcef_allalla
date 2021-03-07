@@ -7,7 +7,6 @@
 
 
 @section('content')
-
 @if (\Session::has('success'))
     <div class="alert  alert-info p-2 m-4 mt-5  ">
         <ul>
@@ -16,8 +15,11 @@
     </div>
 @endif
 
-<div class="container">
-  <div class="row">
+<div class="container mt-5" > <a href="{{route('products')}}" class="mt-5"> back</a>
+
+  <div class="row"> 
+  
+
    @foreach ($product->image as $image)   
     <div class="col col-6 mt-5"><img class="img img-fluid mx-auto d-block" id="images" 
 src="{{$image->image}}"
