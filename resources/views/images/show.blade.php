@@ -107,13 +107,12 @@ img {vertical-align: middle;}
 </style>
 <title>D-ZED-STORE</title>
 </head>
-<body>
+<body style="background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);">
 
 
 
-
-    @if ($images==null)
-    kkkkk
+    @if (count($images) == 0)
+    <p>سنقوم لاحقا بإظافة صور لهذا المنتوج </p>
    @else
 <div class="slideshow-container">
 
