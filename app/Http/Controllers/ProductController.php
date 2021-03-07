@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Color;
+use App\Image;
 use App\Taille;
 use App\Product;
 use App\Category;
@@ -71,6 +72,8 @@ class ProductController extends Controller
        $descreption=$request->get('descreption');
        $type="1";
        $product=new Product();
+       $image=new Image();
+        $image->image=$photo;
        $product->nom=$nom;
        $product->photo=$photo;
        $product->quantity=$quantité;
@@ -80,6 +83,8 @@ class ProductController extends Controller
        $product->product_type="simple";
        $product->descreption=$descreption;
        $product->save();
+       $image->product_id=$product->id;
+       $image->save();
   
 
         
