@@ -131,7 +131,7 @@ img {vertical-align: middle;}
 <br>
             <div class="text-center m-3">{{$image->product->nom}}</div>
 
-<div style="text-align:center">
+<div style="text-align:center" class="mt-2">
     @foreach ($images as $image)
 
   <span class="dot" onclick="currentSlide({{$loop->index+1}})"></span> 
