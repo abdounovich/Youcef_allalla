@@ -17,6 +17,7 @@ class ImageController extends Controller
     public function index($id)
     {
        $product=Product::find($id);
+       
        return view('images.add')->with('product',$product);
     }
 

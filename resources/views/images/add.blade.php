@@ -16,9 +16,23 @@
     </div>
 @endif
 
+<div class="container">
+  
+
+<div class="row mt-5 justify-content-center text-center">
+  <div class="col col-lg-2">
 
 
-
+  @foreach ($product->image as $image)
+<img class="img " id="image" 
+src="{{$image->image}}"
+ alt="" width="200" height="200" style="padding: 2px">
+ 
+@endforeach
+    
+  </div>
+</div>
+</div>
 
 <div class="  mt-3 mb-2 d-flex justify-content-center ">
 
