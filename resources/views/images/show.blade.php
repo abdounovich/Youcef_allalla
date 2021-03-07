@@ -112,7 +112,7 @@ img {vertical-align: middle;}
 
 
 
-    @if (!$images)
+    @if ($images=="")
     kkkkk
    @else
 <div class="slideshow-container">
