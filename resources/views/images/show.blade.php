@@ -129,7 +129,7 @@ img {vertical-align: middle;}
 
 </div>
 <br>
-            <div class="text-center">{{$image->product->nom}}</div>
+            <div class="text-center m-3">{{$image->product->nom}}</div>
 
 <div style="text-align:center">
     @foreach ($images as $image)
