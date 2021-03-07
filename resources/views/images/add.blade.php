@@ -16,23 +16,25 @@
     </div>
 @endif
 
-<div class="container  ">
-  
-
-<div class="row mt-5  d-flex justify-content-center ">
-  <div class="col col-6 mx-auto d-block" >
-
-
-  @foreach ($product->image as $image)
-<img class="img mx-auto d-block" id="image" 
+<div class="container">
+  <div class="row">
+   @foreach ($product->image as $image)   
+    <div class="col mt-5"><img class="img mx-auto d-block" id="image" 
 src="{{$image->image}}"
- alt="" width="100" height="200" >
+ alt="" width="200" height="200" >
  
-@endforeach
-    
+    </div>
+   @endforeach
+
   </div>
-</div>
-</div>
+      
+
+
+
+
+    
+ 
+
 
 <div class="  mt-3 mb-2 d-flex justify-content-center ">
 
