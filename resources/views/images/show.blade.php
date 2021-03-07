@@ -109,6 +109,12 @@ img {vertical-align: middle;}
 </head>
 <body>
 
+
+
+
+    @if (!$images)
+    kkkkk
+   @else
 <div class="slideshow-container">
 
     @foreach ($images as $image)
@@ -163,6 +169,6 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 </script>
-
+@endif
 </body>
 </html> 
