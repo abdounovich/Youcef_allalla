@@ -21,7 +21,7 @@
    @foreach ($product->image as $image)   
     <div class="col mt-5"><img class="img img-fluid mx-auto d-block" id="image" 
 src="{{$image->image}}"
- alt="" width="100" height="200" >
+ alt=""  >
  
     </div>
    @endforeach
