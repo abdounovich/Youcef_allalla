@@ -15,13 +15,13 @@
     </div>
 @endif
 
-<div class="container mt-5" > <a href="{{route('products')}}" class="mt-5"> back</a>
+<div class="container mt-5" > <a href="{{route('products')}}" class="mt-5"> <i class="p-2 h1  fa fa-arrow-circle-o-left text-white bg-info"></i></a>
 
   <div class="row"> 
   
 
    @foreach ($product->image as $image)   
-    <div class="col col-6 mt-5"><img class="img img-fluid mx-auto d-block" id="images" 
+    <div class="col col-6 mt-3"><img class="img img-fluid mx-auto d-block" id="images" 
 src="{{$image->image}}"
  alt=""  >
  
