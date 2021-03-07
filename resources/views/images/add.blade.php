@@ -19,7 +19,7 @@
 <div class="container">
   <div class="row">
    @foreach ($product->image as $image)   
-    <div class="col mt-5"><img class="img img-fluid mx-auto d-block" id="images" 
+    <div class="col col-6 mt-5"><img class="img img-fluid mx-auto d-block" id="images" 
 src="{{$image->image}}"
  alt=""  >
  
