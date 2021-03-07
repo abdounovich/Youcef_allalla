@@ -20,7 +20,7 @@
   
 
 <div class="row mt-5  d-flex justify-content-center ">
-  <div class="col col-6">
+  <div class="col col-6 mx-auto d-block" >
 
 
   @foreach ($product->image as $image)
