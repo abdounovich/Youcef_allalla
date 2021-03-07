@@ -110,13 +110,13 @@ img {vertical-align: middle;}
 <body>
 
 <div class="slideshow-container">
+    <div class="text">{{$image->product->nom}}</div>
 
     @foreach ($images as $image)
         
 <div class="mySlides fade">
   <div class="numbertext" style="background-color:  rgb(252, 206, 0);padding:5px; margin:10px ">{{$loop->index+1}} / {{$images->count()}}</div>
   <img src="{{$image->image}}"  style="width:100% ;height:400px ;padding:10px; margin-top:5px border: solid 2px black">
-  <div class="text">{{$image->product->nom}}</div>
 </div>
 
     @endforeach
