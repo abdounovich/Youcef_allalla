@@ -131,6 +131,8 @@ class ProductController extends Controller
        $type="1";
 
        $product=new Product();
+         $image=new Image();
+        $image->image=$photo;
        $product->nom=$nom;
        $product->photo=$photo;
        $product->quantity=$quantité;
@@ -153,6 +155,9 @@ class ProductController extends Controller
 
      $product->quantity=$q;
      $product->save();
+     $image->product_id=$product->id;
+     $image->save();
+
 
        return back()->with("success","Produit ajouté avec success");
        
@@ -197,6 +202,8 @@ class ProductController extends Controller
        $descreption=$request->get('descreption');
        $type="1";
        $product=new Product();
+       $image=new Image();
+       $image->image=$photo;
        $product->nom=$nom;
        $product->photo=$photo;
        $product->quantity="0";
@@ -223,6 +230,9 @@ class ProductController extends Controller
 
      }  $product->quantity=$q;
      $product->save();
+     $image->product_id=$product->id;
+     $image->save();
+
        return back()->with("success","Produit ajouté avec success");
        }
     }
@@ -266,7 +276,9 @@ class ProductController extends Controller
       }   
   
       $product->save();  
-
+      $image->product_id=$product->id;
+      $image->save();
+ 
        return back()->with("success","Produit ajouté avec success");
        
 
@@ -303,6 +315,8 @@ class ProductController extends Controller
        $descreption=$request->get('descreption');
        $type="0";
        $product=new Product();
+       $image=new Image();
+       $image->image=$photo;
        $product->nom=$nom;
        $product->photo=$photo;
        $product->quantity="0.1";
@@ -312,6 +326,8 @@ class ProductController extends Controller
        $product->product_type="complexe";
        $product->descreption=$descreption;
        $product->save();
+       $image->product_id=$product->id;
+       $image->save();
   
 
         
