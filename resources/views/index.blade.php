@@ -93,9 +93,10 @@ background: linear-gradient(90deg, #2C73D2 0%, #0089BA 100%);}</style>
 @php
 
 
-   
 
+    Share::page('http://jorenvanhocht.be')->facebook();
 
+@endphp
 
     
 @endphp

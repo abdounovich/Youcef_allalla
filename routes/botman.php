@@ -706,7 +706,7 @@ $botman->hears('CommandeByType([0-9]+)', function ( $bot,$number7) {
         
     });
 
-    $botman->hears('PRO([0-9]+)', function($bot,$number1) {
+    $botman->hears('DZEDSTORE([0-9]+)', function($bot,$number1) {
         $product=Product::find($number1);
    if ($product->product_type=="simple") { 
                 $text="";
