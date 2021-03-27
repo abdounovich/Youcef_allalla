@@ -2,7 +2,7 @@
    $remises=App\Remise::where("product_id",$commande->product->id)->first();
    date_default_timezone_set("Africa/Algiers");
     carbon\Carbon::setLocale('fr');@endphp   
-   <div class="my-2" ><span class="  text-secondary float-left">{{$commande->created_at->DiffForHumans()}}  
+   <div class="my-2" ><span class="  text-secondary ">{{$commande->created_at->DiffForHumans()}}  
   </span>
   
 </div>
