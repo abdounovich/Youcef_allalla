@@ -4,6 +4,8 @@
     carbon\Carbon::setLocale('fr');@endphp   
    <div class="my-2" ><span class="  text-secondary ">{{$commande->created_at->DiffForHumans()}}  
   </span>
+  <span class="  text-secondary ">{{$commande->product->code_interne}}  
+  </span>
   
 </div>
  
