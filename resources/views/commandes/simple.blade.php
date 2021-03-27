@@ -31,11 +31,9 @@
    
       <span class="text-wrap"> {{$commande->product->nom}}       
        <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span> </span>
-      
-
        </span>
     </div>
-<p></p>
+<p>{{$commande->product->code_interne}}</p>
             
  
        <img class="img-thumbnail custom  p-0 mt-2 " 
