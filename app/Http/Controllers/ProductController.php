@@ -281,8 +281,7 @@ class ProductController extends Controller
          $q=$q+$taille->quantity;
          $taille->save();
       }   
-      $code_interne=$request->get('code_interne');
-      $product->code_interne=$code_interne;
+ 
       $product->save();  
       $image->product_id=$product->id;
       $image->save();

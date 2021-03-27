@@ -27,9 +27,6 @@ class CreateProductsTable extends Migration
             ->references('id')->on('sub_categories')
             ->onDelete('cascade');
             $table->text('type');
-
-
-
             $table->timestamps();
         });
     }
