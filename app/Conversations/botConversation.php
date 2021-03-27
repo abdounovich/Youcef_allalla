@@ -338,7 +338,7 @@ public function getTicket(){
                  <td class="ticket-logo">
                  <img class="ticket-qr-code" src="https://res.cloudinary.com/ds9qfm1ok/image/upload/v1614278674/logo1_govtcv.jpg" alt="logo"/>                      
                  <img style=" width:80px; height:80px" src="https://res.cloudinary.com/ds9qfm1ok/image/upload/v1614278672/qr-code_x9eanz.png" alt="qrcode"/>
-                 <b><span  style="color:black; ">  '.$this->commande2->product->code_interne.'  </span> </b>                             </div>
+                 <p><span  style="color:black; ">  '.$this->commande2->product->code_interne.'  </span> </p>                             </div>
 
      
        </td>
