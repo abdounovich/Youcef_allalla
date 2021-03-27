@@ -10,7 +10,7 @@
     <div class=" bg-dark  " >
         <a class="  btn-circle float-right " >
             <span class="text-white float-right h3 ">{{$commande->slug}}</span> 
-                    <span class="text-white float-right h3 ">{{$commande->product->code_interne}}</span> 
+                    <span class="text-white h4 ">{{$commande->product->code_interne}}</span> 
 </a>
         
        
