@@ -14,7 +14,10 @@
               <label for="nom">Nom :</label>
               <input type="text" class="form-control" name="nom" id="nom"  placeholder="Entrer le nom du produit">
             </div>
-
+            <div class="form-group ">
+              <label for="nom">code interne :</label>
+              <input type="text" class="form-control" name="code_interne" id="code_interne"  placeholder="Entrer le code du produit">
+            </div>
             <div class="form-group">
                 <label for="descreption">Descreption </label>
                 <textarea class="form-control" name="descreption" id="descreption" rows="3"></textarea>

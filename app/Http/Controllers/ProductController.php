@@ -69,6 +69,7 @@ class ProductController extends Controller
        $quantité=$request->get('quantity');
        $prix=$request->get('prix');
        $sub_cat=$request->get('sub_cat');
+       $code_interne=$request->get('code_interne');
        $descreption=$request->get('descreption');
        $type="1";
        $product=new Product();
@@ -80,6 +81,8 @@ class ProductController extends Controller
        $product->prix=$prix;
        $product->SubCat_id=$sub_cat;
        $product->type=$type;
+       $code_interne=$request->get('code_interne');
+       $product->code_interne=$code_interne;
        $product->product_type="simple";
        $product->descreption=$descreption;
        $product->save();
@@ -139,6 +142,8 @@ class ProductController extends Controller
        $product->prix=$prix;
        $product->SubCat_id=$sub_cat;
        $product->type=$type;
+       $code_interne=$request->get('code_interne');
+       $product->code_interne=$code_interne;
        $product->product_type="taille";
        $product->descreption=$descreption;
        $product->save();
@@ -210,6 +215,8 @@ class ProductController extends Controller
        $product->prix=$prix;
        $product->SubCat_id=$sub_cat;
        $product->type=$type;
+       $code_interne=$request->get('code_interne');
+       $product->code_interne=$code_interne;
        $product->descreption=$descreption;
        $product->product_type="color";
        $product->save();
@@ -274,7 +281,8 @@ class ProductController extends Controller
          $q=$q+$taille->quantity;
          $taille->save();
       }   
-  
+      $code_interne=$request->get('code_interne');
+      $product->code_interne=$code_interne;
       $product->save();  
       $image->product_id=$product->id;
       $image->save();
@@ -323,6 +331,8 @@ class ProductController extends Controller
        $product->prix=$prix;
        $product->SubCat_id=$sub_cat;
        $product->type=$type;
+       $code_interne=$request->get('code_interne');
+       $product->code_interne=$code_interne;
        $product->product_type="complexe";
        $product->descreption=$descreption;
        $product->save();

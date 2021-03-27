@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->text('photo');
             $table->text('descreption');
             $table->text('prix');
+            $table->text('code_interne');
             $table->text('quantity');
             $table->unsignedBigInteger('SubCat_id');
             $table->foreign('SubCat_id')
