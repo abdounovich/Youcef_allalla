@@ -128,7 +128,7 @@
         @elseIf($commande->type=="5")
         class="card bg-dark border-orange     mt-2 mb-1"
 
-        @endif  >
+        @endif >
             @include('commandes.simple')
         </div>
         <br>

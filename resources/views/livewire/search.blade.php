@@ -107,6 +107,7 @@
         <hr>
         <p>{{$produit->SubCategories->nom}} -> {{$produit->SubCategories->categories->nom}}</p>
         <p class="card-text">{{$produit->code_interne}}</p>
+        <hr>
 
         <p class="card-text">{{$produit->descreption}}</p>
         @if ($produit->product_type=="taille")
