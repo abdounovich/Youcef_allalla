@@ -33,7 +33,7 @@
        <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span> </span>
        </span>
     </div>
-<p>{{$commande->product->code_interne}}</p>
+<p></p>
             
  
        <img class="img-thumbnail custom  p-0 mt-2 " 
