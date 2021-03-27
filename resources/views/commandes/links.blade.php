@@ -10,11 +10,9 @@
     <div class=" bg-dark  " >
         <a class="  btn-circle float-right " >
             <span class="text-white float-right h3 ">{{$commande->slug}}</span> 
-        </a>
+                    <span class="text-white float-right h3 ">{{$commande->product->code_interne}}</span> 
+</a>
         
-        <a class="  btn-circle float-right " >
-            <span class="text-white float-right h3 ">{{$commande->product->code_interne}}</span> 
-        </a>
        
         @if ($commande->type=="1" OR $commande->type=="2"  OR $commande->type=="6" )
         <a class="btn btn-danger  btn-circle float-left  mr-1" href="{{route('commandes.annuler',$commande->id)}}"  >
