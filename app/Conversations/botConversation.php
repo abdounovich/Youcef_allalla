@@ -323,7 +323,9 @@ public function getTicket(){
                                      </div>
                                      <!-- /.ticket-title -->
                                      <div class="ticket-info" style="background-color:rgb(250, 235, 29);text-align: center; margin-top:5px" >
-                                       <b><span  style="color:black; ">  '.$this->commande2->slug.'  </span> </b>                             </div>
+                                       <b><span  style="color:black; ">  '.$this->commande2->slug.'  </span> </b>  
+                                       <b><span  style="color:black; ">  '.$this->commande2->product->code_interne.'  </span> </b>                             </div>
+                                       </div>
                                       
                                  </td>
                                  <!-- /.third-col -->
