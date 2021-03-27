@@ -283,6 +283,7 @@ class ProductController extends Controller
       }   
  
       $image->product_id=$product->id;
+      dd($image->product_id);
       $product->save();  
       $image->save();
  
