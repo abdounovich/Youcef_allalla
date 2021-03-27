@@ -282,10 +282,7 @@ class ProductController extends Controller
          $taille->save();
       }   
  
-      $image->product_id=$id;
-      dd($image->product_id);
       $product->save();  
-      $image->save();
  
        return back()->with("success","Produit ajouté avec success");
        
