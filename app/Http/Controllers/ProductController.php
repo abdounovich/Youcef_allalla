@@ -282,7 +282,7 @@ class ProductController extends Controller
          $taille->save();
       }   
  
-      $image->product_id=$product->id;
+      $image->product_id=$id;
       dd($image->product_id);
       $product->save();  
       $image->save();
