@@ -40,7 +40,7 @@
             $taille=App\Taille::find($commande->taille);
 
              $image=$color->photo;
-             $text=" - "$color->couleur." - ".$taille->taille;
+             $text=" - ".$color->couleur." - ".$taille->taille;
           }
           else{$image=$commande->product->photo;
          
