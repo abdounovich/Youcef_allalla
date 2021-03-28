@@ -29,7 +29,7 @@
        @endif 
       @php
       $image="";
-          if($commande->$commande_type=="color"){
+          if($commande->commande_type=="color"){
             $color=App\Color::find($commande->color);
             echo $image=$color->photo;
           }
