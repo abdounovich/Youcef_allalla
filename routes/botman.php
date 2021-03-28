@@ -602,7 +602,7 @@ $botman->hears('CommandeByType([0-9]+)', function ( $bot,$number7) {
             ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
             ->addElements([
                 Element::create($commande->product->nom)
-                    ->subtitle($commande->slug."-".$text)
+                    ->subtitle($commande->slug." ".$text)
                     ->image($image)
                     
                     
