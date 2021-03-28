@@ -30,7 +30,7 @@
       
    
       <span class="text-wrap"> {{$commande->product->nom}}       
-       <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span>{{$commande->color}}{{$commande->taille}}  </span>
+       <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span>{{$commande->color->color}}{{$commande->taille->taille}}  </span>
        </span>
     </div>
 <p></p>
