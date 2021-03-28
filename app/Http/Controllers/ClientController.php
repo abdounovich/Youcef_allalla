@@ -73,6 +73,7 @@ class ClientController extends Controller
         $client=Client::find($id);
         $client->full_name=$request->get("full_name");
         $client->save();
+        return back()->with("success","le nom client ajouté avec success");    
 
     }
 
