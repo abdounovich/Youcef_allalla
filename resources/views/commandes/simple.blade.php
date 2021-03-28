@@ -30,8 +30,8 @@
       @php
       $image="";
           if($commande->product->type=="color"){
-            $product=App\Color::find($commande->color);
-            $image=$product->photo;
+            $color=App\Color::find($commande->color);
+            echo $image=$color->photo;
           }
       @endphp
    
