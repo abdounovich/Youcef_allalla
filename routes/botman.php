@@ -572,7 +572,16 @@ $botman->hears('CommandeByType([0-9]+)', function ( $bot,$number7) {
 
         
         foreach ($commandes as $commande ) {
-
+$image="";
+if ($commande->type=="color") {
+    $image=$commande->product->color->photo;
+   
+}
+elseif($commande->type=="complexe"){
+    $image=$commande->product->color->photo;
+}
+else{$image=$commande->product->photo;
+}
 
 
 
@@ -581,7 +590,7 @@ $botman->hears('CommandeByType([0-9]+)', function ( $bot,$number7) {
             ->addElements([
                 Element::create($commande->product->nom)
                     ->subtitle($commande->slug)
-                    ->image($commande->product->photo)
+                    ->image($image)
                     
                     
                     ->addButton(ElementButton::create(' ℹ حالة الطلبية  ')
