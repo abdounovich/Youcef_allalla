@@ -8,7 +8,7 @@
                 </div>
 
                 <div class="mt-2 text-dark h5 ">
-                    {{$commande->client->facebook}} 
+                    Fb/{{$commande->client->facebook}} 
                 </div>
                 @if ($commande->type=="1")
                 @if ($commande->client->full_name=="vide")
