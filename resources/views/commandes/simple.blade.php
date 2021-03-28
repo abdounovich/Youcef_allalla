@@ -48,7 +48,7 @@
       @endphp
    
       <span class="text-wrap"> {{$commande->product->nom}}       
-       <span class="text-white ml-2 text-info"> X {{$commande->quantity}} </span>- {{$text}}  </span>
+       <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span> - {{$text}}  </span>
        </span>
     </div>
 <p></p>
