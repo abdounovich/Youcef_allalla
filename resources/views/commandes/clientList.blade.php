@@ -21,8 +21,9 @@
                     <button type="submit" class="btn btn-primary col col-12 mb-4">Ajouter</button>
                   </form>
                 @else
-                    {{$commande->client->full_name}}
-
+                <div class="mt-2 text-dark h5 ">
+                    {{$commande->client->full_name}} 
+                </div>
                 @endif
               
                 @endif
