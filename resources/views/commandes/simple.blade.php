@@ -31,7 +31,7 @@
       $image="";
           if($commande->product->type=="color"){
             $product=App\Color::find($commande->color);
-            $image=$color->photo;
+            $image=$product->photo;
           }
       @endphp
    
