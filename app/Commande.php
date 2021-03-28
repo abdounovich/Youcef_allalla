@@ -16,6 +16,15 @@ class Commande extends Model
         return $this->belongsTo(Client::class,'client_id');
     }
 
+    public function color()
+    {
+        return $this->HasOne(Color::class,'color');
+    }
+    public function taille()
+    {
+        return $this->hasOne(Taille::class,'taille');
+    }
+
 
 
 
