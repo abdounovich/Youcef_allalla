@@ -42,6 +42,12 @@
              $image=$color->photo;
              $text=" - ".$color->couleur." - ".$taille->taille;
           }
+          elseif($commande->commande_type=="taille"){
+            $image=$commande->product->photo;
+            $taille=App\Taille::find($commande->taille);
+
+         
+         $text=" - ".$taille->taille ;}
           else{$image=$commande->product->photo;
          
           $text="" ;}
