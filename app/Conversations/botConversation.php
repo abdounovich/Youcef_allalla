@@ -411,9 +411,9 @@ text-align: left;
 }
 .ticket-event-longtitle {
 color: #535353;
-font-size: 22px;
+font-size: 15px;
 letter-spacing: -1px;
-line-height: 22px;
+line-height: 15px;
 }
 .ticket-event-shorttitle {
 color: #535353;
