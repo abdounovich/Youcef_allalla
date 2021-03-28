@@ -232,7 +232,7 @@ public function getTicket(){
                  <td class="first-col">
                      <!-- title -->
                      <div class="ticket-name-div">
-                         <span class="ticket-event-longtitle">'.$this->commande2->product->nom.'</span>
+                         <span class="ticket-event-longtitle h5">'.$this->commande2->product->nom.'</span>
                          <span style=" font-size:12px; margin:6px; float: right ">
                          '.$this->commande2->created_at->format(" Y/m/d    H:i:s     ").'
                          </span> 
