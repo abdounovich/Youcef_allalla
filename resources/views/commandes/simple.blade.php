@@ -42,9 +42,9 @@
              $image=$color->photo;
              $text=$color->couleur." - ".$taille->taille;
           }
-          else{$image=$commande->product->photo
+          else{$image=$commande->product->photo;
          
-          $text="" }
+          $text="" ;}
       @endphp
    
       <span class="text-wrap"> {{$commande->product->nom}}       
