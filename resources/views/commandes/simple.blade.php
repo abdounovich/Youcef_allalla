@@ -33,14 +33,14 @@
           if($commande->commande_type=="color"){
             $color=App\Color::find($commande->color);
              $image=$color->photo;
-             $text=$color->couleur;
+             $text=" - ".$color->couleur;
           }
           elseif($commande->commande_type=="complexe"){
             $color=App\Color::find($commande->color);
             $taille=App\Taille::find($commande->taille);
 
              $image=$color->photo;
-             $text=$color->couleur." - ".$taille->taille;
+             $text=" - "$color->couleur." - ".$taille->taille;
           }
           else{$image=$commande->product->photo;
          
@@ -48,7 +48,7 @@
       @endphp
    
       <span class="text-wrap"> {{$commande->product->nom}}       
-       <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span> - {{$text}}  </span>
+       <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span>  {{$text}}  </span>
        </span>
     </div>
 <p></p>
