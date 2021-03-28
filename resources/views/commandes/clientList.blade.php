@@ -7,7 +7,7 @@
                     <img style="width: 100px; height:100px" src="{{$commande->client->photo}}" class=" img-thumbnail" alt="">
                 </div>
 
-                <div class="mt-2 text-info" style="font-size: 20px">
+                <div class="mt-2 text-info text-bold" style="font-size: 20px">
                     fb/{{$commande->client->facebook}} 
                 </div>
                 @if ($commande->type=="1")
@@ -21,7 +21,7 @@
                     <button type="submit" class="btn btn-primary col col-12 mb-4">Ajouter</button>
                   </form>
                 @else
-                <div class="mt-2 text-dark" style="font-size: 20px">
+                <div class="mt-2 text-dark text-bold" style="font-size: 20px">
                     {{$commande->client->full_name}} 
                 </div>
                 @endif
