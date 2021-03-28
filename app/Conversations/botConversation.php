@@ -764,9 +764,10 @@ elseif ($this->typ=='color') {
 }
 elseif ($this->typ=='complexe') {
     $this->product=Taille::find($this->product_id);
+    $this->c=Color::find($this->product->taille);
     $this->product_id=$this->product->product_id;
     $this->prix=$this->product->product->prix;
-    $this->photo=$this->product->product->photo;
+    $this->photo=$this->c->photo;
     $this->quantity=$this->product->quantity;
     $this->commande->taille= $this->product->id;
     $this->msgText=$this->product->color->couleur."  المقاس ";
