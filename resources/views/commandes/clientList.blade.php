@@ -10,6 +10,22 @@
                 <div class="mt-2 text-dark h5 ">
                     {{$commande->client->facebook}} 
                 </div>
+                @if ($commande->type=="1")
+                @if ($commande->client->facebook=="vide")
+                <form method="POST" action="{{route('clients.edit',$commande->client->id) }}" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-group ">
+                      <label for="nom">Nom - Prenom :</label>
+                      <input type="text" class="form-control" name="full_name" id="full_name"  placeholder="Entrer le nom ">
+                    </div>
+                    <button type="submit" class="btn btn-primary col col-12 mb-4">Ajouter</button>
+                  </form>
+                @else
+                    {{$commande->client->full_name}}
+
+                @endif
+              
+                @endif
 
                 <div class=" text-dark">
                     <i class="text-success fa fa-map-marker mr-2 "></i>{{$commande->client->address}}

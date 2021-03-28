@@ -51,6 +51,7 @@ if ($username=="0") {
     $client->phone="vide";
     $client->address="vide";
     $client->wilaya="vide";
+    $client->full_name="vide";
     $config=Config::get('botman.facebook.token');
 
     ini_set("allow_url_fopen", 1);
@@ -602,7 +603,7 @@ $botman->hears('CommandeByType([0-9]+)', function ( $bot,$number7) {
             ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
             ->addElements([
                 Element::create($commande->product->nom)
-                    ->subtitle($commande->slug." ".$text)
+                    ->subtitle($commande->slug."".$text)
                     ->image($image)
                     
                     

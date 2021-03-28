@@ -59,15 +59,21 @@ class ClientController extends Controller
        return view("clients.show_client_by_slig")->with("client",$client);
     }
 
+  
     /**
-     * Show the form for editing the specified resource.
+     * Update the specified resource in storage.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function edit(Client $client)
+    public function edit(Request $request ,$id)
     {
-        //
+     
+        $client=Client::find($id);
+        $client->full_name=$request->get("full_name");
+        $client->save();
+
     }
 
     /**
