@@ -572,16 +572,29 @@ $botman->hears('CommandeByType([0-9]+)', function ( $bot,$number7) {
 
         
         foreach ($commandes as $commande ) {
-$image="";
-if ($commande->type=="color") {
-    $image=$commande->product->color->photo;
-   
-}
-elseif($commande->type=="complexe"){
-    $image=$commande->product->color->photo;
-}
-else{$image=$commande->product->photo;
-}
+            $image="";
+            $text="";
+                if($commande->commande_type=="color"){
+                  $color=Color::find($commande->color);
+                   $image=$color->photo;
+                   $text=" - ".$color->couleur;
+                }
+                elseif($commande->commande_type=="complexe"){
+                  $color=Color::find($commande->color);
+                  $taille=Taille::find($commande->taille);
+      
+                   $image=$color->photo;
+                   $text=" - ".$color->couleur." - ".$taille->taille;
+                }
+                elseif($commande->commande_type=="taille"){
+                  $image=$commande->product->photo;
+                  $taille=Taille::find($commande->taille);
+      
+               
+               $text=" - ".$taille->taille ;}
+                else{$image=$commande->product->photo;
+               
+                $text="" ;}
 
 
 
