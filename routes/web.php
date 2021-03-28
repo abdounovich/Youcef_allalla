@@ -82,8 +82,7 @@ Route::get('sub_categories/delete/{id}', 'SubCategoryController@destroy')->name(
 
 Route::get('clients', 'ClientController@index')->name('clients');
 Route::post('clients/add', 'ClientController@store')->name('clients.add');
-Route::get('clients/edit/{id}', 'ClientController@edit')->name('clients.edit');
-Route::post('clients/edit/{id}', 'ClientController@update')->name('clients.edit');
+Route::post('clients/edit/{id}', 'ClientController@edit')->name('clients.edit');
 Route::get('clients/delete/{id}', 'ClientController@destroy')->name('clients.delete');
 Route::get('client/{id}', 'ClientController@show')->name('client.show');
 
