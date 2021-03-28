@@ -7,7 +7,7 @@
                     <img style="width: 100px; height:100px" src="{{$commande->client->photo}}" class=" img-thumbnail" alt="">
                 </div>
 
-                <div class="mt-2 text-dark" style="font-size: 10px">
+                <div class="mt-2 text-info" style="font-size: 10px">
                     fb/{{$commande->client->facebook}} 
                 </div>
                 @if ($commande->type=="1")
