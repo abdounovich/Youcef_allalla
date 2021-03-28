@@ -27,17 +27,23 @@
          @elseif($commande->type=="6")
          <i class="btn btn-warning btn-circle"></i>
        @endif 
-      
+      @php
+      $image="";
+          if($commande->product->type=="color"){
+            $product=App\Color::find($commande->color);
+            $image=$color->photo;
+          }
+      @endphp
    
       <span class="text-wrap"> {{$commande->product->nom}}       
-       <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span>{{$commande->color->color}}{{$commande->taille->taille}}  </span>
+       <span class="text-white ml-2 text-info"> X {{$commande->quantity}}</span>  </span>
        </span>
     </div>
 <p></p>
             
  
        <img class="img-thumbnail custom  p-0 mt-2 " 
-       style="width: 100%;height:250px" src="{{$commande->product->photo}}" alt="">
+       style="width: 100%;height:250px" src="{{$image}}" alt="">
 
    @include('commandes.items')
    
