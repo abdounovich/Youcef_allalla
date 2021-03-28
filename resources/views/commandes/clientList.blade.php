@@ -12,7 +12,7 @@
                 </div>
                 @if ($commande->type=="1")
                 @if ($commande->client->full_name=="vide")
-                <form method="POST" action="{{route('clients.edit',$commande->client->id) }}" enctype="multipart/form-data">
+                <form method="POST" action="{{route('clients.edit',$commande->client->id) }}" >
                     @csrf
                     <div class="form-group ">
                       <label for="nom">Nom - Prenom :</label>
