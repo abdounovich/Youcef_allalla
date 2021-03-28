@@ -11,7 +11,7 @@
                     {{$commande->client->facebook}} 
                 </div>
                 @if ($commande->type=="1")
-                @if ($commande->client->facebook=="vide")
+                @if ($commande->client->full_name=="vide")
                 <form method="POST" action="{{route('clients.edit',$commande->client->id) }}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group ">
