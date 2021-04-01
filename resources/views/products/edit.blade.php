@@ -678,7 +678,7 @@ HrefImageElement.setAttribute("href",  "#");
                 <label for="sub_cat">Sous Catégorie : </label>
                 <select class="form-control" id="sub_cat" name="cat">
                   @foreach ($categories as $item)
-                  <option value="{{$item->id}}" @if($item->id==$sub_categorie->categories->id)
+                  <option value="{{$item->id}}" @if($item->id == $product->SubCategories->id)
         selected
                     @endif>{{$item->nom}}</option>
               @endforeach              </select>
