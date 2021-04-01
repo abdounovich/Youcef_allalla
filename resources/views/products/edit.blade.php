@@ -94,12 +94,12 @@
  
                <div class="form-group">
                  <label for="sub_cat">Sous Catégorie : </label>
-{{$product->SubCategories->nom}}               <select class="form-control" id="sub_cat" name="sub_cat">
-                 @foreach ($categories as $item)
-                 <option @if ($item->id==$product->SubCategories->id)
-                     selected
-                 @endif value="{{$item->id}}">{{$item->nom}}->{{$item->categories->nom}}</option>
-               @endforeach              </select> 
+                 <select class="form-control" id="sub_cat" name="cat">
+                  @foreach ($categories as $item)
+                  <option value="{{$item->id}}" @if($item->id == $product->SubCategories->id)
+        selected
+                    @endif>{{$item->nom}} -> {{$item->categories->nom}}</option>
+              @endforeach              </select>
                </div>
              <button type="submit" class="btn btn-primary col col-12 my-3">Modifier</button>
            </form>
@@ -679,7 +679,7 @@ HrefImageElement.setAttribute("href",  "#");
                   @foreach ($categories as $item)
                   <option value="{{$item->id}}" @if($item->id == $product->SubCategories->id)
         selected
-                    @endif>{{$item->id}}-{{$product->SubCategories->id}}</option>
+                    @endif>{{$item->nom}} -> {{$item->categories->nom}}</option>
               @endforeach              </select>
               </div>
              
@@ -907,13 +907,12 @@ HrefImageElement.setAttribute("href",  "#");
   
               <div class="form-group">
                 <label for="sub_cat">Sous Catégorie : </label>
-  {{$product->SubCategories->nom}}               <select class="form-control" id="sub_cat" name="sub_cat">
-                @foreach ($categories as $item)
-             
-                <option @if ($item->nom==$product->SubCategories->nom)
-                    selected
-                @endif value="{{$item->id}}">{{$item->nom}}->{{$item->categories->nom}}</option>
-              @endforeach              </select> 
+                <select class="form-control" id="sub_cat" name="cat">
+                  @foreach ($categories as $item)
+                  <option value="{{$item->id}}" @if($item->id == $product->SubCategories->id)
+        selected
+                    @endif>{{$item->nom}} -> {{$item->categories->nom}}</option>
+              @endforeach              </select>
               </div>
              
   

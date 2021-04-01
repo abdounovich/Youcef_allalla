@@ -128,6 +128,9 @@
               <div class=" col-4 p-2">
               <img class=" img-thumbnail " src="{{$color->photo}}" style="width: 50px; height:50px" alt=""><p></p>
               <p class="card-text  h5  ">{{$color->couleur}} :  </p>
+             {{--  <a class="btn btn-info btn-circle float-right  mr-2  " href="{{route('images.color',$produit->id) }}">
+                <span class="text-white  fa fa-picture-o    "></span>
+            </a> --}}
               <p class="card-text  text-success h5 ">{{$color->quantity}} </p> 
             </div>
               @endforeach
