@@ -343,7 +343,7 @@ $text=$text."\n"."(-".$percentage ."%)"." السعر الجديد : ".$remises->
                 ->payload("byColorShow".$color->id)
                 ->type('postback'))
                 ->addButton(ElementButton::create('   🔍 تكبير الصورة  ')
-            ->url($product->photo))
+            ->url($color->photo))
             ->addButton(ElementButton::create('   ➕  مزيد من الصور    ')
             ->url($this->config."/images/show/".$product->id)
             ->heightRatio('tall')
