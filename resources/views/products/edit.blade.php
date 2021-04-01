@@ -680,7 +680,7 @@ HrefImageElement.setAttribute("href",  "#");
                   @foreach ($categories as $item)
                   <option value="{{$item->id}}" @if($item->id == $product->SubCategories->id)
         selected
-                    @endif>{{$item->id}}-{{$product->SubCategories->id}}-{{$item->nom}}</option>
+                    @endif>{{$item->id}}-{{$product->SubCategories->id}}</option>
               @endforeach              </select>
               </div>
              
