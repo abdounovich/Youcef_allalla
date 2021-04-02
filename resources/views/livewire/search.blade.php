@@ -141,7 +141,9 @@
       @php
           $remises=App\Remise::where("product_id",$produit->id)->first();
           if (!$remises) {
-    echo"<p class='card-text text-info h5'>prix : ".$produit->prix."da</p>";
+    echo"<p class='card-text text-info h5'>prix de vente: ".$produit->prix."da</p>";
+    echo"<p class='card-text text-info h5'>prix d'chat: ".$produit->achat."da</p>";
+
     }else {
     $percentage=round(100-$remises->prix*100/$remises->produit->prix);
     

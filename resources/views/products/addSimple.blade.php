@@ -48,10 +48,14 @@
 
         
       
-              <div class="form-group">
-                <label for="prix">Prix : </label>
-                <input type="text" class="form-control" name="prix" id="prix" placeholder="prix en dianars">
-              </div>
+  <div class="form-group">
+    <label for="prix">Prix d'achat: </label>
+    <input type="text" class="form-control" name="achat" id="achat" placeholder="prix en dianars">
+  </div>
+          <div class="form-group">
+            <label for="prix">Prix de vente : </label>
+            <input type="text" class="form-control" name="prix" id="prix" placeholder="prix en dianars">
+          </div>
 
               <div class="form-group ">
                 <label for="nom">Quantité :</label>

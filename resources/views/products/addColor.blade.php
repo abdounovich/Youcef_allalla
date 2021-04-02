@@ -188,10 +188,15 @@ HrefImageElement.setAttribute("href",  "#");
                                     }                               
 
       </script>
+       <div class="form-group">
+        <label for="prix">Prix d'achat: </label>
+        <input type="text" class="form-control" name="achat" id="achat_color" placeholder="prix en dianars">
+      </div>
               <div class="form-group">
-                <label for="prix">Prix : </label>
+                <label for="prix">Prix de vente : </label>
                 <input type="text" class="form-control" name="prix" id="prix_color" placeholder="prix en dianars">
               </div>
+             
 
 
               <div class="form-group">

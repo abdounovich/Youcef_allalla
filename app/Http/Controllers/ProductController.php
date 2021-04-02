@@ -68,6 +68,7 @@ class ProductController extends Controller
 
        $quantité=$request->get('quantity');
        $prix=$request->get('prix');
+       $achat=$request->get('achat');
        $sub_cat=$request->get('sub_cat');
        $code_interne=$request->get('code_interne');
        $descreption=$request->get('descreption');
@@ -79,6 +80,7 @@ class ProductController extends Controller
        $product->photo=$photo;
        $product->quantity=$quantité;
        $product->prix=$prix;
+       $product->achat=$achat;
        $product->SubCat_id=$sub_cat;
        $product->type=$type;
        $code_interne=$request->get('code_interne');
@@ -129,6 +131,7 @@ class ProductController extends Controller
        $quantité="2";
 
        $prix=$request->get('prix');
+       $achat=$request->get('achat');
        $sub_cat=$request->get('sub_cat');
        $descreption=$request->get('descreption');
        $type="1";
@@ -140,6 +143,7 @@ class ProductController extends Controller
        $product->photo=$photo;
        $product->quantity=$quantité;
        $product->prix=$prix;
+       $product->achat=$achat;
        $product->SubCat_id=$sub_cat;
        $product->type=$type;
        $code_interne=$request->get('code_interne');
@@ -203,6 +207,7 @@ class ProductController extends Controller
 
        $quantité=$request->get('quantity');
        $prix=$request->get('prix');
+       $achat=$request->get('achat');
        $sub_cat=$request->get('sub_cat');
        $descreption=$request->get('descreption');
        $type="1";
@@ -213,6 +218,7 @@ class ProductController extends Controller
        $product->photo=$photo;
        $product->quantity="0";
        $product->prix=$prix;
+       $product->achat=$achat;
        $product->SubCat_id=$sub_cat;
        $product->type=$type;
        $code_interne=$request->get('code_interne');
@@ -316,6 +322,7 @@ class ProductController extends Controller
        $nom=$request->get('nom');
 
        $prix=$request->get('prix');
+       $achat=$request->get('achat');
        $sub_cat=$request->get('sub_cat');
        $descreption=$request->get('descreption');
        $type="0";
@@ -326,6 +333,7 @@ class ProductController extends Controller
        $product->photo=$photo;
        $product->quantity="0.1";
        $product->prix=$prix;
+       $product->achat=$achat;
        $product->SubCat_id=$sub_cat;
        $product->type=$type;
        $code_interne=$request->get('code_interne');
@@ -390,6 +398,7 @@ else{$photo=$product->photo;}
       $nom=$request->get('nom');
       $quantité=$request->get('quantity');
       $prix=$request->get('prix');
+      $achat=$request->get('achat');
       $sub_cat=$request->get('sub_cat');
       $descreption=$request->get('descreption');
       $type="1";
@@ -398,6 +407,7 @@ else{$photo=$product->photo;}
       $product->photo=$photo;
       $product->quantity=$quantité;
       $product->prix=$prix;
+      $product->achat=$achat;
       $product->SubCat_id=$sub_cat;
       $product->type=$type;
       $product->descreption=$descreption;
