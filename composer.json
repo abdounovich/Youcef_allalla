@@ -20,8 +20,7 @@
         "jrm2k6/cloudder": "dev-master#856fb20",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
-        "livewire/livewire": "1.0",
-        "spatie/laravel-backup": "6.0"
+        "livewire/livewire": "1.0"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
