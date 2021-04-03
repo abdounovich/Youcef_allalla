@@ -16,7 +16,6 @@
 
     
    </div>
-
    @else 
     @if ($commande->created_at>$remises->created_at) 
                                 @php
