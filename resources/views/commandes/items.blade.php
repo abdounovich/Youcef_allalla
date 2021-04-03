@@ -30,8 +30,6 @@
                                   <span class="badge mt-1 float-right  mr-1 float-sm-right text-white  badge-success">   {{$commande->total_price}} Da  </span>
 
                                 </div>
-
-
                             @else 
                             <div class="card-text  text-white mt-1  h5"> {{$commande->product->prix}} da
     <span class="badge  float-right mt-1  mr-1 float-sm-right text-white  badge-success">   {{$commande->total_price}} Da  </span>
