@@ -11,7 +11,7 @@
  
    @if (!$remises) 
    
-   <div class="card-text  text-white mt-1  h5"> {{$commande->product->prix}} da 
+   <div class="card-text  text-white mt-1  h5"> {{$commande->product->prix}} da ({{$benefice=$commande->product->prix-$commande->product->achat}})
     <span class="badge float-right mt-1  mr-1 float-sm-right text-white  badge-success">   {{$commande->total_price}} Da  </span>
 
     
@@ -25,7 +25,7 @@
                                 @endphp
 
                                  <div class="card-text h5 clearfix  ">
-                                   <span class="text-white float-sm-left ">{{$remises->produit->prix}} da</span>
+                                   <span class="text-white float-sm-left ">{{$remises->produit->prix}} da ({{$benefice=$commande->product->prix-$commande->product->achat}})</span>
                                   <span class="badge ml-2  mr-1 float-sm-left  badge-info"> - {{$percentage}} % </span>
                                   <span class="badge mt-1 float-right  mr-1 float-sm-right text-white  badge-success">   {{$commande->total_price}} Da  </span>
 
