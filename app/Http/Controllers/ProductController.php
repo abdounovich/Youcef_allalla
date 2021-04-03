@@ -65,7 +65,6 @@ class ProductController extends Controller
         $image_url= Cloudder::show(Cloudder::getPublicId(), ["width" => $width, "height"=>$height]);
        $nom=$request->get('nom');
        $photo=$image_url;
-
        $quantité=$request->get('quantity');
        $prix=$request->get('prix');
        $achat=$request->get('achat');
