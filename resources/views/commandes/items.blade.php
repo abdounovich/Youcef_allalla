@@ -25,15 +25,22 @@
                                 @endphp
 
                                  <div class="card-text h5 clearfix  ">
-                                   <span class="text-success float-sm-left ">{{$remises->produit->prix}} da ({{$benefice=$remises->produit->prix-$commande->product->achat}})</span>
+                                   @php
+                                       $benefice=$remises->produit->prix-$commande->product->achat;
+                                   @endphp
+                                   <span class="text-success float-sm-left ">{{$remises->produit->prix}} da ({{$benefice}})</span>
                                   <span class="badge ml-2  mr-1 float-sm-left  badge-info"> - {{$percentage}} % </span>
                                   <span class="badge float-right mt-1  mr-1 float-sm-right text-white  badge-info">   {{$commande->total_price}} Da ({{$benefice*$commande->quantity}})  </span>
 
                                 </div>
                             @else 
+                            @php
+                            $benefice=$commande->product->prix-$commande->product->achat;
+                        @endphp
                             <div class="card-text  text-white mt-1  h5"> {{$commande->product->prix}} da
-    <span class="badge  float-right mt-1  mr-1 float-sm-right text-white  badge-success">   {{$commande->total_price}} Da   </span>
-    <span class="badge float-right mt-1  mr-1 float-sm-right text-white  badge-info">   {{$commande->total_price}} Da ({{$commande->quantity*$benefice=$commande->product->prix-$commande->product->achat}})  </span>
+    <span class="badge  float-right mt-1  mr-1 float-sm-right text-white  badge-success">   {{$commande->total_price}} Da ({{$commande->quantity*$benefice}})    </span>
+   
+    <span class="badge float-right mt-1  mr-1 float-sm-right text-white  badge-info">   {{$commande->total_price}} Da ({{$commande->quantity*$benefice}})  </span>
 
    </div>
    
