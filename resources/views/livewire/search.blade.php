@@ -143,7 +143,7 @@
           if (!$remises) {
     echo"<p class='card-text text-info h5'>Prix de vente: ".$produit->prix."da</p>";
     echo"<p class='card-text text-primary h5'>Prix d'achat: ".$produit->achat."da</p>";
-    echo"<p class='card-text text-success h5'>Bénéfice: ".$produit->prix - $produit->achat."da</p>";
+    echo"<p class='card-text text-success h5'>Bénéfice: ".(($produit->prix) -($produit->achat))."da</p>";
 
 
     }else {
@@ -156,7 +156,7 @@
           <span class="badge p-1 ml-3 badge-info"> - '.$percentage.' % </span>
         </p>';
         echo"<p class='card-text text-primary h5'>Prix d'achat: ".$produit->achat."da</p>";
-    echo"<p class='card-text text-success h5'>Bénéfice: ".$remise->prix - $produit->achat."da</p>";
+    echo"<p class='card-text text-success h5'>Bénéfice: ".(($remise->prix) - ($produit->achat))."da</p>";
     }
     
       @endphp
