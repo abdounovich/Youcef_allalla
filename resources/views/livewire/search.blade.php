@@ -141,8 +141,10 @@
       @php
           $remises=App\Remise::where("product_id",$produit->id)->first();
           if (!$remises) {
-    echo"<p class='card-text text-info h5'>prix de vente: ".$produit->prix."da</p>";
-    echo"<p class='card-text text-info h5'>prix d'chat: ".$produit->achat."da</p>";
+    echo"<p class='card-text text-info h5'>Prix de vente: ".$produit->prix."da</p>";
+    echo"<p class='card-text text-primary h5'>Prix d'achat: ".$produit->achat."da</p>";
+    echo"<p class='card-text text-success h5'>Bénéfice: ".$produit->prix-$produit->achat."da</p>";
+
 
     }else {
     $percentage=round(100-$remises->prix*100/$remises->produit->prix);
@@ -153,7 +155,8 @@
           <span class="text-success ml-3">'.$remises->prix.' da</span>                      
           <span class="badge p-1 ml-3 badge-info"> - '.$percentage.' % </span>
         </p>';
-    
+        echo"<p class='card-text text-primary h5'>Prix d'achat: ".$produit->achat."da</p>";
+    echo"<p class='card-text text-success h5'>Bénéfice: ".$remise->prix-$produit->achat."da</p>";
     }
     
       @endphp
