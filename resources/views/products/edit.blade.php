@@ -304,10 +304,14 @@ HrefImageElement.setAttribute("href",  "#");
                                   }                               
 
     </script>
-            <div class="form-group">
-              <label for="prix">Prix : </label>
-            <input type="text" class="form-control" value="{{$product->prix}}" name="prix" id="prix" placeholder="prix en dianars">
-            </div>
+              <div class="form-group">
+                <label for="prix">Prix d'achat : </label>
+                <input type="text" class="form-control"  value="{{$product->achat}}" name="achat" id="prix" placeholder="prix en dianars">
+              </div>
+              <div class="form-group">
+               <label for="prix">Prix de vente : </label>
+               <input type="text" class="form-control"  value="{{$product->prix}}" name="prix" id="prix" placeholder="prix en dianars">
+             </div>
 
 
             <div class="form-group">
@@ -671,10 +675,13 @@ HrefImageElement.setAttribute("href",  "#");
   
       </script>
               <div class="form-group">
-                <label for="prix">Prix : </label>
-              <input type="text" class="form-control" value="{{$product->prix}}" name="prix" id="prix" placeholder="prix en dianars">
+                <label for="prix">Prix d'achat : </label>
+                <input type="text" class="form-control"  value="{{$product->achat}}" name="achat" id="prix" placeholder="prix en dianars">
               </div>
-  
+              <div class="form-group">
+               <label for="prix">Prix de vente : </label>
+               <input type="text" class="form-control"  value="{{$product->prix}}" name="prix" id="prix" placeholder="prix en dianars">
+             </div>
   
               <div class="form-group">
                 <label for="sub_cat">Sous-catégorie: </label>
@@ -902,10 +909,14 @@ HrefImageElement.setAttribute("href",  "#");
                                     }                               
   
       </script>
-              <div class="form-group">
-                <label for="prix">Prix : </label>
-              <input type="text" class="form-control" value="{{$product->prix}}" name="prix" id="prix" placeholder="prix en dianars">
+               <div class="form-group">
+                <label for="prix">Prix d'achat : </label>
+                <input type="text" class="form-control"  value="{{$product->achat}}" name="achat" id="prix" placeholder="prix en dianars">
               </div>
+              <div class="form-group">
+               <label for="prix">Prix de vente : </label>
+               <input type="text" class="form-control"  value="{{$product->prix}}" name="prix" id="prix" placeholder="prix en dianars">
+             </div>
   
   
               <div class="form-group">
