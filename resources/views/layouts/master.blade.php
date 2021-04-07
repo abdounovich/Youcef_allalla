@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
+    <meta name="facebook-domain-verification" content="1ngqh1hil6pfkyls3m0vwk5gfsuung" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="{{ asset('js/app.js',true )}}" type="text/js"></script>
