@@ -40,11 +40,10 @@ class LivraisonPriceConversation extends Conversation
         $this->desk=$responses->data[0]->desk_fee;
         ${"W".$wilaya}="W".$wilaya;
         $this->wilayaName=$this->obj->${"W".$wilaya};
-        $this->bot->reply("أهلا بناس  ".$this->wilayaName);
-        $this->bot->reply(" ثمن التوصيل للمنزل هو ".$this->home." دج ");
-        $this->bot->reply("ثمن التوصيل لمكتب YALIDINE في  ولايتك  هو ".$this->desk." دج  ");
+        $this->bot->reply(" أهلا بناس ".$this->wilayaName);
+    
         $this->bot->typesAndWaits(1);
-        $this->bot->reply(ButtonTemplate::create('يمكنك الآن بدأ التسوق بكل سهولة  😍 ')
+        $this->bot->reply(ButtonTemplate::create(" ثمن التوصيل للمنزل هو ".$this->home." دج "."\n"."ثمن التوصيل لمكتب YALIDINE في  ولايتك  هو ".$this->desk." دج  ")
         ->addButton(ElementButton::create('🛍 إبدأ التسوق الآن')
             ->type('postback')
             ->payload('show_me_products')
@@ -57,7 +56,7 @@ class LivraisonPriceConversation extends Conversation
     public function askWilaya(){
         $this->ask('🇩🇿  من فضلك أدخل رقم ولايتك     ', function(Answer $answer) {
             $this->wilaya =$answer->getText();
-            if (is_numeric($this->wilaya)AND $this->wilaya<48 AND $this->wilaya>0) {
+            if (is_numeric($this->wilaya)AND $this->wilaya<49 AND $this->wilaya>0) {
     
 
 
