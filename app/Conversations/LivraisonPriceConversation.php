@@ -45,7 +45,7 @@ class LivraisonPriceConversation extends Conversation
         $this->ask('🇩🇿  من فضلك أدخل رقم ولايتك     ', function(Answer $answer) {
             $this->wilaya = $answer->getText();
     
-            if (is_numeric($this->wilaya)) {
+            if (is_numeric($this->wilaya)AND $this->wilaya<48 AND $this->wilaya>0) {
     
     ${"W".$this->wilaya}="W".$this->wilaya;
      $this->wilayaName=$this->obj->${"W".$this->wilaya};

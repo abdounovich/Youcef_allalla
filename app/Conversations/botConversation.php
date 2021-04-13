@@ -575,7 +575,7 @@ public function askWilaya(){
     $this->ask('🇩🇿  من فضلك أدخل رقم ولايتك     ', function(Answer $answer) {
         $this->wilaya = $answer->getText();
 
-        if (is_numeric($this->wilaya)) {
+        if (is_numeric($this->wilaya)AND $this->wilaya<48 AND $this->wilaya>0) {
 
 
 
