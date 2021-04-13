@@ -73,6 +73,19 @@ $bot->reply($full_name . ' : مرحبا بك ☺ ');
 $bot->typesAndWaits(1);
 $bot->reply( 'تشرفنا زيارتك لصفحتنا  D-Zed Store');
 $bot->typesAndWaits(1);
+
+
+
+
+// Build message object
+$message = OutgoingMessage::create('This is my text')
+->withAttachment("https://res.cloudinary.com/ds9qfm1ok/image/upload/v1618329951/172841827_1109135949593592_1691063750654388273_n_g63vz4.png");
+$bot->reply($message); 
+$message2 = OutgoingMessage::create('This is my text')
+->withAttachment("https://res.cloudinary.com/ds9qfm1ok/image/upload/v1618329952/172655722_359707302074184_911083525856796617_n_owvnd5.png");
+$bot->reply($message2); 
+
+
 $bot->reply(ButtonTemplate::create('   🤖  كيف يمكنني خدمتك ؟  ')
 ->addButton(ElementButton::create('  🛒 إبدأ التسوق الآن ')
 	    ->type('postback')
