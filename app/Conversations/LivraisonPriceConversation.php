@@ -13,7 +13,6 @@ class LivraisonPriceConversation extends Conversation
     public function AskPrice($wilaya)
     {
 
-        $this->bot->reply($wilaya);
 
         $url = "https://api.yalidine.com/v1/deliveryfees/".$wilaya; // the wilayas endpoint
         $curl = curl_init();
@@ -37,8 +36,10 @@ class LivraisonPriceConversation extends Conversation
         $responses = json_decode($response_json);
         $this->home=$responses->data[0]->home_fee;
         $this->desk=$responses->data[0]->desk_fee;
+        ${"W".$wilaya}="W".$wilaya;
+        $this->wilayaName=$this->obj->${"W".$wilaya};
         $this->bot->reply(" ثمن التوصيل للمنزل هو ".$this->home." دج ");
-        $this->bot->reply(" ثمن التوصيل لمكتب YALIDINE هو ".$this->desk." دج  ");
+        $this->bot->reply("ثمن التوصيل لمكتب YALIDINE في  ".$this->wilayaName." هو ".$this->desk." دج  ");
         
     }
 
@@ -47,8 +48,7 @@ class LivraisonPriceConversation extends Conversation
             $this->wilaya =$answer->getText();
             if (is_numeric($this->wilaya)AND $this->wilaya<48 AND $this->wilaya>0) {
     
-    ${"W".$this->wilaya}="W".$this->wilaya;
-     $this->wilayaName=$this->obj->${"W".$this->wilaya};
+
 
                 $this->AskPrice($this->wilaya);
 
