@@ -14,14 +14,15 @@ use App\Conversations\ExampleConversation;
 use App\Conversations\profileConversation;
 use App\Http\Controllers\BotManController;
 use App\Conversations\ByTailleConversation;
+use BotMan\BotMan\Messages\Attachments\Image;
 use BotMan\BotMan\Messages\Outgoing\Question;
 use BotMan\Drivers\Facebook\Extensions\Element;
+use App\Conversations\LivraisonPriceConversation;
 use BotMan\BotMan\Messages\Outgoing\Actions\Button;
+use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
 use BotMan\Drivers\Facebook\Extensions\ElementButton;
 use BotMan\Drivers\Facebook\Extensions\ButtonTemplate;
 use BotMan\Drivers\Facebook\Extensions\GenericTemplate;
-use BotMan\BotMan\Messages\Attachments\Image;
-use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
 
 
 
@@ -32,6 +33,14 @@ use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
 
 $botman = resolve('botman');
 $this->config=Config::get('app.url');
+
+
+
+
+$botman->hears('AskLivraisonPrice', function($bot) {
+    $bot->startConversation(new LivraisonPriceConversation);
+});
+
 
 $botman->hears('GET_STARTED', function ($bot) {
     $user = $bot->getUser();
@@ -93,9 +102,9 @@ $bot->reply(ButtonTemplate::create('   🤖  كيف يمكنني خدمتك ؟  
 	    ->type('postback')
 	    ->payload('show_me_products')
     )
-    ->addButton(ElementButton::create(' 👨‍🏫 كيفية الشراء')
+    ->addButton(ElementButton::create('؟ سعر التوصيل إلى ولايتك ')
     ->type('postback')
-    ->payload('steps')	)
+    ->payload('AskLivraisonPrice')	)
 	->addButton(ElementButton::create(' 💬 إستفسار ')
     ->url('https://www.messenger.com/t/merahi.adjalile')
 	)
@@ -103,30 +112,6 @@ $bot->reply(ButtonTemplate::create('   🤖  كيف يمكنني خدمتك ؟  
 
 
 
-$url = "https://api.yalidine.com/v1/deliveryfees/"."25"; // the wilayas endpoint
-$curl = curl_init();
-curl_setopt_array($curl, array(
-    CURLOPT_URL => $url,
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_ENCODING => '',
-    CURLOPT_MAXREDIRS => 10,
-    CURLOPT_TIMEOUT => 0,
-    CURLOPT_FOLLOWLOCATION => true,
-    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-    CURLOPT_CUSTOMREQUEST => 'GET',
-    CURLOPT_HTTPHEADER => array(
-        'X-API-ID: '."80153160526942779734",
-        'X-API-TOKEN: '."np3A1Ezh8BjgNS2ivR139nsoewmmLXLUu7uSfeFVWKy5xfQRowFptHZx8O70Jr6C"
-    ),
-));
-
-$response_json = curl_exec($curl);
-curl_close($curl);
-$responses = json_decode($response_json);
-$home=$responses->data[0]->home_fee;
-$desk=$responses->data[0]->desk_fee;
-$bot->reply(" ثمن التوصيل للمنزل هو ".$home."دج  ");
-$bot->reply(" ثمن التوصيل لمكتب YALIDINE هو ".$desk."دج  ");
 
 
 });
