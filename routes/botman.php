@@ -102,6 +102,33 @@ $bot->reply(ButtonTemplate::create('   🤖  كيف يمكنني خدمتك ؟  
 );
 
 
+
+$url = "https://api.yalidine.com/v1/deliveryfees/"."25"; // the wilayas endpoint
+$curl = curl_init();
+curl_setopt_array($curl, array(
+    CURLOPT_URL => $url,
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => '',
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 0,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => 'GET',
+    CURLOPT_HTTPHEADER => array(
+        'X-API-ID: '."80153160526942779734",
+        'X-API-TOKEN: '."np3A1Ezh8BjgNS2ivR139nsoewmmLXLUu7uSfeFVWKy5xfQRowFptHZx8O70Jr6C"
+    ),
+));
+
+$response_json = curl_exec($curl);
+curl_close($curl);
+$responses = json_decode($response_json);
+$home=$responses->data[0]->home_fee;
+$desk=$responses->data[0]->desk_fee;
+$bot->reply(" ثمن التوصيل للمنزل هو ".$home."دج  ");
+$bot->reply(" ثمن التوصيل لمكتب YALIDINE هو ".$desk."دج  ");
+
+
 });
 
 
