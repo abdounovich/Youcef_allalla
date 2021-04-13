@@ -42,7 +42,7 @@ class LivraisonPriceConversation extends Conversation
         $this->desk=$responses->data[0]->desk_fee;
         ${"W".$wilaya}="W".$wilaya;
         $this->wilayaName=$this->obj->${"W".$wilaya};
-        $this->bot->reply(" أهلا بناس ".$this->wilayaName." 😍 ");
+        $this->bot->reply(" أهـــلا وســهــلا  بـنـاس ".$this->wilayaName." 😍 ");
     
         $this->bot->typesAndWaits(1);
         $this->bot->reply(ButtonTemplate::create(" ثمن التوصيل للمنزل هو ".$this->home." دج "."\n"."ثمن التوصيل لمكتب YALIDINE في  ولايتك  هو ".$this->desk." دج  ")
@@ -137,11 +137,11 @@ class LivraisonPriceConversation extends Conversation
         
         $this->obj = json_decode($this->jsonobj);
         $this->attachment = new Image('https://res.cloudinary.com/ds9qfm1ok/image/upload/v1618329949/171611099_189522426148517_6058507225347659126_n_oyghe3.png');
-
 // Build message object
 $this->message = OutgoingMessage::create('This is my text')
 ->withAttachment( $this->attachment);
 $this->bot->reply( $this->message);
+$this->bot->typesAndWaits(1);
        $this->askWilaya();
     }
 }
