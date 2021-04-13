@@ -3,7 +3,9 @@
 namespace App\Conversations;
 
 use BotMan\BotMan\Messages\Incoming\Answer;
+use BotMan\Drivers\Facebook\Extensions\ElementButton;
 use BotMan\BotMan\Messages\Conversations\Conversation;
+use BotMan\Drivers\Facebook\Extensions\ButtonTemplate;
 
 class LivraisonPriceConversation extends Conversation
 {
@@ -41,6 +43,14 @@ class LivraisonPriceConversation extends Conversation
         $this->bot->reply("أهلا بناس  ".$this->wilayaName);
         $this->bot->reply(" ثمن التوصيل للمنزل هو ".$this->home." دج ");
         $this->bot->reply("ثمن التوصيل لمكتب YALIDINE في  ولايتك  هو ".$this->desk." دج  ");
+        $this->bot->typesAndWaits(1);
+        $this->bot->reply(ButtonTemplate::create('يمكنك الآن بدأ التسوق بكل سهولة  😍 ')
+        ->addButton(ElementButton::create('🛍 إبدأ التسوق الآن')
+            ->type('postback')
+            ->payload('show_me_products')
+        )
+        
+        );
         
     }
 
