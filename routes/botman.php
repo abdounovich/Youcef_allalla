@@ -102,7 +102,7 @@ $bot->reply(ButtonTemplate::create('   🤖  كيف يمكنني خدمتك ؟  
 	    ->type('postback')
 	    ->payload('show_me_products')
     )
-    ->addButton(ElementButton::create('؟ سعر التوصيل إلى ولايتك ')
+    ->addButton(ElementButton::create('؟ سعر التوصيل   ')
     ->type('postback')
     ->payload('AskLivraisonPrice')	)
 	->addButton(ElementButton::create(' 💬 إستفسار ')
