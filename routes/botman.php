@@ -37,7 +37,7 @@ $this->config=Config::get('app.url');
 
 
 
-$botman->hears('22', function($bot) {
+$botman->hears('A', function($bot) {
     $bot->startConversation(new LivraisonPriceConversation);
 });
 
