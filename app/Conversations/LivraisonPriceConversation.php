@@ -49,9 +49,9 @@ class LivraisonPriceConversation extends Conversation
     
     ${"W".$this->wilaya}="W".$this->wilaya;
      $this->wilayaName=$this->obj->${"W".$this->wilaya};
+     $this->bot->reply($this->wilaya);
 
                 $this->AskPrice($this->wilaya);
-                $this->bot->reply($this->wilaya);
 
             }
             else{$this->bot->reply(" خطأ , من فضلك أدخل رقم الولاية فقط ");
