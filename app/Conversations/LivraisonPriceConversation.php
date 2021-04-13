@@ -42,7 +42,7 @@ class LivraisonPriceConversation extends Conversation
         $this->desk=$responses->data[0]->desk_fee;
         ${"W".$wilaya}="W".$wilaya;
         $this->wilayaName=$this->obj->${"W".$wilaya};
-        $this->bot->reply(" أهلا بناس ".$this->wilayaName);
+        $this->bot->reply(" أهلا بناس ".$this->wilayaName." 😍 ");
     
         $this->bot->typesAndWaits(1);
         $this->bot->reply(ButtonTemplate::create(" ثمن التوصيل للمنزل هو ".$this->home." دج "."\n"."ثمن التوصيل لمكتب YALIDINE في  ولايتك  هو ".$this->desk." دج  ")
