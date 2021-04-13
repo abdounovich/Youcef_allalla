@@ -11,6 +11,9 @@ class LivraisonPriceConversation extends Conversation
     
     public function AskPrice($wilaya)
     {
+
+        $this->bot->reply($wilaya);
+
         $url = "https://api.yalidine.com/v1/deliveryfees/".$wilaya; // the wilayas endpoint
         $curl = curl_init();
         curl_setopt_array($curl, array(
