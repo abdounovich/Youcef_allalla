@@ -92,8 +92,6 @@ $bot->reply($message);
 $message2 = OutgoingMessage::create('This is my text')
 ->withAttachment($attachment2);
 $bot->reply($message2); 
-
-
 $bot->reply(ButtonTemplate::create('   🤖  كيف يمكنني خدمتك ؟  ')
 ->addButton(ElementButton::create('  🛒 إبدأ التسوق الآن ')
 	    ->type('postback')
