@@ -9,9 +9,9 @@ class LivraisonPriceConversation extends Conversation
 
 
     
-    public function AskPrice($wilayaNumber)
+    public function AskPrice($wilaya)
     {
-        $url = "https://api.yalidine.com/v1/deliveryfees/".$wilayaNumber; // the wilayas endpoint
+        $url = "https://api.yalidine.com/v1/deliveryfees/".$wilaya; // the wilayas endpoint
         $curl = curl_init();
         curl_setopt_array($curl, array(
             CURLOPT_URL => $url,
@@ -44,17 +44,10 @@ class LivraisonPriceConversation extends Conversation
     
             if (is_numeric($this->wilaya)) {
     
-    
-    
-    
-    
-    
-    
     ${"W".$this->wilaya}="W".$this->wilaya;
      $this->wilayaName=$this->obj->${"W".$this->wilaya};
-     $this->wilayaNumber=$this->wilaya;
 
-                $this->AskPrice($this->wilayaNumber);
+                $this->AskPrice($this->wilaya);
             }
             else{$this->bot->reply(" خطأ , من فضلك أدخل رقم الولاية فقط ");
                 $this->askWilaya();
