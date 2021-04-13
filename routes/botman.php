@@ -82,9 +82,6 @@ $bot->reply($full_name . ' : مرحبا بك ☺ ');
 $bot->typesAndWaits(1);
 $bot->reply( 'تشرفنا زيارتك لصفحتنا  D-Zed Store');
 $bot->typesAndWaits(1);
-
-
-
 $attachment1 = new Image('https://res.cloudinary.com/ds9qfm1ok/image/upload/v1618329951/172841827_1109135949593592_1691063750654388273_n_g63vz4.png');
 $attachment2 = new Image('https://res.cloudinary.com/ds9qfm1ok/image/upload/v1618329952/172655722_359707302074184_911083525856796617_n_owvnd5.png');
 
