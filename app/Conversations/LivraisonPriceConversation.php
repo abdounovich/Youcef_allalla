@@ -65,7 +65,7 @@ class LivraisonPriceConversation extends Conversation
                 $this->AskPrice($this->wilaya);
 
             }
-            else{$this->bot->reply(" خطأ , من فضلك أدخل رقم الولاية فقط ");
+            else{$this->bot->reply("👇 خطأ , من فضلك أدخل رقم الولاية فقط ✋");
                 $this->askWilaya();
             }
         
