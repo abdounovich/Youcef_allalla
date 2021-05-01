@@ -121,7 +121,41 @@ $bot->reply(ButtonTemplate::create('   🤖  كيف يمكنني خدمتك ؟  
 
 $botman->fallback(function($bot) {
     $bot->typesAndWaits(1);
+    $user = $bot->getUser();
+    $facebook_id = $user->getId();
+    // Access last name
+    $firstname = $user->getFirstname();
+// Access last name
+$lastname = $user->getLastname();
+$full_name=$firstname.'-'.$lastname;
+// Access Username
+$username=Client::whereFacebook($full_name)->count();
+if ($username=="0") {
+    $client=new Client();
+    $client->facebook=$full_name;
+    $client->slug=Str::random(10) ;
+    $client->fb_id=$facebook_id;
+    $client->phone="vide";
+    $client->address="vide";
+    $client->wilaya="vide";
+    $client->full_name="vide";
+    $config=Config::get('botman.facebook.token');
 
+    ini_set("allow_url_fopen", 1);
+    
+                  $userInfoData=file_get_contents('https://graph.facebook.com/v2.6/'.$client->fb_id.'?fields=profile_pic&access_token='.$config);
+                  $userInfo = json_decode($userInfoData, true);
+              $picture = $userInfo['profile_pic'] ;
+    
+   
+    $client->photo=$picture;
+
+
+    $client->save();
+
+
+
+}
     $bot->reply(ButtonTemplate::create('عذرًا ، لم أستطع فهمك 😕 '."\n". 'هذه قائمة بالأوامر التي أفهمها:')
 
 
