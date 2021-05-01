@@ -14,8 +14,8 @@
                 @if ($commande->client->full_name=="vide")
                 <form method="POST" action="{{route('clients.edit',$commande->client->id) }}" >
                     @csrf
-                    <div class="form-group ">
-                      <label for="nom">Nom - Prenom :</label>
+                    <div class="form-group text-dark">
+                      <label for="nom" >Nom - Prenom :</label>
                       <input type="text" class="form-control" name="full_name" id="full_name"  placeholder="Entrer le nom ">
                     </div>
                     <button type="submit" class="btn btn-primary col col-12 mb-4">Ajouter</button>

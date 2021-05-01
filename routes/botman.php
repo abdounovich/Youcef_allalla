@@ -967,5 +967,4 @@ $botman->hears('CommandeByType([0-9]+)', function ( $bot,$number7) {
     
     
     
-    
 
