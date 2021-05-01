@@ -156,7 +156,7 @@ if ($username=="0") {
 
 
 }
-    $bot->reply(ButtonTemplate::create('عذرًا ، لم أستطع فهمك 😕 '."\n". 'هذه قائمة بالأوامر التي أفهمها:')
+ /*    $bot->reply(ButtonTemplate::create('عذرًا ، لم أستطع فهمك 😕 '."\n". 'هذه قائمة بالأوامر التي أفهمها:')
 
 
 
@@ -170,7 +170,7 @@ if ($username=="0") {
 ->addButton(ElementButton::create(' 💬 إستفسار')
 ->url('https://www.messenger.com/t/merahi.adjalile')
 )
-);
+); */
 
 });
 
