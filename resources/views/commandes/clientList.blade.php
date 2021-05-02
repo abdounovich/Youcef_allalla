@@ -10,6 +10,7 @@
                 <div class="mt-4 text-info text-bold text-" style="font-size: 15px">
                     fb/{{$commande->client->facebook}} 
                 </div>
+                @if ($commande->type=="1")
                 @if ($commande->client->full_name=="vide")
                 <form method="POST" action="{{route('clients.edit',$commande->client->id) }}" >
                     @csrf
@@ -23,6 +24,7 @@
                 <div class="mt-2 mb-3 text-dark text-bold" style="font-size: 20px">
                     {{$commande->client->full_name}} 
                 </div>
+                @endif
               
                 @endif
 
