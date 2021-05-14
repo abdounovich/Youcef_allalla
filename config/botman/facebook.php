@@ -91,11 +91,21 @@ return [
                  
                 ],
                 [
+                    'title' => ' 🚛 حساب سعر التوصيل    ',
+                    'type' => 'postback',
+                    'payload' => 'AskLivraisonPrice',
+
+                ],
+                [
                     'title' => ' 🛒 طلبياتي   ',
                     'type' => 'postback',
                     'payload' => 'my_commandes',
 
                 ],
+               
+                
+
+
                 [
                     'title' => ' ✍️  تعديل بياناتي ',
                     'type' => 'postback',
