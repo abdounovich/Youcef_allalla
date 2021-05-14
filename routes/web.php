@@ -92,6 +92,8 @@ Route::get('client/{id}', 'ClientController@show')->name('client.show');
 Route::get('commandes', 'CommandeController@index')->name('commandes');
 Route::post('commandes/add', 'CommandeController@store')->name('commandes.add');
 Route::get('commandes/edit/{id}', 'CommandeController@edit')->name('commandes.edit');
+Route::get('commandes/update/{id}', 'CommandeController@update')->name('commandes.update');
+
 Route::post('commandes/edit/{id}', 'CommandeController@update')->name('commandes.edit');
 Route::get('commandes/delete/{id}', 'CommandeController@destroy')->name('commandes.delete');
 Route::get('commandes/confirmation/{id}', 'CommandeController@confirmation')->name('commandes.confirmation');

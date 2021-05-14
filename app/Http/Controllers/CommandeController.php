@@ -123,9 +123,12 @@ return redirect()->route('commandes');
      * @param  \App\Commande  $commande
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Commande $commande)
+    public function update(Request $request, $id)
     {
-        //
+        $commande=Commande::find($id);
+        $commande->yalidine_TN=$request->get("yalidine");
+        $commande->save();
+        return back()->with("success","ajouté avec success"); 
     }
 
     /**

@@ -54,9 +54,23 @@
    <div class=" badge badge-danger mt-2 text-white h5 p-2 m-2  float-left " >{{$commande->delivery_type}}</div>  
    
    @if ($commande->yalidine_TN=="")
-       kjkjjj
+      
+
+
+   <form method="POST" action="{{route('commandes.update',$commande->id) }}" >
+       @csrf
+       <div class="form-group text-dark">
+         <input type="text" class="form-control" name="yalidine" id="yalidine"  placeholder="Entrer yalidine Tracking number ">
+       </div>
+       <button type="submit" class="btn btn-primary col col-12 mb-4">Ajouter</button>
+     </form>
+
+
+
+       @else
+            <div class="badge badge-primary mt-2 text-white h5 p-2 m-2  float-left ">{{$commande->yalidine_TN}}</div>
+  
    @endif
-   <div class="badge badge-primary mt-2 text-white h5 p-2 m-2  float-left ">{{$commande->yalidine_TN}}</div>
    <div class="  text-white h5  p-2 float-right  " >{{$commande->slug}}</div> 
    </div>
  <div>
