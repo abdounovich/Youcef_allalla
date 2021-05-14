@@ -14,7 +14,7 @@ class AddDeliveryTypeColumnToCommandesTable extends Migration
     public function up()
     {
         Schema::table('commandes', function (Blueprint $table) {
-            //
+            $table->text("delivery_type")->nullable();
         });
     }
 
