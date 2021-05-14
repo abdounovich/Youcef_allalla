@@ -7,9 +7,7 @@
 
 
 <hr color="white">
-     <a class="  btn-circle float-right " >
             <span > {{$commande->delivery_type}} </span> 
-</a>
 <div class=" bg-dark  " >
        
         
