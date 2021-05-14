@@ -50,7 +50,7 @@
                             $ByClientInactiveCommandes=App\Commande::where("type",1)->where("client_id",$commande->client->id)->count();
                             $ByClientActiveCommandes=App\Commande::where("type",2)->where("client_id",$commande->client->id)->count();
                             $ByClientDelivredCommandes=App\Commande::where("type",3)->where("client_id",$commande->client->id)->count();
-                            $ByClientcanceledCommandes=App\Commande::where("type",4)->orWhere("type",5)->where("client_id",$commande->client->id)->count();
+                            $ByClientcanceledCommandes=App\Commande::where("type",4)->where("client_id",$commande->client->id)->count();
                             $ByClientenrouteCommandes=App\Commande::where("type",6)->where("client_id",$commande->client->id)->count();
 
                         @endphp 
@@ -58,7 +58,7 @@
                         
                      
 
-                      {{--   @if ($ByClientInactiveCommandes>0)
+                        @if ($ByClientInactiveCommandes>0)
                         <span class="  badge badge-secondary  ">
                             {{$ByClientInactiveCommandes}}</span> 
                         @endif
@@ -82,7 +82,7 @@
                         <span class=" ml-2  badge btn-danger  ">{{$ByClientcanceledCommandes}}</span> 
 
                         @endif
- --}}
+
                  
  
 
