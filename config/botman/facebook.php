@@ -103,14 +103,7 @@ return [
 
                 ],
                
-                
-
-
-                [
-                    'title' => ' ✍️  تعديل بياناتي ',
-                    'type' => 'postback',
-                    'payload' => 'my_profile',
-                ],
+               
             ],
         ],
     ],
