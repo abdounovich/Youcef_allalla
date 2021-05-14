@@ -8,8 +8,9 @@
 
 <hr color="white">
      <a class="  btn-circle float-right " >
-            <span class="text-white float-right h5 "> {{$commande->delivery_type}} </span> 
-</a><div class=" bg-dark  " >
+            <span > {{$commande->delivery_type}} </span> 
+</a>
+<div class=" bg-dark  " >
        
         
         @if ($commande->type=="1" OR $commande->type=="2"  OR $commande->type=="6" )
