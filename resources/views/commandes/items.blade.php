@@ -6,8 +6,7 @@
   </span>
   <span class="  text-secondary float-right">{{$commande->product->code_interne}}  
   </span>
-  <span class="  text-secondary float-left">{{$commande->delivery_type}}  
-</span>
+
 </div>
  
    @if (!$remises) 

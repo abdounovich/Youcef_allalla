@@ -11,6 +11,9 @@
         <a class="  btn-circle float-right " >
             <span class="text-white float-right h4 ">{{$commande->slug}}  </span> 
 </a>
+<a class="  btn-circle float-left " >
+    <span class="text-white float-right h4 ">{{$commande->delivery_type}}  </span> 
+</a>
         
        
         @if ($commande->type=="1" OR $commande->type=="2"  OR $commande->type=="6" )
