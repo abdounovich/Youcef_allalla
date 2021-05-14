@@ -11,11 +11,14 @@
  
    @if (!$remises) 
    
-   <div class="card-text  text-white mt-1  h5"> {{$commande->product->prix}} Da ({{$benefice=$commande->product->prix-$commande->product->achat}})
-    <span class="badge float-right mt-1  mr-1 float-sm-right text-white  badge-info">   {{$commande->total_price}} Da ({{$benefice*$commande->quantity}})  </span>
+<hr class="bg-white">
+
+   <div class=" text-white  ">    <div class="d-flex justify-content-between">
+{{$commande->product->prix}} Da ({{$benefice=$commande->product->prix-$commande->product->achat}})
+    <span class="badge  p-2 text-white  badge-info">   {{$commande->total_price}} Da ({{$benefice*$commande->quantity}})  </span>
 
 
-    
+    </div>
    </div>
    @else 
     @if ($commande->created_at>$remises->created_at) 
@@ -37,7 +40,7 @@
                             @php
                             $benefice=$commande->product->prix-$commande->product->achat;
                         @endphp
-                            <div class="card-text  text-white mt-1 badgge"> {{$commande->product->prix}} da
+                            <div class="card-text  text-white mt-1 badge"> {{$commande->product->prix}} da
     <span class="badge  float-right mt-1  mr-1 float-sm-right text-white  badge-success ">   {{$commande->total_price}} Da ({{$commande->quantity*$benefice}})    </span>
    
     <span class="badge float-right mt-1  mr-1 float-sm-right text-white  badge-info">   {{$commande->total_price}} Da ({{$commande->quantity*$benefice}})  </span>
@@ -45,10 +48,12 @@
    </div>
    
    @endif
-   @endif
-<div class="">
-   <hr class="bg-white ">
-   <span class=" badge badge-danger mt-2 text-white h5 p-2 m-2  float-left " >{{$commande->delivery_type}}</span>            
-   <span class="badge badge-primary mt-2 text-white h5 p-2 m-2  float-left ">{{$commande->yalidine_TN}}</span>
-   <span class="  text-white h5  p-2 float-right  " >{{$commande->slug}}</span> 
-   <div class=" bg-dark mt-5  " ></div>
+   @endif          <hr class="bg-white ">
+
+   <div class="d-flex justify-content-between">
+   <div class=" badge badge-danger mt-2 text-white h5 p-2 m-2  float-left " >{{$commande->delivery_type}}</div>            
+   <div class="badge badge-primary mt-2 text-white h5 p-2 m-2  float-left ">{{$commande->yalidine_TN}}</div>
+   <div class="  text-white h5  p-2 float-right  " >{{$commande->slug}}</div> 
+   </div>
+ <div>
+

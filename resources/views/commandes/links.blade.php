@@ -5,9 +5,7 @@
 </div>  --}}
 
   
-   
-  <div class="pt-2" >
-      <hr class="bg-white">
+<hr class="bg-white ">
         @if ($commande->type=="1" OR $commande->type=="2"  OR $commande->type=="6" )
         <a class="btn btn-danger  btn-circle float-left  mr-1" href="{{route('commandes.annuler',$commande->id)}}"  >
             <span class="     fa fa-remove  "></span>
@@ -41,4 +39,3 @@
         @endif
     </div>
     
-    </div>
