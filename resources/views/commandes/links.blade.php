@@ -9,7 +9,7 @@
 <hr color="white">
     <div class=" bg-dark  " >
         <a class="  btn-circle float-right " >
-            <span class="text-white float-right h4 ">{{$commande->slug}} - {{$commande->delivery_type}}</span> 
+            <span class="text-white float-right h4 "> {{$commande->delivery_type}} - {{$commande->slug}}</span> 
 </a>
         
        
