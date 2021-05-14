@@ -549,7 +549,7 @@ public function finalStep(){
     $this->commande->slug="CM";
 
     if ($this->TypeOfLivraison=="home") {
-        $this->commande->delivery_type="Homme";
+        $this->commande->delivery_type="Home";
   
       }else{
           $this->commande->delivery_type="Stop Desk";
