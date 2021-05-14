@@ -76,8 +76,8 @@ elseif($commande->commande_type=="taille") {
 
 }
 $commande->type=4;
-$produit->quantity=$produit->quantity+$commande->quantity;
-$produit->save();
+/* $produit->quantity=$produit->quantity+$commande->quantity;
+ */$produit->save();
 $commande->save();
 return redirect()->route('commandes');
 

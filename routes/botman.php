@@ -781,7 +781,7 @@ $botman->hears('CommandeByType([0-9]+)', function ( $bot,$number7) {
     }
     else{
 
-        $bot->reply("أنا آسف ، لا يمكنك إلغاء هذه الطلبية الآن لأنك قمت بتأكيدها من قبل ");  
+        $bot->reply("أنا آسف ، لا يمكنك إلغاء هذه الطلبية ");  
         $bot->typesAndWaits(1);
 
        $bot->reply(Question::create('هل تريد إختيار منتج آخر ؟ ')->addButtons([
