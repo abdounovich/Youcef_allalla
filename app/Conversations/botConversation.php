@@ -219,9 +219,12 @@ public function getTicket(){
     if ($this->TypeOfLivraison=="home") {
       $this->textOfType=" التوصيل إلى المنزل ";
       $this->valOftype=$this->home;
+      $this->commande->delivery_type="Homme";
+
     }else{
         $this->textOfType=" التوصيل إلى مكتب YALIDINE "."\n"." ب".$this->commande2->client->wilaya;
         $this->valOftype=$this->desk;
+        $this->commande->delivery_type="Stop Desk";
     }
  
      $html = '
