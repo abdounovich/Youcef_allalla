@@ -37,8 +37,8 @@
                             @php
                             $benefice=$commande->product->prix-$commande->product->achat;
                         @endphp
-                            <div class="card-text  text-white mt-1  h5"> {{$commande->product->prix}} da
-    <span class="badge  float-right mt-1  mr-1 float-sm-right text-white  badge-success">   {{$commande->total_price}} Da ({{$commande->quantity*$benefice}})    </span>
+                            <div class="card-text  text-white mt-1 badgge"> {{$commande->product->prix}} da
+    <span class="badge  float-right mt-1  mr-1 float-sm-right text-white  badge-success ">   {{$commande->total_price}} Da ({{$commande->quantity*$benefice}})    </span>
    
     <span class="badge float-right mt-1  mr-1 float-sm-right text-white  badge-info">   {{$commande->total_price}} Da ({{$commande->quantity*$benefice}})  </span>
 
