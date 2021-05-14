@@ -58,7 +58,7 @@
                         
                      
 
-                        @if ($ByClientInactiveCommandes>0)
+                      {{--   @if ($ByClientInactiveCommandes>0)
                         <span class="  badge badge-secondary  ">
                             {{$ByClientInactiveCommandes}}</span> 
                         @endif
@@ -82,7 +82,7 @@
                         <span class=" ml-2  badge btn-danger  ">{{$ByClientcanceledCommandes}}</span> 
 
                         @endif
-
+ --}}
                  
  
 
