@@ -36,7 +36,7 @@ class SearchClient extends Component
   public function render()
   { 
       
-      $this->clients=Client::where($this->categorie,'ILIKE','%'.$this->query.'%')->get()->take($this->TakeLimit);
+      $this->clients=Client::where($this->categorie,'LIKE','%'.$this->query.'%')->get()->take($this->TakeLimit);
    
       return view('livewire.search-client');
 

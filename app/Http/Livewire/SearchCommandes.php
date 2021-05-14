@@ -62,7 +62,7 @@ $this->commandes5=Commande::whereType("5")->get();
 $this->commandes6=Commande::whereType("6")->get();
 
         if($this->categorie=="slug"  OR $this->categorie=="total_price"){
-        $this->commandes=Commande::where($this->categorie,'ILIKE','%'.$this->query.'%')
+        $this->commandes=Commande::where($this->categorie,'LIKE','%'.$this->query.'%')
         ->whereType($this->type)->get()->take($this->TakeLimit);}
 
        
@@ -70,12 +70,12 @@ $this->commandes6=Commande::whereType("6")->get();
             
         elseif ($this->categorie=="facebook" OR $this->categorie=="wilaya" ){
            $this->commandes=Commande::whereHas('client', function (Builder $req) {
-                $req->where($this->categorie, 'ILIKE', '%'.$this->query.'%');
+                $req->where($this->categorie, 'LIKE', '%'.$this->query.'%');
             })->whereType($this->type)->get()->take($this->TakeLimit);}
 
             elseif ($this->categorie=="nom" ){
                $this->commandes=Commande::whereHas('product', function (Builder $req) {
-                    $req->where($this->categorie, 'ILIKE', '%'.$this->query.'%');
+                    $req->where($this->categorie, 'LIKE', '%'.$this->query.'%');
                 })->whereType($this->type)->get()->take($this->TakeLimit);}
 
                

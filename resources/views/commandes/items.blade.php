@@ -46,3 +46,9 @@
    
    @endif
    @endif
+<div class="">
+   <hr class="bg-white ">
+   <span class=" badge badge-danger mt-2 text-white h5 p-2 m-2  float-left " >{{$commande->delivery_type}}</span>            
+   <span class="badge badge-primary mt-2 text-white h5 p-2 m-2  float-left ">{{$commande->yalidine_TN}}</span>
+   <span class="  text-white h5  p-2 float-right  " >{{$commande->slug}}</span> 
+   <div class=" bg-dark mt-5  " ></div>
