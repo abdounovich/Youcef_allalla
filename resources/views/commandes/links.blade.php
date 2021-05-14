@@ -4,6 +4,7 @@
     </a>
 </div>  --}}
 
+<hr color="white">
 
 
             <span class="text-danger h5 p-1 float-left" > {{$commande->delivery_type}} </span> 
