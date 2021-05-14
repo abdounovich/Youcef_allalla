@@ -102,7 +102,7 @@ $bot->reply(ButtonTemplate::create('   🤖  كيف يمكنني خدمتك ؟  
 	    ->type('postback')
 	    ->payload('show_me_products')
     )
-    ->addButton(ElementButton::create('🚛 سعر التوصيل   ')
+    ->addButton(ElementButton::create('🚛 سعر التوصيل  ')
     ->type('postback')
     ->payload('AskLivraisonPrice')	)
 	->addButton(ElementButton::create(' 💬 إستفسار ')
@@ -223,7 +223,7 @@ $botman->hears('show_me_products', function ($bot) {
         $elements[]=Element::create($categorie->nom)
         ->subtitle($text)
         ->image($categorie->photo)
-    ->addButton(ElementButton::create(" 🛒 إبدأ التسوق ")
+    ->addButton(ElementButton::create("تصفح منتجات ال ".$categorie->nom )
     ->payload('sous_cat_'.$categorie->id)
     ->type('postback')
 );
