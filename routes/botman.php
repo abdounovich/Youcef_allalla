@@ -102,7 +102,7 @@ $bot->reply(ButtonTemplate::create('لإستمرار إضغط على زر من �
 	    ->type('postback')
 	    ->payload('show_me_products')
     )
-    ->addButton(ElementButton::create('🚛 سعر التوصيل  ')
+    ->addButton(ElementButton::create('🚛 حساب سعر التوصيل ')
     ->type('postback')
     ->payload('AskLivraisonPrice')	)
 	->addButton(ElementButton::create(' 💬 إستفسار ')
