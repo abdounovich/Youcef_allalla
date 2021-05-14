@@ -50,9 +50,7 @@
    @endif
    @endif          <hr class="bg-white ">
 
-   <div class="d-flex justify-content-between">
-   <div class=" badge badge-danger mt-2 text-white h5 p-2 m-2  float-left " >{{$commande->delivery_type}}</div>  
-   
+
    @if ($commande->yalidine_TN=="")
       
 
@@ -67,10 +65,14 @@
 
 
 
-       @else
+    
+   <div class="d-flex justify-content-between">
+   <div class=" badge badge-danger mt-2 text-white h5 p-2 m-2  float-left " >{{$commande->delivery_type}}</div>  
+   
+   
             <div class="badge badge-primary mt-2 text-white h5 p-2 m-2  float-left ">{{$commande->yalidine_TN}}</div>
   
-   @endif
+ 
    <div class="  text-white h5  p-2 float-right  " >{{$commande->slug}}</div> 
    </div>
  <div>
