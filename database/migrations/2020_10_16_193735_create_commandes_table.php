@@ -30,7 +30,9 @@ class CreateCommandesTable extends Migration
             $table->foreign('client_id')
             ->references('id')->on('clients')
             ->onDelete('cascade');
-            
+            $table->text("delivery_type");
+            $table->text("yalidine_TN")->nullable();
+
             $table->timestamps();
         });
     }
