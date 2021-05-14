@@ -597,7 +597,7 @@ $botman->hears('slectedTailleComplexe([0-9]+)', function ( $bot,$number5) {
 
         
        
-if (empty($cmd_array)) {
+if ($commande1->count()=="0" and $commande2->count()=="0" and $commande3->count()=="0" and $commande6->count()=="0") {
     $bot->reply("  لا توجد أي طلبية مسجلة بإسمك  😓  ");
     $bot->reply(ButtonTemplate::create('   يمكنك الآن تقديم أول طلبية بكل سهولة  ☺️ ')
 ->addButton(ElementButton::create('  🛒 تصفح المنتجات   ')
