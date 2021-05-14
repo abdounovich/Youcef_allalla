@@ -57,7 +57,7 @@ class LivraisonPriceConversation extends Conversation
 
     public function askWilaya(){
         $variable=0;
-        $this->ask('🇩🇿  لمعرفة سعر التوصيل يرجى كتابة رقم ولايتك', function(Answer $answer) {
+        $this->ask('  لمعرفة سعر التوصيل يرجى كتابة رقم ولايتك 🇩🇿 ', function(Answer $answer) {
             $this->wilaya =$answer->getText();
             if (is_numeric($this->wilaya)AND $this->wilaya<49 AND $this->wilaya>0 AND $variable<2) {
     
