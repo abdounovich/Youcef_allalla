@@ -59,17 +59,27 @@ class LivraisonPriceConversation extends Conversation
       
         $this->ask('  لمعرفة سعر التوصيل يرجى كتابة رقم ولايتك 🇩🇿 ', function(Answer $answer) {
             $this->wilaya =$answer->getText();
-            if (is_numeric($this->wilaya)AND $this->wilaya<49 AND $this->wilaya>0 AND $variable<2) {
+            if (is_numeric($this->wilaya)AND $this->wilaya<49 AND $this->wilaya>0 ) {
     
 
 
                 $this->AskPrice($this->wilaya);
 
             }
-            else{$this->bot->reply("  ✋ خطأ , من فضلك أدخل رقم الولاية فقط 👇 ");
+            else{
                 
-                $variable=$variable+1;
-                $this->askWilaya();
+                if ( $variable<2) {
+                    $this->bot->reply("  ✋ خطأ , من فضلك أدخل رقم الولاية فقط 👇 ");
+                    $variable=$variable+1;
+                    $this->askWilaya();
+                }
+                else {
+                    $this->bot->reply("  حدث خطأ ما ! يرجى إعادة المحاولة لاحقا  ");
+
+                }
+
+              
+               
                 
             }
         
