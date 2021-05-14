@@ -59,7 +59,7 @@ class LivraisonPriceConversation extends Conversation
         $variable=0;
         $this->ask('  لمعرفة سعر التوصيل يرجى كتابة رقم ولايتك 🇩🇿 ', function(Answer $answer) {
             $this->wilaya =$answer->getText();
-            if (is_numeric($this->wilaya)AND $this->wilaya<49 AND $this->wilaya>0 AND $variable<2) {
+            if (is_numeric($this->wilaya)AND $this->wilaya<49 AND $this->wilaya>0 AND $variable>2) {
     
 
 
@@ -68,7 +68,7 @@ class LivraisonPriceConversation extends Conversation
             }
             else{$this->bot->reply("  ✋ خطأ , من فضلك أدخل رقم الولاية فقط 👇 ");
                 
-                $variable+=1;
+                $variable=$variable+1;
                 $this->askWilaya();
                 
             }
