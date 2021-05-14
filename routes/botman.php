@@ -97,7 +97,7 @@ $message2 = OutgoingMessage::create('This is my text')
 $bot->reply($message2); 
 
 
-$bot->reply(ButtonTemplate::create('  👇   لإستمرار إضغط على زر من القائمة أسفله   ')
+$bot->reply(ButtonTemplate::create('لإستمرار إضغط على زر من القائمة أسفله 👇')
 ->addButton(ElementButton::create('  🛒 إبدأ التسوق الآن ')
 	    ->type('postback')
 	    ->payload('show_me_products')
