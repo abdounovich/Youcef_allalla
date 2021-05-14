@@ -7,7 +7,9 @@
 
 
 <hr color="white">
-            <span > {{$commande->delivery_type}} </span> 
+            <span class="text-danger h5 p-1" > {{$commande->delivery_type}} </span> 
+            <span class="text-danger h5 p-1" > {{$commande->slug}} </span> 
+
 <div class=" bg-dark  " >
        
         
