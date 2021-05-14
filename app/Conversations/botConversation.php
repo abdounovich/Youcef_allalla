@@ -552,7 +552,6 @@ public function finalStep(){
         $this->commande->delivery_type="Homme";
   
       }else{
-          $this->textOfType=" التوصيل إلى مكتب YALIDINE "."\n"." ب".$this->commande2->client->wilaya;
           $this->commande->delivery_type="Stop Desk";
         }
     $this->commande->save();
