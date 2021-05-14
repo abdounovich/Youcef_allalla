@@ -219,12 +219,10 @@ public function getTicket(){
     if ($this->TypeOfLivraison=="home") {
       $this->textOfType=" التوصيل إلى المنزل ";
       $this->valOftype=$this->home;
-      $this->commande->delivery_type="Homme";
 
     }else{
         $this->textOfType=" التوصيل إلى مكتب YALIDINE "."\n"." ب".$this->commande2->client->wilaya;
         $this->valOftype=$this->desk;
-        $this->commande->delivery_type="Stop Desk";
     }
  
      $html = '
@@ -549,6 +547,14 @@ $google_fonts = "Roboto";
 public function finalStep(){
     $this->product->save();
     $this->commande->slug="CM";
+
+    if ($this->TypeOfLivraison=="home") {
+        $this->commande->delivery_type="Homme";
+  
+      }else{
+          $this->textOfType=" التوصيل إلى مكتب YALIDINE "."\n"." ب".$this->commande2->client->wilaya;
+          $this->commande->delivery_type="Stop Desk";
+        }
     $this->commande->save();
     $this->commande2=Commande::find( $this->commande->id);
     $this->key = array_search( $this->client->wilaya, get_object_vars($this->obj));
