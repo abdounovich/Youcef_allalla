@@ -247,7 +247,7 @@ foreach ($sous_cats as $sous_cat ) {
     $elements[]=
     Element::create($sous_cat->nom)
         ->image($sous_cat->photo)
-        ->addButton(ElementButton::create("🛍 منتجات "."ال".$sous_cat->nom)
+        ->addButton(ElementButton::create("🛍 تصفح  "."ال".$sous_cat->nom)
             ->payload('product_'.$sous_cat->id)
             ->type('postback'));
 }
