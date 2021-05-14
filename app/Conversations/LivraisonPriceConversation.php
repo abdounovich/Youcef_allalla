@@ -69,8 +69,7 @@ class LivraisonPriceConversation extends Conversation
             else{
                 
                 if ( $this->variable<2) {
-                    $this->bot->reply("  ✋ خطأ , 
-                      أدخل رقم الولاية فقط 👇 ");
+                    $this->bot->reply("  ✋ خطأ ,\n  أدخل رقم الولاية فقط 👇 ");
                     $this->variable=$this->variable+1;
                     $this->askWilaya();
                 }
