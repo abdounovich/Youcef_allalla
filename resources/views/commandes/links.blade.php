@@ -12,7 +12,6 @@
             <span class="text-white float-right h5 "> {{$commande->delivery_type}} </span> 
 </a>
         
-<p>{{$commande->slug}}</p>
         @if ($commande->type=="1" OR $commande->type=="2"  OR $commande->type=="6" )
         <a class="btn btn-danger  btn-circle float-left  mr-1" href="{{route('commandes.annuler',$commande->id)}}"  >
             <span class="     fa fa-remove  "></span>
