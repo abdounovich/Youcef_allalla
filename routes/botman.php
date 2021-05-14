@@ -223,7 +223,7 @@ $botman->hears('show_me_products', function ($bot) {
         $elements[]=Element::create($categorie->nom)
         ->subtitle($text)
         ->image($categorie->photo)
-    ->addButton(ElementButton::create("منتجات  ".$categorie->nom ." ال"." 🛍 ")
+    ->addButton(ElementButton::create("منتجات  🛍 ".$categorie->nom ." ال")
     ->payload('sous_cat_'.$categorie->id)
     ->type('postback')
 );
