@@ -5,15 +5,13 @@
 </div>  --}}
 
 <hr color="white">
-
-
-            <span class="text-danger h5 p-1 float-left" > {{$commande->delivery_type}} </span> 
+<span class="text-danger h5 p-1 float-left" > {{$commande->delivery_type}} </span> 
             <span class="text-white h5 p-1 float-right" > {{$commande->slug}} </span> 
-<hr color="white">
-
+<p></p>
 <div class=" bg-dark  " >
        
-        
+    <hr color="white">
+
         @if ($commande->type=="1" OR $commande->type=="2"  OR $commande->type=="6" )
         <a class="btn btn-danger  btn-circle float-left  mr-1" href="{{route('commandes.annuler',$commande->id)}}"  >
             <span class="     fa fa-remove  "></span>
