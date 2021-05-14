@@ -41,15 +41,7 @@
 
 </head>
   <body>
-    <div id="loading" style="width: 100%; height:100%"  class="bg-white">
-      </div> 
-   <script type="application/javascript">
-   jQuery(document).ready(function($){
-    $("#loading").fadeOut(2000);
-});
-
-
-</script>
+ 
     <nav class="navbar navbar-expand-lg pt-3 pb-3 navbar-dark bg-dzed fixed-top ">
       <div class="container">
         <a class="navbar-brand text-dark" href="#">D-Zed Store</a>
