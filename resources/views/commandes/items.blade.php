@@ -58,7 +58,7 @@
    <form method="POST" action="{{route('commandes.update',$commande->id) }}" >
        @csrf
        <div class="form-group text-dark">
-         <input type="text" class="form-control" name="yalidine" id="yalidine"  placeholder="Entrer yalidine Tracking number ">
+         <input type="text" class="form-control" name="yalidine" id="yalidine"  placeholder=" Tracking Number ">
        </div>
        <button type="submit" class="btn btn-primary col col-12 mb-4">Ajouter</button>
      </form>
