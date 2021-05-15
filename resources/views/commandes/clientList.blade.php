@@ -33,7 +33,7 @@
                   
                    
                
-                  <div class="collapse" id="collapseClient{{$commande->client->id}}">
+                  <div class="collapse p-4" id="collapseClient{{$commande->client->id}}"><p></p>
                     <div class="card card-body">
                         <form method="POST" action="{{route('clients.edit',$commande->client->id) }}" >
                             @csrf
