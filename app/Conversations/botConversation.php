@@ -58,15 +58,18 @@ else {
         $this->commande->commande_type=$this->typ;
         $this->commande->type="1";
         $this->commande->quantity=$this->q;
-        if ($this->client->phone=="vide"  && $this->client->wilaya=="vide" ) {
+        if ($this->client->phone=="vide" && $this->client->wilaya=="vide" ) {
            $this->askQuestion();
            return;
           
         }else{ 
             $this->bot->reply("☎ رقم هاتفك هو :  ".$this->client->phone);
             $this->bot->reply(" 🇩🇿 ولايتك هي :  ".$this->client->wilaya);
-/*             $this->bot->reply("🏠 عنوانك هو :  ".$this->client->address);
- */            $question=Question::create(' هل تود الإستمرار بهذا الرقم و الولاية  ؟   ')
+            if ($this->TypeOfLivraison=="home"
+            ) {
+             $this->bot->reply("🏠 عنوانك هو :  ".$this->client->address);   
+            }
+           $question=Question::create(' هل تود الإستمرار بهذا الرقم العنوان و الولاية  ؟   ')
             ->addButtons([
                 Button::create(' ✍️ تغيير   ')
                 ->value('change'),
@@ -133,17 +136,10 @@ public function askPhone(){
 
 public function askAddress(){
 
-      /*   $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
+       $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
         $this->address = $answer->getText();
-        $this->client->address=$this->address; */
-        $this->key = array_search($this->client->wilaya, get_object_vars($this->obj));
-
-        $this->WilayaNumber= substr($this->key, 1);
-        $this->client->save();
-
-        $this->askLivriason($this->WilayaNumber);
-    
-    /* }); */
+        $this->client->address=$this->address;        return $this->askConfirmation($this->home);
+  }); 
 
 }
 
@@ -170,8 +166,10 @@ public function askConfirmation($LivrPrice){
     $this->bot->reply($this->msgText ." : ".$this->msgValue);
     $this->bot->reply('  الكمية : '.$this->q);
     $this->bot->reply(' ☎ الهاتف  : '. $this->client->phone);
-/*     $this->bot->reply(' 🏠 العنوان  : '. $this->client->address);
- */    $this->bot->reply(' 🇩🇿 الولاية  : '.$this->client->wilaya);
+    if ($this->TypeOfLivraison=="home"
+    ) {
+     $this->bot->reply("🏠 عنوانك هو :  ".$this->client->address);   
+    }    $this->bot->reply(' 🇩🇿 الولاية  : '.$this->client->wilaya);
 
     $this->remise=Remise::where("product_id",$this->product_id)->first();
     if ($this->remise) {
@@ -342,7 +340,6 @@ public function getTicket(){
                  <img class="ticket-qr-code" src="https://res.cloudinary.com/ds9qfm1ok/image/upload/v1614278674/logo1_govtcv.jpg" alt="logo"/>                      
                  <img style=" width:80px; height:80px" src="https://res.cloudinary.com/ds9qfm1ok/image/upload/v1614278672/qr-code_x9eanz.png" alt="qrcode"/>
                  <p><span  style="color:black; font-size:10px ;margin:-5px ">  '.$this->commande2->product->code_interne.'  </span> </p>                             </div>
-
      
        </td>
      
@@ -466,14 +463,11 @@ width: 32%;
 }
 .ticket-ticket-details .third-col {
     padding: 4px 0px 0px 32px;
-
 text-align: right;
 width: 25%;
-
 }
 .ticket-qr-code{
 height: 50px;
-
 width: 50px;
 }
 /* Print specific styles */
@@ -589,7 +583,12 @@ public function askWilaya(){
 ${"W".$this->wilaya}="W".$this->wilaya;
  $this->client->wilaya=$this->obj->${"W".$this->wilaya};
             
-            $this->askAddress();
+ $this->key = array_search($this->client->wilaya, get_object_vars($this->obj));
+
+ $this->WilayaNumber= substr($this->key, 1);
+ $this->client->save();
+
+ $this->askLivriason($this->WilayaNumber);
         }
         else{$this->bot->reply(" خطأ , من فضلك أدخل  رقم الولاية فقط ");
             $this->askWilaya();
@@ -600,10 +599,70 @@ ${"W".$this->wilaya}="W".$this->wilaya;
 }
 
 
-   
+    public function askQuantity()
+    {
+        
+            $this->q="0";
+        $question5=Question::create('   ما الكمية التي تريد شرائها ؟  🔢   ')
+        ->addButtons([
+            Button::create('1')
+                ->value('q1'),
+            Button::create('2')
+                ->value('q2'),
+            Button::create('3')
+                ->value('q3'),
+            Button::create('4')
+                ->value('q4'),
+         Button::create(' أدخل الكمية 👇')
+                ->value('Qmanuel')
+                ]);
+        
+        
+$this->ask($question5, function (Answer $answer) {
+
+        switch ($answer->getValue()) {
+            case "q1":
+            $this->q="1";
+            $this->askNumber();
+            break;
+            case "q2":
+            $this->q="2";
+            $this->askNumber();
+            break;
+            case "q3":
+            $this->q="3";
+            $this->askNumber();
+            break;
+            case "q4":
+            $this->q="4";
+            $this->askNumber();
+            break;
+
+                   
+            case "Qmanuel":
+            $this->ask(' من فضلك أدخل الكمية من خلال لوحة المفاتيح    ', function(Answer $answer) {
+            $this->q = $answer->getText();
+            $this->askNumber();
+            
+                    });
+                               
+           
+          }
+     
+    
+});
+
+
+       
+
+    }
+
 
     public function askLivriason($wil)
     {
+
+       
+
         $this->client=Client::where('facebook', $this->full_name)->first();
         $url = "https://api.yalidine.com/v1/deliveryfees/".$wil; // the wilayas endpoint
         $curl = curl_init();
@@ -644,7 +703,7 @@ $this->bot->reply(" سعر التوصيل إلى مكتب YALIDINE هو : ".$thi
             
             if($answer->getValue() === 'home') {
 $this->TypeOfLivraison="home";
-                return $this->askConfirmation($this->home);
+$this->askAddress();
 
 
             }else{
@@ -660,13 +719,10 @@ $this->TypeOfLivraison="home";
     /**
      * Start the conversation
      */
-
-
-     
     public function run()
     {
 
-
+        $this->TypeOfLivraison="";
         $this->user = $this->bot->getUser();
         $this->facebook_id =  $this->user->getId();
         $this->firstname = $this->user->getFirstname();

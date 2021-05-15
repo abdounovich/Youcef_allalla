@@ -58,7 +58,7 @@ if ($username=="0") {
     $client->slug=Str::random(10) ;
     $client->fb_id=$facebook_id;
     $client->phone="vide";
-    $client->address="vide";
+    $client->address="/";
     $client->wilaya="vide";
     $client->full_name="vide";
     $config=Config::get('botman.facebook.token');
@@ -136,7 +136,7 @@ if ($username=="0") {
     $client->slug=Str::random(10) ;
     $client->fb_id=$facebook_id;
     $client->phone="vide";
-    $client->address="vide";
+    $client->address="/";
     $client->wilaya="vide";
     $client->full_name="vide";
     $config=Config::get('botman.facebook.token');
