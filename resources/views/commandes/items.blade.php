@@ -67,8 +67,11 @@
 @endIf
     
    <div class="d-flex justify-content-between">
-   <div class=" badge badge-danger mt-2 text-white h5 p-2 m-2  float-left " @if ($commande->delivery_type=="Homme")
-       class="badge-success"
+   <div  @if ($commande->delivery_type=="Homme")
+      class=" badge badge-success  mt-2 text-white h5 p-2 m-2  float-left"
+   @else 
+   class=" badge badge-danger  mt-2 text-white h5 p-2 m-2  float-left"
+
    @endif >{{$commande->delivery_type}}</div>  
    
    
