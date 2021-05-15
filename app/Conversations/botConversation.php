@@ -58,15 +58,15 @@ else {
         $this->commande->commande_type=$this->typ;
         $this->commande->type="1";
         $this->commande->quantity=$this->q;
-        if ($this->client->phone=="vide" && $this->client->address=="vide" && $this->client->wilaya=="vide" ) {
+        if ($this->client->phone=="vide"  && $this->client->wilaya=="vide" ) {
            $this->askQuestion();
            return;
           
         }else{ 
             $this->bot->reply("☎ رقم هاتفك هو :  ".$this->client->phone);
             $this->bot->reply(" 🇩🇿 ولايتك هي :  ".$this->client->wilaya);
-            $this->bot->reply("🏠 عنوانك هو :  ".$this->client->address);
-            $question=Question::create(' هل تود الإستمرار بهذا الرقم العنوان و الولاية  ؟   ')
+/*             $this->bot->reply("🏠 عنوانك هو :  ".$this->client->address);
+ */            $question=Question::create(' هل تود الإستمرار بهذا الرقم و الولاية  ؟   ')
             ->addButtons([
                 Button::create(' ✍️ تغيير   ')
                 ->value('change'),
@@ -133,15 +133,17 @@ public function askPhone(){
 
 public function askAddress(){
 
-        $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
+      /*   $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
         $this->address = $answer->getText();
-        $this->client->address=$this->address;
+        $this->client->address=$this->address; */
         $this->key = array_search($this->client->wilaya, get_object_vars($this->obj));
 
         $this->WilayaNumber= substr($this->key, 1);
         $this->client->save();
 
-        $this->askLivriason($this->WilayaNumber);});
+        $this->askLivriason($this->WilayaNumber);
+    
+    /* }); */
 
 }
 
@@ -168,8 +170,8 @@ public function askConfirmation($LivrPrice){
     $this->bot->reply($this->msgText ." : ".$this->msgValue);
     $this->bot->reply('  الكمية : '.$this->q);
     $this->bot->reply(' ☎ الهاتف  : '. $this->client->phone);
-    $this->bot->reply(' 🏠 العنوان  : '. $this->client->address);
-    $this->bot->reply(' 🇩🇿 الولاية  : '.$this->client->wilaya);
+/*     $this->bot->reply(' 🏠 العنوان  : '. $this->client->address);
+ */    $this->bot->reply(' 🇩🇿 الولاية  : '.$this->client->wilaya);
 
     $this->remise=Remise::where("product_id",$this->product_id)->first();
     if ($this->remise) {
