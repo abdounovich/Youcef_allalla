@@ -21,10 +21,32 @@
                 @else
                 <div class="mt-2 mb-3 text-dark text-bold" style="font-size: 20px">
                     {{$commande->client->full_name}} 
-                </div>
+                 <a class="btn btn-primary" data-toggle="collapse" href="#collapseClient{{$commande->client->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    edit
+                  </a></div>
+               
               
                 @endif
 
+
+                
+                  
+                   
+               
+                  <div class="collapse" id="collapseClient{{$commande->client->id}}">
+                    <div class="card card-body">
+                        <form method="POST" action="{{route('clients.edit',$commande->client->id) }}" >
+                            @csrf
+                            <div class="form-group text-dark">
+                              <input type="text" value="{{$commande->client->full_name}}" class="form-control" name="full_name" id="full_name"  placeholder="Entrer le nom ">
+                            </div>
+                            <button type="submit" class="btn btn-success col col-12 mb-4">Save changes</button>
+                          </form>                    </div>
+                  </div>
+
+
+
+                
                 <div class=" text-dark">
                     <i class="text-success fa fa-map-marker mr-2 "></i>{{$commande->client->address}}
                 </div>

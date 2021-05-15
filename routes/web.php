@@ -81,6 +81,7 @@ Route::get('sub_categories/delete/{id}', 'SubCategoryController@destroy')->name(
 
 
 Route::get('clients', 'ClientController@index')->name('clients');
+Route::get('client/update/{id}', 'ClientController@update')->name('client.update');
 Route::post('clients/add', 'ClientController@store')->name('clients.add');
 Route::post('clients/edit/{id}', 'ClientController@edit')->name('clients.edit');
 Route::get('clients/delete/{id}', 'ClientController@destroy')->name('clients.delete');
