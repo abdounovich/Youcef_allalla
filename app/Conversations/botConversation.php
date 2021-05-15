@@ -37,12 +37,98 @@ public function __construct(string $product_id,string $typ ) {
     /**
      * First question
      */
+    public function askNumber()
+    {
+
+       
+       
+
+
+if ( $this->product->quantity<$this->q) {
+   $this->bot->reply("لا توجد لدينا كل هاته الكمية يرجى إختيار كمية أقل 🤷‍♂️ ");
+   $this->askQuantity();
+
+}
+else {
+  
+
+        $this->product->quantity= $this->product->quantity-$this->q;
+        $this->commande->client_id=$this->client->id;
+        $this->commande->product_id=$this->product_id;
+        $this->commande->commande_type=$this->typ;
+        $this->commande->type="1";
+        $this->commande->quantity=$this->q;
+        if ($this->client->phone=="vide" && $this->client->address=="vide" && $this->client->wilaya=="vide" ) {
+           $this->askQuestion();
+           return;
+          
+        }else{ 
+            $this->bot->reply("☎ رقم هاتفك هو :  ".$this->client->phone);
+            $this->bot->reply(" 🇩🇿 ولايتك هي :  ".$this->client->wilaya);
+            $this->bot->reply("🏠 عنوانك هو :  ".$this->client->address);
+            $question=Question::create(' هل تود الإستمرار بهذا الرقم العنوان و الولاية  ؟   ')
+            ->addButtons([
+                Button::create(' ✍️ تغيير   ')
+                ->value('change'),
+                Button::create('  ✅ نعم إستمر ')
+                    ->value('yess')
+                    ]);
+            
+           }      
+
+           
+        
+        $this->ask($question, function (Answer $answer) {
+            if ($answer->getValue() === 'yess') {
+
+
+
+                $this->key = array_search($this->client->wilaya, get_object_vars($this->obj));
+
+                $this->WilayaNumber= substr($this->key, 1);
+        
+                $this->askLivriason($this->WilayaNumber);
+
+               } else {                
+                   
+                $this->askQuestion();
+               }
+               
+
+
+               });          
+
+          
+        
+    }  
+                           
+      
+       
+    }
+
+public function askQuestion(){
+
     
+    
+    $this->askPhone();
+
+}
 
 
-
-
-
+public function askPhone(){
+    $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer1) {
+        $this->phone = $answer1->getText();
+        if (is_numeric($this->phone)) {
+            $this->client->phone=$this->phone;
+            $this->askWilaya();
+           
+        }
+        else{$this->bot->reply(" خطأ , من فضلك أدخل رقم صحيح  ");
+            $this->askPhone();
+        }
+      
+    });
+}
 
 
 public function askAddress(){
@@ -55,7 +141,7 @@ public function askAddress(){
         $this->WilayaNumber= substr($this->key, 1);
         $this->client->save();
 
-        $this->askConfirmation($this->WilayaNumber);});
+        $this->askLivriason($this->WilayaNumber);});
 
 }
 
@@ -493,6 +579,24 @@ public function finalStep(){
 
 
 }
+public function askWilaya(){
+    $this->ask('🇩🇿  من فضلك أدخل رقم ولايتك     ', function(Answer $answer) {
+        $this->wilaya = $answer->getText();
+
+        if (is_numeric($this->wilaya)AND $this->wilaya<49 AND $this->wilaya>0) {
+${"W".$this->wilaya}="W".$this->wilaya;
+ $this->client->wilaya=$this->obj->${"W".$this->wilaya};
+            
+            $this->askAddress();
+        }
+        else{$this->bot->reply(" خطأ , من فضلك أدخل  رقم الولاية فقط ");
+            $this->askWilaya();
+        }
+    
+
+    });
+}
+
 
    
 
@@ -538,7 +642,6 @@ $this->bot->reply(" سعر التوصيل إلى مكتب YALIDINE هو : ".$thi
             
             if($answer->getValue() === 'home') {
 $this->TypeOfLivraison="home";
-$this->askAddress();
                 return $this->askConfirmation($this->home);
 
 
@@ -557,9 +660,7 @@ $this->askAddress();
      */
 
 
-
-
-
+     
     public function run()
     {
 
@@ -691,192 +792,4 @@ $this->obj = json_decode($this->jsonobj);
         
         $this->askQuantity();
     }
-
-
-
-
-
-
-
-
-    public function askQuantity()
-    {
-        
-            $this->q="0";
-        $question5=Question::create('   ما الكمية التي تريد شرائها ؟  🔢   ')
-        ->addButtons([
-            Button::create('1')
-                ->value('q1'),
-            Button::create('2')
-                ->value('q2'),
-            Button::create('3')
-                ->value('q3'),
-            Button::create('4')
-                ->value('q4'),
-         Button::create(' أدخل الكمية 👇')
-                ->value('Qmanuel')
-                ]);
-        
-        
-$this->ask($question5, function (Answer $answer) {
-
-        switch ($answer->getValue()) {
-            case "q1":
-            $this->q="1";
-            $this->askNumber();
-            break;
-            case "q2":
-            $this->q="2";
-            $this->askNumber();
-            break;
-            case "q3":
-            $this->q="3";
-            $this->askNumber();
-            break;
-            case "q4":
-            $this->q="4";
-            $this->askNumber();
-            break;
-
-                   
-            case "Qmanuel":
-            $this->ask(' من فضلك أدخل الكمية من خلال لوحة المفاتيح    ', function(Answer $answer) {
-            $this->q = $answer->getText();
-            $this->askNumber();
-            
-                    });
-                               
-           
-          }
-     
-    
-});
-
-
-       
-
-    }
-
-
-
-
-
-    public function askNumber()
-    {
-
-       
-       
-
-
-if ( $this->product->quantity<$this->q) {
-   $this->bot->reply("لا توجد لدينا كل هاته الكمية يرجى إختيار كمية أقل 🤷‍♂️ ");
-   $this->askQuantity();
-
 }
-else {
-  
-
-        $this->product->quantity= $this->product->quantity-$this->q;
-        $this->commande->client_id=$this->client->id;
-        $this->commande->product_id=$this->product_id;
-        $this->commande->commande_type=$this->typ;
-        $this->commande->type="1";
-        $this->commande->quantity=$this->q;
-        if ($this->client->phone=="vide" && $this->client->address=="vide" && $this->client->wilaya=="vide" ) {
-           $this->askQuestion();
-           return;
-          
-        }else{ 
-            $this->bot->reply("☎ رقم هاتفك هو :  ".$this->client->phone);
-            $this->bot->reply(" 🇩🇿 ولايتك هي :  ".$this->client->wilaya);
-            $this->bot->reply("🏠 عنوانك هو :  ".$this->client->address);
-            $question=Question::create(' هل تود الإستمرار بهذا الرقم العنوان و الولاية  ؟   ')
-            ->addButtons([
-                Button::create(' ✍️ تغيير   ')
-                ->value('change'),
-                Button::create('  ✅ نعم إستمر ')
-                    ->value('yess')
-                    ]);
-            
-           }      
-
-           
-        
-        $this->ask($question, function (Answer $answer) {
-            if ($answer->getValue() === 'yess') {
-
-
-
-                $this->key = array_search($this->client->wilaya, get_object_vars($this->obj));
-
-                $this->WilayaNumber= substr($this->key, 1);
-        
-                $this->askLivriason($this->WilayaNumber);
-
-               } else {                
-                   
-                $this->askQuestion();
-               }
-               
-
-
-               });          
-
-          
-        
-    }  
-                           
-      
-       
-    }
-
-    public function askQuestion(){
-
-    
-    
-        $this->askPhone();
-    
-    }
-
-
-    public function askPhone(){
-        $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer1) {
-            $this->phone = $answer1->getText();
-            if (is_numeric($this->phone)) {
-                $this->client->phone=$this->phone;
-                $this->askWilaya();
-               
-            }
-            else{$this->bot->reply(" خطأ , من فضلك أدخل رقم صحيح  ");
-                $this->askPhone();
-            }
-          
-        });
-    }
-
-
-
-
-
-    public function askWilaya(){
-        $this->ask('🇩🇿  من فضلك أدخل رقم ولايتك     ', function(Answer $answer) {
-            $this->wilaya = $answer->getText();
-    
-            if (is_numeric($this->wilaya)AND $this->wilaya<49 AND $this->wilaya>0) {
-    ${"W".$this->wilaya}="W".$this->wilaya;
-     $this->client->wilaya=$this->obj->${"W".$this->wilaya};
-                
-                $this->askLivraison();
-            }
-            else{$this->bot->reply(" خطأ , من فضلك أدخل  رقم الولاية فقط ");
-                $this->askWilaya();
-            }
-        
-    
-        });
-    }
-    
-    
-}
-
-
