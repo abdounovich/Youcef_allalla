@@ -51,7 +51,7 @@ public function __construct(string $product_id,string $typ ) {
             return;
          
          }
-if ( $this->product->quantity<$this->q) {
+elseif( $this->product->quantity<$this->q) {
    $this->bot->reply("لا توجد لدينا كل هاته الكمية يرجى إختيار كمية أقل 🤷‍♂️ ");
    $this->askQuantity();
 
