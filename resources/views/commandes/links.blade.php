@@ -35,7 +35,6 @@
               <input type="text" name="price" value="{{$commande->total_price}}">
               <input type="text" name="freeshipping" value="false">
               <input type="text" name="is_stopdesk" value="true">
-              <input type="text" name="has_exchange" value="false">
 
           
             <button type="submit" class="btn btn-primary">Bordreau YALIDINE</button>
