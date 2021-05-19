@@ -22,16 +22,16 @@ use App\Conversations\botConversation;
 
 class botConversation extends Conversation
 {
-
+    public $variable=0;
     protected $product_id;
     protected $typ;
-
 public function __construct(string $product_id,string $typ ) {
 
     $this->product_id = $product_id;
     $this->q="0";
-    $this->typ = $typ;
     $this->valOftype="";
+    $this->typ = $typ;
+
 
 }
     /**
@@ -43,8 +43,15 @@ public function __construct(string $product_id,string $typ ) {
        
        
 
+        if ( $this->product->quantity=="0") {
+            $this->bot->reply("لقد نفذ لدينا هاذا المنتوج  ");
+            $this->bot->reply(" سنقوم بالتواصل معكم فور توفره من جديد    ");
+            $this->bot->reply("  شكرا لتفهمكم  ");
 
-if ( $this->product->quantity<$this->q) {
+            return;
+         
+         }
+elseif( $this->product->quantity<$this->q) {
    $this->bot->reply("لا توجد لدينا كل هاته الكمية يرجى إختيار كمية أقل 🤷‍♂️ ");
    $this->askQuantity();
 
@@ -94,7 +101,7 @@ else {
 
                } else {                
                    
-                $this->askPhone();
+                $this->askWilaya();
                }
                
 
@@ -112,18 +119,33 @@ else {
 
 
 
+
+
 public function askPhone(){
     $this->ask(' من فضلك أدخل رقم هاتفك من خلال لوحة المفاتيح  ☎  ', function(Answer $answer1) {
         $this->phone = $answer1->getText();
         if (is_numeric($this->phone)) {
             $this->client->phone=$this->phone;
-            $this->askConfirmation($this->livraison_price);
+            $this->askConfirmation( $this->valOftype);
            
         }
-        else{$this->bot->reply(" خطأ , من فضلك أدخل رقم صحيح  ");
-            $this->askPhone();
+        else{
+                
+            if ( $this->variable<2) {
+                $this->bot->reply("  ✋ خطأ ,  أدخل الرقم فقط 👇 ");
+                $this->variable=$this->variable+1;
+                $this->askPhone();
+            }
+            else {
+                $this->bot->reply(" حدث خطأ ما ! يرجى إعادة المحاولة لاحقا  ");
+                $this->variable="0";
+            }
+
+            
         }
+    
       
+
     });
 }
 
@@ -132,7 +154,7 @@ public function askAddress(){
 
        $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
         $this->address = $answer->getText();
-        $this->client->address=$this->address;        return $this->askConfirmation($this->valOftype);
+        $this->client->address=$this->address;        return $this->askPhone($this->home);
   }); 
 
 }
@@ -164,6 +186,7 @@ public function askConfirmation($LivrPrice){
     ) {
      $this->bot->reply("🏠 عنوانك هو :  ".$this->client->address);   
     }    $this->bot->reply(' 🇩🇿 الولاية  : '.$this->client->wilaya);
+
     $this->remise=Remise::where("product_id",$this->product_id)->first();
     if ($this->remise) {
         $this->prix=$this->remise->prix;
@@ -583,8 +606,19 @@ ${"W".$this->wilaya}="W".$this->wilaya;
 
  $this->askLivriason($this->WilayaNumber);
         }
-        else{$this->bot->reply(" خطأ , من فضلك أدخل  رقم الولاية فقط ");
-            $this->askWilaya();
+        else{
+                
+            if ( $this->variable<2) {
+                $this->bot->reply("  ✋ خطأ ,  أدخل الرقم فقط 👇 ");
+                $this->variable=$this->variable+1;
+                $this->askWilaya();
+            }
+            else {
+                $this->bot->reply(" حدث خطأ ما ! يرجى إعادة المحاولة لاحقا  ");
+                $this->variable="0";
+            }
+
+            
         }
     
 
@@ -669,8 +703,8 @@ $this->ask($question5, function (Answer $answer) {
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'GET',
             CURLOPT_HTTPHEADER => array(
-                'X-API-ID: '."80153160526942779734",
-                'X-API-TOKEN: '."np3A1Ezh8BjgNS2ivR139nsoewmmLXLUu7uSfeFVWKy5xfQRowFptHZx8O70Jr6C"
+                'X-API-ID: '."58955441267299948423",
+                'X-API-TOKEN: '."f8GCfYr6yNNE8Exk1vIv34OFSjSoJ7oTRulGDVR52PgcmQ035jKJetdAqet9IhWp"
             ),
         ));
         
@@ -696,15 +730,12 @@ $this->bot->reply(" سعر التوصيل إلى مكتب YALIDINE هو : ".$thi
             
             if($answer->getValue() === 'home') {
 $this->TypeOfLivraison="home";
-$this->valOftype=$this->home;
 $this->askAddress();
 
 
             }else{
                 $this->TypeOfLivraison="desk";
-                $this->valOftype=$this->desk;
-
-              return  $this->askConfirmation($this->valOftype);
+              return  $this->askPhone($this->desk);
 
 
             }
