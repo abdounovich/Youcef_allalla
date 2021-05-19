@@ -78,7 +78,7 @@
             <div class="badge badge-primary mt-2 text-white h5 p-2 m-2  float-left ">{{$commande->yalidine_TN}}</div>
   
  
-            <div class="badge badge-warning mt-2 text-white h5 p-2 m-2  float-right ">{{$commande->slug}}</div>
+            <div class="badge badge-warning mt-2 text-dark h5 p-2 m-2  float-right ">{{$commande->slug}}</div>
    </div>
  <div>
 
