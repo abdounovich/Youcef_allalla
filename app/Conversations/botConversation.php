@@ -43,7 +43,14 @@ public function __construct(string $product_id,string $typ ) {
        
        
 
+        if ( $this->product->quantity="0") {
+            $this->bot->reply("لقد نفذ لدينا هاذا المنتوج  ");
+            $this->bot->reply(" سنقوم بالتواصل معكم فور توفره من جديد    ");
+            $this->bot->reply("  شكرا لتفهمكم  ");
 
+            return;
+         
+         }
 if ( $this->product->quantity<$this->q) {
    $this->bot->reply("لا توجد لدينا كل هاته الكمية يرجى إختيار كمية أقل 🤷‍♂️ ");
    $this->askQuantity();
@@ -59,7 +66,7 @@ else {
         $this->commande->type="1";
         $this->commande->quantity=$this->q;
         if ($this->client->phone=="vide" && $this->client->wilaya=="vide" ) {
-           $this->askQuestion();
+           $this->askWilaya();
            return;
           
         }else{ 
@@ -94,7 +101,7 @@ else {
 
                } else {                
                    
-                $this->askQuestion();
+                $this->askWilaya();
                }
                
 
@@ -109,13 +116,9 @@ else {
        
     }
 
-public function askQuestion(){
 
-    
-    
-    $this->askPhone();
 
-}
+
 
 
 public function askPhone(){
@@ -123,7 +126,7 @@ public function askPhone(){
         $this->phone = $answer1->getText();
         if (is_numeric($this->phone)) {
             $this->client->phone=$this->phone;
-            $this->askWilaya();
+            $this->askConfirmation();
            
         }
         else{$this->bot->reply(" خطأ , من فضلك أدخل رقم صحيح  ");
@@ -138,7 +141,7 @@ public function askAddress(){
 
        $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
         $this->address = $answer->getText();
-        $this->client->address=$this->address;        return $this->askConfirmation($this->home);
+        $this->client->address=$this->address;        return $this->askPhone($this->home);
   }); 
 
 }
@@ -708,7 +711,7 @@ $this->askAddress();
 
             }else{
                 $this->TypeOfLivraison="desk";
-              return  $this->askConfirmation($this->desk);
+              return  $this->askPhone($this->desk);
 
 
             }
