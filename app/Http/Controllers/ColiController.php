@@ -54,7 +54,6 @@ class ColiController extends Controller
                     "freeshipping"=> $request->get("freeshipping"),
                     "is_stopdesk"=> $request->get("is_stopdesk"),
                     "has_exchange"=> $request->get("has_exchange"),
-                    "product_to_collect" => $request->get("product_to_collect"),
                 ),
               
             );

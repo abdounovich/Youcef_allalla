@@ -36,7 +36,6 @@
               <input type="text" name="freeshipping" value="false">
               <input type="text" name="is_stopdesk" value="true">
               <input type="text" name="has_exchange" value="false">
-              <input type="text" name="product_to_collect" value="null">
 
           
             <button type="submit" class="btn btn-primary">Bordreau YALIDINE</button>
