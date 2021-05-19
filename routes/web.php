@@ -140,3 +140,6 @@ Route::post('images/add/{id}', 'ImageController@store')->name('images.add');
 Route::get('images/color/add/{id}', 'ImageController@indexColor')->name('images.color');
 Route::get('images/color/show/{id}', 'ImageController@showColor')->name('images.color.show');
 Route::post('images/color/add/{id}', 'ImageController@storeColor')->name('images.color.add');
+
+Route::get('colis/add/', 'ColiController@index')->name('colis.index');
+Route::post('colis/add/', 'ColiController@create')->name('colis.add');
