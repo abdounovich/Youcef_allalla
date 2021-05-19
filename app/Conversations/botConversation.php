@@ -25,6 +25,7 @@ class botConversation extends Conversation
 
     protected $product_id;
     protected $typ;
+    protected $valOftype;
 
 public function __construct(string $product_id,string $typ ) {
 
