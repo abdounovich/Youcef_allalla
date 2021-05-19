@@ -24,65 +24,7 @@ class ColiController extends Controller
      */
     public function create()
     {
-        $url = "https://api.yalidine.com/v1/parcels/"; // the parcel's creation endpoint
-$api_id = "58955441267299948423"; // your api ID
-$api_token = "f8GCfYr6yNNE8Exk1vIv34OFSjSoJ7oTRulGDVR52PgcmQ035jKJetdAqet9IhWp"; // your api token
-
-$data =
-    array( // the array that contains all the parcels
-        array ( // first parcel
-            "order_id"=>"MyFirstOrder",
-            "firstname"=>"Brahim",
-            "familyname"=>"Mohamed",
-            "contact_phone"=>"0123456789,",
-            "address"=>"Cité Kaidi",
-            "to_commune_name"=>"Bordj El Kiffan",
-            "to_wilaya_name"=>"Alger",
-            "product_list"=>"Presse à café",
-            "price"=>3000,
-            "freeshipping"=> true,
-            "is_stopdesk"=> false,
-            "has_exchange"=> 0,
-            "product_to_collect" => null
-        ),
-        array ( // second parcel
-            "order_id" =>"MySecondOrder",
-            "firstname"=>"رفيدة",
-            "familyname"=>"بن مهيدي",
-            "contact_phone"=>"0123456789",
-            "address"=>"حي الياسمين",
-            "to_commune_name"=>"Ouled Fayet",
-            "to_wilaya_name"=>"Alger",
-            "product_list"=>"كتب الطبخ",
-            "price"=>2400,
-            "freeshipping"=>0,
-            "is_stopdesk"=>0,
-            "has_exchange"=> false,
-        ),
       
-    );
-
-$postdata = json_encode($data);
-
-$ch = curl_init($url);
-curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $postdata);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        "X-API-ID: ". $api_id,
-        "X-API-TOKEN: ". $api_token,
-        "Content-Type: application/json"
-    )
-);
-
-$result = curl_exec($ch);
-curl_close($ch);
-
-header("Content-Type: application/json");
-echo $result;
     }
 
     /**
@@ -93,7 +35,51 @@ echo $result;
      */
     public function store(Request $request)
     {
-        //
+        $url = "https://api.yalidine.com/v1/parcels/"; // the parcel's creation endpoint
+        $api_id = "58955441267299948423"; // your api ID
+        $api_token = "f8GCfYr6yNNE8Exk1vIv34OFSjSoJ7oTRulGDVR52PgcmQ035jKJetdAqet9IhWp"; // your api token
+        
+        $data =
+            array( // the array that contains all the parcels
+                array ( // first parcel
+                    "order_id"=>$request->get("order_id"),
+                    "firstname"=>$request->get("firstname"),
+                    "familyname"=>$request->get("familyname"),
+                    "contact_phone"=>$request->get("contact_phone"),
+                    "address"=>$request->get("address"),
+                    "to_commune_name"=>$request->get("to_commune_name"),
+                    "to_wilaya_name"=>$request->get("to_wilaya_name"),
+                    "product_list"=>$request->get("product_list"),
+                    "price"=>$request->get("price"),
+                    "freeshipping"=> $request->get("freeshipping"),
+                    "is_stopdesk"=> $request->get("is_stopdesk"),
+                    "has_exchange"=> $request->get("has_exchange"),
+                    "product_to_collect" => $request->get("product_to_collect"),
+                ),
+              
+            );
+        
+        $postdata = json_encode($data);
+        
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $postdata);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                "X-API-ID: ". $api_id,
+                "X-API-TOKEN: ". $api_token,
+                "Content-Type: application/json"
+            )
+        );
+        
+        $result = curl_exec($ch);
+        curl_close($ch);
+        
+        header("Content-Type: application/json");
+        echo $result;
     }
 
     /**
