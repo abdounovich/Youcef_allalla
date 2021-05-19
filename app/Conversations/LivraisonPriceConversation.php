@@ -30,8 +30,8 @@ class LivraisonPriceConversation extends Conversation
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'GET',
             CURLOPT_HTTPHEADER => array(
-                'X-API-ID: '."80153160526942779734",
-                'X-API-TOKEN: '."np3A1Ezh8BjgNS2ivR139nsoewmmLXLUu7uSfeFVWKy5xfQRowFptHZx8O70Jr6C"
+                'X-API-ID: '."58955441267299948423",
+                'X-API-TOKEN: '."f8GCfYr6yNNE8Exk1vIv34OFSjSoJ7oTRulGDVR52PgcmQ035jKJetdAqet9IhWp"
             ),
         ));
         
