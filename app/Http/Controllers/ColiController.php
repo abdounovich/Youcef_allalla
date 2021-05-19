@@ -73,7 +73,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
         "X-API-ID: ". $api_id,
-        "X-API-TOKEN: ". $token_id,
+        "X-API-TOKEN: ". $api_token,
         "Content-Type: application/json"
     )
 );
