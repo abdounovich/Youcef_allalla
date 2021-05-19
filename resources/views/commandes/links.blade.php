@@ -31,7 +31,7 @@
               <input type="text" name="address" value="{{$commande->client->adress}}">
               <input type="text" name="to_commune_name" value="{{$commande->client->wilaya}}">
               <input type="text" name="to_wilaya_name" value="{{$commande->client->wilaya}}">
-              <input type="text" name="product_list" value="{{$commande->product->name}}">
+              <input type="text" name="product_list" value="{{$commande->product->nom}}">
               <input type="text" name="price" value="{{$commande->total_price}}">
               <input type="text" name="freeshipping" value="false">
               <input type="text" name="is_stopdesk" value="true">
