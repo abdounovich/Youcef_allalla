@@ -43,7 +43,7 @@ public function __construct(string $product_id,string $typ ) {
        
        
 
-        if ( $this->product->quantity="0") {
+        if ( $this->product->quantity=="0") {
             $this->bot->reply("لقد نفذ لدينا هاذا المنتوج  ");
             $this->bot->reply(" سنقوم بالتواصل معكم فور توفره من جديد    ");
             $this->bot->reply("  شكرا لتفهمكم  ");
