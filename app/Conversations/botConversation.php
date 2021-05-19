@@ -126,7 +126,7 @@ public function askPhone(){
         $this->phone = $answer1->getText();
         if (is_numeric($this->phone)) {
             $this->client->phone=$this->phone;
-            $this->askConfirmation();
+            $this->askConfirmation( $this->valOftype);
            
         }
         else{$this->bot->reply(" خطأ , من فضلك أدخل رقم صحيح  ");
