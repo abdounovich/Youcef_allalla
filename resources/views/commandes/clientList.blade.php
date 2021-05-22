@@ -165,18 +165,7 @@
             {{$commande->client->facebook}} 
         </div>
 
-        <div class=" text-dark">
-            <i class="text-success fa fa-map-marker mr-2 "></i>{{$commande->client->address}}
-        </div>
-
-        <div class=" text-dark">
-            <i class="text-danger fa fa-flag mr-2 "></i>{{$commande->client->wilaya}}
-        </div>
-
-        <div class=" text-dark">
-            <i class="text-primary fa fa-phone mr-2 "></i>{{$commande->client->phone}}
-        </div>
-
+      
         @if ($commande->client->nom=="/" AND $commande->client->prenom=="/")
               
             @else
@@ -203,6 +192,17 @@
 
         @endif
 
+        <div class=" text-dark">
+            <i class="text-success fa fa-map-marker mr-2 "></i>{{$commande->client->address}}
+        </div>
+
+        <div class=" text-dark">
+            <i class="text-danger fa fa-flag mr-2 "></i>{{$commande->client->wilaya}}
+        </div>
+
+        <div class=" text-dark">
+            <i class="text-primary fa fa-phone mr-2 "></i>{{$commande->client->phone}}
+        </div>
 
          <div class=" text-dark mr-2">
             <div class=" float-right col col-12  ">
