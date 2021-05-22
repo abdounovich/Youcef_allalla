@@ -683,8 +683,8 @@ $this->ask($question5, function (Answer $answer) {
 
         $this->bot->reply("يمكن أن نرسل لك طلبيتك إلى منزلك");
 $this->bot->reply(" أو يمكنك التنقل بنفسك إلى مكتب YALIDINE في ولاية ".$this->client->wilaya);
-$this->bot->reply(" سعر التوصيل إلى المنزل هو : ".$this->home ." دج ");
-$this->bot->reply(" سعر التوصيل إلى مكتب YALIDINE هو : ".$this->desk ." دج ");
+$this->bot->reply("  التوصيل إلى المنزل بـ : ".$this->home ." دج ");
+$this->bot->reply("  التوصيل إلى مكتب YALIDINE بـ : ".$this->desk ." دج ");
         $question=Question::create( ' 👇 إختر طريقة التوصيل   ')->addButtons([
             Button::create('  إلى المنزل 🏠 ')->value('home'),
             Button::create('   مكتب YALIDINE 🚗')->value('desk')
