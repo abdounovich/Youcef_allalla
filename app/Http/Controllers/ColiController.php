@@ -40,7 +40,7 @@ class ColiController extends Controller
 
 
         $commande=Commande::find($id);
-        $client=Client::where("client_id",$commande->client->id)->first();
+        $client=Client::find($commande->client->id);
         $client->nom=$request->get("familyname");
         $client->prenom=$request->get("firstname");
         $client->save();
