@@ -59,7 +59,7 @@ class ColiController extends Controller
                     "product_list"=>$request->get("product_list"),
                     "price"=>$request->get("price"),
                     "freeshipping"=> $request->get("freeshipping"),
-                    "is_stopdesk"=> $request->get("is_stopdesk"),
+                    "is_stopdesk"=> true,
                     "has_exchange"=> 0,
                     "product_to_collect" => null
                 ),
