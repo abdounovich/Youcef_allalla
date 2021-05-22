@@ -681,8 +681,12 @@ $this->ask($question5, function (Answer $answer) {
         
       
 
-        $this->bot->reply("يمكن أن نرسل لك طلبيتك إلى منزلك");
-$this->bot->reply(" أو يمكنك التنقل بنفسك إلى مكتب YALIDINE في ولاية ".$this->client->wilaya);
+        $this->attachment = new Image('https://res.cloudinary.com/ds9qfm1ok/image/upload/v1618329949/171611099_189522426148517_6058507225347659126_n_oyghe3.png');
+// Build message object
+$this->message = OutgoingMessage::create('This is my text')
+->withAttachment( $this->attachment);
+$this->bot->reply( $this->message);
+$this->bot->typesAndWaits(1);
 $this->bot->reply("  التوصيل إلى المنزل بـ : ".$this->home ." دج ");
 $this->bot->reply("  التوصيل إلى مكتب YALIDINE بـ : ".$this->desk ." دج ");
         $question=Question::create( ' 👇 إختر طريقة التوصيل   ')->addButtons([
