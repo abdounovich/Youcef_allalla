@@ -39,6 +39,10 @@ class ColiController extends Controller
 
 
         $commande=Commande::find($id);
+        $client=Client::where("client_id",$commande->client->id)->first();
+        $client->nom=$request->get("familyname");
+        $client->prenom=$request->get("firstname");
+        $client->save();
         $commande->type="2";
         if ($commande->delivery_type=="Home") {
             $is_stopdesk=false;
