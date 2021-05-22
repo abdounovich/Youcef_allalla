@@ -22,14 +22,14 @@ use App\Conversations\botConversation;
 
 class botConversation extends Conversation
 {
-    public $variable=0;
+
     protected $product_id;
     protected $typ;
+
 public function __construct(string $product_id,string $typ ) {
 
     $this->product_id = $product_id;
     $this->q="0";
-    $this->valOftype="";
     $this->typ = $typ;
 
 
@@ -43,15 +43,8 @@ public function __construct(string $product_id,string $typ ) {
        
        
 
-        if ( $this->product->quantity=="0") {
-            $this->bot->reply("لقد نفذ لدينا هاذا المنتوج  ");
-            $this->bot->reply(" سنقوم بالتواصل معكم فور توفره من جديد    ");
-            $this->bot->reply("  شكرا لتفهمكم  ");
 
-            return;
-         
-         }
-elseif( $this->product->quantity<$this->q) {
+if ( $this->product->quantity<$this->q) {
    $this->bot->reply("لا توجد لدينا كل هاته الكمية يرجى إختيار كمية أقل 🤷‍♂️ ");
    $this->askQuantity();
 
@@ -65,18 +58,15 @@ else {
         $this->commande->commande_type=$this->typ;
         $this->commande->type="1";
         $this->commande->quantity=$this->q;
-        if ($this->client->phone=="vide" && $this->client->wilaya=="vide" ) {
-           $this->askWilaya();
+        if ($this->client->phone=="/" && $this->client->address=="/" && $this->client->wilaya=="/" ) {
+           $this->askQuestion();
            return;
           
         }else{ 
             $this->bot->reply("☎ رقم هاتفك هو :  ".$this->client->phone);
             $this->bot->reply(" 🇩🇿 ولايتك هي :  ".$this->client->wilaya);
-            if ($this->TypeOfLivraison=="home"
-            ) {
-             $this->bot->reply("🏠 عنوانك هو :  ".$this->client->address);   
-            }
-           $question=Question::create(' هل تود الإستمرار بهذا الرقم العنوان و الولاية  ؟   ')
+            $this->bot->reply("🏠 عنوانك هو :  ".$this->client->address);
+            $question=Question::create(' هل تود الإستمرار بهذا الرقم العنوان و الولاية  ؟   ')
             ->addButtons([
                 Button::create(' ✍️ تغيير   ')
                 ->value('change'),
@@ -101,7 +91,7 @@ else {
 
                } else {                
                    
-                $this->askWilaya();
+                $this->askQuestion();
                }
                
 
@@ -116,9 +106,13 @@ else {
        
     }
 
+public function askQuestion(){
 
+    
+    
+    $this->askPhone();
 
-
+}
 
 
 public function askPhone(){
@@ -126,36 +120,28 @@ public function askPhone(){
         $this->phone = $answer1->getText();
         if (is_numeric($this->phone)) {
             $this->client->phone=$this->phone;
-            $this->askConfirmation( $this->valOftype);
+            $this->askWilaya();
            
         }
-        else{
-                
-            if ( $this->variable<2) {
-                $this->bot->reply("  ✋ خطأ ,  أدخل الرقم فقط 👇 ");
-                $this->variable=$this->variable+1;
-                $this->askPhone();
-            }
-            else {
-                $this->bot->reply(" حدث خطأ ما ! يرجى إعادة المحاولة لاحقا  ");
-                $this->variable="0";
-            }
-
-            
+        else{$this->bot->reply(" خطأ , من فضلك أدخل رقم صحيح  ");
+            $this->askPhone();
         }
-    
       
-
     });
 }
 
 
 public function askAddress(){
 
-       $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
+        $this->ask(' من فضلك أدخل  عنوانك الكامل  🗺    ', function(Answer $answer) {
         $this->address = $answer->getText();
-        $this->client->address=$this->address;        return $this->askPhone($this->home);
-  }); 
+        $this->client->address=$this->address;
+        $this->key = array_search($this->client->wilaya, get_object_vars($this->obj));
+
+        $this->WilayaNumber= substr($this->key, 1);
+        $this->client->save();
+
+        $this->askLivriason($this->WilayaNumber);});
 
 }
 
@@ -182,10 +168,8 @@ public function askConfirmation($LivrPrice){
     $this->bot->reply($this->msgText ." : ".$this->msgValue);
     $this->bot->reply('  الكمية : '.$this->q);
     $this->bot->reply(' ☎ الهاتف  : '. $this->client->phone);
-    if ($this->TypeOfLivraison=="home"
-    ) {
-     $this->bot->reply("🏠 عنوانك هو :  ".$this->client->address);   
-    }    $this->bot->reply(' 🇩🇿 الولاية  : '.$this->client->wilaya);
+    $this->bot->reply(' 🏠 العنوان  : '. $this->client->address);
+    $this->bot->reply(' 🇩🇿 الولاية  : '.$this->client->wilaya);
 
     $this->remise=Remise::where("product_id",$this->product_id)->first();
     if ($this->remise) {
@@ -561,7 +545,7 @@ public function finalStep(){
     $this->commande->slug="CM";
 
     if ($this->TypeOfLivraison=="home") {
-        $this->commande->delivery_type="Home";
+        $this->commande->delivery_type="Homme";
   
       }else{
           $this->commande->delivery_type="Stop Desk";
@@ -599,26 +583,10 @@ public function askWilaya(){
 ${"W".$this->wilaya}="W".$this->wilaya;
  $this->client->wilaya=$this->obj->${"W".$this->wilaya};
             
- $this->key = array_search($this->client->wilaya, get_object_vars($this->obj));
-
- $this->WilayaNumber= substr($this->key, 1);
- $this->client->save();
-
- $this->askLivriason($this->WilayaNumber);
+            $this->askAddress();
         }
-        else{
-                
-            if ( $this->variable<2) {
-                $this->bot->reply("  ✋ خطأ ,  أدخل الرقم فقط 👇 ");
-                $this->variable=$this->variable+1;
-                $this->askWilaya();
-            }
-            else {
-                $this->bot->reply(" حدث خطأ ما ! يرجى إعادة المحاولة لاحقا  ");
-                $this->variable="0";
-            }
-
-            
+        else{$this->bot->reply(" خطأ , من فضلك أدخل  رقم الولاية فقط ");
+            $this->askWilaya();
         }
     
 
@@ -687,9 +655,6 @@ $this->ask($question5, function (Answer $answer) {
 
     public function askLivriason($wil)
     {
-
-       
-
         $this->client=Client::where('facebook', $this->full_name)->first();
         $url = "https://api.yalidine.com/v1/deliveryfees/".$wil; // the wilayas endpoint
         $curl = curl_init();
@@ -730,12 +695,12 @@ $this->bot->reply(" سعر التوصيل إلى مكتب YALIDINE هو : ".$thi
             
             if($answer->getValue() === 'home') {
 $this->TypeOfLivraison="home";
-$this->askAddress();
+                return $this->askConfirmation($this->home);
 
 
             }else{
                 $this->TypeOfLivraison="desk";
-              return  $this->askPhone($this->desk);
+              return  $this->askConfirmation($this->desk);
 
 
             }
@@ -749,7 +714,7 @@ $this->askAddress();
     public function run()
     {
 
-        $this->TypeOfLivraison="";
+
         $this->user = $this->bot->getUser();
         $this->facebook_id =  $this->user->getId();
         $this->firstname = $this->user->getFirstname();

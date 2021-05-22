@@ -10,17 +10,20 @@
                 <div class="mt-4 text-info text-bold text-" style="font-size: 15px">
                     fb/{{$commande->client->facebook}} 
                 </div>
-                @if ($commande->client->full_name=="vide")
+                @if ($commande->client->nom=="/" AND $commande->client->prenom=="/")
                 <form method="POST" action="{{route('clients.edit',$commande->client->id) }}" >
                     @csrf
                     <div class="form-group text-dark">
-                      <input type="text" class="form-control" name="full_name" id="full_name"  placeholder="Entrer le nom ">
+                      <input type="text" class="form-control" name="nom" id="nom"  placeholder="nom ">
                     </div>
+                    <div class="form-group text-dark">
+                        <input type="text" class="form-control" name="prenom" id="prenom"  placeholder="prenom ">
+                      </div>
                     <button type="submit" class="btn btn-primary col col-12 mb-4">Ajouter</button>
                   </form>
                 @else
                 <div class="mt-2 mb-3 text-dark text-bold" style="font-size: 20px">
-                    {{$commande->client->full_name}} 
+                    {{$commande->client->nom}} -{{$commande->client->prenom}} 
                  <a class="btn btn-primary" data-toggle="collapse" href="#collapseClient{{$commande->client->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
                     edit
                   </a></div>
@@ -38,8 +41,12 @@
                         <form method="POST" action="{{route('clients.edit',$commande->client->id) }}" >
                             @csrf
                             <div class="form-group text-dark">
-                              <input type="text" value="{{$commande->client->full_name}}" class="form-control" name="full_name" id="full_name"  placeholder="Entrer le nom ">
+                              <input type="text" value="{{$commande->client->nom}}" class="form-control" name="nom" id="nom"  placeholder="nom ">
                             </div>
+                            <div class="form-group text-dark">
+                                <input type="text" value="{{$commande->client->prenom}}" class="form-control" name="prenom" id="prenom"  placeholder="prenom ">
+                              </div>
+
                             <button type="submit" class="btn btn-success col col-12 mb-4">Save changes</button>
                           </form>                    </div>
                   </div>

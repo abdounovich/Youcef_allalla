@@ -16,7 +16,8 @@ class CreateClientsTable extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text("facebook");
-            $table->text("full_name");
+            $table->text("nom");
+            $table->text("prenom");
             $table->text("fb_id");
             $table->text("photo");
             $table->text('slug');

@@ -57,10 +57,12 @@ if ($username=="0") {
     $client->facebook=$full_name;
     $client->slug=Str::random(10) ;
     $client->fb_id=$facebook_id;
-    $client->phone="vide";
+    $client->phone="/";
     $client->address="/";
-    $client->wilaya="vide";
-    $client->full_name="vide";
+    $client->wilaya="/";
+    $client->nom="/";
+    $client->prenom="/";
+
     $config=Config::get('botman.facebook.token');
 
     ini_set("allow_url_fopen", 1);
@@ -135,10 +137,12 @@ if ($username=="0") {
     $client->facebook=$full_name;
     $client->slug=Str::random(10) ;
     $client->fb_id=$facebook_id;
-    $client->phone="vide";
+    $client->phone="/";
     $client->address="/";
-    $client->wilaya="vide";
-    $client->full_name="vide";
+    $client->wilaya="/";
+    $client->nom="/";
+    $client->prenom="/";
+
     $config=Config::get('botman.facebook.token');
 
     ini_set("allow_url_fopen", 1);

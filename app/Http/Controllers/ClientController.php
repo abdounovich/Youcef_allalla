@@ -15,7 +15,7 @@ class ClientController extends Controller
     public function index()
     {
         
-        $pending_clients=Client::where("phone","!=","vide")->get();
+        $pending_clients=Client::where("phone","!=","/")->get();
       
         $clients=Client::paginate(10);
         return view("clients.index")
@@ -71,7 +71,9 @@ class ClientController extends Controller
     {
      
         $client=Client::find($id);
-        $client->full_name=$request->get("full_name");
+        $client->nom=$request->get("nom");
+        $client->prenom=$request->get("prenom");
+
         $client->save();
         return back()->with("success","le nom client ajouté avec success");    
 

@@ -4,7 +4,115 @@
     </a>
 </div>  --}}
 
-  
+  @php
+      
+
+    $jsonobj = '{
+        "1":"أدرار",
+        "2":"الشلف",
+        "3":"الأغواط",
+        "4":"أم البواقي",
+        "5":"باتنة",
+        "6":"بجاية",
+        "7":"بسكرة",
+        "8":"بشار",
+        "9":"البليدة",
+    "01":"أدرار",
+    "33":"إليزي",
+    "04":"أم البواقي",
+    "03":"الأغواط",
+    "09":"البليدة",
+    "10":"البويرة",
+    "32":"البيض",
+    "16":"الجزائر",
+    "17":"الجلفة",
+    "02":"الشلف",
+    "36":"الطارف",
+    "26":"المدية",
+    "28":"المسيلة",
+    "45":"النعامة",
+    "39":"الوادي",
+    "05":"باتنة",
+    "06":"بجاية",
+    "34":"برج بوعريريج",
+    "07":"بسكرة",
+    "08":"بشار",
+    "35":"بومرداس",
+    "12":"تبسة",
+    "13":"تلمسان",
+    "11":"تمنراست",
+    "14":"تيارت",
+    "42":"تيبازة",
+    "15":"تيزي وزو",
+    "38":"تيسمسيلت",
+    "37":"تيندوف",
+    "18":"جيجل",
+    "40":"خنشلة",
+    "19":"سطيف",
+    "20":"سعيدة",
+    "21":"سكيكدة",
+    "41":"سوق أهراس",
+    "22":"سيدي بلعباس",
+    "23":"عنابة",
+    "44":"عين الدفلى",
+    "46":"عين تيموشنت",
+    "47":"غرداية",
+    "48":"غليزان",
+    "24":"قالمة",
+    "25":"قسنطينة",
+    "27":"مستغانم",
+    "29":"معسكر",
+    "43":"ميلة",
+    "30":"ورقلة",
+    "31":"وهران"
+    }';
+    
+    $obj = json_decode($jsonobj);
+
+
+
+    $key = array_search($commande->client->wilaya, get_object_vars($obj));
+
+    $WilayaNumber= substr($key, 0);
+
+
+
+
+
+    
+
+
+
+
+    $url = "https://api.yalidine.com/v1/communes/?has_stop_desk=true&wilaya_id=".$WilayaNumber; // the communes endpoint
+    $api_id = "58955441267299948423"; // your api ID
+    $api_token = "f8GCfYr6yNNE8Exk1vIv34OFSjSoJ7oTRulGDVR52PgcmQ035jKJetdAqet9IhWp"; // your api token
+    
+    $curl = curl_init();
+    
+    curl_setopt_array($curl, array(
+        CURLOPT_URL => $url,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'GET',
+        CURLOPT_HTTPHEADER => array(
+            'X-API-ID: '. $api_id,
+            'X-API-TOKEN: '. $api_token
+        ),
+    ));
+    
+    $response_json = curl_exec($curl);
+    curl_close($curl);
+    
+  $response_array = json_decode($response_json); // converting the json to a php array
+
+ 
+
+  @endphp
 <hr class="bg-white ">
         @if ($commande->type=="1" OR $commande->type=="2"  OR $commande->type=="6" )
         <a class="btn btn-danger  btn-circle float-left  mr-1" href="{{route('commandes.annuler',$commande->id)}}"  >
@@ -25,16 +133,33 @@
 
 
               <input type="text" name="order_id" value="{{$commande->slug}}">
-              <input type="text" name="firstname" value="{{$commande->client->full_name}}">
-              <input type="text" name="familyname" value="{{$commande->client->id}}">
+              <input type="text" name="firstname" value="{{$commande->client->prenom}}">
+              <input type="text" name="familyname" value="{{$commande->client->nom}}">
               <input type="text" name="contact_phone" value="{{$commande->client->phone}}">
-              <input type="text" name="address" value="{{$commande->client->adress}}">
-              <input type="text" name="to_commune_name" value="{{$commande->client->wilaya}}">
-              <input type="text" name="to_wilaya_name" value="{{$commande->client->wilaya}}">
+              <input type="text" name="address" value="{{$commande->client->address}}">
+
+
+              <div class="form-group">
+                  <label for="my-select">Text</label>
+                  <select id="my-select" class="form-control" name="to_commune_name">
+                    @foreach($response_array->data as $item){
+                                            @php
+                                        $wilaya_name=$item->wilaya_name
+                                            @endphp
+                     <option> {{$item->name}} </option>
+                         @endforeach
+                  </select>
+              </div>
+              <input type="text" name="to_wilaya_name" value="{{$wilaya_name}}">
               <input type="text" name="product_list" value="{{$commande->product->nom}}">
               <input type="text" name="price" value="{{$commande->total_price}}">
               <input type="text" name="freeshipping" value="false">
-              <input type="text" name="is_stopdesk" value="true">
+              @if ($commande->delivery_type=="Home")
+              <input type="text" name="is_stopdesk" value="false">
+            @else
+            <input type="text" name="is_stopdesk" value="true">
+
+              @endif
 
           
             <button type="submit" class="btn btn-primary">Bordreau YALIDINE</button>

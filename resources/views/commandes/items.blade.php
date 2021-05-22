@@ -51,7 +51,7 @@
    @endif          <hr class="bg-white ">
 
 
-   @if ($commande->yalidine_TN=="")
+   {{-- @if ($commande->yalidine_TN=="")
       
 
 
@@ -64,7 +64,7 @@
      </form>
 
 
-@endIf
+@endIf --}}
     
    <div class="d-flex justify-content-between">
    <div  @if ($commande->delivery_type=="Home")
@@ -72,7 +72,8 @@
    @else 
    class=" badge badge-danger  mt-2 text-white h5 p-2 m-2  float-left"
 
-   @endif >{{$commande->delivery_type}}</div>  
+   @endif >
+   {{$commande->delivery_type}}</div>  
    
    
             <div class="badge badge-primary mt-2 text-white h5 p-2 m-2  float-left ">{{$commande->yalidine_TN}}</div>

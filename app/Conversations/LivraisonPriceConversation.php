@@ -147,6 +147,16 @@ class LivraisonPriceConversation extends Conversation
         "W31":"وهران"
         }';
         
+
+
+
+
+
+
+
+
+
+        
         $this->obj = json_decode($this->jsonobj);
         $this->attachment = new Image('https://res.cloudinary.com/ds9qfm1ok/image/upload/v1618329949/171611099_189522426148517_6058507225347659126_n_oyghe3.png');
 // Build message object
