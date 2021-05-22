@@ -177,9 +177,9 @@
               <input type="hidden" name="price" value="{{$commande->total_price}}">
               <input type="hidden" name="freeshipping" value="false">
               @if ($commande->delivery_type=="Home")
-              <input type="hidden" name="is_stopdesk" value="false">
+              <input type="text" name="is_stopdesk" value="false">
             @else
-            <input type="hidden" name="is_stopdesk" value="true">
+            <input type="text" name="is_stopdesk" value="true">
 
               @endif
 
