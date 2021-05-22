@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Coli;
+use App\Client;
 use App\Commande;
 use Illuminate\Http\Request;
 
