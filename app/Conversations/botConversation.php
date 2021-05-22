@@ -545,7 +545,7 @@ public function finalStep(){
     $this->commande->slug="CM";
 
     if ($this->TypeOfLivraison=="home") {
-        $this->commande->delivery_type="Homme";
+        $this->commande->delivery_type="Home";
   
       }else{
           $this->commande->delivery_type="Stop Desk";
@@ -687,8 +687,8 @@ $this->message = OutgoingMessage::create('This is my text')
 ->withAttachment( $this->attachment);
 $this->bot->reply( $this->message);
 $this->bot->typesAndWaits(1);
-$this->bot->reply("  التوصيل إلى المنزل بـ : ".$this->home ." دج ");
-$this->bot->reply("  التوصيل إلى مكتب YALIDINE بـ : ".$this->desk ." دج ");
+$this->bot->reply(" التوصيل إلى المنزل بـ : ".$this->home ." دج ");
+$this->bot->reply(" إلى مكتب YALIDINE بـ : ".$this->desk ." دج ");
         $question=Question::create( ' 👇 إختر طريقة التوصيل   ')->addButtons([
             Button::create('  إلى المنزل 🏠 ')->value('home'),
             Button::create('   مكتب YALIDINE 🚗')->value('desk')
