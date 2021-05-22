@@ -38,9 +38,14 @@ class ColiController extends Controller
     {
 
 
-
         $commande=Commande::find($id);
         $commande->type="2";
+        if ($commande->delivery_type=="Home") {
+            $is_stopdesk=false;
+        }
+        else{
+            $is_stopdesk=true; 
+        }
 
         $url = "https://api.yalidine.com/v1/parcels/"; // the parcel's creation endpoint
         $api_id = "58955441267299948423"; // your api ID
@@ -58,8 +63,8 @@ class ColiController extends Controller
                     "to_wilaya_name"=>$request->get("to_wilaya_name"),
                     "product_list"=>$request->get("product_list"),
                     "price"=>$request->get("price"),
-                    "freeshipping"=> $request->get("freeshipping"),
-                    "is_stopdesk"=> true,
+                    "freeshipping"=> false,
+                    "is_stopdesk"=> $is_stopdesk,
                     "has_exchange"=> 0,
                     "product_to_collect" => null
                 ),
