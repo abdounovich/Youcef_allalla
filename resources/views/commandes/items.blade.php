@@ -76,7 +76,7 @@
    {{$commande->delivery_type}}</div>  
    
    
-            <div class="badge badge-primary mt-2 text-white h5 p-2 m-2  float-left ">{{$commande->yalidine_TN}}</div>
+            <div class="badge badge-primary mt-2 text-white h5 p-2 m-2  float-left "><a class="text-white" href="https://yalidine.com/app/bordereau.php?tracking={{$commande->yalidine_TN}}">{{$commande->yalidine_TN}}</a></div>
   
  
             <div class="badge badge-warning mt-2 text-dark h5 p-2 m-2  float-right ">{{$commande->slug}}</div>

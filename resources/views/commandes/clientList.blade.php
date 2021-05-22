@@ -10,18 +10,9 @@
                 <div class="mt-4 text-info text-bold text-" style="font-size: 15px">
                     fb/{{$commande->client->facebook}} 
                 </div>
-                @if ($commande->client->nom=="/" AND $commande->client->prenom=="/")
-                <form method="POST" action="{{route('clients.edit',$commande->client->id) }}" >
-                    @csrf
-                    <div class="form-group text-dark">
-                      <input type="text" class="form-control" name="nom" id="nom"  placeholder="nom ">
-                    </div>
-                    <div class="form-group text-dark">
-                        <input type="text" class="form-control" name="prenom" id="prenom"  placeholder="prenom ">
-                      </div>
-                    <button type="submit" class="btn btn-primary col col-12 mb-4">Ajouter</button>
-                  </form>
-                @else
+                @if ($commande->client->nom!="/" AND $commande->client->prenom!="/")
+               
+            
                 <div class="mt-2 mb-3 text-dark text-bold" style="font-size: 20px">
                     {{$commande->client->nom}} -{{$commande->client->prenom}} 
                  <a class="btn btn-primary" data-toggle="collapse" href="#collapseClient{{$commande->client->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">

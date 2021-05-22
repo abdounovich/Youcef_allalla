@@ -115,69 +115,77 @@
   @endphp
 <hr class="bg-white ">
         @if ($commande->type=="1" OR $commande->type=="2"  OR $commande->type=="6" )
-        <a class="btn btn-danger  btn-circle float-left  mr-1" href="{{route('commandes.annuler',$commande->id)}}"  >
+        <a class="btn btn-danger  btn-circle float-left mb-3  mr-1" href="{{route('commandes.annuler',$commande->id)}}"  >
             <span class="     fa fa-remove  "></span>
         </a>
         @endif
         
         @if ($commande->type=="2")
-        <a class="btn btn-success btn-circle float-left   mr-1" href="{{route('commandes.delivration',$commande->id) }}">
+        <a class="btn btn-success btn-circle float-left mb-3   mr-1" href="{{route('commandes.delivration',$commande->id) }}">
             <span class="  fa fa-truck   "></span>
+          
         </a> 
 
-        <form method="POST" action="{{route('colis.add') }}"  enctype="multipart/form-data">
-            @csrf
-
-     
-
-
-
-              <input type="text" name="order_id" value="{{$commande->slug}}">
-              <input type="text" name="firstname" value="{{$commande->client->prenom}}">
-              <input type="text" name="familyname" value="{{$commande->client->nom}}">
-              <input type="text" name="contact_phone" value="{{$commande->client->phone}}">
-              <input type="text" name="address" value="{{$commande->client->address}}">
-
-
-              <div class="form-group">
-                  <label for="my-select">Text</label>
-                  <select id="my-select" class="form-control" name="to_commune_name">
-                    @foreach($response_array->data as $item){
-                                            @php
-                                        $wilaya_name=$item->wilaya_name
-                                            @endphp
-                     <option> {{$item->name}} </option>
-                         @endforeach
-                  </select>
-              </div>
-              <input type="text" name="to_wilaya_name" value="{{$wilaya_name}}">
-              <input type="text" name="product_list" value="{{$commande->product->nom}}">
-              <input type="text" name="price" value="{{$commande->total_price}}">
-              <input type="text" name="freeshipping" value="false">
-              @if ($commande->delivery_type=="Home")
-              <input type="text" name="is_stopdesk" value="false">
-            @else
-            <input type="text" name="is_stopdesk" value="true">
-
-              @endif
-
-          
-            <button type="submit" class="btn btn-primary">Bordreau YALIDINE</button>
-          </form>
+      
         
-        <a class="btn btn-warning btn-circle float-left   mr-1" href="{{route('commandes.return',$commande->id) }}">
+        <a class="btn btn-warning btn-circle float-left mb-3  mr-1" href="{{route('commandes.return',$commande->id) }}">
             <span class="    fa fa-refresh    "></span>
         </a>
         @endif
         
         @if ($commande->type=="1")
-        <a class="btn btn-primary btn-circle float-left   mr-1" href="{{route('commandes.confirmation',$commande->id) }}">
+    {{--     <a class="btn btn-primary btn-circle float-left mb-3   mr-1" href="{{route('commandes.confirmation',$commande->id) }}">
             <span class="    fa fa-arrow-down    "></span>
         </a> 
+ --}}
+
+
+        <form method="POST" action="{{route('colis.add',$commande->id) }}"  enctype="multipart/form-data">
+            @csrf
+     
 
 
 
+              <input type="hidden" name="order_id" value="{{$commande->slug}}">
+            
+             
+              <input @if ($commande->client->nom=="/") placeholder="nom" value="" 
+           @endif class="form-control my-2" type="text" name="familyname" value="{{$commande->client->nom}}">
+           <input  @if ($commande->client->prenom=="/")
+           placeholder="prenom" value="" 
+        @endif
+         class="form-control my-2 " type="text" name="firstname" value="{{$commande->client->prenom}}">
+              <input type="hidden" name="contact_phone" value="{{$commande->client->phone}}">
+              <input type="hidden" name="address" value="{{$commande->client->address}}">
 
+
+              <div class="form-group">
+                  <select  @if (count($response_array->data)=="1")
+                      hidden
+                  @endif id="my-select" class="form-control" name="to_commune_name">
+                    @foreach($response_array->data as $item){
+                                            @php
+                                        $wilaya_name=$item->wilaya_name
+                                            @endphp
+                                            
+                     <option> {{$item->name}} </option>
+                         @endforeach
+                  </select>
+              </div>
+              <input type="hidden" name="to_wilaya_name" value="{{$wilaya_name}}">
+              <input type="hidden" name="product_list" value="{{$commande->product->nom}}">
+              <input type="hidden" name="price" value="{{$commande->total_price}}">
+              <input type="hidden" name="freeshipping" value="false">
+              @if ($commande->delivery_type=="Home")
+              <input type="hidden" name="is_stopdesk" value="false">
+            @else
+            <input type="hidden" name="is_stopdesk" value="true">
+
+              @endif
+
+          
+            <button type="submit" class="btn btn-primary">Confirmer</button>
+          </form>
 
 
         @endif

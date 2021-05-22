@@ -153,10 +153,7 @@ return back()->with("success","commande supprimé avec success");
     public function confirmation($id)
     {
      
-        $commande=Commande::find($id);
-        $commande->type="2";
-        $commande->save();
-        return redirect()->route('commandes');
+     
     }
 
     

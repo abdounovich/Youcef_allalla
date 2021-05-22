@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Coli;
+use App\Commande;
 use Illuminate\Http\Request;
 
 class ColiController extends Controller
@@ -33,8 +34,14 @@ class ColiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request ,$id )
     {
+
+
+
+        $commande=Commande::find($id);
+        $commande->type="2";
+
         $url = "https://api.yalidine.com/v1/parcels/"; // the parcel's creation endpoint
         $api_id = "58955441267299948423"; // your api ID
         $api_token = "f8GCfYr6yNNE8Exk1vIv34OFSjSoJ7oTRulGDVR52PgcmQ035jKJetdAqet9IhWp"; // your api token
@@ -79,7 +86,17 @@ class ColiController extends Controller
         curl_close($ch);
         
         header("Content-Type: application/json");
-        echo $result;
+        $response_array = json_decode($result);
+        foreach( $response_array as $item){
+            $tracking=$item->tracking;
+
+
+        }
+
+        $commande->yalidine_TN=$tracking;
+        $commande->save();
+        return redirect()->route('commandes');
+
     }
 
     /**
