@@ -275,8 +275,8 @@
                </span>
         
                
-                    <span><i class="text-primary  fa fa-phone ml-2 m-2 "></i>{{$commande->client->phone}}
-               </span> </div>
+                    <span><i class="text-primary  fa fa-phone ml-2 m-2 "></i>                    <a class="text-dark" href="tel: {{$commande->client->phone}}"> {{$commande->client->phone}}  </a>   
+                    </span> </div>
             </div>
 
 
