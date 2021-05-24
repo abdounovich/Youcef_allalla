@@ -196,7 +196,6 @@
 }
       </style>
 
-        <div class="container mt-2 d-flex justify-content-center">
             <div class="card p-2">
                 <div class="d-flex align-items-center">
                     <div class="image img-thumbnail"> <img src="{{$commande->client->photo}}" style="width: 100px; height:100px" class="rounded border border-dark"  > 
@@ -243,7 +242,6 @@
 
 
            
-        </div>
 
 
 
