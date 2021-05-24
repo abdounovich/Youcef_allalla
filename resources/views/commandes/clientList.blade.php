@@ -220,7 +220,7 @@
                     
                     </div>
 
-                    <div class="ml-3 w-100">
+                    <div class="ml-2 w-100">
                                 <a data-toggle="collapse" 
                                 href="#collapseClient{{$commande->client->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
                                     <i   class=" float-right bg-warning p-2  text-dark rounded-circle fa fa-pencil"></i>
@@ -264,6 +264,7 @@
                             <div class="d-flex flex-column"> <i class="btn btn-primary  btn-circle" style=" width:15px; height:15px"></i> <span class="number1">{{$ByClientActiveCommandes}}</span> </div>
                             <div class="d-flex flex-column"> <i class="btn btn-warning  btn-circle" style=" width:15px; height:15px"></i> <span class="number1">{{$ByClientenrouteCommandes}}</span> </div>
                             <div class="d-flex flex-column"> <i class="btn btn-success  btn-circle" style=" width:15px; height:15px"></i> <span class="number1">{{$ByClientDelivredCommandes}}</span> </div>
+                            <div class="d-flex flex-column"> <i class="btn btn-danger  btn-circle" style=" width:15px; height:15px"></i> <span class="number1">{{$ByClientcanceledByClientCommandes}}</span> </div>
 
                         </div>
                 <div class=" text-dark">
