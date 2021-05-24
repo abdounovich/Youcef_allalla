@@ -198,7 +198,7 @@
 
             <div class="card p-2">
                 <div class="d-flex align-items-center">
-                    <div class="image img-thumbnail bg-dark"> <img src="{{$commande->client->photo}}" style="width: 100px; height:100px" class="rounded border border-dark"  > 
+                    <div class="image img-thumbnail bg-dark"> <img src="{{$commande->client->photo}}" style="width: 50px; height:50px" class="rounded border border-dark"  > 
                     
                     
                     </div>
