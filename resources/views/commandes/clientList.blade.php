@@ -173,7 +173,8 @@
 }
 
 .number1 {
-    font-weight: 500
+    font-weight: 500;
+    font-family: Georgia, 'Times New Roman', Times, serif
 }
 
 .followers {
@@ -260,12 +261,22 @@
 
 
                 </div> <div class="p-2 mt-2 d-flex bg-dark justify-content-between rounded text-white ">
-                            <div class="d-flex flex-column"> <i class="btn btn-secondary  btn-circle" style=" width:15px; height:15px"></i> <span class="number1">{{$ByClientInactiveCommandes}}</span> </div>
-                            <div class="d-flex flex-column"> <i class="btn btn-primary  btn-circle" style=" width:15px; height:15px"></i> <span class="number1">{{$ByClientActiveCommandes}}</span> </div>
-                            <div class="d-flex flex-column"> <i class="btn btn-warning  btn-circle" style=" width:15px; height:15px"></i> <span class="number1">{{$ByClientenrouteCommandes}}</span> </div>
-                            <div class="d-flex flex-column"> <i class="btn btn-success  btn-circle" style=" width:15px; height:15px"></i> <span class="number1">{{$ByClientDelivredCommandes}}</span> </div>
-                            <div class="d-flex flex-column"> <i class="btn btn-danger  btn-circle" style=" width:15px; height:15px"></i> <span class="number1">{{$ByClientcanceledByClientCommandes}}</span> </div>
+                    <span class="btn btn-secondary btn-circle" >
+                        <span>{{$ByClientInactiveCommandes}}</span>
+                    </span> 
+                    <span class="btn btn-primary btn-circle" >
+                        <span>{{$ByClientActiveCommandes}}</span>
+                    </span> 
+                    <span class="btn btn-warning btn-circle" >
+                        <span>{{$ByClientenrouteCommandes}}</span>
+                    </span> 
+                    <span class="btn btn-success btn-circle" >
+                        <span>{{$ByClientDelivredCommandes}}</span>
+                    </span>     <span class="btn btn-danger btn-circle" >
+                        <span>{{$ByClientcanceledByClientCommandes}}</span>
+                    </span> 
 
+                           
                         </div>
                 <div class=" text-dark">
                     <i class="text-success fa fa-map-marker m-2 mr-2 "></i>{{$commande->client->address}}
