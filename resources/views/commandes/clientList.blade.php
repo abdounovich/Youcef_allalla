@@ -151,28 +151,110 @@
 
  --}}
 
- <div class="d-flex justify-content-center  my-2 mx-4" >
- <div class=" clearfix col col-12 bg-light ml-2  p-4 m-2 rounded " style="opacity: 0.8">
+ <div class="d-flex justify-content-center " >
+ <div class=" clearfix col col-12 bg-light ml-2  p-1 rounded " style="opacity: 0.8">
     
     <div >
         
 
-        <div class=" float-left my-2 mr-2">
-            <img style="width: 100px; height:100px" src="{{$commande->client->photo}}" class=" img-thumbnail" alt="">
-        </div>
-
-        <div class="mt-2 text-info h5 ">
-            {{$commande->client->facebook}} 
-        </div>
+  
 
       
-        @if ($commande->client->nom=="/" AND $commande->client->prenom=="/")
+
+      <style>
+
+.stats {
+    background: #f2f5f8 !important;
+    color: #000 !important
+}
+
+.articles {
+    font-size: 10px;
+    color: #a1aab9
+}
+
+.number1 {
+    font-weight: 500
+}
+
+.followers {
+    font-size: 10px;
+    color: #a1aab9
+}
+
+.number2 {
+    font-weight: 500
+}
+
+.rating {
+    font-size: 10px;
+    color: #a1aab9
+}
+
+.number3 {
+    font-weight: 500
+}
+      </style>
+
+        <div class="container mt-2 d-flex justify-content-center">
+            <div class="card p-2">
+                <div class="d-flex align-items-center">
+                    <div class="image"> <img src="{{$commande->client->photo}}" class="rounded border border-dark"  > 
+                    
+                    
+                    </div>
+                    <div class="ml-3 w-100">
+                        <h4 class="mb-0 mt-0">{{$commande->client->nom}} {{$commande->client->prenom }} 
+                        </h4> <span> {{$commande->client->facebook}} 
+                        </span>
+                        <div class="button mt-2 d-flex flex-row align-items-center"> 
+                          
+
+                            <a class="btn btn-sm btn-outline-primary w-100" data-toggle="collapse" 
+                            href="#collapseClient{{$commande->client->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                edit
+                             </a>
+                            </div>
+                       
+                       
+                    </div>
+
+                   
+
+                </div> <div class="p-2 mt-2 d-flex bg-dark justify-content-between rounded text-white ">
+                            <div class="d-flex flex-column"> <i class="btn btn-secondary  btn-circle" style=" width:15px; height:15px"></i> <span class="number1">38</span> </div>
+                            <div class="d-flex flex-column"> <i class="btn btn-primary  btn-circle" style=" width:15px; height:15px"></i> <span class="number1">38</span> </div>
+                            <div class="d-flex flex-column"> <i class="btn btn-warning  btn-circle" style=" width:15px; height:15px"></i> <span class="number1">38</span> </div>
+                            <div class="d-flex flex-column"> <i class="btn btn-success  btn-circle" style=" width:15px; height:15px"></i> <span class="number1">38</span> </div>
+
+                        </div>
+                <div class=" text-dark">
+                    <i class="text-success fa fa-map-marker m-2 mr-2 "></i>{{$commande->client->address}}
+                </div>
+        
+                <div class=" text-dark">
+                    <i class="text-danger fa fa-flag mr-2 m-2 "></i>{{$commande->client->wilaya}}
+                </div>
+        
+                <div class=" text-dark">
+                    <i class="text-primary fa fa-phone mr-2 m-2 "></i>{{$commande->client->phone}}
+                </div>
+            </div>
+
+
+           
+        </div>
+
+
+
+
+       {{--  @if ($commande->client->nom=="/" AND $commande->client->prenom=="/")
               
             @else
-        <div class="mt-2 mb-3 text-dark text-bold" style="font-size: 20px">
+        <div class=" text-dark text-bold" style="font-size: 18px">
             {{$commande->client->nom}} - {{$commande->client->prenom}} 
          <a class="btn btn-primary" data-toggle="collapse" href="#collapseClient{{$commande->client->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
-            edit
+             edit
           </a></div>
        
           <div class="collapse p-4" id="collapseClient{{$commande->client->id}}"><p></p>
@@ -191,20 +273,9 @@
           </div>
 
         @endif
-
-        <div class=" text-dark">
-            <i class="text-success fa fa-map-marker mr-2 "></i>{{$commande->client->address}}
-        </div>
-
-        <div class=" text-dark">
-            <i class="text-danger fa fa-flag mr-2 "></i>{{$commande->client->wilaya}}
-        </div>
-
-        <div class=" text-dark">
-            <i class="text-primary fa fa-phone mr-2 "></i>{{$commande->client->phone}}
-        </div>
-
-         <div class=" text-dark mr-2">
+ --}}
+       
+    {{--      <div class=" text-dark mr-2">
             <div class=" float-right col col-12  ">
                 @php
                     $ByClientInactiveCommandes=App\Commande::where("type",1)->where("client_id",$commande->client->id)->count();
@@ -248,6 +319,9 @@
 
 
             </div>
-        </div>
+        </div> --}}
     </div>
-</div></div>
+</div>
+
+
+</div>
