@@ -155,8 +155,7 @@
  <div class=" clearfix col col-12 bg-dark p-2 rounded " style="opacity: 0.8">
     
     <div >
-        
-
+     
   
 
       
@@ -198,14 +197,22 @@
 
             <div class="card p-2">
                 <div class="d-flex align-items-center">
+                       
+        
                     <div class="image img-thumbnail bg-dark mt-0"> <img src="{{$commande->client->photo}}" style="width: 50px; height:50px" class="rounded border border-dark"  > 
                     
                     
                     </div>
+
                     <div class="ml-3 w-100">
-                        <h5 class="mb-0 mt-0">{{$commande->client->nom}} {{$commande->client->prenom }} 
-                        </h5> <span> {{$commande->client->facebook}} 
-                        </span>
+                      <div class=" float-right btn btn-warning rounded "> 
+                                <a href="{{route('clients.edit',$commande->client->id) }}">
+                                    <i class="  text-dark  fa fa-pencil"></i>
+                                </a>
+                                </div>
+                        <h5 class="mb-0 mt-1">{{$commande->client->nom}} {{$commande->client->prenom }} 
+                        </h5> <a href="#" > {{$commande->client->facebook}} 
+                        </a>
                       {{--   <div class="button mt-2 d-flex flex-row align-items-center"> 
                           
 
@@ -214,8 +221,8 @@
                                 edit
                              </a>
                             </div> --}}
-                       
-                       
+                           
+                         
                     </div>
 
                    
