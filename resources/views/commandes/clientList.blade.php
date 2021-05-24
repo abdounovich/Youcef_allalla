@@ -205,11 +205,9 @@
                     </div>
 
                     <div class="ml-3 w-100">
-                      <div class=" float-right btn btn-warning rounded "> 
                                 <a href="{{route('clients.edit',$commande->client->id) }}">
-                                    <i class="  text-dark  fa fa-pencil"></i>
+                                    <i   class=" float-right bg-warning p-1 text-dark rounded    fa fa-pencil"></i>
                                 </a>
-                                </div>
                         <h5 class="mb-0 mt-1">{{$commande->client->nom}} {{$commande->client->prenom }} 
                         </h5> <a href="#" > {{$commande->client->facebook}} 
                         </a>
