@@ -195,6 +195,22 @@
 }
       </style>
 
+
+<div class="collapse p-4" id="collapseClient{{$commande->client->id}}"><p></p>
+    <div class="card card-body">
+        <form method="POST" action="{{route('clients.edit',$commande->client->id) }}" >
+            @csrf
+            <div class="form-group text-dark">
+              <input type="text" value="{{$commande->client->nom}}" class="form-control" name="nom" id="nom"  placeholder="nom ">
+            </div>
+            <div class="form-group text-dark">
+                <input type="text" value="{{$commande->client->prenom}}" class="form-control" name="prenom" id="prenom"  placeholder="prenom ">
+              </div>
+
+            <button type="submit" class="btn btn-success col col-12 mb-4">Save changes</button>
+          </form>                    </div>
+  </div>
+
             <div class="card p-2">
                 <div class="d-flex align-items-center">
                        
@@ -205,9 +221,13 @@
                     </div>
 
                     <div class="ml-3 w-100">
-                                <a href="{{route('clients.edit',$commande->client->id) }}">
-                                    <i   class=" float-right bg-warning p-1 text-dark rounded    fa fa-pencil"></i>
+                                <a data-toggle="collapse" 
+                                href="#collapseClient{{$commande->client->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    <i   class=" float-right bg-warning p-2  text-dark rounded-circle fa fa-pencil"></i>
                                 </a>
+
+                                    
+         
                         <h5 class="mb-0 mt-1">{{$commande->client->nom}} {{$commande->client->prenom }} 
                         </h5> <a href="#" > {{$commande->client->facebook}} 
                         </a>
@@ -223,8 +243,7 @@
                          
                     </div>
 
-                   
-
+                    
                 </div> <div class="p-2 mt-2 d-flex bg-dark justify-content-between rounded text-white ">
                             <div class="d-flex flex-column"> <i class="btn btn-secondary  btn-circle" style=" width:15px; height:15px"></i> <span class="number1">38</span> </div>
                             <div class="d-flex flex-column"> <i class="btn btn-primary  btn-circle" style=" width:15px; height:15px"></i> <span class="number1">38</span> </div>
