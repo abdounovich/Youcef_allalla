@@ -152,7 +152,7 @@
  --}}
 
  <div class="d-flex justify-content-center " >
- <div class=" clearfix col col-12 bg-light ml-2  p-1 rounded " style="opacity: 0.8">
+ <div class=" clearfix col col-12 bg-dark p-2 rounded " style="opacity: 0.8">
     
     <div >
         
@@ -198,13 +198,13 @@
 
             <div class="card p-2">
                 <div class="d-flex align-items-center">
-                    <div class="image img-thumbnail"> <img src="{{$commande->client->photo}}" style="width: 100px; height:100px" class="rounded border border-dark"  > 
+                    <div class="image img-thumbnail bg-dark"> <img src="{{$commande->client->photo}}" style="width: 100px; height:100px" class="rounded border border-dark"  > 
                     
                     
                     </div>
                     <div class="ml-3 w-100">
-                        <h4 class="mb-0 mt-0">{{$commande->client->nom}} {{$commande->client->prenom }} 
-                        </h4> <span> {{$commande->client->facebook}} 
+                        <h5 class="mb-0 mt-0">{{$commande->client->nom}} {{$commande->client->prenom }} 
+                        </h5> <span> {{$commande->client->facebook}} 
                         </span>
                         <div class="button mt-2 d-flex flex-row align-items-center"> 
                           
@@ -231,13 +231,13 @@
                     <i class="text-success fa fa-map-marker m-2 mr-2 "></i>{{$commande->client->address}}
                 </div>
         
-                <div class=" text-dark">
-                    <i class="text-danger fa fa-flag mr-2 m-2 "></i>{{$commande->client->wilaya}}
-                </div>
+                <div class=" text-dark d-flex justify-content-between">
+                    <span><i class="text-danger fa fa-flag mr-2 m-2 "></i>{{$commande->client->wilaya}}
+               </span>
         
-                <div class=" text-dark">
-                    <i class="text-primary fa fa-phone mr-2 m-2 "></i>{{$commande->client->phone}}
-                </div>
+               
+                    <span><i class="text-primary  fa fa-phone ml-2 m-2 "></i>{{$commande->client->phone}}
+               </span> </div>
             </div>
 
 
