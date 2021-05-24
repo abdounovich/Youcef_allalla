@@ -227,9 +227,13 @@
                                 </a>
 
                                     
-         
-                        <h5 class="mb-0 mt-1">{{$commande->client->nom}} {{$commande->client->prenom }} 
-                        </h5> <a href="#" > {{$commande->client->facebook}} 
+                                @if ($commande->client->nom=="/" AND $commande->client->prenom=="/")
+                                FB : 
+                                @else
+                                <h5 class="mb-0 mt-1">{{$commande->client->nom}} {{$commande->client->prenom }} 
+
+                                @endIf
+                            </h5> <a href="#" > {{$commande->client->facebook}} 
                         </a>
                       {{--   <div class="button mt-2 d-flex flex-row align-items-center"> 
                           
@@ -243,12 +247,23 @@
                          
                     </div>
 
-                    
+                    @php
+                    $ByClientInactiveCommandes=App\Commande::where("type",1)->where("client_id",$commande->client->id)->count();
+                    $ByClientActiveCommandes=App\Commande::where("type",2)->where("client_id",$commande->client->id)->count();
+                    $ByClientDelivredCommandes=App\Commande::where("type",3)->where("client_id",$commande->client->id)->count();
+                    $ByClientcanceledByAdminCommandes=App\Commande::where("type",4)->where("client_id",$commande->client->id)->count();
+                    $ByClientcanceledByClientCommandes=App\Commande::where("type",5)->where("client_id",$commande->client->id)->count();
+                    $ByClientenrouteCommandes=App\Commande::where("type",6)->where("client_id",$commande->client->id)->count();
+
+                @endphp 
+              
+
+
                 </div> <div class="p-2 mt-2 d-flex bg-dark justify-content-between rounded text-white ">
-                            <div class="d-flex flex-column"> <i class="btn btn-secondary  btn-circle" style=" width:15px; height:15px"></i> <span class="number1">38</span> </div>
-                            <div class="d-flex flex-column"> <i class="btn btn-primary  btn-circle" style=" width:15px; height:15px"></i> <span class="number1">38</span> </div>
-                            <div class="d-flex flex-column"> <i class="btn btn-warning  btn-circle" style=" width:15px; height:15px"></i> <span class="number1">38</span> </div>
-                            <div class="d-flex flex-column"> <i class="btn btn-success  btn-circle" style=" width:15px; height:15px"></i> <span class="number1">38</span> </div>
+                            <div class="d-flex flex-column"> <i class="btn btn-secondary  btn-circle" style=" width:15px; height:15px"></i> <span class="number1">{{$ByClientInactiveCommandes}}</span> </div>
+                            <div class="d-flex flex-column"> <i class="btn btn-primary  btn-circle" style=" width:15px; height:15px"></i> <span class="number1">{{$ByClientActiveCommandes}}</span> </div>
+                            <div class="d-flex flex-column"> <i class="btn btn-warning  btn-circle" style=" width:15px; height:15px"></i> <span class="number1">{{$ByClientenrouteCommandes}}</span> </div>
+                            <div class="d-flex flex-column"> <i class="btn btn-success  btn-circle" style=" width:15px; height:15px"></i> <span class="number1">{{$ByClientDelivredCommandes}}</span> </div>
 
                         </div>
                 <div class=" text-dark">
