@@ -198,7 +198,7 @@
 
             <div class="card p-2">
                 <div class="d-flex align-items-center">
-                    <div class="image img-thumbnail bg-dark"> <img src="{{$commande->client->photo}}" style="width: 50px; height:50px" class="rounded border border-dark"  > 
+                    <div class="image img-thumbnail bg-dark mt-0"> <img src="{{$commande->client->photo}}" style="width: 50px; height:50px" class="rounded border border-dark"  > 
                     
                     
                     </div>
@@ -206,14 +206,14 @@
                         <h5 class="mb-0 mt-0">{{$commande->client->nom}} {{$commande->client->prenom }} 
                         </h5> <span> {{$commande->client->facebook}} 
                         </span>
-                        <div class="button mt-2 d-flex flex-row align-items-center"> 
+                      {{--   <div class="button mt-2 d-flex flex-row align-items-center"> 
                           
 
                             <a class="btn btn-sm btn-outline-primary w-100" data-toggle="collapse" 
                             href="#collapseClient{{$commande->client->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
                                 edit
                              </a>
-                            </div>
+                            </div> --}}
                        
                        
                     </div>
