@@ -147,6 +147,12 @@ Route::post('colis/add/{id}', 'ColiController@store')->name('colis.add');
 
 
 
+Route::get('update/{table_name}', 'UpdateController@index')->name('show');
+Route::post('update/{table_name}', 'UpdateController@update')->name('update');
+
+
+
+
 Route::get('/colis/test/', function () {
 
     $url = "https://api.yalidine.com/v1/parcels/"; // the parcel's creation endpoint
