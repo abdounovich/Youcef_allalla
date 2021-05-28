@@ -781,8 +781,6 @@ if ( $this->product->quantity=="0") {
     $this->bot->reply("لقد نفذ المخزون سنعلمكم عند توفر هذا الموديل من جديد  ");
 return;         
  }  
-
-
 $this->jsonobj = '{
     "W1":"أدرار",
     "W2":"الشلف",
