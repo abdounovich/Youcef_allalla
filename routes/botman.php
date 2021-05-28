@@ -266,7 +266,7 @@ $bot->typesAndWaits(1);
 
 
 $botman->hears('product_([0-9]+)', function($bot,$number1) {
-    $products=Product::where("SubCat_id",$number1)->where('quantity','>','0')->get();
+    $products=Product::where("SubCat_id",$number1)->get();
     $sub_cat=SubCategory::find($number1);
     $total=$products->count();
 

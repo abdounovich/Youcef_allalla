@@ -41,7 +41,7 @@ public function __construct(string $product_id,string $typ ) {
     {
 
        
-       
+     
 
 
 if ( $this->product->quantity<$this->q) {
@@ -777,7 +777,10 @@ elseif ($this->typ=='complexe') {
 
 }
 
-
+if ( $this->product->quantity=="0") {
+    $this->bot->reply("لقد نفذ المخزون سنعلمكم عند توفر هذا الموديل من جديد  ");
+return;         
+ }  
 
 
 $this->jsonobj = '{
