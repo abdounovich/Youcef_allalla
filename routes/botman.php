@@ -304,7 +304,7 @@ $botman->hears('product_([0-9]+)', function($bot,$number1) {
                  $text=$text.' '.$color->couleur  ; 
                  $text= $text."(";
                  foreach ($color->taille as $taille) {
-                    $text=$text.' '.$taille->taille  ;
+                    $text=$text.''.$taille->taille  ;
                    
                    }
                    $text= $text.") \n";
