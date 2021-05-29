@@ -107,7 +107,7 @@ foreach ($columns as $column ) {
        
     }else{
 
-  echo "<p>".${$column."</p>"};}
+  echo "<p>".${$column}."</p>";}
 
 }
 
