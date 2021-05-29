@@ -81,10 +81,11 @@
                 @endphp
                 
                 
-                   <th>  <input @if ($column=="id" OR $column=="created_at" OR $column=="updated_at" )
-                       hidden
+                   <th>  @if ($column=="id" OR $column=="created_at" OR $column=="updated_at" )
+                     <input   type="hidden"  value="{{$val}}" name="{{$column}}" >
                    @else
-                      type="text" class=" " value="{{$val}}" name="{{$column}}" id="{{$val}}">
+                   <input   type="text"  value="{{$val}}" name="{{$column}}" >
+
                 
                    @endif  </th>
             
