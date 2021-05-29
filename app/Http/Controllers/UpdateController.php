@@ -106,8 +106,8 @@ foreach ($columns as $column ) {
     if ($column=="id") {
        
     }else{
-     
-  ${$column}= $request->get("${$column}");}
+
+  echo "<p>".${$column."</p>"};}
 
 }
 
