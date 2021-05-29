@@ -107,11 +107,10 @@ foreach ($columns as $column ) {
        
     }else{
         $data->type=$request->get('type');
-    $data->${$column}=$request->get(${$column});}
+    $data->${$column}="ll" ;}
 
 }
 
-      $data->save();
 
     }
 
