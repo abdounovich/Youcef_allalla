@@ -106,11 +106,10 @@ foreach ($columns as $column ) {
     if ($column=="id") {
        
     }else{
-    $data->${$column}=$request->get(${$column});}
+   ${$column}=$request->get(${$column});}
 
 }
 
-      $data->save();
 
     }
 
