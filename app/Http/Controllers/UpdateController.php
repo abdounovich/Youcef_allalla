@@ -106,8 +106,8 @@ foreach ($columns as $column ) {
     if ($column=="id") {
        
     }else{
-        $data->type=$request->get('type');
-    $data->${$column}="ll" ;}
+     
+  ${$column}= $request->get("${$column}");}
 
 }
 
