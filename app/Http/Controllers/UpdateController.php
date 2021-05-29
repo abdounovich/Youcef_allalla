@@ -102,7 +102,10 @@ $data=$model::all();
 
 $data=$model::find($request->get("id"));
 
-$data->nom=$request->get('nom');
+foreach ($columns as $column ) {
+    $data->${$column}=$request->get(${$column});
+
+}
 
       $data->save();
 
