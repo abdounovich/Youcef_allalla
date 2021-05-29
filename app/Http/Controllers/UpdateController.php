@@ -103,7 +103,10 @@ $data=$model::all();
 $data=$model::find($request->get("id"));
 
 foreach ($columns as $column ) {
-    $data->${$column}=$request->get(${$column});
+    if ($column=="id") {
+       
+    }else{
+    $data->${$column}=$request->get(${$column});}
 
 }
 
