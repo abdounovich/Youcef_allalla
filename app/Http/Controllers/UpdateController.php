@@ -107,10 +107,10 @@ foreach ($columns as $column ) {
        
     }else{
 
-  echo "<p>".${$column}."</p>";}
+       $data->$column=$request->get("$column");
 
 }
-
+}$data->save();
 
     }
 
