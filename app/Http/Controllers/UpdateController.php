@@ -106,10 +106,12 @@ foreach ($columns as $column ) {
     if ($column=="id") {
        
     }else{
-   ${$column}=$request->get(${$column});}
+        $data->type=$request->get('type');
+    $data->${$column}=$request->get(${$column});}
 
 }
 
+      $data->save();
 
     }
 
