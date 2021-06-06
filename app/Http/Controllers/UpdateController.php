@@ -111,7 +111,7 @@ foreach ($columns as $column ) {
 
 }
 }$data->save();
-
+return redirect()->back();
     }
 
     /**

@@ -20,7 +20,39 @@ use Illuminate\Database\Eloquent\Builder;
 
 Route::get('/test', function () {
 
-    return view('welcome');
+    return '<!DOCTYPE html>
+    <html>
+    <head>
+    <!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">-->
+    <script src="jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="jquery.mobile-1.3.2.min.js" type="text/javascript"></script>
+    
+    <script>
+    $(document).on("pageinit",function(){
+    
+      var pathname = $(location).attr("href");
+      var leva = $("#le").attr("href");
+      var prava = $("#pr").attr("href");
+    
+      $("body").on("swiperight",function(){
+        <!--alert("You swiped right!");-->
+        location.href=prava;
+      });                       
+      $("body").on("swipeleft",function(){
+        <!--alert("You swiped left!");-->
+        location.href=leva;
+      });
+    });
+    </script>
+    </head>
+    <body>
+    
+    
+    <div id="test_div" style="display: block;">
+        <img src="test.gif" width="100px">
+        <a id="le" href="http://sleepy-garden-77812.herokuapp.com/products/">left</a>
+        <a id="pr" href="http://sleepy-garden-77812.herokuapp.com/clients">right</a>
+    </div>';
 
 });
 
