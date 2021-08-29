@@ -84,11 +84,16 @@ Route::get('/commande', function () {
 
 
 
+ /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
 
-Route::get('/parametres/update/', function () {
+Route::post('/parametres/update', function (Request $request) {
 
-    echo "ppp";
-    return;
+  
  $anglais = ['Saturday' ,'Sunday','Monday','Tuesday','Wednesday','Thursday','Friday'];  
  
     for ($i = 0; $i < 7; $i++){
