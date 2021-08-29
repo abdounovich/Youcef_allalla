@@ -114,6 +114,7 @@
 </div>
 
  <form action="/parametres/update/" method="POST">
+    @csrf
     <table class="table  table-bordred">
     <tr class="bg-dark text-white text-center">
         <td>اليوم </td>
