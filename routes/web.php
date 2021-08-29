@@ -85,7 +85,7 @@ Route::get('/commande', function () {
 
 
 
-Route::post('/parametres/update', function (Request $request) {
+Route::post('/parametres/update/', function () {
 
     echo "ppp";
     return;
