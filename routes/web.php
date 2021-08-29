@@ -87,9 +87,6 @@ Route::get('/commande', function () {
 
 Route::post('/parametres/update', function (Request $request) {
 
-
-
-
  $anglais = ['Saturday' ,'Sunday','Monday','Tuesday','Wednesday','Thursday','Friday'];  
  
     for ($i = 0; $i < 7; $i++){
