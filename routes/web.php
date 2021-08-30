@@ -91,10 +91,10 @@ Route::get('/commande', function () {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    Route::post('/parametres/update/',function(){
+    Route::post('/parametres/update/',function(Request $request){
 
 
-        dd("kk");
+        
 
         $anglais = ['Saturday' ,'Sunday','Monday','Tuesday','Wednesday','Thursday','Friday'];  
  
