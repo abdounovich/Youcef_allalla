@@ -86,7 +86,7 @@ Route::get('/commande', function () {
 
 
 
-    Route::post('par','AppointmentController@parametres');
+    Route::post('/par','AppointmentController@parametres');
 
 
   
