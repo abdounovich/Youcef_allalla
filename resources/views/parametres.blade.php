@@ -130,7 +130,7 @@
    
     @endphp
   
-@csrf @for ($i = 0; $i < 7; $i++)
+@for ($i = 0; $i < 7; $i++)
 <tr class="bg-secondary text-white text-center">
         <td>{{$arabic[$i]}}</td>
         <td><input class="form-control {{$anglais[$i]}} " @if (Setting::get($anglais[$i].'.active')=="0" ) readonly @endif type="time" name="{{$anglais[$i].'-debut'}}" value="{{Setting::get($anglais[$i].'.debut')}}"></td>

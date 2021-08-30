@@ -84,14 +84,9 @@ Route::get('/commande', function () {
 
 
 
- /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
 
-    Route::post('/parametres/update','AppointmentController@parametres');
+
+    Route::post('parametres/update','AppointmentController@parametres');
 
 
   
