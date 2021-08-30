@@ -50,7 +50,6 @@ $appointment=Appointment::find($id)->delete();
     public function parametres(Request $request)
     {
 
-        dd('rrrr');
         $anglais = ['Saturday' ,'Sunday','Monday','Tuesday','Wednesday','Thursday','Friday'];  
  
     for ($i = 0; $i < 7; $i++){
