@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use Config;
 use DateTime;
 use App\Client;
+use App\Setting;
 use DateInterval;
 use DateTimeZone;
 use Carbon\Carbon;
 use App\Appointment;
 use Illuminate\Http\Request;
-use Unisharp\Setting\Setting;
 
 class AppointmentController extends Controller
 {
