@@ -115,6 +115,9 @@
 
  <form action="/parametres/update/" method="POST">
     @csrf
+
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
     <table class="table  table-bordred">
     <tr class="bg-dark text-white text-center">
         <td>اليوم </td>
