@@ -86,7 +86,42 @@ Route::get('/commande', function () {
 
 
 
-    Route::post('/par','AppointmentController@parametres');
+    Route::post('/parametres/update/',function(Request $request){
+
+
+        
+
+        $anglais = ['Saturday' ,'Sunday','Monday','Tuesday','Wednesday','Thursday','Friday'];  
+ 
+    for ($i = 0; $i < 7; $i++){
+    $debut=$request->get($anglais[$i].'-debut');
+       
+    $fin=$request->get($anglais[$i]."-fin"); 
+     
+
+   $debut_repos=$request->get($anglais[$i]."-debut-repos"); 
+      
+
+     $fin_repos=$request->get($anglais[$i]."-fin-repos"); 
+     
+
+     $active=$request->get($anglais[$i]."-active"); 
+       
+
+
+ 
+
+    Setting::set($anglais[$i], [
+        'debut'=>$debut,
+        'fin'=> $fin,
+        'active' => $active,
+        'debut-repos' => $debut_repos,
+        'fin-repos' =>$fin_repos
+            ]);
+        }
+        return back()->with("success"," لقد تم حفظ البيانات بنجاح");
+    
+    });
 
 
   

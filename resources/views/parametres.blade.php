@@ -113,7 +113,7 @@
 
 </div>
 
- <form action="/par" method="POST">
+ <form action="/parametres/update/" method="POST">
     @csrf
     <table class="table  table-bordred">
     <tr class="bg-dark text-white text-center">

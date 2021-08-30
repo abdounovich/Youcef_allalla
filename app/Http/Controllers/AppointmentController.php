@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Config;
 use DateTime;
 use App\Client;
-use App\Setting;
 use DateInterval;
 use DateTimeZone;
 use Carbon\Carbon;
@@ -48,39 +47,7 @@ $appointment=Appointment::find($id)->delete();
      */
 
 
-    public function parametres(Request $request)
-    {
-
-        $anglais = ['Saturday' ,'Sunday','Monday','Tuesday','Wednesday','Thursday','Friday'];  
- 
-    for ($i = 0; $i < 7; $i++){
-    $debut=$request->get($anglais[$i].'-debut');
-       
-    $fin=$request->get($anglais[$i]."-fin"); 
-     
-
-   $debut_repos=$request->get($anglais[$i]."-debut-repos"); 
-      
-
-     $fin_repos=$request->get($anglais[$i]."-fin-repos"); 
-     
-
-     $active=$request->get($anglais[$i]."-active"); 
-       
-
-
- 
-
-    Setting::set($anglais[$i], [
-        'debut'=>$debut,
-        'fin'=> $fin,
-        'active' => $active,
-        'debut-repos' => $debut_repos,
-        'fin-repos' =>$fin_repos
-            ]);
-        }
-        return back()->with("success"," لقد تم حفظ البيانات بنجاح");
-    }
+    
     
     /**
      * Store a newly created resource in storage.
