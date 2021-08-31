@@ -15,12 +15,12 @@
                <i class="fa fa-calendar fa-5x  "></i>
            </td>
    
-           <td class="align-middle" style="font-size: 50px">
+           <td class="align-middle text-white" style="font-size: 50px">
                المواعيد 
            </td>
    
            <td class="align-middle" style="font-size: 50px">
-               <span class=" badge badge-danger p-5 ">{{$appointments->count()}}</span>
+               <span class="badge badge-dark text-white p-4 ">{{$appointments->count()}}</span>
            </td>
         
      
@@ -38,17 +38,17 @@
                <i class="fa fa-users fa-5x  "></i>
            </td>
    
-           <td class="align-middle" style="font-size: 50px">
+           <td class="align-middle text-white" style="font-size: 50px">
                الزبائن 
            </td>
    
            <td class="align-middle" style="font-size: 50px">
-               <span class=" badge badge-danger p-5 ">{{$clients->count()}}</span>
+               <span class=" badge badge-dark text-white p-4  ">{{$clients->count()}}</span>
            </td>
          
        </tr>  
        <tr ><td class="text-center " colspan="3"  style="font-size: 50px"> 
-               <a  href="/clients" class=" col col-12 btn btn-primary p-3" style="font-size: 30px"> تصفح الجميع </a>
+               <a  href="/clients" class=" col col-12 btn btn-dark p-3" style="font-size: 30px"> تصفح الجميع </a>
            </td></tr>
    </table>
 
@@ -62,12 +62,12 @@
             <i class="fa fa-list fa-5x  "></i>
         </td>
 
-        <td class="align-middle" style="font-size: 50px">
-            الزبائن 
+        <td class="align-middle text-white" style="font-size: 50px">
+            الأنواع 
         </td>
 
         <td class="align-middle" style="font-size: 50px">
-            <span class=" badge badge-danger p-5 ">{{$types->count()}}</span>
+            <span class=" badge badge-dark text-white p-4 ">{{$types->count()}}</span>
         </td>
            
     </tr>  
