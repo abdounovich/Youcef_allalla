@@ -25,21 +25,21 @@
     </div>
 @endif
 
+<div class="container bg-dark rounded p-2">
 
+    <h3 class="text-center text-white bg-dark p-2">حجز موعد خاص</h3>
 
  <form  method="post" action="addAppoint">
     @csrf
-    <div class="row">
+    <div class="row p-2 ">
         
    <div class="col col-2 p-2"><label class="h4 text-white " for="debut">من :</label>
 </div>
 <div class="col col-10 p-2">
-    <input class="form-control  "  type="time" name="debut" id="debut">
+    <input class="form-control "  type="time" name="debut" id="debut">
 </div>
 
-</div>
 
-<div class="row">
         
     <div class="col col-2 p-2">
      <label  class="h4 text-white" for="fin" >إلى  :</label>
@@ -48,25 +48,26 @@
     <input class="  form-control"type="time" name="fin" id="fin">
 </div>
 
-</div>
-<div class="row">
+
         
     <div class="col col-2 p-2">
-    <label  class="h4 text-white" for="jour">يوم :</label>
+    <label  class="h4 text-white text-right" for="jour">يوم :</label>
 </div>
-<div class="col col-10 p-2">
+<div class="col col-10 p-2 ">
   <input class="form-control"   type="date" name="jour" id="jour">
 
 </div>
 
-</div>
-<div class="row">
     
-<div class="col col-8">
+<div class="col col-12">
     <input class="  btn btn-success"   type="submit" value="إضافة">
-</div></div>
+</div>
+
+
+</div>
+
 </form>
-           
+  </div>         
 
  
   
