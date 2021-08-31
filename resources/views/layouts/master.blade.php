@@ -34,7 +34,7 @@
     top: 0;
     left: 0;
     z-index: 999;
-    background: rgba(255,255,255,0.8) url("loader.gif") center no-repeat;
+    background: rgba(255,255,255,0.8) url("https://upload.wikimedia.org/wikipedia/commons/2/29/Loader.gif") center no-repeat;
 }
 /* Turn off scrollbar when body element has the loading class */
 body.loading{
