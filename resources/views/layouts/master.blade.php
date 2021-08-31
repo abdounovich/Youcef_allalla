@@ -25,28 +25,7 @@
         <style>
 
       
-  
-.loader-wrapper {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #242f3f;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.loader {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  position: relative;
-  top: 50%;                     
-  border: 4px solid #Fff;
-  animation: loader 2s infinite ease;
-}
  
     </style>
     </head>
@@ -57,11 +36,7 @@
     background-size: cover;
     font-family: 'Cairo', sans-serif">
       
-      <div class="loader-wrapper">
-        <span class="loader"><span class="loader-inner"></span></span>
-    </div>
-
-        <div class="se-pre-con"></div>
+     
         <div>   @if ($errors->any())
             <div class="alert alert-danger">
               <ul>
@@ -100,13 +75,7 @@
           </div> </div>
 
 
-<script>
 
-$(window).on("load",function(){
-     $(".loader-wrapper").hide();
-});
-
-</script>
 
 
           <!-- Modal -->
