@@ -121,7 +121,7 @@ $config=Config::get('app.url');
     $A->ActiveType=$num;
     $A->save();
 
-    return redirect('/rdv')   ; }
+    return redirect('/main')   ; }
     public function index()
     {
 
@@ -141,7 +141,7 @@ $afterTommorow=date('Y-m-d', strtotime($today. ' + 2 day'));
     $config=Config::get('botman.facebook.token');
  
  
-       return view("rdv")
+       return view("main")
        ->with('Today_appointments',$Today_appointments)
        ->with('Tomorow_appointments',$Tomorow_appointments)
        ->with('AfterTomoro_appointments',$AfterTomoro_appointments)

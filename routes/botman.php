@@ -108,7 +108,7 @@ $bot->reply(GenericTemplate::create()
 });
 
 
-$botman->hears('rdv([0-9]+)', function($bot,$number) {
+$botman->hears('main([0-9]+)', function($bot,$number) {
  
     $user = $bot->getUser();
     $facebook_id = $user->getId();
@@ -208,11 +208,11 @@ date_default_timezone_set("Africa/Algiers");
    
         $arr[]=  ElementButton::create(' بعد غد  🕐')
         ->type('postback')
-        ->payload('rdv3');
+        ->payload('main3');
       
         $arr[]=  ElementButton::create('يوم الغد  🕐')
         ->type('postback')
-        ->payload('rdv2');
+        ->payload('main2');
         
     }
     elseif ($tomorrow=='Tuesday') {
@@ -220,34 +220,34 @@ date_default_timezone_set("Africa/Algiers");
 
         $arr[]=  ElementButton::create(' بعد غد  🕐')
         ->type('postback')
-        ->payload('rdv3');
+        ->payload('main3');
       
         $arr[]=  ElementButton::create(' اليوم  🕐')
         ->type('postback')
-        ->payload('rdv1');
+        ->payload('main1');
     }
     elseif ($aftertomorrow=='Tuesday') {
      
         $arr[]=  ElementButton::create(' اليوم 🕐')
         ->type('postback')
-        ->payload('rdv1');
+        ->payload('main1');
       
         $arr[]=  ElementButton::create(' يوم الغد  🕐')
         ->type('postback')
-        ->payload('rdv2');
+        ->payload('main2');
 
 
     }
     else{  
         $arr[]=  ElementButton::create('     اليوم 🕐')
         ->type('postback')
-        ->payload('rdv1');
+        ->payload('main1');
         $arr[]=  ElementButton::create(' يوم الغد  🕐')
         ->type('postback')
-        ->payload('rdv2');
+        ->payload('main2');
           $arr[]=  ElementButton::create(' بعد غد  🕐')
         ->type('postback')
-        ->payload('rdv3');
+        ->payload('main3');
       
      } 
     $bot->typesAndWaits(2);

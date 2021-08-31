@@ -26,18 +26,16 @@
         <style>
 
       
-    body{
-    
-    background:url(https://res.cloudinary.com/ds9qfm1ok/image/upload/v1599670310/1_zvsdhh.jpg) ;background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    
-    font-family: 'Cairo', sans-serif;
-    }
+  
  
     </style>
     </head>
-    <body dir="rtl">
+    <body dir="rtl" style="    
+    background:url('{{Setting::get('theme.bg-image') }}');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Cairo', sans-serif">
       
         <div class="se-pre-con"></div>
         <div>   @if ($errors->any())
@@ -62,7 +60,7 @@
               <div class="col p-4 btn-group">
                 <a class=" col col-2 text-success btn btn-dark m-2 p-2 " style="font-size: 60px"   href="/"><i class=" p-2 fa fa-home"></i> </a>
 
-<a href="/rdv" class=" col col-2 text-success btn btn-dark m-2 p-2" style="font-size: 60px"><i class=" p-2 fa fa-calendar"></i></a> 
+<a href="/main" class=" col col-2 text-success btn btn-dark m-2 p-2" style="font-size: 60px"><i class=" p-2 fa fa-calendar"></i></a> 
 
             <a href="/clients" class="col col-2  text-success btn btn-dark m-2 p-2" style="font-size: 60px"> <i class=" p-2 fa fa-users"></i></a>
             <a href="/types" class=" col col-2 text-success btn btn-dark m-2 p-2" style="font-size: 60px"><i class=" p-2 fa fa-server"></i></a>

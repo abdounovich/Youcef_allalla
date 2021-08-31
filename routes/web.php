@@ -27,7 +27,7 @@ Auth::routes();
 Route::match(['get', 'post'], '/botman', 'BotManController@handle');
 
 Route::get('/botman/tinker', 'BotManController@tinker');
-Route::get('/rdv','AppointmentController@index')->middleware('auth');
+Route::get('/main','AppointmentController@index')->middleware('auth');
 Route::get('/client/{slug}','ClientController@index');
 Route::get('/clients','ClientController@show')->middleware('auth');
 Route::post('/client/edit/{id}','ClientController@update')->name("client.editpoints");
@@ -132,58 +132,60 @@ Route::get('/commande', function () {
   
  
 
-Route::get('/l', function () {
-    
-    Setting::set('Saturday', [
-        'debut'=> '08:00',
-        'fin'=> '21:00',
-        'active' => '1',
-        'debut-repos' => '12:00',
-        'fin-repos' => '13:00',
-        ]);
-    Setting::set('Sunday', [
-        'debut'=> '08:00',
-        'fin'=> '21:00',
-        'active' => '1',
-        'debut-repos' => '12:00',
-        'fin-repos' => '13:00',
-         ]);
+Route::get('/installation', function () {
+    Setting::set('theme', [
+            'bg-image'=> 'https://res.cloudinary.com/ds9qfm1ok/image/upload/v1599670310/1_zvsdhh.jpg',]);
 
-    Setting::set('Monday', [
-        'debut'=> '08:00',
-        'fin'=> '21:00',
-        'active' => '1',
-        'debut-repos' => '12:00',
-        'fin-repos' => '13:00',
-         ]);
-    Setting::set('Tuesday', [
-        'debut'=> '08:00',
-        'fin'=> '21:00',
-        'active' => '0',
-        'debut-repos' => '12:00',
-        'fin-repos' => '13:00',
-        ]);
-    Setting::set('Wednesday', [
-            'debut'=> '08:00',
-            'fin'=> '21:00',
-            'active' => '1',
-            'debut-repos' => '12:00',
-            'fin-repos' => '13:00',
-            ]);
-     Setting::set('Thursday', [
-            'debut'=> '08:00',
-            'fin'=> '21:00',
-            'active' => '1',
-            'debut-repos' => '12:00',
-            'fin-repos' => '13:00',
-            ]);
-    Setting::set('Friday', [
-            'debut'=> '08:00',
-            'fin'=> '21:00',
-            'active' => '1',
-            'debut-repos' => '12:00',
-            'fin-repos' => '13:00',
-                ]);
+    // Setting::set('theme', [
+    //     'bg-image'=> '08:00',
+    //     'fin'=> '21:00',
+    //     'active' => '1',
+    //     'debut-repos' => '12:00',
+    //     'fin-repos' => '13:00',
+    //     ]);
+    // Setting::set('Sunday', [
+    //     'debut'=> '08:00',
+    //     'fin'=> '21:00',
+    //     'active' => '1',
+    //     'debut-repos' => '12:00',
+    //     'fin-repos' => '13:00',
+    //      ]);
+
+    // Setting::set('Monday', [
+    //     'debut'=> '08:00',
+    //     'fin'=> '21:00',
+    //     'active' => '1',
+    //     'debut-repos' => '12:00',
+    //     'fin-repos' => '13:00',
+    //      ]);
+    // Setting::set('Tuesday', [
+    //     'debut'=> '08:00',
+    //     'fin'=> '21:00',
+    //     'active' => '0',
+    //     'debut-repos' => '12:00',
+    //     'fin-repos' => '13:00',
+    //     ]);
+    // Setting::set('Wednesday', [
+    //         'debut'=> '08:00',
+    //         'fin'=> '21:00',
+    //         'active' => '1',
+    //         'debut-repos' => '12:00',
+    //         'fin-repos' => '13:00',
+    //         ]);
+    //  Setting::set('Thursday', [
+    //         'debut'=> '08:00',
+    //         'fin'=> '21:00',
+    //         'active' => '1',
+    //         'debut-repos' => '12:00',
+    //         'fin-repos' => '13:00',
+    //         ]);
+    // Setting::set('Friday', [
+    //         'debut'=> '08:00',
+    //         'fin'=> '21:00',
+    //         'active' => '1',
+    //         'debut-repos' => '12:00',
+    //         'fin-repos' => '13:00',
+    //             ]);
     
 
 
