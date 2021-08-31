@@ -26,7 +26,7 @@
      
         </tr>  
         <tr ><td class="text-center " colspan="3"  style="font-size: 50px"> 
-                <a  href="/main" class=" col col-12 btn btn-primary p-3" style="font-size: 30px"> تصفح الجميع </a>
+                <a  href="/main" class=" col col-12 btn btn-dark p-3" style="font-size: 30px"> تصفح الجميع </a>
             </td></tr>   </table>
 
 
@@ -72,7 +72,7 @@
            
     </tr>  
     <tr ><td class="text-center " colspan="3"  style="font-size: 50px"> 
-            <a  href="/types" class=" col col-12 btn btn-primary p-3" style="font-size: 30px"> تصفح الجميع </a>
+            <a  href="/types" class=" col col-12 btn btn-dark p-3" style="font-size: 30px"> تصفح الجميع </a>
         </td></tr>
 </table>
 
