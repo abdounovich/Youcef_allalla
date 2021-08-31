@@ -126,7 +126,7 @@ Route::get('/commande', function () {
         }
         return back()->with("success"," لقد تم حفظ البيانات بنجاح");
     
-    });
+    })->middleware('auth')    ;
 
 
   
