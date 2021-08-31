@@ -8,7 +8,7 @@
 @section('content')
 
 
-<table class="table border-top-0  bg-success  rounded ">
+<table class="table border-top-0  bg-success  rounded m-4 ">
 
     <tr>
            <td class="align-middle p-5">        
@@ -31,11 +31,11 @@
 
 
 
-<table class="table border-top-0  bg-success  rounded ">
+<table class="table border-top-0  bg-success  rounded m-4 ">
 
     <tr>
            <td class="align-middle p-5">        
-               <i class="fa fa-users fa-5x  "></i>
+                <i class="fa fa-users fa-5x  "></i>
            </td>
    
            <td class="align-middle text-white" style="font-size: 50px">
@@ -55,7 +55,7 @@
 
  
 
-<table class="table border-top-0  bg-success  rounded ">
+<table class="table border-top-0  bg-success  rounded m-4 ">
 
  <tr>
         <td class="align-middle p-5">        
