@@ -17,7 +17,7 @@
 <div class="container">
     <div class="row">
 
-        <div class="col col-4 ">  <div class="card rounded bg-success text-dark p-2 shadow" style="opacity: 0.8" >
+        <div class="col col-12 m-2 ">  <div class="card rounded bg-success text-dark p-2 shadow" style="opacity: 0.8" >
         <i class="m-4 p-2 fa fa-users fa-5x d-flex align-self-center "></i>
         <div class="h3 p-2 text-light   d-flex align-self-center"> الزبائن   </div>
         <div class="h1 text-light  d-flex align-self-center">{{$clients->count()}}</div>
@@ -26,8 +26,9 @@
          </div>
         </div>
       
-
-        <div class="col col-4 ">  <div class="card rounded bg-success text-dark p-2 shadow" style="opacity: 0.8" >
+    </div>
+    <div class="row">
+        <div class="col col-12 m-2 ">  <div class="card rounded bg-success text-dark p-2 shadow" style="opacity: 0.8" >
             <i class="m-4 p-2 fa fa-calendar fa-5x d-flex align-self-center "></i>
             <div class="h3 p-2 text-light    d-flex align-self-center"> المواعيد   </div>
             <div class="h1 text-light  d-flex align-self-center">{{$appointments->count()}}</div>
@@ -35,10 +36,12 @@
             <a  href="/main" class=" m-4 p-2 btn btn-primary d-flex align-self-center">تصفح الجميع</a>
              </div>
             </div>
+</div>
 
-
+            <div class="row">
+                
             
-            <div class="col col-4 ">  <div class="card rounded bg-success text-dark p-2 shadow" style="opacity: 0.8" >
+            <div class="col col-12 m-2 ">  <div class="card rounded bg-success text-dark p-2 shadow" style="opacity: 0.8" >
                 <i class="m-4 p-2 fa fa-list fa-5x d-flex align-self-center "></i>
             <div class="h3 p-2 text-light   d-flex align-self-center"> الأنواع    </div>
             <div class="h1 text-light  d-flex align-self-center">{{$types->count()}}</div>

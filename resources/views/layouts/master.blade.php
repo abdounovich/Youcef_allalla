@@ -22,49 +22,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
-        <style>
-
-      
-
-.overlay{
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    background: rgba(255,255,255,0.8) url("https://upload.wikimedia.org/wikipedia/commons/2/29/Loader.gif") center no-repeat;
-}
-/* Turn off scrollbar when body element has the loading class */
-body.loading{
-    overflow: hidden;   
-}
-/* Make spinner image visible when body element has the loading class */
-body.loading .overlay{
-    display: block;
-}
-    </style>
-
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script>
-// Initiate an Ajax request on button click
-$(document).on("click", "button", function(){
-    $.get("customers.php", function(data){
-        $("body").html(data);
-    });       
-});
- 
-// Add remove loading class on body element based on Ajax request status
-$(document).on({
-    ajaxStart: function(){
-        $("body").addClass("loading"); 
-    },
-    ajaxStop: function(){ 
-        $("body").removeClass("loading"); 
-    }    
-});
-</script>
+       
     </head>
     <body dir="rtl" style="    
     background:url('{{Setting::get('theme.bg-image') }}');
@@ -73,7 +31,8 @@ $(document).on({
     background-size: cover;
     font-family: 'Cairo', sans-serif">
       
-      <div class="overlay"></div>
+
+
 
         <div>   @if ($errors->any())
             <div class="alert alert-danger">
@@ -113,7 +72,11 @@ $(document).on({
           </div> </div>
 
 
+<script>
 
+
+
+</script>
 
 
           <!-- Modal -->
