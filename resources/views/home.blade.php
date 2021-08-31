@@ -8,50 +8,76 @@
 @section('content')
 
 
+<table class="table border-top-0  bg-success  rounded ">
 
+    <tr>
+           <td class="align-middle p-5">        
+               <i class="fa fa-calendar fa-5x  "></i>
+           </td>
+   
+           <td class="align-middle" style="font-size: 50px">
+               المواعيد 
+           </td>
+   
+           <td class="align-middle" style="font-size: 50px">
+               <span class=" badge badge-danger p-5 ">{{$appointments->count()}}</span>
+           </td>
+        
+     
+        </tr>  
+        <tr ><td class="text-center " colspan="3"  style="font-size: 50px"> 
+                <a  href="/main" class=" col col-12 btn btn-primary p-3" style="font-size: 30px"> تصفح الجميع </a>
+            </td></tr>   </table>
+
+
+
+<table class="table border-top-0  bg-success  rounded ">
+
+    <tr>
+           <td class="align-middle p-5">        
+               <i class="fa fa-users fa-5x  "></i>
+           </td>
+   
+           <td class="align-middle" style="font-size: 50px">
+               الزبائن 
+           </td>
+   
+           <td class="align-middle" style="font-size: 50px">
+               <span class=" badge badge-danger p-5 ">{{$clients->count()}}</span>
+           </td>
+         
+       </tr>  
+       <tr ><td class="text-center " colspan="3"  style="font-size: 50px"> 
+               <a  href="/clients" class=" col col-12 btn btn-primary p-3" style="font-size: 30px"> تصفح الجميع </a>
+           </td></tr>
+   </table>
 
 
  
 
+<table class="table border-top-0  bg-success  rounded ">
+
+ <tr>
+        <td class="align-middle p-5">        
+            <i class="fa fa-list fa-5x  "></i>
+        </td>
+
+        <td class="align-middle" style="font-size: 50px">
+            الزبائن 
+        </td>
+
+        <td class="align-middle" style="font-size: 50px">
+            <span class=" badge badge-danger p-5 ">{{$types->count()}}</span>
+        </td>
+           
+    </tr>  
+    <tr ><td class="text-center " colspan="3"  style="font-size: 50px"> 
+            <a  href="/types" class=" col col-12 btn btn-primary p-3" style="font-size: 30px"> تصفح الجميع </a>
+        </td></tr>
+</table>
+
+ 
   
-<div class="container">
-    <div class="row">
-
-        <div class="col col-12 m-2 ">  <div class="card rounded bg-success text-dark p-2 shadow" style="opacity: 0.8" >
-        <i class="m-4 p-2 fa fa-users fa-5x d-flex align-self-center "></i>
-        <div class="h3 p-2 text-light   d-flex align-self-center"> الزبائن   </div>
-        <div class="h1 text-light  d-flex align-self-center">{{$clients->count()}}</div>
-
-        <a  href="/clients" class=" m-4 p-2 btn btn-primary d-flex align-self-center">تصفح الجميع</a>
-         </div>
-        </div>
-      
-    </div>
-    <div class="row">
-        <div class="col col-12 m-2 ">  <div class="card rounded bg-success text-dark p-2 shadow" style="opacity: 0.8" >
-            <i class="m-4 p-2 fa fa-calendar fa-5x d-flex align-self-center "></i>
-            <div class="h3 p-2 text-light    d-flex align-self-center"> المواعيد   </div>
-            <div class="h1 text-light  d-flex align-self-center">{{$appointments->count()}}</div>
-    
-            <a  href="/main" class=" m-4 p-2 btn btn-primary d-flex align-self-center">تصفح الجميع</a>
-             </div>
-            </div>
-</div>
-
-            <div class="row">
-                
-            
-            <div class="col col-12 m-2 ">  <div class="card rounded bg-success text-dark p-2 shadow" style="opacity: 0.8" >
-                <i class="m-4 p-2 fa fa-list fa-5x d-flex align-self-center "></i>
-            <div class="h3 p-2 text-light   d-flex align-self-center"> الأنواع    </div>
-            <div class="h1 text-light  d-flex align-self-center">{{$types->count()}}</div>
-    
-            <a href="/types" class=" text-white m-4 p-2 btn btn-primary  btn d-flex align-self-center">تصفح الجميع</a>
-             </div>
-            </div>
-    </div>
-</div>
-
 
 
 
