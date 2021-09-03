@@ -24,44 +24,33 @@
         </ul>
     </div>
 @endif
-
-<div class="container bg-dark rounded p-2">
-
-    <h3 class="text-center text-white bg-dark p-2">حجز موعد خاص</h3>
-
+<div class="bg-dark  p-2"><h2 class="text-white text-center "> حجز موعد خاص</h2>
+     </div>
+<div class="container bg-dark rounded mt-2 ">
+ 
  <form  method="post" action="addAppoint">
     @csrf
-    <div class="row p-2 ">
-        
-   <div class="col col-2 p-2"><label class="h4 text-white " for="debut">من :</label>
-</div>
-<div class="col col-10 p-2">
-    <input class="form-control "  type="time" name="debut" id="debut">
-</div>
-
-
-        
-    <div class="col col-2 p-2">
-     <label  class="h4 text-white" for="fin" >إلى  :</label>
-    </div>
-    <div class="col col-10 p-2">
-    <input class="  form-control"type="time" name="fin" id="fin">
+    <div class="row p-4 mt-2 ">
+        <div class="col col-4">
+                <h4 class="text-white text-right " for="jour">يوم :</h4>
+          
+                <input class="form-control "   type="date" name="jour" id="jour">
+        </div>
+           
+  <div class="col col-4">
+    <h4 class="text-white text-right " for="jour">من :</h4>
+    <input class="form-control "  type="time" name="debut" id="debut">  
 </div>
 
-
-        
-    <div class="col col-2 p-2">
-    <label  class="h4 text-white text-right" for="jour">يوم :</label>
-</div>
-<div class="col col-10 p-2 ">
-  <input class="form-control"   type="date" name="jour" id="jour">
-
+<div class="col col-4">
+<h4 class="text-white text-right " for="jour">إلى :</h4>
+<input class="  form-control " type="time" name="fin" id="fin">
 </div>
 
-    
-<div class="col col-12">
-    <input class="  btn btn-success"   type="submit" value="إضافة">
+<div class="col col-12 mt-4">           
+     <input class=" form-control  btn btn-success  "   type="submit" value="إضافة">
 </div>
+
 
 
 </div>
@@ -72,8 +61,9 @@
  
   
 
-
-<div class="container">
+  <div class="bg-dark mt-5 p-2"><h2 class="text-white text-center "> المواعيد الخاصة</h2>
+  </div>
+<div class="container bg-dark">
 
 @php
     $appointments=App\Appointment::where("ActiveType",5)->get();
@@ -84,7 +74,7 @@
 
 
 
-<table class="table bg-dark text-white mt-5">
+<table class="table m-2 bg-dark text-white ">
     <thead>
     
     </thead>
@@ -114,12 +104,19 @@
 
 </div>
 
+
+
+
+<div class="bg-dark mt-5 p-2"><h2 class="text-white text-center ">أوقات العمل</h2>
+</div>
+
+<div class="bg-dark mt-2">
  <form action="{{url('parametres/update')}}" method="POST">
     @csrf
 
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-    <table class="table  table-bordred">
+    <table class="table   table-bordred">
     <tr class="bg-dark text-white text-center">
         <td>اليوم </td>
         <td>البداية </td>
@@ -151,11 +148,14 @@
 @endfor
    
 </table>
-<div class="col col-12 text-center ">
-    <button style="width: 100%" type="submit" class="btn btn-success">  حفظ التغييرات </button>
- </div>
+<div class="col col-12 p-2">           
+    <input class=" form-control  btn btn-success  "   type="submit" value="حفظ التغييرات">
+</div>
+
  </form>
 </div>
+
+
 <script>
     function myFunction($id) {
     var checkbox=document.getElementById("cb"+$id);
