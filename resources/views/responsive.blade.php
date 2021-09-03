@@ -7,25 +7,26 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
 
     <title>Hello, world!</title>
     <style>
 
 .tracking-detail {
- padding:3rem 0
+ padding:3rem 10rem
 }
 #tracking {
  margin-bottom:1rem
 }
 [class*=tracking-status-] p {
- margin:0;
+ margin:10px;
  font-size:1.1rem;
  color:#fff;
  text-transform:uppercase;
  text-align:center
 }
 [class*=tracking-status-] {
- padding:1.6rem 0
+ padding:1.6rem 1.6rem
 }
 .tracking-status-intransit {
  background-color:#65aee0
@@ -58,12 +59,13 @@
  border:1px solid #e5e5e5
 }
 .tracking-item {
- border-left:1px solid #e5e5e5;
+ border-right:1px solid #e5e5e5;
  position:relative;
- padding:2rem 1.5rem .5rem 2.5rem;
+ padding:5rem 5rem 2rem 2rem;
  font-size:.9rem;
- margin-left:3rem;
- min-height:5rem
+ margin-right:3rem;
+ min-height:5rem;
+ text-align: right;
 }
 .tracking-item:last-child {
  padding-bottom:4rem
@@ -74,7 +76,7 @@
 .tracking-item .tracking-date span {
  color:#888;
  font-size:85%;
- padding-left:.4rem
+ padding-right:.4rem
 }
 .tracking-item .tracking-content {
  padding:.5rem .8rem;
@@ -89,9 +91,9 @@
 .tracking-item .tracking-icon {
  line-height:2.6rem;
  position:absolute;
- left:-1.3rem;
- width:50px;
- height:50px;
+ right:2.3rem;
+ width:0;
+ height:0;
  text-align:center;
  border-radius:50%;
  font-size:1.1rem;
@@ -126,11 +128,11 @@
 }
 @media(min-width:992px) {
  .tracking-item {
-  margin-left:10rem
+  margin-right:10rem
  }
  .tracking-item .tracking-date {
   position:absolute;
-  left:-10rem;
+  right:-10rem;
   width:7.5rem;
   text-align:right
  }
@@ -144,7 +146,8 @@
 }
     </style>
   </head>
-  <body >
+  <body  style="    font-family: 'Cairo', sans-serif">
+    
 
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -167,11 +170,11 @@
               <div class="tracking-list">
                  <div class="tracking-item">
                     <div class="tracking-icon status-intransit">
-                      <img src="https://espace420.com/images/avatar-367-456319.png" style="width: 50px; height:50px"  alt="ss" class="img  rounded-circle">
+                      <img src="https://espace420.com/images/avatar-367-456319.png" style="width: 50px; height:50px" class="mt-4 mr-5"  alt="ss" class="img  rounded-circle">
                        <i class="fas fa-circle"></i>
                     </div>
-                    <div class="tracking-date">Aug 10, 2018<span>05:01 PM</span></div>
-                    <div class="tracking-content">DESTROYEDPER SHIPPER INSTRUCTION<span>KUALA LUMPUR (LOGISTICS HUB), MALAYSIA, MALAYSIA</span></div>
+                    <div class="tracking-date">   أكتوبر  2021<span> 05:01 PM</span></div>
+                    <div class="tracking-content text-right bg-success text-white">Merahi abdeldjalil</div>
                  </div>
                  <div class="tracking-item">
                     <div class="tracking-icon status-intransit">
