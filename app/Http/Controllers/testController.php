@@ -6,6 +6,7 @@ use App\Type;
 use App\Client;
 use Carbon\Carbon;
 use App\Appointment;
+use Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Artisan;
