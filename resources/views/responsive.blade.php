@@ -90,8 +90,8 @@
  line-height:2.6rem;
  position:absolute;
  left:-1.3rem;
- width:2.6rem;
- height:2.6rem;
+ width:50px;
+ height:50px;
  text-align:center;
  border-radius:50%;
  font-size:1.1rem;
@@ -167,9 +167,7 @@
               <div class="tracking-list">
                  <div class="tracking-item">
                     <div class="tracking-icon status-intransit">
-                       <svg class="svg-inline--fa fa-circle fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
-                          <path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"></path>
-                       </svg>
+                      <img src="https://espace420.com/images/avatar-367-456319.png" style="width: 50px; height:50px"  alt="ss" class="img  rounded-circle">
                        <i class="fas fa-circle"></i>
                     </div>
                     <div class="tracking-date">Aug 10, 2018<span>05:01 PM</span></div>
