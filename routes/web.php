@@ -19,6 +19,10 @@ use App\Appointment;
 
 
 
+Route::get('/responsive',function(){
+return view("responsive");
+
+});
 
 
 Route::get('/add','AppointmentController@AddPFunction');
