@@ -107,7 +107,7 @@
 
 
 
-<div class="bg-dark mt-5 p-2"><h2 class="text-white text-center ">أوقات العمل</h2>
+<div class=" container bg-dark mt-5 p-2"><h2 class="text-white text-center ">أوقات العمل</h2>
 </div>
 
 <div class="bg-dark mt-2">
