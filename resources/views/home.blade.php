@@ -8,7 +8,7 @@
 @section('content')
 
 
-<table class="table border-top-0  bg-success  rounded m-4 ">
+<table class="table border-top-0  bg-success  rounded mt-4 ">
 
     <tr>
            <td class="align-middle p-5">        
@@ -31,7 +31,7 @@
 
 
 
-<table class="table border-top-0  bg-success  rounded m-4 ">
+<table class="table border-top-0  bg-success  rounded mt-4 ">
 
     <tr>
            <td class="align-middle p-5">        
@@ -55,7 +55,7 @@
 
  
 
-<table class="table border-top-0  bg-success  rounded m-4 ">
+<table class="table border-top-0  bg-success  rounded mt-4 ">
 
  <tr>
         <td class="align-middle p-5">        
