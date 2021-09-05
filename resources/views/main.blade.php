@@ -157,10 +157,12 @@ date_default_timezone_set("Africa/Algiers");
         class="active" 
    @endif data-timeline="hour-8">
           <span>{{$appointment->debut}}</span>
+          <span>{{$appointment->type->type}}</span>
+
           <div class="timeline-content-item-reveal">
               <a href="#">
                   <img src="https://picsum.photos/g/300/300">
-                  <span>{{$appointment->client->facebook}}</span>
+                  <span>{{$appointment->facebook}}</span>
               </a>
           </div>
       </div>              @endforeach
