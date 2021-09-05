@@ -160,7 +160,7 @@ date_default_timezone_set("Africa/Algiers");
           <div class="timeline-content-item-reveal">
               <a href="#">
                   <img src="https://picsum.photos/g/300/300">
-                  <span>{{$appointment->facebook}}</span>
+                  <span>{{$appointment->client->facebook}}</span>
               </a>
           </div>
       </div>              @endforeach
