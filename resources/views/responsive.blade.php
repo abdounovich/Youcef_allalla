@@ -20,15 +20,16 @@ body {
   width: 90%;
   height: 15rem;
   position: relative;
-  color: #fff;
+  color: rgb(223, 78, 78);
   text-align: center;
   margin: 0 auto;
+  padding: 10px;
 }
 .timeline-wrapper .timeline-line {
   display: block;
   width: 93.9%;
   height: 1px;
-  background: white;
+  background:black;
   position: absolute;
   top: 50%;
   -webkit-box-shadow: 0 0 1px black;
@@ -37,99 +38,10 @@ body {
   left: 3%;
   margin-left: 2.5px;
 }
-.timeline-wrapper .timeline-content-day {
-  height: 100%;
-}
-.timeline-wrapper .timeline-content-item {
-  background: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
-  width: 6%;
-  display: inline-block;
-  position: relative;
-  height: 100%;
-  margin-right: -5px;
-  -webkit-transition: width .5s;
-  -moz-transition: width .5s;
-  -o-transition: width .5s;
-  transition: width .5s;
-  z-index: 1;
-}
-.timeline-wrapper .timeline-content-item > span {
-  height: 2rem;
-  display: block;
-  font-weight: bold;
-  position: absolute;
-  top: 50%;
-  margin-top: -.25em;
-  width: 100%;
-  text-shadow: 0 0 2px black;
-  cursor: pointer;
-}
-.timeline-wrapper .timeline-content-item > span:before {
-  content: " ";
-  display: block;
-  width: .5em;
-  height: .5em;
-  background: white;
-  margin: 0 auto .5em auto;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  -webkit-box-shadow: 0 0 1px black;
-  -moz-box-shadow: 0 0 1px black;
-  box-shadow: 0 0 1px black;
-}
-.timeline-wrapper .timeline-content-item .timeline-content-item-reveal {
-  display: none;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  margin-top: -50%;
-  width: 100%;
-}
-.timeline-wrapper .timeline-content-item .timeline-content-item-reveal a {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.timeline-wrapper .timeline-content-item .timeline-content-item-reveal a img {
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  max-height: 100%;
-  max-width: 100%;
-  border: 3px solid white;
-  -webkit-box-shadow: 0 0 2px black;
-  -moz-box-shadow: 0 0 2px black;
-  box-shadow: 0 0 2px black;
-}
-.timeline-wrapper .timeline-content-item .timeline-content-item-reveal a span {
-  position: absolute;
-  width: 250%;
-  margin-left: -75%;
-  bottom: -2rem;
-  left: 0;
-  font-family: serif;
-  font-size: 1.3em;
-  font-style: italic;
-  text-decoration: none;
-  white-space: nowrap;
-  color: white;
-  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5), 0 0 1px black;
-}
-.timeline-wrapper .timeline-content-item .timeline-content-item-reveal a span:after {
-  content: "\203A";
-  margin-left: .3em;
-}
-.timeline-wrapper .timeline-content-item.active {
-  width: 10%;
-}
-.timeline-wrapper .timeline-content-item.active .timeline-content-item-reveal {
-  display: block;
-}
+
+
+
+
 
 
     </style>
@@ -144,17 +56,80 @@ body {
     <div class="timeline-wrapper clearfix">
       <div class="timeline-content-day">
           <div class="timeline-line"></div>
-              @foreach ($apps as $app)
-                  
-          <div class="timeline-content-item " data-timeline="hour-8">
-              <span>{{$app->debut}}</span>
-              <div class="timeline-content-item-reveal">
-                  <a href="#">
-                      <img src="https://picsum.photos/g/300/300">
-                      <span>Lorem Ipsum</span>
-                  </a>
-              </div>
-          </div>              @endforeach
+
+          <div class="timeline-content-item d-flex justify-content-around " >
+<div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
+  <div  style="margin-left:-15px; margin-top:-50px ">Merahi abdeldjalil</div>
+  <div  style="margin-left:-15px; margin-top:-100px ">حلاقة عادية</div>
+
+
+<div style="margin-left:-15px; margin-top:80px ">08:00</div>
+</div>
+
+
+
+<div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
+  <div  style="margin-left:-15px; margin-top:-50px ">Merahi abdeldjalil</div>
+  <div  style="margin-left:-15px; margin-top:-100px ">حلاقة عادية</div>
+
+
+<div style="margin-left:-15px; margin-top:80px ">08:00</div>
+</div>
+<div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
+  <div  style="margin-left:-15px; margin-top:-50px ">Merahi abdeldjalil</div>
+  <div  style="margin-left:-15px; margin-top:-100px ">حلاقة عادية</div>
+
+
+<div style="margin-left:-15px; margin-top:80px ">08:00</div>
+</div>
+<div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
+  <div  style="margin-left:-15px; margin-top:-50px ">Merahi abdeldjalil</div>
+  <div  style="margin-left:-15px; margin-top:-100px ">حلاقة عادية</div>
+
+
+<div style="margin-left:-15px; margin-top:80px ">08:00</div>
+</div>
+<div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
+  <div  style="margin-left:-15px; margin-top:-50px ">Merahi abdeldjalil</div>
+  <div  style="margin-left:-15px; margin-top:-100px ">حلاقة عادية</div>
+
+
+<div style="margin-left:-15px; margin-top:80px ">08:00</div>
+</div>
+
+<div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
+  <div class="mt-2" style="margin-left:-15px ">08:00</div>
+</div>
+<div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
+  <div class="mt-2" style="margin-left:-15px ">08:00</div>
+</div>
+<div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
+  <div class="mt-2" style="margin-left:-15px ">08:00</div>
+</div><div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
+  <div class="mt-2" style="margin-left:-15px ">08:00</div>
+</div><div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
+  <img class=" rounded-circle" width="50px" height="50px" style="margin-top: -20px ; margin-left:-20px" src="https://picsum.photos/g/300/300">
+  <div class="mt-2" style="margin-left:-15px ">08:00</div>
+</div>
+<div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
+  <div class="mt-2" style="margin-left:-15px ">08:00</div>
+</div>
+<div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
+  <div class="mt-2" style="margin-left:-15px ">08:00</div>
+</div>
+<div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
+  <div class="mt-2" style="margin-left:-15px ">08:00</div>
+</div>
+<div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
+  <div class="mt-2" style="margin-left:-15px ">08:00</div>
+</div>
+
+          </div>      
+          
+          
+    
+
+     
 
   
      
