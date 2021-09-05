@@ -16,6 +16,40 @@
         </ul>
     </div>
 @endif
+@php
+date_default_timezone_set("Africa/Algiers");
+   $actifTime=date('H:i');
+@endphp
+
+
+<div class="timeline-wrapper clearfix">
+  <div class="timeline-content-day">
+      <div class="timeline-line"></div>
+
+          
+       
+   
+          @foreach ($Today_appointments as $appointment)
+              
+      <div class="timeline-content-item "  @if ($actifTime>=$appointment->debut && $actifTime<$appointment->fin)
+        class="active" 
+   @endif data-timeline="hour-8">
+          <span>{{$appointment->debut}}</span>
+          <div class="timeline-content-item-reveal">
+              <a href="#">
+                  <img src="https://picsum.photos/g/300/300">
+                  <span>Lorem Ipsum</span>
+              </a>
+          </div>
+      </div>              @endforeach
+
+
+ 
+
+  
+  </div>
+</div>
+
 
 
   <div class="row mt-5">
