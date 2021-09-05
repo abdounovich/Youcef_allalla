@@ -153,7 +153,7 @@ date_default_timezone_set("Africa/Algiers");
    
           @foreach ($Today_appointments as $appointment)
               
-      <div class="timeline-content-item "  @if ($actifTime>=$appointment->debut && $actifTime<$appointment->fin)
+      <div class="timeline-content-item "  @if ( $appointment->facebook=='Zinou-Cne'/* $actifTime>=$appointment->debut && $actifTime<$appointment->fin */)
         class="active" 
    @endif data-timeline="hour-8">
           <span>{{$appointment->debut}}</span>
