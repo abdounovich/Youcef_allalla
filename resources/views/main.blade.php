@@ -109,21 +109,8 @@
          <td class="align-middle">@php $demain = date('H:i', strtotime($Today_appointment->debut));
           echo $demain;
           @endphp</td>
-           
-<td> 
-  
-  
-  <input  class="m-2 p-2" type="checkbox" id="cb{{$Today_appointment->id}}" @if ($Today_appointment->ActiveType=="2" )
-  checked 
-  @endif onchange="myFunction('{{$Today_appointment->id}}','cb{{$Today_appointment->id}}')"
-   data-on="حاضر" data-off="غائب" data-onstyle="outline-success"
-   data-offstyle="outline-danger"  data-toggle="toggle">
 
-  </td>
-<td>  @php
-      $theId=$Today_appointment->id;
-  @endphp  <a  class="btn btn-danger " data-toggle="modal" data-target="#exampleModal{{$theId}}"><i class=" fa fa-trash fa-2x"></i>   </a>
-  </td> 
+
         </tr>
         @endif      <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
