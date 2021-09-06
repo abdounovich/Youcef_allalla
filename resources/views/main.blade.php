@@ -31,11 +31,11 @@
     <table class="table table-striped table-dark responsive" style="opacity:0.9 ">
       <thead class=" bg-success text-right">
         <tr>
+          <th scope="col"></th>
 
           <th scope="col">الفيسبوك</th>
           <th scope="col"> الحلاقة </th>
           <th scope="col">الموعد  </th>
-          <th scope="col"></th>
 
 
 
