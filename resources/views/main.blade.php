@@ -32,10 +32,10 @@
       <thead class=" bg-success text-right">
         <tr>
 
-        
+                  <th scope="col">  </th>
+
           <th scope="col">الفيسبوك</th>
           <th scope="col">الحلاقة  </th>
-          <th scope="col">الموعد  </th>
 
 
 
