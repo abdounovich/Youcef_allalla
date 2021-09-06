@@ -52,7 +52,7 @@
       
        
        
-        @php
+        {{-- @php
 
 
         ini_set("allow_url_fopen", 1);
@@ -61,7 +61,7 @@
                       $userInfo = json_decode($userInfoData, true);
                   $picture = $userInfo['profile_pic'] ;
         
-        @endphp
+        @endphp --}}
        
      
 
@@ -113,7 +113,7 @@
       
         </td> 
 
-          <td  class="align-middle clearfix" style="position: relative;"><img class=" border rounded-circle ml-2" width="50" height="50" src="{{$picture}}" alt="">
+          <td  class="align-middle clearfix" style="position: relative;"><img class=" border rounded-circle ml-2" width="50" height="50" src="" alt="">
              <span dir="ltr" style=" position: absolute;
             top:1px;
             font-size:10px;
