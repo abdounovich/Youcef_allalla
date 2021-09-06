@@ -32,8 +32,8 @@
       <thead class=" bg-success text-right">
         <tr>
 
-             <th scope="col">/</th>
-<th scope="col">/</th>
+          <th scope="col">/</th>
+          <th scope="col">/</th>
           <th scope="col"> / </th>
           <th scope="col">الموعد  </th>
           <th scope="col">/</th>
@@ -170,6 +170,37 @@
 
 <script> function sendMessage() {
   document.getElementById("myForm").submit();}</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
