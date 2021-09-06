@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 
        
-        <meta name="viewport" content="width=device-width, initial-scale=0">
+        <meta name="viewport" content="width=device-width, initial-scale=2">
         <meta http-equiv="refresh" content="250">
 
         <title>Document</title>      
