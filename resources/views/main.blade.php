@@ -81,23 +81,29 @@
         <tr @if ($actifTime>=$Today_appointment->debut && $actifTime<$Today_appointment->fin)
              class="bg-info" 
         @endif>
+        <td> 
+          <div class="dropdown dropleft float-right">
+            <button class="btn text-white" type="button" id="dropdownMenuButton{{$Today_appointment->id}}" data-toggle="dropdown" >
+             <i class="fa fa-2x text-bold fa-ellipsis-v"></i>
+            </button>
+            <div class="dropdown-menu " aria-labelledby="dropdownMenuButton{{$Today_appointment->id}}">
+              <input  class="m-2 p-2" type="checkbox" id="cb{{$Today_appointment->id}}" @if ($Today_appointment->ActiveType=="2" )
+            checked 
+            @endif onchange="myFunction('{{$Today_appointment->id}}','cb{{$Today_appointment->id}}')"
+             data-on="حاضر" data-off="غائب" data-onstyle="outline-success"
+             data-offstyle="outline-danger"  data-toggle="toggle">
+            @php
+                $theId=$Today_appointment->id;
+            @endphp  <a  class="btn btn-danger " data-toggle="modal" data-target="#exampleModal{{$theId}}"><i class=" fa fa-trash fa-2x"></i>   </a>
+          </div> 
+          </div> 
           
-          <td  class="align-middle clearfix" style="position: relative; margin-right:0px">
-            <div class="dropdown dropleft float-right">
-              <button class="btn text-white" type="button" id="dropdownMenuButton{{$Today_appointment->id}}" data-toggle="dropdown" >
-               <i class="fa fa-2x text-bold fa-ellipsis-v"></i>
-              </button>
-              <div class="dropdown-menu " aria-labelledby="dropdownMenuButton{{$Today_appointment->id}}">
-                <input  class="m-2 p-2" type="checkbox" id="cb{{$Today_appointment->id}}" @if ($Today_appointment->ActiveType=="2" )
-              checked 
-              @endif onchange="myFunction('{{$Today_appointment->id}}','cb{{$Today_appointment->id}}')"
-               data-on="حاضر" data-off="غائب" data-onstyle="outline-success"
-               data-offstyle="outline-danger"  data-toggle="toggle">
-              @php
-                  $theId=$Today_appointment->id;
-              @endphp  <a  class="btn btn-danger " data-toggle="modal" data-target="#exampleModal{{$theId}}"><i class=" fa fa-trash fa-2x"></i>   </a>
-            </div> 
-            </div><img class=" border rounded-circle " width="50" height="50" src="{{$picture}}" alt="">
+          
+          
+                     
+          
+            </td>         
+          <td  class="align-middle clearfix" style="position: relative; margin-right:0px"><img class=" border rounded-circle text-center " width="50" height="50" src="{{$picture}}" alt="">
             <span  dir="ltr" style=" 
             display:inline-flex;
             width: 100px;
