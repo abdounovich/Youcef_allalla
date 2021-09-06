@@ -130,8 +130,6 @@
          <td class="align-middle">@php $demain = date('H:i', strtotime($Today_appointment->debut));
           echo $demain;
           @endphp</td>
-
- 
         </tr>
         @endif      <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
