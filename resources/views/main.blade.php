@@ -108,7 +108,7 @@
                      
           
             </td>         
-          <td  class="align-middle clearfix" style="position: relative; margin-right:100px"><img class=" border rounded-circle " width="50" height="50" src="{{$picture}}" alt="">
+          <td  class="align-middle clearfix" style="position: relative; margin-right:0px"><img class=" border rounded-circle " width="50" height="50" src="{{$picture}}" alt="">
             <span  dir="ltr" style=" 
             display:inline-flex;
             width: 100px;
