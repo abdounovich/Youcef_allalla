@@ -26,7 +26,6 @@
 @endif
 <div class="bg-dark  p-2"><h2 class="text-white text-center "> حجز موعد خاص</h2>
 
-    <a href="/responsive" target="_blank" rel="noopener noreferrer">aa</a>
      </div>
 <div class="container bg-dark rounded mt-2 ">
  
