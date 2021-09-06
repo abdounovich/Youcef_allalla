@@ -34,7 +34,6 @@
           <th scope="col"></th>
 
           <th scope="col">الفيسبوك</th>
-          <th scope="col"> الحلاقة </th>
           <th scope="col">الموعد  </th>
 
 
@@ -69,7 +68,6 @@
               <td  class="bg-warning text-dark">@php $debut = date('H:i', strtotime($Today_appointment->debut));
                 echo "محجوز ";
                 @endphp</td>
-              <td  class="bg-warning"></td>
               <td  class="bg-warning"></td>
               <td  class="bg-warning"></td>
               
@@ -126,8 +124,7 @@
            </td>
          
        
-        <td class="align-middle">{{$Today_appointment->type->type}}</td>
-         <td class="align-middle">@php $demain = date('H:i', strtotime($Today_appointment->debut));
+        <td class="align-middle">{{$Today_appointment->type->type}} @php $demain = date('H:i', strtotime($Today_appointment->debut));
           echo $demain;
           @endphp</td>
         </tr>
