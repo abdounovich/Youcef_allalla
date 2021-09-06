@@ -32,12 +32,12 @@
       <thead class=" bg-success text-right">
         <tr>
 
-          <th scope="col">/</th>
-          <th scope="col">/</th>
-          <th scope="col"> / </th>
+          <th scope="col">الفيسبوك</th>
+          <th scope="col"> الحلاقة </th>
           <th scope="col">الموعد  </th>
-          <th scope="col">/</th>
-       
+          <th scope="col"></th>
+          <th scope="col"></th>
+
 
 
 
@@ -52,7 +52,7 @@
       
        
        
-        {{-- @php
+        @php
 
 
         ini_set("allow_url_fopen", 1);
@@ -61,7 +61,7 @@
                       $userInfo = json_decode($userInfoData, true);
                   $picture = $userInfo['profile_pic'] ;
         
-        @endphp --}}
+        @endphp
        
      
 
@@ -85,36 +85,15 @@
         <tr @if ($actifTime>=$Today_appointment->debut && $actifTime<$Today_appointment->fin)
              class="bg-info" 
         @endif>
+    <input type="hidden" name="" value="   ">
          
-
-    <td> 
-      <div class="dropdown dropleft float-right">
-        <button class="btn text-white" type="button" id="dropdownMenuButton{{$Today_appointment->id}}" data-toggle="dropdown" >
-         <i class="fa fa-2x text-bold fa-ellipsis-v"></i>
-        </button>
-        <div class="dropdown-menu " aria-labelledby="dropdownMenuButton{{$Today_appointment->id}}">
-          <input  class="m-2 p-2" type="checkbox" id="cb{{$Today_appointment->id}}" @if ($Today_appointment->ActiveType=="2" )
-        checked 
-        @endif onchange="myFunction('{{$Today_appointment->id}}','cb{{$Today_appointment->id}}')"
-         data-on="حاضر" data-off="غائب" data-onstyle="outline-success"
-         data-offstyle="outline-danger"  data-toggle="toggle">
-      
-       
-        @php
-            $theId=$Today_appointment->id;
-        @endphp  <a  class="btn btn-danger " data-toggle="modal" data-target="#exampleModal{{$theId}}"><i class=" fa fa-trash fa-2x"></i>   </a>
-      
-          </div> 
-      </div> 
-      
-      
-      
-                 
-      
-        </td> 
-
-          <td  class="align-middle clearfix" style="position: relative;"><img class=" border rounded-circle ml-2" width="50" height="50" src="" alt="">
-             <span dir="ltr" style=" position: absolute;
+          <td  class="align-middle clearfix" style="position: relative;"><img class=" border rounded-circle ml-2" width="50" height="50" src="{{$picture}}" alt="">
+            <span  dir="ltr" style=" 
+            display:inline-flex;
+            width: 100px;
+            overflow: hidden;
+            white-space: nowrap;
+          text-overflow: ellipsis;"><a  class="text-white" href="sendMsg/{{$Today_appointment->fb_id}}">{{$Today_appointment->facebook}}</a></span>  <span dir="ltr" style=" position: absolute;
             top:1px;
             font-size:10px;
             right:1px; width:30px;height:30px; 
@@ -124,19 +103,27 @@
     box-shadow: 1px 1px 1px black;
  " class="badge badge-success rounded-circle "> {{$Today_appointment->client->points}}</span> 
            </td>
-         <td> <span  dir="ltr" style=" 
-          display:inline-flex;
-          width: 100px;
-          overflow: hidden;
-          white-space: nowrap;
-        text-overflow: ellipsis;"><a  class="text-white" href="sendMsg/{{$Today_appointment->fb_id}}">{{$Today_appointment->facebook}}</a></span></td>
+         
        
         <td class="align-middle">{{$Today_appointment->type->type}}</td>
          <td class="align-middle">@php $demain = date('H:i', strtotime($Today_appointment->debut));
           echo $demain;
           @endphp</td>
+           
+<td> 
+  
+  
+  <input  class="m-2 p-2" type="checkbox" id="cb{{$Today_appointment->id}}" @if ($Today_appointment->ActiveType=="2" )
+  checked 
+  @endif onchange="myFunction('{{$Today_appointment->id}}','cb{{$Today_appointment->id}}')"
+   data-on="حاضر" data-off="غائب" data-onstyle="outline-success"
+   data-offstyle="outline-danger"  data-toggle="toggle">
 
-
+  </td>
+<td>  @php
+      $theId=$Today_appointment->id;
+  @endphp  <a  class="btn btn-danger " data-toggle="modal" data-target="#exampleModal{{$theId}}"><i class=" fa fa-trash fa-2x"></i>   </a>
+  </td> 
         </tr>
         @endif      <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -170,37 +157,6 @@
 
 <script> function sendMessage() {
   document.getElementById("myForm").submit();}</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
