@@ -34,6 +34,7 @@
 
         
           <th scope="col">الفيسبوك</th>
+          <th scope="col">الحلاقة  </th>
           <th scope="col">الموعد  </th>
 
 
@@ -70,7 +71,8 @@
                 @endphp</td>
               <td  class="bg-warning"></td>
               <td  class="bg-warning"></td>
-              
+              <td  class="bg-warning"></td>
+
 
             </tr>
       
