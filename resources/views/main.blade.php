@@ -112,10 +112,10 @@
 
 <td> 
 <div class="dropdown dropleft float-right">
-  <button class="btn text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" >
+  <button class="btn text-white" type="button" id="dropdownMenuButton{{$Today_appointment->id}}" data-toggle="dropdown" >
    <i class="fa fa-2x text-bold fa-ellipsis-v"></i>
   </button>
-  <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+  <div class="dropdown-menu " aria-labelledby="dropdownMenuButton{{$Today_appointment->id}}">
     <input  class="m-2 p-2" type="checkbox" id="cb{{$Today_appointment->id}}" @if ($Today_appointment->ActiveType=="2" )
   checked 
   @endif onchange="myFunction('{{$Today_appointment->id}}','cb{{$Today_appointment->id}}')"
