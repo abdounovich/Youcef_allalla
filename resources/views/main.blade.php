@@ -108,14 +108,13 @@
                      
           
             </td>         
-          <td  class="align-middle clearfix" style="position: relative;">
+          <td  class="align-middle clearfix" style="position: relative;"><img class=" border rounded-circle ml-5" width="50" height="50" src="{{$picture}}" alt="">
             <span  dir="ltr" style=" 
             display:inline-flex;
             width: 100px;
             overflow: hidden;
             white-space: nowrap;
-          text-overflow: ellipsis;"><a  class="text-white" href="sendMsg/{{$Today_appointment->fb_id}}">{{$Today_appointment->facebook}}</a></span> <img class=" border rounded-circle ml-5" width="50" height="50" src="{{$picture}}" alt="">
-         <span dir="ltr" style=" position: absolute;
+          text-overflow: ellipsis;"><a  class="text-white" href="sendMsg/{{$Today_appointment->fb_id}}">{{$Today_appointment->facebook}}</a></span>  <span dir="ltr" style=" position: absolute;
             top:1px;
             font-size:10px;
             right:1px; width:30px;height:30px; 
