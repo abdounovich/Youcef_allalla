@@ -73,7 +73,6 @@
               <td  class="bg-warning"></td>
               <td  class="bg-warning"></td>
               <td  class="bg-warning"></td>
-              <td  class="bg-warning"></td>
               
 
             </tr>
