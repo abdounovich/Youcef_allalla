@@ -36,7 +36,6 @@
           <th scope="col"> الحلاقة </th>
           <th scope="col">الموعد  </th>
           <th scope="col"></th>
-          <th scope="col"></th>
 
 
 
