@@ -11,132 +11,73 @@
 
     <title>Hello, world!</title>
     <style>
-body {
-  background: #ccc;
+      div.timeline {
+    list-style-type: none;
+    position: relative;
+}
+div.timeline:before {
+    content: ' ';
+    background: #d4d9df;
+    display: inline-block;
+    position: absolute;
+    right: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 10;
+}
+div.timeline > div {
+    margin: 20px 0;
+    padding-right: 80px;
+}
+div.timeline > div:before {
+    content: ' ';
+    background: green;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid black;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    z-index: 10;
+
 }
 
-.timeline-wrapper {
-  display: block;
-  width: 90%;
-  height: 15rem;
-  position: relative;
-  color: rgb(223, 78, 78);
-  text-align: center;
-  margin: 0 auto;
-  padding: 10px;
+
+#the-active {
+
+
+  
+  background-image: url('https://picsum.photos/g/300/300');
 }
-.timeline-wrapper .timeline-line {
-  display: block;
-  width: 93.9%;
-  height: 1px;
-  background:black;
-  position: absolute;
-  top: 50%;
-  -webkit-box-shadow: 0 0 1px black;
-  -moz-box-shadow: 0 0 1px black;
-  box-shadow: 0 0 1px black;
-  left: 3%;
-  margin-left: 2.5px;
-}
-
-
-
-
-
 
     </style>
   </head>
   <body  style="    font-family: 'Cairo', sans-serif">
-    
-@php
-    $apps=App\Appointment::where("ActiveType","1")->get();
-@endphp
-
-
-    <div class="timeline-wrapper clearfix">
-      <div class="timeline-content-day">
-          <div class="timeline-line"></div>
-
-          <div class="timeline-content-item d-flex justify-content-around " >
-<div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
-  <div  style="margin-left:-15px; margin-top:-50px ">Merahi abdeldjalil</div>
-  <div  style="margin-left:-15px; margin-top:-100px ">حلاقة عادية</div>
-
-
-<div style="margin-left:-15px; margin-top:80px ">08:00</div>
-</div>
-
-
-
-<div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
-  <div  style="margin-left:-15px; margin-top:-50px ">Merahi abdeldjalil</div>
-  <div  style="margin-left:-15px; margin-top:-100px ">حلاقة عادية</div>
-
-
-<div style="margin-left:-15px; margin-top:80px ">08:00</div>
-</div>
-<div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
-  <div  style="margin-left:-15px; margin-top:-50px ">Merahi abdeldjalil</div>
-  <div  style="margin-left:-15px; margin-top:-100px ">حلاقة عادية</div>
-
-
-<div style="margin-left:-15px; margin-top:80px ">08:00</div>
-</div>
-<div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
-  <div  style="margin-left:-15px; margin-top:-50px ">Merahi abdeldjalil</div>
-  <div  style="margin-left:-15px; margin-top:-100px ">حلاقة عادية</div>
-
-
-<div style="margin-left:-15px; margin-top:80px ">08:00</div>
-</div>
-<div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
-  <div  style="margin-left:-15px; margin-top:-50px ">Merahi abdeldjalil</div>
-  <div  style="margin-left:-15px; margin-top:-100px ">حلاقة عادية</div>
-
-
-<div style="margin-left:-15px; margin-top:80px ">08:00</div>
-</div>
-
-<div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
-  <div class="mt-2" style="margin-left:-15px ">08:00</div>
-</div>
-<div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
-  <div class="mt-2" style="margin-left:-15px ">08:00</div>
-</div>
-<div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
-  <div class="mt-2" style="margin-left:-15px ">08:00</div>
-</div><div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
-  <div class="mt-2" style="margin-left:-15px ">08:00</div>
-</div><div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
-  <img class=" rounded-circle" width="50px" height="50px" style="margin-top: -20px ; margin-left:-20px" src="https://picsum.photos/g/300/300">
-  <div class="mt-2" style="margin-left:-15px ">08:00</div>
-</div>
-<div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
-  <div class="mt-2" style="margin-left:-15px ">08:00</div>
-</div>
-<div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
-  <div class="mt-2" style="margin-left:-15px ">08:00</div>
-</div>
-<div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
-  <div class="mt-2" style="margin-left:-15px ">08:00</div>
-</div>
-<div class="bg-success rounded-circle " style="width:10px;height:10px; margin-top:105px ; z-index:1">
-  <div class="mt-2" style="margin-left:-15px ">08:00</div>
-</div>
-
-          </div>      
-          
-          
-    
-
-     
-
-  
-     
-
-      
+    <div class="container mt-5 mb-5">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <div class="timeline ">
+            <div>
+             <div style="position: relative;z-index:200" > 
+              <img src="https://picsum.photos/g/300/300"
+              style='  margin-top:-10px; width:50px; height:50px; margin-left:583px ' class="rounded-circle" alt=""></div>
+           
+                <a target="_blank" href="https://www.totoprayogo.com/#">New Web Design</a>
+              <a href="#" class="float-right">21 March, 2014</a>
+              
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
+           </div>
+            <div>
+              <span href="#">18:00 - 19:00</span>
+              <a href="#" class="float-right">4 March, 2014</a>
+              <p>Curabitur purus sem, malesuada eu luctus eget, suscipit sed turpis. Nam pellentesque felis vitae justo accumsan, sed semper nisi sollicitudin...</p>
+            </div>
+        
+          </div>
+        </div>
       </div>
-  </div>
+    </div>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
