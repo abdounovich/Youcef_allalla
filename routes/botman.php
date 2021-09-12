@@ -159,119 +159,115 @@ $bot->reply(Question::create(' إظهار المزيد ➕ ؟   ')->addButtons([
 });
 
 
-
-
-
-
 $botman->hears('GoToDis', function ( $bot) {
 
-    $user = $bot->getUser();
-    $facebook_id = $user->getId();
-    // Access last name
-    $firstname = $user->getFirstname();
+
+
+
+$user = $bot->getUser();
+$facebook_id = $user->getId();
+// Access last name
+$firstname = $user->getFirstname();
 // Access last name
 $lastname = $user->getLastname();
 $full_name=$firstname.'-'.$lastname;
 // Access Username
 
-    $DbUsername=Client::whereFacebook($full_name)->first();
-    $OneApp=Appointment::where('facebook',$full_name)
-    ->where('ActiveType','1')->count();
+$DbUsername=Client::whereFacebook($full_name)->first();
+$OneApp=Appointment::where('facebook',$full_name)
+->where('ActiveType','1')->count();
+
+if ($OneApp>0) {
+    $bot->typesAndWaits(2);
+
+    $bot->reply(ButtonTemplate::create(' عذرا صديقي 😕 '.$full_name ."\n"." لقد حجزت موعد من قبل لا يمكنك حجز أكثر من موعد في نفس اليوم ")
+    ->addButton(ElementButton::create('🗒 تصفح مواعيدي  ')
+    ->url($this->config.'/client/'.$DbUsername->slug)
+    ->enableExtensions()
+    ->heightRatio('tall')
+    ->disableShare()
+
+    )
     
-    if ($OneApp>0) {
-        $bot->typesAndWaits(2);
-    
-        $bot->reply(ButtonTemplate::create(' عذرا صديقي 😕 '.$full_name ."\n"." لقد حجزت موعد من قبل لا يمكنك حجز أكثر من موعد في نفس اليوم ")
-        ->addButton(ElementButton::create('🗒 تصفح مواعيدي  ')
-        ->url($this->config.'/client/'.$DbUsername->slug)
-        ->enableExtensions()
-        ->heightRatio('tall')
-        ->disableShare()
-    
-        )
-        
-        );}
+    );}
 
 
 
-        else{
+    else{
 
 
 $arr=array();
 date_default_timezone_set("Africa/Algiers");
-    $today=date("l");
-    $tomorrow=date("l", strtotime($today. ' + 1 day'));
-    $aftertomorrow=date("l", strtotime($today. ' + 2 day'));
-   
+$today=date("l");
+$tomorrow=date("l", strtotime($today. ' + 1 day'));
+$aftertomorrow=date("l", strtotime($today. ' + 2 day'));
+
+
+
+
  
-    if ($today=='Tuesday') {
+
+ $today_statue=Setting::get($today.".active"); 
+ $tomorrow_statue=Setting::get($tomorrow.".active"); 
+ $aftertomorrow_statue=Setting::get($aftertomorrow.".active"); 
+
+
+ if ($aftertomorrow_statue==1) {     
+    $arr[]=  ElementButton::create(' بعد غد  🕐')
+           ->type('postback')
+           ->payload('main3');
    
-        $arr[]=  ElementButton::create(' بعد غد  🕐')
-        ->type('postback')
-        ->payload('main3');
-      
-        $arr[]=  ElementButton::create('يوم الغد  🕐')
-        ->type('postback')
-        ->payload('main2');
-        
-    }
-    elseif ($tomorrow=='Tuesday') {
+       }
+
+       if ($tomorrow_statue==1) {
+   
+
+        $arr[]=  ElementButton::create(' يوم الغد  🕐')
+         ->type('postback')
+         ->payload('main2');
        
-
-        $arr[]=  ElementButton::create(' بعد غد  🕐')
-        ->type('postback')
-        ->payload('main3');
       
-        $arr[]=  ElementButton::create(' اليوم  🕐')
-        ->type('postback')
-        ->payload('main1');
-    }
-    elseif ($aftertomorrow=='Tuesday') {
-     
-        $arr[]=  ElementButton::create(' اليوم 🕐')
-        ->type('postback')
-        ->payload('main1');
-      
-        $arr[]=  ElementButton::create(' يوم الغد  🕐')
-        ->type('postback')
-        ->payload('main2');
+     }
+
+if ($today_statue==1) {
+
+    $arr[]=  ElementButton::create(' اليوم  🕐')
+    ->type('postback')
+    ->payload('main1');
+}
+
+if ($today_statue==0 and $tomorrow_statue==0 and $aftertomorrow_statue==0) {
+
+   $bot->reply("المحل في عطلة , شكرا على التفهم ");
+   return;
+}
 
 
-    }
-    else{  
-        $arr[]=  ElementButton::create('     اليوم 🕐')
-        ->type('postback')
-        ->payload('main1');
-        $arr[]=  ElementButton::create(' يوم الغد  🕐')
-        ->type('postback')
-        ->payload('main2');
-          $arr[]=  ElementButton::create(' بعد غد  🕐')
-        ->type('postback')
-        ->payload('main3');
-      
-     } 
-    $bot->typesAndWaits(2);
- /* 
+  }
+$bot->typesAndWaits(2);
+/* 
 
-    $bot->reply(" عفوا لا يمكنك استعمال هاته الخدمة بسبب خلل تقني سنقوم بإصلاحه قريبا ");
-    $bot->reply(" يمكنك حجز موعد عبر الهاتف مؤقتا على الرقم  0555727410 "); */
+$bot->reply(" عفوا لا يمكنك استعمال هاته الخدمة بسبب خلل تقني سنقوم بإصلاحه قريبا ");
+$bot->reply(" يمكنك حجز موعد عبر الهاتف مؤقتا على الرقم  0555727410 "); */
 
 
-     $bot->reply(ButtonTemplate::create('  من فضلك إختر يوم موعدك  👇👇')->addButtons($arr)); 
-    }
+ $bot->reply(ButtonTemplate::create('  من فضلك إختر يوم موعدك  👇👇')->addButtons($arr)); 
+
 });
 
 /* $botman->hears('C([0-9]+)', function ($bot, $number) {
-    $user = $bot->getUser();
-    // Access last name
-    $facebook_id=$user->getId();
-    $firstname = $user->getFirstname();
+$user = $bot->getUser();
+// Access last name
+$facebook_id=$user->getId();
+$firstname = $user->getFirstname();
 // Access last name
 $lastname = $user->getLastname();
 $full_name=$firstname.'-'.$lastname;
 $bot->startConversation(new ExampleConversation($full_name,$number,$facebook_id));
 
 }); */
+
+
 
 
 
