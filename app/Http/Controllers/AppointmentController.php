@@ -284,7 +284,7 @@ else{
 
         $today=date("Y-m-d");
 
-     $appointments=Appointment::where('ActiveType','2')->whereJour($today)->get();
+     $appointments=Appointment::where('ActiveType','2')->where('jour','<',$today)->get();
 
 
      foreach ($appointments as $appointment) {
