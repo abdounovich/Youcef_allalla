@@ -52,7 +52,7 @@
       
        
        
-        @php
+  {{--       @php
 
 
         ini_set("allow_url_fopen", 1);
@@ -61,7 +61,7 @@
                       $userInfo = json_decode($userInfoData, true);
                   $picture = $userInfo['profile_pic'] ;
         
-        @endphp
+        @endphp --}}
        
      
 
@@ -187,13 +187,13 @@
       <tbody class=" text-right">
      
         @foreach ($Tomorow_appointments as $Tomorow_appointment)
-     @php
+{{--      @php
       
         ini_set("allow_url_fopen", 1);
                       $userInfoData=file_get_contents('https://graph.facebook.com/v2.6/'.$Tomorow_appointment->client->fb_id.'?fields=profile_pic&access_token='.$config);
                       $userInfo = json_decode($userInfoData, true);
                   $picture = $userInfo['profile_pic'] ;
-        @endphp  
+        @endphp  --}} 
         @if ($Tomorow_appointment->ActiveType==5)
         <tr class="bg-warning" ><td  class="bg-warning"></td>
           <td  class="bg-warning text-dark">@php $debut = date('H:i', strtotime($Tomorow_appointment->debut));
@@ -268,14 +268,14 @@
       <tbody class=" text-right">
       
         @foreach ($AfterTomoro_appointments as $AfterTomoro_appointment)
-        @php
+     {{--    @php
       
         ini_set("allow_url_fopen", 1);
                       $userInfoData=file_get_contents('https://graph.facebook.com/v2.6/'.$AfterTomoro_appointment->client->fb_id.'?fields=profile_pic&access_token='.$config);
                       $userInfo = json_decode($userInfoData, true);
                   $picture = $userInfo['profile_pic'] ;
         @endphp  
-        
+         --}}
         @if ($AfterTomoro_appointment->ActiveType==5)
         <tr class="bg-warning" ><td  class="bg-warning"></td>
           <td  class="bg-warning text-dark">@php $debut = date('H:i', strtotime($AfterTomoro_appointment->debut));
@@ -354,13 +354,13 @@
       <tbody class=" text-right">
      
         @foreach ($Inactif_appointments as $Inactif_appointment)
-          @php
+       {{--    @php
       
         ini_set("allow_url_fopen", 1);
                       $userInfoData=file_get_contents('https://graph.facebook.com/v2.6/'.$Inactif_appointment->client->fb_id.'?fields=profile_pic&access_token='.$config);
                       $userInfo = json_decode($userInfoData, true);
                   $picture = $userInfo['profile_pic'] ;
-        @endphp  
+        @endphp  --}} 
         <tr>
           <th scope="row">{{ $loop->index+1 }}</th>
           <td  class="align-middle clearfix col col-5" style="position: relative;"><img class=" border rounded-circle ml-2" width="50" height="50" src="" alt="">
